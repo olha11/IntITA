@@ -1,5 +1,6 @@
 (Yii 1.1.15)
 
+<<<<<<< HEAD
 http://localhost/intita/main/index.php?r=courses/index  
 http://localhost/intita/main/index.php?r=tests/index 
 http://localhost/intita/main/index.php?r=modules/index 
@@ -16,5 +17,11 @@ DB:
 int_ita_db
 password(db) 1111
 
+=======
+<<<<<<< HEAD
+http://localhost/intita/main/index.php?r=courses/index  
+http://localhost/intita/main/index.php?r=tests/index 
+etc.
+>>>>>>> 7d46da5b84ca033a48191c7f28a09d16a81aa75e
 ======
 
