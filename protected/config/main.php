@@ -32,6 +32,10 @@ return array(
 
 	// application components
 	'components'=>array(
+		
+		'clientScript'   => array(
+    		'class' => 'system.web.CClientScript'
+    	),
 
 		'user'=>array(
 			// enable cookie-based authentication
