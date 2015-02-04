@@ -5,38 +5,71 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="language" content="en">
 
-	<!-- blueprint CSS framework -->
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection">
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print">
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection">
-	<![endif]-->
 
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
+	<!-- slider, jQuery -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/slider.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/slider.css">
+    <!-- slider, jQuery -->
+    <!-- layouts style -->
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
+    <!-- layouts style -->
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
 <body>
+<div class="main"
 
 <div class="container" id="page">
 
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
+    <div id="navigation">
+        <div id="logo_img">
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/intITA_logo.png"/>
+        </div>
+        <div>
+            <ul>
+                <li><a href="http://www.google.com"><font color="4b75a5">Курси</a></li>
+                <li><a href="http://www.google.com"><font color="4b75a5">Розклад</a></li>
+                <li><a href="http://www.google.com"><font color="4b75a5">Викладачі</a></li>
+                <li><a href="http://www.google.com"><font color="4b75a5">Форум</a></li>
+                <li><a href="http://www.google.com"><font color="4b75a5">Про нас</a></li>
+            </ul>
+        </div>
+        <div id="line_small_off">
 
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div><!-- mainmenu -->
+        </div>
+        <div id="line_top">
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/toper.png"/>
+        </div>
+        <div id="enter_button">
+            <a href="http://www.google.com"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/enter_button.png"/></a>
+
+        </div>
+    </div>
+
+    <script>
+        var up_menu = document.getElementById('navigation');
+        var key = document.getElementById('enter_button');
+        var line = document.getElementById('line_top');
+        var line_small = document.getElementById('line_small_off');
+        window.onscroll = function() {
+            var pageY = window.pageYOffset || document.documentElement.scrollTop;
+            if (pageY >= key.offsetHeight) {
+                key.className = "fixed";
+                up_menu.className = "navigation";
+                line.className = "none";
+                line_small.className = "line_small"
+            } else {
+                key.className = "";
+                line.className = "";
+                line_small.className = "";
+                up_menu.className = "";
+            }
+        }
+
+    </script>
+
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
@@ -47,13 +80,37 @@
 
 	<div class="clear"></div>
 
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
+    <div id="footer">
+        <div>
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/sotial.gif"/>
+        </div>
+        <div class="footer">
+            <div>
+                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/intITA_logo.png" id="logo"/>
+            </div>
+            <div>
+                <p>м. Вінниця, вул. Петлюри, 12а</br>
+                    АйТі академія "INTITA"</p>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="http://www.google.com"><font color="4b75a5">Курси</a></li>
+                    <li><a href="http://www.google.com"><font color="4b75a5">Розклад</a></li>
+                    <li><a href="http://www.google.com"><font color="4b75a5">Викладачі</a></li>
+                    <li><a href="http://www.google.com"><font color="4b75a5">Форум</a></li>
+                    <li><a href="http://www.google.com"><font color="4b75a5">Про нас</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/go_up.gif"/></a>
+        </div>
+        <div class="footer">
+        </div>
+    </div><!-- footer -->
+
 
 </div><!-- page -->
-
+</div>
 </body>
 </html>
