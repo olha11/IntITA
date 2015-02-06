@@ -42,12 +42,7 @@
 		{
 ?>
 					<div class="preLessons">
-						 <table class="nameLesson">
-							<tr>
-								<td><p>Урок <?php echo $footNav->getPreNumber() ?>:</p></td>
-								<td><h4><?php echo $footNav->getPreName() ?></h4></td>
-							</tr>
-						 </table>
+						<p>Урок <?php echo $footNav->getPreNumber() ?>: <b><?php echo $footNav->getPreName() ?></b></p>
 						<table class="typeLesson">
 							<tr>
 								<td><p>Тип:</p></td>
@@ -106,12 +101,7 @@
 ?>					
 					
 					<div class="nextLessons">
-						<table class="nameLesson">
-							<tr>
-								<td><p>Урок <?php echo $footNav->getPostNumber() ?>:</p></td>
-								<td><h4><?php echo $footNav->getPostName() ?></h4></td>
-							</tr>
-						 </table>
+						<p>Урок <?php echo $footNav->getPostNumber() ?>: <b><?php echo $footNav->getPostName() ?></b></p>
 						<table class="typeLesson">
 							<tr>
 								<td><p>Тип:</p></td>
