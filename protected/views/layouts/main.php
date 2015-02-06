@@ -6,11 +6,7 @@
 	<meta name="language" content="en">
 
 
-	<!-- slider, jQuery -->
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/slider.js"></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/slider.css">
-    <!-- slider, jQuery -->
+
     <!-- layouts style -->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
     <!-- layouts style -->
@@ -20,6 +16,11 @@
     <!-- steps style -->
     <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/step.css" />
     <!-- steps style -->
+    <!-- slider, jQuery -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/slider.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/slider.css">
+    <!-- slider, jQuery -->
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
