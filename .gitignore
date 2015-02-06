@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # ignore files
+=======
+#ignore files
+>>>>>>> remotes/origin/html
 
 .idea/*
 protected/runtime/
