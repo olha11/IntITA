@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>subViewFooterNavigation</title>
+<link type="text/css" rel="stylesheet" href="subViewFooterNavigation.css" />
+</head>
+
+<body>
+
+<div class="subViewFooterNavigation" style="width:960px" >
+		<div class="subViewLessons" 	style="width:960px" >
+					<div class="preLessons">
+						<p>Урок 2: <b>Немає данних PHP</b></p>
+						<table class="typeLesson">
+							<tr>
+								<td><p>Тип:</p></td>
+								<td><span>практична робота</span></td>
+								<td><img src="images/practicalIco.png"; style="width:960*0.02 . 'px';"></td>
+								<td><p>Тривалість:</p></td>
+								<td><span>40 хв</span></td>
+								<td><img src="images/timeIco.png" style="width:960*0.02 . 'px';"></td>
+							<tr>
+						</table>
+						<table class="ratingLeson">
+							<tr>
+									<td><img src="images/ratIco1.png" style="width:960*0.015 . 'px'>; padding:0px;"></td>
+									<td><img src="images/ratIco1.png" style="width:960*0.015 . 'px'>; padding:0px;"></td>
+									<td><img src="images/ratIco1.png" style="width:960*0.015 . 'px'>; padding:0px;"></td>
+									<td><img src="images/ratIco1.png" style="width:960*0.015 . 'px'>; padding:0px;"></td>
+									<td><img src="images/ratIco1.png" style="width:960*0.015 . 'px'>; padding:0px;"></td>
+									<td><img src="images/ratIco1.png" style="width:960*0.015 . 'px'>; padding:0px;"></td>
+									<td><img src="images/medalIco.png"; style="width:960*0.035 . 'px';>"></td>
+							<tr>
+						</table>
+						<div class="preLesonLink">
+							<p><a href="#">&#171 переглянути знову попередній урок</a></p>
+						</div>   
+					</div>
+					
+					<div class="nextLessons">
+						<p>Урок 2: <b>Різні типи данних, що використовуються для того, щоб все було PHP</b></p>
+						<table class="typeLesson">
+							<tr>
+								<td><p>Тип:</p></td>
+								<td><span>практична робота</span></td>
+								<td><img src="images/practicalIco.png"; style="width:960*0.02 . 'px';"></td>
+								<td><p>Тривалість:</p></td>
+								<td><span>40 хв</span></td>
+								<td><img src="images/timeIco.png" style="width:960*0.02 . 'px';"></td>
+							<tr>
+						</table>
+						<table class="ratingLeson">
+							<tr>
+									<td><img src="images/ratIco0.png" style="width:960*0.015 . 'px'; padding:0px;"></td>
+									<td><img src="images/ratIco0.png" style="width:960*0.015 . 'px'; padding:0px;"></td>
+									<td><img src="images/ratIco0.png" style="width:960*0.015 . 'px'; padding:0px;"></td>
+									<td><img src="images/ratIco0.png" style="width:960*0.015 . 'px'; padding:0px;"></td>
+									<td><img src="images/ratIco0.png" style="width:960*0.015 . 'px'; padding:0px;"></td>
+									<td><img src="images/ratIco0.png" style="width:960*0.015 . 'px'; padding:0px;"></td>
+									<td><img src="images/medalIcoFalse.png"; style="width:960*0.035 . 'px';>"></td>
+							<tr>
+						</table>
+						<div class="nextLesonLink">
+							<p><a href="#">Перейти (кнопка!!! якщо пройшов) &#187 </a></p>
+						</div>   
+					</div>
+		</div>
+</div>
+</body>
+</html>
+	
