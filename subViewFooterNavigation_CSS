@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+
+h2,h3,h4,h5,h6 {
+	margin: 0;
+	padding: 0;
+}
+p {
+	margin: 0;
+	padding: 0;
+	font-size:100%;
+	}
+
+p, h1, h2, h3, h4, h5, h6, span{
+	font-size:100%;
+	}
+.subViewFooterNavigation {
+	margin: 0px auto;
+	background-color: #ffffff;
+	padding-top:32px;
+	padding-bottom:32px;
+	  }
+.subViewLessons {
+	overflow:hidden;
+	margin:0 auto;
+	padding:15px 5px 30px 0px;
+	border-top:1px solid #cccccc;
+}
+.subViewLessons span {
+	font-style:  italic;
+}
+.subViewLessons img {
+	padding-left:5px;
+	padding-right:10px;
+}
+.preLessons {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	padding-left:5px;
+	border-left:1px solid #cccccc;
+	display:inline-block;
+	max-width:50%;
+	float:left;
+}
+.nextLessons {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	padding-left:5px;
+	border-left:1px solid #cccccc;
+	display:inline-block;
+	max-width:50%;
+	float:right;
+}
+.typeLesson {
+	display:inline-block;
+	float:left;
+}
+.timeLesson {
+	display:inline-block;
+	float:left;
+}
+.ratingLeson {
+	vertical-align:central;
+	clear:both;
+}
+.preLesonLink {
+	padding-left:5px;
+	}
+.nextLesonLink {
+	text-align:right;
+}
+
