@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>subViewFooterNavigation</title>
+<link type="text/css" rel="stylesheet" href="subViewFooterNavigation.css" />
+</head>
+
+<body>
+
+<! Клас - приймає номер уроку на якому знаходиться користувач ($lessNum) і 
+Базу даних чи інформацію з бази даних ($allLess) - в якій міститься номер уроків, назви уроків, типи уроків, тривалість уркоів, оцінка уроків, зарахчи не зарах>
+<?php
+    class FooterNavigation
+    {	
+		 public $numberLesson;
+		 
+		 public $preLessonNumber;
+		 public $postLessonNumber;
+		 
+		 public $thisLessonInfo;
+		 public $preLessonInfo;
+		 public $postLessonInfo;
+		 
+		 public $infoLessons;
+		 
+        function FooterNavigation ($lessNum,$allLess)
+        {
+			 $this->infoLessons=$allLess; // Інформація про всі уроки
+			 $this->numberLessons=$lessNum-1; // Номер уроку
+			 
+			 $this->preLessonNumber=$lessNum-2; // Номер попереднього уроку
+			 $this->postLessonNumber=$lessNum; // Номер наступного уроку
+			 
+			 $this->thisLessonInfo=$this->infoLessons[ $this->numberLessons]; // Інформація даного уроку
+			 $this->preLessonInfo=$this->infoLessons[ $this->preLessonNumber]; // Інформація попереднього уроку
+			 $this->postLessonInfo=$this->infoLessons[ $this->postLessonNumber]; // Інформація наступного уроку
+        }
+	// Данний урок	
+		function getThisMedal()  {
+			return $this->thisLessonInfo[5]; // Медалька
+		}
+	// Попередній урок			
+		function getPre()  {
+			if ( isset( $this->preLessonInfo))
+				{
+					return 'True';  // Існування елемента
+				}
+		}
+		function getPreNumber()  {
+			return $this->preLessonInfo[0];  // Номер
+		}
+		function getPreName()  {
+			return $this->preLessonInfo[1]; // Назва
+		}
+		function getPreType()  {
+			return $this->preLessonInfo[2]; // Тип
+		}
+		function getPreDur()  {
+			return $this->preLessonInfo[3]; //	Тривалість
+		}
+		function getPreRait()  {
+			return $this->preLessonInfo[4]; //	Рейтинг
+		}
+		function getPreMedal()  {
+			return $this->preLessonInfo[5]; // Медалька
+		}
+	// Наступний урок		
+		function getPost()  {
+			if ( isset( $this->postLessonInfo))
+				{
+					return 'True';  // Існування елемента
+				}
+		}	
+		function getPostNumber()  {
+			return $this->postLessonInfo[0];  // Номер
+		}
+		function getPostName()  {
+			return $this->postLessonInfo[1]; // Назва
+		}
+		function getPostType()  {
+			return $this->postLessonInfo[2]; // Тип
+		}
+		function getPostDur()  {
+			return $this->postLessonInfo[3]; //	Тривалість
+		}
+		function getPostRait()  {
+			return $this->postLessonInfo[4]; //	Рейтинг
+		}
+		function getPostMedal()  {
+			return $this->postLessonInfo[5]; // Медалька
+		}
+
+    }
+?>
+
+<! Верстка >
+<?php
+
+//Загальні параметри блоку
+	$footNavSize='960px'; // Ширина блоку
+	$footNavContainerSize='960px'; // Ширина контенту
+	$footNavMaxMark='6'; // Шкала оцінювання - максимальна кількість балів, поділок
+
+// База даних - проста база даних для прикладу
+	$lessonInfo1=array('1','Назва уроку1','практична робота','Тайм1','3','Зараховано');
+	$lessonInfo2=array('2','Назва уроку2','лекція','Тайм2','4','Зараховано');
+	$lessonInfo3=array('3','Назва уроку3','практична робота','Тайм3','2','Зараховано');
+	$lessonInfo4=array('4','Назва уроку4','практична робота','Тайм4','3','Зараховано');
+	$lessonInfo5=array('5','Назва уроку5','практична робота','Тайм5','1','Не Зараховано');
+	$lessonInfo6=array('6','Назва уроку6','лекція','Тайм6','0','Не Зараховано');
+	$lessonInfo7=array('7','Назва уроку7','лекція','Тайм7','0','Не Зараховано');
+	$lessonInfo8=array('8','Назва уроку8','практична робота','Тайм8','0','Не Зараховано');
+	$lessonInfo9=array('9','Назва уроку9','практична робота','Тайм9','0','Не Зараховано');
+	$lessonInfo10=array('10','Назва уроку10','лекція','Тайм10','0','Не Зараховано');
+	
+	$allLessons=array($lessonInfo1,$lessonInfo2,$lessonInfo3,$lessonInfo4,$lessonInfo5,$lessonInfo6,$lessonInfo7,$lessonInfo8,$lessonInfo9,$lessonInfo10);
+
+	// Ініціалізуємо обьєкт класу який проиймає номер сторінки і інформацію про уроки з бази даних
+	$footNav=new FooterNavigation ('2',$allLessons);
+		
+?>
+<!  Верстка на основі обьекта $footNav >
+
+<div class="subViewFooterNavigation" style="width:<?php echo $footNavContainerSize; ?>" >
+		<div class="subViewLessons" 	style="width:<?php echo $footNavSize; ?>" >
+<?php
+	if (  $footNav->getPre()=='True' )
+		{
+?>
+					<div class="preLessons">
+						 <table class="nameLesson">
+							<tr>
+								<td><p>Урок <?php echo $footNav->getPreNumber() ?>:</p></td>
+								<td><h4><?php echo $footNav->getPreName() ?></h4></td>
+							</tr>
+						 </table>
+						<table class="typeLesson">
+							<tr>
+								<td><p>Тип:</p></td>
+								<td><span><?php echo $footNav->getPreType() ?></span></td>
+								<td><img src="<?php
+																	switch ($footNav->getPreType())
+																				{
+																					case 'лекція':
+																						echo "images/lectureIco.png";
+																						break;
+																					case 'практична робота':
+																						echo "images/practicalIco.png";
+																						break;
+																				}
+														?> " style="width:<?php echo $footNavSize*0.02 . 'px'; ?>"></td>
+								<td><p>Тривалість:</p></td>
+								<td><span><?php echo $footNav->getPreDur() ?></span></td>
+								<td><img src="images/timeIco.png" style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
+							<tr>
+						</table>
+						<table class="ratingLeson">
+							<tr>
+								<?php
+									for ($i=0; $i<$footNav->getPreRait(); $i++)
+									{
+								?>
+									<td>	<img src="images/ratIco1.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
+								<?php
+									}
+									for ($j=0; $j<$footNavMaxMark-$footNav->getPreRait(); $j++)
+									{
+								?>
+									<td>	<img src="images/ratIco0.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
+								<?php
+									}
+								?>	
+								<td><img src="<?php
+															if ($footNav->getPreMedal()=='Зараховано')
+																				{
+																					echo "images/medalIco.png";
+																				} else {
+																						echo "images/medalIcoFalse.png";
+																				}
+														?> " style="width:<?php echo $footNavSize*0.035 . 'px'; ?>"></td>
+							<tr>
+						</table>
+						<div class="preLesonLink">
+							<p><a href="#">&#171 переглянути знову попередній урок</a></p>
+						</div>   
+					</div>
+<?php
+		}
+		
+	if (  $footNav->getPost()=='True' )
+		{
+?>					
+					
+					<div class="nextLessons">
+						<table class="nameLesson">
+							<tr>
+								<td><p>Урок <?php echo $footNav->getPostNumber() ?>:</p></td>
+								<td><h4><?php echo $footNav->getPostName() ?></h4></td>
+							</tr>
+						 </table>
+						<table class="typeLesson">
+							<tr>
+								<td><p>Тип:</p></td>
+								<td><span><?php echo $footNav->getPostType() ?></span></td>
+								<td><img src="<?php
+																	switch ($footNav->getPostType())
+																				{
+																					case 'лекція':
+																						echo "images/lectureIco.png";
+																						break;
+																					case 'практична робота':
+																						echo "images/practicalIco.png";
+																						break;
+																				}
+														?> "style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
+								<td><p>Тривалість:</p></td>
+								<td><span><?php echo $footNav->getPostDur() ?></span></td>
+								<td><img src="images/timeIco.png" style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
+							<tr>
+						</table>
+						<table class="ratingLeson">
+							<tr>
+								<?php
+									for ($i=0; $i<$footNav->getPostRait(); $i++)
+									{
+								?>
+									<td>	<img src="images/ratIco1.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
+								<?php
+									}
+									for ($j=0; $j<$footNavMaxMark-$footNav->getPostRait(); $j++)
+									{
+								?>
+									<td>	<img src="images/ratIco0.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
+								<?php
+									}
+								?>																
+									<td><img src="<?php
+																	if ($footNav->getPostMedal()=='Зараховано')
+																				{
+																					echo "images/medalIco.png";
+																				} else {
+																						echo "images/medalIcoFalse.png";
+																				}
+														?> " style="width:<?php echo $footNavSize*0.035 . 'px';?>"></td>
+							<tr>
+						</table>
+						<?php if($footNav->getThisMedal()=='Зараховано') { ?>		
+							<div class="nextLesonLink">
+								<p><a href="#">переглянути наступний урок &#187</a></p>
+							</div>  
+						<?php  }?>
+					</div>
+		</div>
+<?php
+		}
+?>
+</div>
+
+	
