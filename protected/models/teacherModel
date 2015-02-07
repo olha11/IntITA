@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset="utf-8" />
+<title> </title>
+<link type="text/css" rel="stylesheet" href="lectureStyles.css" />
+</head>
+<body>
+ <?php   
+    class Teacher
+    {
+        public $teacherImage;
+        public $teacherName;
+        public $teacherEmails;
+        public $teacherPhoneNumbers;
+        public $teacherSkype;
+        public $linkAdress;
+        //constant
+        public $teacherTitle='Викладач:';
+        public $linkName='детальніше';
+        
+        
+        function Teacher ($teacherImage, $teacherName,$teacherEmails,$teacherPhoneNumbers,$teacherSkype,$linkAdress)
+        {
+        $this->teacherImage = $teacherImage;
+        $this->teacherName = $teacherName;
+        $this->teacherEmail1 = $teacherEmail1;
+        $this->teacherEmail2 = $teacherEmail2;
+        $this->teacherPhoneNumber1 = $teacherPhoneNumber1;
+        $this->teacherPhoneNumber2 = $teacherPhoneNumber2;
+        $this->teacherSkype = $teacherSkype;
+        $this->linkAdress = $linkAdress;    
+        }
+        
+        public function TeacherPrint ()
+        { ?>
+            <div class="teacherBlock">
+                <img src="<?php echo $this->teacherImage; ?>">   
+                <span>
+                <ul>
+                    <li> <div class="teacherTitle">
+                    <?php echo $this->teacherTitle; ?></div>
+                    </li>
+                    <li>
+                        <?php echo $this->teacherName;?>
+                    </li>
+                    <li>
+                        <?php echo $this->teacherEmails; ?>
+                    </li>
+                    <li>
+                        <?php echo $this->teacherPhoneNumbers; ?>
+                    </li>
+                    <li>
+                        
+                        <?php echo 'skype: '?><div id="teacherSkype"><?php echo $this->teacherSkype; ?>
+                        </div>
+                    </li> 
+                    <li>
+                        <a href="<?php echo $this->linkAdress; ?>">
+                        <?php echo $this->linkName; ?>
+                        </a>
+                    </li>                 
+                </ul>
+                <span>
+            </div> <?php
+        }
+ 
+    }?>
+    </body>
+ </html>
