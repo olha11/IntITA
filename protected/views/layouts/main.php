@@ -35,11 +35,11 @@
                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/intITA_logo.png"/>
             </div>
                 <ul>
-                    <li><a href="http://www.google.com">Курси</span></a></li>
-                    <li><a href="http://www.google.com">Розклад</span></a></li>
-                    <li><a href="http://www.google.com">Викладачі</span></a></li>
-                    <li><a href="http://www.google.com">Форум</span></a></li>
-                    <li><a href="http://www.google.com">Про нас</span></a></li>
+                    <li><a href="http://www.google.com">Курси</a></li>
+                    <li><a href="http://www.google.com">Розклад</a></li>
+                    <li><a href="http://www.google.com">Викладачі</a></li>
+                    <li><a href="http://www.google.com">Форум</a></li>
+                    <li><a href="http://www.google.com">Про нас</a></li>
                 </ul>
         </div>
             <div id="line_small_off">
