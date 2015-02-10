@@ -1,7 +1,6 @@
 # ignore files
 
 
-
 .idea/*
 protected/runtime/
 assets/
