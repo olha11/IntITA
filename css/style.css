@@ -6,6 +6,10 @@
 p, h1, h3, h4{
 	font-family: Arial, Helvetica, sans-serif;
 	}
+.clear {
+    width: 960px;
+    clear: both;
+}
 
 /*******navigations-top******/
 #navigation {
@@ -15,7 +19,7 @@ p, h1, h3, h4{
     z-index: 5;
 }
 .navigation {
-    margin-top: -7px;
+    margin-top: 0px;
     background-color: white;
     width: 960px;
     position: fixed;
