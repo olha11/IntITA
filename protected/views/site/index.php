@@ -81,16 +81,15 @@ $massAbout=array($objAbout1,$objAbout2,$objAbout3);
 <! Ініціалізація екземплярів класу>
 <?php
 
-$stepHeader = 'Як проводиться навчання?';
-$stepSubheader = 'далі пояснення як ви будете вчитися крок за кроком';
-$stepSize='540px';
-$stepsContainerSize='960px';
+$stepHeader = 'Як розпочати навчання?';
+$stepSubheader = 'п’ять кроків до здійснення твоїх мрій';
+$stepSize='958px';
 
-$step1=new Step(Yii::app()->request->baseUrl.'/css/images/step1.jpg','Реєстрація на сайті','Щоб Ви отримали доступ до переліку курсів та пройти пробні безкоштовні модулі і заняття зареєструйтесь на сайті.','1','крок');
-$step2=new Step(Yii::app()->request->baseUrl.'/css/images/step2.jpg','Вибір курсу чи модуля','Щоб стати спеціалістом певного напрямку та рівня виберіть для проходження відповідний курс. Якщо Вас цікавить виключно поглиблення знань в певному напрямку IT, то виберіть відповідний модуль.','2','крок');
-$step3=new Step(Yii::app()->request->baseUrl.'/css/images/step3.jpg','Проплата','Щоб розпочати проходження курсу чи модуля виберіть зручну схему оплати (схему оплати курсу чи модуля можна змінювати, також можлива помісячна оплата в кредит) та здійсніть оплату зручним Вам способом.','3','крок');
-$step4=new Step(Yii::app()->request->baseUrl.'/css/images/step4.jpg','Освоєння матеріалу','Вивчення матеріалу можливе шляхом читання тексту чи/і перегляду відео, які підготовлені для кожного заняття. Для цього на сторінці заняття виберіть спосіб, який Вам зручніший чи використовуйте обидва. Протягом освоєння матеріалу заняття виконуйте Проміжні тестові завдання. По завершенню кожного заняття виконуйте Підсумкове тестове завдання. Кожен модуль завершується Індивідуальним проектом чи Екзаменом, який приймають викладачі. Можна замовити індивідуальну консультацію викладача по темам та завданням чи обговорювати питання на тематичному форумі чи форумі групи.','4','крок');
-$step5=new Step(Yii::app()->request->baseUrl.'/css/images/step5.jpg','Завершення курсу','Підсумком курсу є Командний дипломний проект, який виконується разом із іншими студентами (склад команди формуєте самостійно чи рекомендує керівник, який затверджує тему і технічне завдання та асистенти проекту). Здача проекту передбачає передзахист та захист в он-лайн режимі із представленням технічної документації. Після захисту видається диплом та рекомендація для працевлаштування.','5','крок');
+$step1=new Step(Yii::app()->request->baseUrl.'/css/images/step1.jpg','Реєстрація','Щоб отримати доступ до переліку курсів та пройти безкоштовні модулі і заняття зареєструйся на сайті.','1','крок');
+$step2=new Step(Yii::app()->request->baseUrl.'/css/images/step2.jpg','Вибір курсу чи модуля','Щоб стати спеціалістом певного напрямку та рівня вибери для проходження відповідний курс. Якщо Тебе цікавить виключно поглиблення знань в певному напрямку ІТ, то вибери відповідний модуль.','2','крок');
+$step3=new Step(Yii::app()->request->baseUrl.'/css/images/step3.jpg','Проплата','Щоб розпочати проходження курсу чи модуля виберіть зручну схему оплати та здійсни оплату зручним Тобі способом (схему оплати курсу чи модуля можна змінювати, також можлива помісячна оплата в кредит).','3','крок');
+$step4=new Step(Yii::app()->request->baseUrl.'/css/images/step4.jpg','Освоєння матеріалу','Вивчення матеріалу можливе шляхом читання тексту чи/і перегляду відео для кожного заняття. Протягом освоєння матеріалу заняття виконуй Проміжні тестові завдання. По завершенню кожного заняття виконуй Підсумкове тестове завдання. Кожен модуль завершується Індивідуальним проектом чи Екзаменом, який приймають викладачі. Можна замовити індивідуальну консультацію викладача по темам та завданням чи обговорювати питання на тематичному форумі чи форумі групи.','4','крок');
+$step5=new Step(Yii::app()->request->baseUrl.'/css/images/step5.jpg','Завершення курсу','Підсумком курсу є Командний дипломний проект, який виконується разом із іншими студентами (склад команди формуєте самостійно чи рекомендує керівник, який затверджує тему і технічне завдання проекту). Здача проекту передбачає передзахист та захист в он-лайн режимі із представленням технічної документації. Після захисту видається диплом та рекомендація для працевлаштування.','5','крок');
 
 $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 ?>
@@ -99,60 +98,60 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 
 <! Верстка за допомогою масиву з екземплярами класу>
 
-<div class="steps" style="width:<?php echo $stepsContainerSize; ?>" >
-
-    <div class="stepHeader">
-        <h3><?php echo $stepHeader; ?></h3>
-        <h5><?php echo $stepSubheader; ?></h5>
-    </div>
-
-    <?php
+<div class="steps" >
+		<div class="stepHeaderCont" style="width:<?php echo $stepSize; ?>">
+			<div class="stepHeader">
+						<h1><?php echo $stepHeader; ?></h1>
+						<h3><?php echo $stepSubheader; ?></h3>
+			</div>
+		</div>
+<?php
     foreach ($stepsArray as $stepValue)
     {
-        if ($stepValue->stepNumber % 2 != 0)
-        {
-            ?>
-            <div class="stepLeft" 	style="width:<?php echo $stepSize; ?>" >
-                <div class="stepUrl">
-                    <img src="<?php echo $stepValue->stepImage; ?>">
-                </div>
-                <div class="line">
-                </div>
+		if ($stepValue->stepNumber % 2 <> 0)
+		 {
+?>
+         <div class="stepLeft" 	style="width:<?php echo $stepSize; ?>" >
+					<div class="stepUrl">
+        		   		 <img src="<?php echo $stepValue->stepImage; ?>">
+        		    </div>
+					<div class="line">
+                    </div>
 
-                <img class="hexagon" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/hexagon.png">
-                <div class="stepArticle">
-                    <p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
-                    <p class="stepName"><?php echo $stepValue->stepName; ?></p>
-                </div>
-                <div class="stepInfo" style="min-height:<?php echo $stepSize*0.23 . 'px';?> ">
-                    <h4><?php echo $stepValue->stepTitle; ?></h4>
-                    <p><?php echo $stepValue->stepText; ?></p>
-                </div>
-            </div>
-        <?php
-        }
-        else
-        {
-            ?>
-            <div class="stepRight" style="width:<?php echo $stepSize; ?>" >
-                <div class="stepUrl">
-                    <img src="<?php echo $stepValue->stepImage; ?>">
-                </div>
-                <div class="line">
-                </div>
-                <img class="hexagon" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/hexagon.png">
-                <div class="stepArticle">
-                    <p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
-                    <p class="stepName"><?php echo $stepValue->stepName; ?></p>
-                </div>
-                <div class="stepInfo" style="min-height:<?php echo $stepSize*0.23 . 'px';?> ">
-                    <h4><?php echo $stepValue->stepTitle; ?></h4>
-                    <p><?php echo $stepValue->stepText; ?></p>
-                </div>
-            </div>
-        <?php
-        }
-    }
-    ?>
+                    <img class="hexagon" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/hexagon.png">
+					<div class="stepArticle">
+						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
+						<p class="stepName"><?php echo $stepValue->stepName; ?></p>
+					</div>
+        			<div class="stepInfo" style="min-height:<?php echo $stepSize*0.23 . 'px';?> ">
+          				  <h2><?php echo $stepValue->stepTitle; ?></h2>
+              			  <p><?php echo $stepValue->stepText; ?></p>
+          			</div>
+         </div>
+		 <?php
+		 }
+		 else
+		 {
+		 ?>
+		 <div class="stepRight" style="width:<?php echo $stepSize; ?>" >
+					<div class="stepUrl">
+        		   		 <img src="<?php echo $stepValue->stepImage; ?>">
+        		    </div>
+					<div class="line">
+                    </div>
+                     <img class="hexagon" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/hexagon.png">
+					<div class="stepArticle">
+						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
+						<p class="stepName"><?php echo $stepValue->stepName; ?></p>
+					</div>
+        			<div class="stepInfo" style="min-height:<?php echo $stepSize*0.229 . 'px';?> ">
+          				  <h2><?php echo $stepValue->stepTitle; ?></h2>
+              			  <p><?php echo $stepValue->stepText; ?></p>
+          			</div>
+         </div>
+<?php
+	    }
+	}
+?>
 </div>
 

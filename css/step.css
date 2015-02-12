@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* CSS Document */
+
 
 /* Стиль загального блоку */
 html{
@@ -16,13 +16,17 @@ body, html{
 }
 /* Стиль заголовку*/	
 
-.stepHeader h3{
+.stepHeader h1{
 	margin: 3px;
 	}
-.stepHeader h5{
+.stepHeader h3{
 	color:#4b75a4;
 	margin: 3px;
 	}
+.stepHeaderCont {
+	margin: 0px auto;
+	padding-bottom:60px;
+}
 .stepHeader {
 	text-align:center;
 	margin: 0px auto;
@@ -32,38 +36,43 @@ body, html{
 	}
 
 .steps p {
-	font-size: 75%;
+	font-size: 100%;
 	margin-top:0px;
 	}
 .steps h4 {
 	margin-bottom:10px;
 	}
+.steps h2 {
+	margin-bottom:10px;
+	}
 
 .steps {
-	margin: 0px auto;
 	background-color: #f3f3f3;
-	padding-top:32px;
-	padding-bottom:32px;
+	padding-top:60px;
+	padding-bottom:60px;
 	  }
 /* Стиль екземплярів класу Step*/
 .stepLeft {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
 	overflow:hidden;
 	position:relative;
 	margin: 0px auto;
 	background-color: #ffffff;
 	box-shadow: 0 0 5px #ACACAC;
-	margin-top:20px;
-	margin-bottom:20px;
+	margin-top:40px;
+	margin-bottom:40px;
 	}
 .stepRight {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
 	overflow:hidden;
 	position:relative;
-	width: 540px;
 	margin: 0px auto;
 	background-color: #ffffff;
 	box-shadow: 0 0 5px #ACACAC;
-	margin-top:20px;
-	margin-bottom:20px;
+	margin-top:40px;
+	margin-bottom:40px;
 	}
 .stepInfo {
 	box-sizing:border-box;
@@ -75,6 +84,7 @@ body, html{
 	      }
 .stepUrl {
 	box-sizing:border-box;
+    -moz-box-sizing:border-box;
 	position:relative;
 	display:inline-block;
 	width:33%;
@@ -83,15 +93,17 @@ body, html{
 .line {
 	background:#ffffff;
 	box-sizing:border-box;
+    -moz-box-sizing:border-box;
 	position:relative;
 	display:inline-block;
 	width:1%;
 	border:0px solid #af3bf4;
-	height:100px; /*висота вкладки*/
+	height:150px; /*висота вкладки*/
 	z-index:2;
 	}
 .stepUrl img {
 	width:100%;
+    margin-bottom: -4px;
 	}
 
 .hexagon {
@@ -115,14 +127,15 @@ body, html{
 }
 p.stepNumber {
 	color:#3d4d60;
-	font-size:100%;
+	font-size:300%;
 	font-weight:bold;
 	margin:0px;
 	margin-top:5px;
+	margin-bottom:-5px;
 }
 p.stepName {
 	color:#3d4d60;
-	font-size:80%;
+	font-size:130%;
 	font-weight:bold;
 	margin:0px;
 }
@@ -149,16 +162,13 @@ p.stepName {
 }
 .stepLeft .stepInfo {
 	border-left:2px solid #4b75a4;
-	padding:0px 5px 3px 7%;
+	padding:0px 5px 0px 7%;
 }
 .stepRight .stepInfo {
 	border-right:2px solid #4b75a4;
 	float:right;
 	text-align:right;
-	padding:0px 7% 3px 5px;
+	padding:0px 7% 0px 5px;
 }
 
 
-
-
-							  
