@@ -1,13 +1,13 @@
 <?php
 /* @var $this SiteController */
-/* @var model AboutUs */
+
 
 $this->pageTitle=Yii::app()->name;
 ?>
 
 <div class="slider-box">
   <div class="slider">
-    
+
     <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1.jpg"/>
     <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/2.jpg"/>
     <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/3.jpg"/>
@@ -16,13 +16,14 @@ $this->pageTitle=Yii::app()->name;
   </div>
 </div>
 <?php
-$model = new AboutUs(Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image1.png','Про що мрієш ти?','Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль?
-                        Закордонні подорожі, можливо, до екзотичних країн?','https://www.google.com.ua/');
+
 $headerText = 'Про нас';
 $subheaderText = 'дещо, що Вам потрібно знати про наші курси';
 $subLineImage= Yii::app()->request->baseUrl.'/css/images/line1.png';
 $linkName="детальніше »";
-$objAbout1=new AboutUS(Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image1.png','Про що мрієш ти?','Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль?
+
+
+$objAbout1=new AboutUs(Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image1.png','Про що мрієш ти?','Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль?
                         Закордонні подорожі, можливо, до екзотичних країн?','https://www.google.com.ua/');
 $objAbout2=new AboutUs (Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image2.png','Що очікується від тебе','Програмування – Програмування – це не так складно, як ти можеш уявляти.
                         Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля.','https://www.google.com.ua/');
@@ -108,7 +109,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
     <?php
     foreach ($stepsArray as $stepValue)
     {
-        if ($stepValue->stepNumber % 2 <> 0)
+        if ($stepValue->stepNumber % 2 != 0)
         {
             ?>
             <div class="stepLeft" 	style="width:<?php echo $stepSize; ?>" >
