@@ -2,7 +2,7 @@
 /* stylesheet for lesson top */
 
 .lectureMainBlock { border-bottom:solid 2px #DCDCDC; left:50%; width: 960px;  display:inline-block;
- position:relative;    margin-left: -480px; margin-top:0px; padding-bottom: 18px;}
+ position:relative;    margin-left: -480px; margin-top:0px; margin-bottom:5px;padding-bottom: 38px;}
  
 .lectureImageMain
 {
@@ -86,7 +86,7 @@ margin-top:9px;
 #counter
 {
 margin-bottom:-20px;
-margin-top:-12px;
+margin-top:-6px;
 }
 
 p
@@ -97,7 +97,7 @@ a
  
  .teacherBlock
  { border:solid 0px #DCDCDC; left:52%; top:8px; width: 455px;  display:inline-block;  
- position:absolute;    margin-left: 0px; margin-top:0px; padding-bottom:0px;}
+ position:absolute;    margin-left: 0px; margin-top:0px; margin-bottom:-10px; padding-bottom:0px;}
 
  .teacherBlock span 
 { border-left:solid 2px #DCDCDC; left:102px; top:0px;  display:inline-block;  
