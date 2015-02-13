@@ -54,19 +54,20 @@
 
             var key = document.getElementById('enter_button');
 
-            var d = document.getElementsByClassName('main')
+            var logo = document.getElementById('logo_img');
             window.onscroll = function() {
                 var pageY = window.pageYOffset || document.documentElement.scrollTop;
                 if (pageY >= key.offsetHeight) {
 
                     key.className = "down";
+                    logo.className = "down";
                  /*   key.className = "fixed";
                     up_menu.className = "navigation";
                     line.className = "none";
                     line_small.className = "line_small"*/
                 } else {
                     key.className = "";
-
+                    logo.className = "";
                   /*  key.className = "";
                     line.className = "";
                     line_small.className = "";
