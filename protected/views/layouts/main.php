@@ -26,57 +26,59 @@
 </head>
 
 <body>
-<div class="main"
 
-    <div class="container" id="page">
+
 
         <div id="navigation">
+            <div class="main">
             <div id="logo_img">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/intITA_logo.png"/>
+                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/Logo_big.png"/>
             </div>
-                <ul>
-                    <li><a href="http://www.google.com">Курси</a></li>
-                    <li><a href="http://www.google.com">Розклад</a></li>
-                    <li><a href="http://www.google.com">Викладачі</a></li>
-                    <li><a href="http://www.google.com">Форум</a></li>
-                    <li><a href="http://www.google.com">Про нас</a></li>
-                </ul>
+            <ul>
+                <li><a href="http://www.google.com">Курси</a></li>
+                <li><a href="http://www.google.com">Розклад</a></li>
+                <li><a href="http://www.google.com">Викладачі</a></li>
+                <li><a href="http://www.google.com">Форум</a></li>
+                <li><a href="http://www.google.com">Про нас</a></li>
+            </ul>
+            </div>
         </div>
-            <div id="line_small_off">
+        <a href="#">
+<div id="enter_button">
+   <!-- <img src="/IntITA/css/images/enter_button.png">-->
+</div>
+        </a>
 
-            </div>
-            <div id="line_top">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/toper.png"/>
-            </div>
-            <div id="enter_button">
-                <a href="http://www.google.com"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/enter_button.png"/></a>
-
-            </div>
 
         <script>
-            var up_menu = document.getElementById('navigation');
+
             var key = document.getElementById('enter_button');
-            var line = document.getElementById('line_top');
-            var line_small = document.getElementById('line_small_off');
+
+            var d = document.getElementsByClassName('main')
             window.onscroll = function() {
                 var pageY = window.pageYOffset || document.documentElement.scrollTop;
                 if (pageY >= key.offsetHeight) {
-                    key.className = "fixed";
+
+                    key.className = "down";
+                 /*   key.className = "fixed";
                     up_menu.className = "navigation";
                     line.className = "none";
-                    line_small.className = "line_small"
+                    line_small.className = "line_small"*/
                 } else {
                     key.className = "";
+
+                  /*  key.className = "";
                     line.className = "";
                     line_small.className = "";
-                    up_menu.className = "";
+                    up_menu.className = "";*/
                 }
             }
 
         </script>
-
-
         <div class="clear"></div>
+<div class="main">
+
+<div style="height: 105px; width: auto"></div>
 
         <?php if(isset($this->breadcrumbs)):?>
             <?php $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -88,6 +90,7 @@
         <?php echo $content; ?>
 
         <div class="clear"></div>
+
 
         <div id="footer">
             <div>
@@ -103,11 +106,11 @@
                 </div>
                 <div>
                     <ul>
-                        <li><a href="http://www.google.com"><span style="color: 4b75a5">Курси</span></a></li>
-                        <li><a href="http://www.google.com"><span style="color: 4b75a5">Розклад</span></a></li>
-                        <li><a href="http://www.google.com"><span style="color: 4b75a5">Викладачі</span></a></li>
-                        <li><a href="http://www.google.com"><span style="color: 4b75a5">Форум</span></a></li>
-                        <li><a href="http://www.google.com"><span style="color: 4b75a5">Про нас</span></a></li>
+                        <li><a href="http://www.google.com">Курси</a></li>
+                        <li><a href="http://www.google.com">Розклад</a></li>
+                        <li><a href="http://www.google.com">Викладачі</a></li>
+                        <li><a href="http://www.google.com">Форум</a></li>
+                        <li><a href="http://www.google.com">Про нас</a></li>
                     </ul>
                 </div>
             </div>
@@ -118,7 +121,7 @@
         </div><!-- footer -->
 
 
-    </div><!-- page -->
+
 </div>
 </body>
 </html>
