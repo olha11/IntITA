@@ -31,16 +31,18 @@
 
         <div id="navigation">
             <div class="main">
-            <div id="logo_img">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/Logo_big.png"/>
-            </div>
-            <ul>
-                <li><a href="http://www.google.com">Курси</a></li>
-                <li><a href="http://www.google.com">Розклад</a></li>
-                <li><a href="http://www.google.com">Викладачі</a></li>
-                <li><a href="http://www.google.com">Форум</a></li>
-                <li><a href="http://www.google.com">Про нас</a></li>
-            </ul>
+                <div id="logo_img">
+                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/Logo_big.png"/>
+                </div>
+
+                    <ul>
+                        <li><a href="http://www.google.com">Курси</a></li>
+                        <li><a href="http://www.google.com">Розклад</a></li>
+                        <li><a href="http://www.google.com">Викладачі</a></li>
+                        <li><a href="http://www.google.com">Форум</a></li>
+                        <li><a href="http://www.google.com">Про нас</a></li>
+                    </ul>
+
             </div>
         </div>
         <a href="#">
@@ -53,7 +55,7 @@
         <script>
 
             var key = document.getElementById('enter_button');
-
+            var nav = document.getElementById('navigation');
             var logo = document.getElementById('logo_img');
             window.onscroll = function() {
                 var pageY = window.pageYOffset || document.documentElement.scrollTop;
@@ -61,17 +63,15 @@
 
                     key.className = "down";
                     logo.className = "down";
-                 /*   key.className = "fixed";
-                    up_menu.className = "navigation";
-                    line.className = "none";
-                    line_small.className = "line_small"*/
+                    nav.style.height = "68px";
+                    nav.className = "down";
+
                 } else {
                     key.className = "";
                     logo.className = "";
-                  /*  key.className = "";
-                    line.className = "";
-                    line_small.className = "";
-                    up_menu.className = "";*/
+                    nav.className = "";
+                    nav.style.height = "100px";
+
                 }
             }
 
