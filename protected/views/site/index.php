@@ -15,6 +15,7 @@ $this->pageTitle=Yii::app()->name;
 
   </div>
 </div>
+
 <?php
 
 $headerText = 'Про нас';
