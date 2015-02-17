@@ -92,39 +92,42 @@
 
         <?php echo $content; ?>
 
+</div>
+
         <div class="clear"></div>
 
 
         <div id="footer">
-            <div>
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/sotial.gif"/>
-            </div>
-            <div class="footer">
+            <div class="main">
                 <div>
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/intITA_logo.png" id="logo"/>
+                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/sotial.gif"/>
                 </div>
-                <div>
-                    <p>м. Вінниця, вул. Петлюри, 12а</br>
-                        АйТі академія "INTITA"</p>
+                <div class="footer">
+                    <div>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/Logo_big.png" style="max-width: 140px;">
+                    </div>
+                    <div>
+                        <p> телефон: +38 0432 52 82 67<br/>
+                            тел. моб. +38 067 431 20 10<br/>
+                            e-mail: intita.hr@gmail.com</p>
+                    </div>
+                    <div>
+                        <ul>
+                            <li><a href="http://www.google.com">Курси</a></li>
+                            <li><a href="http://www.google.com">Викладачі</a></li>
+                            <li><a href="http://www.google.com">Форум</a></li>
+                            <li><a href="http://www.google.com">Про нас</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <ul>
-                        <li><a href="http://www.google.com">Курси</a></li>
-                        <li><a href="http://www.google.com">Розклад</a></li>
-                        <li><a href="http://www.google.com">Викладачі</a></li>
-                        <li><a href="http://www.google.com">Форум</a></li>
-                        <li><a href="http://www.google.com">Про нас</a></li>
-                    </ul>
+                <div class="footer"">
+                    <a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/go_up.png"/></a>
                 </div>
+                <div class="footer"></div>
             </div>
-            <div class="footer">
-                <a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/go_up.gif"/></a>
-            </div>
-
         </div><!-- footer -->
 
 
 
-</div>
 </body>
 </html>
