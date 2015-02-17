@@ -19,11 +19,20 @@
     <!-- steps style -->
     <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/step.css" />
     <!-- steps style -->
-    <!-- slider, jQuery -->
+    <!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/slider.js"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/slider.css">
-    <!-- slider, jQuery -->
+    <!-- jQuery -->
+    <!-- carousel-plugins -->
+    <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/plugins/owl-carousel/owl.theme.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/plugins/owl-carousel/owl.carousel.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/plugins/liCover/css/liCover.css">
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/plugins/owl-carousel/owl.carousel.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/plugins/liCover/js/jquery.liCover.js"></script>
+    <!-- carousel-plugins -->
+    <!-- carousel -->
+    <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/slider.css">
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/slider.js"></script>
+    <!-- carousel -->
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -79,6 +88,25 @@
 
         </script>
         <div class="clear"></div>
+<div id="slider" class="owl-carousel owl-theme">
+     
+    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/1.jpg"></div>
+    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/2.jpg"></div>
+    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/3.jpg"></div>
+    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/4.jpg"></div>
+<!--     
+    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/5.jpg"></div>
+    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/6.jpg"></div>
+    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/7.jpg"></div>
+    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/8.jpg"></div>
+    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/9.jpg"></div>
+    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/10.jpg"></div>
+    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/11.jpg"></div>
+    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/12.jpg"></div> -->
+
+
+</div>
+
 <div class="main">
 
 <div style="height: 105px; width: auto"></div>

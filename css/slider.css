@@ -1,15 +1,6 @@
-.slider-box{
-  width:1024px;
-  height:678px;
-  overflow:hidden;
+#slider .item img{
+    display: block;
+    width: 100%;
+    /*vertical-align: top;*/
+}
 
-}
-.slider{
-  position: relative;
-  width:10000px;
-  height:677px;
-}
-.slider img{
-  float:left;
-  z-index:0;
-}
