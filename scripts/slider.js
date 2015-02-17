@@ -7,6 +7,7 @@ $(document).ready(function() {
     });
     
     $("#slider").owlCarousel({
+
         itemHeight : "500px",
         slideSpeed : 500,   //0.5 sec
         paginationSpeed : 2000, //2 sec
@@ -16,6 +17,7 @@ $(document).ready(function() {
         singleItem: true
         // lazyFollow: false
     }); 
+
 });
 
 
