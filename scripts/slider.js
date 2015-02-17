@@ -15,7 +15,6 @@ $(document).ready(function() {
         autoPlay: 8000,      //8 sec
         stopOnHover : true,
         singleItem: true
-        // lazyFollow: false
     }); 
 
 });

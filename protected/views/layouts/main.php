@@ -30,6 +30,7 @@
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/plugins/liCover/js/jquery.liCover.js"></script>
     <!-- carousel-plugins -->
     <!-- carousel -->
+    <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/slider.css">
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/slider.js"></script>
     <!-- carousel -->
 
