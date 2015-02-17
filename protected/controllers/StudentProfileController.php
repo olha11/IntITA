@@ -194,22 +194,22 @@ class StudentProfileController extends Controller
 
 	public function actionUploadAvatar()
 	{
-        if($_FILES["filename"]["size"] > 1024*1024*0.5)
+        if($_FILES["upload"]["size"] > 1024*1024*0.5)
           {
               echo ("Розмір файла перевищує 500кб");
-              echo "<meta http-equiv=\"refresh\" content=\"2;url=" . $_SERVER['HTTP_REFERER'] . "\">";
+              echo "<meta http-equiv=\"refresh\" content=\"1;url=" . $_SERVER['HTTP_REFERER'] . "\">";
               exit;
           }
-        if (is_uploaded_file($_FILES["filename"]["tmp_name"])) {
-                $ext = substr(strrchr( $_FILES["filename"]["name"],'.'), 1);
+        if (is_uploaded_file($_FILES["upload"]["tmp_name"])) {
+                $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
                  $id='1'.'id';
-                 $_FILES["filename"]["name"]=$id . '.'. $ext;
-                 move_uploaded_file($_FILES["filename"]["tmp_name"],
-                 "Z:/home/fff/www/css/images/".$_FILES["filename"]["name"]);
-                echo "<meta http-equiv=\"refresh\" content=\"2;url=" . $_SERVER['HTTP_REFERER'] . "\">";
+                 $_FILES["upload"]["name"]=$id . '.'. $ext;
+                 move_uploaded_file($_FILES["upload"]["tmp_name"],
+                 "Z:/home/ita/www/css/images/".$_FILES["upload"]["name"]);
+                echo "<meta http-equiv=\"refresh\" content=\"1;url=" . $_SERVER['HTTP_REFERER'] . "\">";
               } else {
                 echo("Помилка завантаження файла");
-               echo "<meta http-equiv=\"refresh\" content=\"2;url=" . $_SERVER['HTTP_REFERER'] . "\">";
+               echo "<meta http-equiv=\"refresh\" content=\"1;url=" . $_SERVER['HTTP_REFERER'] . "\">";
               }	   
     }
         

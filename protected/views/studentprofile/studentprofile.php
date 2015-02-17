@@ -158,7 +158,7 @@ html {
 	       	<h3>Завантажити фото профілю</h3> 
     	</legend>	
 	
-    	<img src="css/images/1id.png"/>	
+    	<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
 	
     	<form action="/index.php?r=studentprofile/uploadAvatar" method="post" enctype="multipart/form-data">	
 	       	<div class="fileform">
