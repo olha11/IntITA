@@ -1,3 +1,39 @@
+<style>
+@font-face {
+    font-family: GothaProReg; /* Гарнитура шрифта */
+    src: url(<?php echo Yii::app()->request->baseUrl; ?>/css/fonts/GothaProReg.otf); /* Путь к файлу со шрифтом */
+   }
+html {
+    font-family:'GothaProReg';
+   }  
+/* PassEye */
+.passEye {
+	position:relative;display:inline-block;
+}
+.passEye input {
+	padding-right:0px;
+}
+.passEye input::-ms-reveal, .passEye input::-ms-clear {
+	display:none
+}
+.passEye .eye {
+	position:absolute;
+    right:10px;
+    top:50%;
+    margin-top:-4px;
+    display:block;
+    height:10px;
+    width:18px;
+    background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/passEye.png') no-repeat left 2px;
+    cursor:pointer;
+}
+.passEye .openEye {
+	background-position:left bottom;
+}
+.divEl {
+ background: #000000;
+}
+</style>
 <?php
 /* @var $this StudentProfileController */
 /* @var $model StudentProfile */
@@ -9,7 +45,6 @@
 /* @var $model Studentprofile */
 /* @var $form CActiveForm */
 ?>
-
 <div class="formStudProf">
 
     <div class="studProf">
@@ -105,14 +140,13 @@
 
             <div class="rowPass">
                 <?php echo $form->label($model,'password'); ?>
-                <?php echo $form->passwordField($model,'password',array('maxlength'=>255)); ?>
-               <span class="passEye"><?php echo $form->error($model,'password'); ?></span>
+               	<span class="passEye"><?php echo $form->passwordField($model,'password',array('maxlength'=>255)); ?></span>
+            	<?php echo $form->error($model,'password'); ?>
             </div>
-        
             <div class="row">
                 <?php echo $form->label($model,'password_repeat'); ?>
-                <?php echo $form->passwordField($model,'password_repeat',array('maxlength'=>255)); ?>
-                <span class="passEye"><?php echo $form->error($model,'password_repeat'); ?></span>
+               <span class="passEye">  <?php echo $form->passwordField($model,'password_repeat',array('maxlength'=>255)); ?></span>
+               <?php echo $form->error($model,'password_repeat'); ?>
             </div>
             <div class="row buttons">
                 <?php echo CHtml::submitButton('ВІДПРАВИТИ />', array('id' => "submit")); ?>
@@ -120,19 +154,21 @@
         <?php $this->endWidget(); ?>
     </div>
     <div class="studPhoto">
-        <legend class="titleProfile">
-               <h3>Завантажити фото профілю</h3> 
-        </legend>
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/image/1id.jpg"/>
-        <form action="/index.php?r=studentprofile/uploadAvatar" method="post" enctype="multipart/form-data">
-        <div class="uploadAvatar">
-             <input type="file" name="filename"></br> 
-        </div>     
-             <label class="avatarInfo">  Файл не вибрано... </label></br> 
-            <input type="submit" value="ЗАВАНТАЖИТИ"></br>
-        </form>
-    </div>
+     	<legend class="titleProfile">
+	       	<h3>Завантажити фото профілю</h3> 
+    	</legend>	
 	
+    	<img src="css/images/1id.png"/>	
+	
+    	<form action="/index.php?r=studentprofile/uploadAvatar" method="post" enctype="multipart/form-data">	
+	       	<div class="fileform">
+		      	<input type="file" name="upload" id="upload" onchange="getName(this.value);" />
+		      	<div class="selectbutton" for="upload">ВИБРАТИ</div></br>
+	       	</div>	
+			<div id="avatarInfo">Файл не вибрано...</div>		
+			<input type="submit" value="ЗАВАНТАЖИТИ">		
+    	</form>	      
+    </div>
 </div><!-- form -->
 
 

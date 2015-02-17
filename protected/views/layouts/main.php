@@ -16,6 +16,9 @@
     <!-- steps style -->
     <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/step.css" />
     <!-- steps style -->
+	<!-- studprofile style -->
+    <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/studProfile.css" />
+    <!-- studprofile style -->
     <!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
     <!-- jQuery -->
@@ -29,6 +32,12 @@
     <!-- carousel -->
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/slider.js"></script>
     <!-- carousel -->
+	<!-- passEye, jQuery -->
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/jquery.passEye.js"></script>
+    <!-- passEye, jQuery -->
+    <!-- uploadInfo, jQuery -->
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/uploadInfo.js"></script>
+    <!-- uploadInfo, jQuery -->
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>

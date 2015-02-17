@@ -26,6 +26,10 @@ class StudentProfile extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+     public function getDbConnection()
+    {
+        return Yii::app()->db2;
+    }
 	public function tableName()
 	{
 		return 'studentprofile';
@@ -74,7 +78,7 @@ class StudentProfile extends CActiveRecord
 			'firstName' => 'Ім\'я',
 			'secondName' => 'Прізвище',
 			'middleName' => 'По-батькові',
-            'login' => 'Логин',
+            'login' => 'Логін',
 			'birthday' => 'День народження',
 			'education' => 'Освіта',
 			'aboutMyself' => 'Про себе',

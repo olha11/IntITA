@@ -28,7 +28,7 @@ class StudentProfileController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','UploadAvatar','AvatarStatus'),
+				'actions'=>array('index','view','UploadAvatar'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -194,9 +194,6 @@ class StudentProfileController extends Controller
 
 	public function actionUploadAvatar()
 	{
-	   $model=new StudentProfile(); 
-       $model->attributes=$_POST['StudentProfile'];
-       echo $model->login;
         if($_FILES["filename"]["size"] > 1024*1024*0.5)
           {
               echo ("Розмір файла перевищує 500кб");
@@ -208,20 +205,12 @@ class StudentProfileController extends Controller
                  $id='1'.'id';
                  $_FILES["filename"]["name"]=$id . '.'. $ext;
                  move_uploaded_file($_FILES["filename"]["tmp_name"],
-                 "image/".$_FILES["filename"]["name"]);
+                 "Z:/home/fff/www/css/images/".$_FILES["filename"]["name"]);
                 echo "<meta http-equiv=\"refresh\" content=\"2;url=" . $_SERVER['HTTP_REFERER'] . "\">";
               } else {
                 echo("Помилка завантаження файла");
                echo "<meta http-equiv=\"refresh\" content=\"2;url=" . $_SERVER['HTTP_REFERER'] . "\">";
               }	   
     }
-    	public function actionAvatarStatus()
-	{
-
-            echo ("Файл вибрано");
-
- 
-    }
-    
         
 }
