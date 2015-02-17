@@ -7,6 +7,9 @@
 
 
 
+    <!-- fonts -->
+    <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/fontface.css"/>
+    <!-- fonts -->
     <!-- layouts style -->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
     <!-- layouts style -->
@@ -37,7 +40,6 @@
 
                     <ul>
                         <li><a href="http://www.google.com">Курси</a></li>
-                        <li><a href="http://www.google.com">Розклад</a></li>
                         <li><a href="http://www.google.com">Викладачі</a></li>
                         <li><a href="http://www.google.com">Форум</a></li>
                         <li><a href="http://www.google.com">Про нас</a></li>
