@@ -11,16 +11,16 @@ $this->pageTitle=Yii::app()->name;
 <?php
 
 $headerText = 'Про нас';
-$subheaderText = 'дещо, що Вам потрібно знати про наші курси';
+$subheaderText = 'важлива інформація про навчання разом з нами';
 $subLineImage= Yii::app()->request->baseUrl.'/css/images/line1.png';
 $linkName="детальніше »";
 
 
 $objAbout1=new AboutUs(Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image1.png','Про що мрієш ти?','Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль?
                         Закордонні подорожі, можливо, до екзотичних країн?','https://www.google.com.ua/');
-$objAbout2=new AboutUs (Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image2.png','Що очікується від тебе','Програмування – Програмування – це не так складно, як ти можеш уявляти.
+$objAbout2=new AboutUs (Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image2.png','Навчання майбутнього сьогодні','Програмування – Програмування – це не так складно, як ти можеш уявляти.
                         Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля.','https://www.google.com.ua/');
-$objAbout3=new AboutUs(Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image3.png','Три кити Академії  Програмування ІНТІТА','Самостійний графік навчання.
+$objAbout3=new AboutUs(Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image3.png','Питання, які нам часто ставлять','Самостійний графік навчання.
                         Лише 100% необхідні знання. Засвоєння 100% знаннь!','https://www.google.com.ua/');
 $massAbout=array($objAbout1,$objAbout2,$objAbout3);
 ?>
