@@ -3,12 +3,6 @@
 
 
 $this->pageTitle=Yii::app()->name;
-?>
-
-
-
-
-<?php
 
 $headerText = 'Про нас';
 $subheaderText = 'дещо, що Вам потрібно знати про наші курси';

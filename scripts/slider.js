@@ -1,15 +1,21 @@
+
 $(document).ready(function() {
      
+    $('#slider img').liCover({
+        veticalAlign : "middle",
+        align : "center"
+    });
+    
     $("#slider").owlCarousel({
-
-        slideSpeed : 2400,   //2.4 sec
-        paginationSpeed : 2400, //2.4 sec
-        rewindSpeed : 6400,  //2.4 sec
-        autoPlay: 5000,      //5 sec
+        itemHeight : "500px",
+        slideSpeed : 500,   //0.5 sec
+        paginationSpeed : 2000, //2 sec
+        rewindSpeed : 3000,  //3 sec
+        autoPlay: 8000,      //8 sec
         stopOnHover : true,
         singleItem: true
-
-    });
-     
+        // lazyFollow: false
+    }); 
 });
+
 
