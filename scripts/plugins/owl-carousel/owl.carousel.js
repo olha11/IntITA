@@ -8,6 +8,7 @@
  *
  */
 
+
 /*JS Lint helpers: */
 /*global dragMove: false, dragEnd: false, $, jQuery, alert, window, document */
 /*jslint nomen: true, continue:true */
@@ -309,7 +310,7 @@ if (typeof Object.create !== "function") {
             base.$owlItems.each(function (index) {
                 var $this = $(this);
                 $this
-                    .css({"width": base.itemWidth})
+                    .css({"width": base.itemWidth, "height" : base.options.itemHeight})
                     .data("owl-item", Number(index));
 
                 if (index % base.options.items === 0 || index === lastItem) {
@@ -1450,7 +1451,7 @@ if (typeof Object.create !== "function") {
     };
 
     $.fn.owlCarousel.options = {
-
+        itemHeight : "500px",
         items : 5,
         itemsCustom : false,
         itemsDesktop : [1199, 4],

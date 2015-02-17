@@ -85,7 +85,6 @@
 
         </script>
         <div class="clear"></div>
-
 <div id="slider" class="owl-carousel owl-theme">
      
     <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1.jpg"></div>
@@ -94,6 +93,7 @@
     <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/4.jpg"></div>
 
 </div>
+
 <div class="main">
 
 <div style="height: 105px; width: auto"></div>
