@@ -44,3 +44,19 @@ Stack trace:
 REQUEST_URI=/master/index.php?r=site/contact
 HTTP_REFERER=http://localhost/master/index.php?r=site/page&view=about
 ---
+2015/02/13 11:14:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "studentprofile".' in Z:\home\ita\www\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentprofile')
+#1 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 Z:\home\ita\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=studentprofile
+---
+2015/02/13 11:28:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "studentprofile".' in Z:\home\ita\www\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentprofile')
+#1 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 Z:\home\ita\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=studentprofile
+---
