@@ -88,24 +88,7 @@
 
         </script>
         <div class="clear"></div>
-<div id="slider" class="owl-carousel owl-theme">
-     
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/1.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/2.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/3.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/4.jpg"></div>
-<!--     
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/5.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/6.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/7.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/8.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/9.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/10.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/11.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/12.jpg"></div> -->
 
-
-</div>
 
 <div class="main">
 
@@ -117,10 +100,10 @@
             )); ?><!-- breadcrumbs -->
         <?php endif?>
 
-
+</div>
         <?php echo $content; ?>
 
-</div>
+
 
         <div class="clear"></div>
 
