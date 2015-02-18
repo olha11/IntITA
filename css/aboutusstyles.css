@@ -1,30 +1,36 @@
 
-.mainAbout { border:solid 0px; 
-left:50%; width: 960px; height: 390px; display:inline-block;  
- position:relative;    margin-left: -480px; margin-top:0px;
- font-family:MyriadPro;
+.mainAbout {
+    border:solid 0px;
+    left:50%;
+    width: 960px;
+    height: 390px;
+    display:inline-block;
+    position:relative;
+    margin-left: -480px; margin-top:0px;
+    font-family:MyriadPro;
  }
  
 .header {  
-text-align: center ;
- position:relative;
- color:black;
-font-family:MyriadPro;
-font-size:34px;  
-list-style: none;
-margin-top:0px;
-margin-left:0px;
+    text-align: center ;
+    position:relative;
+    color:black;
+    font-family:MyriadPro;
+    font-size:34px;
+    list-style: none;
+    margin-top:0px;
+    margin-left:0px;
 }
 .header p {   
- color:#4682B4;
-font-size:19px; 
-font-family:MyriadPro;
-margin-top:0px; 
+    color:#4682B4;
+    font-size:19px;
+    font-family:MyriadPro;
+    margin-top:0px;
 }
 
 .line1{ 
-margin-left:272px; 
-margin-top:-20px;}
+    margin-left:272px;
+    margin-top:-20px;
+}
 
 .block {
     border:solid 0px #DCDCDC;
@@ -69,13 +75,13 @@ margin-top:-20px;}
     color:#4682B4;
     font-size:18px;
 }
-.title p
-{ 
-position:absolute;
-margin-top:5px;
-color:black;
-font-size:14px;
-font-family:MyriadPro 
+.title p {
+    position:absolute;
+    margin-top:5px;
+    color:black;
+    font-size:14px;
+    font-family:MyriadPro;
+    line-height: 14px;/* это я добавил */
 }
 .block a {
     position:absolute;
