@@ -1,44 +1,44 @@
-/* Розмір форми*/
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ*/
 .formStudProf
 {
+    margin: 0 auto;
     width: 958px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 .titleProfile{
-    margin: 20px 0px 20px 25px;
+    margin: 18px 0px 20px 25px;
     clear:both;
     color: #4b75a4;
 }
-/* Ліва форма*/
+/* ЛіпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ*/
 .studProf{
     display:inline-block;
+    float:left;
     width: 59%;
     border: 1px solid #d8d8d8;
     border-radius: 5px;
 }
 .row {
-	margin-bottom: 8px;	
-    margin-left: 20px;
+	margin-bottom: 8px;
 }
 .rowPass {
 	margin-top: 30px;
-    margin-bottom: 8px;		
-    margin-left: 20px;	
+    margin-bottom: 8px;
 }
 .studProf label
 {
     display: inline-block;
-    width: 154px;
+    width: 150px;
     height: 40px;
     float:left;
     text-align: right;
-    margin-right: 20px;
+    margin-right: 28px;
     line-height: 40px;
 }
 .studProf input
 {
-    width: 355px;
+    width: 350px;
     height: 40px;
     border: 1px solid #d8d8d8;
     border-radius: 5px;
@@ -48,14 +48,13 @@
     border: 1px solid #d8d8d8;
     border-radius: 5px;
     display: inline-block;
-    width: 352px;
+    width: 346px;
     height: 90px;
     margin-bottom: -4px;
 }
 .studProf input:hover,
 .studProf textarea:hover{
     box-shadow:0 0 3px #4b75a4;
-    border-color:#4b75a4;
     cursor: pointer;
 }
 .studProf input:focus,
@@ -65,7 +64,20 @@
     cursor: text;
 }
 
-/*Кнопки*/
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ*/
+.studPhoto, .profileInfo{
+    display:inline-block;
+    float: right;
+    width: 39%;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+
+}
+.formStudProf img {
+    width:190px;
+    margin: 0 32px 0 22px;
+}
+/*пїЅпїЅпїЅпїЅпїЅпїЅ*/
 .formStudProf input[type="submit"] {
      width: 190px;
      height:40px;
@@ -78,46 +90,38 @@
     box-shadow:0 0 3px #2f2f80;
     cursor: pointer;
 }
-
-/* Права форма*/
-.studPhoto{
-    display:inline-block;
-    float: right;
-    width: 39%;
-    border: 1px solid #d8d8d8;
-    border-radius: 5px;
-}
-.studPhoto img {
-    width:190px;
-    margin: 0 0 10px 30px;
-}
-
-/*Кнопки лівої форми*/
+/*пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ*/
 .studProf input[type="submit"] {
+    margin:10px 0px 30px 340px;
+}
+/*пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ*/
+.studPhoto input[type="submit"], .profileInfo input[type="submit"] {
+    margin:10px 0px 0px 22px;
+}
+input[type="submit"].uploadAvatar {
     margin-bottom:30px;
-    margin-left:328px;
 }
-/*Кнопки правої форми*/
-.studPhoto input[type="submit"] {
-    margin-left:30px;
-    border:none;
-    margin-top: 10px;
+.photoButton  input[type="submit"] {
+    margin:10px 0px 30px 22px;
 }
+
 #avatarInfo{
     color:#4b75a4;
-    margin:10px 0 0 30px;
+    margin:10px 0 0 22px;
 	height:20px;
 }
-
+#photoForm {
+    margin-top:10px;
+}
 .fileform { 
     overflow: hidden;
     position: relative;
     width: 190px;
 	height:40px;
-	margin-left:30px;
+	margin-left:22px;
 }
 
-.fileform .selectbutton { 
+.fileform .selectbutton {
     margin-bottom: 10px;
     background-color: #4b75a4;
     border: 1px solid #4b75a4;
@@ -146,14 +150,14 @@
 	cursor: pointer;
 }
 
-/*Попередження*/
+/*пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
 span.required 
 {
     color:red;   
 } 
 .formStudProf .errorMessage
 {
-    margin-left: 165px;
+    margin-left: 180px;
 	color: red;
 	font-size: 0.9em;
 }
@@ -161,4 +165,26 @@ span.required
 label.avatarInfo{
     color:#4b75a4;
     margin-left:30px;
+}
+
+td {
+    vertical-align: top;
+}
+.formStudProf h1 {
+    color: #4b75a4;
+    margin: 0px;
+    font-size: x-large;
+}
+.colorP {
+    color: #4b75a4;
+}
+.activeInfo {
+    border-bottom:1px solid #d8d8d8;
+    margin: 0px 10px 0px 22px;
+}
+.payInfo {
+    margin: 30px 10px 30px 22px;
+}
+.aboutInfo{
+    margin: 30px 0px 30px 0px;
 }

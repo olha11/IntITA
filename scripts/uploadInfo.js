@@ -9,3 +9,13 @@ function getName (str){
     var uploaded = document.getElementById("avatarInfo");
     uploaded.innerHTML = filename;
 }
+$(document).ready(function(e) {
+    $('.avatar').bind('click',function(e) {
+        $('#chooseAvatar').click();
+    });
+    });
+$(document).ready(function(e) {
+    $('.uploadAvatar').bind('click',function(e) {
+        $('#uploadAvatar').click();
+    });
+    });

@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "studentprofile".
+ * This is the model class for table "studentreg".
  *
- * The followings are the available columns in table 'studentprofile':
+ * The followings are the available columns in table 'studentreg':
  * @property integer $id
  * @property string $firstName
  * @property string $secondName
@@ -21,15 +21,17 @@
  * @property string $password
  * @property string $password_repeat
  */
-class StudentProfile extends CActiveRecord
+class StudentReg extends CActiveRecord
 {
-	/**
-	 * @return string the associated database table name
-	 */
-     public function getDbConnection()
+    public $password_repeat;
+	
+	public function getDbConnection()
     {
         return Yii::app()->db2;
     }
+	/**
+	 * @return string the associated database table name
+	 */
 	public function tableName()
 	{
 		return 'studentprofile';
@@ -89,7 +91,7 @@ class StudentProfile extends CActiveRecord
 			'address' => 'Адреса',
 			'note' => 'Примітки',
 			'password' => 'Пароль',
-			'password_repeat' => 'Повтор пароля',
+            'password_repeat' => 'Повтор пароля',
 		);
 	}
 
@@ -126,7 +128,6 @@ class StudentProfile extends CActiveRecord
 		$criteria->compare('address',$this->address,true);
 		$criteria->compare('note',$this->note,true);
 		$criteria->compare('password',$this->password,true);
-		$criteria->compare('password_repeat',$this->password_repeat,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -137,7 +138,7 @@ class StudentProfile extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return StudentProfile the static model class
+	 * @return StudentReg the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
