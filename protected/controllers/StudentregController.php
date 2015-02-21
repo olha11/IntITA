@@ -204,12 +204,7 @@ class StudentRegController extends Controller
                 $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
                  $id='1'.'id';
                  $_FILES["upload"]["name"]=$id . '.'. $ext;
-                 move_uploaded_file($_FILES["upload"]["tmp_name"],
-<<<<<<< Updated upstream:protected/controllers/StudentProfileController.php
-                 "Z:/home/ita/www/css/images/".$_FILES["upload"]["name"]);
-=======
-                 Yii::app()->request->baseUrl ."css/images/".$_FILES["upload"]["name"]);
->>>>>>> Stashed changes:protected/controllers/StudentRegController.php
+
                 echo "<meta http-equiv=\"refresh\" content=\"1;url=" . $_SERVER['HTTP_REFERER'] . "\">";
               } else {
                 echo("Помилка завантаження файла");

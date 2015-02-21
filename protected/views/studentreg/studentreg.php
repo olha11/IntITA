@@ -24,11 +24,7 @@
 	background-position:left bottom;
 }
 </style>
-<?php
-/* @var $this StudentRegController */
-/* @var $model StudentReg */
-/* @var $form CActiveForm */
-?>
+
 
 <?php
 /* @var $this StudentregController */
@@ -146,15 +142,11 @@
     <div class="studPhoto">
      	<div class="titleProfile">
 	       	<h3>Завантажити фото профілю</h3> 
-<<<<<<< Updated upstream:protected/views/studentprofile/studentprofile.php
-    	</legend>	
-	
+
     	<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
-=======
+
     	</div>
->>>>>>> Stashed changes:protected/views/studentreg/studentreg.php
-	
-    	<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
+
         <form id="photoForm" action="/index.php?r=studentreg/uploadAvatar" method="post" enctype="multipart/form-data" style="display:none">
             <div class="fileform">
                 <input type="file" name="upload" id="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
