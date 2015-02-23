@@ -1,11 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
 
-h2,h3,h4,h5,h6 {
+.subViewLessons h2,h3,h4,h5,h6 {
     margin: 0;
     padding: 0;
 }
-p {
+.subViewLessons p {
     margin: 0;
     padding: 0;
     font-size:100%;
@@ -14,7 +14,7 @@ p.lesname{
     width:100%;
 }
 
-p, h1, h2, h3, h4, h5, h6, span{
+.subViewLessons p, h1, h2, h3, h4, h5, h6, span{
     font-size:100%;
 }
 .subViewFooterNavigation {
@@ -69,7 +69,14 @@ div.nextLessons {
 .preLesonLink {
     padding-left:5px;
 }
-.nextLesonLink {
-    text-align:right;
+.nextLesonLink input[type="submit"] {
+    width: 230px;
+    height:44px;
+    border-radius: 10px;
+    color:#ffffff;
+    background-color:#4b75a4;
 }
-
+.nextLesonLink input[type="submit"]:hover {
+    box-shadow:0 0 3px #2f2f80;
+    cursor: pointer;
+}
