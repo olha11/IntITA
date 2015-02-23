@@ -339,7 +339,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <?php
 
 //Загальні параметри блоку
-	$footNavSize='960px'; // Ширина блоку
+	$footNavSize='958px'; // Ширина блоку
 	$footNavMaxMark='6'; // Шкала оцінювання - максимальна кількість балів, поділок
 
 // База даних - проста база даних для прикладу
@@ -362,6 +362,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 ?>
 <!  Верстка на основі обьекта $footNav >
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/lessonFooter.css" />
+
 		<div class="subViewLessons" 	style="width:<?php echo $footNavSize; ?>" >
 <?php
 	if (  $footNav->getPre()=='True' )
@@ -483,4 +484,3 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <?php
 		}
 ?>
-</div>

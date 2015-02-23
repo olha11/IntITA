@@ -13,21 +13,15 @@
 p.lesname{
     width:100%;
 }
-
 .subViewLessons p, h1, h2, h3, h4, h5, h6, span{
     font-size:100%;
-}
-.subViewFooterNavigation {
-    margin: 0px auto;
-    background-color: #ffffff;
-    padding-top:32px;
-    padding-bottom:32px;
 }
 .subViewLessons {
     overflow:hidden;
     margin:0 auto;
     padding:15px 5px 30px 0px;
     border-top:1px solid #cccccc;
+    clear: both;
 }
 .subViewLessons span {
     font-style:  italic;
