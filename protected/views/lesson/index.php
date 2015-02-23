@@ -339,7 +339,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <?php
 
 //Загальні параметри блоку
-	$footNavSize='958px'; // Ширина блоку
+	$footNavSize='960px'; // Ширина блоку
 	$footNavMaxMark='6'; // Шкала оцінювання - максимальна кількість балів, поділок
 
 // База даних - проста база даних для прикладу
