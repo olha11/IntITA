@@ -41,7 +41,7 @@ PARAMETERS
  * entry-script | config-file: optional, the path to
    the entry script file or the configuration file for
    the Web application. If not given, it is assumed to be
-   the 'index.php' file under the current directory.
+   the 'index1.php' file under the current directory.
 
 EOD;
 	}
@@ -53,8 +53,8 @@ EOD;
 	public function run($args)
 	{
 		if(!isset($args[0]))
-			$args[0]='index.php';
-		$entryScript=isset($args[0]) ? $args[0] : 'index.php';
+			$args[0]='index1.php';
+		$entryScript=isset($args[0]) ? $args[0] : 'index1.php';
 		if(($entryScript=realpath($args[0]))===false || !is_file($entryScript))
 			$this->usageError("{$args[0]} does not exist or is not an entry script file.");
 
@@ -82,9 +82,9 @@ EOD;
 		if(is_array($config))
 		{
 			chdir($cwd);
-			$_SERVER['SCRIPT_NAME']='/index.php';
+			$_SERVER['SCRIPT_NAME']='/index1.php';
 			$_SERVER['REQUEST_URI']=$_SERVER['SCRIPT_NAME'];
-			$_SERVER['SCRIPT_FILENAME']=$cwd.DIRECTORY_SEPARATOR.'index.php';
+			$_SERVER['SCRIPT_FILENAME']=$cwd.DIRECTORY_SEPARATOR.'index1.php';
 			Yii::createWebApplication($config);
 		}
 
@@ -104,11 +104,8 @@ EOD;
 		// disable E_NOTICE so that the shell is more friendly
 		error_reporting(E_ALL ^ E_NOTICE);
 
-		$_runner_=new CConsoleCommandRunner;
-		$_runner_->addCommands(dirname(__FILE__).'/shell');
-		$_runner_->addCommands(Yii::getPathOfAlias('application.commands.shell'));
-		if(($_path_=@getenv('YIIC_SHELL_COMMAND_PATH'))!==false)
-			$_runner_->addCommands($_path_);
+		$_runner_=$this->createCommandRunner();
+		$this->addCommands($_runner_);
 		$_commands_=$_runner_->commands;
 		$log=Yii::app()->log;
 
@@ -138,6 +135,29 @@ EOD;
 					echo $e;
 			}
 		}
+	}
+
+	/**
+	 * Creates a commands runner
+	 * @return CConsoleCommandRunner
+	 * @since 1.1.16
+	 */
+	protected function createCommandRunner()
+	{
+		return new CConsoleCommandRunner;
+	}
+
+	/**
+	 * Adds commands to runner
+	 * @param CConsoleCommandRunner $runner
+	 * @since 1.1.16
+	 */
+	protected function addCommands(CConsoleCommandRunner $runner)
+	{
+		$runner->addCommands(Yii::getPathOfAlias('system.cli.commands.shell'));
+		$runner->addCommands(Yii::getPathOfAlias('application.commands.shell'));
+		if(($_path_=@getenv('YIIC_SHELL_COMMAND_PATH'))!==false)
+			$runner->addCommands($_path_);
 	}
 }
 

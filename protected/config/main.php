@@ -16,18 +16,32 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'ext.autoAdmin.*',
+		'ext.autoAdmin.models.*',
+		'ext.autoAdmin.models.field.*',
+		'ext.autoAdmin.helpers.*',
+		'ext.autoAdmin.controllers.*',
 	),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 
-	/*	'gii'=>array(
+		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'admin',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		*/
+
+		'autoAdmin'=>array(
+			'class'=>'ext.autoAdmin.AutoAdmin',
+			'basePath' => dirname(__FILE__).'/../modules/autoAdmin',
+			'wwwDirName' => 'www', //your DocumentRoot
+			'authMode' => false, //Switch on authorization system
+			'openMode' => true, //Use for temporary switching off all access limitations
+			'logMode' => false,
+		),
+
 	),
 
 	// application components
@@ -43,20 +57,33 @@ return array(
 		),
 
 		// uncomment the following to enable URLs in path-format
-		/*
+
 		'urlManager'=>array(
-			'urlFormat'=>'path',
+			//'urlFormat'=>'path',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+
+				'<controller:aajax>/<action:\w+>' => 'autoAdmin/<controller>/<action>',
+				'<controller:afile>/<action:\w+>' => 'autoAdmin/<controller>/<action>',
+				'<controller:\w+>/foreign-<key:\w+>' => 'autoAdmin/<controller>/foreign<key>',
 			),
 		),
-		*/
+
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
-		'db2'=>require(dirname(__FILE__).'/database2.php'),
+		'db2'=>require(dirname(__FILE__).'/database.php'),
+
+		'dbAdmin' => array(
+			'class'=>'CDbConnection',
+			'connectionString' => 'mysql:host=localhost;dbname=int_ita_db',
+			'emulatePrepare' => true,
+			'username' => 'root',
+			'password' => '',
+			'charset' => 'utf8',
+		),
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
