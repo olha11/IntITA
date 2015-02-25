@@ -5,30 +5,31 @@
 html{
 	font-family: "MyriadPro";
 	}
-
-body, html{
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+body{
+    margin: 0;
 }
 /* Стиль заголовку*/	
 
 .stepHeader h1{
-	margin: 3px;
+    color:#5b5b5b;
+	margin: 0px;
+    font-weight: normal;
 	}
 .stepHeader h3{
 	color:#4b75a4;
-	margin: 3px;
+	margin-top: -6px;
+    margin-bottom: 0px;
+    font-weight: normal;
 	}
 .stepHeaderCont {
 	margin: 0px auto;
-	padding-bottom:60px;
+    margin-bottom: 60px;
 }
 .stepHeader {
 	text-align:center;
 	margin: 0px auto;
 	border-bottom:2px solid #4b75a4;
-	padding:0px;
+    padding:0 30px 5px 30px;
 	display: table;
 	}
 
@@ -47,6 +48,7 @@ body, html{
 	background-color: #f3f3f3;
 	padding-top:60px;
 	padding-bottom:60px;
+    margin-top: 20px;
 	  }
 /* Стиль екземплярів класу Step*/
 .stepLeft {
@@ -57,6 +59,7 @@ body, html{
 	margin: 0px auto;
 	background-color: #ffffff;
 	box-shadow: 0 0 5px #ACACAC;
+    border-radius: 3px;
 	margin-top:40px;
 	margin-bottom:40px;
 	}
@@ -68,6 +71,7 @@ body, html{
 	margin: 0px auto;
 	background-color: #ffffff;
 	box-shadow: 0 0 5px #ACACAC;
+    border-radius: 3px;
 	margin-top:40px;
 	margin-bottom:40px;
 	}
@@ -99,9 +103,15 @@ body, html{
 	z-index:2;
 	}
 .stepUrl img {
+    display:block;
 	width:100%;
-    margin-bottom: -4px;
 	}
+img.grid {
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
 
 .hexagon {
 	position:absolute;
@@ -167,5 +177,4 @@ p.stepName {
 	text-align:right;
 	padding:0px 7% 0px 5px;
 }
-
 
