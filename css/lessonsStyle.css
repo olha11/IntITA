@@ -1,0 +1,166 @@
+.lessonBlock {
+    margin: 0 auto;
+    width: 960px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.lessonText {
+    display:inline-block;
+    float:left;
+    width: 66%;
+}
+.lessonNav{
+    display:inline-block;
+    float: right;
+    width: 33%;
+}
+.lessonBlock span {
+    font-weight: bold;
+}
+h1.lessonTheme{
+     color: #4b75a4;
+     font-size: xx-large;
+     margin: 0px;
+}
+h1.lessonPart{
+    color: #4b75a4;
+    font-size: x-large;
+}
+p.listTheme{
+    margin: -5px 0px 30px 0px;
+}
+.lessonCode {
+    background-color: #d6ebe0;
+    color:#114988;
+    padding: 0px 0px 0px 20px;
+    font-weight:bold;
+}
+div.lessonBG {
+    border-top:3px solid #ffffff;
+    background-color: #d6ebe0;
+    overflow:hidden;
+    background-image: -webkit-linear-gradient(left,
+    #becdde 0%,
+    #becdde 11%,
+    #d6ebe0 11%,
+    #d6ebe0 100%);
+    background-image: -moz-linear-gradient(left,
+    #becdde 0%,
+    #becdde 11%,
+    #d6ebe0 11%,
+    #d6ebe0 100%);
+    background-image: -o-linear-gradient(left,
+    #becdde 0%,
+    #becdde 11%,
+    #d6ebe0 11%,
+    #d6ebe0 100%);
+    background-image: linear-gradient(left,
+    #becdde 0%,
+    #becdde 11%,
+    #d6ebe0 11%,
+    #d6ebe0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#becdde', endColorstr='#d6ebe0',GradientType=1 );//Ie6-9
+}
+span.colorO {
+    color:#de5940;
+}
+span.colorBP {
+    color: #114988;
+}
+.lessonText > p {
+    text-indent: 20px;
+}
+.instrTaskImg {
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    float:left;
+}
+.instrTaskImg img{
+    margin: 10px 0 0 10px;
+}
+.instrTaskText {
+    display: inline-block;
+    float:right;
+    width: 89%;
+}
+.instrTaskText ol {
+    list-style-type: none; /* Убираем исходные маркеры */
+    counter-reset: num; /* Задаём имя счетчика */
+    margin: 15px 0px 15px 0px ;
+}
+.instrTaskText li::before {
+    content: counter(num) '. '; /* Выводим число */
+    counter-increment: num; /* Увеличиваем значение счётчика */
+    font-weight:bold;
+}
+.instrTskText li {
+    margin-bottom:10px;
+}
+span.colorAlert {
+    background-color: #ff560c;
+    color:#ffffff;
+}
+div.lessonInstr,div.lessonTask {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+img.lessonBut  {
+    position: absolute;
+    left:43%;
+    top:-14px;
+    width: 90px;
+    height:28px;
+}
+.lessonLine{
+    border: 1px solid #4b75a4;
+}
+.lessonButName {
+    position: absolute;
+    color:#ffffff;
+    left:43%;
+    top:-14px;
+    width: 90px;
+    height:28px;
+    text-align: center;
+    padding-top: 4px;
+}
+img.lessonButFinal  {
+    position: absolute;
+    left:36%;
+    top:-16px;
+    width: 164px;
+    height:32px;
+}
+div.lessonButFinal
+{
+    position: absolute;
+    color:#ffffff;
+    left:36%;
+    top:-16px;
+    width: 164px;
+    height:32px;
+    text-align: center;
+    padding-top: 4px;
+}
+.BBCode {
+    margin: 30px 30px 10px 30px;
+    overflow:hidden;
+}
+.BBCode textarea {
+    height: 130px;
+}
+.BBCode input[type="submit"] {
+    width: 90px;
+    height:28px;
+    border-radius: 10px;
+    color:#ffffff;
+    background-color:#4b75a4;
+    margin: 10px 0px 20px 0px;
+    float:right;
+}
+.BBCode input[type="submit"]:hover {
+    cursor: pointer;
+    box-shadow: 0 0 4px #2f2f80;
+}

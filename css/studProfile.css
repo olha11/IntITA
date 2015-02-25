@@ -175,7 +175,7 @@ td {
     margin: 0px;
     font-size: x-large;
 }
-.colorP {
+span.colorP {
     color: #4b75a4;
 }
 .activeInfo {
