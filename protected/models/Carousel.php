@@ -6,8 +6,6 @@
  * The followings are the available columns in table 'carousel':
  * @property integer $order
  * @property string $picture_url
- * @property integer $width
- * @property integer $height
  * @property string $description
  */
 class Carousel extends CActiveRecord
@@ -28,13 +26,13 @@ class Carousel extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('order, picture_url, width, height, description', 'required'),
-			array('order, width, height', 'numerical', 'integerOnly'=>true),
+			array('order, picture_url, description', 'required'),
+			array('order', 'numerical', 'integerOnly'=>true),
 			array('picture_url', 'length', 'max'=>255),
 			array('description', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('order, picture_url, width, height, description', 'safe', 'on'=>'search'),
+			array('order, picture_url, description', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,8 +55,6 @@ class Carousel extends CActiveRecord
 		return array(
 			'order' => 'Order',
 			'picture_url' => 'Picture Url',
-			'width' => 'Width',
-			'height' => 'Height',
 			'description' => 'Description',
 		);
 	}
@@ -83,8 +79,6 @@ class Carousel extends CActiveRecord
 
 		$criteria->compare('order',$this->order);
 		$criteria->compare('picture_url',$this->picture_url,true);
-		$criteria->compare('width',$this->width);
-		$criteria->compare('height',$this->height);
 		$criteria->compare('description',$this->description,true);
 
 		return new CActiveDataProvider($this, array(

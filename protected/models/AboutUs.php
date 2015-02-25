@@ -10,6 +10,7 @@
  * @property string $titleText
  * @property string $textAbout
  * @property string $linkAddress
+ * @property string $imagesPath
  *
  * The followings are the available model relations:
  * @property Mainpage[] $mainpages
@@ -26,14 +27,14 @@ class AboutUs extends CActiveRecord
 		return 'aboutus';
 	}
 
-    public function setValuesById($id)
-    {
+	public function setValuesById($id)
+	{
 		$this->line2Image=Yii::app()->request->baseUrl.$this->findByPk($id)->line2Image;
-        $this->iconImage=Yii::app()->request->baseUrl.$this->findByPk($id)->iconImage;
-        $this->titleText=$this->findByPk($id)->titleText;
-        $this->textAbout=$this->findByPk($id)->textAbout;
-        $this->linkAddress=$this->findByPk($id)->linkAddress;
-    }
+		$this->iconImage=Yii::app()->request->baseUrl.$this->findByPk($id)->iconImage;
+		$this->titleText=$this->findByPk($id)->titleText;
+		$this->textAbout=$this->findByPk($id)->textAbout;
+		$this->linkAddress=$this->findByPk($id)->linkAddress;
+	}
 
 	/**
 	 * @return array validation rules for model attributes.
@@ -43,12 +44,12 @@ class AboutUs extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('line2Image, iconImage, titleText, textAbout, linkAddress', 'required'),
-			array('line2Image, iconImage, textAbout, linkAddress', 'length', 'max'=>255),
+			array('line2Image, iconImage, titleText, textAbout, linkAddress, imagesPath', 'required'),
+			array('line2Image, iconImage, textAbout, linkAddress, imagesPath', 'length', 'max'=>255),
 			array('titleText', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('block_id, line2Image, iconImage, titleText, textAbout, linkAddress', 'safe', 'on'=>'search'),
+			array('block_id, line2Image, iconImage, titleText, textAbout, linkAddress, imagesPath', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -78,6 +79,7 @@ class AboutUs extends CActiveRecord
 			'titleText' => 'Title Text',
 			'textAbout' => 'Text About',
 			'linkAddress' => 'Link Address',
+			'imagesPath' => 'Images Path',
 		);
 	}
 
@@ -105,6 +107,7 @@ class AboutUs extends CActiveRecord
 		$criteria->compare('titleText',$this->titleText,true);
 		$criteria->compare('textAbout',$this->textAbout,true);
 		$criteria->compare('linkAddress',$this->linkAddress,true);
+		$criteria->compare('imagesPath',$this->imagesPath,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -120,30 +123,5 @@ class AboutUs extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-
-	public function getIconById($id)
-	{
-		return $this->findByPk($id)->iconImage;
-	}
-
-	public function getLine2imageById($id)
-	{
-		return $this->findByPk($id)->line2Image;
-	}
-
-	public function getTitleTextById($id)
-	{
-		return $this->findByPk($id)->titleText;
-	}
-
-	public function getTextAboutById($id)
-	{
-		return $this->findByPk($id)->textAbout;
-	}
-
-	public function getLinkById($id)
-	{
-		return $this->findByPk($id)->linkAddress;
 	}
 }

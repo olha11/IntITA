@@ -1,14 +1,14 @@
 
 $(document).ready(function() {
      
-    $('#slider img').liCover({
+    $('#slider .item').liCover({
         veticalAlign : "middle",
         align : "center"
     });
     
     $("#slider").owlCarousel({
 
-        itemHeight : "500px",
+        itemHeight : "600px",
         slideSpeed : 500,   //0.5 sec
         paginationSpeed : 2000, //2 sec
         rewindSpeed : 3000,  //3 sec
