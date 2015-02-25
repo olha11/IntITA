@@ -27,11 +27,11 @@ p, h1, h2, h3, h4, html{
 }
 
 #navigation ul {
-    margin-left: 500px;
+    margin-left: 475px;
     margin-top: 65px;
 	}
 #navigation.down ul {
-    margin-top: 25px;
+    margin-top: 22px;
 }
 
 #navigation li {
@@ -41,21 +41,24 @@ p, h1, h2, h3, h4, html{
 #navigation ul a {
 	text-decoration:none;
 	font-family: "MyriadPro";
-	font-size: 15px;
+	font-size: 18px;
 	font-weight: normal;
 	color: black;
 }
 #navigation ul a:hover{
-	color: blue;
+	color: #003399;
 }
 
 #logo_img{
     float: left;
-    margin-top: 10px;
+    margin-top: 13px;
 }
 #navigation img {
     max-width: 232px;
     max-height: 75px;
+}
+#logo_img.down {
+    margin-top: 12px;
 }
 #logo_img.down img {
     max-height: 46px;
@@ -80,7 +83,6 @@ p, h1, h2, h3, h4, html{
     margin-top: 20px;
     margin-left: 1050px;
     z-index: 6;
-
 }
 
 /************************************/
@@ -116,6 +118,9 @@ p, h1, h2, h3, h4, html{
 	font-family: "MyriadPro";
 	font-size: 15px;
 	color: #003399;
+}
+#footer li a:hover{
+    color: #000000;
 }
 
 #footer p{
