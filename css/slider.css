@@ -36,7 +36,7 @@
     text-shadow:     1px 1px 1px black;
     color:           white;
     font-size:       21px;
-    font: normal     400 24px/50px "Calibri", sans-serif;
+    font: normal     400 24px/50px "MyriadPro";
     vertical-align:  middle;
     text-align:      center;
     text-decoration: none;
@@ -60,7 +60,7 @@
     width: 1000px;
     color: white;
     font-size: 48px;
-    font-family: 'Arial';
+    font-family: "MyriadPro";
     text-shadow:     1px 1px 1px #555;
 }
 

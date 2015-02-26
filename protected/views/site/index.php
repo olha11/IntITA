@@ -6,7 +6,7 @@
 <div class="insideSlider">
     <div class="lineAndButton">
         <img class="sliderLine" src="<?php echo Yii::app()->request->baseUrl;?>/css/images/slider_img/line.png">
-        <a class="sliderButton" href="#">Почати /></a>
+        <a class="sliderButton" href="#">ПОЧАТИ /></a>
     </div>
     <div class="sliderText">
         ПРОГРАМУЙ  МАЙБУТНЄ<br>
