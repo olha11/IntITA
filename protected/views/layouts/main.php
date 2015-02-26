@@ -78,12 +78,8 @@
 
             </div>
         </div>
-        <a href="#">
-<div id="enter_button">
-   <!-- <img src="/IntITA/css/images/enter_button.png">-->
-</div>
-        </a>
 
+        <a id="enter_button" href="#">Вхід</a>
 
         <script>
 
