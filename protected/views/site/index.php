@@ -1,8 +1,26 @@
 <?php
 /* @var $this SiteController */
 ?>
-<div id="slider" class="owl-carousel owl-theme">
 
+<img id="sliderTexture" src="<?php echo Yii::app()->request->baseUrl;?>/css/images/slider_img/texture.png">
+<div class="insideSlider">
+    <div class="lineAndButton">
+        <img class="sliderLine" src="<?php echo Yii::app()->request->baseUrl;?>/css/images/slider_img/line.png">
+        <a class="sliderButton" href="#">Почати /></a>
+    </div>
+    <div class="sliderText">
+        ПРОГРАМУЙ  МАЙБУТНЄ<br>
+        <div class="sliderTextJr">
+            _____<br><br>
+            Програміст — сама древня сучасна  професія на планеті Земля!<br>
+            Сьогодні в тебе з'явився шанс стати ним, а не вдаватися! Тисни клаву або скроль далі!
+        </div>   
+    </div>
+
+</div>
+<div id="slider" class="owl-carousel owl-theme">
+    
+    
     <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/1.jpg"></div>
     <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/2.jpg"></div>
     <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/3.jpg"></div>
@@ -19,6 +37,7 @@
 
 
 </div>
+
 <?php
 $this->pageTitle=Yii::app()->name;
 
