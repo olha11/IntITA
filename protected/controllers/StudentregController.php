@@ -129,14 +129,24 @@ class StudentRegController extends Controller
             $model->attributes=$_POST['StudentReg'];
             if($model->validate())
             {
-                if ($model->model()->count("login = :login", array(':login' => $model->login)))
+                if ($model->model()->count("email = :email", array(':email' => $model->email)))
                 {
-                    // Указанный логин уже занят. Создаем ошибку и передаем в форму
-                    $model->addError('login', 'Логін уже зайнятий');
+                    // Указанный email уже занят. Создаем ошибку и передаем в форму
+                    $model->addError('email', 'Email уже зайнятий');
                     $this->render("studentreg", array('model' => $model));
                 }else
                 {
                     $model->save();
+                        if(!empty($model->send_letter)) {
+                            $title = $model->firstName;
+                            $mess = $model->send_letter;
+                            // $to - кому отправляем
+                            $to = 'Wizlightdragon@gmail.com';
+                            // $from - от кого
+                            $from = $model->email;
+                            // функция, которая отправляет наше письмо.
+                            mail($to, $title, $mess, "Content-type: text/html; charset=utf-8 \r\n" . "From:" . $from . "\r\n");
+                        }
                     Yii::app()->user->setFlash('message','Ваші дані оновлено');
                     $this->render("studentreg", array('model'=>$model));
                 }

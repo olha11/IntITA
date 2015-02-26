@@ -353,12 +353,12 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 	$lessonInfo8=array('8','Назва уроку8','практична робота','Тайм8','0','Не Зараховано');
 	$lessonInfo9=array('9','Назва уроку9','практична робота','Тайм9','0','Не Зараховано');
 	$lessonInfo10=array('10','Назва уроку10','лекція','Тайм10','0','Не Зараховано');
-	
+
 	$allLessons=array($lessonInfo1,$lessonInfo2,$lessonInfo3,$lessonInfo4,$lessonInfo5,$lessonInfo6,$lessonInfo7,$lessonInfo8,$lessonInfo9,$lessonInfo10);
 
 	// Ініціалізуємо обьєкт класу який проиймає номер сторінки і інформацію про уроки з бази даних
 	$footNav=new LessonFooter ('3',$allLessons);
-		
+
 ?>
 <!  Верстка на основі обьекта $footNav >
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/lessonFooter.css" />
@@ -405,7 +405,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 									<td>	<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco0.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
 								<?php
 									}
-								?>	
+								?>
 								<td><img src="<?php
 															if ($footNav->getPreMedal()=='Зараховано')
 																				{
@@ -418,14 +418,14 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 						</table>
 						<div class="preLesonLink">
 							<p><a href="#">&#171 переглянути знову попередній урок</a></p>
-						</div>   
+						</div>
 					</div>
 <?php
 		}
-		
+
 	if (  $footNav->getPost()=='True' )
 		{
-?>						
+?>
 					<div class="nextLessons">
 						<p class="lesname">Урок <?php echo $footNav->getPostNumber() ?>: <b><?php echo $footNav->getPostName() ?></b></p>
 						<table class="typeLesson">
@@ -463,7 +463,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 									<td>	<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco0.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
 								<?php
 									}
-								?>																
+								?>
 									<td><img src="<?php
 																	if ($footNav->getPostMedal()=='Зараховано')
 																				{
@@ -474,7 +474,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 														?> " style="width:<?php echo $footNavSize*0.035 . 'px';?>"></td>
 							</tr>
 						</table>
-						<?php if($footNav->getThisMedal()=='Зараховано') { ?>		
+						<?php if($footNav->getThisMedal()=='Зараховано') { ?>
 							<div class="nextLesonLink">
 								<p><a href="#"><input class="nextLessButt" type="submit" value="НАСТУПНИЙ УРОК />"></a></p>
 							</div>

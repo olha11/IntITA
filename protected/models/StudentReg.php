@@ -1,29 +1,27 @@
 <?php
 
 /**
- * This is the model class for table "studentreg".
+ * This is the model class for table "studentprofile".
  *
- * The followings are the available columns in table 'studentreg':
+ * The followings are the available columns in table 'studentprofile':
  * @property integer $id
  * @property string $firstName
  * @property string $secondName
- * @property string $middleName
- * @property string $login
+ * @property string $nickname
  * @property string $birthday
- * @property string $education
- * @property string $aboutMyself
- * @property string $interests
- * @property string $certificates
- * @property string $phone
  * @property string $email
- * @property string $address
- * @property string $note
  * @property string $password
- * @property string $password_repeat
+ * @property string $phone
+ * @property string $address
+ * @property string $education
+ * @property string $educform
+ * @property string $interests
+ * @property string $aboutUs
  */
 class StudentReg extends CActiveRecord
 {
     public $password_repeat;
+    public $send_letter;
 	
 	public function getDbConnection()
     {
@@ -44,19 +42,20 @@ class StudentReg extends CActiveRecord
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
-		return array(
-            array('firstName, secondName, middleName,login, birthday, education, email, password, password_repeat', 'required', 'message'=>'Будь ласка введіть {attribute}.'),
-			array('firstName, secondName, middleName, education, certificates, email, password, password_repeat', 'length', 'max'=>255),
-			array('birthday', 'length', 'max'=>11),
+        return array(
+            array('firstName, email, password, password_repeat', 'required', 'message'=>'Будь ласка введіть {attribute}.'),
             array('email', 'email', 'message'=>'Email не являється правильною {attribute} адресою'),
             array('birthday', 'date','format' => 'dd.MM.yyyy'),
-			array('phone', 'length', 'max'=>15),
-			array('aboutMyself, interests, address, note', 'safe'),
             array('password', 'compare', 'compareAttribute'=>'password_repeat', 'message'=>'Паролі не співпадають'),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, firstName, secondName, middleName, birthday, education, aboutMyself, interests, certificates, phone, email, address, note, password, password_repeat', 'safe', 'on'=>'search'),
-		);
+            array('firstName, secondName, nickname, email, password, education', 'length', 'max'=>255),
+            array('birthday', 'length', 'max'=>11),
+            array('phone', 'length', 'max'=>15),
+            array('educform', 'length', 'max'=>60),
+            array('address, interests, aboutUs,send_letter', 'safe'),
+            // The following rule is used by search().
+            // @todo Please remove those attributes that should not be searched.
+            array('id, firstName, secondName, nickname, birthday, email, password, phone, address, education, educform, interests, aboutUs, password_repeat', 'safe', 'on'=>'search'),
+        );
 	}
 
 	/**
@@ -75,24 +74,23 @@ class StudentReg extends CActiveRecord
 	 */
 	public function attributeLabels()
 	{
-		return array(
-			'id' => 'ID',
-			'firstName' => 'Ім\'я',
-			'secondName' => 'Прізвище',
-			'middleName' => 'По-батькові',
-            'login' => 'Логін',
-			'birthday' => 'День народження',
-			'education' => 'Освіта',
-			'aboutMyself' => 'Про себе',
-			'interests' => 'Інтереси',
-			'certificates' => 'Сертифікати',
-			'phone' => 'Телефон',
-			'email' => 'Email',
-			'address' => 'Адреса',
-			'note' => 'Примітки',
-			'password' => 'Пароль',
+        return array(
+            'id' => 'ID',
+            'firstName' => 'Ім\'я',
+            'secondName' => 'Прізвище',
+            'nickname' => 'Нік',
+            'birthday' => 'День народження',
+            'email' => 'Email',
+            'password' => 'Пароль',
             'password_repeat' => 'Повтор пароля',
-		);
+            'phone' => 'Телефон',
+            'address' => 'Адреса',
+            'education' => 'Освіта',
+            'educform' => 'Форма навчання',
+            'interests' => 'Захоплення',
+            'aboutUs' => 'Звідки про нас?',
+            'send_letter'=> 'Лист',
+        );
 	}
 
 	/**
@@ -113,21 +111,20 @@ class StudentReg extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('firstName',$this->firstName,true);
-		$criteria->compare('secondName',$this->secondName,true);
-		$criteria->compare('middleName',$this->middleName,true);
-        $criteria->compare('login',$this->birthday,true);
-		$criteria->compare('birthday',$this->birthday,true);
-		$criteria->compare('education',$this->education,true);
-		$criteria->compare('aboutMyself',$this->aboutMyself,true);
-		$criteria->compare('interests',$this->interests,true);
-		$criteria->compare('certificates',$this->certificates,true);
-		$criteria->compare('phone',$this->phone,true);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('address',$this->address,true);
-		$criteria->compare('note',$this->note,true);
-		$criteria->compare('password',$this->password,true);
+        $criteria->compare('id',$this->id);
+        $criteria->compare('firstName',$this->firstName,true);
+        $criteria->compare('secondName',$this->secondName,true);
+        $criteria->compare('nickname',$this->nickname,true);
+        $criteria->compare('birthday',$this->birthday,true);
+        $criteria->compare('email',$this->email,true);
+        $criteria->compare('password',$this->password,true);
+        $criteria->compare('phone',$this->phone,true);
+        $criteria->compare('address',$this->address,true);
+        $criteria->compare('education',$this->education,true);
+        $criteria->compare('educform',$this->educform,true);
+        $criteria->compare('interests',$this->interests,true);
+        $criteria->compare('aboutUs',$this->aboutUs,true);
+        $criteria->compare('send_letter',$this->send_letter,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
