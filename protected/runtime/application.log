@@ -956,3 +956,21 @@ Stack trace:
 #20 {main}
 REQUEST_URI=/index.php?r=studentreg/profile
 ---
+2015/02/27 15:20:27 [error] [php] Missing argument 5 for Step::Step(), called in Z:\home\temp\www\protected\views\site\index.php on line 116 and defined (Z:\home\temp\www\protected\models\Step.php:10)
+Stack trace:
+#0 Z:\home\temp\www\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 Z:\home\temp\www\protected\framework\web\CController.php(869): SiteController->renderFile()
+#2 Z:\home\temp\www\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#3 Z:\home\temp\www\protected\controllers\SiteController.php(32): SiteController->render()
+#4 Z:\home\temp\www\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 Z:\home\temp\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 Z:\home\temp\www\protected\framework\web\CController.php(286): SiteController->runAction()
+#7 Z:\home\temp\www\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 Z:\home\temp\www\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#9 Z:\home\temp\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 Z:\home\temp\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 Z:\home\temp\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in Z:\home\temp\www\protected\models\Step.php (10)
+in Z:\home\temp\www\protected\views\site\index.php (116)
+in Z:\home\temp\www\protected\controllers\SiteController.php (32)
