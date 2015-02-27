@@ -65,7 +65,22 @@ p, h1, h2, h3, h4, html{
     max-width: 142px;
 }
 
+/******************enter button***************/
 
+#button_border {
+    border: 2px solid #4b70a3;
+    border-radius: 10px 10px 0 0;
+    position: fixed;
+    margin-top: 78px;
+    margin-left: 1048px;
+    z-index: 6;
+    height: 20px;
+    width: 74px;
+
+}
+#button_border.down{
+    display: none;
+}
 #enter_button {
     position: fixed;
     margin-top: 80px;
@@ -74,7 +89,6 @@ p, h1, h2, h3, h4, html{
     height: 33px;
     width: 70px;
     background: #4b70a3;
-    background-image: url("/IntITA/css/images/enter_top_border.png");
     border-radius:   10px;
     border: 2px solid #ffffff;
     color: white;
@@ -95,7 +109,7 @@ p, h1, h2, h3, h4, html{
 #enter_button.down:hover{
     background: #454545;
 }
-
+/*********************enter button end****************/
 /************************************/
 
 /************navigation-bottom***********/
