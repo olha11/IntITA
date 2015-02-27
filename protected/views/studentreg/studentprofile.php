@@ -29,7 +29,6 @@ $post=StudentReg::model()->findByPk(1);
                 </td>
                 <td>
                     <h1><?php echo $post->firstName;?></h1>
-                    <h1><?php echo $post->middleName;?></h1>
                     <h1><?php echo $post->secondName;?></h1>
                     <div class="aboutInfo">
                         <p><?php echo $post->address;?>,
@@ -44,19 +43,34 @@ $post=StudentReg::model()->findByPk(1);
                         </p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP">Про себе:</span> </br> <?php echo $post->aboutMyself;?></p>
+                        <p> <span class="colorP">Нік:</span> </br><?php echo $post->nickname;?></p>
+                    </div>
+                    <div class="aboutInfo">
+                        <p> <span class="colorP">Електрона пошта:</span> </br><?php echo $post->email;?></p>
+                    </div>
+                    <div class="aboutInfo">
+                        <p> <span class="colorP">Телефон:</span> </br><?php echo $post->phone;?></p>
+                    </div>
+                    <div class="aboutInfo">
+                        <p> <span class="colorP">Освіта:</span> </br><?php echo $post->education;?></p>
+                    </div>
+                    <div class="aboutInfo">
+                        <p> <span class="colorP">Форма навчання:</span> </br>
+                            <?php if($post->educform){
+                                echo 'Online';
+                            } else {
+                                echo 'Offline';
+                            }
+                            $post->educform;?></p>
                     </div>
                     <div class="aboutInfo">
                         <p> <span class="colorP">Інтереси:</span> </br><?php echo $post->interests;?></p>
-                    </div>
-                    <div class="aboutInfo">
-                        <p> <span class="colorP">Сертифікати:</span> </br><?php echo $post->certificates;?></p>
                     </div>
                 </td>
             </tr>
        </table>
     </div>
-    <div class="profileInfo">
+    <div class="profileActivity">
      	<div class="titleProfile">
 	       	<h3>Активність</h3>
     	</div>
@@ -70,8 +84,17 @@ $post=StudentReg::model()->findByPk(1);
             <p>Заняття:</br> <span class="colorP">"Заняття 6. Повторіння мать учіння"</span></p>
         </div>
         <div class="payInfo">
-            <p>Фінанси:</br> <span class="colorP">Курс проплочений у повному обсязі</span></p>
+            <p>Проплати:</br> <span class="colorP">Курс проплачений повністю</span></p>
         </div>
+        <div class="payInfo">
+            <p>Проплату здійснити до: <span class="colorP">21.12.2015</span></p>
+        </div>
+        <div class="payInfo">
+            <p>Сума до проплати: <span class="colorP">5000 грн</span></p>
+        </div>
+        <form class="photoButton" action="" method="post">
+            <input type="submit" value="Замовити консультацію">
+        </form>
     </div>
 </div><!-- form -->
 

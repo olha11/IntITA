@@ -1,11 +1,15 @@
+body {
+    margin: 0 auto;
+}
+
 .main {
-	width: 960px;
-	margin: 0 auto;
-	overflow: hidden;
-	}
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
 p, h1, h2, h3, h4, html{
-	font-family: "MyriadPro";
-	}
+    font-family: "MyriadPro";
+}
 .clear {
     width: 100%;
     clear: both;
@@ -23,62 +27,89 @@ p, h1, h2, h3, h4, html{
 }
 
 #navigation ul {
-    margin-left: 500px;
+    margin-left: 475px;
     margin-top: 65px;
-	}
+}
 #navigation.down ul {
-    margin-top: 25px;
+    margin-top: 22px;
 }
 
 #navigation li {
-	display:inline;
-	padding: 10px;
+    display:inline;
+    padding: 10px;
 }
 #navigation ul a {
-	text-decoration:none;
-	font-family: "MyriadPro";
-	font-size: 15px;
-	font-weight: normal;
-	color: black;
+    text-decoration:none;
+    font-family: "MyriadPro";
+    font-size: 18px;
+    font-weight: normal;
+    color: black;
 }
 #navigation ul a:hover{
-	color: blue;
+    color: #003399;
 }
 
 #logo_img{
     float: left;
-    margin-top: 10px;
+    margin-top: 13px;
 }
 #navigation img {
     max-width: 232px;
     max-height: 75px;
+}
+#logo_img.down {
+    margin-top: 12px;
 }
 #logo_img.down img {
     max-height: 46px;
     max-width: 142px;
 }
 
+/******************enter button***************/
 
+#button_border {
+    border: 2px solid #4b70a3;
+    border-radius: 10px 10px 0 0;
+    position: fixed;
+    margin-top: 78px;
+    margin-left: 1048px;
+    z-index: 6;
+    height: 20px;
+    width: 74px;
+
+}
+#button_border.down{
+    display: none;
+}
 #enter_button {
-    height: 50px;
-    width: 80px;
-    background: url("/IntITA/css/images/enter_button.png") no-repeat;
     position: fixed;
     margin-top: 80px;
     margin-left: 1050px;
     z-index: 6;
+    height: 33px;
+    width: 70px;
+    background: #4b70a3;
+    border-radius:   10px;
+    border: 2px solid #ffffff;
+    color: white;
+    vertical-align: middle;
+    font: 500 16px/33px "MyriadPro";
+    text-align:      center;
+    text-decoration: none;
+}
+#enter_button:hover {
+    background: #454545;
+}
+#enter_button:active {
+    background: #363636;
 }
 #enter_button.down {
-    height: 50px;
-    width: 100px;
-    background: url("/IntITA/css/images/enter_button_scroll.png") no-repeat;
-    position: fixed;
     margin-top: 20px;
-    margin-left: 1050px;
-    z-index: 6;
-
 }
-
+#enter_button.down:hover{
+    background: #454545;
+}
+/*********************enter button end****************/
 /************************************/
 
 /************navigation-bottom***********/
@@ -87,16 +118,16 @@ p, h1, h2, h3, h4, html{
     margin-bottom: 20px;
     overflow: hidden;
     border-bottom: 2px solid #33ccff;
-	}
+}
 #footer .main div {
-	margin-left: 15px;
+    margin-left: 15px;
     float: left;
     height: 65px;
 }
 
 .footer {
     border-left: 2px solid #33ccff;
-	padding-top: 20px;
+    padding-top: 20px;
     padding-left: 15px;
     color: #003399;
 }
@@ -108,23 +139,22 @@ p, h1, h2, h3, h4, html{
 }
 
 #footer li a {
-	text-decoration:none;
-	font-family: "MyriadPro";
-	font-size: 15px;
-	color: #003399;
+    text-decoration:none;
+    font-family: "MyriadPro";
+    font-size: 15px;
+    color: #003399;
+}
+#footer li a:hover{
+    color: #000000;
 }
 
 #footer p{
     margin-top: 5px;
-	font-size: 13px;
-	}
+    font-size: 13px;
+}
 
 /****************************************/
 
 
 /** steps style **/
-
-
-
-
 

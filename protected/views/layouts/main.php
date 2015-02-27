@@ -78,17 +78,15 @@
 
     </div>
 </div>
-<a href="#">
-    <div id="enter_button">
-        <!-- <img src="/IntITA/css/images/enter_button.png">-->
-    </div>
-</a>
-
+<div id="button_border">
+</div>
+<a id="enter_button" href="#">Вхід</a>
 
 <script>
     var key = document.getElementById('enter_button');
     var nav = document.getElementById('navigation');
     var logo = document.getElementById('logo_img');
+    var border = document.getElementById('button_border');
     window.onscroll = function() {
         var pageY = window.pageYOffset || document.documentElement.scrollTop;
         if (pageY >= key.offsetHeight) {
@@ -96,7 +94,9 @@
             logo.className = "down";
             nav.style.height = "68px";
             nav.className = "down";
+            border.className = "down";
         } else {
+            border.className = "";
             key.className = "";
             logo.className = "";
             nav.className = "";

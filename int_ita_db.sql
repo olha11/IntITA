@@ -3,11 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
-<<<<<<< HEAD
--- Date/time:                    2015-02-26 17:17:24
-=======
--- Date/time:                    2015-02-25 18:19:18
->>>>>>> 5034100a2cde96fb2f0a3bd7cc6ef7af0e2b088f
+-- Date/time:                    2015-02-27 17:49:18
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -138,8 +134,6 @@ CREATE TABLE IF NOT EXISTS `aa_users` (
 
 -- Dumping data for table int_ita_db.aa_users: ~0 rows (approximately)
 /*!40000 ALTER TABLE `aa_users` DISABLE KEYS */;
-INSERT INTO `aa_users` (`id`, `level`, `login`, `password`, `interface_level`, `email`, `surname`, `firstname`, `middlename`, `regdate`, `info`, `salt`, `disabled`) VALUES
-	(1, 'root', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 'admin', 'admin', 'admin', 'admin', '2015-02-25 14:53:05', NULL, NULL, 0);
 /*!40000 ALTER TABLE `aa_users` ENABLE KEYS */;
 
 
@@ -151,52 +145,35 @@ CREATE TABLE IF NOT EXISTS `aboutus` (
   `titleText` varchar(50) NOT NULL,
   `textAbout` varchar(255) NOT NULL,
   `linkAddress` varchar(255) NOT NULL,
-<<<<<<< HEAD
   `imagesPath` varchar(255) NOT NULL,
-=======
->>>>>>> 5034100a2cde96fb2f0a3bd7cc6ef7af0e2b088f
   PRIMARY KEY (`block_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table int_ita_db.aboutus: ~3 rows (approximately)
 /*!40000 ALTER TABLE `aboutus` DISABLE KEYS */;
-<<<<<<< HEAD
 INSERT INTO `aboutus` (`block_id`, `line2Image`, `iconImage`, `titleText`, `textAbout`, `linkAddress`, `imagesPath`) VALUES
-	(1, '/css/images/line2.png', '/css/images/image1.png', 'Про що мрієш ти?', '<p>Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль? Закордонні подорожі, можливо, до екзотичних країн?</p>', 'https://www.google.com/', '/css/images/'),
-	(2, '/css/images/line2.png', '/css/images/image2.png', 'Що очікується від тебе', '<p>Програмування – це не так складно, як ти можеш уявляти. Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля.</p>', 'https://www.google.com/', '/css/images/'),
-	(3, '/css/images/line2.png', '/css/images/image3.png', 'Три кити Академії Програмування ІНТІТА', '<p>Три кити Академії Програмування ІНТІТА Самостійний графік навчання. Лише 100% необхідні знання. Засвоєння 100% знань!</p>', 'https://www.google.com/', '/css/images/');
-=======
-INSERT INTO `aboutus` (`block_id`, `line2Image`, `iconImage`, `titleText`, `textAbout`, `linkAddress`) VALUES
-	(1, '/css/images/line2.png', 'image2.png', 'Про що мрієш ти? changed', 'Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль? Закордонні подорожі, можливо, до екзотичних країн? changed', 'https://www.google.com/'),
-	(2, '/css/images/line2.png', '/css/images/image2.png', 'Що очікується від тебе changed', 'Програмування – це не так складно, як ти можеш уявляти. Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля. changed', 'https://www.google.com/'),
-	(3, '/css/images/line2.png', '/css/images/image3.png', 'Три кити Академії Програмування ІНТІТА changed', 'Три кити Академії Програмування ІНТІТА Самостійний графік навчання. Лише 100% необхідні знання. Засвоєння 100% знань! changed', 'https://www.google.com/');
->>>>>>> 5034100a2cde96fb2f0a3bd7cc6ef7af0e2b088f
+	(1, '/css/images/line2.png', 'image1.png', 'Про що мрієш ти?', '<p>Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль? Закордонні подорожі, можливо, до екзотичних країн?</p>', 'https://www.google.com/', '/css/images/'),
+	(2, '/css/images/line2.png', 'image2.png', 'Що очікується від тебе', '<p>Програмування – це не так складно, як ти можеш уявляти. Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля.</p>', 'https://www.google.com/', '/css/images/'),
+	(3, '/css/images/line2.png', 'image3.png', 'Три кити Академії Програмування ІНТІТА', '<p>Три кити Академії Програмування ІНТІТА Самостійний графік навчання. Лише 100% необхідні знання. Засвоєння 100% знань!</p>', 'https://www.google.com/', '/css/images/');
 /*!40000 ALTER TABLE `aboutus` ENABLE KEYS */;
 
 
 -- Dumping structure for table int_ita_db.carousel
 CREATE TABLE IF NOT EXISTS `carousel` (
   `order` int(11) NOT NULL,
-  `picture_url` varchar(255) NOT NULL,
+  `picture_url` varchar(50) NOT NULL,
   `description` varchar(100) NOT NULL,
+  `images_path` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`order`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Dumping data for table int_ita_db.carousel: ~4 rows (approximately)
 /*!40000 ALTER TABLE `carousel` DISABLE KEYS */;
-<<<<<<< HEAD
-INSERT INTO `carousel` (`order`, `picture_url`, `description`) VALUES
-	(1, '/css/images/slider_img/2.jpg', 'train1'),
-	(2, '/css/images/slider_img/1.jpg', 'train'),
-	(3, '/css/images/slider_img/4.jpg', 'train3'),
-	(4, '/css/images/slider_img/3.jpg', 'train2');
-=======
-INSERT INTO `carousel` (`order`, `picture_url`, `width`, `height`, `description`) VALUES
-	(1, '/css/images/slider_img/2.jpg', 1200, 800, 'train1'),
-	(2, '/css/images/slider_img/1.jpg', 1200, 800, 'train'),
-	(3, '/css/images/slider_img/4.jpg', 1200, 800, 'train3'),
-	(4, '/css/images/slider_img/3.jpg', 1200, 800, 'train2');
->>>>>>> 5034100a2cde96fb2f0a3bd7cc6ef7af0e2b088f
+INSERT INTO `carousel` (`order`, `picture_url`, `description`, `images_path`) VALUES
+	(1, '1.jpg', 'train1', '/css/images/slider_img/'),
+	(2, '2.jpg', 'train', '/css/images/slider_img/'),
+	(3, '3.jpg', 'train3', '/css/images/slider_img/'),
+	(4, '11.jpg', 'train2', '/css/images/slider_img/');
 /*!40000 ALTER TABLE `carousel` ENABLE KEYS */;
 
 
@@ -447,7 +424,6 @@ INSERT INTO `course` (`course_ID`, `course_name`, `course_duration_hours`) VALUE
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 
 
-<<<<<<< HEAD
 -- Dumping structure for table int_ita_db.footer
 CREATE TABLE IF NOT EXISTS `footer` (
   `footer_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -490,8 +466,6 @@ INSERT INTO `header` (`header_id`, `language`, `logo_url`, `menu_item_1`, `item_
 /*!40000 ALTER TABLE `header` ENABLE KEYS */;
 
 
-=======
->>>>>>> 5034100a2cde96fb2f0a3bd7cc6ef7af0e2b088f
 -- Dumping structure for table int_ita_db.hometasks
 CREATE TABLE IF NOT EXISTS `hometasks` (
   `hometask_ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -558,6 +532,7 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
   `step5` int(11) NOT NULL,
   `step_size` varchar(10) NOT NULL,
   `linkName` varchar(20) NOT NULL,
+  `hexagon` varchar(255) NOT NULL,
   PRIMARY KEY (`mainpage_id`),
   UNIQUE KEY `carousel_id` (`carousel_id`),
   KEY `FK_mainpage_block` (`block1`),
@@ -580,13 +555,8 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
 
 -- Dumping data for table int_ita_db.mainpage: ~1 rows (approximately)
 /*!40000 ALTER TABLE `mainpage` DISABLE KEYS */;
-<<<<<<< HEAD
-INSERT INTO `mainpage` (`mainpage_id`, `title`, `carousel_id`, `slider_header`, `slider_text`, `slider_texture_url`, `slider_line_url`, `slider_button_text`, `header1`, `subLineImage`, `subheader1`, `block1`, `block2`, `block3`, `header2`, `subheader2`, `step1`, `step2`, `step3`, `step4`, `step5`, `step_size`, `linkName`) VALUES
-	(1, 'IntITA changed', 1, 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Програміст — сама древня сучасна професія на планеті Земля!', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'Почати', 'Про насchanged', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси changed', 1, 2, 3, 'Як проводиться навчання? changed', 'далі пояснення як ви будете вчитися крок за кроком changed', 1, 2, 3, 4, 5, '958px', 'детальніше ...');
-=======
-INSERT INTO `mainpage` (`mainpage_id`, `title`, `carousel_id`, `header1`, `subLineImage`, `subheader1`, `block1`, `block2`, `block3`, `header2`, `subheader2`, `step1`, `step2`, `step3`, `step4`, `step5`, `step_size`, `linkName`) VALUES
-	(1, 'IntITA changed', 1, 'Про насchanged', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси changed', 1, 2, 3, 'Як проводиться навчання? changed', 'далі пояснення як ви будете вчитися крок за кроком changed', 1, 2, 3, 4, 5, '958px', 'детальніше ...');
->>>>>>> 5034100a2cde96fb2f0a3bd7cc6ef7af0e2b088f
+INSERT INTO `mainpage` (`mainpage_id`, `title`, `carousel_id`, `slider_header`, `slider_text`, `slider_texture_url`, `slider_line_url`, `slider_button_text`, `header1`, `subLineImage`, `subheader1`, `block1`, `block2`, `block3`, `header2`, `subheader2`, `step1`, `step2`, `step3`, `step4`, `step5`, `step_size`, `linkName`, `hexagon`) VALUES
+	(1, 'IntITA', 1, 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Програміст — сама древня сучасна професія на планеті Земля!', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'Почати />', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', 1, 2, 3, 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', 1, 2, 3, 4, 5, '958px', 'детальніше ...', '/css/images/hexagon.png');
 /*!40000 ALTER TABLE `mainpage` ENABLE KEYS */;
 
 
@@ -615,30 +585,20 @@ CREATE TABLE IF NOT EXISTS `step` (
   `stepName` varchar(30) NOT NULL DEFAULT '0',
   `stepNumber` int(11) NOT NULL,
   `stepTitle` varchar(50) NOT NULL,
-  `stepImage` varchar(255) NOT NULL,
-<<<<<<< HEAD
+  `stepImagePath` varchar(255) NOT NULL DEFAULT '0',
+  `stepImage` varchar(50) NOT NULL,
   `stepText` text NOT NULL,
-=======
-  `stepText` varchar(255) NOT NULL,
->>>>>>> 5034100a2cde96fb2f0a3bd7cc6ef7af0e2b088f
   PRIMARY KEY (`step_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.step: ~5 rows (approximately)
+-- Dumping data for table int_ita_db.step: ~4 rows (approximately)
 /*!40000 ALTER TABLE `step` DISABLE KEYS */;
-INSERT INTO `step` (`step_id`, `stepName`, `stepNumber`, `stepTitle`, `stepImage`, `stepText`) VALUES
-	(1, 'крок', 1, 'Реєстрація на сайті', '/css/images/step1.jpg', 'Щоб Ви отримали доступ до переліку курсів та пройти пробні безкоштовні модулі і заняття зареєструйтесь на сайті.'),
-<<<<<<< HEAD
-	(2, 'крок', 2, 'Вибір курсу чи модуля', '/css/images/step2.jpg', 'Щоб стати спеціалістом певного напрямку та рівня вибери для проходження відповідний курс. Якщо Тебе цікавить виключно поглиблення знань в певному напрямку ІТ, то вибери відповідний модуль.'),
-	(3, 'крок', 3, 'Проплата', '/css/images/step3.jpg', 'Щоб розпочати проходження курсу чи модуля виберіть зручну схему оплати та здійсни оплату зручним Тобі способом (схему оплати курсу чи модуля можна змінювати, також можлива помісячна оплата в кредит).'),
-	(4, 'крок', 4, 'Освоєння матеріалу', '/css/images/step4.jpg', 'Вивчення матеріалу можливе шляхом читання тексту чи/і перегляду відео для кожного заняття. Протягом освоєння матеріалу заняття виконуй Проміжні тестові завдання. По завершенню кожного заняття виконуй Підсумкове тестове завдання. Кожен модуль завершується Індивідуальним проектом чи Екзаменом, який приймають викладачі. Можна замовити індивідуальну консультацію викладача по темам та завданням чи обговорювати питання на тематичному форумі чи форумі групи.'),
-	(5, 'крок', 5, 'Завершення курсу', '/css/images/step5.jpg', 'Підсумком курсу є Командний дипломний проект, який виконується разом із іншими студентами (склад команди формуєте самостійно чи рекомендує керівник, який затверджує тему і технічне завдання проекту). Здача проекту передбачає передзахист та захист в он-лайн режимі із представленням технічної документації. Після захисту видається диплом та рекомендація для працевлаштування.');
-=======
-	(2, 'крок', 2, 'Вибір курсу чи модуля', '/css/images/step2.jpg', 'Щоб стати спеціалістом певного напрямку та рівня виберіть для проходження відповідний курс. Якщо Вас цікавить виключно поглиблення знань в певному напрямку IT, то виберіть відповідний модуль'),
-	(3, 'крок', 3, 'Проплата', '/css/images/step3.jpg', 'Щоб розпочати проходження курсу чи модуля виберіть зручну схему оплати (схему оплати курсу чи модуля можна змінювати, також можлива помісячна оплата в кредит) та здійсніть оплату зручним Вам способом.'),
-	(4, 'крок', 4, 'Освоєння матеріалу', '/css/images/step4.jpg', 'Вивчення матеріалу можливе шляхом читання тексту чи/і перегляду відео, які підготовлені для кожного заняття. Для цього на сторінці заняття виберіть спосіб, який Вам зручніший чи використовуйте обидва. Протягом освоєння матеріалу заняття виконуйте Проміжні'),
-	(5, 'крок', 5, 'Завершення курсу', '/css/images/step5.jpg', 'Підсумком курсу є Командний дипломний проект, який виконується разом із іншими студентами (склад команди формуєте самостійно чи рекомендує керівник, який затверджує тему і технічне завдання та асистенти проекту). Здача проекту передбачає передзахист та за');
->>>>>>> 5034100a2cde96fb2f0a3bd7cc6ef7af0e2b088f
+INSERT INTO `step` (`step_id`, `stepName`, `stepNumber`, `stepTitle`, `stepImagePath`, `stepImage`, `stepText`) VALUES
+	(1, 'крок', 1, 'Реєстрація на сайті', '/css/images/', 'step1.jpg', 'Щоб Ви отримали доступ до переліку курсів та пройти пробні безкоштовні модулі і заняття зареєструйтесь на сайті.'),
+	(2, 'крок', 2, 'Вибір курсу чи модуля', '/css/images/', 'step2.jpg', 'Щоб стати спеціалістом певного напрямку та рівня вибери для проходження відповідний курс. Якщо Тебе цікавить виключно поглиблення знань в певному напрямку ІТ, то вибери відповідний модуль.'),
+	(3, 'крок', 3, 'Проплата', '/css/images/', 'step3.jpg', 'Щоб розпочати проходження курсу чи модуля виберіть зручну схему оплати та здійсни оплату зручним Тобі способом (схему оплати курсу чи модуля можна змінювати, також можлива помісячна оплата в кредит).'),
+	(4, 'крок', 4, 'Освоєння матеріалу', '/css/images/', 'step4.jpg', 'Вивчення матеріалу можливе шляхом читання тексту чи/і перегляду відео для кожного заняття. Протягом освоєння матеріалу заняття виконуй Проміжні тестові завдання. По завершенню кожного заняття виконуй Підсумкове тестове завдання. Кожен модуль завершується Індивідуальним проектом чи Екзаменом, який приймають викладачі. Можна замовити індивідуальну консультацію викладача по темам та завданням чи обговорювати питання на тематичному форумі чи форумі групи.'),
+	(5, 'крок', 5, 'Завершення курсу', '/css/images/', 'step5.jpg', 'Підсумком курсу є Командний дипломний проект, який виконується разом із іншими студентами (склад команди формуєте самостійно чи рекомендує керівник, який затверджує тему і технічне завдання проекту). Здача проекту передбачає передзахист та захист в он-лайн режимі із представленням технічної документації. Після захисту видається диплом та рекомендація для працевлаштування.');
 /*!40000 ALTER TABLE `step` ENABLE KEYS */;
 
 
