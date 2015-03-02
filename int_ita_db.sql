@@ -3,12 +3,17 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-03-02 17:27:15
+-- Date/time:                    2015-03-02 17:33:40
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!40014 SET FOREIGN_KEY_CHECKS=0 */;
+
+-- Dumping database structure for int_ita_db
+CREATE DATABASE IF NOT EXISTS `int_ita_db` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `int_ita_db`;
+
 
 -- Dumping structure for table int_ita_db.aa_access
 CREATE TABLE IF NOT EXISTS `aa_access` (
@@ -41,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_authorizations: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.aa_authorizations: ~6 rows (approximately)
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
 INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(1, 2, '2015-03-02 15:33:25', '::1'),
@@ -139,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `aa_users` (
   UNIQUE KEY `login` (`login`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_users: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.aa_users: ~2 rows (approximately)
 /*!40000 ALTER TABLE `aa_users` DISABLE KEYS */;
 INSERT INTO `aa_users` (`id`, `level`, `login`, `password`, `interface_level`, `email`, `surname`, `firstname`, `middlename`, `regdate`, `info`, `salt`, `disabled`) VALUES
 	(2, 'root', 'root', '63a9f0ea7bb98050796b649e85481845', 1, 'root', 'root', 'root', 'root', '2015-03-02 15:33:13', NULL, NULL, 0),
@@ -187,229 +192,6 @@ INSERT INTO `carousel` (`order`, `picture_url`, `description`, `images_path`) VA
 /*!40000 ALTER TABLE `carousel` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.continents
-CREATE TABLE IF NOT EXISTS `continents` (
-  `id` varchar(15) NOT NULL,
-  `name_en` varchar(16) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='Континенты';
-
--- Dumping data for table int_ita_db.continents: ~6 rows (approximately)
-/*!40000 ALTER TABLE `continents` DISABLE KEYS */;
-INSERT INTO `continents` (`id`, `name_en`) VALUES
-	('africa', 'Africa'),
-	('asia', 'Asia'),
-	('australia', 'Australia'),
-	('europe', 'Europe'),
-	('n-america', 'North America'),
-	('s-america', 'South America');
-/*!40000 ALTER TABLE `continents` ENABLE KEYS */;
-
-
--- Dumping structure for table int_ita_db.countries
-CREATE TABLE IF NOT EXISTS `countries` (
-  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `continent_id` varchar(15) NOT NULL,
-  `name_en` varchar(60) DEFAULT NULL,
-  `flag` varchar(160) DEFAULT NULL,
-  `flag_ico` varchar(160) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `continent_id` (`continent_id`),
-  CONSTRAINT `countries_ibfk_1` FOREIGN KEY (`continent_id`) REFERENCES `continents` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='Страны';
-
--- Dumping data for table int_ita_db.countries: ~186 rows (approximately)
-/*!40000 ALTER TABLE `countries` DISABLE KEYS */;
-INSERT INTO `countries` (`id`, `continent_id`, `name_en`, `flag`, `flag_ico`) VALUES
-	(1, 'europe', 'Russia', 'russia.png', 'russia.png'),
-	(2, 'europe', 'Ukraine', 'ukraine.png', 'ukraine.png'),
-	(3, 'europe', 'Austria', 'austria.png', 'austria.png'),
-	(4, 'europe', 'Albania', 'albania.png', 'albania.png'),
-	(5, 'europe', 'Andorra', 'andorra.png', 'andorra.png'),
-	(6, 'europe', 'Belarus', 'belarus.png', 'belarus.png'),
-	(7, 'europe', 'Belgium', 'belgium.png', 'belgium.png'),
-	(8, 'europe', 'Bulgaria', 'bulgaria.png', 'bulgaria.png'),
-	(9, 'europe', 'Bosnia and Herzegovina', 'bosnia.png', 'bosnia.png'),
-	(10, 'europe', 'Vatican City', 'vatikan.png', 'vatikan.png'),
-	(11, 'europe', 'Great Britain', 'greatbritain.png', 'greatbritain.png'),
-	(12, 'europe', 'Hungary', 'hungary.png', 'hungary.png'),
-	(13, 'europe', 'Germany', 'germany.png', 'germany.png'),
-	(14, 'europe', 'Greece', 'greece.png', 'greece.png'),
-	(15, 'europe', 'Denmark', 'denmark.png', 'denmark.png'),
-	(16, 'europe', 'Ireland', 'ireland.png', 'ireland.png'),
-	(17, 'europe', 'Iceland', 'iceland.png', 'iceland.png'),
-	(18, 'europe', 'Spain', 'spain.png', 'spain.png'),
-	(19, 'europe', 'Italy', 'italy.png', 'italy.png'),
-	(20, 'europe', 'Kazakhstan', 'kazakhstan.png', 'kazakhstan.png'),
-	(21, 'europe', 'Latvia', 'latvia.png', 'latvia.png'),
-	(22, 'europe', 'Lithuania', 'lithuania.png', 'lithuania.png'),
-	(23, 'europe', 'Liechtenstein', 'liechtenstein.png', 'liechtenstein.png'),
-	(24, 'europe', 'Luxembourg', 'luxembourg.png', 'luxembourg.png'),
-	(25, 'europe', 'Malta', 'malta.png', 'malta.png'),
-	(26, 'europe', 'Maсedonia', 'macedonia.png', 'macedonia.png'),
-	(27, 'europe', 'Moldova', 'moldova.png', 'moldova.png'),
-	(28, 'europe', 'Monaco', 'monako.png', 'monako.png'),
-	(29, 'europe', 'Netherlands', 'netherlands.png', 'netherlands.png'),
-	(30, 'europe', 'Norway', 'norway.png', 'norway.png'),
-	(31, 'europe', 'Poland', 'poland.png', 'poland.png'),
-	(32, 'europe', 'Portugal', 'portugal.png', 'portugal.png'),
-	(33, 'europe', 'Romania', 'romania.png', 'romania.png'),
-	(34, 'europe', 'San Marino', 'san-marino.png', 'san-marino.png'),
-	(35, 'europe', 'Serbia', 'serbia.png', 'serbia.png'),
-	(36, 'europe', 'Slovakia', 'slovakia.png', 'slovakia.png'),
-	(37, 'europe', 'Slovenia', 'slovenia.png', 'slovenia.png'),
-	(38, 'europe', 'Turkey', 'turkey.png', 'turkey.png'),
-	(39, 'europe', 'Finland', 'finland.png', 'finland.png'),
-	(40, 'europe', 'France', 'france.png', 'france.png'),
-	(41, 'europe', 'Croatia', 'croatia.png', 'croatia.png'),
-	(42, 'europe', 'Montenegro', 'montenegro.png', 'montenegro.png'),
-	(43, 'europe', 'Czech Republic', 'czech.png', 'czech.png'),
-	(44, 'europe', 'Switzerland', 'switzerland.png', 'switzerland.png'),
-	(45, 'europe', 'Sweden', 'sweden.png', 'sweden.png'),
-	(46, 'europe', 'Estonia', 'estonia.png', 'estonia.png'),
-	(47, 's-america', 'France Guiana', 'franceguiana.png', 'franceguiana.png'),
-	(48, 's-america', 'Chile', 'chile.png', 'chile.png'),
-	(49, 's-america', 'Ecuador', 'ecuador.png', 'ecuador.png'),
-	(50, 's-america', 'South Georgia and the South Sandwich Islands', 'southgeorgia.png', 'southgeorgia.png'),
-	(51, 'asia', 'Armenia', 'armenia.png', 'armenia.png'),
-	(52, 'asia', 'Azerbaijan', 'azerbaijan.png', 'azerbaijan.png'),
-	(53, 'asia', 'Afghanistan', 'afganistan.png', 'afganistan.png'),
-	(54, 'asia', 'Bangladesh', 'bangladesh.png', 'bangladesh.png'),
-	(55, 'asia', 'Bahrain', 'bahreyn.png', 'bahreyn.png'),
-	(56, 'asia', 'Brunei Darussalam', 'bruney.png', 'bruney.png'),
-	(57, 'asia', 'Bhutan', 'butan.png', 'butan.png'),
-	(58, 'asia', 'East Timor', 'east-timor.png', 'east-timor.png'),
-	(59, 'asia', 'Vietnam', 'vetnam.png', 'vetnam.png'),
-	(60, 'europe', 'Georgia', 'georgia.png', 'georgia.png'),
-	(62, 'asia', 'India', 'indiya.png', 'indiya.png'),
-	(63, 'asia', 'Indonesia', 'indoneziya.png', 'indoneziya.png'),
-	(64, 'asia', 'Jordan', 'iordaniya.png', 'iordaniya.png'),
-	(65, 'asia', 'Iraq', 'iraq.png', 'iraq.png'),
-	(66, 'asia', 'Iran', 'iran.png', 'iran.png'),
-	(67, 'asia', 'Yemen', 'yemen.png', 'yemen.png'),
-	(69, 'asia', 'Cambodia', 'kambodzha.png', 'kambodzha.png'),
-	(70, 'asia', 'Qatar', 'qatar.png', 'qatar.png'),
-	(71, 'asia', 'Cyprus', 'cyprus.png', 'cyprus.png'),
-	(72, 'asia', 'Kyrgyzstan', 'kyrgyzstan.png', 'kyrgyzstan.png'),
-	(73, 'asia', 'China', 'china.png', 'china.png'),
-	(74, 'asia', 'North Korea', 'kndr.png', 'kndr.png'),
-	(75, 'asia', 'Kuwait', 'kuveyt.png', 'kuveyt.png'),
-	(76, 'asia', 'Laos', 'laos.png', 'laos.png'),
-	(77, 'asia', 'Lebanon', 'livan.png', 'livan.png'),
-	(78, 'asia', 'Malaysia', 'malayziya.png', 'malayziya.png'),
-	(79, 'asia', 'Maldives', 'maldivi.png', 'maldivi.png'),
-	(80, 'asia', 'Mongolia', 'mongoliya.png', 'mongoliya.png'),
-	(81, 'asia', 'Myanmar', 'myanma.png', 'myanma.png'),
-	(82, 'asia', 'Nepal', 'nepal.png', 'nepal.png'),
-	(83, 'asia', 'United Arab Emirates', 'oae.png', 'oae.png'),
-	(84, 'asia', 'Oman', 'oman.png', 'oman.png'),
-	(85, 'asia', 'Pakistan', 'pakistan.png', 'pakistan.png'),
-	(86, 'asia', 'Palestina', 'palestina.png', 'palestina.png'),
-	(87, 'asia', 'Saudi Arabia', 'saudiarabia.png', 'saudiarabia.png'),
-	(88, 'asia', 'Syria', 'siriya.png', 'siriya.png'),
-	(89, 'asia', 'Singapore', 'singapore.png', 'singapore.png'),
-	(90, 'asia', 'Tajikistan', 'tajikistan.png', 'tajikistan.png'),
-	(91, 'asia', 'Tailand', 'tailand.png', 'tailand.png'),
-	(92, 'asia', 'Turkmeniya', 'turkmeniya.png', 'turkmeniya.png'),
-	(93, 'asia', 'Uzbekistan', 'uzbekistan.png', 'uzbekistan.png'),
-	(94, 'asia', 'Philippines', 'filippini.png', 'filippini.png'),
-	(95, 'asia', 'Sri Lanka', 'sri-lanka.png', 'sri-lanka.png'),
-	(96, 'asia', 'Korea', 'korea.png', 'korea.png'),
-	(97, 'asia', 'Japan', 'japan.png', 'japan.png'),
-	(98, 'africa', 'Algeria', 'algeria.png', 'algeria.png'),
-	(99, 'africa', 'Egypt', 'egipet.png', 'egipet.png'),
-	(100, 'africa', 'Libya', 'liviya.png', 'liviya.png'),
-	(101, 'africa', 'Morocco', 'marokko.png', 'marokko.png'),
-	(102, 'africa', 'Sudan', 'sudan.png', 'sudan.png'),
-	(103, 'africa', 'Tunisia', 'tunis.png', 'tunis.png'),
-	(105, 'africa', 'Ceuta', 'seuta.png', 'seuta.png'),
-	(106, 'africa', 'Madeira', 'madeira.png', 'madeira.png'),
-	(107, 'africa', 'Melilla', 'melilya.png', 'melilya.png'),
-	(108, 'africa', 'Benin', 'benin.png', 'benin.png'),
-	(109, 'africa', 'Burkina Faso', 'burkina_faso.png', 'burkina_faso.png'),
-	(110, 'africa', 'Gambia', 'gambiya.png', 'gambiya.png'),
-	(111, 'africa', 'Ghana', 'gana.png', 'gana.png'),
-	(112, 'africa', 'Guinea', 'gvineya.png', 'gvineya.png'),
-	(113, 'africa', 'Guinea - Bissau', 'gvineya-bisau.png', 'gvineya-bisau.png'),
-	(114, 'africa', 'Cape Verde', 'kabo-verde.png', 'kabo-verde.png'),
-	(115, 'africa', 'Ivory Coast', 'ivorycoast.png', 'ivorycoast.png'),
-	(116, 'africa', 'Liberia', 'liberiya.png', 'liberiya.png'),
-	(117, 'africa', 'Mali', 'mali.png', 'mali.png'),
-	(118, 'africa', 'Mauritania', 'mavritaniya.png', 'mavritaniya.png'),
-	(119, 'africa', 'Niger', 'niger.png', 'niger.png'),
-	(120, 'africa', 'Nigeria', 'nigeria.png', 'nigeria.png'),
-	(122, 'africa', 'Senegal', 'senegal.png', 'senegal.png'),
-	(123, 'africa', 'Sierra Leone', 'sierra-leone.png', 'sierra-leone.png'),
-	(124, 'africa', 'Togo', 'togo.png', 'togo.png'),
-	(125, 'africa', 'Angola', 'angola.png', 'angola.png'),
-	(126, 'africa', 'Gabon', 'gabon.png', 'gabon.png'),
-	(127, 'africa', 'Cameroon', 'kamerun.png', 'kamerun.png'),
-	(128, 'africa', 'Democratic Republic of the Congo', 'drk.png', 'drk.png'),
-	(129, 'africa', 'Republic of the Congo', 'kongo.png', 'kongo.png'),
-	(130, 'africa', 'Sao Tome and Principe', 'sao-tome-principe.png', 'sao-tome-principe.png'),
-	(131, 'africa', 'Central African Republic', 'car.png', 'car.png'),
-	(132, 'africa', 'Chad', 'chad.png', 'chad.png'),
-	(133, 'africa', 'Equatorial Guinea', 'equatorial-guinea.png', 'equatorial-guinea.png'),
-	(134, 'africa', 'Burundi', 'burundi.png', 'burundi.png'),
-	(135, 'africa', 'Djibouti', 'dzhibuti.png', 'dzhibuti.png'),
-	(136, 'africa', 'Zambia', 'zambiya.png', 'zambiya.png'),
-	(137, 'africa', 'Zimbabwe', 'zimbabve.png', 'zimbabve.png'),
-	(138, 'africa', 'Kenya', 'keniya.png', 'keniya.png'),
-	(139, 'africa', 'Comoros', 'comoros.png', 'comoros.png'),
-	(140, 'africa', 'Mauritius', 'mavrikiy.png', 'mavrikiy.png'),
-	(141, 'africa', 'Madagascar', 'madagaskar.png', 'madagaskar.png'),
-	(142, 'africa', 'Malawi', 'malavi.png', 'malavi.png'),
-	(143, 'africa', 'Mozambique', 'mozambik.png', 'mozambik.png'),
-	(144, 'africa', 'Rwanda', 'ruanda.png', 'ruanda.png'),
-	(145, 'africa', 'Seychelles', 'seychelles.png', 'seychelles.png'),
-	(146, 'africa', 'Somalia', 'somali.png', 'somali.png'),
-	(147, 'africa', 'Somali', 'somalilend.png', 'somalilend.png'),
-	(148, 'africa', 'Tanzania', 'tanzaniya.png', 'tanzaniya.png'),
-	(149, 'africa', 'Uganda', 'uganda.png', 'uganda.png'),
-	(150, 'africa', 'Eritrea', 'eritreya.png', 'eritreya.png'),
-	(151, 'africa', 'Ethiopia', 'ethiopia.png', 'ethiopia.png'),
-	(152, 'africa', 'Botswana', 'botsvana.png', 'botsvana.png'),
-	(153, 'africa', 'Lesotho', 'lesoto.png', 'lesoto.png'),
-	(154, 'africa', 'Namibia', 'namibiya.png', 'namibiya.png'),
-	(156, 'africa', 'Swaziland', 'svazilend.png', 'svazilend.png'),
-	(157, 'africa', 'South Africa', 'sudafricana.png', 'sudafricana.png'),
-	(158, 'n-america', 'Belize', 'belize.png', 'belize.png'),
-	(159, 'n-america', 'Guatemala', 'guatemala.png', 'guatemala.png'),
-	(160, 'n-america', 'Honduras', 'honduras.png', 'honduras.png'),
-	(161, 'n-america', 'Costa Rica', 'costa_rica.png', 'costa_rica.png'),
-	(162, 'n-america', 'Nicaragua', 'nicaragua.png', 'nicaragua.png'),
-	(163, 'n-america', 'Panama', 'panama.png', 'panama.png'),
-	(164, 'n-america', 'El Salvador', 'salvador.png', 'salvador.png'),
-	(165, 'n-america', 'Cuba', 'cuba.png', 'cuba.png'),
-	(166, 'n-america', 'Mexico', 'mexico.png', 'mexico.png'),
-	(167, 'n-america', 'Canada', 'canada.png', 'canada.png'),
-	(168, 'n-america', 'USA', 'usa.png', 'usa.png'),
-	(169, 'europe', 'England', 'england.png', 'england.png'),
-	(170, 'europe', 'Scotland', 'scotland.png', 'scotland.png'),
-	(171, 'europe', 'Wales', 'wales.png', 'wales.png'),
-	(172, 'europe', 'Northern Ireland', 'north_ireland.png', 'north_ireland.png'),
-	(173, 'australia', 'Australia', 'australia.png', 'australia.png'),
-	(174, 'australia', 'New Zealand', 'newzeland.png', 'newzeland.png'),
-	(175, 'australia', 'Solomon Islands', 'solomon_islands.png', 'solomon_islands.png'),
-	(176, 'australia', 'Marshall Islands', 'marshall_islands.png', 'marshall_islands.png'),
-	(177, 'australia', 'Vanuatu', 'vanuatu.png', 'vanuatu.png'),
-	(178, 's-america', 'Argentina', 'argentina.png', 'argentina.png'),
-	(179, 's-america', 'Bolivia', 'bolivia.png', 'bolivia.png'),
-	(180, 's-america', 'Brazil', 'brazil.png', 'brazil.png'),
-	(181, 's-america', 'Venezuela', 'venezuela.png', 'venezuela.png'),
-	(182, 's-america', 'Guyana', 'guyana.png', 'guyana.png'),
-	(183, 's-america', 'Colombia', 'colombia.png', 'colombia.png'),
-	(184, 's-america', 'Paraguay', 'paraguay.png', 'paraguay.png'),
-	(185, 's-america', 'Peru', 'peru.png', 'peru.png'),
-	(186, 's-america', 'Surinam', 'surinam.png', 'surinam.png'),
-	(187, 's-america', 'Uruguay', 'uruguay.png', 'uruguay.png'),
-	(188, 'europe', 'Israel', 'israel.png', 'israel.png'),
-	(189, 'n-america', 'Jamaica', 'jamaica.png', 'jamaica.png'),
-	(195, 'europe', 'Faroe Islands', 'faroe.png', 'faroe.png'),
-	(196, 'australia', 'Saint Vincent and the Grenadines', NULL, NULL);
-/*!40000 ALTER TABLE `countries` ENABLE KEYS */;
-
-
 -- Dumping structure for table int_ita_db.course
 CREATE TABLE IF NOT EXISTS `course` (
   `course_ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -445,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `footer` (
   PRIMARY KEY (`footer_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.footer: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.footer: ~1 rows (approximately)
 /*!40000 ALTER TABLE `footer` DISABLE KEYS */;
 INSERT INTO `footer` (`footer_id`, `image_social`, `phone`, `mobile`, `email`, `image_up`) VALUES
 	(1, '/css/images/sotial.gif', 'телефон: +38 0432 52', 'тел. моб. +38 067 432 20 10', 'e-mail: intita.hr@gmail.com', '/css/images/go_up.png');
@@ -469,7 +251,7 @@ CREATE TABLE IF NOT EXISTS `header` (
   PRIMARY KEY (`header_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.header: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.header: ~1 rows (approximately)
 /*!40000 ALTER TABLE `header` DISABLE KEYS */;
 INSERT INTO `header` (`header_id`, `language`, `logo_url`, `menu_item_1`, `item_1_link`, `menu_item_2`, `item_2_link`, `menu_item_3`, `item_3_link`, `menu_item_4`, `item_4_link`, `enter_button_link`) VALUES
 	(1, 'UA', '/css/images/Logo_big.png', 'Курси', 'http://www.google.com', 'Викладачі', 'http://www.google.com', 'Форум', 'http://www.google.com', 'Про нас', 'http://www.google.com', '/css/images/enter_button.png');
@@ -534,7 +316,7 @@ CREATE TABLE IF NOT EXISTS `lecture` (
   KEY `FK_lectures_modules` (`lectureModule`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.lecture: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.lecture: ~1 rows (approximately)
 /*!40000 ALTER TABLE `lecture` DISABLE KEYS */;
 INSERT INTO `lecture` (`lectureID`, `lectureImageMain`, `lectureModule`, `lectureNumber`, `lectureNameText`, `lectureTypeText`, `lectureTypeImage`, `lectureTimeText`, `lectureMaxNumber`, `lectureIconImage`, `lectureUnwatchedImage`, `lectureOverlookedImage`, `infoLectures`, `thisLectureInfo`, `preLectureInfo`, `postLessonInfo`, `teacherTitle`, `linkName`) VALUES
 	(1, '/css/images/lectureImage.png', '1', 0, 'Goal of classes 1', '10', '100', 'css/images/timeIco.p', 0, '', 'css/images/ratIco0.png', 'css/images/ratIco1.png', '0', '0', '0', '0', '0', '0');
@@ -567,7 +349,7 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
   KEY `FK_mainpage_step` (`array_steps`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.mainpage: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.mainpage: ~1 rows (approximately)
 /*!40000 ALTER TABLE `mainpage` DISABLE KEYS */;
 INSERT INTO `mainpage` (`mainpage_id`, `title`, `carousel_id`, `slider_header`, `slider_text`, `slider_texture_url`, `slider_line_url`, `slider_button_text`, `header1`, `subLineImage`, `subheader1`, `array_blocks`, `header2`, `subheader2`, `array_steps`, `step_size`, `linkName`, `hexagon`) VALUES
 	(1, 'IntITA', 1, 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Програміст — сама древня сучасна професія на планеті Земля!', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ />', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png');
@@ -636,7 +418,7 @@ CREATE TABLE IF NOT EXISTS `studentprofile` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.studentprofile: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.studentprofile: ~1 rows (approximately)
 /*!40000 ALTER TABLE `studentprofile` DISABLE KEYS */;
 INSERT INTO `studentprofile` (`id`, `firstName`, `secondName`, `middleName`, `login`, `birthday`, `education`, `aboutMyself`, `interests`, `certificates`, `phone`, `email`, `address`, `note`, `password`) VALUES
 	(1, 'Вова', 'Марля', 'Джа', 'Wizlight', '21.03.1988', 'ВДПУ', 'Растафарай', 'Реггі, ковбаска, колобки', 'Доктора Попова', '911', 'Wizlightdragon@gmail.com', 'Ямайка', 'Нон', '123');
@@ -795,7 +577,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `user_email` (`user_email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.users: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.users: ~1 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`user_id`, `user_email`, `user_passwd`, `user_hash`, `user_status`) VALUES
 	(1, 'mail1@mail.com', 'qwerty', '67896', 0);
@@ -814,7 +596,7 @@ CREATE TABLE IF NOT EXISTS `videos` (
   PRIMARY KEY (`video_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.videos: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.videos: ~1 rows (approximately)
 /*!40000 ALTER TABLE `videos` DISABLE KEYS */;
 INSERT INTO `videos` (`video_ID`, `fkmodule_ID`, `fklecture_ID`, `video_name`, `video_description`, `video_url`, `video_durationin_seconds`) VALUES
 	(1, 1, 1, 'Video 1', 'Description 1', 'URL 1', 344);
