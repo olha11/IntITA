@@ -2,17 +2,17 @@
 /* @var $this SiteController */
 ?>
 
-<img id="sliderTexture" src="<?php echo $sliderTexture; ?>">
+<img id="sliderTexture" src="<?php echo $mainpage['sliderTexture']; ?>">
 <div class="insideSlider">
     <div class="lineAndButton">
-        <img class="sliderLine" src="<?php echo $sliderLine; ?>">
-        <a class="sliderButton" href="#"><?php echo $buttonStart; ?> </a>
+        <img class="sliderLine" src="<?php echo $mainpage['sliderLine']; ?>">
+        <a class="sliderButton" href="#"><?php echo $mainpage['buttonStart']; ?> </a>
     </div>
     <div class="sliderText">
-        <?php echo $sliderHeader; ?><br>
+        <?php echo $mainpage['sliderHeader']; ?><br>
         <div class="sliderTextJr">
             _____<br><br>
-            <?php echo $sliderText; ?>
+            <?php echo $mainpage['sliderText']; ?>
         </div>
     </div>
 </div>
@@ -25,11 +25,11 @@
 </div>
 
 <?php
-$this->pageTitle=$title;
-$headerText = $header1;
-$subheaderText = $subheader1;
-$subLineImage = $subLineImage;
-$linkName= $linkName;
+$this->pageTitle=$mainpage['title'];
+$headerText = $mainpage['header1'];
+$subheaderText = $mainpage['subheader1'];
+$subLineImage = $mainpage['subLineImage'];
+$linkName= $mainpage['linkName'];
 $massAbout=array($block1,$block2,$block3);
 ?>
 
@@ -77,9 +77,9 @@ $massAbout=array($block1,$block2,$block3);
 </div>
 <! Ініціалізація екземплярів класу>
 <?php
-$stepHeader =  $header2;
-$stepSubheader =  $subheader2;
-$stepSize= $stepSize;
+$stepHeader =  $mainpage['header2'];
+$stepSubheader =  $mainpage['subheader2'];
+$stepSize= $mainpage['stepSize'];
 $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 ?>
 
@@ -104,7 +104,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 					<div class="line">
                     </div>
 
-                    <img class="hexagon" src="<?php echo $hexagon; ?>">
+                    <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
 					<div class="stepArticle">
 						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
 						<p class="stepName"><?php echo $stepValue->stepName; ?></p>
@@ -125,7 +125,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
         		    </div>
 					<div class="line">
                     </div>
-                     <img class="hexagon" src="<?php echo $hexagon; ?>">
+                     <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
 					<div class="stepArticle">
 						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
 						<p class="stepName"><?php echo $stepValue->stepName; ?></p>

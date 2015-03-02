@@ -1,4 +1,9 @@
-<?php /* @var $this Controller */ ?>
+<?php
+/* @var $this Controller */
+/* @var $header Header */
+/* @var $footer Footer */
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
