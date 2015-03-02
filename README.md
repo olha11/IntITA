@@ -8,7 +8,7 @@ back-end index page http://localhost/IntITA/www/_admin/
 user login: User
 
      password: password
-     
+
 
 #Pages:
 
