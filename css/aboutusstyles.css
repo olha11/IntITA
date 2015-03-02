@@ -63,7 +63,6 @@
     left:0px; }
 	
 .icon{
-	
 	position:absolute;
     top:0px;   
     left:10%;
@@ -76,6 +75,8 @@
     font-size:18px;
 }
 .title p {
+width:210px;
+text-align:  justify;
     position:absolute;
     margin-top:5px;
     color:black;
@@ -92,4 +93,100 @@
 }
 .block a:hover {
     color: #000000;
+}
+#aboutDetailMain
+{
+position:relative;
+left:50%;
+margin-left:-480px;
+width:960px;
+}
+
+#dropButton1 {    
+    position:absolute;
+    cursor: pointer;
+    margin-left:80px;
+    margin-top:285px;
+    color: #4682B4;
+    font-size:16px;
+	}
+	
+#dropButton2 {    
+    position:absolute;
+    cursor: pointer;
+    margin-left:391px;
+    margin-top:285px;
+    color: #4682B4;
+    font-size:16px;
+	}
+	
+#dropButton3 {    
+    position:absolute;
+    cursor: pointer;
+    margin-left:703px;
+    margin-top:285px;
+    color: #4682B4;
+    font-size:16px;
+	}
+	
+#dropTextLayer1 
+{ 
+     position:relative;
+     display: none;
+}
+ 
+ #dropTextLayer2 
+{ 
+     position:relative;
+     display: none;
+ }
+ 
+ #dropTextLayer3 
+{ 
+     position:relative;
+     display: none;
+ }
+
+
+.textBox { 
+	margin-bottom:0px; 
+	padding: 20px; 
+}
+
+.detailTitle1{
+    color: #4682B4;
+    font-size:24px;
+}
+.detailTitle2{
+    font-weight:bold;
+    font-size:16px;
+}
+
+.detailTitle3{
+    font-weight:bold;
+    font-style:  italic;
+    font-size:16px;
+}
+
+
+#detailTable{
+    left:50%;
+    border: 1px solid black;
+    border-spacing:0px;
+}
+
+
+#detailTable tr td
+{
+    text-indent:0em;
+    border: 1px solid black;
+    text-align: left;
+    padding:10px;
+}
+
+
+.listAbout
+{
+    list-style-position: inside;
+    text-indent:0em;
 }

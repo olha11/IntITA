@@ -1,0 +1,92 @@
+.TeacherProfilemainBlock
+{
+    width:1200px;
+    position:relative;
+    left:50%;
+    margin-left:-600px;
+    font-family:MyriadPro;
+    text-align:  left;
+}
+.TeacherProfileblock1
+{
+    position:relative;
+    width:583px;
+    left:0px;
+}
+
+.TeacherProfileblock1 img
+{
+    position:absolute;
+}
+
+.TeacherProfileblock2
+{
+    position:absolute;
+    width:583px;
+    left:617px;
+    top:120px;
+}
+
+ 
+ .TeacherProfiletextBlock
+ {
+    margin-top:0px;
+    margin-left:168px;
+}
+.TeacherProfilename
+{
+    color:#4B75A4;
+    font-size:26px;
+    margin-bottom:0px;
+}
+
+.TeacherProfilename p
+{
+    margin-top:0px;
+}
+
+.TeacherProfileseparator
+{
+    margin-top: -5px;
+}
+
+.TeacherProfiletitles 
+{
+    display: inline-block;
+    position: relative;
+    color:#4B75A4;
+    font-size:16px;
+    margin-top: 10px;
+}
+
+.TeacherProfilesectionText
+{
+    margin-top:-20px;
+    margin-left:65px;
+}
+
+.TeacherProfilesectionText p 
+{
+    margin-top:-12px;
+}
+
+.TeacherProfilecourse
+{
+    background-color:#D6EBE0;
+    padding:1px;
+    margin-bottom:10px;
+}
+
+a:link {font-size:16px; color:#4B75A4;}
+a:visited {font-size:16px; color:navy}
+a:hover {font-size:16px; color:#4b75fa}
+
+.TeacherProfiletitles span
+{
+    color:#4B75A4;
+    font-size:18px;
+}
+
+
+
+

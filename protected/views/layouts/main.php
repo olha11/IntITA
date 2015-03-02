@@ -15,7 +15,8 @@
     <!-- layouts style -->
     <!-- aboutUs style -->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/aboutusstyles.css" />
-    <!-- aboutUs style -->
+    <!-- teacherProfile style -->
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/teacherProfile.css" />
     <!-- steps style -->
     <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/step.css" />
     <!-- steps style -->
@@ -24,6 +25,8 @@
     <!-- studprofile style -->
     <!-- lesson style -->
     <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/lessonsStyle.css" />
+	  <!-- courses style -->
+    <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/courses.css" />
     <!-- lesson style -->
     <!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>

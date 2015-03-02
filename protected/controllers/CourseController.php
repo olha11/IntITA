@@ -122,7 +122,7 @@ class CourseController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Course');
+	/*	$dataProvider=new CActiveDataProvider('Course');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -137,7 +137,8 @@ class CourseController extends Controller
 			'options'=>array(
 				'delay'=>'300',
 			),
-		));
+		));*/
+		$this->render('index');
 	}
 
 	/**

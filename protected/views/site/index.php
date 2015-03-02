@@ -48,11 +48,11 @@ $linkName="детальніше »";
 
 
 $objAbout1=new AboutUs(Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image1.png','Про що мрієш ти?','Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль?
-                        Закордонні подорожі, можливо, до екзотичних країн?','https://www.google.com.ua/');
+                        Закордонні подорожі, можливо, до екзотичних країн?',Yii::app()->request->baseUrl.'/index.php?r=site/aboutdetail');
 $objAbout2=new AboutUs (Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image2.png','Навчання майбутнього сьогодні','Програмування – Програмування – це не так складно, як ти можеш уявляти.
-                        Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля.','https://www.google.com.ua/');
+                        Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля.',Yii::app()->request->baseUrl.'/index.php?r=site/aboutdetail');
 $objAbout3=new AboutUs(Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image3.png','Питання, які нам часто ставлять','Самостійний графік навчання.
-                        Лише 100% необхідні знання. Засвоєння 100% знаннь!','https://www.google.com.ua/');
+                        Лише 100% необхідні знання. Засвоєння 100% знаннь!',Yii::app()->request->baseUrl.'/index.php?r=site/aboutdetail');
 $massAbout=array($objAbout1,$objAbout2,$objAbout3);
 ?>
 
@@ -78,15 +78,15 @@ $massAbout=array($objAbout1,$objAbout2,$objAbout3);
             <ul>
                 <li>
                     <div class="line2">
-                        <img src="<?php echo $val->line2Image;?>">
+                    <img src="<?php echo $val->line2Image;?>"> 
                     </div>
                     <div class="icon">
-                        <img src="<?php echo $val->iconImage;?>">
+                      <img src="<?php echo $val->iconImage;?>">
                     </div>
                     <div class="title">
                         <?php echo $val->titleText; ?>
                         <p>
-                            <?php echo $val->textAbout; ?>
+                            <?php echo $val->textAbout;?>
                         </p>
                     </div>
                         <a href="<?php echo $val->linkAdress ?>">

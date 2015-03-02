@@ -1,6 +1,5 @@
 <?php
-
-class SiteController extends Controller
+class TeacherProfileController extends Controller
 {
 	/**
 	 * Declares class-based actions.
