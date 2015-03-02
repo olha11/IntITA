@@ -1,4 +1,4 @@
-<?php    
+<?php
 define('YII_DIR', 'yii');
 define('YII_PROTECTED', 'protected');
 
