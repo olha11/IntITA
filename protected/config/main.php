@@ -65,7 +65,6 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 
-
 				'/<module:autoadmin>' => 'autoadmin/default/index',
 				'/<module:autoadmin>/<controller:\w+>' => 'autoadmin/<controller>/index',
 				'/<module:autoadmin>/<controller:\w+>/<action:\w+>' => 'autoadmin/<controller>/<action>',
