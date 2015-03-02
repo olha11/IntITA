@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-02-27 17:49:18
+-- Date/time:                    2015-03-02 17:27:15
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -39,10 +39,17 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   KEY `user_id` (`user_id`),
   KEY `when_enter` (`when_enter`),
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- Dumping data for table int_ita_db.aa_authorizations: ~0 rows (approximately)
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
+INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
+	(1, 2, '2015-03-02 15:33:25', '::1'),
+	(2, 2, '2015-03-02 15:33:25', '::1'),
+	(3, 2, '2015-03-02 15:41:58', '::1'),
+	(4, 2, '2015-03-02 15:41:59', '::1'),
+	(5, 3, '2015-03-02 15:45:10', '::1'),
+	(6, 3, '2015-03-02 15:45:10', '::1');
 /*!40000 ALTER TABLE `aa_authorizations` ENABLE KEYS */;
 
 
@@ -130,10 +137,13 @@ CREATE TABLE IF NOT EXISTS `aa_users` (
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `login` (`login`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_users: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.aa_users: ~1 rows (approximately)
 /*!40000 ALTER TABLE `aa_users` DISABLE KEYS */;
+INSERT INTO `aa_users` (`id`, `level`, `login`, `password`, `interface_level`, `email`, `surname`, `firstname`, `middlename`, `regdate`, `info`, `salt`, `disabled`) VALUES
+	(2, 'root', 'root', '63a9f0ea7bb98050796b649e85481845', 1, 'root', 'root', 'root', 'root', '2015-03-02 15:33:13', NULL, NULL, 0),
+	(3, 'user', 'User', '5f4dcc3b5aa765d61d8327deb882cf99', 1, 'user', 'Surname', 'Name', 'Middle name', '2015-03-02 15:43:00', NULL, NULL, 0);
 /*!40000 ALTER TABLE `aa_users` ENABLE KEYS */;
 
 
@@ -173,7 +183,7 @@ INSERT INTO `carousel` (`order`, `picture_url`, `description`, `images_path`) VA
 	(1, '1.jpg', 'train1', '/css/images/slider_img/'),
 	(2, '2.jpg', 'train', '/css/images/slider_img/'),
 	(3, '3.jpg', 'train3', '/css/images/slider_img/'),
-	(4, '11.jpg', 'train2', '/css/images/slider_img/');
+	(4, '6.jpg', 'train2', '/css/images/slider_img/');
 /*!40000 ALTER TABLE `carousel` ENABLE KEYS */;
 
 
@@ -428,8 +438,8 @@ INSERT INTO `course` (`course_ID`, `course_name`, `course_duration_hours`) VALUE
 CREATE TABLE IF NOT EXISTS `footer` (
   `footer_id` int(11) NOT NULL AUTO_INCREMENT,
   `image_social` varchar(255) NOT NULL,
-  `phone` varchar(30) NOT NULL,
-  `mobile` varchar(30) NOT NULL,
+  `phone` varchar(40) NOT NULL,
+  `mobile` varchar(40) NOT NULL,
   `email` varchar(50) NOT NULL,
   `image_up` varchar(255) NOT NULL,
   PRIMARY KEY (`footer_id`)
@@ -438,7 +448,7 @@ CREATE TABLE IF NOT EXISTS `footer` (
 -- Dumping data for table int_ita_db.footer: ~0 rows (approximately)
 /*!40000 ALTER TABLE `footer` DISABLE KEYS */;
 INSERT INTO `footer` (`footer_id`, `image_social`, `phone`, `mobile`, `email`, `image_up`) VALUES
-	(1, '/css/images/sotial.gif', 'телефон: +38 0432 52', 'тел. моб. +38 067 43', 'e-mail: intita.hr@gmail.com', '/css/images/go_up.png');
+	(1, '/css/images/sotial.gif', 'телефон: +38 0432 52', 'тел. моб. +38 067 432 20 10', 'e-mail: intita.hr@gmail.com', '/css/images/go_up.png');
 /*!40000 ALTER TABLE `footer` ENABLE KEYS */;
 
 
@@ -486,25 +496,49 @@ INSERT INTO `hometasks` (`hometask_ID`, `fkmodule_ID`, `fklecture_ID`, `hometask
 /*!40000 ALTER TABLE `hometasks` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.lectures
-CREATE TABLE IF NOT EXISTS `lectures` (
-  `lecture_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `fkcourse_ID` int(11) NOT NULL,
-  `fkmodule_ID` int(11) NOT NULL,
-  `name_classes` varchar(45) NOT NULL,
-  `goal_of_classes` varchar(45) NOT NULL,
-  `total_number_of_items` int(11) NOT NULL,
-  `duration_in_hours` int(11) NOT NULL,
-  PRIMARY KEY (`lecture_ID`)
+-- Dumping structure for table int_ita_db.language
+CREATE TABLE IF NOT EXISTS `language` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` enum('EN','UA','RU') NOT NULL,
+  `language` varchar(50) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table int_ita_db.language: ~0 rows (approximately)
+/*!40000 ALTER TABLE `language` DISABLE KEYS */;
+/*!40000 ALTER TABLE `language` ENABLE KEYS */;
+
+
+-- Dumping structure for table int_ita_db.lecture
+CREATE TABLE IF NOT EXISTS `lecture` (
+  `lectureID` int(11) NOT NULL AUTO_INCREMENT,
+  `lectureImageMain` varchar(255) NOT NULL,
+  `lectureModule` varchar(100) NOT NULL,
+  `lectureNumber` int(11) NOT NULL,
+  `lectureNameText` varchar(100) NOT NULL,
+  `lectureTypeText` varchar(255) NOT NULL,
+  `lectureTypeImage` varchar(255) NOT NULL,
+  `lectureTimeText` varchar(20) NOT NULL,
+  `lectureMaxNumber` int(11) NOT NULL,
+  `lectureIconImage` varchar(255) NOT NULL,
+  `lectureUnwatchedImage` varchar(255) NOT NULL,
+  `lectureOverlookedImage` varchar(255) NOT NULL,
+  `infoLectures` varchar(50) NOT NULL DEFAULT '0',
+  `thisLectureInfo` varchar(255) NOT NULL DEFAULT '0',
+  `preLectureInfo` varchar(255) NOT NULL DEFAULT '0',
+  `postLessonInfo` varchar(255) NOT NULL DEFAULT '0',
+  `teacherTitle` varchar(50) NOT NULL DEFAULT '0',
+  `linkName` varchar(30) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`lectureID`),
+  KEY `FK_lectures_modules` (`lectureModule`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.lectures: ~3 rows (approximately)
-/*!40000 ALTER TABLE `lectures` DISABLE KEYS */;
-INSERT INTO `lectures` (`lecture_ID`, `fkcourse_ID`, `fkmodule_ID`, `name_classes`, `goal_of_classes`, `total_number_of_items`, `duration_in_hours`) VALUES
-	(1, 1, 1, 'Name classes 1', 'Goal of classes 1', 10, 100),
-	(2, 2, 2, 'Name classes 2', 'Goal of classes 2', 5, 50),
-	(3, 3, 3, 'Name of classes 3', 'Goal of classes 3 ', 3, 30);
-/*!40000 ALTER TABLE `lectures` ENABLE KEYS */;
+-- Dumping data for table int_ita_db.lecture: ~0 rows (approximately)
+/*!40000 ALTER TABLE `lecture` DISABLE KEYS */;
+INSERT INTO `lecture` (`lectureID`, `lectureImageMain`, `lectureModule`, `lectureNumber`, `lectureNameText`, `lectureTypeText`, `lectureTypeImage`, `lectureTimeText`, `lectureMaxNumber`, `lectureIconImage`, `lectureUnwatchedImage`, `lectureOverlookedImage`, `infoLectures`, `thisLectureInfo`, `preLectureInfo`, `postLessonInfo`, `teacherTitle`, `linkName`) VALUES
+	(1, '/css/images/lectureImage.png', '1', 0, 'Goal of classes 1', '10', '100', 'css/images/timeIco.p', 0, '', 'css/images/ratIco0.png', 'css/images/ratIco1.png', '0', '0', '0', '0', '0', '0');
+/*!40000 ALTER TABLE `lecture` ENABLE KEYS */;
 
 
 -- Dumping structure for table int_ita_db.mainpage
@@ -520,43 +554,23 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
   `header1` varchar(50) NOT NULL,
   `subLineImage` varchar(255) NOT NULL,
   `subheader1` varchar(100) NOT NULL,
-  `block1` int(11) NOT NULL,
-  `block2` int(11) NOT NULL,
-  `block3` int(11) NOT NULL,
+  `array_blocks` varchar(10) NOT NULL,
   `header2` varchar(50) NOT NULL,
   `subheader2` varchar(100) NOT NULL,
-  `step1` int(11) NOT NULL,
-  `step2` int(11) NOT NULL,
-  `step3` int(11) NOT NULL,
-  `step4` int(11) NOT NULL,
-  `step5` int(11) NOT NULL,
+  `array_steps` varchar(10) NOT NULL,
   `step_size` varchar(10) NOT NULL,
   `linkName` varchar(20) NOT NULL,
   `hexagon` varchar(255) NOT NULL,
   PRIMARY KEY (`mainpage_id`),
   UNIQUE KEY `carousel_id` (`carousel_id`),
-  KEY `FK_mainpage_block` (`block1`),
-  KEY `FK_mainpage_block_2` (`block2`),
-  KEY `FK_mainpage_block_3` (`block3`),
-  KEY `FK_mainpage_step` (`step1`),
-  KEY `FK_mainpage_step_2` (`step2`),
-  KEY `FK_mainpage_step_3` (`step3`),
-  KEY `FK_mainpage_step_4` (`step4`),
-  KEY `FK_mainpage_step_5` (`step5`),
-  CONSTRAINT `FK_mainpage_block` FOREIGN KEY (`block1`) REFERENCES `aboutus` (`block_id`),
-  CONSTRAINT `FK_mainpage_block_2` FOREIGN KEY (`block2`) REFERENCES `aboutus` (`block_id`),
-  CONSTRAINT `FK_mainpage_block_3` FOREIGN KEY (`block3`) REFERENCES `aboutus` (`block_id`),
-  CONSTRAINT `FK_mainpage_step` FOREIGN KEY (`step1`) REFERENCES `step` (`step_id`),
-  CONSTRAINT `FK_mainpage_step_2` FOREIGN KEY (`step2`) REFERENCES `step` (`step_id`),
-  CONSTRAINT `FK_mainpage_step_3` FOREIGN KEY (`step3`) REFERENCES `step` (`step_id`),
-  CONSTRAINT `FK_mainpage_step_4` FOREIGN KEY (`step4`) REFERENCES `step` (`step_id`),
-  CONSTRAINT `FK_mainpage_step_5` FOREIGN KEY (`step5`) REFERENCES `step` (`step_id`)
+  KEY `FK_mainpage_block` (`array_blocks`),
+  KEY `FK_mainpage_step` (`array_steps`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.mainpage: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.mainpage: ~0 rows (approximately)
 /*!40000 ALTER TABLE `mainpage` DISABLE KEYS */;
-INSERT INTO `mainpage` (`mainpage_id`, `title`, `carousel_id`, `slider_header`, `slider_text`, `slider_texture_url`, `slider_line_url`, `slider_button_text`, `header1`, `subLineImage`, `subheader1`, `block1`, `block2`, `block3`, `header2`, `subheader2`, `step1`, `step2`, `step3`, `step4`, `step5`, `step_size`, `linkName`, `hexagon`) VALUES
-	(1, 'IntITA', 1, 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Програміст — сама древня сучасна професія на планеті Земля!', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'Почати />', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', 1, 2, 3, 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', 1, 2, 3, 4, 5, '958px', 'детальніше ...', '/css/images/hexagon.png');
+INSERT INTO `mainpage` (`mainpage_id`, `title`, `carousel_id`, `slider_header`, `slider_text`, `slider_texture_url`, `slider_line_url`, `slider_button_text`, `header1`, `subLineImage`, `subheader1`, `array_blocks`, `header2`, `subheader2`, `array_steps`, `step_size`, `linkName`, `hexagon`) VALUES
+	(1, 'IntITA', 1, 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Програміст — сама древня сучасна професія на планеті Земля!', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ />', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png');
 /*!40000 ALTER TABLE `mainpage` ENABLE KEYS */;
 
 
@@ -591,7 +605,7 @@ CREATE TABLE IF NOT EXISTS `step` (
   PRIMARY KEY (`step_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.step: ~4 rows (approximately)
+-- Dumping data for table int_ita_db.step: ~5 rows (approximately)
 /*!40000 ALTER TABLE `step` DISABLE KEYS */;
 INSERT INTO `step` (`step_id`, `stepName`, `stepNumber`, `stepTitle`, `stepImagePath`, `stepImage`, `stepText`) VALUES
 	(1, 'крок', 1, 'Реєстрація на сайті', '/css/images/', 'step1.jpg', 'Щоб Ви отримали доступ до переліку курсів та пройти пробні безкоштовні модулі і заняття зареєструйтесь на сайті.'),
@@ -676,7 +690,7 @@ CREATE TABLE IF NOT EXISTS `studentsaccess` (
   KEY `FK_studentsaccess_modules` (`module_id`),
   CONSTRAINT `FK_courseaccess_students` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`),
   CONSTRAINT `FK_studentsaccess_course` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_ID`),
-  CONSTRAINT `FK_studentsaccess_lectures` FOREIGN KEY (`lecture_id`) REFERENCES `lectures` (`lecture_ID`),
+  CONSTRAINT `FK_studentsaccess_lectures` FOREIGN KEY (`lecture_id`) REFERENCES `lecture` (`lectureID`),
   CONSTRAINT `FK_studentsaccess_modules` FOREIGN KEY (`module_id`) REFERENCES `modules` (`module_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
