@@ -13,7 +13,7 @@ $main['modules'] = array(
 		'wwwDirName' => 'www',	//this is your document root directory (where the webserver looks into)
 
 		//Optional params of built-in auth-system:
-		'authMode' => false,	//switch internal authentication system. can be switched on only if you import the regard SQL dump and configure dbAdmin connector.
+		'authMode' => true,	//switch internal authentication system. can be switched on only if you import the regard SQL dump and configure dbAdmin connector.
 		'openMode' => true,	//use it for temporary reseting all access limitations
 		'logMode' => false,	//enable logging. can't be switched on if authMode=false
 		/**
