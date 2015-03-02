@@ -67,10 +67,18 @@ div.nextLessons {
     width: 230px;
     height:44px;
     border-radius: 10px;
+    border:none;
     color:#ffffff;
     background-color:#4b75a4;
+    box-shadow:0px 2px 0px #7f7f7f;
+    font-size: medium;
 }
 .nextLesonLink input[type="submit"]:hover {
-    box-shadow:0 0 3px #2f2f80;
+    border-top-color: #454545;
+    background: #454545;
+    color: #fcfcfc;
     cursor: pointer;
+}
+.nextLesonLink a {
+    text-decoration: none;
 }

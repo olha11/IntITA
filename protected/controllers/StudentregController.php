@@ -28,7 +28,7 @@ class StudentRegController extends Controller
     {
         return array(
             array('allow',  // allow all users to perform 'index' and 'view' actions
-                'actions'=>array('index','view','UploadAvatar','Profile'),
+                'actions'=>array('index','view','edit','profile','sendletter'),
                 'users'=>array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -136,19 +136,20 @@ class StudentRegController extends Controller
                     $this->render("studentreg", array('model' => $model));
                 }else
                 {
+                    if($_FILES["upload"]["size"] > 1024*1024*0.5)
+                    {
+                        Yii::app()->user->setFlash('avatarmessage','Розмір файла перевищує 500кб');
+                    }elseif (is_uploaded_file($_FILES["upload"]["tmp_name"])) {
+                        $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
+                        $id='1'.'id';
+                        $_FILES["upload"]["name"]=$id . '.'. $ext;
+                        move_uploaded_file($_FILES["upload"]["tmp_name"],
+                            Yii::app()->request->baseUrl ."css/images/".$_FILES["upload"]["name"]);
+                        $model->avatar= Yii::app()->request->baseUrl ."css/images/".$_FILES["upload"]["name"];
+                    }
                     $model->save();
-                        if(!empty($model->send_letter)) {
-                            $title = $model->firstName;
-                            $mess = $model->send_letter;
-                            // $to - кому отправляем
-                            $to = 'Wizlightdragon@gmail.com';
-                            // $from - от кого
-                            $from = $model->email;
-                            // функция, которая отправляет наше письмо.
-                            mail($to, $title, $mess, "Content-type: text/html; charset=utf-8 \r\n" . "From:" . $from . "\r\n");
-                        }
                     Yii::app()->user->setFlash('message','Ваші дані оновлено');
-                    $this->render("studentreg", array('model'=>$model));
+                    header('Location: '.$_SERVER['HTTP_REFERER']);
                 }
 
             } else {
@@ -201,28 +202,6 @@ class StudentRegController extends Controller
             Yii::app()->end();
         }
     }
-
-    public function actionUploadAvatar()
-    {
-        if($_FILES["upload"]["size"] > 1024*1024*0.5)
-        {
-            echo ("Розмір файла перевищує 500кб");
-            echo "<meta http-equiv=\"refresh\" content=\"1;url=" . $_SERVER['HTTP_REFERER'] . "\">";
-            exit;
-        }
-        if (is_uploaded_file($_FILES["upload"]["tmp_name"])) {
-            $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
-            $id='1'.'id';
-            $_FILES["upload"]["name"]=$id . '.'. $ext;
-            move_uploaded_file($_FILES["upload"]["tmp_name"],
-                Yii::app()->request->baseUrl ."css/images/".$_FILES["upload"]["name"]);
-            echo "<meta http-equiv=\"refresh\" content=\"1;url=" . $_SERVER['HTTP_REFERER'] . "\">";
-        } else {
-            echo("Помилка завантаження файла");
-            echo "<meta http-equiv=\"refresh\" content=\"1;url=" . $_SERVER['HTTP_REFERER'] . "\">";
-        }
-    }
-
     public function actionProfile()
     {
         $model=new StudentReg();
@@ -230,5 +209,30 @@ class StudentRegController extends Controller
         $this->render("studentprofile", array('model'=>$model));
 
     }
+    public function actionSendletter()
+    {
+        $model=StudentReg::model()->findByPk(1);
 
+        if($_POST['submit']) {
+            if(!empty($_POST['send_letter'])) {
+                $title = $_POST['letterTheme'];
+                $mess = $_POST['send_letter'];
+                // $to - кому отправляем
+                $to = 'Wizlightdragon@gmail.com';
+                // $from - от кого
+                $from = $model->email;
+                // функция, которая отправляет наше письмо.
+                mail($to, $title, $mess, "Content-type: text/html; charset=utf-8 \r\n" . "From:" . $from . "\r\n");
+                Yii::app()->user->setFlash('messagemail','Ваше повідомлення відправлено');
+            }
+            header('Location: '.$_SERVER['HTTP_REFERER']);
+        }
+    }
+    public function actionEdit()
+    {
+        $model=new StudentReg();
+
+        $this->render("studentprofileedit", array('model'=>$model));
+
+    }
 }

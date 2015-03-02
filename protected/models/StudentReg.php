@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'studentprofile':
  * @property integer $id
  * @property string $firstName
+ * @property string $middleName
  * @property string $secondName
  * @property string $nickname
  * @property string $birthday
@@ -17,11 +18,14 @@
  * @property string $educform
  * @property string $interests
  * @property string $aboutUs
+ * @property string $aboutMy
  */
 class StudentReg extends CActiveRecord
 {
     public $password_repeat;
     public $send_letter;
+public $upload;
+    public $letterTheme;
 	
 	public function getDbConnection()
     {
@@ -45,16 +49,16 @@ class StudentReg extends CActiveRecord
         return array(
             array('firstName, email, password, password_repeat', 'required', 'message'=>'Будь ласка введіть {attribute}.'),
             array('email', 'email', 'message'=>'Email не являється правильною {attribute} адресою'),
-            array('birthday', 'date','format' => 'dd.MM.yyyy'),
+            array('birthday', 'date','format' => 'dd.MM.yyyy','message'=>'Введіть дату народження в форматі дд.мм.рррр'),
             array('password', 'compare', 'compareAttribute'=>'password_repeat', 'message'=>'Паролі не співпадають'),
             array('firstName, secondName, nickname, email, password, education', 'length', 'max'=>255),
             array('birthday', 'length', 'max'=>11),
             array('phone', 'length', 'max'=>15),
             array('educform', 'length', 'max'=>60),
-            array('address, interests, aboutUs,send_letter', 'safe'),
+            array('address, interests, aboutUs,send_letter','safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, firstName, secondName, nickname, birthday, email, password, phone, address, education, educform, interests, aboutUs, password_repeat', 'safe', 'on'=>'search'),
+            array('id, firstName, secondName, nickname, birthday, email, password, phone, address, education, educform, interests, aboutUs, password_repeat, middleName,aboutMy, avatar, upload', 'safe', 'on'=>'search'),
         );
 	}
 
@@ -77,6 +81,7 @@ class StudentReg extends CActiveRecord
         return array(
             'id' => 'ID',
             'firstName' => 'Ім\'я',
+            'middleName'=> 'По-батькові',
             'secondName' => 'Прізвище',
             'nickname' => 'Нік',
             'birthday' => 'День народження',
@@ -87,9 +92,13 @@ class StudentReg extends CActiveRecord
             'address' => 'Адреса',
             'education' => 'Освіта',
             'educform' => 'Форма навчання',
-            'interests' => 'Захоплення',
+            'interests' => 'Інтереси',
             'aboutUs' => 'Звідки про нас?',
-            'send_letter'=> 'Лист',
+            'send_letter'=> 'Повідомлення',
+            'letterTheme'=> 'Тема',
+            'aboutMy'=> 'Про себе',
+            'avatar'=> 'Аватар',
+            'upload'=> 'Up',
         );
 	}
 
@@ -113,6 +122,7 @@ class StudentReg extends CActiveRecord
 
         $criteria->compare('id',$this->id);
         $criteria->compare('firstName',$this->firstName,true);
+        $criteria->compare('middleName',$this->middleName,true);
         $criteria->compare('secondName',$this->secondName,true);
         $criteria->compare('nickname',$this->nickname,true);
         $criteria->compare('birthday',$this->birthday,true);
@@ -124,7 +134,10 @@ class StudentReg extends CActiveRecord
         $criteria->compare('educform',$this->educform,true);
         $criteria->compare('interests',$this->interests,true);
         $criteria->compare('aboutUs',$this->aboutUs,true);
+        $criteria->compare('aboutMy',$this->aboutMy,true);
         $criteria->compare('send_letter',$this->send_letter,true);
+        $criteria->compare('avatar',$this->avatar,true);
+        $criteria->compare('upload',$this->upload,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

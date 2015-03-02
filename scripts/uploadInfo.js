@@ -18,4 +18,4 @@ $(document).ready(function(e) {
     $('.uploadAvatar').bind('click',function(e) {
         $('#uploadAvatar').click();
     });
-    });
+});

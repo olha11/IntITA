@@ -190,8 +190,11 @@ div.lessonButFinal
     background-color:#4b75a4;
     margin: 10px 0px 20px 0px;
     float:right;
+    border:none;
 }
 .BBCode input[type="submit"]:hover {
     cursor: pointer;
-    box-shadow: 0 0 4px #2f2f80;
+    border-top-color: #454545;
+    background: #454545;
+    color: #fcfcfc;
 }
