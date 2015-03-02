@@ -8,7 +8,7 @@ class AAFileController extends CExtController
 	{
 		$data = array();
 
-		$this->layout = 'ext.autoAdmin.views.layouts.fileUpload';
+		$this->layout = 'ext.autoadmin.views.layouts.fileUpload';
 		$data['fieldID'] = Yii::app()->request->getParam('fieldID', '');
 		$data['interface'] = Yii::app()->request->getParam('interface', '');
 		if(!$data['fieldID'] || !preg_match('/^i_(\d+)$/i', $data['fieldID'], $matches) || !$data['interface'])
@@ -25,7 +25,7 @@ class AAFileController extends CExtController
 			$data['imgname'] = $this->copyImage('file', $fileDirs[$fileDirKey]);
 			$data['img'] = getimagesize(Yii::app()->basePath.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.Yii::app()->modules['autoadmin']['wwwDirName'].str_replace('/', DIRECTORY_SEPARATOR, $data['imgname']));
 		}
-		$this->render('ext.autoAdmin.views.fileUpload', $data);
+		$this->render('ext.autoadmin.views.fileUpload', $data);
 	}
 
 	function copyImage($var, $uploadDir='/i/other')

@@ -53,7 +53,7 @@ class AutoAdminAccess
 		{
 			throw new CHttpException(403, Yii::t('AutoAdmin.access', 'Open Mode is inactive, but the interface {alias} is unknown. There is need to to set the correct configuration.', array('{alias}'=>$interfaceAlias)));
 		}
-		$this->setOpenMode(!empty(Yii::app()->modules['autoAdmin']['openMode']));
+		$this->setOpenMode(!empty(Yii::app()->modules['autoadmin']['openMode']));
 	}
 
 	/**
@@ -211,6 +211,6 @@ class AutoAdminAccess
 	 */
 	public static function sqlAdminTableName($tableName)
 	{
-		return (!empty(Yii::app()->modules['autoAdmin']['dbAdminSchema']) ? Yii::app()->modules['autoAdmin']['dbAdminSchema'].'.' : '').self::$dbTablePrefix.$tableName;
+		return (!empty(Yii::app()->modules['autoadmin']['dbAdminSchema']) ? Yii::app()->modules['autoadmin']['dbAdminSchema'].'.' : '').self::$dbTablePrefix.$tableName;
 	}
 }

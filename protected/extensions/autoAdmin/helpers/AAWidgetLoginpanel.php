@@ -23,13 +23,12 @@ final class AAWidgetLoginpanel extends CWidget
 		{
 			?>
 			<div id="logout">
-				<?php echo Yii::t('AutoAdmin.access', 'You\'ve entered as <b>{userName}</b>', array('{userName}'=>$this->userName))?>. <span id="logout-link">[<a href="<?php echo $this->controller->createUrl('autoAdmin/aaauth/logout')?>"><?php echo Yii::t('AutoAdmin.access', 'logout')?></a>]</span>
+				<?php echo Yii::t('AutoAdmin.access', 'You\'ve been entered as <b>{userName}</b>', array('{userName}'=>$this->userName))?>. <span id="logout-link">[<a href="<?php echo $this->controller->createUrl('aaauth/logout')?>"><?php echo Yii::t('AutoAdmin.access', 'logout')?></a>]</span>
 				<?php
 				if($this->userLevel && in_array($this->userLevel, array('admin', 'root')))
 				{
 					?>
-					<br/><span id="access-link"><a href="<?php echo $this->controller->createUrl('autoAdmin/aaauth/users')?>"><?php echo Yii::t('AutoAdmin.access', 'Panel\'s users managing')?></a></span>
-					<br/><span id="generator-link"><a href="<?php echo $this->controller->createUrl('autoAdmin/aagenerator/index')?>"><?php echo Yii::t('AutoAdmin.generator', 'AutoAdmin Generator')?></a></span>
+					<br/><span id="access-link"><a href="<?php echo $this->controller->createUrl('aaauth/users')?>"><?php echo Yii::t('AutoAdmin.access', 'Panel\'s users managing')?></a></span>
 					<?php
 				}
 				?>

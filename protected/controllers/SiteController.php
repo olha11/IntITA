@@ -2,6 +2,16 @@
 
 class SiteController extends Controller
 {
+	/* @var $mainpage Mainpage*/
+	/* @var $modelCarousel Carousel */
+	/* @var $step1 Step*/
+	/* @var $step2 Step*/
+	/* @var $step3 Step*/
+	/* @var $step4 Step*/
+	/* @var $step5 Step*/
+	/* @var $objAbout1 AboutUs*/
+	/* @var $objAbout2 AboutUs*/
+	/* @var $objAbout3 AboutUs*/
 	/**
 	 * Declares class-based actions.
 	 */
@@ -29,7 +39,76 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index1.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$modelCarousel = new Carousel();
+
+		$mainpage = new Mainpage(1);
+		$mainpage->setValueById(1);
+		$objAbout1 = new AboutUs(1);
+		$objAbout1->setValuesById(1);
+		$objAbout2 = new AboutUs(2);
+		$objAbout2->setValuesById(2);
+		$objAbout3 = new AboutUs(3);
+		$objAbout3->setValuesById(3);
+		$step1=new Step(1);
+		$step1->setValueById(1);
+		$step2=new Step(2);
+		$step2->setValueById(2);
+		$step3=new Step(3);
+		$step3->setValueById(3);
+		$step4=new Step(4);
+		$step4->setValueById(4);
+		$step5=new Step(5);
+		$step5->setValueById(5);
+		$arrayAboutUs = array(
+			'objAbout1'=>$objAbout1,
+			'objAbout2'=>$objAbout2,
+			'objAbout3'=>$objAbout3,
+		);
+		$arraySteps = array(
+			'step1'=>$step1,
+			'step2'=>$step2,
+			'step3'=>$step3,
+			'step4'=>$step4,
+			'step5'=>$step5,
+		);
+		$sliderPictures = array(
+			'slider1'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(1)->images_path.$modelCarousel->findByPk(1)->picture_url,
+			'slider2'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(2)->images_path.$modelCarousel->findByPk(2)->picture_url,
+			'slider3'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(3)->images_path.$modelCarousel->findByPk(3)->picture_url,
+			'slider4'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(4)->images_path.$modelCarousel->findByPk(4)->picture_url,
+		);
+
+
+		$this->render('index', array(
+			'slider1'=>$sliderPictures['slider1'],
+			'slider2'=>$sliderPictures['slider2'],
+			'slider3'=>$sliderPictures['slider3'],
+			'slider4'=>$sliderPictures['slider4'],
+			'mainpage'=>array(
+				'sliderLine'=> $mainpage->slider_line_url,
+				'sliderTexture'=> $mainpage->slider_texture_url,
+				'buttonStart'=>$mainpage->slider_button_text,
+				'sliderHeader'=>$mainpage->slider_header,
+				'sliderText'=>$mainpage->slider_text,
+				'title'=>$mainpage->title,
+				'header1'=>$mainpage->header1,
+				'header2'=>$mainpage->header2,
+				'hexagon'=>$mainpage->hexagon,
+				'linkName'=>$mainpage->linkName,
+				'subLineImage'=>$mainpage->subLineImage,
+				'stepSize'=>$mainpage->step_size,
+				'subheader1'=>$mainpage->subheader1,
+				'subheader2'=>$mainpage->subheader2,
+			),
+			'block1'=>$arrayAboutUs['objAbout1'],
+			'block2'=>$arrayAboutUs['objAbout2'],
+			'block3'=>$arrayAboutUs['objAbout3'],
+			'step1'=>$arraySteps['step1'],
+			'step2'=>$arraySteps['step2'],
+			'step3'=>$arraySteps['step3'],
+			'step4'=>$arraySteps['step4'],
+			'step5'=>$arraySteps['step5'],
+		));
 	}
 
 	/**

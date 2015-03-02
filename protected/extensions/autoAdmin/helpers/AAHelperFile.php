@@ -13,7 +13,7 @@ class AAHelperFile
 	 */
 	public static function srcToPath($src)
 	{
-		return Yii::app()->basePath.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.Yii::app()->modules['autoAdmin']['wwwDirName'].str_replace('/', DIRECTORY_SEPARATOR, $src);
+		return Yii::app()->basePath.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.Yii::app()->modules['autoadmin']['wwwDirName'].str_replace('/', DIRECTORY_SEPARATOR, $src);
 	}
 
 	/**

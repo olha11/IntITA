@@ -8,6 +8,7 @@
  * @property string $stepName
  * @property integer $stepNumber
  * @property string $stepTitle
+ * @property string $stepImagePath
  * @property string $stepImage
  * @property string $stepText
  *
@@ -23,20 +24,24 @@ class Step extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
-    public function setValueById($id)
-    {
-		$this->stepImage=Yii::app()->request->baseUrl.$this->findByPk($id)->stepImage;
-        $this->stepTitle=$this->findByPk($id)->stepTitle;
-        $this->stepText=$this->findByPk($id)->stepText;
-        $this->stepNumber=$this->findByPk($id)->stepNumber;
-        $this->stepName=$this->findByPk($id)->stepName;
-    }
+	function Step($id){
+		//setValueById($id);
+	}
 
-    public function tableName()
+	public function tableName()
 	{
 		return 'step';
 	}
 
+
+	public function setValueById($id)
+	{
+		$this->stepImage=Yii::app()->request->baseUrl.$this->findByPk($id)->stepImagePath.$this->findByPk($id)->stepImage;
+		$this->stepTitle=$this->findByPk($id)->stepTitle;
+		$this->stepText=$this->findByPk($id)->stepText;
+		$this->stepNumber=$this->findByPk($id)->stepNumber;
+		$this->stepName=$this->findByPk($id)->stepName;
+	}
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -48,11 +53,11 @@ class Step extends CActiveRecord
 			array('stepNumber, stepTitle, stepImage, stepText', 'required'),
 			array('stepNumber', 'numerical', 'integerOnly'=>true),
 			array('stepName', 'length', 'max'=>30),
-			array('stepTitle', 'length', 'max'=>50),
-			array('stepImage, stepText', 'length', 'max'=>255),
+			array('stepTitle, stepImage', 'length', 'max'=>50),
+			array('stepImagePath', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('step_id, stepName, stepNumber, stepTitle, stepImage, stepText', 'safe', 'on'=>'search'),
+			array('step_id, stepName, stepNumber, stepTitle, stepImagePath, stepImage, stepText', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -82,6 +87,7 @@ class Step extends CActiveRecord
 			'stepName' => 'Step Name',
 			'stepNumber' => 'Step Number',
 			'stepTitle' => 'Step Title',
+			'stepImagePath' => 'Step Image Path',
 			'stepImage' => 'Step Image',
 			'stepText' => 'Step Text',
 		);
@@ -109,6 +115,7 @@ class Step extends CActiveRecord
 		$criteria->compare('stepName',$this->stepName,true);
 		$criteria->compare('stepNumber',$this->stepNumber);
 		$criteria->compare('stepTitle',$this->stepTitle,true);
+		$criteria->compare('stepImagePath',$this->stepImagePath,true);
 		$criteria->compare('stepImage',$this->stepImage,true);
 		$criteria->compare('stepText',$this->stepText,true);
 

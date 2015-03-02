@@ -18,11 +18,11 @@
  * 
  * @todo Gii-like automatic creation interfaces configurations (Controllers & Actions).
  */
-Yii::import('ext.autoAdmin.*');
-Yii::import('ext.autoAdmin.models.*');
-Yii::import('ext.autoAdmin.models.field.*');
-Yii::import('ext.autoAdmin.helpers.*');
-Yii::import('ext.autoAdmin.controllers.*');
+Yii::import('ext.autoadmin.*');
+Yii::import('ext.autoadmin.models.*');
+Yii::import('ext.autoadmin.models.field.*');
+Yii::import('ext.autoadmin.helpers.*');
+Yii::import('ext.autoadmin.controllers.*');
 
 class AutoAdmin extends CWebModule
 {
@@ -126,12 +126,12 @@ class AutoAdmin extends CWebModule
 	 *
 	 * @var string Path to default layout. Can be configured.
 	 */
-	public $layout = 'ext.autoAdmin.views.layouts.main';
+	public $layout = 'ext.autoadmin.views.layouts.main';
 	/**
 	 *
 	 * @var string Path to layout extension views.
 	 */
-	public $viewsPath = 'ext.autoAdmin.views.';
+	public $viewsPath = 'ext.autoadmin.views.';
 	/**
 	 * 
 	 * @var array Additional view scripts to display in the list & edit modes
@@ -171,11 +171,10 @@ class AutoAdmin extends CWebModule
 	public function init()
 	{
 		Yii::app()->user->setStateKeyPrefix('AUTOADMIN');
-		$this->controllerMap['aafile'] = array('class'=>'ext.autoAdmin.controllers.AAFileController');
-		$this->controllerMap['aaajax'] = array('class'=>'ext.autoAdmin.controllers.AAAjaxController');
-		$this->controllerMap['aaauth'] = array('class'=>'ext.autoAdmin.controllers.AAAuthController');
-		$this->controllerMap['aagenerator'] = array('class'=>'ext.autoAdmin.controllers.AAGeneratorController');
-		self::$assetPath = Yii::app()->assetManager->publish(Yii::getPathOfAlias('ext.autoAdmin.assets'));
+		$this->controllerMap['aafile'] = array('class'=>'ext.autoadmin.controllers.AAFileController');
+		$this->controllerMap['aaajax'] = array('class'=>'ext.autoadmin.controllers.AAAjaxController');
+		$this->controllerMap['aaauth'] = array('class'=>'ext.autoadmin.controllers.AAAuthController');
+		self::$assetPath = Yii::app()->assetManager->publish(Yii::getPathOfAlias('ext.autoadmin.assets'));
 
 		$this->cache = new AACache();
 		$this->_data = new AAData();
@@ -235,7 +234,7 @@ class AutoAdmin extends CWebModule
 		if(Yii::app()->request->getQuery('foreign', null))
 		{
 			$this->_iframeMode = Yii::app()->request->getQuery('foreign');
-			$this->_controller->layout = 'ext.autoAdmin.views.layouts.iframe';
+			$this->_controller->layout = 'ext.autoadmin.views.layouts.iframe';
 		}
 		else
 			$this->_controller->layout = $this->layout;
@@ -256,7 +255,7 @@ class AutoAdmin extends CWebModule
 		$this->_viewData = array(
 			'getParams'		=> $_GET,
 			'viewsPath'		=> $this->viewsPath,
-			'iframeMode'	=> (bool)$this->_iframeMode,
+			'iframeMode'	=> $this->_iframeMode,
 		);
 
 		if(parent::beforeControllerAction($controller, $action))
@@ -546,7 +545,7 @@ class AutoAdmin extends CWebModule
 						$viewData['fieldName'] = $field->formInputName();
 					}
 				}
-				$this->_controller->layout = 'ext.autoAdmin.views.layouts.fileUpload';
+				$this->_controller->layout = 'ext.autoadmin.views.layouts.fileUpload';
 				$this->_controller->render($this->viewsPath.'fileUpload', $viewData);
 				break;
 			}

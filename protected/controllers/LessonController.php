@@ -1,5 +1,5 @@
 <?php
-
+/* @var $lecture Lecture*/
 
 class LessonController extends Controller{
 

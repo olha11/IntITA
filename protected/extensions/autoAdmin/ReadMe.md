@@ -1,6 +1,6 @@
-The AutoAdmin is a "CMS framework". It's a perfect solution for web projects with **free designed databases**. It really does for portals as well as for "turnkey websites". Easy-to-Learn and easy-to-use.
+AutoAdmin is a "CMS framework". It's a perfect solution for web projects with **free designed databases**. It really does for portals as well as for "turnkey websites". Easy-to-Learn and easy-to-use.
 
-The AutoAdmin includes built-in module to provide shared access to interfaces with different rights.
+AutoAdmin includes built-in module to provide shared access to interfaces with different rights.
 
 ##Links
 
@@ -9,7 +9,7 @@ The AutoAdmin includes built-in module to provide shared access to interfaces wi
 
 ##Requirements
 
-PHP 5.3, Yii 1.1x
+Yii 1.1 or above (AutoAdmin requires jQuery 1.7.1 and jQuery UI 1.8).
 
 The extension uses PDO interfaces and was tested on MySQL and PostgreSQL databases.
 
@@ -26,7 +26,7 @@ _*Note:* There are several enhancements in version 1.1 that have simplified setu
 There are only two steps to install the AutoAdmin extension:
 
 1. Put the distributive files into _[protected/extensions]_ folder of your Yii application.
-2. Create module folder _[autoadmin]_ in _[protected/modules]_ directory using a standart Yii module structure, but without module class file _AutoAdminModule.php_ (which inherites _CWebModule_) - it will be included from the extension. 
+2. Create module folder _[autoadmin]_ in _[protected/modules]_ directory using a standart Yii module structure, but without module class AutoAdminModule.php (which inherites _CWebModule_) - it will be included from the extension. 
 
 ###Yii config setup
 
@@ -35,7 +35,7 @@ Set necessary parameters:
 [php]
 <?php
 //In this example we read the main config.
-//Note if you use a fully separate config just set appropriate sections in the returning array.
+//Note if you use fully separate config just set approriate sections in the returning array.
 $main = require(dirname(__FILE__).'/main.php');
 
 $main['modules'] = array(
@@ -107,7 +107,7 @@ $main['modules'] = array(
 );
 ~~~
 
-Create a dedicated user for service DB (imported from distributive dump) and grant him appropriate access rights. If you use the only, common DB, just clone settings from a primary connection to "dbAdmin".
+Create a dedicated user for service DB (imported from distributive dump) and grant him approriate access rights. If you use the only, common DB, just clone settings from a primary connection to "dbAdmin".
 
 ~~~
 [php]
@@ -132,7 +132,7 @@ $main['components'] = array(
 		//...
 ~~~
 
-If you use different DB schemes, you may configure them using special params:
+If you use different DB schemas, you may configure them using special params:
 ~~~
 [php]
 $main['modules'] = array(
@@ -263,85 +263,29 @@ $this->module->foreignLink('spheres', array(
 
 Much more examples you can find in [the AutoAdmin showroom](http://palamarchuk.info/autoadmin/).
 
-###Fields configuration
-Data fields configurations must be set by passing a special-formatted array as an argument to the _AutoAdmin::fieldsConf()_ function.
-~~~
-[php]
-	$this->module->fieldsConf(array(
-		array([SQL field name], [AutoAdmin field type], [Form label], array([options])),
-		//...
-	));
-~~~
+###Field types
+You can easily develope custom field types. A Field class have to inherite AAField and redefine methods you want to make custom.
 
-To avoid "monkey-coding" you can use the AutoAdmin Code Generator to generate default interfaces (Yii actions) based on SQL tables service info. To use the Generator go to the "_/autoadmin/aagenerator/_" URL or just click on the link in the right bottom corner of any page. The feature requires the root access level (or disabling the authentication system).
-
-![AutoAdmin Code Generator](http://palamarchuk.info/i/autoadmin/autoadmin_gen1.png "")
-
-AutoAdmin provides various built-in types. Most of them accept the following standart options:
-
- * _show_: Data from a field should be displayed in the list mode.
- * _search_: A field can be searched by in the list mode.
- * _null_: A field can contain the NULL value.
- * _default_: Field's default value.
- * _bind_: The list query will be constrained with _WHERE ... AND field-name=bind-value_. The _bind-value_ is the value of this option.
- * _bindBy_: The list query will be constrained with _WHERE ... AND field-name=bind-value_. The _bind-value_ is a value passed by a parent interface in a parameter named as PrimaryKey field name from a parent interface. Usually it just has _'id'_ value.
- * _default_: Field's default value.
- * _pattern_: A regexp pattern as input parameter for HTML 5.
+AutoAdmin includes the following types:
 
 #### string
-Classical text strings. Usually used with VARCHAR SQL type.
-
-Additional options
-
-* _maxlength_: The maximum length of a string.
+Standart text strings. Usually used with VARCHAR SQL type.
 
 #### text
 Textareas for HTML-formatted texts. Usually used with TEXT type.
-
-Additional options
-
-* _directoryPath_: HTML-oriented diectory path to upload images to. Won't be stored as part of a value in DB.
 
 #### tinytext
 Textareas for short texts without complicated formatting. Usually used with TEXT type.
 
 #### wysiwig
 TineMCE visual text editor. Usually used with TEXT type.
-To use this field you need to download the ["TinyMCE jQuery package"](http://www.tinymce.com/download/download.php), then unpack it to [/js/] directory of your DocumentRoot. If you use another JS directory you can set it up in options, as well as documented TinyMCE options (overriding the default ones):
-
-~~~
-[php]
-	...
-	array('content', 'wysiwig', 'Page content', array('show', 'null', 'directoryPath'=>'/i/articles/', 'subDirectoryPath'=>date('Y-m'),
-			'tinyMCE'=>array(
-				'dir'=>'/js/tinymce',
-				'options'=>array(
-					//Documented TineMCE options which you can override individually
-					'plugins' => 'pagebreak,style,layer,table,save,advhr,advimage',
-				),
-			),
-		)),
-~~~
+Note: to use this field you need to install [TineMCE extension](http://www.yiiframework.com/extension/tinymce).
 
 #### num
-Numbers - integer or decimal. Usually used with INTEGER and DECIMAL (NUMERIC, FLOAT etc.) types.
-
-Additional options:
-
-* _max_: The maximum number.
-* _min_: The minimum number.
+Numbers - integer and decimal. Usually used with INTEGER and DECIMAL (NUMERIC, FLOAT etc.) types.
 
 #### enum
 Predefined sets of values. Usually used with ENUM type.
-
-Obligatory options:
-
-* _enum_: An array of 'SQL value'=>'Option label' pairs
-
-~~~
-[php]
-	..., 'enum'=>array('deg1'=>'I degree', 'deg2'=>'II degree', 'deg3'=>'III degree'), ...
-~~~
 
 #### date
 Dates. Usually used with DATE type.
@@ -358,68 +302,27 @@ Boolean checkbox (yes or no). Usually used with BOOLEAN type.
 #### password
 For passwords. Will be hashed.
 
-Additional options:
-
-* _maxlength_: The maximum password length.
+#### file
+To upload files in public areas and give links to them. Uses database to store path to file only.
 
 #### image
 To upload images. Uses database to store path to file only.
 
-Obligatory options:
-
-* _directoryPath_: HTML-oriented diectory path to upload images to. Won't be stored as part of a value in DB.
-
-Additional options:
-
-* _description_: Additional info for an upload form.
-* _subDirectoryPath_: Relative directory path after _directoryPath_. Will be stored as part of a value in DB. Used for dynamic subdirectories.
-* _popup_: The boolean parameter used to show images by popuping them instead of inline displaying in the listmode.
-
-~~~
-[php]
-	..., 'directoryPath'=>'/i/flags/120', 'subDirectoryPath'=>date('Ym'), 'description'=> '120x80px'
-~~~
-
-#### file
-To upload files in public areas and give links to them. Uses database to store path to file only.
-
-Obligatory options:
-
-* _directoryPath_: HTML-oriented diectory path to upload images to. Won't be stored as part of a value in DB.
-
-Additional options:
-
-* _description_: Additional info for an upload form.
-* _subDirectoryPath_: Relative directory path after _directoryPath_. Will be stored as part of a value in DB. Used for dynamic subdirectories.
-
 #### foreign
 For values from other tables which are linked with the field through a foreign key (you may use virtual connection like as in MyISAM).
 
-Obligatory options:
-* _foreign_: Describes one-to-many connections.
-~~~
-[php]
-	..., 'foreign', array(
-		'table'	=> 'continents',
-			'pk'		=> 'id',	//foreign primary key
-			'select'	=> array('name_en'),	//foreign fields to select
-			'order'		=> 'name_en',	//foreign fields to order by
-		), ...
-~~~
-
 ###Spatial field types
-You can manage spatial SQL data in the AutoAdmin after installing [the AutoAdminGIS extension](http://www.yiiframework.com/extension/autoadmingis). After that the following field types will be accessible: **gispoint**, **gislinestring**, **gispolygon**. For more information see [AutoAdminGIS page](http://www.yiiframework.com/extension/autoadmingis).
+You can manage spatial SQL data in AutoAdmin after installing [the AutoAdminGIS extension](http://www.yiiframework.com/extension/autoadmingis). After that the following field types will be accessible: **gispoint**, **gislinestring**, **gispolygon**. For more information see [AutoAdminGIS page](http://www.yiiframework.com/extension/autoadmingis).
 
 ###Custom field types
 AudoAdmin is an extendable system. Particularly you can create your own field types by programming classes that implement *AAIField* interface.
 
-You may also inherit built-in field-type classes and modify theirs behavior, add custom options etc.
-
-Complicated content-management tasks may require complex logic custom fields need. In that case you can create a sub-extension for the AutoAdmin. An example of such development is [the AutoAdminGIS extension](http://www.yiiframework.com/extension/autoadmingis).
+Complicated content-management tasks may require complex logic custom fields need. In that case you can create a subextension for AutoAdmin. An example of such development is [the AutoAdminGIS extension](http://www.yiiframework.com/extension/autoadmingis).
 
 ##Supported languages
-English, Russian.
+English, russian.
 
 ##What's next?
 
+* Gii-like auto-generator of interfaces.
 * Built-in interfaces to read all logs (now you have to list it in DB directly).

@@ -1809,3 +1809,311 @@ REQUEST_URI=/IntITA/
 in D:\xampp\htdocs\IntITA\protected\views\site\index.php (82)
 in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (89)
 in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/02 13:52:26 [error] [php] Object of class SiteController could not be converted to string (D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php:64)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (64)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/02 13:52:48 [error] [php] Object of class SiteController could not be converted to string (D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php:64)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (64)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/02 14:01:25 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\views\site\index.php:5)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#2 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(108): SiteController->render()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (5)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (108)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/02 14:04:49 [error] [php] Undefined index: sliderLine (D:\xampp\htdocs\IntITA\protected\views\site\index.php:8)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#2 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(108): SiteController->render()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (8)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (108)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/02 14:07:34 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.sliderTexture" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sliderTexture')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CModel.php(596): CActiveRecord->__get('sliderTexture')
+#2 D:\xampp\htdocs\IntITA\protected\views\site\index.php(5): CModel->offsetGet('sliderTexture')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(95): CController->render('index', Array)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/02 14:08:17 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.sliderTexture" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sliderTexture')
+#1 D:\xampp\htdocs\IntITA\protected\views\site\index.php(5): CActiveRecord->__get('sliderTexture')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(95): CController->render('index', Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#13 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/02 14:08:51 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.sliderTexture" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sliderTexture')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CModel.php(596): CActiveRecord->__get('sliderTexture')
+#2 D:\xampp\htdocs\IntITA\protected\views\site\index.php(5): CModel->offsetGet('sliderTexture')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(95): CController->render('index', Array)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/02 14:08:57 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.sliderTexture" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sliderTexture')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CModel.php(596): CActiveRecord->__get('sliderTexture')
+#2 D:\xampp\htdocs\IntITA\protected\views\site\index.php(5): CModel->offsetGet('sliderTexture')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(95): CController->render('index', Array)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/02 15:40:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin
+---
+2015/03/02 15:40:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/02 15:40:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/02 15:44:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin
+---
+2015/03/02 15:44:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/02 15:44:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/02 15:44:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/02 15:44:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/02 16:08:11 [error] [php] Missing argument 1 for Lecture::setLessonFooterValues(), called in D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php on line 11 and defined (D:\xampp\htdocs\IntITA\protected\models\Lecture.php:40)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): LessonController->runAction()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): LessonController->runActionWithFilters()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): LessonController->run()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php?r=lesson
+in D:\xampp\htdocs\IntITA\protected\models\Lecture.php (40)
+in D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php (11)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/02 16:09:43 [error] [exception.CException] exception 'CException' with message 'Property "Lecture.teacherImage" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(161): CComponent->__set('teacherImage', '/IntITA/css/ima...')
+#1 D:\xampp\htdocs\IntITA\protected\models\Lecture.php(69): CActiveRecord->__set('teacherImage', '/IntITA/css/ima...')
+#2 D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php(13): Lecture->setTeacherValues('/css/images/tea...', '\xD0\x86\xD0\xB2\xD0\xB0\xD0\xBD\xD0\xBE\xD0\xB2 \xD0\x86...', 'ivanov@intita.o...', '/067/56-569-56,...', 'ivanov.ivanov', 'https://www.goo...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): LessonController->actionIndex()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('lesson')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=lesson
+---
+2015/03/02 16:11:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "teacherprofile".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('teacherprofile')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=teacherprofile
+---
+2015/03/02 16:11:55 [error] [exception.CException] exception 'CException' with message 'Property "StudentReg.nickname" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('nickname')
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('nickname')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(StudentReg), 'nickname')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(StudentReg), 'nickname', Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(StudentReg), 'nickname', Array)
+#5 D:\xampp\htdocs\IntITA\protected\views\studentreg\studentreg.php(67): CActiveForm->textField(Object(StudentReg), 'nickname', Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('studentreg', Array, true)
+#10 D:\xampp\htdocs\IntITA\protected\controllers\StudentregController.php(158): CController->render('studentreg', Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StudentRegController->actionIndex()
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#21 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg')
+#22 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#23 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/IntITA/index.php?r=studentreg
+---
+2015/03/02 16:12:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "studentprofile".' in D:\xampp\htdocs\IntITA\protected\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(270): CController->missingAction('studentprofile')
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('studentprofile')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/stud...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/IntITA/index.php?r=studentreg/studentprofile
+---
+2015/03/02 16:13:11 [error] [exception.CException] exception 'CException' with message 'Property "StudentReg.nickname" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('nickname')
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('nickname')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(StudentReg), 'nickname')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(StudentReg), 'nickname', Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(StudentReg), 'nickname', Array)
+#5 D:\xampp\htdocs\IntITA\protected\views\studentreg\studentreg.php(67): CActiveForm->textField(Object(StudentReg), 'nickname', Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('studentreg', Array, true)
+#10 D:\xampp\htdocs\IntITA\protected\controllers\StudentregController.php(158): CController->render('studentreg', Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StudentRegController->actionIndex()
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('index')
+#21 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/inde...')
+#22 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#23 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/IntITA/index.php?r=studentreg/index
+---

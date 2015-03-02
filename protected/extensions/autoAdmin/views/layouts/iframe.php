@@ -16,6 +16,7 @@ Yii::app()->clientScript
 if(isset($this->breadcrumbs))
 {
 	$this->widget('zii.widgets.CBreadcrumbs', array(
+		'homeLink'=>'<a href="'.$this->createUrl('/').'/" id="home">Main panel</a>',
 		'links'=>$this->breadcrumbs,
 	));
 }

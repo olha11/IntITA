@@ -18,7 +18,7 @@ class AAAuthController extends CExtController
 		if(!Yii::app()->user->isGuest && Yii::app()->user->id)
 		{
 			$userName = Yii::app()->user->getState('firstname').' '.Yii::app()->user->getState('surname');
-			$this->render('ext.autoAdmin.views.login', array('userName'=>$userName, 'returnUrl'=>$returnURL));
+			$this->render('ext.autoadmin.views.login', array('userName'=>$userName, 'returnUrl'=>$returnURL));
 			Yii::app()->end();
 		}
 
@@ -44,7 +44,7 @@ class AAAuthController extends CExtController
 		}
 
 		$data['model'] = $model;
-		$this->render('ext.autoAdmin.views.loginForm', $data);
+		$this->render('ext.autoadmin.views.loginForm', $data);
 	}
 
 	/**
@@ -64,7 +64,7 @@ class AAAuthController extends CExtController
 		if(Yii::app()->user->isGuest && $this->isRootDefined())
 			Yii::app()->request->redirect('../login/');
 		elseif(!Yii::app()->user->isGuest && Yii::app()->user->level == 'user')
-			throw new CHttpException(403, Yii::t('AutoAdmin.access', 'You do not have permissions to access'));
+			throw new CHttpException(403);
 		
 		$this->module->dbConnection = 'dbAdmin';
 		$this->module->dbSchema = '';	//We must set to null the default schema, because of all the admin tables are named with AutoAdminAccess::sqlAdminTableName()
@@ -120,7 +120,7 @@ class AAAuthController extends CExtController
 	public function actionSections()
 	{
 		if(Yii::app()->user->isGuest || !in_array(Yii::app()->user->level, array('root', 'admin')))
-			throw new CHttpException(403, Yii::t('AutoAdmin.access', 'You do not have permissions to access'));
+			throw new CHttpException(403);
 			
 		$this->module->dbConnection = 'dbAdmin';
 		$this->module->dbSchema = '';
@@ -148,7 +148,7 @@ class AAAuthController extends CExtController
 	public function actionInterfaces()
 	{
 		if(Yii::app()->user->isGuest || !in_array(Yii::app()->user->level, array('root', 'admin')))
-			throw new CHttpException(403, Yii::t('AutoAdmin.access', 'You do not have permissions to access'));
+			throw new CHttpException(403);
 		$bk = Yii::app()->request->getParam('bk', array('id'=>null));
 		$sectionID = $bk['id'];
 
@@ -181,7 +181,7 @@ class AAAuthController extends CExtController
 				$data['actionURI'] = Yii::app()->request->getRequestUri();
 			}
 
-			$this->module->setPartialView('ext.autoAdmin.views.partialInterfacesImport', 'up');
+			$this->module->setPartialView('ext.autoadmin.views.partialInterfacesImport', 'up');
 			$this->module->setPartialViewData($data);
 		}
 
@@ -224,7 +224,7 @@ class AAAuthController extends CExtController
 	public function actionRights()
 	{
 		if(Yii::app()->user->isGuest || !in_array(Yii::app()->user->level, array('root', 'admin')))
-			throw new CHttpException(403, Yii::t('AutoAdmin.access', 'You do not have permissions to access'));
+			throw new CHttpException(403);
 		$bkp = Yii::app()->request->getParam('bkp', array(0=>array('id'=>null), 1=>array('id'=>null)));
 		$bk = Yii::app()->request->getParam('bk', array('id'=>null));
 		$userID = $bkp[0]['id'];

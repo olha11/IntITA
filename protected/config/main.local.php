@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright Alexander Palamarchuk, <a@palamarchuk.info>
+ * @copyright Alexander Palamarchuk, <a@palamarchuk.info> 
  */
 mb_internal_encoding('UTF-8');
 
@@ -20,7 +20,7 @@ return array(
 
 	'components'=>array(
 		'urlManager'=>array(
-			//'urlFormat'=>'path',
+			'urlFormat'=>'path',
 			'caseSensitive'=>false,
 			'showScriptName'=>false,
 			'urlSuffix' => '/',

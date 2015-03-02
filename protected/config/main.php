@@ -16,11 +16,11 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'ext.autoAdmin.*',
-		'ext.autoAdmin.models.*',
-		'ext.autoAdmin.models.field.*',
-		'ext.autoAdmin.helpers.*',
-		'ext.autoAdmin.controllers.*',
+		'ext.autoadmin.*',
+		'ext.autoadmin.models.*',
+		'ext.autoadmin.models.field.*',
+		'ext.autoadmin.helpers.*',
+		'ext.autoadmin.controllers.*',
 	),
 
 	'modules'=>array(
@@ -33,11 +33,11 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
 
-		'autoAdmin'=>array(
-			'class'=>'ext.autoAdmin.AutoAdmin',
-			'basePath' => dirname(__FILE__).'/../modules/autoAdmin',
+		'autoadmin'=>array(
+			'class'=>'ext.autoadmin.AutoAdmin',
+			'basePath' => dirname(__FILE__).'/../modules/autoadmin',
 			'wwwDirName' => 'www', //your DocumentRoot
-			'authMode' => false, //Switch on authorization system
+			'authMode' => true, //Switch on authorization system
 			'openMode' => true, //Use for temporary switching off all access limitations
 			'logMode' => false,
 		),
@@ -62,12 +62,17 @@ return array(
 			//'urlFormat'=>'path',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 
-				'<controller:aajax>/<action:\w+>' => 'autoAdmin/<controller>/<action>',
-				'<controller:afile>/<action:\w+>' => 'autoAdmin/<controller>/<action>',
-				'<controller:\w+>/foreign-<key:\w+>' => 'autoAdmin/<controller>/foreign<key>',
+
+				'/<module:autoadmin>' => 'autoadmin/default/index',
+				'/<module:autoadmin>/<controller:\w+>' => 'autoadmin/<controller>/index',
+				'/<module:autoadmin>/<controller:\w+>/<action:\w+>' => 'autoadmin/<controller>/<action>',
+
+				'<controller:aajax>/<action:\w+>' => 'autoadmin/<controller>/<action>',
+				'<controller:afile>/<action:\w+>' => 'autoadmin/<controller>/<action>',
+				'<controller:\w+>/foreign-<key:\w+>' => 'autoadmin/<controller>/foreign<key>',
 			),
 		),
 

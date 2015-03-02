@@ -29,7 +29,7 @@ class MainpageController extends Controller
 		$this->module->setPK('order');
 		$fieldsConf = array(
 			array('order', 'string', 'Порядок', array('show')),
-			array('picture_url', 'image', 'Фото', array('show', 'directoryPath'=>'./')),
+			array('picture_url', 'image', 'Фото', array('show', 'directoryPath'=>'./css/images/slider_img/small/')),
 			array('description', 'text', 'Опис', array('show', 'directoryPath'=>'./')),
 		);
 		$this->module->fieldsConf($fieldsConf);
@@ -45,7 +45,7 @@ class MainpageController extends Controller
 		$this->module->setPK('block_id');
 		$fieldsConf = array(
 			array('titleText', 'string', 'Header', array('show')),
-			array('iconImage', 'image', 'Фото', array('show', 'directoryPath'=>'./')),
+			array('iconImage', 'image', 'Фото', array('show', 'directoryPath'=>'./css/images/')),
 			array('textAbout', 'text', 'Текст блоку', array('show', 'directoryPath'=>'./')),
 			array('linkAddress', 'string', 'Посилання', array('show')),
 		);

@@ -22,6 +22,10 @@ class AboutUs extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	function AboutUs($id){
+		//setValuesById($id);
+	}
+
 	public function tableName()
 	{
 		return 'aboutus';
@@ -30,7 +34,7 @@ class AboutUs extends CActiveRecord
 	public function setValuesById($id)
 	{
 		$this->line2Image=Yii::app()->request->baseUrl.$this->findByPk($id)->line2Image;
-		$this->iconImage=Yii::app()->request->baseUrl.$this->findByPk($id)->iconImage;
+		$this->iconImage=Yii::app()->request->baseUrl.$this->findByPk($id)->imagesPath.$this->findByPk($id)->iconImage;
 		$this->titleText=$this->findByPk($id)->titleText;
 		$this->textAbout=$this->findByPk($id)->textAbout;
 		$this->linkAddress=$this->findByPk($id)->linkAddress;
