@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-03-03 19:05:29
+-- Date/time:                    2015-03-03 20:04:05
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -176,15 +176,19 @@ CREATE TABLE IF NOT EXISTS `aboutus` (
   `textAbout` varchar(255) NOT NULL,
   `linkAddress` varchar(255) NOT NULL,
   `imagesPath` varchar(255) NOT NULL,
+  `drop1Text` text NOT NULL,
+  `drop2Text` text NOT NULL,
+  `drop3Text` text NOT NULL,
+  `dropName` varchar(50) NOT NULL,
   PRIMARY KEY (`block_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table int_ita_db.aboutus: ~3 rows (approximately)
 /*!40000 ALTER TABLE `aboutus` DISABLE KEYS */;
-INSERT INTO `aboutus` (`block_id`, `line2Image`, `iconImage`, `titleText`, `textAbout`, `linkAddress`, `imagesPath`) VALUES
-	(1, '/css/images/line2.png', 'image1.png', 'Про що мрієш ти?', '<p>Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль? Закордонні подорожі, можливо, до екзотичних країн?</p>', 'https://www.google.com/', '/css/images/'),
-	(2, '/css/images/line2.png', 'image2.png', 'Що очікується від тебе', '<p>Програмування – це не так складно, як ти можеш уявляти. Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля.</p>', 'https://www.google.com/', '/css/images/'),
-	(3, '/css/images/line2.png', 'image3.png', 'Три кити Академії Програмування ІНТІТА', '<p>Три кити Академії Програмування ІНТІТА Самостійний графік навчання. Лише 100% необхідні знання. Засвоєння 100% знань!</p>', 'https://www.google.com/', '/css/images/');
+INSERT INTO `aboutus` (`block_id`, `line2Image`, `iconImage`, `titleText`, `textAbout`, `linkAddress`, `imagesPath`, `drop1Text`, `drop2Text`, `drop3Text`, `dropName`) VALUES
+	(1, '/css/images/line2.png', 'image1.png', 'Про що мрієш ти?', '<p>Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль? Закордонні подорожі, можливо, до екзотичних країн?</p>', 'http://localhost/IntITA/index.php?r=site/aboutdetail', '/css/images/', '', '', '', ''),
+	(2, '/css/images/line2.png', 'image2.png', 'Що очікується від тебе', '<p>Програмування – це не так складно, як ти можеш уявляти. Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля.</p>', 'http://localhost/IntITA/index.php?r=site/aboutdetail', '/css/images/', '', '', '', ''),
+	(3, '/css/images/line2.png', 'image3.png', 'Три кити Академії Програмування ІНТІТА', '<p>Три кити Академії Програмування ІНТІТА Самостійний графік навчання. Лише 100% необхідні знання. Засвоєння 100% знань!</p>', 'http://localhost/IntITA/index.php?r=site/aboutdetail', '/css/images/', '', '', '', '');
 /*!40000 ALTER TABLE `aboutus` ENABLE KEYS */;
 
 
@@ -372,6 +376,7 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
   `button_start` varchar(50) NOT NULL,
   `social_text` varchar(50) NOT NULL,
   `image_network` varchar(255) NOT NULL,
+  `form_fon` varchar(255) NOT NULL,
   PRIMARY KEY (`mainpage_id`),
   UNIQUE KEY `carousel_id` (`carousel_id`),
   KEY `FK_mainpage_block` (`array_blocks`),
@@ -380,8 +385,8 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
 
 -- Dumping data for table int_ita_db.mainpage: ~1 rows (approximately)
 /*!40000 ALTER TABLE `mainpage` DISABLE KEYS */;
-INSERT INTO `mainpage` (`mainpage_id`, `title`, `carousel_id`, `slider_header`, `slider_text`, `slider_texture_url`, `slider_line_url`, `slider_button_text`, `header1`, `subLineImage`, `subheader1`, `array_blocks`, `header2`, `subheader2`, `array_steps`, `step_size`, `linkName`, `hexagon`, `form_header_1`, `form_header_2`, `reg_text`, `button_start`, `social_text`, `image_network`) VALUES
-	(1, 'IntITA', 1, 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Програміст — сама древня сучасна професія на планеті Земля!', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ />', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png', 'Готові розпочати?', 'Введіть дані в форму нижче', 'розширена реєстрація', 'Розпочати', 'Ви можете також зареєструватися через соцмережі:', '/css/images/networking.png');
+INSERT INTO `mainpage` (`mainpage_id`, `title`, `carousel_id`, `slider_header`, `slider_text`, `slider_texture_url`, `slider_line_url`, `slider_button_text`, `header1`, `subLineImage`, `subheader1`, `array_blocks`, `header2`, `subheader2`, `array_steps`, `step_size`, `linkName`, `hexagon`, `form_header_1`, `form_header_2`, `reg_text`, `button_start`, `social_text`, `image_network`, `form_fon`) VALUES
+	(1, 'IntITA', 1, 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Програміст — сама древня сучасна професія на планеті Земля!', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ />', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png', 'Готові розпочати?', 'Введіть дані в форму нижче', 'розширена реєстрація', 'Розпочати', 'Ви можете також зареєструватися через соцмережі:', '/css/images/networking.png', '/css/images/formFon.png');
 /*!40000 ALTER TABLE `mainpage` ENABLE KEYS */;
 
 
