@@ -110,7 +110,7 @@ $post=StudentReg::model()->findByPk(1);
         </div>
         <div class="row">
             <?php echo $form->label($model,'interests'); ?>
-            <?php echo $form->textField($model,'interests',array('maxlength'=>255)); ?>
+            <?php echo $form->textField($model,'interests',array('maxlength'=>255, 'placeholder'=>'введіть Ваші інтереси через кому')); ?>
             <span><?php echo $form->error($model,'interests'); ?></span>
         </div>
         <div class="row">

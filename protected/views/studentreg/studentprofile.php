@@ -75,7 +75,17 @@ $post=StudentReg::model()->findByPk(1);
                         <p> <span class="colorP">Освіта:</span> </br><?php echo $post->education;?></p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP">Інтереси:</span> </br><?php echo $post->interests;?></p>
+                        <p> <span class="colorP">Інтереси:</span> </br>
+                            <?php
+                                $interestArray=explode(",", $post->interests);
+                                for ($i = 0; $i < count($interestArray); $i++)
+                                {
+                            ?>
+                                    <span class="interestBG"><?php echo $interestArray[$i]." ";?></span>
+                            <?php
+                                }
+                            ?>
+                        </p>
                     </div>
                     <div class="aboutInfo">
                         <p> <span class="colorP">Завершенні курси:</span> </br>Курси самогоних апаратів 6-го рівня</p>
@@ -127,10 +137,10 @@ $post=StudentReg::model()->findByPk(1);
                     <p>Курс:</br> <span class="colorP">"Апгрейд головного мозку"</span></p>
                 </div>
                 <div class="profileModule">
-                    <p>Модуль 3:</br> <span class="colorP">Модуль 4. Модульне око, модульний ніс</span></p>
+                    <p>Модуль:</br> <span class="colorP">Модуль 4. Модульне око, модульний ніс</span></p>
                 </div>
                 <div class="profileLesson">
-                    <p>Заняття 4:</br> <span class="colorP">Заняття 6. Повторіння мать учіння</span></p>
+                    <p>Заняття:</br> <span class="colorP">Заняття 6. Повторіння мать учіння</span></p>
                 </div>
                 <div class="profileCoursePay">
                     <p>Курс:</br> <span class="colorP">"Як прокачати ельфа до 81-го рівня"</span></p>

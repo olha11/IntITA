@@ -226,6 +226,13 @@ span.required
 {
     color:red;
 }
+span.interestBG{
+    background-color: #edf1f6;
+    margin-right: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 5px;
+}
 .formStudProf .errorMessage
 {
     margin-left: 180px;
@@ -358,7 +365,7 @@ label.tabsUp1,label.tabsDown1{
 .profileLesson {
     padding-left: 30px;
 }
-.profileLesson p, .profileCourse p,.profileCoursePay p,.profileModule p,{
+.profileLesson p, .profileCourse p,.profileCoursePay > p,.profileModule p, .aboutInfo > p{
     color: #666666;
 }
 /*My Course*/
