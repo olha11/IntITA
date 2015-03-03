@@ -2576,3 +2576,6 @@ Stack trace:
 REQUEST_URI=/index.php/?r=studentreg/profile
 HTTP_REFERER=http://temp/?r=studentreg/edit
 ---
+2015/03/03 20:02:49 [warning] [application] Failed to set unsafe attribute "middleName" of "StudentReg".
+in Z:\home\temp\www\protected\controllers\StudentregController.php (129)
+in Z:\home\temp\www\index.php (13)
