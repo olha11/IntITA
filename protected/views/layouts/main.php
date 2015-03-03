@@ -71,21 +71,21 @@
 <div id="navigation">
     <div class="main">
         <div id="logo_img">
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/Logo_big.png"/>
+            <img src="<?php echo $this->logo; ?>"/>
         </div>
 
         <ul>
-            <li><a href="http://www.google.com">Курси</a></li>
-            <li><a href="http://www.google.com">Викладачі</a></li>
-            <li><a href="http://www.google.com">Форум</a></li>
-            <li><a href="http://www.google.com">Про нас</a></li>
+            <li><a href="<?php echo $this->link1; ?>"><?php echo $this->menu1; ?></a></li>
+            <li><a href="<?php echo $this->link2; ?>"><?php echo $this->menu2; ?></a></li>
+            <li><a href="<?php echo $this->link3; ?>"><?php echo $this->menu3; ?></a></li>
+            <li><a href="<?php echo $this->link4; ?>"><?php echo $this->menu4; ?></a></li>
         </ul>
 
     </div>
 </div>
 <div id="button_border">
 </div>
-<a id="enter_button" href="#">Вхід</a>
+<a id="enter_button" href="#"><?php echo $this->button_text; ?></a>
 
 <script>
     var key = document.getElementById('enter_button');
@@ -133,28 +133,28 @@
 <div id="footer">
     <div class="main">
         <div>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/sotial.gif"/>
+            <img src="<?php echo $this->image_sotial; ?>"/>
         </div>
         <div class="footer">
             <div>
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/Logo_big.png" style="max-width: 140px;">
+                <img src="<?php echo $this->logo; ?>" style="max-width: 140px;">
             </div>
             <div>
-                <p> телефон: +38 0432 52 82 67<br/>
-                    тел. моб. +38 067 431 20 10<br/>
-                    e-mail: intita.hr@gmail.com</p>
+                <p> <?php echo $this->phone; ?><br/>
+                    <?php echo $this->mobile; ?><br/>
+                    <?php echo $this->email; ?></p>
             </div>
             <div>
                 <ul>
-                    <li><a href="http://www.google.com">Курси</a></li>
-                    <li><a href="http://www.google.com">Викладачі</a></li>
-                    <li><a href="http://www.google.com">Форум</a></li>
-                    <li><a href="http://www.google.com">Про нас</a></li>
+                    <li><a href="<?php echo $this->link1; ?>"><?php echo $this->menu1; ?></a></li>
+                    <li><a href="<?php echo $this->link2; ?>"><?php echo $this->menu2; ?></a></li>
+                    <li><a href="<?php echo $this->link3; ?>"><?php echo $this->menu3; ?></a></li>
+                    <li><a href="<?php echo $this->link4; ?>"><?php echo $this->menu4; ?></a></li>
                 </ul>
             </div>
         </div>
         <div class="footer"">
-        <a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/go_up.png"/></a>
+        <a href="#"><img src="<?php echo $this->image_up; ?>"/></a>
     </div>
     <div class="footer"></div>
 </div>

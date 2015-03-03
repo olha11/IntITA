@@ -2,6 +2,7 @@
 
 
 .idea/*
-protected/runtime/
+protected/runtime/*
+assets/
 
-
+assets

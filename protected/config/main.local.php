@@ -13,6 +13,11 @@ return array(
 	'import'=>array(
 		'application.components.*',
 		'application.models.*',
+		'ext.autoadmin.*',
+		'ext.autoadmin.models.*',
+		'ext.autoadmin.models.field.*',
+		'ext.autoadmin.helpers.*',
+		'ext.autoadmin.controllers.*',
 	),
 
 	'modules'=>array(
