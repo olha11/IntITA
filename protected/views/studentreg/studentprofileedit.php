@@ -41,7 +41,7 @@ $post=StudentReg::model()->findByPk(1);
 ?>
 <div class="formStudProfNav">
     <div class="regLinks">
-        <a href="/index.php">Головна</a> &#187; <a href="/index.php/?r=studentreg/profile">Профіль</a>&#187; <a href="#">Редагувати профіль</a>
+        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Головна</a> &#187; <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/?r=studentreg/profile">Профіль</a>&#187; <a href="#">Редагувати профіль</a>
     </div>
     <div class="profileStatus">
         <div>
