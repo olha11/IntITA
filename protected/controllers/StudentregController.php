@@ -297,6 +297,6 @@ class StudentRegController extends Controller
                 Yii::app()->user->setFlash('messageedit','Оновлено');
             }
         }
-        header ('location: /index.php/?r=studentreg/profile');
+        header ('location: '. Yii::app()->request->baseUrl.'/index.php/?r=studentreg/profile');
     }
 }

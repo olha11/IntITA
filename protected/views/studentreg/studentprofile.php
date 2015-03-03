@@ -39,7 +39,7 @@ $post=StudentReg::model()->findByPk(1);
                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/profileedit.png"/>
                 </td>
                 <td>
-                    <a href="/?r=studentreg/edit">Редагувати </br> профіль</a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=studentreg/edit">Редагувати </br> профіль</a>
                 </td>
             </tr>
         </table>
@@ -176,7 +176,7 @@ $post=StudentReg::model()->findByPk(1);
                 </p>
             </section>
             <section id="mylettersSend">
-                <form method="post" action="/index.php?r=studentreg/sendletter">
+                <form method="post" action="<?php echo Yii::app()->request->baseUrl; ?>/?r=studentreg/sendletter">
                     <label for="letterTheme">Тема:</label>
                     <input type="text" id="letterTheme" name="letterTheme" /></br> </br>
                     <label for="send_letter">Повідомлення:</label>

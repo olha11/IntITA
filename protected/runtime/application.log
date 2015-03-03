@@ -2559,3 +2559,20 @@ REQUEST_URI=/index.php/?r=studentreg/pro
 2015/03/03 04:33:52 [warning] [application] Failed to set unsafe attribute "middleName" of "StudentReg".
 in Z:\home\temp\www\protected\controllers\StudentregController.php (129)
 in Z:\home\temp\www\index.php (13)
+2015/03/03 19:39:52 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.header' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `header`.
+in Z:\home\temp\www\protected\components\Controller.php (26)
+in Z:\home\temp\www\index.php (13)
+2015/03/03 19:39:52 [error] [exception.CDbException] exception 'CDbException' with message 'The table "header" for active record class "Header" cannot be found in the database.' in Z:\home\temp\www\protected\framework\db\ar\CActiveRecord.php:2385
+Stack trace:
+#0 Z:\home\temp\www\protected\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Header))
+#1 Z:\home\temp\www\protected\framework\db\ar\CActiveRecord.php(661): CActiveRecord->getMetaData()
+#2 Z:\home\temp\www\protected\framework\db\ar\CActiveRecord.php(1490): CActiveRecord->getTableSchema()
+#3 Z:\home\temp\www\protected\components\Controller.php(26): CActiveRecord->findByPk(1)
+#4 Z:\home\temp\www\protected\framework\web\CWebApplication.php(281): Controller->init()
+#5 Z:\home\temp\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/prof...')
+#6 Z:\home\temp\www\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 Z:\home\temp\www\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/index.php/?r=studentreg/profile
+HTTP_REFERER=http://temp/?r=studentreg/edit
+---
