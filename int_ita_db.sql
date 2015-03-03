@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-03-02 17:33:40
+-- Date/time:                    2015-03-03 18:59:34
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -44,9 +44,9 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   KEY `user_id` (`user_id`),
   KEY `when_enter` (`when_enter`),
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_authorizations: ~6 rows (approximately)
+-- Dumping data for table int_ita_db.aa_authorizations: ~10 rows (approximately)
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
 INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(1, 2, '2015-03-02 15:33:25', '::1'),
@@ -54,7 +54,13 @@ INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(3, 2, '2015-03-02 15:41:58', '::1'),
 	(4, 2, '2015-03-02 15:41:59', '::1'),
 	(5, 3, '2015-03-02 15:45:10', '::1'),
-	(6, 3, '2015-03-02 15:45:10', '::1');
+	(6, 3, '2015-03-02 15:45:10', '::1'),
+	(7, 2, '2015-03-03 15:04:10', '::1'),
+	(8, 2, '2015-03-03 15:04:10', '::1'),
+	(9, 2, '2015-03-03 15:41:31', '::1'),
+	(10, 2, '2015-03-03 15:41:32', '::1'),
+	(11, 2, '2015-03-03 17:26:15', '::1'),
+	(12, 2, '2015-03-03 17:26:15', '::1');
 /*!40000 ALTER TABLE `aa_authorizations` ENABLE KEYS */;
 
 
@@ -227,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `footer` (
   PRIMARY KEY (`footer_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.footer: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.footer: ~0 rows (approximately)
 /*!40000 ALTER TABLE `footer` DISABLE KEYS */;
 INSERT INTO `footer` (`footer_id`, `image_social`, `phone`, `mobile`, `email`, `image_up`) VALUES
 	(1, '/css/images/sotial.gif', 'телефон: +38 0432 52', 'тел. моб. +38 067 432 20 10', 'e-mail: intita.hr@gmail.com', '/css/images/go_up.png');
@@ -247,14 +253,14 @@ CREATE TABLE IF NOT EXISTS `header` (
   `item_3_link` varchar(255) NOT NULL,
   `menu_item_4` varchar(30) NOT NULL,
   `item_4_link` varchar(255) NOT NULL,
-  `enter_button_link` varchar(255) NOT NULL,
+  `enter_button_text` varchar(30) NOT NULL,
   PRIMARY KEY (`header_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.header: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.header: ~0 rows (approximately)
 /*!40000 ALTER TABLE `header` DISABLE KEYS */;
-INSERT INTO `header` (`header_id`, `language`, `logo_url`, `menu_item_1`, `item_1_link`, `menu_item_2`, `item_2_link`, `menu_item_3`, `item_3_link`, `menu_item_4`, `item_4_link`, `enter_button_link`) VALUES
-	(1, 'UA', '/css/images/Logo_big.png', 'Курси', 'http://www.google.com', 'Викладачі', 'http://www.google.com', 'Форум', 'http://www.google.com', 'Про нас', 'http://www.google.com', '/css/images/enter_button.png');
+INSERT INTO `header` (`header_id`, `language`, `logo_url`, `menu_item_1`, `item_1_link`, `menu_item_2`, `item_2_link`, `menu_item_3`, `item_3_link`, `menu_item_4`, `item_4_link`, `enter_button_text`) VALUES
+	(1, 'UA', '/css/images/Logo_big.png', 'Курси', 'http://www.google.com', 'Викладачі', 'http://www.google.com', 'Форум', 'http://www.google.com', 'Про нас', 'http://www.google.com', 'Вхід');
 /*!40000 ALTER TABLE `header` ENABLE KEYS */;
 
 
@@ -314,9 +320,9 @@ CREATE TABLE IF NOT EXISTS `lecture` (
   `linkName` varchar(30) NOT NULL DEFAULT '0',
   PRIMARY KEY (`lectureID`),
   KEY `FK_lectures_modules` (`lectureModule`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.lecture: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.lecture: ~0 rows (approximately)
 /*!40000 ALTER TABLE `lecture` DISABLE KEYS */;
 INSERT INTO `lecture` (`lectureID`, `lectureImageMain`, `lectureModule`, `lectureNumber`, `lectureNameText`, `lectureTypeText`, `lectureTypeImage`, `lectureTimeText`, `lectureMaxNumber`, `lectureIconImage`, `lectureUnwatchedImage`, `lectureOverlookedImage`, `infoLectures`, `thisLectureInfo`, `preLectureInfo`, `postLessonInfo`, `teacherTitle`, `linkName`) VALUES
 	(1, '/css/images/lectureImage.png', '1', 0, 'Goal of classes 1', '10', '100', 'css/images/timeIco.p', 0, '', 'css/images/ratIco0.png', 'css/images/ratIco1.png', '0', '0', '0', '0', '0', '0');
@@ -343,6 +349,12 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
   `step_size` varchar(10) NOT NULL,
   `linkName` varchar(20) NOT NULL,
   `hexagon` varchar(255) NOT NULL,
+  `form_header_1` varchar(50) NOT NULL,
+  `form_header_2` varchar(50) NOT NULL,
+  `reg_text` varchar(50) NOT NULL,
+  `button_start` varchar(50) NOT NULL,
+  `social_text` varchar(50) NOT NULL,
+  `image_network` varchar(255) NOT NULL,
   PRIMARY KEY (`mainpage_id`),
   UNIQUE KEY `carousel_id` (`carousel_id`),
   KEY `FK_mainpage_block` (`array_blocks`),
@@ -351,8 +363,8 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
 
 -- Dumping data for table int_ita_db.mainpage: ~1 rows (approximately)
 /*!40000 ALTER TABLE `mainpage` DISABLE KEYS */;
-INSERT INTO `mainpage` (`mainpage_id`, `title`, `carousel_id`, `slider_header`, `slider_text`, `slider_texture_url`, `slider_line_url`, `slider_button_text`, `header1`, `subLineImage`, `subheader1`, `array_blocks`, `header2`, `subheader2`, `array_steps`, `step_size`, `linkName`, `hexagon`) VALUES
-	(1, 'IntITA', 1, 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Програміст — сама древня сучасна професія на планеті Земля!', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ />', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png');
+INSERT INTO `mainpage` (`mainpage_id`, `title`, `carousel_id`, `slider_header`, `slider_text`, `slider_texture_url`, `slider_line_url`, `slider_button_text`, `header1`, `subLineImage`, `subheader1`, `array_blocks`, `header2`, `subheader2`, `array_steps`, `step_size`, `linkName`, `hexagon`, `form_header_1`, `form_header_2`, `reg_text`, `button_start`, `social_text`, `image_network`) VALUES
+	(1, 'IntITA', 1, 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Програміст — сама древня сучасна професія на планеті Земля!', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ />', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png', 'Готові розпочати?', 'Введіть дані в форму нижче', 'розширена реєстрація', 'Розпочати', 'Ви можете також зареєструватися через соцмережі:', '/css/images/networking.png');
 /*!40000 ALTER TABLE `mainpage` ENABLE KEYS */;
 
 
@@ -402,26 +414,27 @@ INSERT INTO `step` (`step_id`, `stepName`, `stepNumber`, `stepTitle`, `stepImage
 CREATE TABLE IF NOT EXISTS `studentprofile` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `firstName` varchar(255) DEFAULT NULL,
-  `secondName` varchar(255) DEFAULT NULL,
   `middleName` varchar(255) DEFAULT NULL,
-  `login` varchar(255) DEFAULT NULL,
+  `secondName` varchar(255) DEFAULT NULL,
+  `nickname` varchar(255) DEFAULT NULL,
   `birthday` varchar(11) DEFAULT NULL,
-  `education` varchar(255) DEFAULT NULL,
-  `aboutMyself` text,
-  `interests` text,
-  `certificates` varchar(255) DEFAULT NULL,
-  `phone` varchar(15) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `address` text,
-  `note` text,
   `password` varchar(255) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `address` text,
+  `education` varchar(255) DEFAULT NULL,
+  `educform` decimal(60,0) DEFAULT NULL,
+  `interests` text,
+  `aboutUs` text,
+  `aboutMy` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.studentprofile: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.studentprofile: ~0 rows (approximately)
 /*!40000 ALTER TABLE `studentprofile` DISABLE KEYS */;
-INSERT INTO `studentprofile` (`id`, `firstName`, `secondName`, `middleName`, `login`, `birthday`, `education`, `aboutMyself`, `interests`, `certificates`, `phone`, `email`, `address`, `note`, `password`) VALUES
-	(1, 'Вова', 'Марля', 'Джа', 'Wizlight', '21.03.1988', 'ВДПУ', 'Растафарай', 'Реггі, ковбаска, колобки', 'Доктора Попова', '911', 'Wizlightdragon@gmail.com', 'Ямайка', 'Нон', '123');
+INSERT INTO `studentprofile` (`id`, `firstName`, `middleName`, `secondName`, `nickname`, `birthday`, `email`, `password`, `phone`, `address`, `education`, `educform`, `interests`, `aboutUs`, `aboutMy`, `avatar`) VALUES
+	(1, 'Вова', 'Джа', 'Марля', 'Wizlight', '21.03.1988', 'Wizlightdragon@gmail.com', '123', '911', 'Ямайка', 'ВДПУ', 1, 'Реггі, ковбаска, колобки', 'Растафарай', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', NULL);
 /*!40000 ALTER TABLE `studentprofile` ENABLE KEYS */;
 
 
@@ -577,7 +590,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `user_email` (`user_email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.users: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.users: ~0 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`user_id`, `user_email`, `user_passwd`, `user_hash`, `user_status`) VALUES
 	(1, 'mail1@mail.com', 'qwerty', '67896', 0);
@@ -596,7 +609,7 @@ CREATE TABLE IF NOT EXISTS `videos` (
   PRIMARY KEY (`video_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.videos: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.videos: ~0 rows (approximately)
 /*!40000 ALTER TABLE `videos` DISABLE KEYS */;
 INSERT INTO `videos` (`video_ID`, `fkmodule_ID`, `fklecture_ID`, `video_name`, `video_description`, `video_url`, `video_durationin_seconds`) VALUES
 	(1, 1, 1, 'Video 1', 'Description 1', 'URL 1', 344);
