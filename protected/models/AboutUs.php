@@ -26,14 +26,13 @@ class AboutUs extends CActiveRecord
 		//setValuesById($id);
 	}
 
-class AboutUs {
-    public $line2Image;
-    public $iconImage;
-    public $titleText;
-    public $textAbout;
-    public $linkAdress;
 
-	public function setValuesById($id)
+    public function tableName(){
+        return 'aboutus';
+    }
+
+
+    public function setValuesById($id)
 	{
 		$this->line2Image=Yii::app()->request->baseUrl.$this->findByPk($id)->line2Image;
 		$this->iconImage=Yii::app()->request->baseUrl.$this->findByPk($id)->imagesPath.$this->findByPk($id)->iconImage;
