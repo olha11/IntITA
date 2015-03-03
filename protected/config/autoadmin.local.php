@@ -8,7 +8,7 @@ $main['language'] = 'en';
 
 $main['modules'] = array(
 	'autoadmin'=>array(
-		'class'=>'ext.autoAdmin.AutoAdmin',	//alias-path to AutoAdmin extension
+		'class'=>'ext.autoadmin.AutoAdmin',	//alias-path to AutoAdmin extension
 		'basePath' => dirname(__FILE__).'/../modules/autoadmin',	//this is your module directory
 		'wwwDirName' => 'www',	//this is your document root directory (where the webserver looks into)
 
