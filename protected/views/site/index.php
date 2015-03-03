@@ -145,7 +145,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
     <div class="formFon"style="  background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/formFon.png');">
         <div class="email-password">
             <form method = "POST" action="">
-                <input type="email" value="" name="email" class="email1" placeholder="E-mail"/>
+                <input type="email" value="" name="email" class="email1" placeholder="E-mail" />
                 <input type="password" value="" name="password" class="password1" placeholder="password"/>
 
         </div>

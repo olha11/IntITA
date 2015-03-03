@@ -15,35 +15,30 @@
  * @property string $header1
  * @property string $subLineImage
  * @property string $subheader1
- * @property integer $block1
- * @property integer $block2
- * @property integer $block3
+ * @property string $array_blocks
  * @property string $header2
  * @property string $subheader2
- * @property integer $step1
- * @property integer $step2
- * @property integer $step3
- * @property integer $step4
- * @property integer $step5
+ * @property string $array_steps
  * @property string $step_size
  * @property string $linkName
  * @property string $hexagon
- *
- * The followings are the available model relations:
- * @property Aboutus $block10
- * @property Aboutus $block20
- * @property Aboutus $block30
- * @property Step $step10
- * @property Step $step20
- * @property Step $step30
- * @property Step $step40
- * @property Step $step50
+ * @property string $form_header_1
+ * @property string $form_header_2
+ * @property string $reg_text
+ * @property string $button_start
+ * @property string $social_text
+ * @property string $image_network
  */
 class Mainpage extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
+	public function tableName()
+	{
+		return 'mainpage';
+	}
+
 	function Mainpage($id){
 		//setValueById($id);
 	}
@@ -65,14 +60,11 @@ class Mainpage extends CActiveRecord
 		$this->hexagon=Yii::app()->request->baseUrl.$this->findByPk($id)->hexagon;
 		$this->slider_line_url=Yii::app()->request->baseUrl.$this->findByPk($id)->slider_line_url;
 		$this->slider_button_text=$this->findByPk($id)->slider_button_text;
+		$this->form_header_1 = $this->findByPk($id)->form_header_1;
+		$this->form_header_2 = $this->findByPk($id)->form_header_2;
+		$this->reg_text = $this->findByPk($id)->reg_text
 		return $this;
 	}
-
-	public function tableName()
-	{
-		return 'mainpage';
-	}
-
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -81,16 +73,16 @@ class Mainpage extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('mainpage_id, title, carousel_id, slider_header, slider_text, slider_texture_url, slider_line_url, slider_button_text, header1, subLineImage, subheader1, block1, block2, block3, header2, subheader2, step1, step2, step3, step4, step5, step_size, linkName, hexagon', 'required'),
-			array('mainpage_id, carousel_id, block1, block2, block3, step1, step2, step3, step4, step5', 'numerical', 'integerOnly'=>true),
+			array('mainpage_id, title, carousel_id, slider_header, slider_text, slider_texture_url, slider_line_url, slider_button_text, header1, subLineImage, subheader1, array_blocks, header2, subheader2, array_steps, step_size, linkName, hexagon, form_header_1, form_header_2, reg_text, button_start, social_text, image_network', 'required'),
+			array('mainpage_id, carousel_id', 'numerical', 'integerOnly'=>true),
 			array('title, subheader1, subheader2', 'length', 'max'=>100),
-			array('slider_header, header1, header2', 'length', 'max'=>50),
-			array('slider_text, slider_texture_url, slider_line_url, subLineImage, hexagon', 'length', 'max'=>255),
+			array('slider_header, header1, header2, form_header_1, form_header_2, reg_text, button_start, social_text', 'length', 'max'=>50),
+			array('slider_text, slider_texture_url, slider_line_url, subLineImage, hexagon, image_network', 'length', 'max'=>255),
 			array('slider_button_text, linkName', 'length', 'max'=>20),
-			array('step_size', 'length', 'max'=>10),
+			array('array_blocks, array_steps, step_size', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('mainpage_id, title, carousel_id, slider_header, slider_text, slider_texture_url, slider_line_url, slider_button_text, header1, subLineImage, subheader1, block1, block2, block3, header2, subheader2, step1, step2, step3, step4, step5, step_size, linkName, hexagon', 'safe', 'on'=>'search'),
+			array('mainpage_id, title, carousel_id, slider_header, slider_text, slider_texture_url, slider_line_url, slider_button_text, header1, subLineImage, subheader1, array_blocks, header2, subheader2, array_steps, step_size, linkName, hexagon, form_header_1, form_header_2, reg_text, button_start, social_text, image_network', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -102,14 +94,6 @@ class Mainpage extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'block10' => array(self::BELONGS_TO, 'Aboutus', 'block1'),
-			'block20' => array(self::BELONGS_TO, 'Aboutus', 'block2'),
-			'block30' => array(self::BELONGS_TO, 'Aboutus', 'block3'),
-			'step10' => array(self::BELONGS_TO, 'Step', 'step1'),
-			'step20' => array(self::BELONGS_TO, 'Step', 'step2'),
-			'step30' => array(self::BELONGS_TO, 'Step', 'step3'),
-			'step40' => array(self::BELONGS_TO, 'Step', 'step4'),
-			'step50' => array(self::BELONGS_TO, 'Step', 'step5'),
 		);
 	}
 
@@ -130,19 +114,19 @@ class Mainpage extends CActiveRecord
 			'header1' => 'Header1',
 			'subLineImage' => 'Sub Line Image',
 			'subheader1' => 'Subheader1',
-			'block1' => 'Block1',
-			'block2' => 'Block2',
-			'block3' => 'Block3',
+			'array_blocks' => 'Array Blocks',
 			'header2' => 'Header2',
 			'subheader2' => 'Subheader2',
-			'step1' => 'Step1',
-			'step2' => 'Step2',
-			'step3' => 'Step3',
-			'step4' => 'Step4',
-			'step5' => 'Step5',
+			'array_steps' => 'Array Steps',
 			'step_size' => 'Step Size',
 			'linkName' => 'Link Name',
 			'hexagon' => 'Hexagon',
+			'form_header_1' => 'Form Header 1',
+			'form_header_2' => 'Form Header 2',
+			'reg_text' => 'Reg Text',
+			'button_start' => 'Button Start',
+			'social_text' => 'Social Text',
+			'image_network' => 'Image Network',
 		);
 	}
 
@@ -175,19 +159,19 @@ class Mainpage extends CActiveRecord
 		$criteria->compare('header1',$this->header1,true);
 		$criteria->compare('subLineImage',$this->subLineImage,true);
 		$criteria->compare('subheader1',$this->subheader1,true);
-		$criteria->compare('block1',$this->block1);
-		$criteria->compare('block2',$this->block2);
-		$criteria->compare('block3',$this->block3);
+		$criteria->compare('array_blocks',$this->array_blocks,true);
 		$criteria->compare('header2',$this->header2,true);
 		$criteria->compare('subheader2',$this->subheader2,true);
-		$criteria->compare('step1',$this->step1);
-		$criteria->compare('step2',$this->step2);
-		$criteria->compare('step3',$this->step3);
-		$criteria->compare('step4',$this->step4);
-		$criteria->compare('step5',$this->step5);
+		$criteria->compare('array_steps',$this->array_steps,true);
 		$criteria->compare('step_size',$this->step_size,true);
 		$criteria->compare('linkName',$this->linkName,true);
 		$criteria->compare('hexagon',$this->hexagon,true);
+		$criteria->compare('form_header_1',$this->form_header_1,true);
+		$criteria->compare('form_header_2',$this->form_header_2,true);
+		$criteria->compare('reg_text',$this->reg_text,true);
+		$criteria->compare('button_start',$this->button_start,true);
+		$criteria->compare('social_text',$this->social_text,true);
+		$criteria->compare('image_network',$this->image_network,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
