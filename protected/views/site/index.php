@@ -2,65 +2,40 @@
 /* @var $this SiteController */
 ?>
 
-<img id="sliderTexture" src="<?php echo Yii::app()->request->baseUrl;?>/css/images/slider_img/texture.png">
+<img id="sliderTexture" src="<?php echo $mainpage['sliderTexture']; ?>">
 <div class="insideSlider">
     <div class="lineAndButton">
-        <img class="sliderLine" src="<?php echo Yii::app()->request->baseUrl;?>/css/images/slider_img/line.png">
-        <a class="sliderButton" href="#">ПОЧАТИ /></a>
+        <img class="sliderLine" src="<?php echo $mainpage['sliderLine']; ?>">
+        <a class="sliderButton" href="#"><?php echo $mainpage['buttonStart']; ?> </a>
     </div>
     <div class="sliderText">
-        ПРОГРАМУЙ  МАЙБУТНЄ<br>
+        <?php echo $mainpage['sliderHeader']; ?><br>
         <div class="sliderTextJr">
             _____<br><br>
-            Програміст — сама древня сучасна  професія на планеті Земля!<br>
-            Сьогодні в тебе з'явився шанс стати ним, а не вдаватися! Тисни клаву або скроль далі!
-        </div>   
+            <?php echo $mainpage['sliderText']; ?>
+        </div>
     </div>
-
 </div>
+
 <div id="slider" class="owl-carousel owl-theme">
-    
-    
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/1.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/2.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/3.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/4.jpg"></div>
-<!--
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/5.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/6.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/7.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/8.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/9.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/10.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/11.jpg"></div>
-    <div class="item"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/12.jpg"></div> -->
-
-
+    <div class="item"><img src="<?php echo $slider1; ?>"></div>
+    <div class="item"><img src="<?php echo $slider2; ?>"></div>
+    <div class="item"><img src="<?php echo $slider3; ?>"></div>
+    <div class="item"><img src="<?php echo $slider4; ?>"></div>
 </div>
 
 <?php
-$this->pageTitle=Yii::app()->name;
-
-$headerText = 'Про нас';
-$subheaderText = 'важлива інформація про навчання разом з нами';
-$subLineImage= Yii::app()->request->baseUrl.'/css/images/line1.png';
-$linkName="детальніше »";
-
-
-$objAbout1=new AboutUs(Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image1.png','Про що мрієш ти?','Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль?
-                        Закордонні подорожі, можливо, до екзотичних країн?',Yii::app()->request->baseUrl.'/index.php?r=site/aboutdetail');
-$objAbout2=new AboutUs (Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image2.png','Навчання майбутнього сьогодні','Програмування – Програмування – це не так складно, як ти можеш уявляти.
-                        Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля.',Yii::app()->request->baseUrl.'/index.php?r=site/aboutdetail');
-$objAbout3=new AboutUs(Yii::app()->request->baseUrl.'/css/images/line2.png',Yii::app()->request->baseUrl.'/css/images/image3.png','Питання, які нам часто ставлять','Самостійний графік навчання.
-                        Лише 100% необхідні знання. Засвоєння 100% знаннь!',Yii::app()->request->baseUrl.'/index.php?r=site/aboutdetail');
-$massAbout=array($objAbout1,$objAbout2,$objAbout3);
+$this->pageTitle=$mainpage['title'];
+$headerText = $mainpage['header1'];
+$subheaderText = $mainpage['subheader1'];
+$subLineImage = $mainpage['subLineImage'];
+$linkName= $mainpage['linkName'];
+$massAbout=array($block1,$block2,$block3);
 ?>
 
 <div class="mainAbout">
     <div class="header">
-
         <?php echo $headerText; ?>
-
         <p>
             <?php echo $subheaderText; ?>
         </p>
@@ -89,39 +64,26 @@ $massAbout=array($objAbout1,$objAbout2,$objAbout3);
                             <?php echo $val->textAbout;?>
                         </p>
                     </div>
-                        <a href="<?php echo $val->linkAdress ?>">
+                        <a href="<?php echo $val->linkAddress ?>">
                         <?php echo $linkName; ?>
                         </a>
                 </li>
             </ul>
         </div>
-
     <?php
-
     }
     ?>
 
 </div>
 <! Ініціалізація екземплярів класу>
 <?php
-
-$stepHeader = 'Як розпочати навчання?';
-$stepSubheader = 'п’ять кроків до здійснення твоїх мрій';
-$stepSize='960px';
-
-$step1=new Step(Yii::app()->request->baseUrl.'/css/images/step1.jpg','Реєстрація','Щоб отримати доступ до переліку курсів, модулів і занять та щоб пройти безкоштовні модулі і заняття зареєструйся на сайті. Реєстрація дозволить тобі оцінити якість та зручність нашого продукт, який стане для тебе надійним партнером і порадником в професійній самореалізації.','1','крок');
-$step2=new Step(Yii::app()->request->baseUrl.'/css/images/step2.jpg','Вибір курсу чи модуля','Щоб стати спеціалістом певного напрямку та рівня (отримати професійну спеціалізацію) вибери для проходження відповідний курс. Якщо Тебе цікавить виключно поглиблення знань в певному напрямку ІТ, то вибери відповідний модуль.','2','крок');
-$step3=new Step(Yii::app()->request->baseUrl.'/css/images/step3.jpg','Проплата','Щоб розпочати проходження курсу чи модуля вибери схему (вся сума, помісячно, потриместрово тощо) оплати та здійсни оплату зручним Тобі способом (схему оплати курсу чи модуля можна змінювати, також можлива помісячна оплата в кредит).','3','крок');
-$step4=new Step(Yii::app()->request->baseUrl.'/css/images/step4.jpg','Освоєння матеріалу','Вивчення матеріалу можливе шляхом читання тексту чи/і перегляду відео для кожного заняття. Протягом освоєння матеріалу заняття виконуй Проміжні тестові завдання. По завершенню кожного заняття виконуй Підсумкове тестове завдання. Кожен модуль завершується Індивідуальним проектом чи Екзаменом.Можна отримати індивідуальну консультацію викладача чи обговорювати питання на форумі.','4','крок');
-$step5=new Step(Yii::app()->request->baseUrl.'/css/images/step5.jpg','Завершення курсу','Підсумком курсу є Командний дипломний проект, який виконується разом з іншими студентами (склад команди формуєш самостійно чи рекомендує керівник, який затверджує тему і технічне завдання проекту). Здача проекту передбачає передзахист та захист в он-лайн режимі із представленням технічної документації. Після захисту видається диплом та рекомендація для працевлаштування.','5','крок');
-
+$stepHeader =  $mainpage['header2'];
+$stepSubheader =  $mainpage['subheader2'];
+$stepSize= $mainpage['stepSize'];
 $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 ?>
 
-
-
 <! Верстка за допомогою масиву з екземплярами класу>
-
 <div class="steps" >
 		<div class="stepHeaderCont" style="width:<?php echo $stepSize; ?>">
 			<div class="stepHeader">
@@ -137,13 +99,12 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 ?>
          <div class="stepLeft" 	style="width:<?php echo $stepSize; ?>" >
 					<div class="stepUrl">
-                        <img class="grid" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/grid.png">
-        		   		<img src="<?php echo $stepValue->stepImage; ?>">
+        		   		 <img src="<?php echo $stepValue->stepImage; ?>">
         		    </div>
 					<div class="line">
                     </div>
 
-                    <img class="hexagon" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/hexagon.png">
+                    <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
 					<div class="stepArticle">
 						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
 						<p class="stepName"><?php echo $stepValue->stepName; ?></p>
@@ -160,12 +121,11 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 		 ?>
 		 <div class="stepRight" style="width:<?php echo $stepSize; ?>" >
 					<div class="stepUrl">
-                        <img class="grid" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/grid.png">
-        		   		<img src="<?php echo $stepValue->stepImage; ?>">
+        		   		 <img src="<?php echo $stepValue->stepImage; ?>">
         		    </div>
 					<div class="line">
                     </div>
-                     <img class="hexagon" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/hexagon.png">
+                     <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
 					<div class="stepArticle">
 						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
 						<p class="stepName"><?php echo $stepValue->stepName; ?></p>

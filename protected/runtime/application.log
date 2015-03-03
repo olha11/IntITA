@@ -1,328 +1,946 @@
-2015/02/03 23:48:11 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/opt/lampp/htdocs/master/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /opt/lampp/htdocs/framework/web/CAssetManager.php:138
+2015/02/25 15:34:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "IntITA".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
 Stack trace:
-#0 /opt/lampp/htdocs/framework/web/CAssetManager.php(123): CAssetManager->setBasePath('/opt/lampp/htdo...')
-#1 /opt/lampp/htdocs/framework/web/CAssetManager.php(217): CAssetManager->getBasePath()
-#2 /opt/lampp/htdocs/framework/web/CClientScript.php(510): CAssetManager->publish('/opt/lampp/htdo...')
-#3 /opt/lampp/htdocs/framework/web/CClientScript.php(547): CClientScript->getCoreScriptUrl()
-#4 /opt/lampp/htdocs/framework/web/CClientScript.php(348): CClientScript->getPackageBaseUrl('jquery')
-#5 /opt/lampp/htdocs/framework/web/CClientScript.php(208): CClientScript->renderCoreScripts()
-#6 /opt/lampp/htdocs/framework/web/CController.php(351): CClientScript->render('<!DOCTYPE html>...')
-#7 /opt/lampp/htdocs/framework/web/CController.php(788): CController->processOutput('<!DOCTYPE html>...')
-#8 /opt/lampp/htdocs/master/protected/controllers/SiteController.php(72): CController->render('contact', Array)
-#9 /opt/lampp/htdocs/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
-#10 /opt/lampp/htdocs/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#11 /opt/lampp/htdocs/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
-#12 /opt/lampp/htdocs/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#13 /opt/lampp/htdocs/framework/web/CWebApplication.php(282): CController->run('contact')
-#14 /opt/lampp/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
-#15 /opt/lampp/htdocs/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#16 /opt/lampp/htdocs/master/index.php(13): CApplication->run()
-#17 {main}
-REQUEST_URI=/master/index.php?r=site/contact
-HTTP_REFERER=http://localhost/master/index.php?r=site/page&view=about
----
-2015/02/03 23:48:27 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/opt/lampp/htdocs/master/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /opt/lampp/htdocs/framework/web/CAssetManager.php:138
-Stack trace:
-#0 /opt/lampp/htdocs/framework/web/CAssetManager.php(123): CAssetManager->setBasePath('/opt/lampp/htdo...')
-#1 /opt/lampp/htdocs/framework/web/CAssetManager.php(217): CAssetManager->getBasePath()
-#2 /opt/lampp/htdocs/framework/web/CClientScript.php(510): CAssetManager->publish('/opt/lampp/htdo...')
-#3 /opt/lampp/htdocs/framework/web/CClientScript.php(547): CClientScript->getCoreScriptUrl()
-#4 /opt/lampp/htdocs/framework/web/CClientScript.php(348): CClientScript->getPackageBaseUrl('jquery')
-#5 /opt/lampp/htdocs/framework/web/CClientScript.php(208): CClientScript->renderCoreScripts()
-#6 /opt/lampp/htdocs/framework/web/CController.php(351): CClientScript->render('<!DOCTYPE html>...')
-#7 /opt/lampp/htdocs/framework/web/CController.php(788): CController->processOutput('<!DOCTYPE html>...')
-#8 /opt/lampp/htdocs/master/protected/controllers/SiteController.php(72): CController->render('contact', Array)
-#9 /opt/lampp/htdocs/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
-#10 /opt/lampp/htdocs/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#11 /opt/lampp/htdocs/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
-#12 /opt/lampp/htdocs/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#13 /opt/lampp/htdocs/framework/web/CWebApplication.php(282): CController->run('contact')
-#14 /opt/lampp/htdocs/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
-#15 /opt/lampp/htdocs/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#16 /opt/lampp/htdocs/master/index.php(13): CApplication->run()
-#17 {main}
-REQUEST_URI=/master/index.php?r=site/contact
-HTTP_REFERER=http://localhost/master/index.php?r=site/page&view=about
----
-2015/02/13 11:14:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "studentprofile".' in Z:\home\ita\www\protected\framework\web\CWebApplication.php:286
-Stack trace:
-#0 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentprofile')
-#1 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 Z:\home\ita\www\index.php(13): CApplication->run()
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('IntITA')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
 #3 {main}
-REQUEST_URI=/index.php?r=studentprofile
+REQUEST_URI=/IntITA/
 ---
-2015/02/13 11:28:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "studentprofile".' in Z:\home\ita\www\protected\framework\web\CWebApplication.php:286
+2015/02/25 15:47:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'carousel.carousel_id' in 'field list'. The SQL statement executed was: SELECT `carousel`.`carousel_id`, `carousel`.`order`, `carousel`.`picture_url`, `carousel`.`width`, `carousel`.`height`, `carousel`.`description`
+FROM `carousel`
+ORDER BY `carousel`.`order` LIMIT 80.
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AADb.php (97)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php (612)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php (564)
+2015/02/25 15:47:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'carousel.carousel_id' in 'field list'. The SQL statement executed was: SELECT `carousel`.`carousel_id`, `carousel`.`order`, `carousel`.`picture_url`, `carousel`.`width`, `carousel`.`height`, `carousel`.`description`
+FROM `carousel`
+ORDER BY `carousel`.`order` LIMIT 80' in D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
 Stack trace:
-#0 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentprofile')
-#1 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 Z:\home\ita\www\index.php(13): CApplication->run()
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AADb.php(97): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(612): AADb->getList(80, 0)
+#3 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(564): AutoAdmin->listMode()
+#4 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(44): AutoAdmin->process()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#11 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost:63342/IntITA/index.php?r=autoAdmin
+---
+2015/02/25 15:48:29 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3' for key 'PRIMARY'. The SQL statement executed was: UPDATE `carousel` SET `order`=:order WHERE (carousel.order = :_idorder).
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AADb.php (343)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php (816)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php (495)
+2015/02/25 15:48:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3' for key 'PRIMARY'. The SQL statement executed was: UPDATE `carousel` SET `order`=:order WHERE (carousel.order = :_idorder)' in D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(1313): CDbCommand->execute(Array)
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AADb.php(343): CDbCommand->update('carousel', Array, Array, Array)
+#2 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(816): AADb->update(Array)
+#3 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(495): AutoAdmin->update()
+#4 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(44): AutoAdmin->process()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#11 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/IntITA/?r=autoAdmin/mainpage/carousel/&id[order]=1&action=update
+HTTP_REFERER=http://localhost:63342/IntITA/?r=autoAdmin/mainpage/carousel/&action=edit&id[order]=1
+---
+2015/02/25 15:55:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.block' doesn't exist. The SQL statement executed was: SELECT `block`.`block_id`, `block`.`header`, `block`.`picture_url`, `block`.`annotation`, `block`.`link`
+FROM `block`
+ORDER BY `block`.`header` LIMIT 80.
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AADb.php (97)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php (612)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php (564)
+2015/02/25 15:55:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.block' doesn't exist. The SQL statement executed was: SELECT `block`.`block_id`, `block`.`header`, `block`.`picture_url`, `block`.`annotation`, `block`.`link`
+FROM `block`
+ORDER BY `block`.`header` LIMIT 80' in D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AADb.php(97): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(612): AADb->getList(80, 0)
+#3 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(564): AutoAdmin->listMode()
+#4 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(62): AutoAdmin->process()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionBlocks()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('blocks')
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#11 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/blocks/
+HTTP_REFERER=http://localhost:63342/IntITA/index.php?r=autoAdmin
+---
+2015/02/25 15:56:22 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'aboutus.header' in 'field list'. The SQL statement executed was: SELECT `aboutus`.`block_id`, `aboutus`.`header`, `aboutus`.`picture_url`, `aboutus`.`annotation`, `aboutus`.`link`
+FROM `aboutus`
+ORDER BY `aboutus`.`header` LIMIT 80.
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AADb.php (97)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php (612)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php (564)
+2015/02/25 15:56:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'aboutus.header' in 'field list'. The SQL statement executed was: SELECT `aboutus`.`block_id`, `aboutus`.`header`, `aboutus`.`picture_url`, `aboutus`.`annotation`, `aboutus`.`link`
+FROM `aboutus`
+ORDER BY `aboutus`.`header` LIMIT 80' in D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AADb.php(97): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(612): AADb->getList(80, 0)
+#3 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(564): AutoAdmin->listMode()
+#4 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(62): AutoAdmin->process()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionBlocks()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('blocks')
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#11 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/blocks/
+HTTP_REFERER=http://localhost:63342/IntITA/index.php?r=autoAdmin
+---
+2015/02/25 15:58:22 [error] [exception.AAException] exception 'AAException' with message 'Wrong field name "header" for sorting' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php:135
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(923): AAData->setSortOrder(Array)
+#1 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(61): AutoAdmin->sortDefault(Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionBlocks()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('blocks')
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#8 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/blocks/
+HTTP_REFERER=http://localhost:63342/IntITA/index.php?r=autoAdmin
+---
+2015/02/25 16:00:02 [error] [php] Undefined index: autoadmin (D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php:16)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(891): AAFieldImage->loadFromForm()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(782): AutoAdmin->fillFieldsWithForm()
+#2 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(495): AutoAdmin->update()
+#3 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(62): AutoAdmin->process()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionBlocks()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): MainpageController->runAction()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): MainpageController->runActionWithFilters()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): MainpageController->run()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/?r=autoAdmin/mainpage/blocks/&sortBy=1&id[block_id]=1&action=update
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php (16)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php (57)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldFile.php (101)
+2015/02/25 16:01:04 [error] [php] Undefined index: autoadmin (D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php:16)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(891): AAFieldImage->loadFromForm()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(782): AutoAdmin->fillFieldsWithForm()
+#2 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(495): AutoAdmin->update()
+#3 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(62): AutoAdmin->process()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionBlocks()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): MainpageController->runAction()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): MainpageController->runActionWithFilters()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): MainpageController->run()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/?r=autoAdmin/mainpage/blocks/&sortBy=1&id[block_id]=1&action=update
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php (16)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php (57)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldFile.php (101)
+2015/02/25 16:01:44 [error] [php] Undefined index: autoadmin (D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php:16)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(891): AAFieldImage->loadFromForm()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(782): AutoAdmin->fillFieldsWithForm()
+#2 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(495): AutoAdmin->update()
+#3 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(62): AutoAdmin->process()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionBlocks()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): MainpageController->runAction()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): MainpageController->runActionWithFilters()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): MainpageController->run()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/?r=autoAdmin/mainpage/blocks/&sortBy=1&id[block_id]=1&action=update
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php (16)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php (57)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldFile.php (101)
+2015/02/25 16:03:20 [error] [php] Undefined index: autoadmin (D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php:16)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(891): AAFieldImage->loadFromForm()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(782): AutoAdmin->fillFieldsWithForm()
+#2 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(495): AutoAdmin->update()
+#3 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(62): AutoAdmin->process()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionBlocks()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): MainpageController->runAction()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): MainpageController->runActionWithFilters()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): MainpageController->run()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/?r=autoAdmin/mainpage/blocks/&sortBy=1&id[block_id]=1&action=update
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php (16)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php (57)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldFile.php (101)
+2015/02/25 16:05:08 [error] [php] Undefined index: autoadmin (D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php:16)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(891): AAFieldImage->loadFromForm()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(782): AutoAdmin->fillFieldsWithForm()
+#2 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(495): AutoAdmin->update()
+#3 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(62): AutoAdmin->process()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionBlocks()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): MainpageController->runAction()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): MainpageController->runActionWithFilters()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): MainpageController->run()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/?r=autoAdmin/mainpage/blocks/&id[block_id]=1&action=update
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php (16)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\helpers\AAHelperFile.php (57)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldFile.php (101)
+2015/02/25 16:09:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
 #3 {main}
-REQUEST_URI=/index.php?r=studentprofile
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
 ---
-2015/02/20 00:16:13 [error] [exception.CException] exception 'CException' with message 'Property "StudentProfile.password_repeat" is not defined.' in Z:\home\ita\www\protected\framework\base\CComponent.php:130
+2015/02/25 16:17:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
 Stack trace:
-#0 Z:\home\ita\www\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('password_repeat')
-#1 Z:\home\ita\www\protected\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('password_repeat')
-#2 Z:\home\ita\www\protected\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(StudentProfile), 'password_repeat')
-#3 Z:\home\ita\www\protected\framework\web\helpers\CHtml.php(1628): CHtml::activeInputField('password', Object(StudentProfile), 'password_repeat', Array)
-#4 Z:\home\ita\www\protected\framework\web\widgets\CActiveForm.php(771): CHtml::activePasswordField(Object(StudentProfile), 'password_repeat', Array)
-#5 Z:\home\ita\www\protected\views\studentprofile\studentprofile.php(148): CActiveForm->passwordField(Object(StudentProfile), 'password_repeat', Array)
-#6 Z:\home\ita\www\protected\framework\web\CBaseController.php(126): require('Z:\home\ita\www...')
-#7 Z:\home\ita\www\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('Z:\home\ita\www...', Array, true)
-#8 Z:\home\ita\www\protected\framework\web\CController.php(869): CBaseController->renderFile('Z:\home\ita\www...', Array, true)
-#9 Z:\home\ita\www\protected\framework\web\CController.php(782): CController->renderPartial('studentprofile', Array, true)
-#10 Z:\home\ita\www\protected\controllers\StudentProfileController.php(148): CController->render('studentprofile', Array)
-#11 Z:\home\ita\www\protected\framework\web\actions\CInlineAction.php(49): StudentProfileController->actionIndex()
-#12 Z:\home\ita\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#13 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#14 Z:\home\ita\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#15 Z:\home\ita\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#16 Z:\home\ita\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#17 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#18 Z:\home\ita\www\protected\framework\web\CController.php(291): CFilterChain->run()
-#19 Z:\home\ita\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#20 Z:\home\ita\www\protected\framework\web\CWebApplication.php(282): CController->run('')
-#21 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentprofile')
-#22 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#23 Z:\home\ita\www\index.php(13): CApplication->run()
-#24 {main}
-REQUEST_URI=/?r=studentprofile
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
 ---
-2015/02/20 00:29:46 [error] [exception.CException] exception 'CException' with message 'Property "StudentProfile.password_repeat" is not defined.' in Z:\home\ita\www\protected\framework\base\CComponent.php:130
+2015/02/25 16:19:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
 Stack trace:
-#0 Z:\home\ita\www\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('password_repeat')
-#1 Z:\home\ita\www\protected\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('password_repeat')
-#2 Z:\home\ita\www\protected\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(StudentProfile), 'password_repeat')
-#3 Z:\home\ita\www\protected\framework\web\helpers\CHtml.php(1628): CHtml::activeInputField('password', Object(StudentProfile), 'password_repeat', Array)
-#4 Z:\home\ita\www\protected\framework\web\widgets\CActiveForm.php(771): CHtml::activePasswordField(Object(StudentProfile), 'password_repeat', Array)
-#5 Z:\home\ita\www\protected\views\studentprofile\studentprofile.php(148): CActiveForm->passwordField(Object(StudentProfile), 'password_repeat', Array)
-#6 Z:\home\ita\www\protected\framework\web\CBaseController.php(126): require('Z:\home\ita\www...')
-#7 Z:\home\ita\www\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('Z:\home\ita\www...', Array, true)
-#8 Z:\home\ita\www\protected\framework\web\CController.php(869): CBaseController->renderFile('Z:\home\ita\www...', Array, true)
-#9 Z:\home\ita\www\protected\framework\web\CController.php(782): CController->renderPartial('studentprofile', Array, true)
-#10 Z:\home\ita\www\protected\controllers\StudentProfileController.php(148): CController->render('studentprofile', Array)
-#11 Z:\home\ita\www\protected\framework\web\actions\CInlineAction.php(49): StudentProfileController->actionIndex()
-#12 Z:\home\ita\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#13 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#14 Z:\home\ita\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#15 Z:\home\ita\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#16 Z:\home\ita\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#17 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#18 Z:\home\ita\www\protected\framework\web\CController.php(291): CFilterChain->run()
-#19 Z:\home\ita\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#20 Z:\home\ita\www\protected\framework\web\CWebApplication.php(282): CController->run('')
-#21 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentprofile')
-#22 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#23 Z:\home\ita\www\index.php(13): CApplication->run()
-#24 {main}
-REQUEST_URI=/?r=studentprofile
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
 ---
-2015/02/20 01:00:01 [error] [php] include(students.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (Z:\home\ita\www\protected\framework\YiiBase.php:427)
+2015/02/25 16:20:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
 Stack trace:
-#0 Z:\home\ita\www\protected\models\StudentProfile.php(13): spl_autoload_call()
-#1 Z:\home\ita\www\protected\framework\YiiBase.php(427): include()
-#2 unknown(0): autoload()
-#3 Z:\home\ita\www\protected\controllers\StudentProfileController.php(126): spl_autoload_call()
-#4 Z:\home\ita\www\protected\framework\web\actions\CInlineAction.php(49): StudentProfileController->actionIndex()
-#5 Z:\home\ita\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
-#6 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(133): StudentProfileController->runAction()
-#7 Z:\home\ita\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#8 Z:\home\ita\www\protected\framework\web\CController.php(1145): CAccessControlFilter->filter()
-#9 Z:\home\ita\www\protected\framework\web\filters\CInlineFilter.php(58): StudentProfileController->filterAccessControl()
-#10 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
-#11 Z:\home\ita\www\protected\framework\web\CController.php(291): CFilterChain->run()
-#12 Z:\home\ita\www\protected\framework\web\CController.php(265): StudentProfileController->runActionWithFilters()
-#13 Z:\home\ita\www\protected\framework\web\CWebApplication.php(282): StudentProfileController->run()
-#14 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#15 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#16 Z:\home\ita\www\index.php(13): CWebApplication->run()
-REQUEST_URI=/?r=studentprofile
-in Z:\home\ita\www\protected\models\StudentProfile.php (13)
-in Z:\home\ita\www\protected\controllers\StudentProfileController.php (126)
-in Z:\home\ita\www\index.php (13)
-2015/02/20 01:08:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.studentprofile' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `studentprofile`.
-in Z:\home\ita\www\protected\controllers\StudentProfileController.php (126)
-in Z:\home\ita\www\index.php (13)
-2015/02/20 01:08:37 [error] [exception.CDbException] exception 'CDbException' with message 'The table "studentprofile" for active record class "Studentprofile" cannot be found in the database.' in Z:\home\ita\www\protected\framework\db\ar\CActiveRecord.php:2362
-Stack trace:
-#0 Z:\home\ita\www\protected\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Studentprofile))
-#1 Z:\home\ita\www\protected\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
-#2 Z:\home\ita\www\protected\controllers\StudentProfileController.php(126): CActiveRecord->__construct()
-#3 Z:\home\ita\www\protected\framework\web\actions\CInlineAction.php(49): StudentProfileController->actionIndex()
-#4 Z:\home\ita\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#5 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#6 Z:\home\ita\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#7 Z:\home\ita\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#8 Z:\home\ita\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#9 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#10 Z:\home\ita\www\protected\framework\web\CController.php(291): CFilterChain->run()
-#11 Z:\home\ita\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#12 Z:\home\ita\www\protected\framework\web\CWebApplication.php(282): CController->run('')
-#13 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentprofile')
-#14 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#15 Z:\home\ita\www\index.php(13): CApplication->run()
-#16 {main}
-REQUEST_URI=/?r=studentprofile
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
 ---
-2015/02/20 01:09:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000] [1049] Unknown database 'students'' in Z:\home\ita\www\protected\framework\db\CDbConnection.php:382
+2015/02/25 16:40:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
 Stack trace:
-#0 Z:\home\ita\www\protected\framework\db\CDbConnection.php(330): CDbConnection->open()
-#1 Z:\home\ita\www\protected\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
-#2 Z:\home\ita\www\protected\framework\base\CModule.php(387): CDbConnection->init()
-#3 Z:\home\ita\www\protected\framework\base\CModule.php(103): CModule->getComponent('db2')
-#4 Z:\home\ita\www\protected\models\Studentprofile.php(31): CModule->__get('db2')
-#5 Z:\home\ita\www\protected\framework\db\ar\CActiveRecord.php(2361): Studentprofile->getDbConnection()
-#6 Z:\home\ita\www\protected\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Studentprofile))
-#7 Z:\home\ita\www\protected\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
-#8 Z:\home\ita\www\protected\controllers\StudentProfileController.php(126): CActiveRecord->__construct()
-#9 Z:\home\ita\www\protected\framework\web\actions\CInlineAction.php(49): StudentProfileController->actionIndex()
-#10 Z:\home\ita\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#11 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#12 Z:\home\ita\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#13 Z:\home\ita\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#14 Z:\home\ita\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#15 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#16 Z:\home\ita\www\protected\framework\web\CController.php(291): CFilterChain->run()
-#17 Z:\home\ita\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#18 Z:\home\ita\www\protected\framework\web\CWebApplication.php(282): CController->run('')
-#19 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentprofile')
-#20 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#21 Z:\home\ita\www\index.php(13): CApplication->run()
-#22 {main}
-REQUEST_URI=/?r=studentprofile
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
 ---
-2015/02/20 01:09:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000] [1049] Unknown database 'students'' in Z:\home\ita\www\protected\framework\db\CDbConnection.php:382
+2015/02/25 16:46:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
 Stack trace:
-#0 Z:\home\ita\www\protected\framework\db\CDbConnection.php(330): CDbConnection->open()
-#1 Z:\home\ita\www\protected\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
-#2 Z:\home\ita\www\protected\framework\base\CModule.php(387): CDbConnection->init()
-#3 Z:\home\ita\www\protected\framework\base\CModule.php(103): CModule->getComponent('db2')
-#4 Z:\home\ita\www\protected\models\Studentprofile.php(31): CModule->__get('db2')
-#5 Z:\home\ita\www\protected\framework\db\ar\CActiveRecord.php(2361): Studentprofile->getDbConnection()
-#6 Z:\home\ita\www\protected\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Studentprofile))
-#7 Z:\home\ita\www\protected\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
-#8 Z:\home\ita\www\protected\controllers\StudentProfileController.php(126): CActiveRecord->__construct()
-#9 Z:\home\ita\www\protected\framework\web\actions\CInlineAction.php(49): StudentProfileController->actionIndex()
-#10 Z:\home\ita\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#11 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#12 Z:\home\ita\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#13 Z:\home\ita\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#14 Z:\home\ita\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#15 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#16 Z:\home\ita\www\protected\framework\web\CController.php(291): CFilterChain->run()
-#17 Z:\home\ita\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#18 Z:\home\ita\www\protected\framework\web\CWebApplication.php(282): CController->run('')
-#19 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentprofile')
-#20 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#21 Z:\home\ita\www\index.php(13): CApplication->run()
-#22 {main}
-REQUEST_URI=/?r=studentprofile
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA//index.php?r=aaauth/login
 ---
-2015/02/20 11:24:32 [error] [php] include(StudentProfile.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (Z:\home\ita\www\protected\framework\YiiBase.php:427)
+2015/02/25 17:18:06 [error] [exception.CHttpException.403] exception 'CHttpException' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\controllers\AAGeneratorController.php:16
 Stack trace:
-#0 Z:\home\ita\www\protected\controllers\StudentRegController.php(218): spl_autoload_call()
-#1 Z:\home\ita\www\protected\framework\web\actions\CInlineAction.php(49): StudentRegController->actionReg()
-#2 Z:\home\ita\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
-#3 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(133): StudentRegController->runAction()
-#4 Z:\home\ita\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#5 Z:\home\ita\www\protected\framework\web\CController.php(1145): CAccessControlFilter->filter()
-#6 Z:\home\ita\www\protected\framework\web\filters\CInlineFilter.php(58): StudentRegController->filterAccessControl()
-#7 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
-#8 Z:\home\ita\www\protected\framework\web\CController.php(291): CFilterChain->run()
-#9 Z:\home\ita\www\protected\framework\web\CController.php(265): StudentRegController->runActionWithFilters()
-#10 Z:\home\ita\www\protected\framework\web\CWebApplication.php(282): StudentRegController->run()
-#11 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#12 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#13 Z:\home\ita\www\index.php(13): CWebApplication->run()
-REQUEST_URI=/?r=studentreg/reg
-in Z:\home\ita\www\protected\controllers\StudentRegController.php (218)
-in Z:\home\ita\www\index.php (13)
-2015/02/20 11:25:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "reg".' in Z:\home\ita\www\protected\framework\web\CController.php:483
-Stack trace:
-#0 Z:\home\ita\www\protected\framework\web\CController.php(270): CController->missingAction('reg')
-#1 Z:\home\ita\www\protected\framework\web\CWebApplication.php(282): CController->run('reg')
-#2 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/reg')
-#3 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#4 Z:\home\ita\www\index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/?r=studentreg/reg
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): AAGeneratorController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aagen...')
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aagenerator
 ---
-2015/02/20 11:25:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "reg".' in Z:\home\ita\www\protected\framework\web\CController.php:483
+2015/02/25 17:18:19 [error] [exception.CHttpException.403] exception 'CHttpException' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\controllers\AAGeneratorController.php:16
 Stack trace:
-#0 Z:\home\ita\www\protected\framework\web\CController.php(270): CController->missingAction('reg')
-#1 Z:\home\ita\www\protected\framework\web\CWebApplication.php(282): CController->run('reg')
-#2 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/reg')
-#3 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#4 Z:\home\ita\www\index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/?r=studentreg/reg
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): AAGeneratorController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('index')
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aagen...')
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aagenerator/index
 ---
-2015/02/20 11:26:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\home\ita\www\protected\framework\web\auth\CAccessControlFilter.php:182
+2015/02/25 17:18:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aagenerator/index".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
 Stack trace:
-#0 Z:\home\ita\www\protected\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
-#1 Z:\home\ita\www\protected\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
-#2 Z:\home\ita\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#3 Z:\home\ita\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#4 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#5 Z:\home\ita\www\protected\framework\web\CController.php(291): CFilterChain->run()
-#6 Z:\home\ita\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#7 Z:\home\ita\www\protected\framework\web\CWebApplication.php(282): CController->run('profile')
-#8 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/prof...')
-#9 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#10 Z:\home\ita\www\index.php(13): CApplication->run()
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aagenerator/ind...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aagenerator/index
+---
+2015/02/25 17:18:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aagenerator".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aagenerator')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aagenerator
+---
+2015/02/26 13:52:06 [error] [php] Undefined variable: imagesPath (D:\xampp\htdocs\IntITA\protected\models\AboutUs.php:37)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(32): SiteController->render()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/
+in D:\xampp\htdocs\IntITA\protected\models\AboutUs.php (37)
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (60)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (32)
+2015/02/26 13:52:47 [error] [php] Undefined variable: imagesPath (D:\xampp\htdocs\IntITA\protected\models\AboutUs.php:37)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(32): SiteController->render()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/
+in D:\xampp\htdocs\IntITA\protected\models\AboutUs.php (37)
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (60)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (32)
+2015/02/26 13:54:48 [error] [php] Undefined variable: imagesPath (D:\xampp\htdocs\IntITA\protected\models\AboutUs.php:37)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(32): SiteController->render()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/
+in D:\xampp\htdocs\IntITA\protected\models\AboutUs.php (37)
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (60)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (32)
+2015/02/26 13:59:34 [error] [exception.CHttpException.403] exception 'CHttpException' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\controllers\AAGeneratorController.php:16
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): AAGeneratorController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aagen...')
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aagenerator
+---
+2015/02/26 13:59:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aagenerator".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aagenerator')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aagenerator
+---
+2015/02/26 13:59:47 [error] [exception.CHttpException.403] exception 'CHttpException' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\controllers\AAGeneratorController.php:16
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): AAGeneratorController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aagen...')
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aagenerator
+---
+2015/02/26 13:59:52 [error] [exception.CHttpException.403] exception 'CHttpException' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\controllers\AAGeneratorController.php:16
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): AAGeneratorController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('index')
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aagen...')
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aagenerator/index
+---
+2015/02/26 14:33:49 [error] [exception.AAException] exception 'AAException' with message 'Wrong field name "title" for sorting' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php:135
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(923): AAData->setSortOrder(Array)
+#1 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\StepsController.php(19): AutoAdmin->sortDefault(Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StepsController->actionStepsList()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('stepslist')
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/steps...')
+#8 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/steps/stepslist/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 14:45:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'carousel.width' in 'field list'. The SQL statement executed was: SELECT `carousel`.`order`, `carousel`.`order`, `carousel`.`picture_url`, `carousel`.`width`, `carousel`.`height`, `carousel`.`description`
+FROM `carousel`
+ORDER BY `carousel`.`order` LIMIT 80.
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AADb.php (97)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php (612)
+in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php (564)
+2015/02/26 14:45:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'carousel.width' in 'field list'. The SQL statement executed was: SELECT `carousel`.`order`, `carousel`.`order`, `carousel`.`picture_url`, `carousel`.`width`, `carousel`.`height`, `carousel`.`description`
+FROM `carousel`
+ORDER BY `carousel`.`order` LIMIT 80' in D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AADb.php(97): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(612): AADb->getList(80, 0)
+#3 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(564): AutoAdmin->listMode()
+#4 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(44): AutoAdmin->process()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#11 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/IntITA/index.php/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php/?r=autoAdmin
+---
+2015/02/26 14:56:08 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(40): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
 #11 {main}
-REQUEST_URI=/?r=studentreg/profile
-HTTP_REFERER=http://ita/index.php?r=site/login
+REQUEST_URI=/IntITA/index.php/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php/?r=autoAdmin
 ---
-2015/02/20 11:27:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\home\ita\www\protected\framework\web\auth\CAccessControlFilter.php:182
+2015/02/26 14:57:35 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
 Stack trace:
-#0 Z:\home\ita\www\protected\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
-#1 Z:\home\ita\www\protected\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
-#2 Z:\home\ita\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#3 Z:\home\ita\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#4 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#5 Z:\home\ita\www\protected\framework\web\CController.php(291): CFilterChain->run()
-#6 Z:\home\ita\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#7 Z:\home\ita\www\protected\framework\web\CWebApplication.php(282): CController->run('profile')
-#8 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/prof...')
-#9 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#10 Z:\home\ita\www\index.php(13): CApplication->run()
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(40): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
 #11 {main}
-REQUEST_URI=/?r=studentreg/profile
-HTTP_REFERER=http://ita/index.php?r=site/login
+REQUEST_URI=/IntITA/index.php/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php/?r=autoAdmin
 ---
-2015/02/20 11:27:45 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\home\ita\www\protected\framework\web\auth\CAccessControlFilter.php:182
+2015/02/26 14:59:36 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
 Stack trace:
-#0 Z:\home\ita\www\protected\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
-#1 Z:\home\ita\www\protected\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
-#2 Z:\home\ita\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#3 Z:\home\ita\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#4 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#5 Z:\home\ita\www\protected\framework\web\CController.php(291): CFilterChain->run()
-#6 Z:\home\ita\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#7 Z:\home\ita\www\protected\framework\web\CWebApplication.php(282): CController->run('profile')
-#8 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/prof...')
-#9 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#10 Z:\home\ita\www\index.php(13): CApplication->run()
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
 #11 {main}
-REQUEST_URI=/?r=studentreg/profile
-HTTP_REFERER=http://ita/index.php?r=site/login
+REQUEST_URI=/IntITA/index.php/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php/?r=autoAdmin
 ---
-2015/02/20 11:28:47 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\home\ita\www\protected\framework\web\auth\CAccessControlFilter.php:182
+2015/02/26 15:00:45 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
 Stack trace:
-#0 Z:\home\ita\www\protected\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
-#1 Z:\home\ita\www\protected\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
-#2 Z:\home\ita\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#3 Z:\home\ita\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#4 Z:\home\ita\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#5 Z:\home\ita\www\protected\framework\web\CController.php(291): CFilterChain->run()
-#6 Z:\home\ita\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#7 Z:\home\ita\www\protected\framework\web\CWebApplication.php(282): CController->run('profile')
-#8 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/prof...')
-#9 Z:\home\ita\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#10 Z:\home\ita\www\index.php(13): CApplication->run()
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
 #11 {main}
+REQUEST_URI=/IntITA/index.php/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php/?r=autoAdmin
+---
+2015/02/26 15:02:16 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php/?r=autoAdmin
+---
+2015/02/26 15:03:43 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php/?r=autoAdmin
+---
+2015/02/26 15:04:58 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field picture_url' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldFile.php:19
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldFile->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php/?r=autoAdmin
+---
+2015/02/26 15:06:30 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php/?r=autoAdmin
+---
+2015/02/26 15:07:03 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php/?r=autoAdmin
+---
+2015/02/26 15:08:15 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php/?r=autoAdmin
+---
+2015/02/26 15:08:31 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php/?r=autoAdmin
+---
+2015/02/26 15:09:27 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:10:11 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:11:08 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:11:13 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field textAbout' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'aboutus')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(56): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionBlocks()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('blocks')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/blocks/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:11:23 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field stepText' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'step')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\StepsController.php(18): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StepsController->actionStepsList()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('stepslist')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/steps...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/steps/stepslist/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:12:19 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+<<<<<<< HEAD
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:12:56 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:13:10 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:13:53 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(38): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:13:56 [error] [exception.AAException] exception 'AAException' with message 'Incorrect options configuration of the field iconImage' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php:104
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'aboutus')
+#1 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(56): AutoAdmin->fieldsConf(Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionBlocks()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('blocks')
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#8 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/blocks/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:13:58 [error] [exception.AAException] exception 'AAException' with message 'Incorrect options configuration of the field stepImage' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php:104
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'step')
+#1 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\StepsController.php(18): AutoAdmin->fieldsConf(Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StepsController->actionStepsList()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('stepslist')
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/steps...')
+#8 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/steps/stepslist/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:14:34 [error] [exception.AAException] exception 'AAException' with message 'Incorrect options configuration of the field stepImage' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php:104
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'step')
+#1 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\StepsController.php(18): AutoAdmin->fieldsConf(Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StepsController->actionStepsList()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('stepslist')
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/steps...')
+#8 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/steps/stepslist/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:26:47 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field description' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'carousel')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(35): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionCarousel()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('carousel')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/carousel/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:28:07 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field stepText' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'step')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\StepsController.php(18): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StepsController->actionStepsList()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('stepslist')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/steps...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/steps/stepslist/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:28:51 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field stepText' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'step')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\StepsController.php(18): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StepsController->actionStepsList()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('stepslist')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/steps...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/steps/stepslist/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:29:59 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field stepText' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'step')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\StepsController.php(18): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StepsController->actionStepsList()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('stepslist')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/steps...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/steps/stepslist/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:32:00 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field textAbout' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'aboutus')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(53): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionBlocks()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('blocks')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/blocks/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+---
+2015/02/26 15:34:23 [error] [exception.AAException] exception 'AAException' with message 'The parameter "directoryPath" must be set for the field textAbout' in D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\field\AAFieldText.php:14
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\models\AAData.php(102): AAFieldText->completeOptions()
+#1 D:\xampp\htdocs\IntITA\protected\extensions\autoAdmin\AutoAdmin.php(308): AAData->loadColumnsConf(Array, 'aboutus')
+#2 D:\xampp\htdocs\IntITA\protected\modules\autoAdmin\controllers\MainpageController.php(53): AutoAdmin->fieldsConf(Array)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): MainpageController->actionBlocks()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('blocks')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/mainp...')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/mainpage/blocks/
+HTTP_REFERER=http://localhost/IntITA/index.php?r=autoAdmin
+=======
 REQUEST_URI=/?r=studentreg/profile
 ---
 2015/02/20 11:29:14 [error] [exception.CException] exception 'CException' with message 'StudentRegController cannot find the requested view "studentprofile".' in Z:\home\ita\www\protected\framework\web\CController.php:878
@@ -955,6 +1573,605 @@ Stack trace:
 #19 Z:\home\temp\www\index.php(13): CApplication->run()
 #20 {main}
 REQUEST_URI=/index.php?r=studentreg/profile
+>>>>>>> 54211e7c1adefcd394752864567f03421111490a
+---
+2015/02/27 14:38:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/02/27 14:43:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aauth/users".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aauth...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aauth/users
+---
+2015/02/27 14:44:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aauth/users".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aauth...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aauth/users
+---
+2015/02/27 14:44:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aauth/users".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aauth...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aauth/users
+---
+2015/02/27 14:44:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/02/27 14:45:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/02/27 14:49:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/02/27 14:50:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/02/27 14:50:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aauth...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aauth/login
+---
+2015/02/27 14:50:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aauth...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aauth/login
+---
+2015/02/27 14:53:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aauth...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aauth/login
+---
+2015/02/27 14:53:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/02/27 14:54:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/02/27 14:54:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/AAUTH/USERS".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/AAUTH...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/AAUTH/USERS
+---
+2015/02/27 14:54:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aauth/users".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aauth...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aauth/users
+---
+2015/02/27 14:58:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/02/27 15:01:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/02/27 15:03:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/02/27 15:05:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/02/27 15:15:21 [error] [php] Object of class Carousel could not be converted to string (D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php:62)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (62)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/02/27 16:21:05 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.sliderTexture" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sliderTexture')
+#1 D:\xampp\htdocs\IntITA\protected\views\site\index.php(5): CActiveRecord->__get('sliderTexture')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(76): CController->render('index', Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#13 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/IntITA/
+---
+2015/02/27 16:33:08 [error] [php] Undefined variable: subheader1 (D:\xampp\htdocs\IntITA\protected\views\site\index.php:30)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#2 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(87): SiteController->render()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (30)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (87)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/02/27 16:34:13 [error] [php] Undefined variable: subLineImage (D:\xampp\htdocs\IntITA\protected\views\site\index.php:31)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#2 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(89): SiteController->render()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (31)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (89)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/02/27 16:35:12 [error] [php] Undefined variable: step_size (D:\xampp\htdocs\IntITA\protected\views\site\index.php:82)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#2 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(89): SiteController->render()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (82)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (89)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/02 13:52:26 [error] [php] Object of class SiteController could not be converted to string (D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php:64)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (64)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/02 13:52:48 [error] [php] Object of class SiteController could not be converted to string (D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php:64)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (64)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/02 14:01:25 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\views\site\index.php:5)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#2 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(108): SiteController->render()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (5)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (108)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/02 14:04:49 [error] [php] Undefined index: sliderLine (D:\xampp\htdocs\IntITA\protected\views\site\index.php:8)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#2 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(108): SiteController->render()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (8)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (108)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/02 14:07:34 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.sliderTexture" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sliderTexture')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CModel.php(596): CActiveRecord->__get('sliderTexture')
+#2 D:\xampp\htdocs\IntITA\protected\views\site\index.php(5): CModel->offsetGet('sliderTexture')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(95): CController->render('index', Array)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/02 14:08:17 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.sliderTexture" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sliderTexture')
+#1 D:\xampp\htdocs\IntITA\protected\views\site\index.php(5): CActiveRecord->__get('sliderTexture')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(95): CController->render('index', Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#13 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/02 14:08:51 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.sliderTexture" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sliderTexture')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CModel.php(596): CActiveRecord->__get('sliderTexture')
+#2 D:\xampp\htdocs\IntITA\protected\views\site\index.php(5): CModel->offsetGet('sliderTexture')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(95): CController->render('index', Array)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/02 14:08:57 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.sliderTexture" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sliderTexture')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CModel.php(596): CActiveRecord->__get('sliderTexture')
+#2 D:\xampp\htdocs\IntITA\protected\views\site\index.php(5): CModel->offsetGet('sliderTexture')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(95): CController->render('index', Array)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/02 15:40:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin
+---
+2015/03/02 15:40:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/02 15:40:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/02 15:44:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin
+---
+2015/03/02 15:44:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/02 15:44:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/02 15:44:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/02 15:44:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/02 16:08:11 [error] [php] Missing argument 1 for Lecture::setLessonFooterValues(), called in D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php on line 11 and defined (D:\xampp\htdocs\IntITA\protected\models\Lecture.php:40)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): LessonController->runAction()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): LessonController->runActionWithFilters()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): LessonController->run()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php?r=lesson
+in D:\xampp\htdocs\IntITA\protected\models\Lecture.php (40)
+in D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php (11)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/02 16:09:43 [error] [exception.CException] exception 'CException' with message 'Property "Lecture.teacherImage" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(161): CComponent->__set('teacherImage', '/IntITA/css/ima...')
+#1 D:\xampp\htdocs\IntITA\protected\models\Lecture.php(69): CActiveRecord->__set('teacherImage', '/IntITA/css/ima...')
+#2 D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php(13): Lecture->setTeacherValues('/css/images/tea...', '\xD0\x86\xD0\xB2\xD0\xB0\xD0\xBD\xD0\xBE\xD0\xB2 \xD0\x86...', 'ivanov@intita.o...', '/067/56-569-56,...', 'ivanov.ivanov', 'https://www.goo...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): LessonController->actionIndex()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('lesson')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php?r=lesson
+---
+2015/03/02 16:11:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "teacherprofile".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('teacherprofile')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=teacherprofile
+---
+2015/03/02 16:11:55 [error] [exception.CException] exception 'CException' with message 'Property "StudentReg.nickname" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('nickname')
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('nickname')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(StudentReg), 'nickname')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(StudentReg), 'nickname', Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(StudentReg), 'nickname', Array)
+#5 D:\xampp\htdocs\IntITA\protected\views\studentreg\studentreg.php(67): CActiveForm->textField(Object(StudentReg), 'nickname', Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('studentreg', Array, true)
+#10 D:\xampp\htdocs\IntITA\protected\controllers\StudentregController.php(158): CController->render('studentreg', Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StudentRegController->actionIndex()
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#21 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg')
+#22 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#23 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/IntITA/index.php?r=studentreg
+---
+2015/03/02 16:12:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "studentprofile".' in D:\xampp\htdocs\IntITA\protected\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(270): CController->missingAction('studentprofile')
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('studentprofile')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/stud...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/IntITA/index.php?r=studentreg/studentprofile
+---
+2015/03/02 16:13:11 [error] [exception.CException] exception 'CException' with message 'Property "StudentReg.nickname" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('nickname')
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('nickname')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(StudentReg), 'nickname')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(StudentReg), 'nickname', Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(StudentReg), 'nickname', Array)
+#5 D:\xampp\htdocs\IntITA\protected\views\studentreg\studentreg.php(67): CActiveForm->textField(Object(StudentReg), 'nickname', Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('studentreg', Array, true)
+#10 D:\xampp\htdocs\IntITA\protected\controllers\StudentregController.php(158): CController->render('studentreg', Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StudentRegController->actionIndex()
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('index')
+#21 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/inde...')
+#22 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#23 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/IntITA/index.php?r=studentreg/index
+---
+2015/03/03 14:41:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/03 14:53:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/03 14:54:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/
+---
+2015/03/03 14:54:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aaaut...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aaauth/login
+---
+2015/03/03 14:56:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aagenerator/".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aagen...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aagenerator/
+---
+2015/03/03 14:56:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoadmin/aagenerator/".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoadmin/aagen...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoadmin/aagenerator/
+---
+2015/03/03 14:56:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoadmin/aagenerator/index".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoadmin/aagen...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoadmin/aagenerator/index
 ---
 2015/02/27 15:20:27 [error] [php] Missing argument 5 for Step::Step(), called in Z:\home\temp\www\protected\views\site\index.php on line 116 and defined (Z:\home\temp\www\protected\models\Step.php:10)
 Stack trace:

@@ -16,18 +16,32 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'ext.autoadmin.*',
+		'ext.autoadmin.models.*',
+		'ext.autoadmin.models.field.*',
+		'ext.autoadmin.helpers.*',
+		'ext.autoadmin.controllers.*',
 	),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 
-	/*	'gii'=>array(
+		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'admin',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		*/
+
+		'autoadmin'=>array(
+			'class'=>'ext.autoadmin.AutoAdmin',
+			'basePath' => dirname(__FILE__).'/../modules/autoadmin',
+			'wwwDirName' => 'www', //your DocumentRoot
+			'authMode' => true, //Switch on authorization system
+			'openMode' => true, //Use for temporary switching off all access limitations
+			'logMode' => false,
+		),
+
 	),
 
 	// application components
@@ -43,20 +57,37 @@ return array(
 		),
 
 		// uncomment the following to enable URLs in path-format
-		/*
+
 		'urlManager'=>array(
-			'urlFormat'=>'path',
+			//'urlFormat'=>'path',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+
+				'/<module:autoadmin>' => 'autoadmin/default/index',
+				'/<module:autoadmin>/<controller:\w+>' => 'autoadmin/<controller>/index',
+				'/<module:autoadmin>/<controller:\w+>/<action:\w+>' => 'autoadmin/<controller>/<action>',
+
+				'<controller:aajax>/<action:\w+>' => 'autoadmin/<controller>/<action>',
+				'<controller:afile>/<action:\w+>' => 'autoadmin/<controller>/<action>',
+				'<controller:\w+>/foreign-<key:\w+>' => 'autoadmin/<controller>/foreign<key>',
 			),
 		),
-		*/
+
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
-		'db2'=>require(dirname(__FILE__).'/database2.php'),
+		'db2'=>require(dirname(__FILE__).'/database.php'),
+
+		'dbAdmin' => array(
+			'class'=>'CDbConnection',
+			'connectionString' => 'mysql:host=localhost;dbname=int_ita_db',
+			'emulatePrepare' => true,
+			'username' => 'root',
+			'password' => '',
+			'charset' => 'utf8',
+		),
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors

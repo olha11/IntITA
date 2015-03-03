@@ -1,20 +1,21 @@
-(Yii 1.1.15)
+#AutoAdmin CMS Framework http://www.yiiframework.com/extension/autoadmin/
 
-http://localhost/intita/main/index.php?r=courses/index  
-http://localhost/intita/main/index.php?r=tests/index 
-http://localhost/intita/main/index.php?r=modules/index 
-http://localhost/intita/main/index.php?r=lectures/index 
-http://localhost/intita/main/index.php?r=hometasks/index 
-http://localhost/intita/main/index.php?r=videos/index 
-http://localhost/intita/main/index.php?r=theoreticalsmaterials/index 
+Yii 1.1.16
 
-login: admin/admin
 
-password (site) 1111
+back-end index page http://localhost/IntITA/www/_admin/
 
-DB: 
-int_ita_db
-password(db) 1111
+user login: User
 
-======
+     password: password
 
+
+#Pages:
+
+1. main - http://localhost/IntITA/
+
+2. lesson - http://localhost/IntITA/index.php?r=lesson
+
+3. teacher profile -
+
+4. student profile -
