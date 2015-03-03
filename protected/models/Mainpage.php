@@ -62,7 +62,7 @@ class Mainpage extends CActiveRecord
 		$this->slider_button_text=$this->findByPk($id)->slider_button_text;
 		$this->form_header_1 = $this->findByPk($id)->form_header_1;
 		$this->form_header_2 = $this->findByPk($id)->form_header_2;
-		$this->reg_text = $this->findByPk($id)->reg_text
+		$this->reg_text = $this->findByPk($id)->reg_text;
 		return $this;
 	}
 	/**
