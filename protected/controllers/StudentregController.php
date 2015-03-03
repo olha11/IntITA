@@ -28,7 +28,7 @@ class StudentRegController extends Controller
     {
         return array(
             array('allow',  // allow all users to perform 'index' and 'view' actions
-                'actions'=>array('index','view','edit','profile','sendletter'),
+                'actions'=>array('index','view','edit','profile','sendletter','rewrite'),
                 'users'=>array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -233,6 +233,72 @@ class StudentRegController extends Controller
         $model=new StudentReg();
 
         $this->render("studentprofileedit", array('model'=>$model));
+
+    }
+    public function actionRewrite()
+    {
+        $model=new StudentReg();
+
+        if(!empty($_POST['StudentReg']['firstName'])) {
+            StudentReg::model()->updateByPk(1, array('firstName' => $_POST['StudentReg']['firstName']));
+            Yii::app()->user->setFlash('messageedit','Оновлено');
+        }
+        if(!empty($_POST['StudentReg']['secondName'])) {
+            StudentReg::model()->updateByPk(1, array('secondName' => $_POST['StudentReg']['secondName']));
+            Yii::app()->user->setFlash('messageedit','Оновлено');
+        }
+        if(!empty($_POST['StudentReg']['middleName'])) {
+            StudentReg::model()->updateByPk(1, array('middleName' => $_POST['StudentReg']['middleName']));
+            Yii::app()->user->setFlash('messageedit','Оновлено');
+        }
+        if(!empty($_POST['StudentReg']['birthday'])) {
+            StudentReg::model()->updateByPk(1, array('birthday' => $_POST['StudentReg']['birthday']));
+            Yii::app()->user->setFlash('messageedit','Оновлено');
+        }
+        if(!empty($_POST['StudentReg']['email'])) {
+            StudentReg::model()->updateByPk(1, array('email' => $_POST['StudentReg']['email']));
+            Yii::app()->user->setFlash('messageedit','Оновлено');
+        }
+        if(!empty($_POST['StudentReg']['password'])) {
+            StudentReg::model()->updateByPk(1, array('password' => $_POST['StudentReg']['password']));
+            Yii::app()->user->setFlash('messageedit','Оновлено');
+        }
+        if(!empty($_POST['StudentReg']['phone'])) {
+            StudentReg::model()->updateByPk(1, array('phone' => $_POST['StudentReg']['phone']));
+            Yii::app()->user->setFlash('messageedit','Оновлено');
+        }
+        if(!empty($_POST['StudentReg']['address'])) {
+            StudentReg::model()->updateByPk(1, array('address' => $_POST['StudentReg']['address']));
+            Yii::app()->user->setFlash('messageedit','Оновлено');
+        }
+        if(!empty($_POST['StudentReg']['education'])) {
+            StudentReg::model()->updateByPk(1, array('education' => $_POST['StudentReg']['education']));
+            Yii::app()->user->setFlash('messageedit','Оновлено');
+        }
+        if(!empty($_POST['StudentReg']['interests'])) {
+            StudentReg::model()->updateByPk(1, array('interests' => $_POST['StudentReg']['interests']));
+            Yii::app()->user->setFlash('messageedit','Оновлено');
+        }
+        if(!empty($_POST['StudentReg']['aboutMy'])) {
+            StudentReg::model()->updateByPk(1, array('aboutMy' => $_POST['StudentReg']['aboutMy']));
+            Yii::app()->user->setFlash('messageedit','Оновлено');
+        }
+        if(!empty($_FILES["upload"])) {
+            if($_FILES["upload"]["size"] > 1024*1024*0.5)
+            {
+                Yii::app()->user->setFlash('avatarmessage','Розмір файла перевищує 500кб');
+            }elseif (is_uploaded_file($_FILES["upload"]["tmp_name"])) {
+                $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
+                $id='1'.'id';
+                $_FILES["upload"]["name"]=$id . '.'. $ext;
+                move_uploaded_file($_FILES["upload"]["tmp_name"],
+                    Yii::app()->request->baseUrl ."css/images/".$_FILES["upload"]["name"]);
+                StudentReg::model()->updateByPk(1, array('avatar' => Yii::app()->request->baseUrl ."css/images/".$_FILES["upload"]["name"]));
+                Yii::app()->user->setFlash('messageedit','Оновлено');
+            }
+        }
+
+        $this->render("studentprofile", array('model'=>$model));
 
     }
 }

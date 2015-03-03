@@ -199,7 +199,7 @@ table.titleProfile{
     margin-top: 22px;
 }
 
-.fileform #uploadAvatar {
+.fileform .uploadAvatar {
     position:absolute;
     top:0;
     left:0;
@@ -211,12 +211,12 @@ table.titleProfile{
     z-index:1;
 	cursor: pointer;
 }
-input[type="file"]#chooseAvatar{
+input[type="file"].chooseAvatar{
     position:absolute;
     top:4px;
     left:2px;
 }
-input[type="button"].avatar{
+input[type="button"].avatar,input[type="submit"].avatar{
     position:absolute;
     z-index:2;
     margin:0;

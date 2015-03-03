@@ -1298,3 +1298,47 @@ in Z:\home\temp\www\index.php (13)
 2015/03/02 20:59:35 [warning] [application] Failed to set unsafe attribute "middleName" of "StudentReg".
 in Z:\home\temp\www\protected\controllers\StudentregController.php (129)
 in Z:\home\temp\www\index.php (13)
+2015/03/03 03:13:10 [warning] [application] Failed to set unsafe attribute "middleName" of "StudentReg".
+in Z:\home\temp\www\protected\controllers\StudentregController.php (129)
+in Z:\home\temp\www\index.php (13)
+2015/03/03 04:13:19 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (Z:\home\temp\www\protected\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 Z:\home\temp\www\protected\framework\web\helpers\CHtml.php(158): renderAttributes()
+#1 Z:\home\temp\www\protected\framework\web\helpers\CHtml.php(465): tag()
+#2 Z:\home\temp\www\protected\framework\web\helpers\CHtml.php(500): button()
+#3 Z:\home\temp\www\protected\views\studentreg\studentprofileedit.php(131): submitButton()
+#4 Z:\home\temp\www\protected\framework\web\CBaseController.php(126): require()
+#5 Z:\home\temp\www\protected\framework\web\CBaseController.php(95): StudentRegController->renderInternal()
+#6 Z:\home\temp\www\protected\framework\web\CController.php(869): StudentRegController->renderFile()
+#7 Z:\home\temp\www\protected\framework\web\CController.php(782): StudentRegController->renderPartial()
+#8 Z:\home\temp\www\protected\controllers\StudentregController.php(235): StudentRegController->render()
+#9 Z:\home\temp\www\protected\framework\web\actions\CInlineAction.php(49): StudentRegController->actionEdit()
+#10 Z:\home\temp\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(133): StudentRegController->runAction()
+#12 Z:\home\temp\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 Z:\home\temp\www\protected\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#14 Z:\home\temp\www\protected\framework\web\filters\CInlineFilter.php(58): StudentRegController->filterAccessControl()
+#15 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#16 Z:\home\temp\www\protected\framework\web\CController.php(291): CFilterChain->run()
+#17 Z:\home\temp\www\protected\framework\web\CController.php(265): StudentRegController->runActionWithFilters()
+#18 Z:\home\temp\www\protected\framework\web\CWebApplication.php(282): StudentRegController->run()
+#19 Z:\home\temp\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 Z:\home\temp\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 Z:\home\temp\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/?r=studentreg/edit
+in Z:\home\temp\www\protected\views\studentreg\studentprofileedit.php (131)
+in Z:\home\temp\www\protected\controllers\StudentregController.php (235)
+in Z:\home\temp\www\index.php (13)
+2015/03/03 04:32:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pro".' in Z:\home\temp\www\protected\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\temp\www\protected\framework\web\CController.php(270): CController->missingAction('pro')
+#1 Z:\home\temp\www\protected\framework\web\CWebApplication.php(282): CController->run('pro')
+#2 Z:\home\temp\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/pro')
+#3 Z:\home\temp\www\protected\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 Z:\home\temp\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/?r=studentreg/pro
+---
+2015/03/03 04:33:52 [warning] [application] Failed to set unsafe attribute "middleName" of "StudentReg".
+in Z:\home\temp\www\protected\controllers\StudentregController.php (129)
+in Z:\home\temp\www\index.php (13)

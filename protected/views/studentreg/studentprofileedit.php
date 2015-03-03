@@ -56,6 +56,7 @@ $post=StudentReg::model()->findByPk(1);
 <div class="formStudProf">
     <?php $form=$this->beginWidget('CActiveForm', array(
         'id'=>'studentreg-form',
+        'action'=>'/index.php/?r=studentreg/rewrite',
         // Please note: When you enable ajax validation, make sure the corresponding
         // controller action is handling ajax validation correctly.
         // There is a call to performAjaxValidation() commented in generated controller code.
@@ -146,8 +147,8 @@ $post=StudentReg::model()->findByPk(1);
         <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
         <div class="fileform">
             <input class="avatar" type="button" value="ВИБЕРІТЬ ФАЙЛ">
-            <input type="file" name="upload" id="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
-            <input  id="uploadAvatar" type="submit">
+            <input type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
+            <input  class="uploadAvatar" type="submit">
         </div>
         <div id="avatarInfo">Файл не вибрано...</div>
         <div class="avatarError">

@@ -80,6 +80,9 @@ $post=StudentReg::model()->findByPk(1);
                     <div class="aboutInfo">
                         <p> <span class="colorP">Завершенні курси:</span> </br>Курси самогоних апаратів 6-го рівня</p>
                     </div>
+                    <?php if(Yii::app()->user->hasFlash('messageedit')):
+                        echo Yii::app()->user->getFlash('messageedit');
+                    endif; ?>
                 </td>
             </tr>
        </table>
