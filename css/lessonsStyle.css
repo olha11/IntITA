@@ -4,6 +4,14 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.lessonBlock h3{
+    margin-top: 20px;
+}
+.lessonVisb2, .lessonVisb3 {
+}
+.spoilerBody {
+    display:none;
+}
 .lessonText {
     display:inline-block;
     float:left;
@@ -25,9 +33,32 @@ h1.lessonTheme{
 h1.lessonPart{
     color: #4b75a4;
     font-size: x-large;
+    margin-top: 34px;
 }
-p.listTheme{
-    margin: -5px 0px 30px 0px;
+span.listTheme{
+    font-size: large;
+    font-weight: normal;
+}
+span.spoilerLinks {
+    cursor:pointer;
+}
+span.spoilerClick {
+    text-decoration:underline;
+    color:#4b75a4;
+    font-size: small;
+    font-weight: normal;
+}
+span.spoilerTriangle {
+    font-size: xx-small;
+    color: #000000;
+}
+span.subChapter{
+    color: #4b75a4;
+    font-weight: normal;
+    font-size: larger;
+}
+.spoilerBody p {
+    margin:0 0 0 20px ;
 }
 .lessonCode {
     background-color: #d6ebe0;
@@ -159,8 +190,11 @@ div.lessonButFinal
     background-color:#4b75a4;
     margin: 10px 0px 20px 0px;
     float:right;
+    border:none;
 }
 .BBCode input[type="submit"]:hover {
     cursor: pointer;
-    box-shadow: 0 0 4px #2f2f80;
+    border-top-color: #454545;
+    background: #454545;
+    color: #fcfcfc;
 }

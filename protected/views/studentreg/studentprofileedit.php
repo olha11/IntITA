@@ -36,14 +36,27 @@
 /* @var $model studentreg */
 /* @var $form CActiveForm */
 ?>
+<?php
+$post=StudentReg::model()->findByPk(1);
+?>
 <div class="formStudProfNav">
     <div class="regLinks">
-        <a href="/index.php">Головна</a> &#187; <a href="#">Реєстрація</a>
+        <a href="/index.php">Головна</a> &#187; <a href="/index.php/?r=studentreg/profile">Профіль</a>&#187; <a href="#">Редагувати профіль</a>
+    </div>
+    <div class="profileStatus">
+        <div>
+         <?php echo $post->firstName;?></br>
+         <?php echo $post->middleName;?></br>
+         <?php echo $post->secondName;?></br>
+         <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
+        </div>
+        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
     </div>
 </div>
 <div class="formStudProf">
     <?php $form=$this->beginWidget('CActiveForm', array(
         'id'=>'studentreg-form',
+        'action'=>'/index.php/?r=studentreg/rewrite',
         // Please note: When you enable ajax validation, make sure the corresponding
         // controller action is handling ajax validation correctly.
         // There is a call to performAjaxValidation() commented in generated controller code.
@@ -61,7 +74,7 @@
         </table>
 
         <div class="row">
-            <?php echo $form->labelEx($model,'firstName'); ?>
+            <?php echo $form->label($model,'firstName'); ?>
             <?php echo $form->textField($model,'firstName',array('maxlength'=>255)); ?>
             <span><?php echo $form->error($model,'firstName'); ?></span>
         </div>
@@ -86,27 +99,37 @@
             <span><?php echo $form->error($model,'education'); ?></span>
         </div>
         <div class="row">
-            <?php echo $form->labelEx($model,'phone'); ?>
+            <?php echo $form->label($model,'phone'); ?>
             <?php echo $form->textField($model,'phone',array('maxlength'=>15)); ?>
             <span><?php echo $form->error($model,'phone'); ?></span>
         </div>
         <div class="row">
-            <?php echo $form->labelEx($model,'email'); ?>
-            <?php echo $form->textField($model,'email',array('maxlength'=>255)); ?>
-            <span><?php echo $form->error($model,'email'); ?></span>
+            <?php echo $form->label($model,'address'); ?>
+            <?php echo $form->textField($model,'address',array('maxlength'=>255)); ?>
+            <span><?php echo $form->error($model,'address'); ?></span>
         </div>
-        <div class="rowPass">
-            <?php echo $form->labelEx($model,'password'); ?>
+        <div class="row">
+            <?php echo $form->label($model,'interests'); ?>
+            <?php echo $form->textField($model,'interests',array('maxlength'=>255, 'placeholder'=>'введіть Ваші інтереси через кому')); ?>
+            <span><?php echo $form->error($model,'interests'); ?></span>
+        </div>
+        <div class="row">
+            <?php echo $form->label($model,'aboutMy'); ?>
+            <?php echo $form->textArea($model,'aboutMy'); ?>
+            <?php echo $form->error($model,'aboutMy'); ?>
+        </div>
+        <div class="rowPassEd">
+            <?php echo $form->label($model,'password'); ?>
             <span class="passEye"><?php echo $form->passwordField($model,'password',array('maxlength'=>255)); ?></span>
             <?php echo $form->error($model,'password'); ?>
         </div>
         <div class="row">
-            <?php echo $form->labelEx($model,'password_repeat'); ?>
+            <?php echo $form->label($model,'password_repeat'); ?>
             <span class="passEye">  <?php echo $form->passwordField($model,'password_repeat',array('maxlength'=>255)); ?></span>
             <?php echo $form->error($model,'password_repeat'); ?>
         </div>
         <div class="row buttons">
-            <?php echo CHtml::submitButton('ВІДПРАВИТИ />', array('id' => "submit")); ?>
+            <?php echo CHtml::submitButton('ЗБЕРЕГТИ />', array('id' => "submit")); ?>
         </div>
         <?php if(Yii::app()->user->hasFlash('message')):
             echo Yii::app()->user->getFlash('message');
@@ -135,5 +158,6 @@
         </div>
     <?php $this->endWidget(); ?>
 </div><!-- form -->
+</div>
 
 

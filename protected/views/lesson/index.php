@@ -132,207 +132,259 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
     });
 </script>
 <!--JS BBCode-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.spoilerLinks').click(function(){
+            $(this).next('.spoilerBody').toggle('normal');
+            return false;
+        });
+    });
+</script>
+<!--Перша частина-->
 <div class="lessonBlock">
-    <div class="lessonText">
-        <h1 class="lessonTheme">Змінні та типи даних в PHP </h1>
-        <p class="listTheme">Зміст <a href="#"><span class="colorP">(показати)</span></a> &#9660;</p>
-        <h1 class="lessonPart">Частина 1: Типи змінних та перемінних</h1>
-        <p><span>Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:</p>
-        <div class="lessonCode"><p>$names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
-        <span>Імена змінних</span>
-        <p>Будь-яка змінна в РНР має ім'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>
-        <div class="lessonCode">
-            <p>$names="value";</p>
-            <p>$names=5;</p>
-            <p>echo $$name;</p>
-        </div>
-        <p>Змінні в РНР представляються у вигляді рядка, що починається знаком долара, а за ним слідує ім'я змінної. Ім'я змінної може складатися з латинських літер, звичайних цифр і деяких символів або комбінацій літер, цифр і символів.</p>
-        <span>Всі змінні діляться на певні типи:</span>
-        <p>Мова JavaScript містить шість типів даних <span>Undefîned</span> (невизначений), <span>Null</span> (нульовий), <span>Вооlеаn</span> (логічний), <span>String</span> (строковий), <span>Number</span> (числовий) і <span>Object</span> (об'єктний). Ця відносно невелика кількість типів дозволяє, тим не менше, створювати повноцінні сценарії для виконання багатьох функцій.</p>
-        <h3><span class="colorP">Зразок коду 1:</span></h3>
+    <div class="lessonVisb1">
+        <div class="lessonText">
+            <h1 class="lessonTheme">Змінні та типи даних в PHP </h1>
+            <a name="Частина 1: Типи змінних та перемінних"></a>
+            <span class="listTheme">Зміст </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+                <div class="spoilerBody">
+                   <p><a href="#Частина 1: Типи змінних та перемінних">Частина 1: Типи змінних та перемінних</a></p>
+                   <p><a href="#Частина 7: Типи данних та математичний аналіз">Частина 7: Типи данних та математичний аналіз</a></p>
+                </div>
+            <h1 class="lessonPart">Частина 1: Типи змінних та перемінних</h1>
+            <p><span>Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:</p>
+            <div class="lessonCode"><p>$names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
+            <span>Імена змінних</span>
+            <p>Будь-яка змінна в РНР має ім'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>
+            <div class="lessonCode">
+                <p>$names="value";</p>
+                <p>$names=5;</p>
+                <p>echo $$name;</p>
+            </div>
+            <p>Змінні в РНР представляються у вигляді рядка, що починається знаком долара, а за ним слідує ім'я змінної. Ім'я змінної може складатися з латинських літер, звичайних цифр і деяких символів або комбінацій літер, цифр і символів.</p>
+            <span>Всі змінні діляться на певні типи:</span>
+            <p>Мова JavaScript містить шість типів даних <span>Undefîned</span> (невизначений), <span>Null</span> (нульовий), <span>Вооlеаn</span> (логічний), <span>String</span> (строковий), <span>Number</span> (числовий) і <span>Object</span> (об'єктний). Ця відносно невелика кількість типів дозволяє, тим не менше, створювати повноцінні сценарії для виконання багатьох функцій.</p>
+            <span class="subChapter">Зразок коду 1:</span>
 <pre class="prettyprint linenums">
 &lt;html&gt;
   &lt;head&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;p&gt;
-     &lt;?php
-     $items= //Set this to a number greater than 5! Type the string &quot;Arr, matey!&quot;
-     if ($items&lt;5) {
-     echo &quot;You get a 10% discount!&quot;;
-     }
+      &lt;?php
+      $items= //Set this to a number greater than 5! Type the string &quot;Arr, matey!&quot;
+
+      if ($items&lt;5) {
+      echo &quot;You get a 10% discount!&quot;;
+      }
     ?&gt;
-  &lt;/p&gt;
-  &lt;/body&gt;
+    &lt;/p&gt;
+ &lt;/body&gt;
 &lt;/html&gt;
 </pre>
-        <h3><span class="colorP">Зразок коду 2  </span><a href="#"><span class="colorP">(показати)</span> </a>&#9660;</h3></br>
-        <h3><span class="colorP">Відео 1.</span></h3>
-        <iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>
-        <div class="lessonInstr">
-            <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">
-            <div class="lessonButName" unselectable = "on">Інструкція</div>
-            <div class="lessonLine"></div>
-            <div class="lessonBG">
-                <div class="instrTaskImg">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/instr.png">
-                </div>
-                <div class="instrTaskText">
-                    <ol>
-                        <li>On line 7, set <span class="colorBP">$items</span> equal to a number greater than 5. Make sure to put a semicolon at the end of the line.</li>
-                        <li>On line 9, edit the state condition so that your program will be out Some expressions return a ' logical value": TRUE or FALSE, text like thise:<span class="colorAlert">You get a 10% discount!</span></li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-
-        <div class="lessonTask">
-            <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">
-            <div class="lessonButName" unselectable = "on">Завдання 1</div>
-            <div class="lessonLine"></div>
-            <div class="lessonBG">
-                <div class="instrTaskImg">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">
-                </div>
-                <div class="instrTaskText">
-                    <ol>
-                        <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>
-                        <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
-                        <li>An if statement is made up of the if keyword, a condition like we've seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>
-                        <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
-                        <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>
-                    </ol>
-                    <div class="BBCode">
-                        <form action="" method="post">
-                            <textarea id="editor"></textarea>
-                            <input  id="lessonTask" type="submit" value="Відповісти">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/borderLesson.png">
-    </div>
-    <div class="lessonNav">
-        Навігація
-    </div>
-</div>
-<div class="lessonBlock">
-    <div class="lessonText">
-        <h1 class="lessonTheme">Змінні та типи даних в PHP </h1>
-        <p class="listTheme">Зміст <a href="#"><span class="colorP">(показати)</span></a> &#9660;</p>
-        <h1 class="lessonPart">Частина 1: Типи змінних та перемінних</h1>
-        <p><span>Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:</p>
-        <div class="lessonCode"><p>$names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
-        <span>Імена змінних</span>
-        <p>Будь-яка змінна в РНР має ім'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>
-        <div class="lessonCode">
-            <p>$names="value";</p>
-            <p>$names=5;</p>
-            <p>echo $$name;</p>
-        </div>
-        <p>Змінні в РНР представляються у вигляді рядка, що починається знаком долара, а за ним слідує ім'я змінної. Ім'я змінної може складатися з латинських літер, звичайних цифр і деяких символів або комбінацій літер, цифр і символів.</p>
-        <span>Всі змінні діляться на певні типи:</span>
-        <p>Мова JavaScript містить шість типів даних <span>Undefîned</span> (невизначений), <span>Null</span> (нульовий), <span>Вооlеаn</span> (логічний), <span>String</span> (строковий), <span>Number</span> (числовий) і <span>Object</span> (об'єктний). Ця відносно невелика кількість типів дозволяє, тим не менше, створювати повноцінні сценарії для виконання багатьох функцій.</p>
-        <h3><span class="colorP">Зразок коду 1:</span></h3>
+            <span class="subChapter">Зразок коду 2  </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+            <div class="spoilerBody">
 <pre class="prettyprint linenums">
 &lt;html&gt;
   &lt;head&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;p&gt;
-     &lt;?php
-     $items= //Set this to a number greater than 5! Type the string &quot;Arr, matey!&quot;
-     if ($items&lt;5) {
-     echo &quot;You get a 10% discount!&quot;;
-     }
+      &lt;?php
+      $items= //Set this to a number greater than 5! Type the string &quot;Arr, matey!&quot;
+
+      if ($items&lt;5) {
+      echo &quot;You get a 10% discount!&quot;;
+      }
     ?&gt;
-  &lt;/p&gt;
-  &lt;/body&gt;
+    &lt;/p&gt;
+ &lt;/body&gt;
 &lt;/html&gt;
 </pre>
-        <h3><span class="colorP">Зразок коду 2  </span><a href="#"><span class="colorP">(показати)</span> </a>&#9660;</h3></br>
-        <h3><span class="colorP">Відео 1.</span></h3>
-        <iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>
-        <div class="lessonInstr">
-            <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">
-            <div class="lessonButName" unselectable = "on">Інструкція</div>
-            <div class="lessonLine"></div>
-            <div class="lessonBG">
-                <div class="instrTaskImg">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/instr.png">
-                </div>
-                <div class="instrTaskText">
-                    <ol>
-                        <li>On line 7, set <span class="colorBP">$items</span> equal to a number greater than 5. Make sure to put a semicolon at the end of the line.</li>
-                        <li>On line 9, edit the state condition so that your program will be out Some expressions return a ' logical value": TRUE or FALSE, text like thise:<span class="colorAlert">You get a 10% discount!</span></li>
-                    </ol>
+            </div>
+            <h3><span class="subChapter">Відео 1.</span></h3>
+            <iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>
+            <div class="lessonInstr">
+                <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">
+                <div class="lessonButName" unselectable = "on">Інструкція</div>
+                <div class="lessonLine"></div>
+                <div class="lessonBG">
+                    <div class="instrTaskImg">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/instr.png">
+                    </div>
+                    <div class="instrTaskText">
+                        <ol>
+                            <li>On line 7, set <span class="colorBP">$items</span> equal to a number greater than 5. Make sure to put a semicolon at the end of the line.</li>
+                            <li>On line 9, edit the state condition so that your program will be out Some expressions return a ' logical value": TRUE or FALSE, text like thise:<span class="colorAlert">You get a 10% discount!</span></li>
+                        </ol>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="lessonTask">
-            <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">
-            <div class="lessonButName" unselectable = "on">Завдання 1</div>
-            <div class="lessonLine"></div>
-            <div class="lessonBG">
-                <div class="instrTaskImg">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">
+            <div class="lessonTask">
+                <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">
+                <div class="lessonButName" unselectable = "on">Завдання 1</div>
+                <div class="lessonLine"></div>
+                <div class="lessonBG">
+                    <div class="instrTaskImg">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">
+                    </div>
+                    <div class="instrTaskText">
+                        <ol>
+                            <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>
+                            <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
+                            <li>An if statement is made up of the if keyword, a condition like we've seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>
+                            <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
+                            <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>
+                        </ol>
+                        <div class="BBCode">
+                            <form action="" method="post">
+                                <textarea id="editor"></textarea>
+                                <input  id="lessonTask1" type="submit" value="Відповісти">
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="instrTaskText">
-                    <ol>
-                        <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>
-                        <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
-                        <li>An if statement is made up of the if keyword, a condition like we've seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>
-                        <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
-                        <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>
-                    </ol>
-                    <div class="BBCode">
-                        <form action="" method="post">
-                            <textarea id="editor2"></textarea>
-                            <input  id="lessonTask2" type="submit" value="Відповісти">
-                        </form>
+            </div>
+            <a name="Частина 7: Типи данних та математичний аналіз"></a>
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/borderLesson.png">
+        </div>
+        <div class="lessonNav">
+        </div>
+    </div>
+    <!--Друга частина-->
+    <div class="lessonVisb2">
+        <div class="lessonText">
+            <h1 class="lessonPart">Частина 7: Типи данних та математичний аналіз</h1>
+            <p><span>Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:</p>
+            <div class="lessonCode"><p>$names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
+            <span>Імена змінних</span>
+            <p>Будь-яка змінна в РНР має ім'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>
+            <div class="lessonCode">
+                <p>$names="value";</p>
+                <p>$names=5;</p>
+                <p>echo $$name;</p>
+            </div>
+            <p>Змінні в РНР представляються у вигляді рядка, що починається знаком долара, а за ним слідує ім'я змінної. Ім'я змінної може складатися з латинських літер, звичайних цифр і деяких символів або комбінацій літер, цифр і символів.</p>
+            <span>Всі змінні діляться на певні типи:</span>
+            <p>Мова JavaScript містить шість типів даних <span>Undefîned</span> (невизначений), <span>Null</span> (нульовий), <span>Вооlеаn</span> (логічний), <span>String</span> (строковий), <span>Number</span> (числовий) і <span>Object</span> (об'єктний). Ця відносно невелика кількість типів дозволяє, тим не менше, створювати повноцінні сценарії для виконання багатьох функцій.</p>
+            <span class="subChapter">Зразок коду 1:</span>
+<pre class="prettyprint linenums">
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+      &lt;?php
+      $items= //Set this to a number greater than 5! Type the string &quot;Arr, matey!&quot;
+
+      if ($items&lt;5) {
+      echo &quot;You get a 10% discount!&quot;;
+      }
+    ?&gt;
+    &lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+            <span class="subChapter">Зразок коду 2  </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+            <div class="spoilerBody">
+<pre class="prettyprint linenums">
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+      &lt;?php
+      $items= //Set this to a number greater than 5! Type the string &quot;Arr, matey!&quot;
+
+      if ($items&lt;5) {
+      echo &quot;You get a 10% discount!&quot;;
+      }
+    ?&gt;
+    &lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+            </div>
+            <h3><span class="subChapter">Відео 1.</span></h3>
+            <iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>
+            <div class="lessonInstr">
+                <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">
+                <div class="lessonButName" unselectable = "on">Інструкція</div>
+                <div class="lessonLine"></div>
+                <div class="lessonBG">
+                    <div class="instrTaskImg">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/instr.png">
+                    </div>
+                    <div class="instrTaskText">
+                        <ol>
+                            <li>On line 7, set <span class="colorBP">$items</span> equal to a number greater than 5. Make sure to put a semicolon at the end of the line.</li>
+                            <li>On line 9, edit the state condition so that your program will be out Some expressions return a ' logical value": TRUE or FALSE, text like thise:<span class="colorAlert">You get a 10% discount!</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lessonTask">
+                <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">
+                <div class="lessonButName" unselectable = "on">Завдання 1</div>
+                <div class="lessonLine"></div>
+                <div class="lessonBG">
+                    <div class="instrTaskImg">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">
+                    </div>
+                    <div class="instrTaskText">
+                        <ol>
+                            <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>
+                            <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
+                            <li>An if statement is made up of the if keyword, a condition like we've seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>
+                            <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
+                            <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>
+                        </ol>
+                        <div class="BBCode">
+                            <form action="" method="post">
+                                <textarea id="editor2"></textarea>
+                                <input  id="lessonTask2" type="submit" value="Відповісти">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/borderLesson.png">
+        </div>
+        <div class="lessonNav">
+        </div>
+    </div>
+    <!--Заключна частина-->
+    <div class="lessonVisb3">
+        <div class="lessonText">
+            <div class="lessonTask">
+                <img class="lessonButFinal" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButtonFinale.png">
+                <div class="lessonButFinal" unselectable = "on">Підсумкове Завдання</div>
+                <div class="lessonLine"></div>
+                <div class="lessonBG">
+                    <div class="instrTaskImg">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">
+                    </div>
+                    <div class="instrTaskText">
+                        <ol>
+                            <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>
+                            <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
+                            <li>An if statement is made up of the if keyword, a condition like we've seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>
+                            <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
+                            <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>
+                        </ol>
+                        <div class="BBCode">
+                            <form action="" method="post">
+                                <textarea id="editor3"></textarea>
+                                <input  id="lessonTask3" type="submit" value="Відповісти">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/borderLesson.png">
-    </div>
-    <div class="lessonNav">
-        Навігація
     </div>
 </div>
-
-<div class="lessonBlock">
-    <div class="lessonText">
-        <div class="lessonTask">
-            <img class="lessonButFinal" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButtonFinale.png">
-            <div class="lessonButFinal" unselectable = "on">Підсумкове Завдання</div>
-            <div class="lessonLine"></div>
-            <div class="lessonBG">
-                <div class="instrTaskImg">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">
-                </div>
-                <div class="instrTaskText">
-                    <ol>
-                        <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>
-                        <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
-                        <li>An if statement is made up of the if keyword, a condition like we've seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>
-                        <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
-                        <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>
-                    </ol>
-                    <div class="BBCode">
-                        <form action="" method="post">
-                            <textarea id="editor3"></textarea>
-                            <input  id="lessonTask3" type="submit" value="Відповісти">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <!-- lesson footer -->
 <!-- Верстка -->

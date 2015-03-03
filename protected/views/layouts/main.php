@@ -4,8 +4,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="language" content="en">
-
-
+    <!-- for tabs -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- for tabs -->
 
     <!-- fonts -->
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/fontface.css"/>

@@ -5,9 +5,6 @@
 html{
 	font-family: "MyriadPro";
 	}
-body{
-    margin: 0;
-}
 /* Стиль заголовку*/	
 
 .stepHeader h1{
@@ -90,7 +87,10 @@ body{
 	display:inline-block;
 	width:33%;
 	border:2px solid #4b75a4;
-         }
+    }
+.stepInfo p {
+    margin-bottom: 0px;
+}
 .line {
 	background:#ffffff;
 	box-sizing:border-box;
