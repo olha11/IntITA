@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-03-03 20:04:05
+-- Date/time:                    2015-03-03 20:39:47
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -186,9 +186,9 @@ CREATE TABLE IF NOT EXISTS `aboutus` (
 -- Dumping data for table int_ita_db.aboutus: ~3 rows (approximately)
 /*!40000 ALTER TABLE `aboutus` DISABLE KEYS */;
 INSERT INTO `aboutus` (`block_id`, `line2Image`, `iconImage`, `titleText`, `textAbout`, `linkAddress`, `imagesPath`, `drop1Text`, `drop2Text`, `drop3Text`, `dropName`) VALUES
-	(1, '/css/images/line2.png', 'image1.png', 'Про що мрієш ти?', '<p>Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль? Закордонні подорожі, можливо, до екзотичних країн?</p>', 'http://localhost/IntITA/index.php?r=site/aboutdetail', '/css/images/', '', '', '', ''),
-	(2, '/css/images/line2.png', 'image2.png', 'Що очікується від тебе', '<p>Програмування – це не так складно, як ти можеш уявляти. Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля.</p>', 'http://localhost/IntITA/index.php?r=site/aboutdetail', '/css/images/', '', '', '', ''),
-	(3, '/css/images/line2.png', 'image3.png', 'Три кити Академії Програмування ІНТІТА', '<p>Три кити Академії Програмування ІНТІТА Самостійний графік навчання. Лише 100% необхідні знання. Засвоєння 100% знань!</p>', 'http://localhost/IntITA/index.php?r=site/aboutdetail', '/css/images/', '', '', '', '');
+	(1, '/css/images/line2.png', 'image1.png', 'Про що мрієш ти?', '<p>Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль? Закордонні подорожі, можливо, до екзотичних країн?</p>', '/index.php?r=site/aboutdetail', '/css/images/', '', '', '', ''),
+	(2, '/css/images/line2.png', 'image2.png', 'Що очікується від тебе', '<p>Програмування – це не так складно, як ти можеш уявляти. Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля.</p>', '/index.php?r=site/aboutdetail', '/css/images/', '', '', '', ''),
+	(3, '/css/images/line2.png', 'image3.png', 'Три кити Академії Програмування ІНТІТА', '<p>Три кити Академії Програмування ІНТІТА Самостійний графік навчання. Лише 100% необхідні знання. Засвоєння 100% знань!</p>', '/index.php?r=site/aboutdetail', '/css/images/', '', '', '', '');
 /*!40000 ALTER TABLE `aboutus` ENABLE KEYS */;
 
 

@@ -36,7 +36,7 @@ class Aboutus extends CActiveRecord
 		$this->iconImage=Yii::app()->request->baseUrl.$this->findByPk($id)->imagesPath.$this->findByPk($id)->iconImage;
 		$this->titleText=$this->findByPk($id)->titleText;
 		$this->textAbout=$this->findByPk($id)->textAbout;
-		$this->linkAddress=$this->findByPk($id)->linkAddress;		return 'aboutus';
+		$this->linkAddress=Yii::app()->request->baseUrl.$this->findByPk($id)->linkAddress;		return 'aboutus';
 	}
 	/**
 	 * @return array validation rules for model attributes.
