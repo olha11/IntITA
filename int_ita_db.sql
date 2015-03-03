@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-03-03 18:59:34
+-- Date/time:                    2015-03-03 19:05:29
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -11,11 +11,13 @@
 /*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 
 -- Dumping database structure for int_ita_db
+DROP DATABASE IF EXISTS `int_ita_db`;
 CREATE DATABASE IF NOT EXISTS `int_ita_db` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `int_ita_db`;
 
 
 -- Dumping structure for table int_ita_db.aa_access
+DROP TABLE IF EXISTS `aa_access`;
 CREATE TABLE IF NOT EXISTS `aa_access` (
   `user_id` smallint(5) unsigned NOT NULL,
   `interface_id` smallint(5) unsigned NOT NULL,
@@ -35,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `aa_access` (
 
 
 -- Dumping structure for table int_ita_db.aa_authorizations
+DROP TABLE IF EXISTS `aa_authorizations`;
 CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` smallint(5) unsigned NOT NULL,
@@ -46,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_authorizations: ~10 rows (approximately)
+-- Dumping data for table int_ita_db.aa_authorizations: ~12 rows (approximately)
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
 INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(1, 2, '2015-03-02 15:33:25', '::1'),
@@ -65,6 +68,7 @@ INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 
 
 -- Dumping structure for table int_ita_db.aa_errors
+DROP TABLE IF EXISTS `aa_errors`;
 CREATE TABLE IF NOT EXISTS `aa_errors` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `error_type` enum('exception','warning') DEFAULT NULL,
@@ -81,6 +85,7 @@ CREATE TABLE IF NOT EXISTS `aa_errors` (
 
 
 -- Dumping structure for table int_ita_db.aa_interfaces
+DROP TABLE IF EXISTS `aa_interfaces`;
 CREATE TABLE IF NOT EXISTS `aa_interfaces` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `section_id` tinyint(3) unsigned DEFAULT NULL,
@@ -100,6 +105,7 @@ CREATE TABLE IF NOT EXISTS `aa_interfaces` (
 
 
 -- Dumping structure for table int_ita_db.aa_logs
+DROP TABLE IF EXISTS `aa_logs`;
 CREATE TABLE IF NOT EXISTS `aa_logs` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `interface_id` smallint(5) unsigned DEFAULT NULL,
@@ -120,6 +126,7 @@ CREATE TABLE IF NOT EXISTS `aa_logs` (
 
 
 -- Dumping structure for table int_ita_db.aa_sections
+DROP TABLE IF EXISTS `aa_sections`;
 CREATE TABLE IF NOT EXISTS `aa_sections` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(40) NOT NULL,
@@ -132,6 +139,7 @@ CREATE TABLE IF NOT EXISTS `aa_sections` (
 
 
 -- Dumping structure for table int_ita_db.aa_users
+DROP TABLE IF EXISTS `aa_users`;
 CREATE TABLE IF NOT EXISTS `aa_users` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `level` enum('root','admin','user') NOT NULL DEFAULT 'user',
@@ -159,6 +167,7 @@ INSERT INTO `aa_users` (`id`, `level`, `login`, `password`, `interface_level`, `
 
 
 -- Dumping structure for table int_ita_db.aboutus
+DROP TABLE IF EXISTS `aboutus`;
 CREATE TABLE IF NOT EXISTS `aboutus` (
   `block_id` int(11) NOT NULL AUTO_INCREMENT,
   `line2Image` varchar(255) NOT NULL,
@@ -180,6 +189,7 @@ INSERT INTO `aboutus` (`block_id`, `line2Image`, `iconImage`, `titleText`, `text
 
 
 -- Dumping structure for table int_ita_db.carousel
+DROP TABLE IF EXISTS `carousel`;
 CREATE TABLE IF NOT EXISTS `carousel` (
   `order` int(11) NOT NULL,
   `picture_url` varchar(50) NOT NULL,
@@ -199,6 +209,7 @@ INSERT INTO `carousel` (`order`, `picture_url`, `description`, `images_path`) VA
 
 
 -- Dumping structure for table int_ita_db.course
+DROP TABLE IF EXISTS `course`;
 CREATE TABLE IF NOT EXISTS `course` (
   `course_ID` int(11) NOT NULL AUTO_INCREMENT,
   `course_name` varchar(45) NOT NULL,
@@ -223,6 +234,7 @@ INSERT INTO `course` (`course_ID`, `course_name`, `course_duration_hours`) VALUE
 
 
 -- Dumping structure for table int_ita_db.footer
+DROP TABLE IF EXISTS `footer`;
 CREATE TABLE IF NOT EXISTS `footer` (
   `footer_id` int(11) NOT NULL AUTO_INCREMENT,
   `image_social` varchar(255) NOT NULL,
@@ -233,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `footer` (
   PRIMARY KEY (`footer_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.footer: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.footer: ~1 rows (approximately)
 /*!40000 ALTER TABLE `footer` DISABLE KEYS */;
 INSERT INTO `footer` (`footer_id`, `image_social`, `phone`, `mobile`, `email`, `image_up`) VALUES
 	(1, '/css/images/sotial.gif', 'телефон: +38 0432 52', 'тел. моб. +38 067 432 20 10', 'e-mail: intita.hr@gmail.com', '/css/images/go_up.png');
@@ -241,6 +253,7 @@ INSERT INTO `footer` (`footer_id`, `image_social`, `phone`, `mobile`, `email`, `
 
 
 -- Dumping structure for table int_ita_db.header
+DROP TABLE IF EXISTS `header`;
 CREATE TABLE IF NOT EXISTS `header` (
   `header_id` int(11) NOT NULL AUTO_INCREMENT,
   `language` enum('EN','UA','RU') NOT NULL,
@@ -257,7 +270,7 @@ CREATE TABLE IF NOT EXISTS `header` (
   PRIMARY KEY (`header_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.header: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.header: ~1 rows (approximately)
 /*!40000 ALTER TABLE `header` DISABLE KEYS */;
 INSERT INTO `header` (`header_id`, `language`, `logo_url`, `menu_item_1`, `item_1_link`, `menu_item_2`, `item_2_link`, `menu_item_3`, `item_3_link`, `menu_item_4`, `item_4_link`, `enter_button_text`) VALUES
 	(1, 'UA', '/css/images/Logo_big.png', 'Курси', 'http://www.google.com', 'Викладачі', 'http://www.google.com', 'Форум', 'http://www.google.com', 'Про нас', 'http://www.google.com', 'Вхід');
@@ -265,6 +278,7 @@ INSERT INTO `header` (`header_id`, `language`, `logo_url`, `menu_item_1`, `item_
 
 
 -- Dumping structure for table int_ita_db.hometasks
+DROP TABLE IF EXISTS `hometasks`;
 CREATE TABLE IF NOT EXISTS `hometasks` (
   `hometask_ID` int(11) NOT NULL AUTO_INCREMENT,
   `fkmodule_ID` int(11) NOT NULL,
@@ -285,6 +299,7 @@ INSERT INTO `hometasks` (`hometask_ID`, `fkmodule_ID`, `fklecture_ID`, `hometask
 
 
 -- Dumping structure for table int_ita_db.language
+DROP TABLE IF EXISTS `language`;
 CREATE TABLE IF NOT EXISTS `language` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` enum('EN','UA','RU') NOT NULL,
@@ -299,6 +314,7 @@ CREATE TABLE IF NOT EXISTS `language` (
 
 
 -- Dumping structure for table int_ita_db.lecture
+DROP TABLE IF EXISTS `lecture`;
 CREATE TABLE IF NOT EXISTS `lecture` (
   `lectureID` int(11) NOT NULL AUTO_INCREMENT,
   `lectureImageMain` varchar(255) NOT NULL,
@@ -322,7 +338,7 @@ CREATE TABLE IF NOT EXISTS `lecture` (
   KEY `FK_lectures_modules` (`lectureModule`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.lecture: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.lecture: ~1 rows (approximately)
 /*!40000 ALTER TABLE `lecture` DISABLE KEYS */;
 INSERT INTO `lecture` (`lectureID`, `lectureImageMain`, `lectureModule`, `lectureNumber`, `lectureNameText`, `lectureTypeText`, `lectureTypeImage`, `lectureTimeText`, `lectureMaxNumber`, `lectureIconImage`, `lectureUnwatchedImage`, `lectureOverlookedImage`, `infoLectures`, `thisLectureInfo`, `preLectureInfo`, `postLessonInfo`, `teacherTitle`, `linkName`) VALUES
 	(1, '/css/images/lectureImage.png', '1', 0, 'Goal of classes 1', '10', '100', 'css/images/timeIco.p', 0, '', 'css/images/ratIco0.png', 'css/images/ratIco1.png', '0', '0', '0', '0', '0', '0');
@@ -330,6 +346,7 @@ INSERT INTO `lecture` (`lectureID`, `lectureImageMain`, `lectureModule`, `lectur
 
 
 -- Dumping structure for table int_ita_db.mainpage
+DROP TABLE IF EXISTS `mainpage`;
 CREATE TABLE IF NOT EXISTS `mainpage` (
   `mainpage_id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
@@ -369,6 +386,7 @@ INSERT INTO `mainpage` (`mainpage_id`, `title`, `carousel_id`, `slider_header`, 
 
 
 -- Dumping structure for table int_ita_db.modules
+DROP TABLE IF EXISTS `modules`;
 CREATE TABLE IF NOT EXISTS `modules` (
   `module_ID` int(11) NOT NULL AUTO_INCREMENT,
   `module_name` varchar(45) NOT NULL,
@@ -388,6 +406,7 @@ INSERT INTO `modules` (`module_ID`, `module_name`, `module_duration_hours`, `mod
 
 
 -- Dumping structure for table int_ita_db.step
+DROP TABLE IF EXISTS `step`;
 CREATE TABLE IF NOT EXISTS `step` (
   `step_id` int(11) NOT NULL AUTO_INCREMENT,
   `stepName` varchar(30) NOT NULL DEFAULT '0',
@@ -411,6 +430,7 @@ INSERT INTO `step` (`step_id`, `stepName`, `stepNumber`, `stepTitle`, `stepImage
 
 
 -- Dumping structure for table int_ita_db.studentprofile
+DROP TABLE IF EXISTS `studentprofile`;
 CREATE TABLE IF NOT EXISTS `studentprofile` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `firstName` varchar(255) DEFAULT NULL,
@@ -431,7 +451,7 @@ CREATE TABLE IF NOT EXISTS `studentprofile` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.studentprofile: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.studentprofile: ~1 rows (approximately)
 /*!40000 ALTER TABLE `studentprofile` DISABLE KEYS */;
 INSERT INTO `studentprofile` (`id`, `firstName`, `middleName`, `secondName`, `nickname`, `birthday`, `email`, `password`, `phone`, `address`, `education`, `educform`, `interests`, `aboutUs`, `aboutMy`, `avatar`) VALUES
 	(1, 'Вова', 'Джа', 'Марля', 'Wizlight', '21.03.1988', 'Wizlightdragon@gmail.com', '123', '911', 'Ямайка', 'ВДПУ', 1, 'Реггі, ковбаска, колобки', 'Растафарай', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', NULL);
@@ -439,6 +459,7 @@ INSERT INTO `studentprofile` (`id`, `firstName`, `middleName`, `secondName`, `ni
 
 
 -- Dumping structure for table int_ita_db.students
+DROP TABLE IF EXISTS `students`;
 CREATE TABLE IF NOT EXISTS `students` (
   `student_id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(35) NOT NULL,
@@ -471,6 +492,7 @@ CREATE TABLE IF NOT EXISTS `students` (
 
 
 -- Dumping structure for table int_ita_db.studentsaccess
+DROP TABLE IF EXISTS `studentsaccess`;
 CREATE TABLE IF NOT EXISTS `studentsaccess` (
   `id_access` int(11) NOT NULL AUTO_INCREMENT,
   `student_id` int(11) NOT NULL,
@@ -495,6 +517,7 @@ CREATE TABLE IF NOT EXISTS `studentsaccess` (
 
 
 -- Dumping structure for table int_ita_db.teachers
+DROP TABLE IF EXISTS `teachers`;
 CREATE TABLE IF NOT EXISTS `teachers` (
   `teacher_id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(35) NOT NULL,
@@ -522,6 +545,7 @@ CREATE TABLE IF NOT EXISTS `teachers` (
 
 
 -- Dumping structure for table int_ita_db.team
+DROP TABLE IF EXISTS `team`;
 CREATE TABLE IF NOT EXISTS `team` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) DEFAULT NULL,
@@ -542,6 +566,7 @@ INSERT INTO `team` (`id`, `name`, `post`, `pic`) VALUES
 
 
 -- Dumping structure for table int_ita_db.tests
+DROP TABLE IF EXISTS `tests`;
 CREATE TABLE IF NOT EXISTS `tests` (
   `test_ID` int(11) NOT NULL AUTO_INCREMENT,
   `fkmodule_ID` int(11) NOT NULL,
@@ -561,6 +586,7 @@ INSERT INTO `tests` (`test_ID`, `fkmodule_ID`, `fklecture_ID`, `test_title`, `te
 
 
 -- Dumping structure for table int_ita_db.theoreticalsmaterials
+DROP TABLE IF EXISTS `theoreticalsmaterials`;
 CREATE TABLE IF NOT EXISTS `theoreticalsmaterials` (
   `tm_ID` int(11) NOT NULL AUTO_INCREMENT,
   `fkmodule_ID` int(11) NOT NULL,
@@ -580,6 +606,7 @@ INSERT INTO `theoreticalsmaterials` (`tm_ID`, `fkmodule_ID`, `fklecture_ID`, `TM
 
 
 -- Dumping structure for table int_ita_db.users
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_email` varchar(35) NOT NULL,
@@ -590,7 +617,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `user_email` (`user_email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.users: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.users: ~1 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`user_id`, `user_email`, `user_passwd`, `user_hash`, `user_status`) VALUES
 	(1, 'mail1@mail.com', 'qwerty', '67896', 0);
@@ -598,6 +625,7 @@ INSERT INTO `users` (`user_id`, `user_email`, `user_passwd`, `user_hash`, `user_
 
 
 -- Dumping structure for table int_ita_db.videos
+DROP TABLE IF EXISTS `videos`;
 CREATE TABLE IF NOT EXISTS `videos` (
   `video_ID` int(11) NOT NULL AUTO_INCREMENT,
   `fkmodule_ID` int(11) NOT NULL,
@@ -609,7 +637,7 @@ CREATE TABLE IF NOT EXISTS `videos` (
   PRIMARY KEY (`video_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.videos: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.videos: ~1 rows (approximately)
 /*!40000 ALTER TABLE `videos` DISABLE KEYS */;
 INSERT INTO `videos` (`video_ID`, `fkmodule_ID`, `fklecture_ID`, `video_name`, `video_description`, `video_url`, `video_durationin_seconds`) VALUES
 	(1, 1, 1, 'Video 1', 'Description 1', 'URL 1', 344);
