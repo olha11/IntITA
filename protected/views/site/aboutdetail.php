@@ -162,7 +162,7 @@ function WindowShow(buttonNumber)
 </script>
 
 <! buttons for dropdown  About Us>
-<div id="dropButton1" onclick="WindowShow(1)"  >
+<div id="dropButton1" onclick="WindowShow(1)" >
 	<?php  echo  $dropName;   ?>
  </div>
 <div id="dropButton2" onclick="WindowShow(2)">

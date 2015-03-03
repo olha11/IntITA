@@ -58,9 +58,9 @@ $main['components'] = array(
 	'db' => array(
 	/**
 	 * This connector isn't the same as the front-end's one. This one should
-	 *  have rights on selecting, inserting, updating and deleting data in your 
+	 *  have rights on selecting, inserting, updating and deleting data in your
 	 *  DB.
-	 * If you don't need to defend your back-end strongly, just use the same as 
+	 * If you don't need to defend your back-end strongly, just use the same as
 	 *  in main.local.php (your base front-end config) DB settings.
 	 */
 		'class'=>'CDbConnection',
@@ -76,12 +76,12 @@ $main['components'] = array(
 	 * Ideally you should give it very specific rights on every table:
 	 *  can insert, but not delete\update rows from 'aa_logs' and 'aa_access'
 	 *  etc. (just follow your developer's logic).
-	 * 
+	 *
 	 * If you can use a separate database for AutoAdmin service tables,
 	 *  set it's settings here.
 	 * Otherwise just duplicate the settings of previous array on 'db' key.
-	 * 
-	 * Not that if you separate front-end and back-end (AutoAdmin's) databases using 
+	 *
+	 * Not that if you separate front-end and back-end (AutoAdmin's) databases using
 	 *  schemas, set them in the 'autoadmin' section of modules settings.
 	 * E.g.:
 	 *		'dbSchema' => 'public',

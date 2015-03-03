@@ -6,8 +6,7 @@ Yii 1.1.16
 back-end index page http://localhost/IntITA/www/_admin/
 
 user login: User
-
-     password: password
+password: password
 
 
 #Pages:
