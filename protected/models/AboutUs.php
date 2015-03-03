@@ -11,36 +11,33 @@
  * @property string $textAbout
  * @property string $linkAddress
  * @property string $imagesPath
- *
- * The followings are the available model relations:
- * @property Mainpage[] $mainpages
- * @property Mainpage[] $mainpages1
- * @property Mainpage[] $mainpages2
+ * @property string $drop1Text
+ * @property string $drop2Text
+ * @property string $drop3Text
+ * @property string $dropName
  */
-class AboutUs extends CActiveRecord
+class Aboutus extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
+	public function tableName()
+	{
+		return 'aboutus';
+	}
+
 	function AboutUs($id){
 		//setValuesById($id);
 	}
 
-
-    public function tableName(){
-        return 'aboutus';
-    }
-
-
-    public function setValuesById($id)
+	public function setValuesById($id)
 	{
 		$this->line2Image=Yii::app()->request->baseUrl.$this->findByPk($id)->line2Image;
 		$this->iconImage=Yii::app()->request->baseUrl.$this->findByPk($id)->imagesPath.$this->findByPk($id)->iconImage;
 		$this->titleText=$this->findByPk($id)->titleText;
 		$this->textAbout=$this->findByPk($id)->textAbout;
-		$this->linkAddress=$this->findByPk($id)->linkAddress;
+		$this->linkAddress=$this->findByPk($id)->linkAddress;		return 'aboutus';
 	}
-
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -49,12 +46,12 @@ class AboutUs extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('line2Image, iconImage, titleText, textAbout, linkAddress, imagesPath', 'required'),
+			array('line2Image, iconImage, titleText, textAbout, linkAddress, imagesPath, drop1Text, drop2Text, drop3Text, dropName', 'required'),
 			array('line2Image, iconImage, textAbout, linkAddress, imagesPath', 'length', 'max'=>255),
-			array('titleText', 'length', 'max'=>50),
+			array('titleText, dropName', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('block_id, line2Image, iconImage, titleText, textAbout, linkAddress, imagesPath', 'safe', 'on'=>'search'),
+			array('block_id, line2Image, iconImage, titleText, textAbout, linkAddress, imagesPath, drop1Text, drop2Text, drop3Text, dropName', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,9 +63,6 @@ class AboutUs extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'mainpages' => array(self::HAS_MANY, 'Mainpage', 'block1'),
-			'mainpages1' => array(self::HAS_MANY, 'Mainpage', 'block2'),
-			'mainpages2' => array(self::HAS_MANY, 'Mainpage', 'block3'),
 		);
 	}
 
@@ -85,6 +79,10 @@ class AboutUs extends CActiveRecord
 			'textAbout' => 'Text About',
 			'linkAddress' => 'Link Address',
 			'imagesPath' => 'Images Path',
+			'drop1Text' => 'Drop1 Text',
+			'drop2Text' => 'Drop2 Text',
+			'drop3Text' => 'Drop3 Text',
+			'dropName' => 'Drop Name',
 		);
 	}
 
@@ -113,6 +111,10 @@ class AboutUs extends CActiveRecord
 		$criteria->compare('textAbout',$this->textAbout,true);
 		$criteria->compare('linkAddress',$this->linkAddress,true);
 		$criteria->compare('imagesPath',$this->imagesPath,true);
+		$criteria->compare('drop1Text',$this->drop1Text,true);
+		$criteria->compare('drop2Text',$this->drop2Text,true);
+		$criteria->compare('drop3Text',$this->drop3Text,true);
+		$criteria->compare('dropName',$this->dropName,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
