@@ -292,8 +292,8 @@ class StudentRegController extends Controller
                 $id='1'.'id';
                 $_FILES["upload"]["name"]=$id . '.'. $ext;
                 move_uploaded_file($_FILES["upload"]["tmp_name"],
-                    Yii::app()->request->baseUrl ."css/images/".$_FILES["upload"]["name"]);
-                StudentReg::model()->updateByPk(1, array('avatar' => Yii::app()->request->baseUrl ."css/images/".$_FILES["upload"]["name"]));
+                    Yii::app()->request->baseUrl ."/css/images/".$_FILES["upload"]["name"]);
+                StudentReg::model()->updateByPk(1, array('avatar' => Yii::app()->request->baseUrl ."/css/images/".$_FILES["upload"]["name"]));
                 Yii::app()->user->setFlash('messageedit','Оновлено');
             }
         }
