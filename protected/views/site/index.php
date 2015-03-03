@@ -29,7 +29,7 @@ $this->pageTitle=$mainpage['title'];
 $headerText = $mainpage['header1'];
 $subheaderText = $mainpage['subheader1'];
 $subLineImage = $mainpage['subLineImage'];
-$linkName= $mainpage['linkName'];
+$linkName = $mainpage['linkName'];
 $massAbout=array($block1,$block2,$block3);
 ?>
 
