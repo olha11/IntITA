@@ -143,9 +143,8 @@ class StudentRegController extends Controller
                         $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
                         $id='1'.'id';
                         $_FILES["upload"]["name"]=$id . '.'. $ext;
-                        move_uploaded_file($_FILES["upload"]["tmp_name"],
-                            Yii::app()->request->baseUrl ."/css/images/".$_FILES["upload"]["name"]);
-                        $model->avatar= Yii::app()->request->baseUrl ."/css/images/".$_FILES["upload"]["name"];
+                        copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/".$_FILES['upload']['name']);
+                        $model->avatar="/css/images/".$_FILES["upload"]["name"];
                     }
                     $model->save();
                     Yii::app()->user->setFlash('message','Ваші дані оновлено');
@@ -291,10 +290,9 @@ class StudentRegController extends Controller
                 $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
                 $id='1'.'id';
                 $_FILES["upload"]["name"]=$id . '.'. $ext;
-                move_uploaded_file($_FILES["upload"]["tmp_name"],
-                    Yii::app()->request->baseUrl ."/css/images/".$_FILES["upload"]["name"]);
-                StudentReg::model()->updateByPk(1, array('avatar' => Yii::app()->request->baseUrl ."/css/images/".$_FILES["upload"]["name"]));
-                Yii::app()->user->setFlash('messageedit','Оновлено');
+                copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/".$_FILES['upload']['name']);
+                StudentReg::model()->updateByPk(1, array('avatar' => "/css/images/".$_FILES["upload"]["name"]));
+                Yii::app()->user->setFlash('messageedit', 'Оновлено' );
             }
         }
         header ('location: '. Yii::app()->request->baseUrl.'/index.php/?r=studentreg/profile');
