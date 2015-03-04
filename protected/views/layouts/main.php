@@ -66,7 +66,11 @@
 
 <body>
 
-
+<form action="" method="post">
+    <button formaction="<?php echo Yii::app()->request->baseUrl; ?>?r=site/aboutdetail">ua</button>
+    <button formaction="<?php echo Yii::app()->request->baseUrl; ?>?r=site/aboutdetail">en</button>
+    <button formaction="<?php echo Yii::app()->request->baseUrl; ?>?r=site/login">ru</button>
+</form>
 
 <div id="navigation">
     <div class="main">
