@@ -39,9 +39,6 @@
 <div class="formStudProfNav">
     <div class="regLinks">
         <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Головна</a> &#187; <a href="#">Реєстрація</a>
-        <?php echo "1" ?>
-        <?php echo Yii::app()->request->baseUrl; ?>
-        <?php echo "3"?>
     </div>
 </div>
 <div class="formStudProf">
