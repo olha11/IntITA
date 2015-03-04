@@ -24,15 +24,15 @@ class Controller extends CController
 
 	public function init(){
 		$this->logo = Yii::app()->request->baseUrl.Header::model()->findByPk(1)->logo_url;
-		$this->menu1 = Header::model()->findByPk(1)->menu_item_1;
-		$this->menu2 = Header::model()->findByPk(1)->menu_item_2;
-		$this->menu3 = Header::model()->findByPk(1)->menu_item_3;
-		$this->menu4 = Header::model()->findByPk(1)->menu_item_4;
+		$this->menu1 = Header::model()->findByPk(2)->menu_item_1;
+		$this->menu2 = Header::model()->findByPk(2)->menu_item_2;
+		$this->menu3 = Header::model()->findByPk(2)->menu_item_3;
+		$this->menu4 = Header::model()->findByPk(2)->menu_item_4;
 		$this->link1 = Header::model()->findByPk(1)->item_1_link;
 		$this->link2 = Header::model()->findByPk(1)->item_2_link;
 		$this->link3 = Header::model()->findByPk(1)->item_3_link;
-		$this->link4 = Header::model()->findByPk(1)->item_4_link;
-		$this->button_text = Header::model()->findByPk(1)->enter_button_text;
+		$this->link4 = Yii::app()->request->baseUrl.Header::model()->findByPk(1)->item_4_link;
+		$this->button_text = Header::model()->findByPk(2)->enter_button_text;
 
 		$this->email = Footer::model()->findByPk(1)->email;
 		$this->phone = Footer::model()->findByPk(1)->phone;

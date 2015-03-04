@@ -3017,3 +3017,205 @@ Stack trace:
 REQUEST_URI=/IntITA/index.php?r=register/submitForm
 HTTP_REFERER=http://localhost/IntITA/index.php
 ---
+2015/03/04 14:05:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "register/submitForm".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('register/submit...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=register/submitForm
+HTTP_REFERER=http://localhost/IntITA/index.php
+---
+2015/03/04 14:05:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "register/submitForm".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('register/submit...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=register/submitForm
+HTTP_REFERER=http://localhost/IntITA/index.php
+---
+2015/03/04 14:05:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "register/submitForm".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('register/submit...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=register/submitForm
+HTTP_REFERER=http://localhost/IntITA/index.php
+---
+2015/03/04 14:06:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "submitForm".' in D:\xampp\htdocs\IntITA\protected\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(270): CController->missingAction('submitForm')
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('submitForm')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('site/submitForm')
+#3 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/IntITA/index.php?r=site/submitForm
+HTTP_REFERER=http://localhost/IntITA/index.php
+---
+2015/03/04 14:10:07 [error] [exception.CException] exception 'CException' with message 'StudentsController cannot find the requested view "students".' in D:\xampp\htdocs\IntITA\protected\framework\web\CController.php:878
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('students', Array, true)
+#1 D:\xampp\htdocs\IntITA\protected\controllers\StudentsController.php(148): CController->render('students', Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StudentsController->actionIndex()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('students')
+#13 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/IntITA/index.php?r=students
+---
+2015/03/04 14:10:17 [error] [exception.CException] exception 'CException' with message 'StudentsController cannot find the requested view "students".' in D:\xampp\htdocs\IntITA\protected\framework\web\CController.php:878
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('students', Array, true)
+#1 D:\xampp\htdocs\IntITA\protected\controllers\StudentsController.php(148): CController->render('students', Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StudentsController->actionIndex()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('index')
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('students/index')
+#13 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/IntITA/index.php?r=students/index
+---
+2015/03/04 14:13:11 [error] [exception.CException] exception 'CException' with message 'StudentsController cannot find the requested view "students".' in D:\xampp\htdocs\IntITA\protected\framework\web\CController.php:878
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('students', Array, true)
+#1 D:\xampp\htdocs\IntITA\protected\controllers\StudentsController.php(148): CController->render('students', Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StudentsController->actionIndex()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('students')
+#13 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/IntITA/index.php?r=students
+---
+2015/03/04 14:13:34 [error] [exception.CException] exception 'CException' with message 'StudentsController cannot find the requested view "students".' in D:\xampp\htdocs\IntITA\protected\framework\web\CController.php:878
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('students', Array, true)
+#1 D:\xampp\htdocs\IntITA\protected\controllers\StudentsController.php(148): CController->render('students', Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StudentsController->actionIndex()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('students')
+#13 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/IntITA/index.php?r=students
+---
+2015/03/04 14:14:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "studentprofile".' in D:\xampp\htdocs\IntITA\protected\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(270): CController->missingAction('studentprofile')
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('studentprofile')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/stud...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/IntITA/index.php?r=studentreg/studentprofile
+---
+2015/03/04 14:15:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in D:\xampp\htdocs\IntITA\protected\framework\web\CController.php:336
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('view')
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/view')
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/IntITA/index.php?r=studentreg/view
+---
+2015/03/04 14:23:53 [error] [exception.CException] exception 'CException' with message 'TeacherProfileController cannot find the requested view "login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CController.php:878
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#1 D:\xampp\htdocs\IntITA\protected\controllers\TeacherProfileController.php(104): CController->render('login', Array)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): TeacherProfileController->actionLogin()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('login')
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('teacherProfile/...')
+#8 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/IntITA/index.php?r=teacherProfile/login
+---
+2015/03/04 14:36:07 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.ab' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `ab`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/04 14:36:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/04 14:36:16 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/04 14:36:23 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/04 15:25:19 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\views\site\aboutdetail.php:19)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#2 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(150): SiteController->render()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionAboutdetail()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php?r=site/aboutdetail
+in D:\xampp\htdocs\IntITA\protected\views\site\aboutdetail.php (19)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (150)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/04 15:25:56 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\views\site\aboutdetail.php:19)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#2 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(150): SiteController->render()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionAboutdetail()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php?r=site/aboutdetail
+in D:\xampp\htdocs\IntITA\protected\views\site\aboutdetail.php (19)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (150)
+in D:\xampp\htdocs\IntITA\index.php (13)

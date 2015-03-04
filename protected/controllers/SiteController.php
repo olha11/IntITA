@@ -164,6 +164,15 @@ class SiteController extends Controller
 		}
 	}
 
+	public function actionSubmitForm(){
+
+		if(isset($_POST['isExtended']))
+		{
+			$this->redirect(array('studentreg/index'));
+		}
+		$this->redirect(array('site/index'));
+	}
+
 	/**
 	 * Displays the contact page
 	 */

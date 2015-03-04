@@ -36,11 +36,8 @@
     text-shadow:     1px 1px 1px black;
     color:           white;
     font-size:       21px;
-<<<<<<< HEAD
-    font: normal     400 24px/50px "Calibri", sans-serif;
-=======
     font: normal     400 24px/50px "MyriadPro";
->>>>>>> 54211e7c1adefcd394752864567f03421111490a
+
     vertical-align:  middle;
     text-align:      center;
     text-decoration: none;
@@ -64,11 +61,8 @@
     width: 1000px;
     color: white;
     font-size: 48px;
-<<<<<<< HEAD
-    font-family: 'Arial';
-=======
     font-family: "MyriadPro";
->>>>>>> 54211e7c1adefcd394752864567f03421111490a
+
     text-shadow:     1px 1px 1px #555;
 }
 

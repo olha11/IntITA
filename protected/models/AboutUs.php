@@ -15,6 +15,7 @@
  * @property string $drop2Text
  * @property string $drop3Text
  * @property string $dropName
+ * @property string $textLarge
  */
 class Aboutus extends CActiveRecord
 {
@@ -37,7 +38,9 @@ class Aboutus extends CActiveRecord
 		$this->titleText=$this->findByPk($id)->titleText;
 		$this->textAbout=$this->findByPk($id)->textAbout;
 		$this->linkAddress=Yii::app()->request->baseUrl.$this->findByPk($id)->linkAddress;		return 'aboutus';
+		$this->textLarge = $this->findByPk($id)->textLarge;
 	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -46,12 +49,12 @@ class Aboutus extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('line2Image, iconImage, titleText, textAbout, linkAddress, imagesPath, drop1Text, drop2Text, drop3Text, dropName', 'required'),
+			array('line2Image, iconImage, titleText, textAbout, linkAddress, imagesPath, drop1Text, drop2Text, drop3Text, dropName, textLarge', 'required'),
 			array('line2Image, iconImage, textAbout, linkAddress, imagesPath', 'length', 'max'=>255),
 			array('titleText, dropName', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('block_id, line2Image, iconImage, titleText, textAbout, linkAddress, imagesPath, drop1Text, drop2Text, drop3Text, dropName', 'safe', 'on'=>'search'),
+			array('block_id, line2Image, iconImage, titleText, textAbout, linkAddress, imagesPath, drop1Text, drop2Text, drop3Text, dropName, textLarge', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -83,6 +86,7 @@ class Aboutus extends CActiveRecord
 			'drop2Text' => 'Drop2 Text',
 			'drop3Text' => 'Drop3 Text',
 			'dropName' => 'Drop Name',
+			'textLarge' => 'Text Large',
 		);
 	}
 
@@ -115,6 +119,7 @@ class Aboutus extends CActiveRecord
 		$criteria->compare('drop2Text',$this->drop2Text,true);
 		$criteria->compare('drop3Text',$this->drop3Text,true);
 		$criteria->compare('dropName',$this->dropName,true);
+		$criteria->compare('textLarge',$this->textLarge,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

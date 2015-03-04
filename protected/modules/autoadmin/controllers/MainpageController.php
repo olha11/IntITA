@@ -37,21 +37,52 @@ class MainpageController extends Controller
 		$this->module->process();
 	}
 
-	public function actionBlocks()
-	{
-		$this->pageTitle = 'Блоки <Про нас>';
+	public function actionContacts(){
+		$this->pageTitle = 'Контакти';
 
-		$this->module->tableName('aboutus');
-		$this->module->setPK('block_id');
+		$this->module->tableName('footer');
+		$this->module->setPK('footer_id');
 		$fieldsConf = array(
-			array('titleText', 'string', 'Header', array('show')),
-			array('iconImage', 'image', 'Фото', array('show', 'directoryPath'=>'./css/images/')),
-			array('textAbout', 'text', 'Текст блоку', array('show', 'directoryPath'=>'./')),
-			array('linkAddress', 'string', 'Посилання', array('show')),
+			array('phone', 'string', 'Телефон', array('show')),
+			array('mobile', 'string', 'Мобільний', array('show')),
+			array('email', 'string', 'E-mail', array('show')),
 		);
-
 		$this->module->fieldsConf($fieldsConf);
-		$this->module->sortDefault(array('titleText'));
+		$this->module->sortDefault(array('phone'));
+		$this->module->process();
+	}
+
+	public function actionMenu(){
+		$this->pageTitle = 'Меню сайта';
+
+		$this->module->tableName('header');
+		$this->module->setPK('header_id');
+		$fieldsConf = array(
+			array('menu_item_1', 'string', 'Меню 1 (Курси)', array('show')),
+			array('menu_item_2', 'string', 'Меню 2 (Викладачі)', array('show')),
+			array('menu_item_3', 'string', 'Меню 3 (Форум)', array('show')),
+			array('menu_item_4', 'string', 'Меню 4 (Про нас)', array('show')),
+			array('enter_button_text', 'string', 'Кнопка <Вхід>', array('show')),
+		);
+		$this->module->fieldsConf($fieldsConf);
+		$this->module->sortDefault(array('menu_item_1'));
+		$this->module->process();
+	}
+
+	public function actionForm(){
+		$this->pageTitle = 'Форма реєстрації на головній сторінці';
+
+		$this->module->tableName('mainpage');
+		$this->module->setPK('mainpage_id');
+		$fieldsConf = array(
+			array('form_header_1', 'string', 'Заголовок форми', array('show')),
+			array('form_header_2', 'string', 'Підзаголовок', array('show')),
+			array('reg_text', 'string', 'Розширена реєстрація', array('show')),
+			array('button_start', 'string', 'Кнопка почати', array('show')),
+			array('social_text', 'string', 'Текст соцмережі', array('show')),
+		);
+		$this->module->fieldsConf($fieldsConf);
+		$this->module->sortDefault(array('form_header_1'));
 		$this->module->process();
 	}
 }
