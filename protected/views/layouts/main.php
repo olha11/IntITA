@@ -65,13 +65,16 @@
 </head>
 
 <body>
-
+<div id="lang">
 <form action="" method="post">
-    <button formaction="<?php echo Yii::app()->request->baseUrl; ?>?r=site/aboutdetail">ua</button>
-    <button formaction="<?php echo Yii::app()->request->baseUrl; ?>?r=site/aboutdetail">en</button>
-    <button formaction="<?php echo Yii::app()->request->baseUrl; ?>?r=site/login">ru</button>
+    <button formaction="<?php echo Yii::app()->request->baseUrl; ?>?r=site" id="ua" disabled="true">ua</button>
+    <label id="Label" for="ua" class="langButton" disabled="true">ua</label>
+    <button formaction="<?php echo Yii::app()->request->baseUrl; ?>?r=site/aboutdetail" id="en">en</button>
+    <label id="Label" for="en" class="langButton">en</label>
+    <button formaction="<?php echo Yii::app()->request->baseUrl; ?>?r=site/login" id="ru" onclick="changeLang()">ru</button>
+    <label id="Label" for="ru" class="langButton">ru</label>
 </form>
-
+</div>
 <div id="navigation">
     <div class="main">
         <div id="logo_img">
@@ -92,6 +95,13 @@
 <a id="enter_button" href="#"><?php echo $this->button_text; ?></a>
 
 <script>
+    function changeLang(){
+        alert('aaaa');
+        document.getElementById('ru').disabled = true;
+        document.getElementById('ua').disabled = false;
+    }
+
+
     var key = document.getElementById('enter_button');
     var nav = document.getElementById('navigation');
     var logo = document.getElementById('logo_img');
