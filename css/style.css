@@ -14,21 +14,33 @@ p, h1, h2, h3, h4, html{
     width: 100%;
     clear: both;
 }
-
+#lang {
+    z-index: 6;
+    margin-left: 1141px;
+    margin-top: -45px;
+    position: fixed;
+}
+#lang #en {
+    border-left: 1px solid #999999;
+    border-right: 1px solid #999999;
+    padding-left: 8px;
+    padding-right: 8px;
+}
 #lang button{
-    display: none;
     background:none!important;
     border:none;
-    padding:0!important;
-    /*border is optional*/
-    border-bottom:1px solid #444;
+
     cursor: pointer;
-}
-.langButton {
-    color: #08A300;
+    color: #4b70a3;
+    font-size: 18px;
+    font-family: "MyriadPro";
     text-decoration: underline;
-    cursor: pointer;
 }
+#lang .selectedLang {
+    text-decoration: none;
+    color: #999999;
+}
+
 /*******navigations-top******/
 #navigation {
     display: block;
