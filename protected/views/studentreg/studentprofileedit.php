@@ -41,7 +41,7 @@ $post=StudentReg::model()->findByPk(1);
 ?>
 <div class="formStudProfNav">
     <div class="regLinks">
-        <a href="/index.php">Головна</a> &#187; <a href="/index.php/?r=studentreg/profile">Профіль</a>&#187; <a href="#">Редагувати профіль</a>
+        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Головна</a> &#187; <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/?r=studentreg/profile">Профіль</a>&#187; <a href="#">Редагувати профіль</a>
     </div>
     <div class="profileStatus">
         <div>
@@ -56,7 +56,7 @@ $post=StudentReg::model()->findByPk(1);
 <div class="formStudProf">
     <?php $form=$this->beginWidget('CActiveForm', array(
         'id'=>'studentreg-form',
-        'action'=>'/index.php/?r=studentreg/rewrite',
+        'action'=> Yii::app()->request->baseUrl.'/?r=studentreg/rewrite',
         // Please note: When you enable ajax validation, make sure the corresponding
         // controller action is handling ajax validation correctly.
         // There is a call to performAjaxValidation() commented in generated controller code.
