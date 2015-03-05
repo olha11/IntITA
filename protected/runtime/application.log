@@ -2891,3 +2891,155 @@ Stack trace:
 REQUEST_URI=/?r=studentreg/rewrite
 in Z:\home\temp\www\protected\controllers\StudentregController.php (293)
 in Z:\home\temp\www\index.php (13)
+2015/03/04 12:45:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "teachers".' in Z:\home\temp\www\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\temp\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('teachers')
+#1 Z:\home\temp\www\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\temp\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/?r=teachers
+---
+2015/03/05 12:52:13 [error] [exception.CException] exception 'CException' with message 'TeachersController cannot find the requested view "index".' in Z:\home\temp\www\protected\framework\web\CController.php:878
+Stack trace:
+#0 Z:\home\temp\www\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#1 Z:\home\temp\www\protected\controllers\TeachersController.php(128): CController->render('index', Array)
+#2 Z:\home\temp\www\protected\framework\web\actions\CInlineAction.php(49): TeachersController->actionIndex()
+#3 Z:\home\temp\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 Z:\home\temp\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 Z:\home\temp\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 Z:\home\temp\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\home\temp\www\protected\framework\web\CController.php(291): CFilterChain->run()
+#10 Z:\home\temp\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\home\temp\www\protected\framework\web\CWebApplication.php(282): CController->run('')
+#12 Z:\home\temp\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('teachers')
+#13 Z:\home\temp\www\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 Z:\home\temp\www\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/?r=teachers
+---
+2015/03/05 13:08:20 [error] [exception.CException] exception 'CException' with message 'TeachersController and its behaviors do not have a method or closure named "findByPk".' in Z:\home\temp\www\protected\framework\base\CComponent.php:266
+Stack trace:
+#0 Z:\home\temp\www\protected\views\teachers\teachers.php(15): CComponent->__call('findByPk', Array)
+#1 Z:\home\temp\www\protected\views\teachers\teachers.php(15): TeachersController->findByPk(1)
+#2 Z:\home\temp\www\protected\framework\web\CBaseController.php(126): require('Z:\home\temp\ww...')
+#3 Z:\home\temp\www\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('Z:\home\temp\ww...', Array, true)
+#4 Z:\home\temp\www\protected\framework\web\CController.php(869): CBaseController->renderFile('Z:\home\temp\ww...', Array, true)
+#5 Z:\home\temp\www\protected\framework\web\CController.php(782): CController->renderPartial('teachers', Array, true)
+#6 Z:\home\temp\www\protected\controllers\TeachersController.php(128): CController->render('teachers', Array)
+#7 Z:\home\temp\www\protected\framework\web\actions\CInlineAction.php(49): TeachersController->actionIndex()
+#8 Z:\home\temp\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 Z:\home\temp\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 Z:\home\temp\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 Z:\home\temp\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 Z:\home\temp\www\protected\framework\web\CController.php(291): CFilterChain->run()
+#15 Z:\home\temp\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 Z:\home\temp\www\protected\framework\web\CWebApplication.php(282): CController->run('')
+#17 Z:\home\temp\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('teachers')
+#18 Z:\home\temp\www\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 Z:\home\temp\www\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/?r=teachers
+---
+2015/03/05 13:31:46 [error] [php] Object of class TeachersTemp could not be converted to string (Z:\home\temp\www\protected\views\teachers\teachers.php:67)
+Stack trace:
+#0 Z:\home\temp\www\protected\framework\web\CController.php(869): TeachersController->renderFile()
+#1 Z:\home\temp\www\protected\framework\web\CController.php(782): TeachersController->renderPartial()
+#2 Z:\home\temp\www\protected\controllers\TeachersController.php(128): TeachersController->render()
+#3 Z:\home\temp\www\protected\framework\web\actions\CInlineAction.php(49): TeachersController->actionIndex()
+#4 Z:\home\temp\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(133): TeachersController->runAction()
+#6 Z:\home\temp\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 Z:\home\temp\www\protected\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 Z:\home\temp\www\protected\framework\web\filters\CInlineFilter.php(58): TeachersController->filterAccessControl()
+#9 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 Z:\home\temp\www\protected\framework\web\CController.php(291): CFilterChain->run()
+#11 Z:\home\temp\www\protected\framework\web\CController.php(265): TeachersController->runActionWithFilters()
+#12 Z:\home\temp\www\protected\framework\web\CWebApplication.php(282): TeachersController->run()
+#13 Z:\home\temp\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 Z:\home\temp\www\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 Z:\home\temp\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/?r=teachers
+in Z:\home\temp\www\protected\views\teachers\teachers.php (67)
+in Z:\home\temp\www\protected\controllers\TeachersController.php (128)
+in Z:\home\temp\www\index.php (13)
+2015/03/05 13:39:43 [error] [exception.CException] exception 'CException' with message 'Property "TeachersTemp.3" is not defined.' in Z:\home\temp\www\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 Z:\home\temp\www\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('3')
+#1 Z:\home\temp\www\protected\framework\base\CModel.php(596): CActiveRecord->__get('3')
+#2 Z:\home\temp\www\protected\views\teachers\teachers.php(69): CModel->offsetGet(3)
+#3 Z:\home\temp\www\protected\framework\web\CBaseController.php(126): require('Z:\home\temp\ww...')
+#4 Z:\home\temp\www\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('Z:\home\temp\ww...', Array, true)
+#5 Z:\home\temp\www\protected\framework\web\CController.php(869): CBaseController->renderFile('Z:\home\temp\ww...', Array, true)
+#6 Z:\home\temp\www\protected\framework\web\CController.php(782): CController->renderPartial('teachers', Array, true)
+#7 Z:\home\temp\www\protected\controllers\TeachersController.php(128): CController->render('teachers', Array)
+#8 Z:\home\temp\www\protected\framework\web\actions\CInlineAction.php(49): TeachersController->actionIndex()
+#9 Z:\home\temp\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 Z:\home\temp\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 Z:\home\temp\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 Z:\home\temp\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 Z:\home\temp\www\protected\framework\web\CController.php(291): CFilterChain->run()
+#16 Z:\home\temp\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 Z:\home\temp\www\protected\framework\web\CWebApplication.php(282): CController->run('')
+#18 Z:\home\temp\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('teachers')
+#19 Z:\home\temp\www\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 Z:\home\temp\www\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/?r=teachers
+---
+2015/03/05 13:40:07 [error] [exception.CException] exception 'CException' with message 'Property "TeachersTemp.3" is not defined.' in Z:\home\temp\www\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 Z:\home\temp\www\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('3')
+#1 Z:\home\temp\www\protected\framework\base\CModel.php(596): CActiveRecord->__get('3')
+#2 Z:\home\temp\www\protected\views\teachers\teachers.php(69): CModel->offsetGet(3)
+#3 Z:\home\temp\www\protected\framework\web\CBaseController.php(126): require('Z:\home\temp\ww...')
+#4 Z:\home\temp\www\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('Z:\home\temp\ww...', Array, true)
+#5 Z:\home\temp\www\protected\framework\web\CController.php(869): CBaseController->renderFile('Z:\home\temp\ww...', Array, true)
+#6 Z:\home\temp\www\protected\framework\web\CController.php(782): CController->renderPartial('teachers', Array, true)
+#7 Z:\home\temp\www\protected\controllers\TeachersController.php(128): CController->render('teachers', Array)
+#8 Z:\home\temp\www\protected\framework\web\actions\CInlineAction.php(49): TeachersController->actionIndex()
+#9 Z:\home\temp\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 Z:\home\temp\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 Z:\home\temp\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 Z:\home\temp\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 Z:\home\temp\www\protected\framework\web\CController.php(291): CFilterChain->run()
+#16 Z:\home\temp\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 Z:\home\temp\www\protected\framework\web\CWebApplication.php(282): CController->run('')
+#18 Z:\home\temp\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('teachers')
+#19 Z:\home\temp\www\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 Z:\home\temp\www\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/?r=teachers
+---
+2015/03/05 14:02:35 [error] [exception.CException] exception 'CException' with message 'Property "TeachersTemp.second_name" is not defined.' in Z:\home\temp\www\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 Z:\home\temp\www\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('second_name')
+#1 Z:\home\temp\www\protected\views\teachers\teachers.php(67): CActiveRecord->__get('second_name')
+#2 Z:\home\temp\www\protected\framework\web\CBaseController.php(126): require('Z:\home\temp\ww...')
+#3 Z:\home\temp\www\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('Z:\home\temp\ww...', Array, true)
+#4 Z:\home\temp\www\protected\framework\web\CController.php(869): CBaseController->renderFile('Z:\home\temp\ww...', Array, true)
+#5 Z:\home\temp\www\protected\framework\web\CController.php(782): CController->renderPartial('teachers', Array, true)
+#6 Z:\home\temp\www\protected\controllers\TeachersController.php(128): CController->render('teachers', Array)
+#7 Z:\home\temp\www\protected\framework\web\actions\CInlineAction.php(49): TeachersController->actionIndex()
+#8 Z:\home\temp\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 Z:\home\temp\www\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 Z:\home\temp\www\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 Z:\home\temp\www\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 Z:\home\temp\www\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 Z:\home\temp\www\protected\framework\web\CController.php(291): CFilterChain->run()
+#15 Z:\home\temp\www\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 Z:\home\temp\www\protected\framework\web\CWebApplication.php(282): CController->run('')
+#17 Z:\home\temp\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('teachers')
+#18 Z:\home\temp\www\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 Z:\home\temp\www\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/?r=teachers
+---

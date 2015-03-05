@@ -1,0 +1,86 @@
+/*header navigation*/
+.subNavBlock {
+    margin: 0 auto;
+    width: 960px;
+    clear: both;
+    overflow: hidden;
+}
+div.subLinks{
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    display:inline-block;
+    margin-top: 40px;
+    margin-bottom: 28px;
+    float:left;
+}
+.subLinks a{
+    color: #666666;
+}
+/*Main Block*/
+.teachersList
+{
+    margin: 0 auto;
+    width: 960px;
+    overflow: hidden;
+}
+/*Title*/
+div.titleTeachers {
+    padding: 0;
+    margin-bottom: 30px;
+}
+.titleTeachers h1,h2 {
+    font-weight: inherit;
+    color: #4B75A4;
+    margin: 0 0 10px 0;
+    line-height: 100%;
+}
+/*teacher Column*/
+.leftTeacher{
+    float:left;
+    width:460px;
+}
+.rightTeacher{
+    float:right;
+    width:460px;
+}
+/*teacher Profile Block*/
+.teacherBlock {
+    width:inherit;
+}
+.teacherBlock p, .teacherBlock ul{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+img.teacherAvatar{
+    display: block;
+    margin: 0 20px 0 0;
+    width: 112px;
+    height: 136px;
+}
+.teacherBlock table,.teacherBlock td{
+    vertical-align: top;
+    border-collapse: collapse;
+    padding: 0;
+}
+.teacherBlock span{
+    font-weight: bold;
+}
+.teacherBlock ul {
+    padding-left: 20px;
+}
+.teacherCourses {
+    padding-top:1px;
+    padding-bottom:1px;
+    background-color: #d6ebe0;
+    color:#467c98;
+}
+div.aboutMore{
+    float:right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    color: #4B75A4;
+}
+.aboutMore img{
+    margin-right: 5px;
+}
