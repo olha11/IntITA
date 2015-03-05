@@ -277,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `header` (
 -- Dumping data for table int_ita_db.header: ~1 rows (approximately)
 /*!40000 ALTER TABLE `header` DISABLE KEYS */;
 INSERT INTO `header` (`header_id`, `language`, `logo_url`, `menu_item_1`, `item_1_link`, `menu_item_2`, `item_2_link`, `menu_item_3`, `item_3_link`, `menu_item_4`, `item_4_link`, `enter_button_text`) VALUES
-	(1, 'UA', '/css/images/Logo_big.png', 'Курси', 'http://www.google.com', 'Викладачі', 'http://www.google.com', 'Форум', 'http://www.google.com', 'Про нас', 'http://www.google.com', 'Вхід');
+	(1, 'UA', '/css/images/Logo_big.png', 'Курси', 'http://www.google.com', 'Викладачі', '/?r=teachers', 'Форум', 'http://www.google.com', 'Про нас', 'http://www.google.com', 'Вхід');
 /*!40000 ALTER TABLE `header` ENABLE KEYS */;
 
 
