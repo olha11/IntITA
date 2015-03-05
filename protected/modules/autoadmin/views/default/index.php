@@ -1,11 +1,11 @@
 <?php
-$this->pageTitle = 'Back-end index page';
+$this->pageTitle = 'Адмінка - головна';
 
 $this->breadcrumbs=array(
 	$this->pageTitle
 );
 ?>
-<h1>AutoAdmin CMS FrameWork</h1>
+<h1>Адмінка</h1>
 
 <h2>Головна сторінка</h2>
 <ul>

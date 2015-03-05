@@ -41,8 +41,8 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 		$modelCarousel = new Carousel();
 
-		$mainpage = new Mainpage(1);
-		$mainpage->setValueById(1);
+		$mainpage = new Mainpage(0);
+		$mainpage->setValueById(0);
 		$objAbout1 = new AboutUs(1);
 		$objAbout1->setValuesById(1);
 		$objAbout2 = new AboutUs(2);
@@ -72,10 +72,10 @@ class SiteController extends Controller
 			'step5'=>$step5,
 		);
 		$sliderPictures = array(
-			'slider1'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(1)->images_path.$modelCarousel->findByPk(1)->picture_url,
-			'slider2'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(2)->images_path.$modelCarousel->findByPk(2)->picture_url,
-			'slider3'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(3)->images_path.$modelCarousel->findByPk(3)->picture_url,
-			'slider4'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(4)->images_path.$modelCarousel->findByPk(4)->picture_url,
+			'slider1'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(1)->imagesPath.$modelCarousel->findByPk(1)->pictureURL,
+			'slider2'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(2)->imagesPath.$modelCarousel->findByPk(2)->pictureURL,
+			'slider3'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(3)->imagesPath.$modelCarousel->findByPk(3)->pictureURL,
+			'slider4'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(4)->imagesPath.$modelCarousel->findByPk(4)->pictureURL,
 		);
 
 
@@ -85,27 +85,27 @@ class SiteController extends Controller
 			'slider3'=>$sliderPictures['slider3'],
 			'slider4'=>$sliderPictures['slider4'],
 			'mainpage'=>array(
-				'sliderLine'=> $mainpage->slider_line_url,
-				'sliderTexture'=> $mainpage->slider_texture_url,
-				'buttonStart'=>$mainpage->slider_button_text,
-				'sliderHeader'=>$mainpage->slider_header,
-				'sliderText'=>$mainpage->slider_text,
+				'sliderLine'=> $mainpage->sliderLineURL,
+				'sliderTexture'=> $mainpage->sliderTextureURL,
+				'buttonStart'=>$mainpage->sliderButtonText,
+				'sliderHeader'=>$mainpage->sliderHeader,
+				'sliderText'=>$mainpage->sliderText,
 				'title'=>$mainpage->title,
 				'header1'=>$mainpage->header1,
 				'header2'=>$mainpage->header2,
 				'hexagon'=>$mainpage->hexagon,
 				'linkName'=>$mainpage->linkName,
 				'subLineImage'=>$mainpage->subLineImage,
-				'stepSize'=>$mainpage->step_size,
+				'stepSize'=>$mainpage->stepSize,
 				'subheader1'=>$mainpage->subheader1,
 				'subheader2'=>$mainpage->subheader2,
-				'formHeader1'=>$mainpage->form_header_1,
-				'formHeader2'=>$mainpage->form_header_2,
-				'regText'=>$mainpage->reg_text,
-				'formButtonStart'=>$mainpage->button_start,
-				'socialText'=>$mainpage->social_text,
-				'imageNetwork'=>$mainpage->image_network,
-				'formFon'=>$mainpage->form_fon,
+				'formHeader1'=>$mainpage->formHeader1,
+				'formHeader2'=>$mainpage->formHeader2,
+				'regText'=>$mainpage->regText,
+				'formButtonStart'=>$mainpage->buttonStart,
+				'socialText'=>$mainpage->socialText,
+				'imageNetwork'=>$mainpage->imageNetwork,
+				'formFon'=>$mainpage->formFon,
 			),
 			'block1'=>$arrayAboutUs['objAbout1'],
 			'block2'=>$arrayAboutUs['objAbout2'],
@@ -120,8 +120,8 @@ class SiteController extends Controller
 	
 		public function actionAboutdetail()
 	{
-		$mainpage = new Mainpage(1);
-		$mainpage->setValueById(1);
+		$mainpage = new Mainpage(0);
+		$mainpage->setValueById(0);
 		$objAbout1 = new AboutUs(1);
 		$objAbout1->setValuesById(1);
 		$objAbout2 = new AboutUs(2);

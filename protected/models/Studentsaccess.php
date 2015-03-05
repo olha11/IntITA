@@ -116,7 +116,7 @@ class Studentsaccess extends CActiveRecord
 
 	public function isAccessable ($student_id, $course_id, $module_id,  $lecture_id)
 	{
-		$access = $this->find(['student_id=:student_id'], array())
+		$access = $this->find(['student_id=:student_id'], array());
 		return true;
 	}
 

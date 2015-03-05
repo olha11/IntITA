@@ -14,31 +14,32 @@ class Controller extends CController
 	public $link3;
 	public $menu4;
 	public $link4;
-	public $button_text;
+	public $buttonText;
 
 	public $phone;
-	public $image_up;
+	public $imageUp;
 	public $mobile;
 	public $email;
-	public $image_sotial;
+	public $imageSotial;
+
 
 	public function init(){
-		$this->logo = Yii::app()->request->baseUrl.Header::model()->findByPk(1)->logo_url;
-		$this->menu1 = Header::model()->findByPk(2)->menu_item_1;
-		$this->menu2 = Header::model()->findByPk(2)->menu_item_2;
-		$this->menu3 = Header::model()->findByPk(2)->menu_item_3;
-		$this->menu4 = Header::model()->findByPk(2)->menu_item_4;
-		$this->link1 = Header::model()->findByPk(1)->item_1_link;
-		$this->link2 = Header::model()->findByPk(1)->item_2_link;
-		$this->link3 = Header::model()->findByPk(1)->item_3_link;
-		$this->link4 = Yii::app()->request->baseUrl.Header::model()->findByPk(1)->item_4_link;
-		$this->button_text = Header::model()->findByPk(2)->enter_button_text;
+		$this->logo = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->logoURL;
+		$this->menu1 = Header::model()->findByPk(0)->menuItem1;
+		$this->menu2 = Header::model()->findByPk(0)->menuItem2;
+		$this->menu3 = Header::model()->findByPk(0)->menuItem3;
+		$this->menu4 = Header::model()->findByPk(0)->menuItem4;
+		$this->link1 = Header::model()->findByPk(0)->item1Link;
+		$this->link2 = Header::model()->findByPk(0)->item2Link;
+		$this->link3 = Header::model()->findByPk(0)->item3Link;
+		$this->link4 = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->item4Link;
+		$this->buttonText = Header::model()->findByPk(0)->enterButtonText;
 
-		$this->email = Footer::model()->findByPk(1)->email;
-		$this->phone = Footer::model()->findByPk(1)->phone;
-		$this->mobile = Footer::model()->findByPk(1)->mobile;
-		$this->image_sotial = Yii::app()->request->baseUrl.Footer::model()->findByPk(1)->image_social;
-		$this->image_up = Yii::app()->request->baseUrl.Footer::model()->findByPk(1)->image_up;
+		$this->email = Footer::model()->findByPk(0)->email;
+		$this->phone = Footer::model()->findByPk(0)->phone;
+		$this->mobile = Footer::model()->findByPk(0)->mobile;
+		$this->imageSotial = Yii::app()->request->baseUrl.Footer::model()->findByPk(0)->imageSotial;
+		$this->imageUp = Yii::app()->request->baseUrl.Footer::model()->findByPk(0)->imageUp;
 	}
 	/**
 	 * @var string the default layout for the controller view. Defaults to '//layouts/column1',

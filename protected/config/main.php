@@ -1,63 +1,50 @@
 <?php
-
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
-
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'IntITA',
-
-	// preloading 'log' component
+// preloading 'log' component
 	'preload'=>array('log'),
-
-	// autoloading model and component classes
+// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'ext.autoadmin.*',
-		'ext.autoadmin.models.*',
-		'ext.autoadmin.models.field.*',
-		'ext.autoadmin.helpers.*',
-		'ext.autoadmin.controllers.*',
+		'ext.autoAdmin.*',
+		'ext.autoAdmin.models.*',
+		'ext.autoAdmin.models.field.*',
+		'ext.autoAdmin.helpers.*',
+		'ext.autoAdmin.controllers.*',
 	),
-
 	'modules'=>array(
-		// uncomment the following to enable the Gii tool
-
+// uncomment the following to enable the Gii tool
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'admin',
-			// If removed, Gii defaults to localhost only. Edit carefully to taste.
+// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-
 		'autoadmin'=>array(
-			'class'=>'ext.autoadmin.AutoAdmin',
+			'class'=>'ext.autoAdmin.AutoAdmin',
 			'basePath' => dirname(__FILE__).'/../modules/autoadmin',
-			'wwwDirName' => '', //your DocumentRoot
+			'wwwDirName' => 'www', //your DocumentRoot
 			'authMode' => true, //Switch on authorization system
 			'openMode' => true, //Use for temporary switching off all access limitations
 			'logMode' => false,
 		),
-
 	),
-
-	// application components
+// application components
 	'components'=>array(
-		
-		'clientScript'   => array(
-    		'class' => 'system.web.CClientScript'
-    	),
-
+		'clientScript' => array(
+			'class' => 'system.web.CClientScript'
+		),
 		'user'=>array(
-			// enable cookie-based authentication
+// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-
-		// uncomment the following to enable URLs in path-format
-
+// uncomment the following to enable URLs in path-format
 		'urlManager'=>array(
 			//'urlFormat'=>'path',
 			'rules'=>array(
@@ -65,28 +52,19 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 
-				'/<module:autoadmin>' => 'autoadmin/default/index',
-				'/<module:autoadmin>/<controller:\w+>' => 'autoadmin/<controller>/index',
-				'/<module:autoadmin>/<controller:\w+>/<action:\w+>' => 'autoadmin/<controller>/<action>',
-
 				'<controller:aajax>/<action:\w+>' => 'autoadmin/<controller>/<action>',
 				'<controller:afile>/<action:\w+>' => 'autoadmin/<controller>/<action>',
 				'<controller:\w+>/foreign-<key:\w+>' => 'autoadmin/<controller>/foreign<key>',
 			),
 		),
-
-
-		// database settings are configured in database.php
+// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
 		'db2'=>require(dirname(__FILE__).'/database.php'),
-
 		'dbAdmin' => require(dirname(__FILE__).'/database.php'),
-
 		'errorHandler'=>array(
-			// use 'site/error' action to display errors
+// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
 		),
-
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
@@ -94,21 +72,19 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
-				// uncomment the following to show log messages on web pages
+// uncomment the following to show log messages on web pages
 				/*
-				array(
-					'class'=>'CWebLogRoute',
-				),
-				*/
+                array(
+                'class'=>'CWebLogRoute',
+                ),
+                */
 			),
 		),
-
 	),
-
-	// application-level parameters that can be accessed
-	// using Yii::app()->params['paramName']
+// application-level parameters that can be accessed
+// using Yii::app()->params['paramName']
 	'params'=>array(
-		// this is used in contact page
+// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
 	),
 );

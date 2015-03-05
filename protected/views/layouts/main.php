@@ -85,7 +85,7 @@
 </div>
 <div id="button_border">
 </div>
-<a id="enter_button" href="#"><?php echo $this->button_text; ?></a>
+<a id="enter_button" href="#"><?php echo $this->buttonText; ?></a>
 
 <script>
     var key = document.getElementById('enter_button');
@@ -133,7 +133,7 @@
 <div id="footer">
     <div class="main">
         <div>
-            <img src="<?php echo $this->image_sotial; ?>"/>
+            <img src="<?php echo $this->imageSotial; ?>"/>
         </div>
         <div class="footer">
             <div>
@@ -154,7 +154,7 @@
             </div>
         </div>
         <div class="footer"">
-        <a href="#"><img src="<?php echo $this->image_up; ?>"/></a>
+        <a href="#"><img src="<?php echo $this->imageUp; ?>"/></a>
     </div>
     <div class="footer"></div>
 </div>

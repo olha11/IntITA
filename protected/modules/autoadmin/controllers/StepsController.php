@@ -7,7 +7,7 @@ class StepsController extends Controller
         $this->pageTitle = 'Кроки';
 
         $this->module->tableName('step');
-        $this->module->setPK('step_id');
+        $this->module->setPK('stepID');
         $fieldsConf = array(
             array('stepNumber', 'num', 'Номер', array('show')),
             array('stepTitle', 'string', 'Заголовок кроку', array('show')),
