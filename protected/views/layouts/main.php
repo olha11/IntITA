@@ -69,7 +69,7 @@
 <div id="navigation">
     <div class="main">
         <div id="logo_img">
-            <img src="<?php echo $this->logo; ?>"/>
+            <img id="logo" src="<?php echo $this->logo; ?>"/>
         </div>
 
         <ul>
@@ -116,12 +116,15 @@
     window.onscroll = function() {
         var pageY = window.pageYOffset || document.documentElement.scrollTop;
         if (pageY >= key.offsetHeight) {
+            document.getElementById('logo').src="/IntITA/css/images/Logo_small.png";
+
             key.className = "down";
             logo.className = "down";
             nav.style.height = "68px";
             nav.className = "down";
             border.className = "down";
         } else {
+            document.getElementById('logo').src="<?php echo $this->logo; ?>";
             border.className = "";
             key.className = "";
             logo.className = "";

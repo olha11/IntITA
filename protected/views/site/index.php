@@ -6,7 +6,7 @@
 <div class="insideSlider">
     <div class="lineAndButton">
         <img class="sliderLine" src="<?php echo $mainpage['sliderLine']; ?>">
-        <a class="sliderButton" href="#"><?php echo $mainpage['buttonStart']; ?> </a>
+        <a class="sliderButton" href="#"><?php echo $mainpage['buttonStart']; ?> <img src="/IntITA/css/images/pointer.png"/> </a>
     </div>
     <div class="sliderText">
         <?php echo $mainpage['sliderHeader']; ?><br>
