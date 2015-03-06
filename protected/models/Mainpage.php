@@ -28,6 +28,7 @@
  * @property string $button_start
  * @property string $social_text
  * @property string $image_network
+ * @property string $form_fon
  */
 class Mainpage extends CActiveRecord
 {
@@ -63,8 +64,13 @@ class Mainpage extends CActiveRecord
 		$this->form_header_1 = $this->findByPk($id)->form_header_1;
 		$this->form_header_2 = $this->findByPk($id)->form_header_2;
 		$this->reg_text = $this->findByPk($id)->reg_text;
+		$this->button_start = $this->findByPk($id)->button_start;
+		$this->social_text = $this->findByPk($id)->social_text;
+		$this->image_network = Yii::app()->request->baseUrl.$this->findByPk($id)->image_network;
+		$this->form_fon = Yii::app()->request->baseUrl.$this->findByPk($id)->form_fon;
 		return $this;
 	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -73,16 +79,16 @@ class Mainpage extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('mainpage_id, title, carousel_id, slider_header, slider_text, slider_texture_url, slider_line_url, slider_button_text, header1, subLineImage, subheader1, array_blocks, header2, subheader2, array_steps, step_size, linkName, hexagon, form_header_1, form_header_2, reg_text, button_start, social_text, image_network', 'required'),
+			array('mainpage_id, title, carousel_id, slider_header, slider_text, slider_texture_url, slider_line_url, slider_button_text, header1, subLineImage, subheader1, array_blocks, header2, subheader2, array_steps, step_size, linkName, hexagon, form_header_1, form_header_2, reg_text, button_start, social_text, image_network, form_fon', 'required'),
 			array('mainpage_id, carousel_id', 'numerical', 'integerOnly'=>true),
 			array('title, subheader1, subheader2', 'length', 'max'=>100),
 			array('slider_header, header1, header2, form_header_1, form_header_2, reg_text, button_start, social_text', 'length', 'max'=>50),
-			array('slider_text, slider_texture_url, slider_line_url, subLineImage, hexagon, image_network', 'length', 'max'=>255),
+			array('slider_text, slider_texture_url, slider_line_url, subLineImage, hexagon, image_network, form_fon', 'length', 'max'=>255),
 			array('slider_button_text, linkName', 'length', 'max'=>20),
 			array('array_blocks, array_steps, step_size', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('mainpage_id, title, carousel_id, slider_header, slider_text, slider_texture_url, slider_line_url, slider_button_text, header1, subLineImage, subheader1, array_blocks, header2, subheader2, array_steps, step_size, linkName, hexagon, form_header_1, form_header_2, reg_text, button_start, social_text, image_network', 'safe', 'on'=>'search'),
+			array('mainpage_id, title, carousel_id, slider_header, slider_text, slider_texture_url, slider_line_url, slider_button_text, header1, subLineImage, subheader1, array_blocks, header2, subheader2, array_steps, step_size, linkName, hexagon, form_header_1, form_header_2, reg_text, button_start, social_text, image_network, form_fon', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -127,6 +133,7 @@ class Mainpage extends CActiveRecord
 			'button_start' => 'Button Start',
 			'social_text' => 'Social Text',
 			'image_network' => 'Image Network',
+			'form_fon' => 'Form Fon',
 		);
 	}
 
@@ -172,6 +179,7 @@ class Mainpage extends CActiveRecord
 		$criteria->compare('button_start',$this->button_start,true);
 		$criteria->compare('social_text',$this->social_text,true);
 		$criteria->compare('image_network',$this->image_network,true);
+		$criteria->compare('form_fon',$this->form_fon,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

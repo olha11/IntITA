@@ -80,14 +80,7 @@ return array(
 		'db'=>require(dirname(__FILE__).'/database.php'),
 		'db2'=>require(dirname(__FILE__).'/database.php'),
 
-		'dbAdmin' => array(
-			'class'=>'CDbConnection',
-			'connectionString' => 'mysql:host=localhost;dbname=int_ita_db',
-			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
-			'charset' => 'utf8',
-		),
+		'dbAdmin' => require(dirname(__FILE__).'/database.php'),
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors

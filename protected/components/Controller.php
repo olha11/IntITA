@@ -29,7 +29,7 @@ class Controller extends CController
 		$this->menu3 = Header::model()->findByPk(1)->menu_item_3;
 		$this->menu4 = Header::model()->findByPk(1)->menu_item_4;
 		$this->link1 = Header::model()->findByPk(1)->item_1_link;
-		$this->link2 = Header::model()->findByPk(1)->item_2_link;
+		$this->link2 = Yii::app()->request->baseUrl.Header::model()->findByPk(1)->item_2_link;
 		$this->link3 = Header::model()->findByPk(1)->item_3_link;
 		$this->link4 = Header::model()->findByPk(1)->item_4_link;
 		$this->button_text = Header::model()->findByPk(1)->enter_button_text;

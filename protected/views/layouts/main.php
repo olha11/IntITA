@@ -66,12 +66,10 @@
 
 <body>
 
-
-
 <div id="navigation">
     <div class="main">
         <div id="logo_img">
-            <img src="<?php echo $this->logo; ?>"/>
+            <img id="logo" src="<?php echo $this->logo; ?>"/>
         </div>
 
         <ul>
@@ -82,12 +80,35 @@
         </ul>
 
     </div>
+    <div id="lang">
+        <form action="" method="post" onsubmit="" name="fff">
+            <button formaction="" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
+
+            <button formaction="" id="en" name="en" onclick="changeLang(this)">en</button>
+
+            <button formaction="" id="ru" name="ru" onclick="changeLang(this)">ru</button>
+
+        </form>
+    </div>
 </div>
 <div id="button_border">
 </div>
 <a id="enter_button" href="#"><?php echo $this->button_text; ?></a>
 
 <script>
+    function changeLang(n){
+        for (var i=0; i< n.form.length; i++){
+            if(n.form.elements[i].id !== n.id){
+                console.log(n.form.elements[i].id);
+                document.getElementById(n.form.elements[i].id).disabled = false;
+                document.getElementById(n.form.elements[i].id).className = "";
+            }
+        }
+        document.getElementById(n.id).disabled = true;
+        document.getElementById(n.id).className = "selectedLang";
+    }
+
+
     var key = document.getElementById('enter_button');
     var nav = document.getElementById('navigation');
     var logo = document.getElementById('logo_img');
@@ -95,12 +116,15 @@
     window.onscroll = function() {
         var pageY = window.pageYOffset || document.documentElement.scrollTop;
         if (pageY >= key.offsetHeight) {
+            document.getElementById('logo').src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/Logo_small.png";
+
             key.className = "down";
             logo.className = "down";
             nav.style.height = "68px";
             nav.className = "down";
             border.className = "down";
         } else {
+            document.getElementById('logo').src="<?php echo $this->logo; ?>";
             border.className = "";
             key.className = "";
             logo.className = "";
@@ -137,7 +161,7 @@
         </div>
         <div class="footer">
             <div>
-                <img src="<?php echo $this->logo; ?>" style="max-width: 140px;">
+                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/Logo_small.png" style="max-width: 140px;">
             </div>
             <div>
                 <p> <?php echo $this->phone; ?><br/>

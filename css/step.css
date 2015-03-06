@@ -135,10 +135,10 @@ img.grid {
 p.stepNumber {
 	color:#3d4d60;
 	font-size:300%;
-	font-weight:bold;
+	font-weight:normal;
 	margin:0px;
-	margin-top:5px;
-	margin-bottom:-5px;
+	margin-top: 0px;
+	margin-bottom: -15px;
 }
 p.stepName {
 	color:#3d4d60;

@@ -99,6 +99,13 @@ class SiteController extends Controller
 				'stepSize'=>$mainpage->step_size,
 				'subheader1'=>$mainpage->subheader1,
 				'subheader2'=>$mainpage->subheader2,
+				'formHeader1'=>$mainpage->form_header_1,
+				'formHeader2'=>$mainpage->form_header_2,
+				'regText'=>$mainpage->reg_text,
+				'formButtonStart'=>$mainpage->button_start,
+				'socialText'=>$mainpage->social_text,
+				'imageNetwork'=>$mainpage->image_network,
+				'formFon'=>$mainpage->form_fon,
 			),
 			'block1'=>$arrayAboutUs['objAbout1'],
 			'block2'=>$arrayAboutUs['objAbout2'],
@@ -113,9 +120,34 @@ class SiteController extends Controller
 	
 		public function actionAboutdetail()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('aboutdetail');
+		$mainpage = new Mainpage(1);
+		$mainpage->setValueById(1);
+		$objAbout1 = new AboutUs(1);
+		$objAbout1->setValuesById(1);
+		$objAbout2 = new AboutUs(2);
+		$objAbout2->setValuesById(2);
+		$objAbout3 = new AboutUs(3);
+		$objAbout3->setValuesById(3);
+
+		$arrayAboutUs = array(
+			'objAbout1'=>$objAbout1,
+			'objAbout2'=>$objAbout2,
+			'objAbout3'=>$objAbout3,
+		);
+
+		$this->render('aboutdetail', array(
+
+			'mainpage'=>array(
+				'title'=>$mainpage->title,
+				'header1'=>$mainpage->header1,
+				'linkName'=>$mainpage->linkName,
+				'subLineImage'=>$mainpage->subLineImage,
+				'subheader1'=>$mainpage->subheader1,
+			),
+			'block1'=>$arrayAboutUs['objAbout1'],
+			'block2'=>$arrayAboutUs['objAbout2'],
+			'block3'=>$arrayAboutUs['objAbout3'],
+		));
 	}
 
 	/**

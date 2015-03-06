@@ -21,7 +21,7 @@
     top: 260px;
 }
 
-.sliderButton {
+.lineAndButton .sliderButton {
     position:        absolute;
     top:             345px;
     margin-left:     400px;
@@ -36,7 +36,7 @@
     text-shadow:     1px 1px 1px black;
     color:           white;
     font-size:       21px;
-    font: normal     400 24px/50px "MyriadPro";
+    font: normal     400 30px/50px "MyriadPro";
     vertical-align:  middle;
     text-align:      center;
     text-decoration: none;
