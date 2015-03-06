@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-03-06 18:14:58
+-- Date/time:                    2015-03-06 18:21:55
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -16,6 +16,7 @@ USE `int_ita_db`;
 
 
 -- Dumping structure for table int_ita_db.aa_access
+DROP TABLE IF EXISTS `aa_access`;
 CREATE TABLE IF NOT EXISTS `aa_access` (
   `user_id` smallint(5) unsigned NOT NULL,
   `interface_id` smallint(5) unsigned NOT NULL,
@@ -35,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `aa_access` (
 
 
 -- Dumping structure for table int_ita_db.aa_authorizations
+DROP TABLE IF EXISTS `aa_authorizations`;
 CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` smallint(5) unsigned NOT NULL,
@@ -73,6 +75,7 @@ INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 
 
 -- Dumping structure for table int_ita_db.aa_errors
+DROP TABLE IF EXISTS `aa_errors`;
 CREATE TABLE IF NOT EXISTS `aa_errors` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `error_type` enum('exception','warning') DEFAULT NULL,
@@ -89,6 +92,7 @@ CREATE TABLE IF NOT EXISTS `aa_errors` (
 
 
 -- Dumping structure for table int_ita_db.aa_interfaces
+DROP TABLE IF EXISTS `aa_interfaces`;
 CREATE TABLE IF NOT EXISTS `aa_interfaces` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `section_id` tinyint(3) unsigned DEFAULT NULL,
@@ -108,6 +112,7 @@ CREATE TABLE IF NOT EXISTS `aa_interfaces` (
 
 
 -- Dumping structure for table int_ita_db.aa_logs
+DROP TABLE IF EXISTS `aa_logs`;
 CREATE TABLE IF NOT EXISTS `aa_logs` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `interface_id` smallint(5) unsigned DEFAULT NULL,
@@ -128,6 +133,7 @@ CREATE TABLE IF NOT EXISTS `aa_logs` (
 
 
 -- Dumping structure for table int_ita_db.aa_sections
+DROP TABLE IF EXISTS `aa_sections`;
 CREATE TABLE IF NOT EXISTS `aa_sections` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(40) NOT NULL,
@@ -140,6 +146,7 @@ CREATE TABLE IF NOT EXISTS `aa_sections` (
 
 
 -- Dumping structure for table int_ita_db.aa_users
+DROP TABLE IF EXISTS `aa_users`;
 CREATE TABLE IF NOT EXISTS `aa_users` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `level` enum('root','admin','user') NOT NULL DEFAULT 'user',
@@ -167,6 +174,7 @@ INSERT INTO `aa_users` (`id`, `level`, `login`, `password`, `interface_level`, `
 
 
 -- Dumping structure for table int_ita_db.aboutus
+DROP TABLE IF EXISTS `aboutus`;
 CREATE TABLE IF NOT EXISTS `aboutus` (
   `blockID` int(11) NOT NULL AUTO_INCREMENT,
   `language` enum('EN','UA','RU') NOT NULL,
@@ -194,6 +202,7 @@ INSERT INTO `aboutus` (`blockID`, `language`, `line2Image`, `iconImage`, `titleT
 
 
 -- Dumping structure for table int_ita_db.carousel
+DROP TABLE IF EXISTS `carousel`;
 CREATE TABLE IF NOT EXISTS `carousel` (
   `order` int(11) NOT NULL,
   `pictureURL` varchar(50) NOT NULL,
@@ -213,6 +222,7 @@ INSERT INTO `carousel` (`order`, `pictureURL`, `description`, `imagesPath`) VALU
 
 
 -- Dumping structure for table int_ita_db.course
+DROP TABLE IF EXISTS `course`;
 CREATE TABLE IF NOT EXISTS `course` (
   `course_ID` int(11) NOT NULL AUTO_INCREMENT,
   `course_name` varchar(45) NOT NULL,
@@ -237,6 +247,7 @@ INSERT INTO `course` (`course_ID`, `course_name`, `course_duration_hours`) VALUE
 
 
 -- Dumping structure for table int_ita_db.footer
+DROP TABLE IF EXISTS `footer`;
 CREATE TABLE IF NOT EXISTS `footer` (
   `footerID` int(11) NOT NULL AUTO_INCREMENT,
   `language` enum('EN','UA','RU') NOT NULL DEFAULT 'UA',
@@ -258,6 +269,7 @@ INSERT INTO `footer` (`footerID`, `language`, `imageSotial`, `phone`, `mobile`, 
 
 
 -- Dumping structure for table int_ita_db.header
+DROP TABLE IF EXISTS `header`;
 CREATE TABLE IF NOT EXISTS `header` (
   `headerID` int(11) NOT NULL AUTO_INCREMENT,
   `language` enum('EN','UA','RU') NOT NULL,
@@ -284,6 +296,7 @@ INSERT INTO `header` (`headerID`, `language`, `logoURL`, `smallLogoURL`, `menuIt
 
 
 -- Dumping structure for table int_ita_db.hometasks
+DROP TABLE IF EXISTS `hometasks`;
 CREATE TABLE IF NOT EXISTS `hometasks` (
   `hometask_ID` int(11) NOT NULL AUTO_INCREMENT,
   `fkmodule_ID` int(11) NOT NULL,
@@ -304,6 +317,7 @@ INSERT INTO `hometasks` (`hometask_ID`, `fkmodule_ID`, `fklecture_ID`, `hometask
 
 
 -- Dumping structure for table int_ita_db.language
+DROP TABLE IF EXISTS `language`;
 CREATE TABLE IF NOT EXISTS `language` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` enum('EN','UA','RU') NOT NULL,
@@ -321,6 +335,7 @@ INSERT INTO `language` (`id`, `code`, `language`, `country`) VALUES
 
 
 -- Dumping structure for table int_ita_db.lecture
+DROP TABLE IF EXISTS `lecture`;
 CREATE TABLE IF NOT EXISTS `lecture` (
   `lectureID` int(11) NOT NULL AUTO_INCREMENT,
   `lectureImageMain` varchar(255) NOT NULL,
@@ -352,6 +367,7 @@ INSERT INTO `lecture` (`lectureID`, `lectureImageMain`, `lectureModule`, `lectur
 
 
 -- Dumping structure for table int_ita_db.mainpage
+DROP TABLE IF EXISTS `mainpage`;
 CREATE TABLE IF NOT EXISTS `mainpage` (
   `mainpageID` int(11) NOT NULL,
   `language` enum('EN','UA','RU') NOT NULL,
@@ -392,6 +408,7 @@ INSERT INTO `mainpage` (`mainpageID`, `language`, `title`, `sliderHeader`, `slid
 
 
 -- Dumping structure for table int_ita_db.modules
+DROP TABLE IF EXISTS `modules`;
 CREATE TABLE IF NOT EXISTS `modules` (
   `module_ID` int(11) NOT NULL AUTO_INCREMENT,
   `module_name` varchar(45) NOT NULL,
@@ -411,6 +428,7 @@ INSERT INTO `modules` (`module_ID`, `module_name`, `module_duration_hours`, `mod
 
 
 -- Dumping structure for table int_ita_db.step
+DROP TABLE IF EXISTS `step`;
 CREATE TABLE IF NOT EXISTS `step` (
   `stepID` int(11) NOT NULL AUTO_INCREMENT,
   `language` enum('UA','RU','EN') NOT NULL,
@@ -435,6 +453,7 @@ INSERT INTO `step` (`stepID`, `language`, `stepName`, `stepNumber`, `stepTitle`,
 
 
 -- Dumping structure for table int_ita_db.studentprofile
+DROP TABLE IF EXISTS `studentprofile`;
 CREATE TABLE IF NOT EXISTS `studentprofile` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `firstName` varchar(255) NOT NULL,
@@ -463,6 +482,7 @@ INSERT INTO `studentprofile` (`id`, `firstName`, `middleName`, `secondName`, `ni
 
 
 -- Dumping structure for table int_ita_db.studentsaccess
+DROP TABLE IF EXISTS `studentsaccess`;
 CREATE TABLE IF NOT EXISTS `studentsaccess` (
   `accessID` int(11) NOT NULL AUTO_INCREMENT,
   `studentID` int(11) NOT NULL,
@@ -487,6 +507,7 @@ CREATE TABLE IF NOT EXISTS `studentsaccess` (
 
 
 -- Dumping structure for table int_ita_db.teachers
+DROP TABLE IF EXISTS `teachers`;
 CREATE TABLE IF NOT EXISTS `teachers` (
   `teacherID` int(11) NOT NULL AUTO_INCREMENT,
   `firstName` varchar(35) NOT NULL,
@@ -515,6 +536,7 @@ CREATE TABLE IF NOT EXISTS `teachers` (
 
 
 -- Dumping structure for table int_ita_db.tests
+DROP TABLE IF EXISTS `tests`;
 CREATE TABLE IF NOT EXISTS `tests` (
   `test_ID` int(11) NOT NULL AUTO_INCREMENT,
   `fkmodule_ID` int(11) NOT NULL,
@@ -534,6 +556,7 @@ INSERT INTO `tests` (`test_ID`, `fkmodule_ID`, `fklecture_ID`, `test_title`, `te
 
 
 -- Dumping structure for table int_ita_db.theoreticalsmaterials
+DROP TABLE IF EXISTS `theoreticalsmaterials`;
 CREATE TABLE IF NOT EXISTS `theoreticalsmaterials` (
   `tm_ID` int(11) NOT NULL AUTO_INCREMENT,
   `fkmodule_ID` int(11) NOT NULL,
@@ -553,6 +576,7 @@ INSERT INTO `theoreticalsmaterials` (`tm_ID`, `fkmodule_ID`, `fklecture_ID`, `TM
 
 
 -- Dumping structure for table int_ita_db.users
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `userID` int(11) NOT NULL AUTO_INCREMENT,
   `userName` varchar(50) NOT NULL,
@@ -573,6 +597,7 @@ INSERT INTO `users` (`userID`, `userName`, `userEmail`, `userPassword`, `userHas
 
 
 -- Dumping structure for table int_ita_db.videos
+DROP TABLE IF EXISTS `videos`;
 CREATE TABLE IF NOT EXISTS `videos` (
   `video_ID` int(11) NOT NULL AUTO_INCREMENT,
   `fkmodule_ID` int(11) NOT NULL,
