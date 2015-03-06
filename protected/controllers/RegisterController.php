@@ -8,6 +8,12 @@ class RegisterController {
         {
             $this->redirect(array('studentreg/index'));
         }
-        $this->redirect(array('site/index'));
+        else rapidRegister($_POST['name'], $_POST['email']);
     }
+
+    public function rapidRegister(String $name, String $email){
+
+    }
+
+
 }

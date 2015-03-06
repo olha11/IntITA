@@ -29,7 +29,7 @@ class MainpageController extends Controller
 		$this->module->setPK('order');
 		$fieldsConf = array(
 			array('order', 'string', 'Порядок', array('show')),
-			array('pictureURL', 'image', 'Фото', array('show', 'directoryPath'=>'./css/images/slider_img/small/')),
+			array('pictureURL', 'image', 'Фото', array('show', 'directoryPath'=>'./css/images/slider_img/small')),
 			array('description', 'text', 'Опис', array('show', 'directoryPath'=>'./')),
 		);
 		$this->module->fieldsConf($fieldsConf);

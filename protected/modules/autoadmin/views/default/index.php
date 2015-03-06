@@ -24,4 +24,16 @@ $this->breadcrumbs=array(
 
 </ul>
 
+<h2>Викладачі</h2>
+<ul>
+	<li><a href="./aboutus/blockextended/">Викладачі</a></li>
+
+</ul>
+
+<h2>Реєстрація</h2>
+<ul>
+	<li><a href="./register/extended/">Розширена реєстрація</a></li>
+
+</ul>
+
 <br clear="both"/>

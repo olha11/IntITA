@@ -12,11 +12,6 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'ext.autoAdmin.*',
-		'ext.autoAdmin.models.*',
-		'ext.autoAdmin.models.field.*',
-		'ext.autoAdmin.helpers.*',
-		'ext.autoAdmin.controllers.*',
 	),
 	'modules'=>array(
 // uncomment the following to enable the Gii tool

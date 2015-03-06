@@ -5,8 +5,8 @@
  *
  * The followings are the available columns in table 'mainpage':
  * @property integer $mainpageID
+ * @property string $language
  * @property string $title
- * @property integer $carousel_id
  * @property string $sliderHeader
  * @property string $sliderText
  * @property string $sliderTextureURL
@@ -15,7 +15,7 @@
  * @property string $header1
  * @property string $subLineImage
  * @property string $subheader1
- * @property string $array_blocks
+ * @property string $arrayBlocks
  * @property string $header2
  * @property string $subheader2
  * @property string $arraySteps
@@ -78,8 +78,9 @@ class Mainpage extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('mainpageID, title, carousel_id, sliderHeader, sliderText, sliderTextureURL, sliderLineURL, sliderButtonText, header1, subLineImage, subheader1, arrayBlocks, header2, subheader2, arraySteps, stepSize, linkName, hexagon, formHeader1, formHeader2, regText, buttonStart, socialText, imageNetwork, formFon', 'required'),
-			array('mainpageID, carousel_id', 'numerical', 'integerOnly'=>true),
+			array('mainpageID, language, title, sliderHeader, sliderText, sliderTextureURL, sliderLineURL, sliderButtonText, header1, subLineImage, subheader1, arrayBlocks, header2, subheader2, arraySteps, stepSize, linkName, hexagon, formHeader1, formHeader2, regText, buttonStart, socialText, imageNetwork, formFon', 'required'),
+			array('mainpageID', 'numerical', 'integerOnly'=>true),
+			array('language', 'length', 'max'=>2),
 			array('title, subheader1, subheader2', 'length', 'max'=>100),
 			array('sliderHeader, header1, header2, formHeader1, formHeader2, regText, buttonStart, socialText', 'length', 'max'=>50),
 			array('sliderText, sliderTextureURL, sliderLineURL, subLineImage, hexagon, imageNetwork, formFon', 'length', 'max'=>255),
@@ -87,7 +88,7 @@ class Mainpage extends CActiveRecord
 			array('arrayBlocks, arraySteps, stepSize', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('mainpageID, title, carousel_id, sliderHeader, sliderText, sliderTextureURL, sliderlineURL, sliderButtonText, header1, subLineImage, subheader1, arrayBlocks, header2, subheader2, arraySteps, stepSize, linkName, hexagon, formHeader1, formHeader2, regText, buttonStart, socialText, imageNetwork, formFon', 'safe', 'on'=>'search'),
+			array('mainpageID, language, title, sliderHeader, sliderText, sliderTextureURL, sliderLineURL, sliderButtonText, header1, subLineImage, subheader1, arrayBlocks, header2, subheader2, arraySteps, stepSize, linkName, hexagon, formHeader1, formHeader2, regText, buttonStart, socialText, imageNetwork, formFon', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -109,8 +110,8 @@ class Mainpage extends CActiveRecord
 	{
 		return array(
 			'mainpageID' => 'Mainpage',
+			'language' => 'Language',
 			'title' => 'Title',
-			'carousel_id' => 'Carousel',
 			'sliderHeader' => 'Slider Header',
 			'sliderText' => 'Slider Text',
 			'sliderTextureURL' => 'Slider Texture Url',
@@ -126,8 +127,8 @@ class Mainpage extends CActiveRecord
 			'stepSize' => 'Step Size',
 			'linkName' => 'Link Name',
 			'hexagon' => 'Hexagon',
-			'formHeader1' => 'Form Header 1',
-			'formHeader2' => 'Form Header 2',
+			'formHeader1' => 'Form Header1',
+			'formHeader2' => 'Form Header2',
 			'regText' => 'Reg Text',
 			'buttonStart' => 'Button Start',
 			'socialText' => 'Social Text',
@@ -154,31 +155,31 @@ class Mainpage extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('mainpageID',$this->mainpage_id);
+		$criteria->compare('mainpageID',$this->mainpageID);
+		$criteria->compare('language',$this->language,true);
 		$criteria->compare('title',$this->title,true);
-		$criteria->compare('carousel_id',$this->carousel_id);
-		$criteria->compare('sliderHeader',$this->slider_header,true);
-		$criteria->compare('sliderText',$this->slider_text,true);
-		$criteria->compare('sliderTextureURL',$this->slider_texture_url,true);
-		$criteria->compare('sliderLineURL',$this->slider_line_url,true);
-		$criteria->compare('sliderButtonText',$this->slider_button_text,true);
+		$criteria->compare('sliderHeader',$this->sliderHeader,true);
+		$criteria->compare('sliderText',$this->sliderText,true);
+		$criteria->compare('sliderTextureURL',$this->sliderTextureURL,true);
+		$criteria->compare('sliderLineURL',$this->sliderLineURL,true);
+		$criteria->compare('sliderButtonText',$this->sliderButtonText,true);
 		$criteria->compare('header1',$this->header1,true);
 		$criteria->compare('subLineImage',$this->subLineImage,true);
 		$criteria->compare('subheader1',$this->subheader1,true);
-		$criteria->compare('arrayBlocks',$this->array_blocks,true);
+		$criteria->compare('arrayBlocks',$this->arrayBlocks,true);
 		$criteria->compare('header2',$this->header2,true);
 		$criteria->compare('subheader2',$this->subheader2,true);
-		$criteria->compare('arraySteps',$this->array_steps,true);
-		$criteria->compare('stepSize',$this->step_size,true);
+		$criteria->compare('arraySteps',$this->arraySteps,true);
+		$criteria->compare('stepSize',$this->stepSize,true);
 		$criteria->compare('linkName',$this->linkName,true);
 		$criteria->compare('hexagon',$this->hexagon,true);
-		$criteria->compare('formHeader1',$this->form_header_1,true);
-		$criteria->compare('formHeader2',$this->form_header_2,true);
-		$criteria->compare('regText',$this->reg_text,true);
-		$criteria->compare('buttonStart',$this->button_start,true);
-		$criteria->compare('socialText',$this->social_text,true);
-		$criteria->compare('imageNetwork',$this->image_network,true);
-		$criteria->compare('formFon',$this->form_fon,true);
+		$criteria->compare('formHeader1',$this->formHeader1,true);
+		$criteria->compare('formHeader2',$this->formHeader2,true);
+		$criteria->compare('regText',$this->regText,true);
+		$criteria->compare('buttonStart',$this->buttonStart,true);
+		$criteria->compare('socialText',$this->socialText,true);
+		$criteria->compare('imageNetwork',$this->imageNetwork,true);
+		$criteria->compare('formFon',$this->formFon,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

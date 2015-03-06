@@ -3834,3 +3834,33 @@ Stack trace:
 REQUEST_URI=/IntITA/index.php?r=site/aboutdetail
 in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (139)
 in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/06 13:08:56 [warning] [application] Failed to set unsafe attribute "middleName" of "StudentReg".
+in D:\xampp\htdocs\IntITA\protected\controllers\StudentregController.php (129)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/06 13:09:21 [warning] [application] Failed to set unsafe attribute "middleName" of "StudentReg".
+in D:\xampp\htdocs\IntITA\protected\controllers\StudentregController.php (129)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/06 13:20:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/06 14:27:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/06 14:27:19 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/06 14:33:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/06 14:33:21 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/06 14:33:54 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/06 14:34:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/06 14:34:39 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/06 14:34:49 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)

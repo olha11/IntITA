@@ -6,6 +6,7 @@
 class Controller extends CController
 {
 	public $logo;
+	public $logoSmall;
 	public $menu1;
 	public $link1;
 	public $menu2;
@@ -25,12 +26,13 @@ class Controller extends CController
 
 	public function init(){
 		$this->logo = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->logoURL;
+		$this->logoSmall = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->smallLogoURL;
 		$this->menu1 = Header::model()->findByPk(0)->menuItem1;
 		$this->menu2 = Header::model()->findByPk(0)->menuItem2;
 		$this->menu3 = Header::model()->findByPk(0)->menuItem3;
 		$this->menu4 = Header::model()->findByPk(0)->menuItem4;
 		$this->link1 = Header::model()->findByPk(0)->item1Link;
-		$this->link2 = Header::model()->findByPk(0)->item2Link;
+		$this->link2 = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->item2Link;
 		$this->link3 = Header::model()->findByPk(0)->item3Link;
 		$this->link4 = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->item4Link;
 		$this->buttonText = Header::model()->findByPk(0)->enterButtonText;
