@@ -14,7 +14,6 @@ $this->breadcrumbs=array(
 	<li><a href="./mainpage/carousel/">Слайдер</a></li>
 	<li><a href="./aboutus/blocklist/">Блоки</a></li>
 	<li><a href="./steps/stepslist/">Кроки</a></li>
-	<li><a href="./mainpage/form/">Форма реєстрації</a></li>
 	<li><a href="./mainpage/contacts/">Контакти</a></li>
 </ul>
 
@@ -26,12 +25,13 @@ $this->breadcrumbs=array(
 
 <h2>Викладачі</h2>
 <ul>
-	<li><a href="./aboutus/blockextended/">Викладачі</a></li>
+	<li><a href="www.google.com.ua">Викладачі</a></li>
 
 </ul>
 
 <h2>Реєстрація</h2>
 <ul>
+	<li><a href="./mainpage/form/">Форма швидкої реєстрації на головній</a></li>
 	<li><a href="./register/extended/">Розширена реєстрація</a></li>
 
 </ul>

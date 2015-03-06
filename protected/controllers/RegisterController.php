@@ -1,19 +1,15 @@
 <?php
+/*@var $users Users*/
 
 class RegisterController {
 
-    public function actionSubmitForm(){
-
-        if(isset($_POST['isExtended']))
-        {
+    public function actionSubmitForm()
+    {
+        $this->redirect(array('users/create'));
+        if (isset($_POST['isExtended'])) {
             $this->redirect(array('studentreg/index'));
         }
-        else rapidRegister($_POST['name'], $_POST['email']);
+        $this->redirect(array('users/create'));
     }
-
-    public function rapidRegister(String $name, String $email){
-
-    }
-
 
 }

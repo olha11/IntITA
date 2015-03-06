@@ -9,6 +9,7 @@ class StepsController extends Controller
         $this->module->tableName('step');
         $this->module->setPK('stepID');
         $fieldsConf = array(
+            array('language', 'string', 'Мова', array('show')),
             array('stepNumber', 'num', 'Номер', array('show')),
             array('stepTitle', 'string', 'Заголовок кроку', array('show')),
             array('stepImage', 'image', 'Фото', array('show', 'directoryPath'=>'/../css/images')),

@@ -10,6 +10,7 @@ class AboutusController extends Controller
         $this->module->tableName('aboutus');
         $this->module->setPK('blockID');
         $fieldsConf = array(
+            array('language', 'string', 'Мова', array('show')),
             array('titleText', 'string', 'Header', array('show')),
             array('iconImage', 'image', 'Фото', array('show', 'directoryPath'=>'./css/images/')),
             array('textAbout', 'text', 'Аннотація', array('show', 'directoryPath'=>'./')),
@@ -27,6 +28,7 @@ class AboutusController extends Controller
         $this->module->tableName('aboutus');
         $this->module->setPK('blockID');
         $fieldsConf = array(
+            array('language', 'string', 'Мова', array('show')),
             array('titleText', 'string', 'Header', array('show')),
             array('iconImage', 'image', 'Фото', array('show', 'directoryPath'=>'./css/images/')),
             array('textAbout', 'text', 'Аннотація', array('show', 'directoryPath'=>'./')),

@@ -4,11 +4,12 @@ class RegisterController extends Controller
 {
     public function actionExtended()
     {
-        $this->pageTitle = 'Форма реєстрації на головній сторінці';
+        $this->pageTitle = 'Форма розширеної реєстрації';
 
         $this->module->tableName('mainpage');
         $this->module->setPK('mainpageID');
         $fieldsConf = array(
+            array('language', 'string', 'Мова', array('show')),
             array('formHeader1', 'string', 'Заголовок форми', array('show')),
             array('formHeader2', 'string', 'Підзаголовок', array('show')),
             array('regText', 'string', 'Розширена реєстрація', array('show')),

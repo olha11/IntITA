@@ -1,27 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "users".
+ * This is the model class for table "teacher_temp".
  *
- * The followings are the available columns in table 'users':
- * @property integer $userID
- * @property string $userName
- * @property string $userEmail
- * @property string $userPassword
- * @property string $userHash
- * @property integer $userStatus
- *
- * The followings are the available model relations:
- * @property Teachers[] $teachers
+ * The followings are the available columns in table 'teacher_temp':
+ * @property integer $teacher_id
+ * @property string $first_name
+ * @property string $middle_name
+ * @property string $last_name
+ * @property string $foto_url
+ * @property string $subjects
+ * @property string $profile_text
  */
-class Users extends CActiveRecord
+class TeachersTemp extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'users';
+		return 'teacher_temp';
 	}
 
 	/**
@@ -32,15 +30,12 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('userName, userEmail, userPassword', 'required'),
-			array('userStatus', 'numerical', 'integerOnly'=>true),
-			array('userName', 'length', 'max'=>50),
-			array('userEmail', 'length', 'max'=>35),
-			array('userPassword', 'length', 'max'=>40),
-			array('userHash', 'length', 'max'=>20),
+			array('first_name, middle_name, last_name, foto_url, profile_text', 'required'),
+			array('first_name, middle_name, last_name', 'length', 'max'=>35),
+			array('foto_url, subjects', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('userID, userName, userEmail, userPassword, userHash, userStatus', 'safe', 'on'=>'search'),
+			array('teacher_id, first_name, middle_name, last_name, foto_url, subjects, profile_text', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,7 +47,6 @@ class Users extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'teachers' => array(self::HAS_MANY, 'Teachers', 'email'),
 		);
 	}
 
@@ -62,12 +56,13 @@ class Users extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'userID' => 'User',
-			'userName' => 'User Name',
-			'userEmail' => 'User Email',
-			'userPassword' => 'User Password',
-			'userHash' => 'User Hash',
-			'userStatus' => 'User Status',
+			'teacher_id' => 'Teacher',
+			'first_name' => 'First Name',
+			'middle_name' => 'Middle Name',
+			'last_name' => 'Last Name',
+			'foto_url' => 'Foto Url',
+			'subjects' => 'Subjects',
+			'profile_text' => 'Profile Text',
 		);
 	}
 
@@ -89,12 +84,13 @@ class Users extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('userID',$this->userID);
-		$criteria->compare('userName',$this->userName,true);
-		$criteria->compare('userEmail',$this->userEmail,true);
-		$criteria->compare('userPassword',$this->userPassword,true);
-		$criteria->compare('userHash',$this->userHash,true);
-		$criteria->compare('userStatus',$this->userStatus);
+		$criteria->compare('teacher_id',$this->teacher_id);
+		$criteria->compare('first_name',$this->first_name,true);
+		$criteria->compare('middle_name',$this->middle_name,true);
+		$criteria->compare('last_name',$this->last_name,true);
+		$criteria->compare('foto_url',$this->foto_url,true);
+		$criteria->compare('subjects',$this->subjects,true);
+		$criteria->compare('profile_text',$this->profile_text,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -105,17 +101,10 @@ class Users extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Users the static model class
+	 * @return TeachersTemp the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-
-	public function createUser($email, $status, $password){
-		$this->userPassword = $password;
-		$this->userEmail = $email;
-		$this->userStatus = $status;
-		$this->save();
 	}
 }
