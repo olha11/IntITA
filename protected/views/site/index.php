@@ -132,7 +132,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
 						<p class="stepName"><?php echo $stepValue->stepName; ?></p>
 					</div>
-        			<div class="stepInfo" style="min-height:<?php echo $stepSize*0.229 . 'px';?> ">
+        			<div class="stepInfo" style="min-height:<?php echo $stepSize*0.23. 'px';?> ">
           				  <h2><?php echo $stepValue->stepTitle; ?></h2>
               			  <p><?php echo $stepValue->stepText; ?></p>
           			</div>
