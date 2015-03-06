@@ -116,7 +116,7 @@
     window.onscroll = function() {
         var pageY = window.pageYOffset || document.documentElement.scrollTop;
         if (pageY >= key.offsetHeight) {
-            document.getElementById('logo').src="/IntITA/css/images/Logo_small.png";
+            document.getElementById('logo').src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/Logo_small.png";
 
             key.className = "down";
             logo.className = "down";
@@ -161,7 +161,7 @@
         </div>
         <div class="footer">
             <div>
-                <img src="<?php echo $this->logo; ?>" style="max-width: 140px;">
+                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/Logo_small.png" style="max-width: 140px;">
             </div>
             <div>
                 <p> <?php echo $this->phone; ?><br/>
