@@ -3366,3 +3366,27 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/IntITA/index.php?r=studentprofile
 ---
+2015/03/07 11:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "studentprofile".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentprofile')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=studentprofile
+---
+2015/03/07 11:16:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "studentprofile/index".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentprofile/...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=studentprofile/index
+---
+2015/03/07 11:16:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "studentprofile".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentprofile')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=studentprofile
+---

@@ -164,7 +164,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
                     <area shape="circle" coords="262,27, 20" href="javascript:" title="Вконтакте" />
                     <area shape="circle" coords="214,26, 20" href="javascript:" title="Однокласники" />
                     <area shape="circle" coords="167,27, 20" href="javascript:" title="YouTube" />
-                    <area shape="circle" coords="121,26, 21" href="javascript:" title="googl" />
+                    <area shape="circle" coords="121,26, 21" href="javascript:" title="Google +" />
                     <area shape="circle" coords="74,26, 20" href="javascript:" title="facebook" />
                     <area shape="circle" coords="27,25, 21" href="javascript:" title="twitter" />
                 </map></div>
