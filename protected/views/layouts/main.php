@@ -73,7 +73,7 @@
         </div>
 
         <ul>
-            <li><a href="<?php echo $this->link1; ?>"><?php echo $this->menu1; ?></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=courses"><?php echo $this->menu1; ?></a></li>
             <li><a href="<?php echo $this->link2; ?>"><?php echo $this->menu2; ?></a></li>
             <li><a href="<?php echo $this->link3; ?>"><?php echo $this->menu3; ?></a></li>
             <li><a href="<?php echo $this->link4; ?>"><?php echo $this->menu4; ?></a></li>
