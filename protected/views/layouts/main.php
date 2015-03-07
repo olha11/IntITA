@@ -69,11 +69,11 @@
 <div id="navigation">
     <div class="main">
         <div id="logo_img">
-            <a href="<?php echo Yii::app()->request->baseUrl; ?>"><img id="logo" src="<?php echo $this->logoURL; ?>"/></a>
+            <img id="logo" src="<?php echo $this->logoURL; ?>"/>
         </div>
 
         <ul>
-            <li><a href="<?php echo $this->link1; ?>"><?php echo $this->menu1; ?></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=courses"><?php echo $this->menu1; ?></a></li>
             <li><a href="<?php echo $this->link2; ?>"><?php echo $this->menu2; ?></a></li>
             <li><a href="<?php echo $this->link3; ?>"><?php echo $this->menu3; ?></a></li>
             <li><a href="<?php echo $this->link4; ?>"><?php echo $this->menu4; ?></a></li>
@@ -116,7 +116,7 @@
     window.onscroll = function() {
         var pageY = window.pageYOffset || document.documentElement.scrollTop;
         if (pageY >= key.offsetHeight) {
-            document.getElementById('logo').src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/Logo_small.png;";
+            document.getElementById('logo').src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png";
 
             key.className = "down";
             logo.className = "down";
@@ -161,7 +161,7 @@
         </div>
         <div class="footer">
             <div>
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/Logo_small.png;" style="max-width: 140px;">
+                <img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png" style="max-width: 140px;">
             </div>
             <div>
                 <p> <?php echo $this->phone; ?><br/>
