@@ -62,7 +62,7 @@ $post=TeachersTemp::model()->findAll();
                                 </ul>
                             </div>
                             <div class="aboutMore">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="#">Читать полностью &#187;</a></br>
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Читать полностью &#187;</a></br>
                                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/><a href="#">Отзывы о преподавателе &#187;</a>
                             </div>
                         </td>

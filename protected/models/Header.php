@@ -4,18 +4,19 @@
  * This is the model class for table "header".
  *
  * The followings are the available columns in table 'header':
- * @property integer $header_id
+ * @property integer $headerID
  * @property string $language
- * @property string $logo_url
- * @property string $menu_item_1
- * @property string $item_1_link
- * @property string $menu_item_2
- * @property string $item_2_link
- * @property string $menu_item_3
- * @property string $item_3_link
- * @property string $menu_item_4
- * @property string $item_4_link
- * @property string $enter_button_text
+ * @property string $logoURL
+ * @property string $smallLogoURL
+ * @property string $menuItem1
+ * @property string $item1Link
+ * @property string $menuItem2
+ * @property string $item2Link
+ * @property string $menuItem3
+ * @property string $item3Link
+ * @property string $menuItem4
+ * @property string $item4Link
+ * @property string $enterButtonText
  */
 class Header extends CActiveRecord
 {
@@ -35,13 +36,13 @@ class Header extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('language, logo_url, menu_item_1, item_1_link, menu_item_2, item_2_link, menu_item_3, item_3_link, menu_item_4, item_4_link, enter_button_text', 'required'),
+			array('language, logoURL, smallLogoURL, menuItem1, item1Link, menuItem2, item2Link, menuItem3, item3Link, menuItem4, item4Link, enterButtonText', 'required'),
 			array('language', 'length', 'max'=>2),
-			array('logo_url, item_1_link, item_2_link, item_3_link, item_4_link, enter_button_text', 'length', 'max'=>255),
-			array('menu_item_1, menu_item_2, menu_item_3, menu_item_4', 'length', 'max'=>30),
+			array('logoURL, smallLogoURL, item1Link, item2Link, item3Link, item4Link', 'length', 'max'=>255),
+			array('menuItem1, menuItem2, menuItem3, menuItem4, enterButtonText', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('header_id, language, logo_url, menu_item_1, item_1_link, menu_item_2, item_2_link, menu_item_3, item_3_link, menu_item_4, item_4_link, enter_button_text', 'safe', 'on'=>'search'),
+			array('headerID, language, logoURL, smallLogoURL, menuItem1, item1Link, menuItem2, item2Link, menuItem3, item3Link, menuItem4, item4Link, enterButtonText', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,18 +63,19 @@ class Header extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'header_id' => 'Header',
+			'headerID' => 'Header',
 			'language' => 'Language',
-			'logo_url' => 'Logo Url',
-			'menu_item_1' => 'Menu Item 1',
-			'item_1_link' => 'Item 1 Link',
-			'menu_item_2' => 'Menu Item 2',
-			'item_2_link' => 'Item 2 Link',
-			'menu_item_3' => 'Menu Item 3',
-			'item_3_link' => 'Item 3 Link',
-			'menu_item_4' => 'Menu Item 4',
-			'item_4_link' => 'Item 4 Link',
-			'enter_button_text' => 'Enter Button Text',
+			'logoURL' => 'Logo Url',
+			'smallLogoURL' => 'Small Logo Url',
+			'menuItem1' => 'Menu Item1',
+			'item1Link' => 'Item1 Link',
+			'menuItem2' => 'Menu Item2',
+			'item2Link' => 'Item2 Link',
+			'menuItem3' => 'Menu Item3',
+			'item3Link' => 'Item3 Link',
+			'menuItem4' => 'Menu Item4',
+			'item4Link' => 'Item4 Link',
+			'enterButtonText' => 'Enter Button Text',
 		);
 	}
 
@@ -95,18 +97,19 @@ class Header extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('header_id',$this->header_id);
+		$criteria->compare('headerID',$this->headerID);
 		$criteria->compare('language',$this->language,true);
-		$criteria->compare('logo_url',$this->logo_url,true);
-		$criteria->compare('menu_item_1',$this->menu_item_1,true);
-		$criteria->compare('item_1_link',$this->item_1_link,true);
-		$criteria->compare('menu_item_2',$this->menu_item_2,true);
-		$criteria->compare('item_2_link',$this->item_2_link,true);
-		$criteria->compare('menu_item_3',$this->menu_item_3,true);
-		$criteria->compare('item_3_link',$this->item_3_link,true);
-		$criteria->compare('menu_item_4',$this->menu_item_4,true);
-		$criteria->compare('item_4_link',$this->item_4_link,true);
-		$criteria->compare('enter_button_text',$this->enter_button_text,true);
+		$criteria->compare('logoURL',$this->logoURL,true);
+		$criteria->compare('smallLogoURL',$this->smallLogoURL,true);
+		$criteria->compare('menuItem1',$this->menuItem1,true);
+		$criteria->compare('item1Link',$this->item1Link,true);
+		$criteria->compare('menuItem2',$this->menuItem2,true);
+		$criteria->compare('item2Link',$this->item2Link,true);
+		$criteria->compare('menuItem3',$this->menuItem3,true);
+		$criteria->compare('item3Link',$this->item3Link,true);
+		$criteria->compare('menuItem4',$this->menuItem4,true);
+		$criteria->compare('item4Link',$this->item4Link,true);
+		$criteria->compare('enterButtonText',$this->enterButtonText,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
