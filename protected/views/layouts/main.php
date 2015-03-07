@@ -69,7 +69,7 @@
 <div id="navigation">
     <div class="main">
         <div id="logo_img">
-            <img id="logo" src="<?php echo $this->logoURL; ?>"/>
+           <a href="<?php echo Yii::app()->request->baseUrl; ?>"> <img id="logo" src="<?php echo $this->logoURL; ?>"/></a>
         </div>
 
         <ul>
