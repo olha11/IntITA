@@ -12,33 +12,28 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'userID'); ?>
-		<?php echo $form->textField($model,'userID'); ?>
+		<?php echo $form->label($model,'user_id'); ?>
+		<?php echo $form->textField($model,'user_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'userName'); ?>
-		<?php echo $form->textField($model,'userName',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->label($model,'user_email'); ?>
+		<?php echo $form->textField($model,'user_email',array('size'=>35,'maxlength'=>35)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'userEmail'); ?>
-		<?php echo $form->textField($model,'userEmail',array('size'=>35,'maxlength'=>35)); ?>
+		<?php echo $form->label($model,'user_passwd'); ?>
+		<?php echo $form->textField($model,'user_passwd',array('size'=>40,'maxlength'=>40)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'userPassword'); ?>
-		<?php echo $form->textField($model,'userPassword',array('size'=>40,'maxlength'=>40)); ?>
+		<?php echo $form->label($model,'user_hash'); ?>
+		<?php echo $form->textField($model,'user_hash',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'userHash'); ?>
-		<?php echo $form->textField($model,'userHash',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'userStatus'); ?>
-		<?php echo $form->textField($model,'userStatus'); ?>
+		<?php echo $form->label($model,'user_status'); ?>
+		<?php echo $form->textField($model,'user_status'); ?>
 	</div>
 
 	<div class="row buttons">

@@ -40,35 +40,32 @@ class Mainpage extends CActiveRecord
 		return 'mainpage';
 	}
 
-	function Mainpage($id){
-		//setValueById($id);
-	}
-
-	public function setValueById($id)
-	{
-		$this->title=$this->findByPk($id)->title;
-		$this->sliderText=$this->findByPk($id)->sliderText;
-		$this->header1=$this->findByPk($id)->header1;
-		$this->header2=$this->findByPk($id)->header2;
-		$this->linkName=$this->findByPk($id)->linkName;
-		$this->sliderTextureURL=Yii::app()->request->baseUrl.$this->findByPk($id)->sliderTextureURL;
-		$this->sliderHeader=$this->findByPk($id)->sliderHeader;
-		$this->stepSize=$this->findByPk($id)->stepSize;
-		$this->subheader1=$this->findByPk($id)->subheader1;
-		$this->subheader2=$this->findByPk($id)->subheader2;
-		$this->subLineImage=Yii::app()->request->baseUrl.$this->findByPk($id)->subLineImage;
-		$this->hexagon=Yii::app()->request->baseUrl.$this->findByPk($id)->hexagon;
-		$this->sliderLineURL=Yii::app()->request->baseUrl.$this->findByPk($id)->sliderLineURL;
-		$this->sliderButtonText=$this->findByPk($id)->sliderButtonText;
-		$this->formHeader1 = $this->findByPk($id)->formHeader1;
-		$this->formHeader2 = $this->findByPk($id)->formHeader2;
-		$this->regText = $this->findByPk($id)->regText;
-		$this->buttonStart = $this->findByPk($id)->buttonStart;
-		$this->socialText = $this->findByPk($id)->socialText;
-		$this->imageNetwork = Yii::app()->request->baseUrl.$this->findByPk($id)->imageNetwork;
-		$this->formFon = Yii::app()->request->baseUrl.$this->findByPk($id)->formFon;
-		return $this;
-	}
+    public function setValueById($id)
+    {
+        $this->title=$this->findByPk($id)->title;
+        $this->sliderText=$this->findByPk($id)->sliderText;
+        $this->header1=$this->findByPk($id)->header1;
+        $this->header2=$this->findByPk($id)->header2;
+        $this->linkName=$this->findByPk($id)->linkName;
+        $this->sliderButtonText=$this->findByPk($id)->sliderButtonText;
+        $this->sliderTextureURL=Yii::app()->request->baseUrl.$this->findByPk($id)->sliderTextureURL;
+        $this->sliderHeader=$this->findByPk($id)->sliderHeader;
+        $this->stepSize=$this->findByPk($id)->stepSize;
+        $this->subheader1=$this->findByPk($id)->subheader1;
+        $this->subheader2=$this->findByPk($id)->subheader2;
+        $this->subLineImage=Yii::app()->request->baseUrl.$this->findByPk($id)->subLineImage;
+        $this->hexagon=Yii::app()->request->baseUrl.$this->findByPk($id)->hexagon;
+        $this->sliderLineURL=Yii::app()->request->baseUrl.$this->findByPk($id)->sliderLineURL;
+        $this->sliderButtonText=$this->findByPk($id)->sliderButtonText;
+        $this->formHeader1 = $this->findByPk($id)->formHeader1;
+        $this->formHeader2 = $this->findByPk($id)->formHeader2;
+        $this->regText = $this->findByPk($id)->regText;
+        $this->buttonStart = $this->findByPk($id)->buttonStart;
+        $this->socialText = $this->findByPk($id)->socialText;
+        $this->imageNetwork = Yii::app()->request->baseUrl.$this->findByPk($id)->imageNetwork;
+        $this->formFon = Yii::app()->request->baseUrl.$this->findByPk($id)->formFon;
+        return $this;
+    }
 
 	/**
 	 * @return array validation rules for model attributes.

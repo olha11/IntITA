@@ -41,7 +41,7 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 		$modelCarousel = new Carousel();
 
-		$mainpage = new Mainpage(0);
+		$mainpage = new Mainpage();
 		$mainpage->setValueById(0);
 		$objAbout1 = new AboutUs(1);
 		$objAbout1->setValuesById(1);
@@ -120,7 +120,7 @@ class SiteController extends Controller
 	
 		public function actionAboutdetail()
 	{
-		$mainpage = new Mainpage(0);
+		$mainpage = new Mainpage();
 		$mainpage->setValueById(0);
 		$objAbout1 = new AboutUs(1);
 		$objAbout1->setValuesById(1);
@@ -164,15 +164,14 @@ class SiteController extends Controller
 		}
 	}
 
-	public function actionSubmitForm(){
+    public function actionSubmitForm(){
 
-		if(isset($_POST['isExtended']))
-		{
-			$this->redirect(array('studentreg/index'));
-		}
-		$this->redirect(array('site/index'));
-	}
-
+        if(isset($_POST['isExtended']))
+        {
+            $this->redirect(array('studentreg/index'));
+        }
+        $this->redirect(array('site/index'));
+    }
 	/**
 	 * Displays the contact page
 	 */

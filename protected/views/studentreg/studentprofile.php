@@ -2,7 +2,14 @@
 /* @var $this StudentProfileController */
 /* @var $model StudentProfile */
 /* @var $form CActiveForm */
+?>
 
+<?php
+/* @var $this StudentprofileController */
+/* @var $model Studentprofile */
+/* @var $form CActiveForm */
+?>
+<?php
 $post=StudentReg::model()->findByPk(1);
 ?>
 

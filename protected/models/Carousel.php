@@ -34,7 +34,7 @@ class Carousel extends CActiveRecord
 			array('images_path', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('order, pictureURL, description, imagesPath', 'safe', 'on'=>'search'),
+			array('order, picture_url, description, images_path', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,9 +56,9 @@ class Carousel extends CActiveRecord
 	{
 		return array(
 			'order' => 'Order',
-			'pictureURL' => 'Picture Url',
+			'picture_url' => 'Picture Url',
 			'description' => 'Description',
-			'imagesPath' => 'Images Path',
+			'images_path' => 'Images Path',
 		);
 	}
 
@@ -81,9 +81,9 @@ class Carousel extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('order',$this->order);
-		$criteria->compare('pictureURL',$this->pictureURL,true);
+		$criteria->compare('picture_url',$this->picture_url,true);
 		$criteria->compare('description',$this->description,true);
-		$criteria->compare('imagesPath',$this->imagesPath,true);
+		$criteria->compare('images_path',$this->images_path,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

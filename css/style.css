@@ -7,13 +7,20 @@ body {
     margin: 0 auto;
     overflow: hidden;
 }
-p, h1, h2, h3, h4, html{
+h1, h2, h3, h4, html{
     font-family: "MyriadPro";
+    color: #333333;
+}
+p {
+    font-family: "MyriadPro";
+    color: #666666;
 }
 .clear {
     width: 100%;
     clear: both;
 }
+
+/*************languages buttons*************/
 #lang {
     z-index: 6;
     margin-left: 1141px;
@@ -40,6 +47,7 @@ p, h1, h2, h3, h4, html{
     text-decoration: none;
     color: #999999;
 }
+/*************languages buttons*************/
 
 /*******navigations-top******/
 #navigation {
@@ -130,7 +138,7 @@ p, h1, h2, h3, h4, html{
     background: #363636;
 }
 #enter_button.down {
-    margin-top: 20px;
+    margin-top: 18px;
 }
 #enter_button.down:hover{
     background: #454545;
@@ -171,12 +179,13 @@ p, h1, h2, h3, h4, html{
     color: #003399;
 }
 #footer li a:hover{
-    color: #000000;
+    color: #666666;
 }
 
 #footer p{
     margin-top: 5px;
     font-size: 13px;
+    color: #003399;
 }
 
 /****************************************/

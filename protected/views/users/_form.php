@@ -20,33 +20,27 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'userName'); ?>
-		<?php echo $form->textField($model,'userName',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'userName'); ?>
+		<?php echo $form->labelEx($model,'user_email'); ?>
+		<?php echo $form->textField($model,'user_email',array('size'=>35,'maxlength'=>35)); ?>
+		<?php echo $form->error($model,'user_email'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'userEmail'); ?>
-		<?php echo $form->textField($model,'userEmail',array('size'=>35,'maxlength'=>35)); ?>
-		<?php echo $form->error($model,'userEmail'); ?>
+		<?php echo $form->labelEx($model,'user_passwd'); ?>
+		<?php echo $form->textField($model,'user_passwd',array('size'=>40,'maxlength'=>40)); ?>
+		<?php echo $form->error($model,'user_passwd'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'userPassword'); ?>
-		<?php echo $form->textField($model,'userPassword',array('size'=>40,'maxlength'=>40)); ?>
-		<?php echo $form->error($model,'userPassword'); ?>
+		<?php echo $form->labelEx($model,'user_hash'); ?>
+		<?php echo $form->textField($model,'user_hash',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->error($model,'user_hash'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'userHash'); ?>
-		<?php echo $form->textField($model,'userHash',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'userHash'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'userStatus'); ?>
-		<?php echo $form->textField($model,'userStatus'); ?>
-		<?php echo $form->error($model,'userStatus'); ?>
+		<?php echo $form->labelEx($model,'user_status'); ?>
+		<?php echo $form->textField($model,'user_status'); ?>
+		<?php echo $form->error($model,'user_status'); ?>
 	</div>
 
 	<div class="row buttons">

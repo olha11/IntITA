@@ -8,9 +8,9 @@ $main['language'] = 'en';
 
 $main['modules'] = array(
 	'autoadmin'=>array(
-		'class'=>'ext.autoAdmin.AutoAdmin',	//alias-path to AutoAdmin extension
+		'class'=>'ext.autoadmin.AutoAdmin',	//alias-path to AutoAdmin extension
 		'basePath' => dirname(__FILE__).'/../modules/autoadmin',	//this is your module directory
-		'wwwDirName' => 'www',	//this is your document root directory (where the webserver looks into)
+		'wwwDirName' => 'views',	//this is your document root directory (where the webserver looks into)
 
 		//Optional params of built-in auth-system:
 		'authMode' => true,	//switch internal authentication system. can be switched on only if you import the regard SQL dump and configure dbAdmin connector.
@@ -19,7 +19,7 @@ $main['modules'] = array(
 		/**
 		 * If you'd like to use GIS-extension, download it to the extensions dir
 		 *  and uncomment these lines
-		 *
+		 * 
 		 * 'extensions' => array(
 		 * 	'Gis' => array(
 		 * 		'srid' => 4326,
@@ -37,8 +37,8 @@ $main['components'] = array(
 		'urlSuffix' => '/',
 		'rules'=>array(
 			/**
-			 * These settings are for the configuration, which you can see in
-			 *  this exemplary pack. Namely we use /_admin/index.php as Yii's
+			 * These settings are for the configuration, which you can see in 
+			 *  this exemplary pack. Namely we use /_admin/index.php as Yii's 
 			 *  enter point with it's own .htaccess copy. In this case URI
 			 *  http://www.you_site.com/_admin/ becomes root in the rules:
 			 */
@@ -48,7 +48,7 @@ $main['components'] = array(
 			/**
 			 * If you configure your front-end from the main enter point
 			 *  /index.php, you should use non-root settings like these:
-			 *
+			 *  
 			 * '<module:autoadmin>' => '<module>/default/index',
 			 * '<module:autoadmin>/<controller:\w+>' => '<module>/<controller>/index',
 			 * '<module:autoadmin>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',

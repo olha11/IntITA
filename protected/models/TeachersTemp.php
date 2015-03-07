@@ -11,6 +11,7 @@
  * @property string $foto_url
  * @property string $subjects
  * @property string $profile_text
+ * @property string $readMoreLink
  */
 class TeachersTemp extends CActiveRecord
 {
@@ -30,12 +31,13 @@ class TeachersTemp extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, middle_name, last_name, foto_url, profile_text', 'required'),
+			array('first_name, middle_name, last_name, foto_url, profile_text, readMoreLink', 'required'),
 			array('first_name, middle_name, last_name', 'length', 'max'=>35),
 			array('foto_url, subjects', 'length', 'max'=>100),
+			array('readMoreLink', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('teacher_id, first_name, middle_name, last_name, foto_url, subjects, profile_text', 'safe', 'on'=>'search'),
+			array('teacher_id, first_name, middle_name, last_name, foto_url, subjects, profile_text, readMoreLink', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +65,7 @@ class TeachersTemp extends CActiveRecord
 			'foto_url' => 'Foto Url',
 			'subjects' => 'Subjects',
 			'profile_text' => 'Profile Text',
+			'readMoreLink' => 'Read More Link',
 		);
 	}
 
@@ -91,6 +94,7 @@ class TeachersTemp extends CActiveRecord
 		$criteria->compare('foto_url',$this->foto_url,true);
 		$criteria->compare('subjects',$this->subjects,true);
 		$criteria->compare('profile_text',$this->profile_text,true);
+		$criteria->compare('readMoreLink',$this->readMoreLink,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -28,7 +28,7 @@ class UsersController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'createUser'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -67,21 +67,16 @@ class UsersController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['email-password']))
+		if(isset($_POST['Users']))
 		{
 			$model->attributes=$_POST['Users'];
 			if($model->save())
-				echo "Success register!";
+				$this->redirect(array('view','id'=>$model->user_id));
 		}
 
-	}
-
-	public function actionCreateUser($email, $password)
-	{
-		$model=new Users;
-		$model->userEmail = $email;
-		$model->userPassword = $password;
-		$model->save();
+		$this->render('create',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
@@ -100,7 +95,7 @@ class UsersController extends Controller
 		{
 			$model->attributes=$_POST['Users'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->userID));
+				$this->redirect(array('view','id'=>$model->user_id));
 		}
 
 		$this->render('update',array(

@@ -5,8 +5,7 @@
  */
 class Controller extends CController
 {
-	public $logo;
-	public $logoSmall;
+	public $logoURL;
 	public $menu1;
 	public $link1;
 	public $menu2;
@@ -16,6 +15,7 @@ class Controller extends CController
 	public $menu4;
 	public $link4;
 	public $buttonText;
+    public $smallLogoURL;
 
 	public $phone;
 	public $imageUp;
@@ -23,10 +23,9 @@ class Controller extends CController
 	public $email;
 	public $imageSotial;
 
-
 	public function init(){
-		$this->logo = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->logoURL;
-		$this->logoSmall = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->smallLogoURL;
+		$this->logoURL = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->logoURL;
+        $this->smallLogoURL = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->smallLogoURL;
 		$this->menu1 = Header::model()->findByPk(0)->menuItem1;
 		$this->menu2 = Header::model()->findByPk(0)->menuItem2;
 		$this->menu3 = Header::model()->findByPk(0)->menuItem3;
@@ -37,11 +36,11 @@ class Controller extends CController
 		$this->link4 = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->item4Link;
 		$this->buttonText = Header::model()->findByPk(0)->enterButtonText;
 
-		$this->email = Footer::model()->findByPk(0)->email;
-		$this->phone = Footer::model()->findByPk(0)->phone;
-		$this->mobile = Footer::model()->findByPk(0)->mobile;
-		$this->imageSotial = Yii::app()->request->baseUrl.Footer::model()->findByPk(0)->imageSotial;
-		$this->imageUp = Yii::app()->request->baseUrl.Footer::model()->findByPk(0)->imageUp;
+		$this->email = Footer::model()->findByPk(1)->email;
+		$this->phone = Footer::model()->findByPk(1)->phone;
+		$this->mobile = Footer::model()->findByPk(1)->mobile;
+		$this->imageSotial = Yii::app()->request->baseUrl.Footer::model()->findByPk(1)->imageSotial;
+		$this->imageUp = Yii::app()->request->baseUrl.Footer::model()->findByPk(1)->imageUp;
 	}
 	/**
 	 * @var string the default layout for the controller view. Defaults to '//layouts/column1',

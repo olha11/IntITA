@@ -4,15 +4,11 @@
  * This is the model class for table "users".
  *
  * The followings are the available columns in table 'users':
- * @property integer $userID
- * @property string $userName
- * @property string $userEmail
- * @property string $userPassword
- * @property string $userHash
- * @property integer $userStatus
- *
- * The followings are the available model relations:
- * @property Teachers[] $teachers
+ * @property integer $user_id
+ * @property string $user_email
+ * @property string $user_passwd
+ * @property string $user_hash
+ * @property integer $user_status
  */
 class Users extends CActiveRecord
 {
@@ -32,15 +28,14 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('userName, userEmail, userPassword', 'required'),
-			array('userStatus', 'numerical', 'integerOnly'=>true),
-			array('userName', 'length', 'max'=>50),
-			array('userEmail', 'length', 'max'=>35),
-			array('userPassword', 'length', 'max'=>40),
-			array('userHash', 'length', 'max'=>20),
+			array('user_email, user_passwd, user_hash, user_status', 'required'),
+			array('user_status', 'numerical', 'integerOnly'=>true),
+			array('user_email', 'length', 'max'=>35),
+			array('user_passwd', 'length', 'max'=>40),
+			array('user_hash', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('userID, userName, userEmail, userPassword, userHash, userStatus', 'safe', 'on'=>'search'),
+			array('user_id, user_email, user_passwd, user_hash, user_status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,7 +47,6 @@ class Users extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'teachers' => array(self::HAS_MANY, 'Teachers', 'email'),
 		);
 	}
 
@@ -62,12 +56,11 @@ class Users extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'userID' => 'User',
-			'userName' => 'User Name',
-			'userEmail' => 'User Email',
-			'userPassword' => 'User Password',
-			'userHash' => 'User Hash',
-			'userStatus' => 'User Status',
+			'user_id' => 'User',
+			'user_email' => 'User email',
+			'user_passwd' => 'User Password',
+			'user_hash' => 'User Hash',
+			'user_status' => 'User Status',
 		);
 	}
 
@@ -89,12 +82,11 @@ class Users extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('userID',$this->userID);
-		$criteria->compare('userName',$this->userName,true);
-		$criteria->compare('userEmail',$this->userEmail,true);
-		$criteria->compare('userPassword',$this->userPassword,true);
-		$criteria->compare('userHash',$this->userHash,true);
-		$criteria->compare('userStatus',$this->userStatus);
+		$criteria->compare('user_id',$this->user_id);
+		$criteria->compare('user_email',$this->user_email,true);
+		$criteria->compare('user_passwd',$this->user_passwd,true);
+		$criteria->compare('user_hash',$this->user_hash,true);
+		$criteria->compare('user_status',$this->user_status);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -110,12 +102,5 @@ class Users extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-
-	public function createUser($email, $status, $password){
-		$this->userPassword = $password;
-		$this->userEmail = $email;
-		$this->userStatus = $status;
-		$this->save();
 	}
 }

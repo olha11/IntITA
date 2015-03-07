@@ -4,12 +4,12 @@
  * This is the model class for table "footer".
  *
  * The followings are the available columns in table 'footer':
- * @property integer $footerID
- * @property string $imageSocial
+ * @property integer $footer_id
+ * @property string $image_social
  * @property string $phone
  * @property string $mobile
  * @property string $email
- * @property string $imageUp
+ * @property string $image_up
  */
 class Footer extends CActiveRecord
 {
@@ -29,13 +29,13 @@ class Footer extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('imageSocial, phone, mobile, email, imageUp', 'required'),
-			array('imageSocial, image_Up', 'length', 'max'=>255),
+			array('image_social, phone, mobile, email, image_up', 'required'),
+			array('image_social, image_up', 'length', 'max'=>255),
 			array('phone, mobile', 'length', 'max'=>40),
 			array('email', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('footerID, imageSocial, phone, mobile, email, imageUp', 'safe', 'on'=>'search'),
+			array('footer_id, image_social, phone, mobile, email, image_up', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,12 +56,12 @@ class Footer extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'footerID' => 'Footer',
-			'imageSocial' => 'Image Social',
+			'footer_id' => 'Footer',
+			'image_social' => 'Image Social',
 			'phone' => 'Phone',
 			'mobile' => 'Mobile',
 			'email' => 'Email',
-			'imageUp' => 'Image Up',
+			'image_up' => 'Image Up',
 		);
 	}
 
@@ -83,12 +83,12 @@ class Footer extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('footerID',$this->footer_id);
-		$criteria->compare('imageSocial',$this->image_social,true);
+		$criteria->compare('footer_id',$this->footer_id);
+		$criteria->compare('image_social',$this->image_social,true);
 		$criteria->compare('phone',$this->phone,true);
 		$criteria->compare('mobile',$this->mobile,true);
 		$criteria->compare('email',$this->email,true);
-		$criteria->compare('imageUp',$this->image_up,true);
+		$criteria->compare('image_up',$this->image_up,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -5,28 +5,24 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('userID')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->userID), array('view', 'id'=>$data->userID)); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('user_id')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->user_id), array('view', 'id'=>$data->user_id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('userName')); ?>:</b>
-	<?php echo CHtml::encode($data->userName); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('user_email')); ?>:</b>
+	<?php echo CHtml::encode($data->user_email); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('userEmail')); ?>:</b>
-	<?php echo CHtml::encode($data->userEmail); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('user_passwd')); ?>:</b>
+	<?php echo CHtml::encode($data->user_passwd); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('userPassword')); ?>:</b>
-	<?php echo CHtml::encode($data->userPassword); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('user_hash')); ?>:</b>
+	<?php echo CHtml::encode($data->user_hash); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('userHash')); ?>:</b>
-	<?php echo CHtml::encode($data->userHash); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('userStatus')); ?>:</b>
-	<?php echo CHtml::encode($data->userStatus); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('user_status')); ?>:</b>
+	<?php echo CHtml::encode($data->user_status); ?>
 	<br />
 
 

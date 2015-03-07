@@ -13,7 +13,7 @@
 .header {  
     text-align: center ;
     position:relative;
-    color:black;
+    color: #666666;
     font-family:MyriadPro;
     font-size:34px;
     list-style: none;
@@ -79,7 +79,7 @@ width:210px;
 text-align:  justify;
     position:absolute;
     margin-top:5px;
-    color:black;
+    color:#666666;
     font-size:14px;
     font-family:MyriadPro;
     line-height: 14px;/* это я добавил */
