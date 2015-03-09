@@ -164,7 +164,6 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <div class="lessonBlock">
 <!--navigation vertical-->
     <div class="sidebarLesson">
-        <p><a href="#"><input type="submit" value="МОДУЛЬ"></a></p>
         <p><a href="#"><input type="submit" value="Онлайн домомога"></a></p>
         <p><a href="#"><input type="submit" value="Онлайн консультація"></a></p>
     </div>
