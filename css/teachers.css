@@ -46,6 +46,7 @@ div.titleTeachers {
 /*teacher Profile Block*/
 .teacherBlock {
     width:inherit;
+    margin-bottom: 40px;
 }
 .teacherBlock p, .teacherBlock ul{
     margin-top: 10px;
