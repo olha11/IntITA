@@ -140,9 +140,35 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
         });
     });
 </script>
+<!--JS BBCode-->
+<!--Sidebar-->
+<script type="text/javascript">
+    $(function() {
+        var offset = $(".sidebarLesson").offset();
+        var topPadding = 70;
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > offset.top) {
+                $(".sidebarLesson").stop().animate({
+                    marginTop: $(window).scrollTop() - offset.top + topPadding
+                });
+            } else {
+                $(".sidebarLesson").stop().animate({
+                    marginTop: 0
+                });
+            };
+        });
+    });
+</script>
+<!--Sidebar-->
 <!--Перша частина-->
 <div class="lessonBlock">
-    <div class="lessonVisb1">
+<!--navigation vertical-->
+    <div class="sidebarLesson">
+        <p><a href="#"><input type="submit" value="МОДУЛЬ"></a></p>
+        <p><a href="#"><input type="submit" value="Онлайн домомога"></a></p>
+        <p><a href="#"><input type="submit" value="Онлайн консультація"></a></p>
+    </div>
+<!--navigation vertical-->
         <div class="lessonText">
             <h1 class="lessonTheme">Змінні та типи даних в PHP </h1>
             <a name="Частина 1: Типи змінних та перемінних"></a>
@@ -248,11 +274,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
             <a name="Частина 7: Типи данних та математичний аналіз"></a>
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/borderLesson.png">
         </div>
-        <div class="lessonNav">
-        </div>
-    </div>
     <!--Друга частина-->
-    <div class="lessonVisb2">
         <div class="lessonText">
             <h1 class="lessonPart">Частина 7: Типи данних та математичний аналіз</h1>
             <p><span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:</p>
@@ -351,11 +373,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
             </div>
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/borderLesson.png">
         </div>
-        <div class="lessonNav">
-        </div>
-    </div>
     <!--Заключна частина-->
-    <div class="lessonVisb3">
         <div class="lessonText">
             <div class="lessonTask">
                 <img class="lessonButFinal" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButtonFinale.png">
@@ -383,7 +401,6 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                 </div>
             </div>
         </div>
-    </div>
 </div>
 
 <!-- lesson footer -->
