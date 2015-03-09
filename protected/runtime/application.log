@@ -3366,3 +3366,14 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/IntITA/index.php?r=studentprofile
 ---
+2015/03/09 11:44:52 [error] [exception.CException] exception 'CException' with message 'Property "Footer.imageSotial" is not defined.' in Z:\home\ita\www\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 Z:\home\ita\www\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('imageSotial')
+#1 Z:\home\ita\www\protected\components\Controller.php(42): CActiveRecord->__get('imageSotial')
+#2 Z:\home\ita\www\protected\framework\web\CWebApplication.php(281): Controller->init()
+#3 Z:\home\ita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#4 Z:\home\ita\www\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\ita\www\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/
+---
