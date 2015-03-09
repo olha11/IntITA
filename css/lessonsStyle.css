@@ -49,11 +49,13 @@ h1.lessonTheme{
      color: #4b75a4;
      font-size: xx-large;
      margin: 0px;
+    font-weight: normal;
 }
 h1.lessonPart{
     color: #4b75a4;
     font-size: x-large;
     margin-top: 34px;
+    font-weight: normal;
 }
 span.listTheme{
     font-size: large;
@@ -82,9 +84,11 @@ span.subChapter{
 }
 .lessonCode {
     background-color: #d6ebe0;
-    color:#114988;
     padding: 0px 0px 0px 20px;
     font-weight:bold;
+}
+.lessonCode p{
+    color:#114988;
 }
 div.lessonBG {
     border-top:3px solid #ffffff;
@@ -117,6 +121,12 @@ span.colorO {
 }
 span.colorBP {
     color: #114988;
+}
+span.colorBlack {
+    color: #000000;
+}
+span.colorGreen {
+    color: #45ad45;
 }
 .lessonText > p {
     text-indent: 20px;
