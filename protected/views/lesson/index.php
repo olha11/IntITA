@@ -145,16 +145,16 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <script type="text/javascript">
     $(function() {
         var offset = $(".sidebarLesson").offset();
-        var topPadding = 120;
+        var topPadding = 60;
         $(window).scroll(function() {
-            if ($(window).scrollTop() > offset.top) {
+            if ($(window).scrollTop() > offset.top -60) {
                 $(".sidebarLesson").stop().animate({
                     marginTop: $(window).scrollTop() - offset.top + topPadding
-                });
+                },0);
             } else {
                 $(".sidebarLesson").stop().animate({
                     marginTop: 0
-                });
+                },0);
             };
         });
     });
