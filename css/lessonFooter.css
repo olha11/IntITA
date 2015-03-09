@@ -12,6 +12,7 @@
 }
 p.lesname{
     width:100%;
+    margin-left: 3px;
 }
 .subViewLessons p, h1, h2, h3, h4, h5, h6, span{
     font-size:100%;
@@ -52,12 +53,15 @@ div.nextLessons {
     display:inline-block;
     float:left;
 }
+.typeLesson img {
+    margin-right: 22px;
+}
+
 .timeLesson {
     display:inline-block;
     float:left;
 }
 .ratingLeson {
-    vertical-align:central;
     clear:both;
 }
 .preLesonLink {

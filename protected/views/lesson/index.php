@@ -9,6 +9,12 @@ $this->breadcrumbs=array(
 );
 ?>
 
+<div class="subNavBlock">
+    <div class="subLinks">
+        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Головна</a> &#187; <a href="#">Курс Програмування</a> &#187; <a href="#">Модуль PHP</a> &#187; <a href="#">Урок 2: Змінні та типи данних в PHP</a>
+    </div>
+</div>
+
 <!-- lesson top -->
 <?php
 //Object Lecture, you can use designer. Ther is only one object, thats why I dont use it.))
@@ -421,7 +427,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 		{
 ?>
 					<div class="preLessons">
-						<p class="lesname">Урок <?php echo $footNav->getPreNumber() ?>: <b><?php echo $footNav->getPreName() ?></b></p>
+						<p class="lesname">Заняття <?php echo $footNav->getPreNumber() ?>: <b><?php echo $footNav->getPreName() ?></b></p>
 						<table class="typeLesson">
 							<tr>
 								<td><p>Тип:</p></td>
@@ -479,7 +485,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 		{
 ?>
 					<div class="nextLessons">
-						<p class="lesname">Урок <?php echo $footNav->getPostNumber() ?>: <b><?php echo $footNav->getPostName() ?></b></p>
+						<p class="lesname">Заняття <?php echo $footNav->getPostNumber() ?>: <b><?php echo $footNav->getPostName() ?></b></p>
 						<table class="typeLesson">
 							<tr>
 								<td><p>Тип:</p></td>
