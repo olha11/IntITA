@@ -145,7 +145,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <script type="text/javascript">
     $(function() {
         var offset = $(".sidebarLesson").offset();
-        var topPadding = 70;
+        var topPadding = 120;
         $(window).scroll(function() {
             if ($(window).scrollTop() > offset.top) {
                 $(".sidebarLesson").stop().animate({
