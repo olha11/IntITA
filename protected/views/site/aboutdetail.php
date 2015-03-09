@@ -1,10 +1,11 @@
 <?php
 /* @var $this SiteController */
+
 ?>
 <html>
 <head>
 </head>
-<body onload="Window()">
+<body onload=WindowShow(<?php echo (empty($_GET['id']))?1:$_GET['id']; ?>)>
 <?php
 $this->pageTitle=$mainpage['title'];
 
@@ -14,6 +15,7 @@ $subLineImage= $mainpage['subLineImage'];
 $dropName = $mainpage['linkName'];
 
 $massAbout = array($block1,$block2,$block3);
+
 
 $block1->drop1Text='<span class="detailTitle1"> Про що мрієш ти? </span>
 
@@ -117,6 +119,7 @@ $block1->drop2Text='<span class="detailTitle1">Навчання майбутнь
                         <?php echo $val->titleText; ?>
                         <p>
                             <?php echo $val->textAbout; ?>
+
                         </p>
                     </div>
                 </li>
@@ -134,7 +137,7 @@ $block1->drop2Text='<span class="detailTitle1">Навчання майбутнь
 
 function Window()
 {
-		$('#dropTextLayer1').css('display', 'inline-block'); 
+    $('#dropTextLayer1').css('display', 'inline-block');
 }
 
 function WindowShow(buttonNumber) 
@@ -164,7 +167,7 @@ function WindowShow(buttonNumber)
 <! buttons for dropdown  About Us>
 <div id="dropButton1" onclick="WindowShow(1)" >
 	<?php  echo  $dropName;   ?>
- </div>
+</div>
 <div id="dropButton2" onclick="WindowShow(2)">
 	<?php  echo  $dropName;   ?>
 </div>

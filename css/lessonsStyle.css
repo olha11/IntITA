@@ -1,8 +1,29 @@
+/*header navigation*/
+.subNavBlock {
+    margin: 0 auto;
+    width: 960px;
+    clear: both;
+    overflow: hidden;
+}
+div.subLinks{
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    display:inline-block;
+    margin-top: 40px;
+    margin-bottom: 28px;
+    float:left;
+}
+.subLinks a{
+    color: #666666;
+}
+/*header navigation*/
+
 .lessonBlock {
     margin: 0 auto;
     width: 960px;
     margin-top: 20px;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 .lessonBlock h3{
     margin-top: 20px;
@@ -13,14 +34,10 @@
     display:none;
 }
 .lessonText {
-    display:inline-block;
-    float:left;
-    width: 66%;
-}
-.lessonNav{
-    display:inline-block;
-    float: right;
-    width: 33%;
+    position: relative;
+    float: left;
+    width:66%;
+    z-index: 0;
 }
 .lessonBlock span {
     font-weight: bold;
@@ -29,11 +46,13 @@ h1.lessonTheme{
      color: #4b75a4;
      font-size: xx-large;
      margin: 0px;
+    font-weight: normal;
 }
 h1.lessonPart{
     color: #4b75a4;
     font-size: x-large;
     margin-top: 34px;
+    font-weight: normal;
 }
 span.listTheme{
     font-size: large;
@@ -62,9 +81,11 @@ span.subChapter{
 }
 .lessonCode {
     background-color: #d6ebe0;
-    color:#114988;
     padding: 0px 0px 0px 20px;
     font-weight:bold;
+}
+.lessonCode p{
+    color:#114988;
 }
 div.lessonBG {
     border-top:3px solid #ffffff;
@@ -97,6 +118,12 @@ span.colorO {
 }
 span.colorBP {
     color: #114988;
+}
+span.colorBlack {
+    color: #000000;
+}
+span.colorGreen {
+    color: #45ad45;
 }
 .lessonText > p {
     text-indent: 20px;
@@ -164,6 +191,7 @@ img.lessonButFinal  {
     width: 164px;
     height:32px;
 }
+
 div.lessonButFinal
 {
     position: absolute;
@@ -197,4 +225,35 @@ div.lessonButFinal
     border-top-color: #454545;
     background: #454545;
     color: #fcfcfc;
+}
+
+/*vertical navigation*/
+.sidebarLesson {
+    position: relative;
+    width: 33%;
+    float:right;
+    z-index: 1;
+}
+.sidebarLesson p{
+    margin-left: 100px;
+}
+
+.sidebarLesson input[type="submit"] {
+    width: 170px;
+    height:30px;
+    border-radius: 5px;
+    border:none;
+    color:#ffffff;
+    background-color:#4b75a4;
+    box-shadow:0px 2px 0px #7f7f7f;
+    font-size: medium;
+}
+.sidebarLesson input[type="submit"]:hover {
+    border-top-color: #454545;
+    background: #454545;
+    color: #fcfcfc;
+    cursor: pointer;
+}
+.sidebarLesson a {
+    text-decoration: none;
 }

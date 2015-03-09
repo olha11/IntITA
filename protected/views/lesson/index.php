@@ -140,21 +140,46 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
         });
     });
 </script>
+<!--JS BBCode-->
+<!--Sidebar-->
+<script type="text/javascript">
+    $(function() {
+        var offset = $(".sidebarLesson").offset();
+        var topPadding = 120;
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > offset.top) {
+                $(".sidebarLesson").stop().animate({
+                    marginTop: $(window).scrollTop() - offset.top + topPadding
+                });
+            } else {
+                $(".sidebarLesson").stop().animate({
+                    marginTop: 0
+                });
+            };
+        });
+    });
+</script>
+<!--Sidebar-->
 <!--Перша частина-->
 <div class="lessonBlock">
-    <div class="lessonVisb1">
+<!--navigation vertical-->
+    <div class="sidebarLesson">
+        <p><a href="#"><input type="submit" value="Онлайн домомога"></a></p>
+        <p><a href="#"><input type="submit" value="Онлайн консультація"></a></p>
+    </div>
+<!--navigation vertical-->
         <div class="lessonText">
             <h1 class="lessonTheme">Змінні та типи даних в PHP </h1>
             <a name="Частина 1: Типи змінних та перемінних"></a>
-            <span class="listTheme">Зміст </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+            <span class="listTheme">Зміст </span><span class="spoilerLinks"><span class="spoilerClick">(приховати)</span><span class="spoilerTriangle"> &#9660;</span></span>
                 <div class="spoilerBody">
                    <p><a href="#Частина 1: Типи змінних та перемінних">Частина 1: Типи змінних та перемінних</a></p>
                    <p><a href="#Частина 7: Типи данних та математичний аналіз">Частина 7: Типи данних та математичний аналіз</a></p>
                 </div>
             <h1 class="lessonPart">Частина 1: Типи змінних та перемінних</h1>
-            <p><span>Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:</p>
-            <div class="lessonCode"><p>$names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
-            <span>Імена змінних</span>
+            <p><span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:</p>
+            <div class="lessonCode"><p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
+            <span class="colorBlack">Імена змінних</span>
             <p>Будь-яка змінна в РНР має ім'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>
             <div class="lessonCode">
                 <p>$names="value";</p>
@@ -162,8 +187,8 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                 <p>echo $$name;</p>
             </div>
             <p>Змінні в РНР представляються у вигляді рядка, що починається знаком долара, а за ним слідує ім'я змінної. Ім'я змінної може складатися з латинських літер, звичайних цифр і деяких символів або комбінацій літер, цифр і символів.</p>
-            <span>Всі змінні діляться на певні типи:</span>
-            <p>Мова JavaScript містить шість типів даних <span>Undefîned</span> (невизначений), <span>Null</span> (нульовий), <span>Вооlеаn</span> (логічний), <span>String</span> (строковий), <span>Number</span> (числовий) і <span>Object</span> (об'єктний). Ця відносно невелика кількість типів дозволяє, тим не менше, створювати повноцінні сценарії для виконання багатьох функцій.</p>
+            <span class="colorBlack">Всі змінні діляться на певні типи:</span>
+            <p>Мова JavaScript містить шість типів даних <span class="colorBlack">Undefîned</span> (невизначений), <span class="colorBlack">Null</span> (нульовий), <span class="colorBlack">Вооlеаn</span> (логічний), <span class="colorBlack">String</span> (строковий), <span class="colorBlack">Number</span> (числовий) і <span class="colorBlack">Object</span> (об'єктний). Ця відносно невелика кількість типів дозволяє, тим не менше, створювати повноцінні сценарії для виконання багатьох функцій.</p>
             <span class="subChapter">Зразок коду 1:</span>
 <pre class="prettyprint linenums">
 &lt;html&gt;
@@ -182,7 +207,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
  &lt;/body&gt;
 &lt;/html&gt;
 </pre>
-            <span class="subChapter">Зразок коду 2  </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+            <span class="subChapter">Зразок коду 2  </span><span class="spoilerLinks"><span class="spoilerClick">(приховати)</span><span class="spoilerTriangle"> &#9660;</span></span>
             <div class="spoilerBody">
 <pre class="prettyprint linenums">
 &lt;html&gt;
@@ -248,16 +273,12 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
             <a name="Частина 7: Типи данних та математичний аналіз"></a>
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/borderLesson.png">
         </div>
-        <div class="lessonNav">
-        </div>
-    </div>
     <!--Друга частина-->
-    <div class="lessonVisb2">
         <div class="lessonText">
             <h1 class="lessonPart">Частина 7: Типи данних та математичний аналіз</h1>
-            <p><span>Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:</p>
+            <p><span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:</p>
             <div class="lessonCode"><p>$names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
-            <span>Імена змінних</span>
+            <span class="colorBlack">Імена змінних</span>
             <p>Будь-яка змінна в РНР має ім'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>
             <div class="lessonCode">
                 <p>$names="value";</p>
@@ -265,8 +286,8 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                 <p>echo $$name;</p>
             </div>
             <p>Змінні в РНР представляються у вигляді рядка, що починається знаком долара, а за ним слідує ім'я змінної. Ім'я змінної може складатися з латинських літер, звичайних цифр і деяких символів або комбінацій літер, цифр і символів.</p>
-            <span>Всі змінні діляться на певні типи:</span>
-            <p>Мова JavaScript містить шість типів даних <span>Undefîned</span> (невизначений), <span>Null</span> (нульовий), <span>Вооlеаn</span> (логічний), <span>String</span> (строковий), <span>Number</span> (числовий) і <span>Object</span> (об'єктний). Ця відносно невелика кількість типів дозволяє, тим не менше, створювати повноцінні сценарії для виконання багатьох функцій.</p>
+            <span class="colorBlack">Всі змінні діляться на певні типи:</span>
+            <p>Мова JavaScript містить шість типів даних <span class="colorBlack">Undefîned</span> (невизначений), <span class="colorBlack">Null</span> (нульовий), <span class="colorBlack">Вооlеаn</span> (логічний), <span class="colorBlack">String</span> (строковий), <span class="colorBlack">Number</span> (числовий) і <span class="colorBlack">Object</span> (об'єктний). Ця відносно невелика кількість типів дозволяє, тим не менше, створювати повноцінні сценарії для виконання багатьох функцій.</p>
             <span class="subChapter">Зразок коду 1:</span>
 <pre class="prettyprint linenums">
 &lt;html&gt;
@@ -285,7 +306,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
  &lt;/body&gt;
 &lt;/html&gt;
 </pre>
-            <span class="subChapter">Зразок коду 2  </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+            <span class="subChapter">Зразок коду 2  </span><span class="spoilerLinks"><span class="spoilerClick">(приховати)</span><span class="spoilerTriangle"> &#9660;</span></span>
             <div class="spoilerBody">
 <pre class="prettyprint linenums">
 &lt;html&gt;
@@ -351,11 +372,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
             </div>
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/borderLesson.png">
         </div>
-        <div class="lessonNav">
-        </div>
-    </div>
     <!--Заключна частина-->
-    <div class="lessonVisb3">
         <div class="lessonText">
             <div class="lessonTask">
                 <img class="lessonButFinal" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButtonFinale.png">
@@ -383,7 +400,6 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                 </div>
             </div>
         </div>
-    </div>
 </div>
 
 <!-- lesson footer -->
@@ -421,7 +437,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 		{
 ?>
 					<div class="preLessons">
-						<p class="lesname">Урок <?php echo $footNav->getPreNumber() ?>: <b><?php echo $footNav->getPreName() ?></b></p>
+						<p class="lesname">Заняття <?php echo $footNav->getPreNumber() ?>: <b><?php echo $footNav->getPreName() ?></b></p>
 						<table class="typeLesson">
 							<tr>
 								<td><p>Тип:</p></td>
@@ -479,7 +495,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 		{
 ?>
 					<div class="nextLessons">
-						<p class="lesname">Урок <?php echo $footNav->getPostNumber() ?>: <b><?php echo $footNav->getPostName() ?></b></p>
+						<p class="lesname">Заняття <?php echo $footNav->getPostNumber() ?>: <b><?php echo $footNav->getPostName() ?></b></p>
 						<table class="typeLesson">
 							<tr>
 								<td><p>Тип:</p></td>

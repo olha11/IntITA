@@ -30,7 +30,7 @@ html{
 	display: table;
 	}
 
-.steps p {
+.steps {
 	font-size: 100%;
 	margin-top:0px;
 	}
@@ -59,6 +59,7 @@ html{
     border-radius: 3px;
 	margin-top:40px;
 	margin-bottom:40px;
+    height:220px;
 	}
 .stepRight {
     box-sizing:border-box;
@@ -71,6 +72,7 @@ html{
     border-radius: 3px;
 	margin-top:40px;
 	margin-bottom:40px;
+    height:220px;
 	}
 .stepInfo {
 	box-sizing:border-box;
@@ -79,13 +81,14 @@ html{
 	display:inline-block;
 	width:65%;
 	text-align:left;
+    height:100%;
 	      }
 .stepUrl {
 	box-sizing:border-box;
     -moz-box-sizing:border-box;
 	position:relative;
 	display:inline-block;
-	width:33%;
+	width:317px;
 	border:2px solid #4b75a4;
     }
 .stepInfo p {

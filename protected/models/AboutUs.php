@@ -18,6 +18,7 @@
  */
 class Aboutus extends CActiveRecord
 {
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -27,7 +28,7 @@ class Aboutus extends CActiveRecord
 	}
 
 	function AboutUs($id){
-		//setValuesById($id);
+
 	}
 
 	public function setValuesById($id)
@@ -36,7 +37,8 @@ class Aboutus extends CActiveRecord
 		$this->iconImage=Yii::app()->request->baseUrl.$this->findByPk($id)->imagesPath.$this->findByPk($id)->iconImage;
 		$this->titleText=$this->findByPk($id)->titleText;
 		$this->textAbout=$this->findByPk($id)->textAbout;
-		$this->linkAddress=Yii::app()->request->baseUrl.$this->findByPk($id)->linkAddress;		return 'aboutus';
+		$this->linkAddress=Yii::app()->request->baseUrl.$this->findByPk($id)->linkAddress;
+        return 'aboutus';
 	}
 	/**
 	 * @return array validation rules for model attributes.
@@ -65,6 +67,11 @@ class Aboutus extends CActiveRecord
 		return array(
 		);
 	}
+
+    public function setStartBlock(){
+        $this->isStart = true;
+        $this->redirect(array('studentreg/index'));
+    }
 
 	/**
 	 * @return array customized attribute labels (name=>label)
