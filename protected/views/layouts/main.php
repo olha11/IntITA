@@ -5,6 +5,7 @@
   
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="language" content="en">
+
     <!-- for tabs -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- for tabs -->
@@ -66,10 +67,10 @@
 
 <body>
 
-<div id="navigation">
+<div id="navigation" class="down">
     <div class="main">
-        <div id="logo_img">
-            <img id="logo" src="<?php echo $this->logoURL; ?>"/>
+        <div id="logo_img" class="down">
+            <img id="logo" src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png"/>
         </div>
 
         <ul>
@@ -80,7 +81,7 @@
         </ul>
 
     </div>
-    <div id="lang">
+    <div id="lang" class="down">
         <form action="" method="post" onsubmit="" name="fff">
             <button formaction="" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
 
@@ -91,9 +92,9 @@
         </form>
     </div>
 </div>
-<div id="button_border">
+<div id="button_border" class="down">
 </div>
-<a id="enter_button" href="#"><?php echo $this->buttonText; ?></a>
+<a id="enter_button" href="#" class="down"><?php echo $this->buttonText; ?></a>
 
 <script>
     function changeLang(n){
@@ -109,29 +110,7 @@
     }
 
 
-    var key = document.getElementById('enter_button');
-    var nav = document.getElementById('navigation');
-    var logo = document.getElementById('logo_img');
-    var border = document.getElementById('button_border');
-    window.onscroll = function() {
-        var pageY = window.pageYOffset || document.documentElement.scrollTop;
-        if (pageY >= key.offsetHeight) {
-            document.getElementById('logo').src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png";
 
-            key.className = "down";
-            logo.className = "down";
-            nav.style.height = "68px";
-            nav.className = "down";
-            border.className = "down";
-        } else {
-            document.getElementById('logo').src="<?php echo $this->logoURL; ?>";
-            border.className = "";
-            key.className = "";
-            logo.className = "";
-            nav.className = "";
-            nav.style.height = "100px";
-        }
-    }
 </script>
 <div class="clear"></div>
 
@@ -157,7 +136,7 @@
 <div id="footer">
     <div class="main">
         <div>
-            <img src="<?php echo $this->imageSotial; ?>"/>
+            <img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/socials.png" style="margin-top: 10px;"/>
         </div>
         <div class="footer">
             <div>
@@ -166,7 +145,9 @@
             <div>
                 <p> <?php echo $this->phone; ?><br/>
                     <?php echo $this->mobile; ?><br/>
-                    <?php echo $this->email; ?></p>
+                    <?php echo $this->email; ?><br/>
+                    skype: int.ita
+                </p>
             </div>
             <div>
                 <ul>
@@ -177,9 +158,9 @@
                 </ul>
             </div>
         </div>
-        <div class="footer"">
-        <a href="#"><img src="<?php echo $this->imageUp; ?>"/></a>
-    </div>
+        <div class="footer">
+            <a href="#"><img src="<?php echo $this->imageUp; ?>" style="margin-top: 20px;"/></a>
+        </div>
     <div class="footer"></div>
 </div>
 </div><!-- footer -->

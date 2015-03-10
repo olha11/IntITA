@@ -44,7 +44,7 @@ html{
 .steps {
 	background-color: #f3f3f3;
 	padding-top:60px;
-	padding-bottom:60px;
+	padding-bottom:0px;
     margin-top: 20px;
 	  }
 /* Стиль екземплярів класу Step*/
@@ -146,7 +146,7 @@ p.stepNumber {
 p.stepName {
 	color:#3d4d60;
 	font-size:130%;
-	font-weight:bold;
+	font-weight:normal;
 	margin:0px;
 }
 .stepLeft .hexagon  {
