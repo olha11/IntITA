@@ -25,7 +25,7 @@ class Step extends CActiveRecord
 	 * @return string the associated database table name
 	 */
 	function Step($id){
-		//setValueById($id);
+		//$this->setValueById($id);
 	}
 
 	public function tableName()

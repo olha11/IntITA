@@ -39,9 +39,10 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index1.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$modelCarousel = new Carousel();
 
-		$mainpage = new Mainpage();
+		$lang =  (empty($_GET['lang']))?1:$_GET['lang'];
+		$modelCarousel = new Carousel();
+		$mainpage = new Mainpage(1);//($lang == 'UA')?0:1);
 		$mainpage->setValueById(0);
 		$objAbout1 = new AboutUs(1);
 		$objAbout1->setValuesById(1);
@@ -77,8 +78,6 @@ class SiteController extends Controller
 			'slider3'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(3)->imagesPath.$modelCarousel->findByPk(3)->pictureURL,
 			'slider4'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(4)->imagesPath.$modelCarousel->findByPk(4)->pictureURL,
 		);
-
-
 		$this->render('index', array(
 			'slider1'=>$sliderPictures['slider1'],
 			'slider2'=>$sliderPictures['slider2'],
@@ -117,10 +116,9 @@ class SiteController extends Controller
 			'step5'=>$arraySteps['step5'],
 		));
 	}
-	
-		public function actionAboutdetail()
+	public function actionAboutdetail()
 	{
-		$mainpage = new Mainpage();
+		$mainpage = new Mainpage(0);
 		$mainpage->setValueById(0);
 		$objAbout1 = new AboutUs(1);
 		$objAbout1->setValuesById(1);
@@ -128,15 +126,12 @@ class SiteController extends Controller
 		$objAbout2->setValuesById(2);
 		$objAbout3 = new AboutUs(3);
 		$objAbout3->setValuesById(3);
-
 		$arrayAboutUs = array(
 			'objAbout1'=>$objAbout1,
 			'objAbout2'=>$objAbout2,
 			'objAbout3'=>$objAbout3,
 		);
-
 		$this->render('aboutdetail', array(
-
 			'mainpage'=>array(
 				'title'=>$mainpage->title,
 				'header1'=>$mainpage->header1,
@@ -170,8 +165,12 @@ class SiteController extends Controller
         {
             $this->redirect(array('studentreg/index'));
         }
-        $this->redirect(array('site/index'));
+        $this->redirect(array('courses/index'));
     }
+
+	public  function setLang($lang='UA'){
+		$this->actionIndex();
+	}
 	/**
 	 * Displays the contact page
 	 */
