@@ -230,6 +230,7 @@ div.lessonButFinal
 /*vertical navigation*/
 .sidebarLesson {
     position: relative;
+    background: #ffffff;
     width: 33%;
     float:right;
     z-index: 1;

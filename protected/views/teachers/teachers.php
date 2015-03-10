@@ -37,8 +37,9 @@ $post=TeachersTemp::model()->findAll();
             <div class="teacherBlock">
                 <table>
                     <tr>
-                        <td>
+                        <td  class="profileTeacher" >
                             <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
+                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Профіль</a>
                         </td>
                         <td>
                             <h2><?php echo $teacherValue->last_name ?></h2>
@@ -61,13 +62,21 @@ $post=TeachersTemp::model()->findAll();
                                     ?>
                                 </ul>
                             </div>
-                            <div class="aboutMore">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Читать полностью &#187;</a></br>
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/><a href="#">Отзывы о преподавателе &#187;</a>
-                            </div>
                         </td>
                     </tr>
                 </table>
+                <div class="aboutMore">
+                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Читать полностью &#187;</a></br>
+                    <?php
+                    for ($k=0; $k<10; $k++)
+                    {
+                        ?>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/>
+                    <?php
+                    }
+                    ?>
+                    <a href="#">Отзывы о преподавателе &#187;</a>
+                </div>
             </div>
             <?php
         }
@@ -85,8 +94,9 @@ $post=TeachersTemp::model()->findAll();
             <div class="teacherBlock">
                 <table>
                     <tr>
-                        <td>
+                        <td  class="profileTeacher" >
                             <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
+                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Профіль</a>
                         </td>
                         <td>
                             <h2><?php echo $teacherValue->last_name ?></h2>
@@ -109,13 +119,21 @@ $post=TeachersTemp::model()->findAll();
                                     ?>
                                 </ul>
                             </div>
-                            <div class="aboutMore">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="#">Читать полностью &#187;</a></br>
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/><a href="#">Отзывы о преподавателе &#187;</a>
-                            </div>
                         </td>
                     </tr>
                 </table>
+                <div class="aboutMore">
+                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Читать полностью &#187;</a></br>
+                    <?php
+                    for ($k=0; $k<10; $k++)
+                    {
+                        ?>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/>
+                    <?php
+                    }
+                    ?>
+                    <a href="#">Отзывы о преподавателе &#187;</a>
+                </div>
             </div>
             <?php
         }

@@ -1,24 +1,6 @@
-<style>
-    /* PassEye */
-    .passEye {
-        position:relative;display:inline-block;
-    }
-    .passEye input {
-        padding-right:0px;
-    }
-    .passEye input::-ms-reveal, .passEye input::-ms-clear {
-        display:none
-    }
+<style type="text/css">
     .passEye .eye {
-        position:absolute;
-        right:10px;
-        top:50%;
-        margin-top:-4px;
-        display:block;
-        height:10px;
-        width:18px;
         background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/passEye.png') no-repeat left 2px;
-        cursor:pointer;
     }
     .passEye .openEye {
         background-position:left bottom;
@@ -120,8 +102,8 @@
         <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
         <div class="fileform">
             <input class="avatar" type="button" value="ВИБЕРІТЬ ФАЙЛ">
-            <input type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
-            <input  class="uploadAvatar" type="submit">
+            <input tabindex="-1" type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
+            <input tabindex="-1" class="uploadAvatar" type="submit">
         </div>
         <div id="avatarInfo">Файл не вибрано...</div>
         <div class="avatarError">
