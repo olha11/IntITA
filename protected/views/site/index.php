@@ -6,7 +6,7 @@
 <div class="insideSlider">
     <div class="lineAndButton">
         <img class="sliderLine" src="<?php echo $mainpage['sliderLine']; ?>">
-        <a class="sliderButton" href="#form"><?php echo $mainpage['buttonStart']; ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/> </a>
+        <a class="sliderButton" href="#"><?php echo $mainpage['buttonStart']; ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/> </a>
     </div>
     <div class="sliderText">
         <?php echo $mainpage['sliderHeader']; ?><br>
@@ -132,7 +132,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
 						<p class="stepName"><?php echo $stepValue->stepName; ?></p>
 					</div>
-        			<div class="stepInfo">
+        			<div class="stepInfo" style="min-height:<?php echo $stepSize*0.23 . 'px';?> ">
           				  <h2><?php echo $stepValue->stepTitle; ?></h2>
               			  <p><?php echo $stepValue->stepText; ?></p>
           			</div>
