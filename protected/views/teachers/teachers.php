@@ -37,8 +37,9 @@ $post=TeachersTemp::model()->findAll();
             <div class="teacherBlock">
                 <table>
                     <tr>
-                        <td>
+                        <td  class="profileTeacher" >
                             <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
+                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Профіль</a>
                         </td>
                         <td>
                             <h2><?php echo $teacherValue->last_name ?></h2>
@@ -85,8 +86,9 @@ $post=TeachersTemp::model()->findAll();
             <div class="teacherBlock">
                 <table>
                     <tr>
-                        <td>
+                        <td  class="profileTeacher" >
                             <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
+                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Профіль</a>
                         </td>
                         <td>
                             <h2><?php echo $teacherValue->last_name ?></h2>

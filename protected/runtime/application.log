@@ -3377,3 +3377,11 @@ Stack trace:
 #6 {main}
 REQUEST_URI=/
 ---
+2015/03/10 12:14:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "teacher".' in Z:\home\intita\www\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\intita\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('teacher')
+#1 Z:\home\intita\www\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\intita\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/?r=teacher
+---

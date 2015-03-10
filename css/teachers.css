@@ -54,7 +54,6 @@ div.titleTeachers {
 }
 img.teacherAvatar{
     display: block;
-    margin: 0 20px 0 0;
     width: 112px;
     height: 136px;
 }
@@ -84,4 +83,9 @@ div.aboutMore{
 }
 .aboutMore img{
     margin-right: 5px;
+}
+
+td.profileTeacher{
+    text-align: center;
+    padding: 0 20px 0 0;
 }
