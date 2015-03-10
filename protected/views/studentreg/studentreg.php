@@ -1,24 +1,6 @@
-<style>
-    /* PassEye */
-    .passEye {
-        position:relative;display:inline-block;
-    }
-    .passEye input {
-        padding-right:0px;
-    }
-    .passEye input::-ms-reveal, .passEye input::-ms-clear {
-        display:none
-    }
+<style type="text/css">
     .passEye .eye {
-        position:absolute;
-        right:10px;
-        top:50%;
-        margin-top:-4px;
-        display:block;
-        height:10px;
-        width:18px;
         background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/passEye.png') no-repeat left 2px;
-        cursor:pointer;
     }
     .passEye .openEye {
         background-position:left bottom;

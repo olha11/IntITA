@@ -1,3 +1,11 @@
+<style type="text/css">
+    .passEye .eye {
+        background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/passEye.png') no-repeat left 2px;
+    }
+    .passEye .openEye {
+        background-position:left bottom;
+    }
+</style>
 <?php
 /* @var $this SiteController */
 ?>
@@ -147,7 +155,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
             <div class="email-password">
                 <form method = "POST" action="<?php echo Yii::app()->createUrl('site/submitForm');?>">
                     <input type="email" value="" name="email" class="email1" placeholder="E-mail" />
-                    <input type="password" value="" name="password" class="password1" placeholder="password"/><br>
+                    <span class="passEye"><input type="password" value="" name="password" class="password1" placeholder="password"/></span><br>
                     <input type="checkbox" value="" name="isExtended"/> <?php echo $mainpage['regText']; ?>
             </div>
             <br>
