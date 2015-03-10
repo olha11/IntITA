@@ -8,7 +8,7 @@ class MainpageController extends Controller
 		$this->module->tableName('mainpage');
 		$this->module->setPK('mainpageID');
 		$fieldsConf = array(
-			array('language', 'string', 'Мова', array('show')),//array('UA'=>'UA', 'EN'=>'EN', 'RU'=>'RU')),
+			array('language', 'string', 'Мова', array('show')),
 			array('title', 'string', 'Заголовок сторінки', array('show')),
 			array('header1', 'string', 'Заголовок 1', array('show')),
 			array('subheader1', 'string', 'Підзаголовок 1', array('show')),
@@ -27,7 +27,7 @@ class MainpageController extends Controller
 		$this->module->setPK('order');
 		$fieldsConf = array(
 			array('order', 'string', 'Порядок', array('show')),
-			array('pictureURL', 'image', 'Фото', array('show', 'directoryPath'=>'./css/images/slider_img/small')),
+			array('pictureURL', 'image', 'Фото', array('show', 'directoryPath'=>'/../IntITA/css/images/slider_img/small')),
 			array('description', 'text', 'Опис', array('show', 'directoryPath'=>'./')),
 		);
 		$this->module->fieldsConf($fieldsConf);

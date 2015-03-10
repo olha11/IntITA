@@ -6,7 +6,7 @@
 <div class="insideSlider">
     <div class="lineAndButton">
         <img class="sliderLine" src="<?php echo $mainpage['sliderLine']; ?>">
-        <a class="sliderButton" href="#"><?php echo $mainpage['buttonStart']; ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/> </a>
+        <a class="sliderButton" href="#form"><?php echo $mainpage['buttonStart']; ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/> </a>
     </div>
     <div class="sliderText">
         <?php echo $mainpage['sliderHeader']; ?><br>
@@ -141,6 +141,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 	    }
 	}
 ?>
+    <a name="form">
     <div class="fon"style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/fon.png') no-repeat;">
         <div class="textFon"><p class="zagolovok"><?php echo $mainpage['formHeader1']; ?></p><p class="zagolovok2"><?php echo $mainpage['formHeader2']; ?></p></div>
         <div class="formFon"style=" background:url('<?php echo $mainpage['formFon']; ?>');">
@@ -164,7 +165,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
                     <area shape="circle" coords="262,27, 20" href="javascript:" title="Вконтакте" />
                     <area shape="circle" coords="214,26, 20" href="javascript:" title="Однокласники" />
                     <area shape="circle" coords="167,27, 20" href="javascript:" title="YouTube" />
-                    <area shape="circle" coords="121,26, 21" href="javascript:" title="googl" />
+                    <area shape="circle" coords="121,26, 21" href="javascript:" title="Google +" />
                     <area shape="circle" coords="74,26, 20" href="javascript:" title="facebook" />
                     <area shape="circle" coords="27,25, 21" href="javascript:" title="twitter" />
                 </map></div>

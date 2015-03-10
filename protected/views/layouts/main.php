@@ -30,6 +30,7 @@
 	  <!-- courses style -->
     <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/courses.css" />
     <!-- lesson style -->
+    <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/css/images/favicon.ico" type="image/x-icon"/>
     <!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
     <!-- jQuery -->
@@ -69,11 +70,11 @@
 <div id="navigation">
     <div class="main">
         <div id="logo_img">
-            <img id="logo" src="<?php echo $this->logoURL; ?>"/>
+           <a href="<?php echo Yii::app()->request->baseUrl; ?>"> <img id="logo" src="<?php echo $this->logoURL; ?>"/></a>
         </div>
 
         <ul>
-            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=courses"><?php echo $this->menu1; ?></a></li>
+            <li><a href="<?php echo $this->link1; ?>"><?php echo $this->menu1; ?></a></li>
             <li><a href="<?php echo $this->link2; ?>"><?php echo $this->menu2; ?></a></li>
             <li><a href="<?php echo $this->link3; ?>"><?php echo $this->menu3; ?></a></li>
             <li><a href="<?php echo $this->link4; ?>"><?php echo $this->menu4; ?></a></li>
@@ -82,18 +83,18 @@
     </div>
     <div id="lang">
         <form action="" method="post" onsubmit="" name="fff">
-            <button formaction="" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
 
-            <button formaction="" id="en" name="en" onclick="changeLang(this)">en</button>
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'EN'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
 
-            <button formaction="" id="ru" name="ru" onclick="changeLang(this)">ru</button>
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'RU'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
 
         </form>
     </div>
 </div>
 <div id="button_border">
 </div>
-<a id="enter_button" href="#"><?php echo $this->buttonText; ?></a>
+<a id="enter_button" href="#form"><?php echo $this->buttonText; ?></a>
 
 <script>
     function changeLang(n){

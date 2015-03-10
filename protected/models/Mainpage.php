@@ -40,10 +40,14 @@ class Mainpage extends CActiveRecord
 		return 'mainpage';
 	}
 
+	function Mainpage($id){
+		//$this->setValueById($id);
+	}
+
     public function setValueById($id)
     {
-        $this->title=$this->findByPk($id)->title;
-        $this->sliderText=$this->findByPk($id)->sliderText;
+		$this->title=$this->findByPk($id)->title;
+		$this->sliderText=$this->findByPk($id)->sliderText;
         $this->header1=$this->findByPk($id)->header1;
         $this->header2=$this->findByPk($id)->header2;
         $this->linkName=$this->findByPk($id)->linkName;

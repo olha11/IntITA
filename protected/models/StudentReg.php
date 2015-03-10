@@ -24,7 +24,7 @@ class StudentReg extends CActiveRecord
 {
     public $password_repeat;
     public $send_letter;
-public $upload;
+    public $upload;
     public $letterTheme;
 	
 	public function getDbConnection()

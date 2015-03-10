@@ -36,7 +36,7 @@ return array(
 		'autoadmin'=>array(
 			'class'=>'ext.autoadmin.AutoAdmin',
 			'basePath' => dirname(__FILE__).'/../modules/autoadmin',
-			'wwwDirName' => 'views', //your DocumentRoot
+			'wwwDirName' => 'www', //your DocumentRoot
 			'authMode' => true, //Switch on authorization system
 			'openMode' => true, //Use for temporary switching off all access limitations
 			'logMode' => false,

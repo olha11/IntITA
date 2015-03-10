@@ -12,7 +12,7 @@ class StepsController extends Controller
             array('language', 'string', 'Мова', array('show')),
             array('stepNumber', 'num', 'Номер', array('show')),
             array('stepTitle', 'string', 'Заголовок кроку', array('show')),
-            array('stepImage', 'image', 'Фото', array('show', 'directoryPath'=>'/../css/images')),
+            array('stepImage', 'image', 'Фото', array('show', 'directoryPath'=>'/../IntITA/css/images')),
             array('stepText', 'text', 'Текст', array('show', 'directoryPath'=>'./')),
         );
 

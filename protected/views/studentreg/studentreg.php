@@ -27,7 +27,9 @@
 <?php
 /* @var $this StudentRegController */
 /* @var $model StudentReg */
+/* @var $regExtended Regextended*/
 /* @var $form CActiveForm */
+
 ?>
 
 <div class="formStudProfNav">
