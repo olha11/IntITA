@@ -36,7 +36,7 @@ return array(
 		'autoadmin'=>array(
 			'class'=>'ext.autoadmin.AutoAdmin',
 			'basePath' => dirname(__FILE__).'/../modules/autoadmin',
-			'wwwDirName' => 'www', //your DocumentRoot
+			'wwwDirName' => '', //your DocumentRoot
 			'authMode' => true, //Switch on authorization system
 			'openMode' => true, //Use for temporary switching off all access limitations
 			'logMode' => false,
@@ -79,8 +79,10 @@ return array(
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
 		'db2'=>require(dirname(__FILE__).'/database.php'),
-
 		'dbAdmin' => require(dirname(__FILE__).'/database.php'),
+
+		'sourceLanguage'=>'en',
+		'language'=>'ua',
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
@@ -103,6 +105,14 @@ return array(
 			),
 		),
 
+		'request'=>array(
+			'class'=>'DLanguageHttpRequest',
+            
+        ),
+        'urlManager'=>array(
+			'class'=>'DLanguageUrlManager',
+        ),
+
 	),
 
 	// application-level parameters that can be accessed
@@ -110,5 +120,11 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
+		'translatedLanguages'=>array(
+			'ru'=>'Russian',
+			'en'=>'English',
+			'ua'=>'Ukraine',
+		),
+		'defaultLanguage'=>'ua',
 	),
 );
