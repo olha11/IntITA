@@ -47,6 +47,7 @@ div.titleTeachers {
 .teacherBlock {
     width:inherit;
     margin-bottom: 40px;
+    overflow: hidden;
 }
 .teacherBlock p, .teacherBlock ul{
     margin-top: 10px;
@@ -80,9 +81,6 @@ div.aboutMore{
     margin-bottom: 20px;
     text-align: right;
     color: #4B75A4;
-}
-.aboutMore img{
-    margin-right: 5px;
 }
 
 td.profileTeacher{
