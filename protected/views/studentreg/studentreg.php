@@ -100,8 +100,8 @@
         <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
         <div class="fileform">
             <input class="avatar" type="button" value="ВИБЕРІТЬ ФАЙЛ">
-            <input type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
-            <input  class="uploadAvatar" type="submit">
+            <input tabindex="-1" type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
+            <input tabindex="-1" class="uploadAvatar" type="submit">
         </div>
         <div id="avatarInfo">Файл не вибрано...</div>
         <div class="avatarError">
