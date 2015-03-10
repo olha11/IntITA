@@ -23,9 +23,13 @@ p {
 /*************languages buttons*************/
 #lang {
     z-index: 6;
-    margin-left: 1141px;
-    margin-top: -45px;
+    margin-left: 1034px;
+    margin-top: -102px;
     position: fixed;
+}
+#lang.down {
+    margin-top: -45px;
+    margin-left: 1141px;
 }
 #lang #en {
     border-left: 1px solid #999999;
@@ -58,6 +62,9 @@ p {
     width: 100%;
     position: fixed;
     z-index: 5;
+}
+#navigation.down {
+    height: 68px;
 }
 
 #navigation ul {
@@ -127,7 +134,7 @@ p {
     border: 2px solid #ffffff;
     color: white;
     vertical-align: middle;
-    font: 500 16px/33px "MyriadPro";
+    font: 16px/30px "MyriadPro";
     text-align:      center;
     text-decoration: none;
 }
@@ -149,25 +156,27 @@ p {
 /************navigation-bottom***********/
 
 #footer{
+    margin-top: 30px;
     margin-bottom: 20px;
     overflow: hidden;
-    border-bottom: 2px solid #33ccff;
+    border-bottom: 1px solid #33ccff;
 }
 #footer .main div {
     margin-left: 15px;
+    margin-top: 10px;
     float: left;
-    height: 65px;
+    height: 90px;
 }
 
 .footer {
-    border-left: 2px solid #33ccff;
-    padding-top: 20px;
+    border-left: 1px solid #33ccff;
     padding-left: 15px;
     color: #003399;
 }
-
+#footer ul {
+    margin-top: 10px;
+}
 #footer li {
-
     display:inline;
     padding: 8px;
 }
@@ -183,7 +192,7 @@ p {
 }
 
 #footer p{
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: 13px;
     color: #003399;
 }

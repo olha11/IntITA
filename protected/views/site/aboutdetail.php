@@ -7,6 +7,10 @@
 </head>
 <body onload=WindowShow(<?php echo (empty($_GET['id']))?1:$_GET['id']; ?>)>
 <?php
+$this->breadcrumbs=array(
+    'About',
+);
+
 $this->pageTitle=$mainpage['title'];
 
 $headerText = $mainpage['header1'];

@@ -4,6 +4,10 @@
 </head>
 <body>
 <?php
+$this->breadcrumbs=array(
+    'Course',
+);
+
 	class Course 
 	{
 		public $courseImage;
@@ -54,6 +58,7 @@
 	$courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
 	
 	?>
+
 <div id='coursesMainBox'>
 
 

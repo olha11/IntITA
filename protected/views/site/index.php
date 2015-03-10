@@ -9,8 +9,42 @@
 <?php
 /* @var $this SiteController */
 ?>
+<script>
+    var key = document.getElementById('enter_button');
+    var nav = document.getElementById('navigation');
+    var logo = document.getElementById('logo_img');
+    var border = document.getElementById('button_border');
+    var lang = document.getElementById('lang');
 
-<img id="sliderTexture" src="<?php echo $mainpage['sliderTexture']; ?>">
+    key.className = "";
+    nav.className = "";
+    logo.className = "";
+    border.className = "";
+    lang.className = "";
+    document.getElementById('logo').src="<?php echo $this->logoURL; ?>";
+
+    window.onscroll = function() {
+        var pageY = window.pageYOffset || document.documentElement.scrollTop;
+        if (pageY >= key.offsetHeight) {
+            document.getElementById('logo').src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png";
+            key.className = "down";
+            logo.className = "down";
+            nav.className = "down";
+            border.className = "down";
+            lang.className = "down";
+        } else {
+            document.getElementById('logo').src="<?php echo $this->logoURL; ?>";
+            border.className = "";
+            key.className = "";
+            logo.className = "";
+            nav.className = "";
+            lang.className = "";
+        }
+    }
+</script>
+
+
+
 <div class="insideSlider">
     <div class="lineAndButton">
         <img class="sliderLine" src="<?php echo $mainpage['sliderLine']; ?>">
@@ -167,7 +201,8 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
             </div>
             <div class="lineForm"><hr color="#4b75a4" size="1px"></div>
             <div class="social"><?php echo $mainpage['socialText']; ?></div>
-            <div class="image" > <img name="networking" src="<?php echo $mainpage['imageNetwork']; ?>" width="410" height="50" border="0" id="networking" usemap="#m_networking" alt="" /><map name="m_networking" id="m_networking">
+            <div class="image" > <img name="networking" src="<?php echo $mainpage['imageNetwork']; ?>" width="410" height="50" border="0" id="networking" usemap="#m_networking" alt="" />
+                <map name="m_networking" id="m_networking">
                     <area shape="circle" coords="354,26, 20" href="javascript:" title="instagram" />
                     <area shape="circle" coords="309,26, 21" href="javascript:" title="Rubka" />
                     <area shape="circle" coords="262,27, 20" href="javascript:" title="Вконтакте" />
@@ -176,7 +211,8 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
                     <area shape="circle" coords="121,26, 21" href="javascript:" title="Google +" />
                     <area shape="circle" coords="74,26, 20" href="javascript:" title="facebook" />
                     <area shape="circle" coords="27,25, 21" href="javascript:" title="twitter" />
-                </map></div>
+                </map>
+            </div>
         </div>
     </div>
 
