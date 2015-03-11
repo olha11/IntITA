@@ -144,9 +144,6 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
                         <img class="grid" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/grid.png">
         		   		<img src="<?php echo $stepValue->stepImage; ?>">
         		    </div>
-					<div class="line">
-                    </div>
-
                     <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
 					<div class="stepArticle">
 						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
@@ -167,8 +164,6 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
                         <img class="grid" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/grid.png">
         		   		<img src="<?php echo $stepValue->stepImage; ?>">
         		    </div>
-					<div class="line">
-                    </div>
                      <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
 					<div class="stepArticle">
 						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
