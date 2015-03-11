@@ -60,6 +60,7 @@ return array(
 
 		'urlManager'=>array(
 			//'urlFormat'=>'path',
+			//'class'=>'DLanguageUrlManager',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
@@ -106,11 +107,8 @@ return array(
 		),
 
 		'request'=>array(
-			'class'=>'DLanguageHttpRequest',
-            
-        ),
-        'urlManager'=>array(
-			'class'=>'DLanguageUrlManager',
+			//'class'=>'DLanguageHttpRequest',
+
         ),
 
 	),

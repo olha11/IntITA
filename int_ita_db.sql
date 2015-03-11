@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-03-10 19:56:52
+-- Date/time:                    2015-03-11 17:51:03
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_authorizations: ~24 rows (approximately)
+-- Dumping data for table int_ita_db.aa_authorizations: ~22 rows (approximately)
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
 INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(1, 2, '2015-03-02 15:33:25', '::1'),
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `aboutus` (
   PRIMARY KEY (`blockID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.aboutus: ~6 rows (approximately)
+-- Dumping data for table int_ita_db.aboutus: ~5 rows (approximately)
 /*!40000 ALTER TABLE `aboutus` DISABLE KEYS */;
 INSERT INTO `aboutus` (`blockID`, `language`, `line2Image`, `iconImage`, `titleText`, `textAbout`, `linkAddress`, `imagesPath`, `drop1Text`, `drop2Text`, `drop3Text`, `dropName`, `textLarge`) VALUES
 	(1, 'UA', '/css/images/line2.png', 'image1.png', 'Про що мрієш ти?', '<p>Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль? Закордонні подорожі, можливо, до екзотичних країн?</p>', '/index.php?r=site/aboutdetail&id=1', '/css/images/', '', '', '', '', '<p>Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль? Закордонні подорожі, можливо, до екзотичних країн? Забезпечене життя для себе та близьких, коли не доводиться думати про гроші?\nА, може, це свобода жити своїм життям? Самостійно керувати власним часом з можливістю працювати за зручним графіком без необхідності щодня їздити на роботу, але при цьому мати стабільно високий дохід?\n	Можливо ти хочеш заробляти, займаючись улюбленою справою і отримувати задоволення від сучасної професії?\nПро що б ти не мріяв, для здійснення більшості мрій потрібні гроші. Сьогодні середня зарплата в Україні є найнижчою в Європі: близько 3,5 тис грн у місяць. Навіть якщо брати сферу бізнесу, зарплати більшості робітників не перевищують 5-8 тис грн. \nЯк щодо 40 - 60 тис грн в місяць з можливістю працювати за гнучким графіком та дистанційно? Ти думаєш, що в нашій країні такі умови лише у керівників та власників бізнесу? У нас хороша новина: вже через рік-два-три так зможеш заробляти і ти.</p>\n\n<p><span class="detailTitle2">Професія майбутнього</span>\n Сьогодні у тебе є реальна можливість поєднати хороший заробіток, гнучкий графік роботи та зручність дистанційної роботи. І це не “заработок в интернете”, про який кричить банерна реклама на багатьох сайтах. Ми віримо у те, що високого стабільного доходу можна досягти лише за допомогою власних зусиль.\nМи живемо в епоху, коли головним двигуном розвитку світової економіки є інформаційні технології (ІТ). Вони дозволяють досягти нових проривних результатів у традиційних галузях: виробництві та послугах. Саме інформаційні технології повністю змінили і продовжують трансформувати індустрії звязку, розваг (книги, музика, фільми), банківських послуг, а також такі традиційні бізнеси, як послуги таксі (Uber), готелів (Airbnb), навчання (Coursera). \nГерої інформаційної епохи - це спеціалісти з інформаційних технологій. Вони знаходяться на передовій змін, вони придумали та продовжують розвивати Windows, iOS, Android, а також мільйони додатків до них, вони створюють соціальні мережі, сайти та бази даних. \nГарна новина для тебе: сьогодні таких спеціалістів не вистачає. Інформаційні технології розвиваються дуже швидко і стають потрібними усюди, тому людей не вистачає, існуючі навчальні заклади просто не встигають готувати потрібну кількість. Нестача спеціалістів означає, що зарплати на ринку стабільно зростають, і сягнули небачених для України значень: в середньому спеціалісти з інформаційних технологій сьогодні отримують 3-5 тис доларів у місяць, і при цьому роботодавці активно полюють на професіоналів. Секрет таких високих зарплат не лише у дефіциті кадрів, а й у тому, що для ІТ-галузі кордони - не проблема. Ти можеш працювати вдома зі своєї квартири в Україні над замовленням клієнта зі США чи Німеччини і отримувати винагороду у доларах чи євро з рівнем оплати, не набагато нижчим від американських чи європейських стандартів.  \nМи запрошуємо тебе приєднатися до світової інформаційної еліти та за короткий час стати професіоналом у сфері інформаційних технологій, щоб отримувати стабільно високий дохід та працювати в зручних умовах за гнучким графіком. </p>\n\n<p><span class="detailTitle2">Що очікується від тебе</span><br/>\nПрограмування - це не так складно, як ти можеш уявляти. Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля. Ризикнемо сказати, що крім часу та зусиль (та, зрозуміло, наявності простенького компютера) не потрібно більше ні-чо-го. Не потрібно бути сильним у математиці: навіть якщо у школі ти не любив математику, а твої оцінки не піднимались вище середнього рівня, ти зможеш стати чудовим програмістом. Не потрібно знати, як влаштований компютер чи бути досвіченим користувачем будь-яких програм. Достатньо часу на навчання та бажання займатися. Гарні знання з математики, логіки, комп’ютера можуть пришвидшити темп навчання, але й без них кожен зможе досягти високого рівня професіоналізму у програмуванні завдяки іноваційному підходу до навчання Академії Програмування ІНТІТА.</p>'),
@@ -304,6 +304,27 @@ INSERT INTO `header` (`headerID`, `language`, `logoURL`, `smallLogoURL`, `menuIt
 /*!40000 ALTER TABLE `header` ENABLE KEYS */;
 
 
+-- Dumping structure for table int_ita_db.headerlang
+DROP TABLE IF EXISTS `headerlang`;
+CREATE TABLE IF NOT EXISTS `headerlang` (
+  `l_id` int(11) NOT NULL AUTO_INCREMENT,
+  `header_id` int(11) NOT NULL,
+  `lang_id` varchar(6) NOT NULL,
+  `l_menuItem1` varchar(30) NOT NULL,
+  `l_menuItem2` varchar(30) NOT NULL,
+  `l_menuItem3` varchar(30) NOT NULL,
+  `l_menuItem4` varchar(30) NOT NULL,
+  `l_enterButtonText` varchar(30) NOT NULL,
+  PRIMARY KEY (`l_id`),
+  KEY `FK_headerlang_header` (`header_id`),
+  CONSTRAINT `FK_headerlang_header` FOREIGN KEY (`header_id`) REFERENCES `header` (`headerID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table int_ita_db.headerlang: ~0 rows (approximately)
+/*!40000 ALTER TABLE `headerlang` DISABLE KEYS */;
+/*!40000 ALTER TABLE `headerlang` ENABLE KEYS */;
+
+
 -- Dumping structure for table int_ita_db.hometasks
 DROP TABLE IF EXISTS `hometasks`;
 CREATE TABLE IF NOT EXISTS `hometasks` (
@@ -329,7 +350,7 @@ INSERT INTO `hometasks` (`hometask_ID`, `fkmodule_ID`, `fklecture_ID`, `hometask
 DROP TABLE IF EXISTS `language`;
 CREATE TABLE IF NOT EXISTS `language` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` enum('EN','UA','RU') NOT NULL,
+  `code` varchar(6) NOT NULL,
   `language` varchar(50) NOT NULL,
   `country` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
@@ -461,7 +482,7 @@ CREATE TABLE IF NOT EXISTS `regextended` (
   PRIMARY KEY (`regID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.regextended: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.regextended: ~0 rows (approximately)
 /*!40000 ALTER TABLE `regextended` DISABLE KEYS */;
 INSERT INTO `regextended` (`regID`, `language`, `mainLink`, `regLink`, `header`, `headerFoto`, `firstName`, `middleName`, `lastName`, `dateOfBirth`, `education`, `tel`, `email`, `password`, `repeatPassword`, `submitButtonText`, `chooseFileButton`, `fileNotChoose`) VALUES
 	(1, 'UA', 'Головна', 'Реєстрація', 'Персональні', 'Завантажити фото профілю', 'Ім\'я', 'По-батькові', 'Прізвище', 'Дата народження', 'Освіта', 'Телефон', 'Email', 'Пароль', 'Повтор пароля', 'Відправити />', 'Виберіть файл', 'Файл не вибрано ...'),
@@ -646,20 +667,22 @@ INSERT INTO `theoreticalsmaterials` (`tm_ID`, `fkmodule_ID`, `fklecture_ID`, `TM
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `userID` int(11) NOT NULL AUTO_INCREMENT,
-  `userName` varchar(50) NOT NULL,
   `userEmail` varchar(35) NOT NULL,
   `userPassword` varchar(40) NOT NULL,
   `userHash` varchar(20) DEFAULT NULL,
   `userStatus` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`userID`),
   UNIQUE KEY `user_email` (`userEmail`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.users: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.users: ~3 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`userID`, `userName`, `userEmail`, `userPassword`, `userHash`, `userStatus`) VALUES
-	(1, '', 'mail1@mail.com', 'qwerty', '67896', 0),
-	(2, 'name', 'email', 'password', '098877', 0);
+INSERT INTO `users` (`userID`, `userEmail`, `userPassword`, `userHash`, `userStatus`) VALUES
+	(1, 'mail1@mail.com', 'qwerty', '67896', 0),
+	(2, 'email', 'password', '098877', 0),
+	(4, 'email1', 'password1', '232213', 1),
+	(5, 'emaildd', 'passworfg', '232213', 0),
+	(6, 'admin', 'admin', '232213', 0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 

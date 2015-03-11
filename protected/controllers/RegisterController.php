@@ -5,11 +5,25 @@ class RegisterController {
 
     public function actionSubmitForm()
     {
-        $this->redirect(array('users/create'));
+
+
         if (isset($_POST['isExtended'])) {
             $this->redirect(array('studentreg/index'));
         }
-        $this->redirect(array('users/create'));
+
+
+
+        $connection=Yii::app()->db;
+        $sql="INSERT INTO `users` (`userEmail`, `userPassword`) VALUES (:email, :password);";
+        $command=$connection->createCommand($sql);
+
+        $command->bindParam(":email",$_POST['email'],PDO::PARAM_STR);
+
+        $command->bindParam(":password",$_POST['password']::PARAM_STR);
+        $command->execute();
+
+        $this->redirect(array('courses/index'));
+
     }
 
 }

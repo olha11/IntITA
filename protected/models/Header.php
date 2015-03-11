@@ -126,4 +126,31 @@ class Header extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+    /*
+	public function behaviors() {
+		return array(
+			'ml' => array(
+				'class' => 'application.models.behaviors.MultilingualBehavior',
+				'langClassName' => 'PostLang',
+				'langTableName' => 'headerlang',
+				'langForeignKey' => 'header_id',
+				'langField' => 'lang_id',
+				'localizedAttributes' => array('title', 'content'), //attributes of the model to be translated
+				'localizedPrefix' => 'l_',
+				'languages' => Yii::app()->params['translatedLanguages'], // array of your translated languages. Example : array('fr' => 'Français', 'en' => 'English')
+				'defaultLanguage' => Yii::app()->params['defaultLanguage'], //your main language. Example : 'fr'
+				//'createScenario' => 'insert',
+				//'localizedRelation' => 'i18nPost',
+				//'multilangRelation' => 'multilangPost',
+				//'forceOverwrite' => false,
+				//'forceDelete' => true,
+				'dynamicLangClass' => true, //Set to true if you don't want to create a 'PostLang.php' in your models folder
+			),
+		);
+	}
+
+	public function defaultScope()
+	{
+		return $this->ml->localizedCriteria();
+	}*/
 }

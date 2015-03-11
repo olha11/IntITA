@@ -71,7 +71,7 @@ class UsersController extends Controller
 		{
 			$model->attributes=$_POST['Users'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->user_id));
+				$this->redirect(array('view','id'=>$model->userID));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class UsersController extends Controller
 		{
 			$model->attributes=$_POST['Users'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->user_id));
+				$this->redirect(array('view','id'=>$model->userID));
 		}
 
 		$this->render('update',array(
@@ -169,5 +169,13 @@ class UsersController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function actionLogin($userEmail, $userPassword){
+		$identity=new UserIdentity($userEmail,$userPassword);
+		if($identity->authenticate())
+			Yii::app()->user->login($identity);
+		else
+			echo $identity->errorMessage;
 	}
 }
