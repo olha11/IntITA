@@ -53,7 +53,8 @@
     <div class="sliderText">
         <?php echo $mainpage['sliderHeader']; ?><br>
         <div class="sliderTextJr">
-            _____<br><br>
+            <br/>
+            <hr style="border: 1px solid #ffffff; width: 100px;">
             <?php echo $mainpage['sliderText']; ?>
         </div>
     </div>
