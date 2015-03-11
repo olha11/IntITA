@@ -104,9 +104,6 @@ img.grid {
 }
 
 .hexagon {
-    position:absolute;
-    width:10.7%;
-    height: 222px;
     z-index:1;
 }
 .stepArticle {
@@ -144,7 +141,6 @@ p.stepName {
     position:absolute;
     right:272px;
 }
-
 .stepLeft .stepUrl {
 	float:left;
     border-right: none;
