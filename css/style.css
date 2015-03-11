@@ -64,7 +64,7 @@ p {
     z-index: 5;
 }
 #navigation.down {
-    height: 68px;
+    height: 55px;
 }
 
 #navigation ul {
@@ -72,7 +72,7 @@ p {
     margin-top: 65px;
 }
 #navigation.down ul {
-    margin-top: 22px;
+    margin-top: 13px;
 }
 
 #navigation li {
@@ -99,7 +99,7 @@ p {
     max-height: 75px;
 }
 #logo_img.down {
-    margin-top: 12px;
+    margin-top: 5px;
 }
 #logo_img.down img {
     max-height: 46px;
@@ -145,7 +145,7 @@ p {
     background: #363636;
 }
 #enter_button.down {
-    margin-top: 18px;
+    margin-top: 9px;
 }
 #enter_button.down:hover{
     background: #454545;
