@@ -39,7 +39,7 @@ $post=TeachersTemp::model()->findAll();
                     <tr>
                         <td  class="profileTeacher" >
                             <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
-                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Профіль</a>
+                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">персональна сторінка</a>
                         </td>
                         <td>
                             <h2><?php echo $teacherValue->last_name ?></h2>
@@ -96,7 +96,7 @@ $post=TeachersTemp::model()->findAll();
                     <tr>
                         <td  class="profileTeacher" >
                             <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
-                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Профіль</a>
+                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">персональна сторінка</a>
                         </td>
                         <td>
                             <h2><?php echo $teacherValue->last_name ?></h2>

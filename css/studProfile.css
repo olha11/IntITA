@@ -125,6 +125,7 @@ table.profileInfo {
     width: 39%;
     border: 1px solid #d8d8d8;
     border-radius: 5px;
+    text-align: center;
 }
 .profileActivity{
     display:inline-block;
@@ -132,12 +133,19 @@ table.profileInfo {
     width: 59%;
 }
 img.avatarimg  {
-    display: block;
+    display: inline-block;
     width:176px;
-    margin: 0 32px 0 22px;
+    margin: 0 0 0 0;
 }
 table.titleProfile{
     margin:16px 0px 16px 22px;
+    display:inline-block;
+    color: #4b75a4;
+    font-size: smaller;
+    line-height: 120%;
+}
+table.titleProfileAv{
+    margin:16px 0px 16px 0;
     display:inline-block;
     color: #4b75a4;
     font-size: smaller;
@@ -149,10 +157,13 @@ table.titleProfile{
 .titleProfile h2{
     font-weight: normal;
     margin-top: 0;
-    margin-right: 70px;
     margin-bottom: 0;
 }
-
+.titleProfileAv h2{
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 .formStudProf input[type="submit"],.formStudProf input[type="button"] {
     width: 176px;
     height:43px;
@@ -164,15 +175,16 @@ table.titleProfile{
     box-shadow:0px 2px 0px #7f7f7f;
     font-size: medium;
 }
-.formStudProf input[type="submit"]:hover,.formStudProf input[type="button"]:hover  {
-    border-top-color: #454545;
+.formStudProf input[type="button"]:hover  {
     background: #454545;
-    color: #fcfcfc;
     cursor: pointer;
+}
+.rowbuttons{
+    text-align: center;
 }
 /*������ ��� �����*/
 .studProf input[type="submit"] {
-    margin:16px 0px 32px 359px;
+    margin:16px 0px 32px 0;
 }
 /*������ ����� �����*/
 .studPhoto input[type="submit"], .profileActivity input[type="submit"] {
@@ -184,18 +196,18 @@ table.titleProfile{
 
 #avatarInfo{
     color:#666666;
-    margin:10px 0 140px 22px;
+    margin:10px 0 140px 0;
 	height:20px;
 }
 #photoForm {
     margin-top:10px;
 }
 .fileform {
+    display: inline-block;
     overflow: hidden;
     position: relative;
     width: 176px;
 	height:45px;
-	margin-left:22px;
     margin-top: 22px;
 }
 
@@ -219,7 +231,7 @@ input[type="file"].chooseAvatar{
 input[type="button"].avatar,input[type="submit"].avatar{
     position:absolute;
     z-index:2;
-    margin:0;
+    left:0;
 }
 
 span.required

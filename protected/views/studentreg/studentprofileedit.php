@@ -5,6 +5,19 @@
     .passEye .openEye {
         background-position:left bottom;
     }
+    .formStudProf input[type="submit"]{
+        background:#4b75a4;
+        background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
+        background-repeat: no-repeat;
+        background-position: 130px 50%;
+    }
+    .formStudProf input[type="submit"]:hover {
+        background: #454545;
+        background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
+        background-repeat: no-repeat;
+        background-position: 130px 50%;
+        cursor: pointer;
+    }
 </style>
 <?php
 /* @var $this StudentRegController */
@@ -110,8 +123,8 @@ $post=StudentReg::model()->findByPk(1);
             <span class="passEye">  <?php echo $form->passwordField($model,'password_repeat',array('maxlength'=>255)); ?></span>
             <?php echo $form->error($model,'password_repeat'); ?>
         </div>
-        <div class="row buttons">
-            <?php echo CHtml::submitButton('ЗБЕРЕГТИ />', array('id' => "submit")); ?>
+        <div class="rowbuttons">
+            <?php echo CHtml::submitButton('ЗБЕРЕГТИ', array('id' => "submit")); ?>
         </div>
         <?php if(Yii::app()->user->hasFlash('message')):
             echo Yii::app()->user->getFlash('message');
@@ -126,7 +139,7 @@ $post=StudentReg::model()->findByPk(1);
             </tr>
         </table>
 
-        <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
+        <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/></br>
         <div class="fileform">
             <input class="avatar" type="button" value="ВИБЕРІТЬ ФАЙЛ">
             <input tabindex="-1" type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
@@ -138,6 +151,7 @@ $post=StudentReg::model()->findByPk(1);
                 echo Yii::app()->user->getFlash('avatarmessage');
             endif; ?>
         </div>
+    </div>
     <?php $this->endWidget(); ?>
 </div><!-- form -->
 </div>
