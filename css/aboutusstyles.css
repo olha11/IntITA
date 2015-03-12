@@ -75,8 +75,8 @@
     font-size:18px;
 }
 .title p {
-width:210px;
-text-align:  justify;
+    width:210px;
+    text-align:  left;
     position:absolute;
     margin-top:5px;
     color:#666666;
