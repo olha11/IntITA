@@ -91,7 +91,7 @@ class StudentReg extends CActiveRecord
             'phone' => 'Телефон',
             'address' => 'Адреса',
             'education' => 'Освіта',
-            'educform' => 'Форма навчання',
+            'educform' => 'Роль',
             'interests' => 'Інтереси',
             'aboutUs' => 'Звідки про нас?',
             'send_letter'=> 'Повідомлення',

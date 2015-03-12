@@ -81,6 +81,13 @@
             <?php echo $form->textField($model,'phone',array('maxlength'=>15)); ?>
             <span><?php echo $form->error($model,'phone'); ?></span>
         </div>
+        <div class="rowRadioButton">
+            <?php $model->educform ='0'; ?>
+            <?php echo $form->labelEx($model,'educform'); ?>
+            <div class="radiolabel">
+            <?php echo $form->radioButtonList($model,'educform',array('0'=>'Студент','1'=>'Вчитель'), array('separator'=>' '));?>
+            </div>
+       </div>
         <div class="row">
             <?php echo $form->labelEx($model,'email'); ?>
             <?php echo $form->textField($model,'email',array('maxlength'=>255)); ?>

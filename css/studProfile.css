@@ -104,6 +104,18 @@ table.profileInfo {
     box-shadow:0 0 3px #4b75a4;
     cursor: pointer;
 }
+.rowRadioButton input[type="radio"]
+{
+    float:left;
+    width: 40px;
+
+}
+.radiolabel label
+{
+    width: 100px;
+    text-align: left;
+    margin-bottom: 8px;
+}
 .rowRadioButton input[type="radio"]:hover
 {
     box-shadow:0 0 3px #ffffff;
