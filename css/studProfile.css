@@ -110,10 +110,9 @@ table.profileInfo {
 .rowRadioButton input[type="radio"]
 {
     float:left;
-    width: 40px;
-
+    width: 20px;
 }
-.radiolabel label
+.radiolabel label, .radiolabelRole label
 {
     width: 100px;
     text-align: left;
@@ -255,8 +254,7 @@ span.required
 span.interestBG{
     background-color: #edf1f6;
     margin-right: 5px;
-    padding-left: 3px;
-    padding-right: 3px;
+
     border-radius: 5px;
 }
 .formStudProf .errorMessage

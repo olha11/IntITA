@@ -71,7 +71,8 @@ span.spoilerClick {
 }
 span.spoilerTriangle {
     font-size: xx-small;
-    color: #000000;
+    color: #4b75a4;
+    margin-left: 3px;
 }
 span.subChapter{
     color: #4b75a4;

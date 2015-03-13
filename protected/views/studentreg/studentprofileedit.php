@@ -40,9 +40,9 @@ $post=StudentReg::model()->findByPk(1);
     </div>
     <div class="profileStatus">
         <div>
-         <?php echo $post->firstName;?></br>
-         <?php echo $post->middleName;?></br>
-         <?php echo $post->secondName;?></br>
+            <?php echo $post->firstName;?></br>
+            <?php echo $post->secondName;?></br>
+            <?php echo $post->nickname;?></br>
          <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
         </div>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
@@ -67,53 +67,62 @@ $post=StudentReg::model()->findByPk(1);
                 </td>
             </tr>
         </table>
-
         <div class="row">
             <?php echo $form->label($model,'firstName'); ?>
-            <?php echo $form->textField($model,'firstName',array('maxlength'=>255)); ?>
+            <?php echo $form->textField($model,'firstName',array('value'=>$post->firstName,'maxlength'=>255)); ?>
             <span><?php echo $form->error($model,'firstName'); ?></span>
         </div>
         <div class="row">
-            <?php echo $form->label($model,'middleName'); ?>
-            <?php echo $form->textField($model,'middleName',array('maxlength'=>255)); ?>
-            <span><?php echo $form->error($model,'middleName'); ?></span>
-        </div>
-        <div class="row">
             <?php echo $form->label($model,'secondName'); ?>
-            <?php echo $form->textField($model,'secondName',array('maxlength'=>255)); ?>
+            <?php echo $form->textField($model,'secondName',array('value'=>$post->secondName,'maxlength'=>255)); ?>
             <span><?php echo $form->error($model,'secondName'); ?></span>
         </div>
         <div class="row">
+            <?php echo $form->label($model,'nickname'); ?>
+            <?php echo $form->textField($model,'nickname',array('value'=>$post->nickname,'maxlength'=>255)); ?>
+            <span><?php echo $form->error($model,'nickname'); ?></span>
+        </div>
+        <div class="row">
             <?php echo $form->label($model,'birthday'); ?>
-            <?php echo $form->textField($model,'birthday',array('maxlength'=>11)); ?>
+            <?php echo $form->textField($model,'birthday',array('value'=>$post->birthday,'maxlength'=>11, 'placeholder'=>'введіть в форматі дд.мм.рррр')); ?>
             <span><?php echo $form->error($model,'birthday'); ?></span>
         </div>
         <div class="row">
-            <?php echo $form->label($model,'education'); ?>
-            <?php echo $form->textField($model,'education',array('maxlength'=>255)); ?>
-            <span><?php echo $form->error($model,'education'); ?></span>
-        </div>
-        <div class="row">
-            <?php echo $form->label($model,'phone'); ?>
-            <?php echo $form->textField($model,'phone',array('maxlength'=>15)); ?>
+            <?php echo $form->labelEx($model,'phone'); ?>
+            <?php echo $form->textField($model,'phone',array('value'=>$post->phone,'maxlength'=>15)); ?>
             <span><?php echo $form->error($model,'phone'); ?></span>
         </div>
         <div class="row">
             <?php echo $form->label($model,'address'); ?>
-            <?php echo $form->textField($model,'address',array('maxlength'=>255)); ?>
+            <?php echo $form->textField($model,'address',array('value'=>$post->address,'maxlength'=>255)); ?>
             <span><?php echo $form->error($model,'address'); ?></span>
         </div>
         <div class="row">
-            <?php echo $form->label($model,'interests'); ?>
-            <?php echo $form->textField($model,'interests',array('maxlength'=>255, 'placeholder'=>'введіть Ваші інтереси через кому')); ?>
-            <span><?php echo $form->error($model,'interests'); ?></span>
+            <?php echo $form->label($model,'education'); ?>
+            <?php echo $form->textField($model,'education',array('value'=>$post->education,'maxlength'=>255)); ?>
+            <span><?php echo $form->error($model,'education'); ?></span>
         </div>
         <div class="row">
             <?php echo $form->label($model,'aboutMy'); ?>
-            <?php echo $form->textArea($model,'aboutMy'); ?>
+            <?php echo $form->textArea($model,'aboutMy',array('value'=>$post->aboutMy)); ?>
             <?php echo $form->error($model,'aboutMy'); ?>
         </div>
-        <div class="rowPassEd">
+        <div class="row">
+            <?php echo $form->label($model,'interests'); ?>
+            <?php echo $form->textField($model,'interests',array('value'=>$post->interests,'maxlength'=>255, 'placeholder'=>'введіть Ваші інтереси через кому')); ?>
+            <span><?php echo $form->error($model,'interests'); ?></span>
+        </div>
+        <div class="row">
+            <?php echo $form->label($model,'aboutUs'); ?>
+            <?php echo $form->textField($model,'aboutUs',array('value'=>$post->aboutUs)); ?>
+            <span><?php echo $form->error($model,'aboutUs'); ?></span>
+        </div>
+        <div class="row">
+            <?php echo $form->label($model,'email'); ?>
+            <?php echo $form->textField($model,'email',array('value'=>$post->email,'maxlength'=>255)); ?>
+            <span><?php echo $form->error($model,'email'); ?></span>
+        </div>
+        <div class="rowPass">
             <?php echo $form->label($model,'password'); ?>
             <span class="passEye"><?php echo $form->passwordField($model,'password',array('maxlength'=>255)); ?></span>
             <?php echo $form->error($model,'password'); ?>
@@ -145,7 +154,7 @@ $post=StudentReg::model()->findByPk(1);
             <input tabindex="-1" type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
             <input tabindex="-1" class="uploadAvatar" type="submit">
         </div>
-        <div id="avatarInfo">Файл не вибрано...</div>
+        <div id="avatarInfo">Розмір фото до 512кб</div>
         <div class="avatarError">
             <?php if(Yii::app()->user->hasFlash('avatarmessage')):
                 echo Yii::app()->user->getFlash('avatarmessage');
