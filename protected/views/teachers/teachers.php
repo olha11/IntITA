@@ -17,14 +17,14 @@ $post=TeachersTemp::model()->findAll();
 
 <div class="subNavBlock">
     <div class="subLinks">
-        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Головна</a> &#187; <a href="#">Викладачі</a>
+        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php"><?php echo $page['BCmain']?></a> &#187; <a href="#"><?php echo $page['BCteachers']?></a>
     </div>
 </div>
 
 <div class='teachersList'>
 
     <div class="titleTeachers">
-                <h1>Наші викладачі</h1>
+                <h1><?php echo $page['header']?></h1>
     </div>
 
     <div class="leftTeacher">
@@ -46,7 +46,7 @@ $post=TeachersTemp::model()->findAll();
                             <h2><?php echo $teacherValue->first_name ?> <?php echo $teacherValue->middle_name ?></h2>
                             <?php echo $teacherValue->profile_text ?>
                             <p>
-                                Ведет курсы:
+                                <?php echo $page['courses']?>
                             </p>
                             <div class="teacherCourses">
                                 <ul>
@@ -62,8 +62,8 @@ $post=TeachersTemp::model()->findAll();
                                 </ul>
                             </div>
                             <div class="aboutMore">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Читать полностью &#187;</a></br>
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/><a href="#">Отзывы о преподавателе &#187;</a>
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>"><?php echo $page['link1']?> &#187;</a></br>
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/><a href="#"><?php echo $page['link2']?> &#187;</a>
                             </div>
                         </td>
                     </tr>
@@ -94,7 +94,7 @@ $post=TeachersTemp::model()->findAll();
                             <h2><?php echo $teacherValue->first_name ?> <?php echo $teacherValue->middle_name ?></h2>
                             <?php echo $teacherValue->profile_text ?>
                             <p>
-                                Ведет курсы:
+                                <?php echo $page['courses']?>
                             </p>
                             <div class="teacherCourses">
                                 <ul>
@@ -110,8 +110,8 @@ $post=TeachersTemp::model()->findAll();
                                 </ul>
                             </div>
                             <div class="aboutMore">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="#">Читать полностью &#187;</a></br>
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/><a href="#">Отзывы о преподавателе &#187;</a>
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="#"><?php echo $page['link1']?> &#187;</a></br>
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/><a href="#"><?php echo $page['link2']?> &#187;</a>
                             </div>
                         </td>
                     </tr>

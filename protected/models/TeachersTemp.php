@@ -5,11 +5,13 @@
  *
  * The followings are the available columns in table 'teacher_temp':
  * @property integer $teacher_id
+ * @property string $lang
  * @property string $first_name
  * @property string $middle_name
  * @property string $last_name
  * @property string $foto_url
  * @property string $subjects
+ * @property string $profile_text_big
  * @property string $profile_text
  * @property string $readMoreLink
  */
@@ -23,6 +25,17 @@ class TeachersTemp extends CActiveRecord
 		return 'teacher_temp';
 	}
 
+	public function setValuesByID($id){
+		$this->first_name = $this->findByPk($id)->first_name;
+		$this->foto_url = $this->findByPk($id)->foto_url;
+		$this->last_name = $this->findByPk($id)->last_name;
+		$this->middle_name = $this->findByPk($id)->middle_name;
+		$this->profile_text = $this->findByPk($id)->profile_text;
+		$this->readMoreLink = $this->findByPk($id)->readMoreLink;
+		$this->subjects = $this->findByPk($id)->subjects;
+		return $this;
+	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -31,13 +44,14 @@ class TeachersTemp extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, middle_name, last_name, foto_url, profile_text, readMoreLink', 'required'),
+			array('lang, first_name, middle_name, last_name, foto_url, subjects, profile_text_big, profile_text, readMoreLink', 'required'),
+			array('lang', 'length', 'max'=>6),
 			array('first_name, middle_name, last_name', 'length', 'max'=>35),
 			array('foto_url, subjects', 'length', 'max'=>100),
 			array('readMoreLink', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('teacher_id, first_name, middle_name, last_name, foto_url, subjects, profile_text, readMoreLink', 'safe', 'on'=>'search'),
+			array('teacher_id, lang, first_name, middle_name, last_name, foto_url, subjects, profile_text_big, profile_text, readMoreLink', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,11 +73,13 @@ class TeachersTemp extends CActiveRecord
 	{
 		return array(
 			'teacher_id' => 'Teacher',
+			'lang' => 'Lang',
 			'first_name' => 'First Name',
 			'middle_name' => 'Middle Name',
 			'last_name' => 'Last Name',
 			'foto_url' => 'Foto Url',
 			'subjects' => 'Subjects',
+			'profile_text_big' => 'Profile Text Big',
 			'profile_text' => 'Profile Text',
 			'readMoreLink' => 'Read More Link',
 		);
@@ -88,11 +104,13 @@ class TeachersTemp extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('teacher_id',$this->teacher_id);
+		$criteria->compare('lang',$this->lang,true);
 		$criteria->compare('first_name',$this->first_name,true);
 		$criteria->compare('middle_name',$this->middle_name,true);
 		$criteria->compare('last_name',$this->last_name,true);
 		$criteria->compare('foto_url',$this->foto_url,true);
 		$criteria->compare('subjects',$this->subjects,true);
+		$criteria->compare('profile_text_big',$this->profile_text_big,true);
 		$criteria->compare('profile_text',$this->profile_text,true);
 		$criteria->compare('readMoreLink',$this->readMoreLink,true);
 

@@ -54,6 +54,8 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+			'loginUrl' => array('/site/login'),
+			'class'=>'WebUser',
 		),
 
 		// uncomment the following to enable URLs in path-format

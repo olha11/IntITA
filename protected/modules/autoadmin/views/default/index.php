@@ -21,20 +21,18 @@ $this->breadcrumbs=array(
 <h2>Про нас</h2>
 <ul>
 	<li><a href="?r=autoadmin/aboutus/blockextended/">Блоки</a></li>
-
 </ul>
 
 <h2>Викладачі</h2>
 <ul>
-	<li><a href="?r=autoadmin/">Викладачі</a></li>
-
+	<li><a href="?r=autoadmin/teachers/page/">Параметри сторінки <Наші викладачі></a></li>
+	<li><a href="?r=autoadmin/teachers/list/">Список викладачів</a></li>
 </ul>
 
 <h2>Реєстрація</h2>
 <ul>
 	<li><a href="?r=autoadmin/mainpage/form/">Форма швидкої реєстрації на головній</a></li>
 	<li><a href="?r=autoadmin/register/extended/">Розширена реєстрація</a></li>
-
 </ul>
 
 <br clear="both"/>

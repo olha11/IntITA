@@ -37,6 +37,7 @@ $massAbout=array($block1,$block2,$block3);
     <div class="header">
         <?php echo $headerText; ?>
         <p>
+            USER: <?php echo Yii::app()->user->name; ?>
             <?php echo $subheaderText; ?>
         </p>
     </div>
