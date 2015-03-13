@@ -17,6 +17,10 @@
  * @property string $menuItem4
  * @property string $item4Link
  * @property string $enterButtonText
+ * @property string $logoutButtonText
+ *
+ * The followings are the available model relations:
+ * @property Headerlang[] $headerlangs
  */
 class Header extends CActiveRecord
 {
@@ -36,13 +40,13 @@ class Header extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('language, logoURL, smallLogoURL, menuItem1, item1Link, menuItem2, item2Link, menuItem3, item3Link, menuItem4, item4Link, enterButtonText', 'required'),
+			array('language, logoURL, smallLogoURL, menuItem1, item1Link, menuItem2, item2Link, menuItem3, item3Link, menuItem4, item4Link, enterButtonText, logoutButtonText', 'required'),
 			array('language', 'length', 'max'=>2),
 			array('logoURL, smallLogoURL, item1Link, item2Link, item3Link, item4Link', 'length', 'max'=>255),
-			array('menuItem1, menuItem2, menuItem3, menuItem4, enterButtonText', 'length', 'max'=>30),
+			array('menuItem1, menuItem2, menuItem3, menuItem4, enterButtonText, logoutButtonText', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('headerID, language, logoURL, smallLogoURL, menuItem1, item1Link, menuItem2, item2Link, menuItem3, item3Link, menuItem4, item4Link, enterButtonText', 'safe', 'on'=>'search'),
+			array('headerID, language, logoURL, smallLogoURL, menuItem1, item1Link, menuItem2, item2Link, menuItem3, item3Link, menuItem4, item4Link, enterButtonText, logoutButtonText', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,6 +58,7 @@ class Header extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'headerlangs' => array(self::HAS_MANY, 'Headerlang', 'header_id'),
 		);
 	}
 
@@ -76,6 +81,7 @@ class Header extends CActiveRecord
 			'menuItem4' => 'Menu Item4',
 			'item4Link' => 'Item4 Link',
 			'enterButtonText' => 'Enter Button Text',
+			'logoutButtonText' => 'Logout Button Text',
 		);
 	}
 
@@ -110,6 +116,7 @@ class Header extends CActiveRecord
 		$criteria->compare('menuItem4',$this->menuItem4,true);
 		$criteria->compare('item4Link',$this->item4Link,true);
 		$criteria->compare('enterButtonText',$this->enterButtonText,true);
+		$criteria->compare('logoutButtonText',$this->logoutButtonText,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

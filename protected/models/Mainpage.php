@@ -51,7 +51,6 @@ class Mainpage extends CActiveRecord
         $this->header1=$this->findByPk($id)->header1;
         $this->header2=$this->findByPk($id)->header2;
         $this->linkName=$this->findByPk($id)->linkName;
-        $this->sliderButtonText=$this->findByPk($id)->sliderButtonText;
         $this->sliderTextureURL=Yii::app()->request->baseUrl.$this->findByPk($id)->sliderTextureURL;
         $this->sliderHeader=$this->findByPk($id)->sliderHeader;
         $this->stepSize=$this->findByPk($id)->stepSize;
