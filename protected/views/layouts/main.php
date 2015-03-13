@@ -94,7 +94,7 @@
 </div>
 <div id="button_border">
 </div>
-<a id="enter_button" href="<?php echo Yii::app()->createUrl('users/login')?>"><?php echo $this->buttonText; ?></a>
+<a id="enter_button" href="<?php echo Yii::app()->createUrl('site/logout')?>"><?php echo $this->buttonText; ?></a>
 
 <script>
     function changeLang(n){

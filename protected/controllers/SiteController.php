@@ -39,10 +39,8 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index1.php'
 		// using the default layout 'protected/views/layouts/main.php'
-
-		$lang =  (empty($_GET['lang']))?1:$_GET['lang'];
 		$modelCarousel = new Carousel();
-		$mainpage = new Mainpage(1);//($lang == 'UA')?0:1);
+		$mainpage = new Mainpage(1);
 		$mainpage->setValueById(0);
 		$objAbout1 = new AboutUs(1);
 		$objAbout1->setValuesById(1);
@@ -219,6 +217,7 @@ class SiteController extends Controller
 			if($model->validate() && $model->login())
 				$this->redirect(Yii::app()->user->returnUrl);
 		}
+
 		// display the login form
 		$this->render('login',array('model'=>$model));
 	}

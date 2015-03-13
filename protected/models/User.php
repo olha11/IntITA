@@ -1,23 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "users".
+ * This is the model class for table "user".
  *
- * The followings are the available columns in table 'users':
+ * The followings are the available columns in table 'user':
  * @property integer $userID
  * @property string $userEmail
  * @property string $userPassword
  * @property string $userHash
  * @property integer $userStatus
  */
-class Users extends CActiveRecord
+class User extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'users';
+		return 'user';
 	}
 
 	/**
@@ -97,12 +97,24 @@ class Users extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Users the static model class
+	 * @return User the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
 
+	public function validatePassword($password)
+	{
+		return CPasswordHelper::verifyPassword($password,$this->userPassword);
+	}
 
+	public function hashPassword($password)
+	{
+		return CPasswordHelper::hashPassword($password);
+	}
+
+	public function getUserEmail(){
+		return $this->userEmail;
+	}
 }

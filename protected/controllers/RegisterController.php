@@ -1,5 +1,5 @@
 <?php
-/*@var $users Users*/
+/*@var $user User*/
 
 class RegisterController {
 
@@ -14,7 +14,7 @@ class RegisterController {
 
 
         $connection=Yii::app()->db;
-        $sql="INSERT INTO `users` (`userEmail`, `userPassword`) VALUES (:email, :password);";
+        $sql="INSERT INTO `user` (`userEmail`, `userPassword`) VALUES (:email, :password);";
         $command=$connection->createCommand($sql);
 
         $command->bindParam(":email",$_POST['email'],PDO::PARAM_STR);
