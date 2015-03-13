@@ -1,3 +1,26 @@
+<style type="text/css">
+    .nextLesonLink input[type="submit"] {
+        margin-top: 5px;
+        width: 230px;
+        height:44px;
+        border-radius: 10px;
+        border:none;
+        color:#ffffff;
+        background-color:#4b75a4;
+        box-shadow:0 2px 0 #7f7f7f;
+        font-size: medium;
+        background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
+        background-repeat: no-repeat;
+        background-position: 192px 49%;
+    }
+    .nextLesonLink input[type="submit"]:hover {
+        background: #454545;
+        background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
+        background-repeat: no-repeat;
+        background-position: 192px 49%;
+        cursor: pointer;
+    }
+</style>
 <?php
 /* @var $this LessonController */
 /* @var $model LessonTop */
@@ -46,7 +69,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
             <div class="lectureImageMain">
                 <img src="<?php echo $lecture3->lectureImageMain; ?>">
             </div>
-            <div class="titlesBlock">
+            <div class="titlesBlock" id="titlesBlock">
                 <ul>
                     <li>
                         <?php echo 'Модуль: ';?>
@@ -135,13 +158,13 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <script type="text/javascript">
     $(document).ready(function(){
         $('.spoilerLinks').click(function(){
+            var nameSpoiler = $(this).children("span:first").text();
+            if(nameSpoiler=="(показати)"){
+                $(this).children("span:first").text("(приховати)");
+            } else if(nameSpoiler=="(приховати)"){
+                $(this).children("span:first").text("(показати)");
+            }
             $(this).next('.spoilerBody').toggle('normal');
-            return false;
-        });
-    });
-    $(document).ready(function(){
-        $('.spoilerLinksHidden').click(function(){
-            $(this).parent().toggle('normal');
             return false;
         });
     });
@@ -150,16 +173,18 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <!--Sidebar-->
 <script type="text/javascript">
     $(function() {
-        var offset = $(".sidebarLesson").offset();
-        var topPadding = 60;
-        var sideBarHeight = document.getElementById('sidebarLesson').getBoundingClientRect().bottom -document.getElementById('sidebarLesson').getBoundingClientRect().top+100;
+        var sideBarHeight =document.getElementById('titlesBlock').getBoundingClientRect().bottom - document.getElementById('titlesBlock').getBoundingClientRect().top+100;
+        var mainBlockCoord =$(window).scrollTop()+document.getElementById('titlesBlock').getBoundingClientRect().bottom;
+
         $(window).scroll(function() {
-            if (($(window).scrollTop() > offset.top - 60) && ($(window).scrollTop()+sideBarHeight) < (document.getElementById('subViewLessons').getBoundingClientRect().top + $(window).scrollTop())) {
-                $(".sidebarLesson").stop().animate({
-                    marginTop: $(window).scrollTop() - offset.top + topPadding
+            if (($(window).scrollTop() > mainBlockCoord-56) && ($(window).scrollTop()+sideBarHeight+100) < (document.getElementById('subViewLessons').getBoundingClientRect().top + $(window).scrollTop())) {
+                document.getElementById('sidebarLesson').style.display='block';
+                $("#sidebarLesson").stop().animate({
+                    marginTop: $(window).scrollTop() -  mainBlockCoord
                 },0);
             } else {
-                $(".sidebarLesson").stop().animate({
+                document.getElementById('sidebarLesson').style.display='none';
+                $("#sidebarLesson").stop().animate({
                     marginTop: 0
                 },0);
             };
@@ -170,7 +195,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <!--Перша частина-->
 <div class="lessonBlock" id="lessonBlock">
 <!--navigation vertical-->
-    <div class="sidebarLesson" id="sidebarLesson">
+    <div id="sidebarLesson">
         <div class="lectureImageMain">
             <img src="<?php echo $lecture3->lectureImageMain; ?>">
         </div>
@@ -209,19 +234,29 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                     <?php } ?>
                 </div>
             </ul>
-
         </div>
+        <p><a href="#"><input type="submit" value="Онлайн домомога"></a></p>
+        <p><a href="#"><input type="submit" value="Онлайн консультація"></a></p>
     </div>
 <!--navigation vertical-->
         <div class="lessonText">
             <h1 class="lessonTheme">Змінні та типи даних в PHP </h1>
-            <a name="Частина 1: Типи змінних та перемінних"></a>
-            <span class="listTheme">Зміст </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+            <span class="listTheme">Зміст </span><span class="spoilerLinks"><span class="spoilerClick" id="123456">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+
                 <div class="spoilerBody">
                    <p><a href="#Частина 1: Типи змінних та перемінних">Частина 1: Типи змінних та перемінних</a></p>
                    <p><a href="#Частина 7: Типи данних та математичний аналіз">Частина 7: Типи данних та математичний аналіз</a></p>
-                   <span class="spoilerLinksHidden"><span class="spoilerClick">(приховати)</span><span class="spoilerTriangle"> &#9650;</span></span>
                 </div>
+
+            <h1 class="lessonPart">Вступ</h1>
+            <span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:
+            <div class="lessonCode"><p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
+            <span class="colorBlack">Імена змінних</span>
+            <p>Будь-яка змінна в РНР має ім'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>
+            <h3><span class="subChapter">Відео 1.</span></h3>
+            <iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>
+
+            <a name="Частина 1: Типи змінних та перемінних"></a>
             <h1 class="lessonPart">Частина 1: Типи змінних та перемінних</h1>
             <span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:
             <div class="lessonCode"><p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
@@ -590,7 +625,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 						</table>
 						<?php if($footNav->getThisMedal()=='Зараховано') { ?>
 							<div class="nextLesonLink">
-								<p><a href="#"><input class="nextLessButt" type="submit" value="НАСТУПНИЙ УРОК />"></a></p>
+								<p><a href="#"><input class="nextLessButt" type="submit" value="НАСТУПНИЙ УРОК"></a></p>
 							</div>
 						<?php  }?>
 					</div>

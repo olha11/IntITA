@@ -58,6 +58,9 @@ div.profileStatus{
     border: 1px solid #d8d8d8;
     border-radius: 5px;
 }
+.studProfInf .avatarimg{
+    margin-left: 22px;
+}
 table.profileInfo {
     margin: 10px 10px 80px 22px;
 }
@@ -152,7 +155,6 @@ img.avatarimg  {
 table.titleProfile{
     margin:16px 0px 16px 22px;
     display:inline-block;
-    color: #4b75a4;
     font-size: smaller;
     line-height: 120%;
 }
@@ -167,11 +169,14 @@ table.titleProfileAv{
     margin-bottom:-7px;
 }
 .titleProfile h2{
+    color: #4b75a4;
     font-weight: normal;
     margin-top: 0;
     margin-bottom: 0;
+    margin-right: 60px;
 }
 .titleProfileAv h2{
+    color: #4b75a4;
     font-weight: normal;
     margin-top: 0;
     margin-bottom: 0;
@@ -191,12 +196,9 @@ table.titleProfileAv{
     background: #454545;
     cursor: pointer;
 }
-.rowbuttons{
-    text-align: center;
-}
 /*������ ��� �����*/
 .studProf input[type="submit"] {
-    margin:16px 0px 32px 0;
+    margin:16px 0px 32px 358px;
 }
 /*������ ����� �����*/
 .studPhoto input[type="submit"], .profileActivity input[type="submit"] {

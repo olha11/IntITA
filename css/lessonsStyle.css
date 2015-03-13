@@ -98,29 +98,29 @@ div.lessonCode {
 }
 div.lessonBG {
     border-top:3px solid #ffffff;
-    background-color: #d6ebe0;
+    background-color: #dbe3ed;
     overflow:hidden;
     background-image: -webkit-linear-gradient(left,
     #becdde 0%,
     #becdde 11%,
-    #d6ebe0 11%,
-    #d6ebe0 100%);
+    #dbe3ed 11%,
+    #dbe3ed 100%);
     background-image: -moz-linear-gradient(left,
     #becdde 0%,
     #becdde 11%,
-    #d6ebe0 11%,
-    #d6ebe0 100%);
+    #dbe3ed 11%,
+    #dbe3ed 100%);
     background-image: -o-linear-gradient(left,
     #becdde 0%,
     #becdde 11%,
-    #d6ebe0 11%,
-    #d6ebe0 100%);
+    #dbe3ed 11%,
+    #dbe3ed 100%);
     background-image: linear-gradient(left,
     #becdde 0%,
     #becdde 11%,
-    #d6ebe0 11%,
-    #d6ebe0 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#becdde', endColorstr='#d6ebe0',GradientType=1 );//Ie6-9
+    #dbe3ed 11%,
+    #dbe3ed 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#becdde', endColorstr='#dbe3ed',GradientType=1 );//Ie6-9
 }
 span.colorO {
     color:#de5940;
@@ -237,9 +237,36 @@ div.lessonButFinal
 }
 
 /*vertical navigation*/
-.sidebarLesson {
+#sidebarLesson {
+    display: none;
     position: absolute;
-    padding-top: 100px;
+    padding-top: 50px;
     margin-left: 640px;
     z-index: 1;
+}
+#sidebarLesson p{
+    margin-left: 100px;
+}
+
+#sidebarLesson input[type="submit"] {
+    width: 170px;
+    height:30px;
+    border-radius: 5px;
+    border:none;
+    color:#ffffff;
+    background-color:#4b75a4;
+    box-shadow:0px 2px 0px #7f7f7f;
+    font-size: medium;
+}
+#sidebarLesson input[type="submit"]:hover {
+    border-top-color: #454545;
+    background: #454545;
+    color: #fcfcfc;
+    cursor: pointer;
+}
+#sidebarLesson a {
+    text-decoration: none;
+}
+#sidebarLesson .titlesBlock{
+    margin-bottom: 10px;
 }

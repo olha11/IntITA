@@ -131,7 +131,7 @@ $post=StudentReg::model()->findByPk(1);
         endif; ?>
     </div>
     <div class="studPhoto">
-        <table class="titleProfile">
+        <table class="titleProfileAv">
             <tr>
                 <td>
                     <h2>Завантажити фото профілю</h2>
