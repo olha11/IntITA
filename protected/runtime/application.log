@@ -4992,3 +4992,59 @@ Stack trace:
 #15 {main}
 REQUEST_URI=/IntITA/
 ---
+2015/03/13 13:22:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/13 13:23:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/13 13:23:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/13 13:23:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/13 13:24:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/13 13:26:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aaaut...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aaauth/login
+---
+2015/03/13 13:26:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aaauth/users".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aaaut...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aaauth/users
+---

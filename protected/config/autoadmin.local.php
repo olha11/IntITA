@@ -10,7 +10,7 @@ $main['modules'] = array(
 	'autoadmin'=>array(
 		'class'=>'ext.autoadmin.AutoAdmin',	//alias-path to AutoAdmin extension
 		'basePath' => dirname(__FILE__).'/../modules/autoadmin',	//this is your module directory
-		'wwwDirName' => '',	//this is your document root directory (where the webserver looks into)
+		'wwwDirName' => 'www',	//this is your document root directory (where the webserver looks into)
 
 		//Optional params of built-in auth-system:
 		'authMode' => true,	//switch internal authentication system. can be switched on only if you import the regard SQL dump and configure dbAdmin connector.
