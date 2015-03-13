@@ -15,9 +15,12 @@ $post=TeachersTemp::model()->findAll();
 ?>
 <!-- BD -))) -->
 
-<div class="subNavBlock">
-    <div class="subLinks">
+<div class="subNavBlockTeachers">
+    <div class="subLinksTeachers">
         <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Головна</a> &#187; <a href="#">Викладачі</a>
+    </div>
+    <div class="ifYouTeachers">
+    Якщо ви професійний ІТ-шник і бажаєте викладати окремі ІТ курси чи модулі і співпрацювати з нами в напрямку підготовки програмістів, напишіть нам листа.
     </div>
 </div>
 
@@ -39,7 +42,7 @@ $post=TeachersTemp::model()->findAll();
                     <tr>
                         <td  class="profileTeacher" >
                             <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
-                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Профіль</a>
+                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">персональна сторінка &#187;</a>
                         </td>
                         <td>
                             <h2><?php echo $teacherValue->last_name ?></h2>
@@ -96,7 +99,7 @@ $post=TeachersTemp::model()->findAll();
                     <tr>
                         <td  class="profileTeacher" >
                             <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
-                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Профіль</a>
+                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">персональна сторінка &#187;</a>
                         </td>
                         <td>
                             <h2><?php echo $teacherValue->last_name ?></h2>

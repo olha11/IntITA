@@ -1,3 +1,26 @@
+<style type="text/css">
+    .nextLesonLink input[type="submit"] {
+        margin-top: 5px;
+        width: 230px;
+        height:44px;
+        border-radius: 10px;
+        border:none;
+        color:#ffffff;
+        background-color:#4b75a4;
+        box-shadow:0 2px 0 #7f7f7f;
+        font-size: medium;
+        background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
+        background-repeat: no-repeat;
+        background-position: 192px 49%;
+    }
+    .nextLesonLink input[type="submit"]:hover {
+        background: #454545;
+        background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
+        background-repeat: no-repeat;
+        background-position: 192px 49%;
+        cursor: pointer;
+    }
+</style>
 <?php
 /* @var $this LessonController */
 /* @var $model LessonTop */
@@ -46,7 +69,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
             <div class="lectureImageMain">
                 <img src="<?php echo $lecture3->lectureImageMain; ?>">
             </div>
-            <div class="titlesBlock">
+            <div class="titlesBlock" id="titlesBlock">
                 <ul>
                     <li>
                         <?php echo 'Модуль: ';?>
@@ -135,6 +158,12 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <script type="text/javascript">
     $(document).ready(function(){
         $('.spoilerLinks').click(function(){
+            var nameSpoiler = $(this).children("span:first").text();
+            if(nameSpoiler=="(показати)"){
+                $(this).children("span:first").text("(приховати)");
+            } else if(nameSpoiler=="(приховати)"){
+                $(this).children("span:first").text("(показати)");
+            }
             $(this).next('.spoilerBody').toggle('normal');
             return false;
         });
@@ -144,15 +173,18 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <!--Sidebar-->
 <script type="text/javascript">
     $(function() {
-        var offset = $(".sidebarLesson").offset();
-        var topPadding = 60;
+        var sideBarHeight =document.getElementById('titlesBlock').getBoundingClientRect().bottom - document.getElementById('titlesBlock').getBoundingClientRect().top+100;
+        var mainBlockCoord =$(window).scrollTop()+document.getElementById('titlesBlock').getBoundingClientRect().bottom;
+
         $(window).scroll(function() {
-            if ($(window).scrollTop() > offset.top - 60) {
-                $(".sidebarLesson").stop().animate({
-                    marginTop: $(window).scrollTop() - offset.top + topPadding
+            if (($(window).scrollTop() > mainBlockCoord-56) && ($(window).scrollTop()+sideBarHeight+100) < (document.getElementById('subViewLessons').getBoundingClientRect().top + $(window).scrollTop())) {
+                document.getElementById('sidebarLesson').style.display='block';
+                $("#sidebarLesson").stop().animate({
+                    marginTop: $(window).scrollTop() -  mainBlockCoord
                 },0);
             } else {
-                $(".sidebarLesson").stop().animate({
+                document.getElementById('sidebarLesson').style.display='none';
+                $("#sidebarLesson").stop().animate({
                     marginTop: 0
                 },0);
             };
@@ -161,23 +193,72 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 </script>
 <!--Sidebar-->
 <!--Перша частина-->
-<div class="lessonBlock">
+<div class="lessonBlock" id="lessonBlock">
 <!--navigation vertical-->
-    <div class="sidebarLesson">
+    <div id="sidebarLesson">
+        <div class="lectureImageMain">
+            <img src="<?php echo $lecture3->lectureImageMain; ?>">
+        </div>
+        <div class="titlesBlock">
+            <ul>
+                <li>
+                    <?php echo 'Модуль: ';?>
+                    <span><?php echo $lecture3->lectureModule; ?></span>
+                </li>
+                <li><?php echo 'Заняття '.$lecture3->lectureNumber.': ';?>
+                    <span><?php echo $lecture3->lectureNameText; ?></span>
+                </li>
+                <li><?php echo 'Тип: ';?>
+                    <div id="lectionTypeText"><?php echo $lecture3->lectureTypeText; ?></div>
+                    <div id="lectionTypeImage"><img src="<?php echo $lecture3->lectureTypeImage; ?>"></div>
+                </li>
+                <li><div id="subTitle"><?php echo 'Тривалість: ';?></div>
+                    <div id="lectureTimeText"><?php echo $lecture3->lectureTimeText; ?></div>
+                    <div id="lectureTimeImage"><img src="<?php echo $lecture3->lectureTimeImage; ?>"></div>
+                </li>
+                <li>
+                    <!-- Тег p--->
+                    <?php echo '('.$lecture3->lectureNumber.' з '.$lecture3->lectureMaxNumber.' занять)'; ?>
+                    <div id="iconImage">
+                        <img src="<?php echo $lecture3->lectureIconImage ;?>">
+                    </div>
+                    <!--Тег p-->
+                </li>
+                <div id="counter">
+                    <?php
+                    for ($i=0; $i<$lecture3->lectureNumber;$i++){ ?>
+                        <img src="<?php echo $lecture3->lectureOverlookedImage;?>">
+                    <?php }
+                    for ($i=0; $i<$lecture3->lectureMaxNumber-$lecture3->lectureNumber;$i++){ ?>
+                        <img src="<?php echo $lecture3->lectureUnwatchedImage;?>">
+                    <?php } ?>
+                </div>
+            </ul>
+        </div>
         <p><a href="#"><input type="submit" value="Онлайн домомога"></a></p>
         <p><a href="#"><input type="submit" value="Онлайн консультація"></a></p>
     </div>
 <!--navigation vertical-->
         <div class="lessonText">
             <h1 class="lessonTheme">Змінні та типи даних в PHP </h1>
-            <a name="Частина 1: Типи змінних та перемінних"></a>
-            <span class="listTheme">Зміст </span><span class="spoilerLinks"><span class="spoilerClick">(приховати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+            <span class="listTheme">Зміст </span><span class="spoilerLinks"><span class="spoilerClick" id="123456">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+
                 <div class="spoilerBody">
                    <p><a href="#Частина 1: Типи змінних та перемінних">Частина 1: Типи змінних та перемінних</a></p>
                    <p><a href="#Частина 7: Типи данних та математичний аналіз">Частина 7: Типи данних та математичний аналіз</a></p>
                 </div>
+
+            <h1 class="lessonPart">Вступ</h1>
+            <span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:
+            <div class="lessonCode"><p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
+            <span class="colorBlack">Імена змінних</span>
+            <p>Будь-яка змінна в РНР має ім'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>
+            <h3><span class="subChapter">Відео 1.</span></h3>
+            <iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>
+
+            <a name="Частина 1: Типи змінних та перемінних"></a>
             <h1 class="lessonPart">Частина 1: Типи змінних та перемінних</h1>
-            <p><span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:</p>
+            <span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:
             <div class="lessonCode"><p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
             <span class="colorBlack">Імена змінних</span>
             <p>Будь-яка змінна в РНР має ім'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>
@@ -207,7 +288,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
  &lt;/body&gt;
 &lt;/html&gt;
 </pre>
-            <span class="subChapter">Зразок коду 2  </span><span class="spoilerLinks"><span class="spoilerClick">(приховати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+            <span class="subChapter">Зразок коду 2  </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
             <div class="spoilerBody">
 <pre class="prettyprint linenums">
 &lt;html&gt;
@@ -239,7 +320,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                     </div>
                     <div class="instrTaskText">
                         <ol>
-                            <li>On line 7, set <span class="colorBP">$items</span> equal to a number greater than 5. Make sure to put a semicolon at the end of the line.</li>
+                            <li>On line 7, set <span class="colorBP"><span class="colorGreen">$</span>terms</span> equal to a number greater than 5. Make sure to put a semicolon at the end of the line.</li>
                             <li>On line 9, edit the state condition so that your program will be out Some expressions return a ' logical value": TRUE or FALSE, text like thise:<span class="colorAlert">You get a 10% discount!</span></li>
                         </ol>
                     </div>
@@ -256,10 +337,10 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                     <div class="instrTaskText">
                         <ol>
                             <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>
-                            <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
-                            <li>An if statement is made up of the if keyword, a condition like we've seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>
-                            <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
-                            <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>
+                            <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>
+                            <li>An if statement is made up of the if keyword, a condition like we've seen before <span class="colorBP"><span class="colorGreen">$</span>terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>
+                            <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>
+                            <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP"><span class="colorGreen">$</span>terms</span> браузера или с разрешением экрана)</li>
                         </ol>
                         <div class="BBCode">
                             <form action="" method="post">
@@ -276,8 +357,8 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
     <!--Друга частина-->
         <div class="lessonText">
             <h1 class="lessonPart">Частина 7: Типи данних та математичний аналіз</h1>
-            <p><span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:</p>
-            <div class="lessonCode"><p>$names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
+            <span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:
+            <div class="lessonCode"><p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
             <span class="colorBlack">Імена змінних</span>
             <p>Будь-яка змінна в РНР має ім'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>
             <div class="lessonCode">
@@ -306,7 +387,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
  &lt;/body&gt;
 &lt;/html&gt;
 </pre>
-            <span class="subChapter">Зразок коду 2  </span><span class="spoilerLinks"><span class="spoilerClick">(приховати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+            <span class="subChapter">Зразок коду 2  </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
             <div class="spoilerBody">
 <pre class="prettyprint linenums">
 &lt;html&gt;
@@ -338,7 +419,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                     </div>
                     <div class="instrTaskText">
                         <ol>
-                            <li>On line 7, set <span class="colorBP">$items</span> equal to a number greater than 5. Make sure to put a semicolon at the end of the line.</li>
+                            <li>On line 7, set <span class="colorBP"><span class="colorGreen">$</span>items</span> equal to a number greater than 5. Make sure to put a semicolon at the end of the line.</li>
                             <li>On line 9, edit the state condition so that your program will be out Some expressions return a ' logical value": TRUE or FALSE, text like thise:<span class="colorAlert">You get a 10% discount!</span></li>
                         </ol>
                     </div>
@@ -356,10 +437,10 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                     <div class="instrTaskText">
                         <ol>
                             <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>
-                            <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
-                            <li>An if statement is made up of the if keyword, a condition like we've seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>
-                            <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
-                            <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>
+                            <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>
+                            <li>An if statement is made up of the if keyword, a condition like we've seen before <span class="colorBP"><span class="colorGreen">$</span>terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>
+                            <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>
+                            <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP"><span class="colorGreen">$</span>terms</span> браузера или с разрешением экрана)</li>
                         </ol>
                         <div class="BBCode">
                             <form action="" method="post">
@@ -385,9 +466,9 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                     <div class="instrTaskText">
                         <ol>
                             <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>
-                            <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
+                            <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>
                             <li>An if statement is made up of the if keyword, a condition like we've seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>
-                            <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
+                            <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>
                             <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>
                         </ol>
                         <div class="BBCode">
@@ -431,13 +512,13 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <!  Верстка на основі обьекта $footNav >
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/lessonFooter.css" />
 
-		<div class="subViewLessons" 	style="width:<?php echo $footNavSize; ?>" >
+		<div class="subViewLessons" id="subViewLessons"	style="width:<?php echo $footNavSize; ?>" >
 <?php
 	if (  $footNav->getPre()=='True' )
 		{
 ?>
 					<div class="preLessons">
-						<p class="lesname">Заняття <?php echo $footNav->getPreNumber() ?>: <b><?php echo $footNav->getPreName() ?></b></p>
+						<p class="lesname">Заняття <?php echo $footNav->getPreNumber() ?>: <?php echo $footNav->getPreName() ?></p>
 						<table class="typeLesson">
 							<tr>
 								<td><p>Тип:</p></td>
@@ -495,7 +576,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 		{
 ?>
 					<div class="nextLessons">
-						<p class="lesname">Заняття <?php echo $footNav->getPostNumber() ?>: <b><?php echo $footNav->getPostName() ?></b></p>
+						<p class="lesname">Заняття <?php echo $footNav->getPostNumber() ?>: <?php echo $footNav->getPostName() ?></p>
 						<table class="typeLesson">
 							<tr>
 								<td><p>Тип:</p></td>
@@ -544,7 +625,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 						</table>
 						<?php if($footNav->getThisMedal()=='Зараховано') { ?>
 							<div class="nextLesonLink">
-								<p><a href="#"><input class="nextLessButt" type="submit" value="НАСТУПНИЙ УРОК />"></a></p>
+								<p><a href="#"><input class="nextLessButt" type="submit" value="НАСТУПНИЙ УРОК"></a></p>
 							</div>
 						<?php  }?>
 					</div>
