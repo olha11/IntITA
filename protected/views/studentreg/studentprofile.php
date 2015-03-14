@@ -20,8 +20,8 @@ $post=StudentReg::model()->findByPk(1);
     <div class="profileStatus">
         <div>
             <?php echo $post->firstName;?></br>
-            <?php echo $post->middleName;?></br>
             <?php echo $post->secondName;?></br>
+            <?php echo $post->nickname;?></br>
             <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
         </div>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
@@ -47,8 +47,8 @@ $post=StudentReg::model()->findByPk(1);
        <table class='profileInfo'>
             <tr>
                 <td>
+                    <h1><?php echo $post->nickname;?></h1>
                     <h1><?php echo $post->firstName;?></h1>
-                    <h1><?php echo $post->middleName;?></h1>
                     <h1><?php echo $post->secondName;?></h1>
                     <div class="aboutInfo">
                         <p><?php echo $post->address;?>,
@@ -86,6 +86,9 @@ $post=StudentReg::model()->findByPk(1);
                                 }
                             ?>
                         </p>
+                    </div>
+                    <div class="aboutInfo">
+                        <p> <span class="colorP">Звідки дізнався про Вас:</span> </br><?php echo $post->aboutUs;?></p>
                     </div>
                     <div class="aboutInfo">
                         <p> <span class="colorP">Завершенні курси:</span> </br>Курси самогоних апаратів 6-го рівня</p>

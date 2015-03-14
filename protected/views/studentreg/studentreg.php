@@ -27,6 +27,22 @@
 
 ?>
 
+<!--Role-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.radiolabelRole input[type="radio"]').click(function(){
+            var roles=$(this).val();
+            if(roles=='1'){
+                document.getElementById('rowEducForm').style.display='none';
+            } else {
+                document.getElementById('rowEducForm').style.display='block';
+            }
+        });
+    });
+</script>
+<!--Role-->
+
+
 <div class="formStudProfNav">
     <div class="regLinks">
         <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Головна</a> &#187; <a href="#">Реєстрація</a>
@@ -51,15 +67,17 @@
             </tr>
         </table>
 
+        <div class="rowRadioButton">
+            <?php $model->role ='0'; ?>
+            <?php echo $form->labelEx($model,'role'); ?>
+            <div class="radiolabelRole">
+                <?php echo $form->radioButtonList($model,'role',array('0'=>'Студент','1'=>'Викладач'), array('separator'=>' '));?>
+            </div>
+        </div>
         <div class="row">
             <?php echo $form->labelEx($model,'firstName'); ?>
             <?php echo $form->textField($model,'firstName',array('maxlength'=>255)); ?>
             <span><?php echo $form->error($model,'firstName'); ?></span>
-        </div>
-        <div class="row">
-            <?php echo $form->label($model,'middleName'); ?>
-            <?php echo $form->textField($model,'middleName',array('maxlength'=>255)); ?>
-            <span><?php echo $form->error($model,'middleName'); ?></span>
         </div>
         <div class="row">
             <?php echo $form->label($model,'secondName'); ?>
@@ -67,27 +85,52 @@
             <span><?php echo $form->error($model,'secondName'); ?></span>
         </div>
         <div class="row">
-            <?php echo $form->label($model,'birthday'); ?>
-            <?php echo $form->textField($model,'birthday',array('maxlength'=>11)); ?>
-            <span><?php echo $form->error($model,'birthday'); ?></span>
+            <?php echo $form->label($model,'nickname'); ?>
+            <?php echo $form->textField($model,'nickname',array('maxlength'=>255)); ?>
+            <span><?php echo $form->error($model,'nickname'); ?></span>
         </div>
         <div class="row">
-            <?php echo $form->label($model,'education'); ?>
-            <?php echo $form->textField($model,'education',array('maxlength'=>255)); ?>
-            <span><?php echo $form->error($model,'education'); ?></span>
+            <?php echo $form->label($model,'birthday'); ?>
+            <?php echo $form->textField($model,'birthday',array('maxlength'=>11, 'placeholder'=>'введіть в форматі дд.мм.рррр')); ?>
+            <span><?php echo $form->error($model,'birthday'); ?></span>
         </div>
         <div class="row">
             <?php echo $form->labelEx($model,'phone'); ?>
             <?php echo $form->textField($model,'phone',array('maxlength'=>15)); ?>
             <span><?php echo $form->error($model,'phone'); ?></span>
         </div>
-        <div class="rowRadioButton">
+        <div class="row">
+            <?php echo $form->label($model,'address'); ?>
+            <?php echo $form->textField($model,'address',array('maxlength'=>255)); ?>
+            <span><?php echo $form->error($model,'address'); ?></span>
+        </div>
+        <div class="row">
+            <?php echo $form->label($model,'education'); ?>
+            <?php echo $form->textField($model,'education',array('maxlength'=>255)); ?>
+            <span><?php echo $form->error($model,'education'); ?></span>
+        </div>
+        <div class="rowRadioButton" id="rowEducForm">
             <?php $model->educform ='0'; ?>
             <?php echo $form->labelEx($model,'educform'); ?>
             <div class="radiolabel">
-            <?php echo $form->radioButtonList($model,'educform',array('0'=>'Студент','1'=>'Вчитель'), array('separator'=>' '));?>
+                <?php echo $form->radioButtonList($model,'educform',array('0'=>'online','1'=>'offline'), array('separator'=>' '));?>
             </div>
-       </div>
+        </div>
+        <div class="row">
+            <?php echo $form->label($model,'aboutMy'); ?>
+            <?php echo $form->textArea($model,'aboutMy'); ?>
+            <?php echo $form->error($model,'aboutMy'); ?>
+        </div>
+        <div class="row">
+            <?php echo $form->label($model,'interests'); ?>
+            <?php echo $form->textField($model,'interests',array('maxlength'=>255, 'placeholder'=>'введіть Ваші інтереси через кому')); ?>
+            <span><?php echo $form->error($model,'interests'); ?></span>
+        </div>
+        <div class="row">
+            <?php echo $form->label($model,'aboutUs'); ?>
+            <?php echo $form->textField($model,'aboutUs'); ?>
+            <span><?php echo $form->error($model,'aboutUs'); ?></span>
+        </div>
         <div class="row">
             <?php echo $form->labelEx($model,'email'); ?>
             <?php echo $form->textField($model,'email',array('maxlength'=>255)); ?>
@@ -126,7 +169,7 @@
             <input tabindex="-1" type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
             <input tabindex="-1" class="uploadAvatar" type="submit">
         </div>
-        <div id="avatarInfo">Файл не вибрано...</div>
+        <div id="avatarInfo">Розмір фото до 512кб</div>
         <div class="avatarError">
             <?php if(Yii::app()->user->hasFlash('avatarmessage')):
                 echo Yii::app()->user->getFlash('avatarmessage');

@@ -19,6 +19,7 @@
  * @property string $interests
  * @property string $aboutUs
  * @property string $aboutMy
+ * @property string $role
  */
 class StudentReg extends CActiveRecord
 {
@@ -58,7 +59,7 @@ class StudentReg extends CActiveRecord
             array('address, interests, aboutUs,send_letter','safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, firstName, secondName, nickname, birthday, email, password, phone, address, education, educform, interests, aboutUs, password_repeat, middleName,aboutMy, avatar, upload', 'safe', 'on'=>'search'),
+            array('id, firstName, secondName, nickname, birthday, email, password, phone, address, education, educform, interests, aboutUs, password_repeat, middleName,aboutMy, avatar, upload, role', 'safe', 'on'=>'search'),
         );
 	}
 
@@ -84,21 +85,22 @@ class StudentReg extends CActiveRecord
             'middleName'=> 'По-батькові',
             'secondName' => 'Прізвище',
             'nickname' => 'Нік',
-            'birthday' => 'День народження',
+            'birthday' => 'Дата народження',
             'email' => 'Email',
             'password' => 'Пароль',
             'password_repeat' => 'Повтор пароля',
             'phone' => 'Телефон',
             'address' => 'Адреса',
             'education' => 'Освіта',
-            'educform' => 'Роль',
-            'interests' => 'Інтереси',
+            'educform' => 'Форма навчання',
+            'interests' => 'Захоплення',
             'aboutUs' => 'Звідки про нас?',
             'send_letter'=> 'Повідомлення',
             'letterTheme'=> 'Тема',
             'aboutMy'=> 'Про себе',
             'avatar'=> 'Аватар',
             'upload'=> 'Up',
+            'role'=> 'Роль',
         );
 	}
 
@@ -138,6 +140,7 @@ class StudentReg extends CActiveRecord
         $criteria->compare('send_letter',$this->send_letter,true);
         $criteria->compare('avatar',$this->avatar,true);
         $criteria->compare('upload',$this->upload,true);
+        $criteria->compare('role',$this->role,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
