@@ -71,7 +71,9 @@
 <div id="navigation" class="down">
     <div class="main">
         <div id="logo_img" class="down">
+            <a href="<?php echo Yii::app()->request->baseUrl;?>">
             <img id="logo" src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png"/>
+            </a>
         </div>
 
         <ul>

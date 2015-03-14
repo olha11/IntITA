@@ -301,8 +301,8 @@ CREATE TABLE `header` (
 -- ----------------------------
 -- Records of header
 -- ----------------------------
-INSERT INTO `header` VALUES ('0', 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курси', 'http://www.google.com', 'Викладачі', '/index.php?r=teachers', 'Форум', 'http://www.google.com', 'Про нас', '/index.php?r=site/aboutdetail', 'Вхід');
-INSERT INTO `header` VALUES ('1', 'RU', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курсы', 'http://www.google.com', 'Преподаватели', '/index.php?r=teachers', 'Форум', 'http://www.google.com', 'О нас', '/index.php?r=site/aboutdetail', 'Вход');
+INSERT INTO `header` VALUES ('0', 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курси', '/index.php?r=courses', 'Викладачі', '/index.php?r=teachers', 'Форум', 'http://www.google.com', 'Про нас', '/index.php?r=site/aboutdetail', 'Вхід');
+INSERT INTO `header` VALUES ('1', 'RU', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курсы', '/index.php?r=courses', 'Преподаватели', '/index.php?r=teachers', 'Форум', 'http://www.google.com', 'О нас', '/index.php?r=site/aboutdetail', 'Вход');
 
 -- ----------------------------
 -- Table structure for hometasks
@@ -698,6 +698,34 @@ CREATE TABLE `theoreticalsmaterials` (
 -- ----------------------------
 INSERT INTO `theoreticalsmaterials` VALUES ('1', '1', '1', 'TM 1', 'Description 1', 'URL 1');
 INSERT INTO `theoreticalsmaterials` VALUES ('2', '2', '2', 'TM 2', 'Description 2', 'URL 2');
+
+
+
+
+-- Dumping structure for table int_ita_db.user
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `userID` int(11) NOT NULL AUTO_INCREMENT,
+  `userEmail` varchar(35) NOT NULL,
+  `userPassword` varchar(40) NOT NULL,
+  `userHash` varchar(20) DEFAULT NULL,
+  `userStatus` tinyint(4) DEFAULT NULL,
+  `username` varchar(50) NOT NULL,
+  `role` int(1) NOT NULL,
+  PRIMARY KEY (`userID`),
+  UNIQUE KEY `user_email` (`userEmail`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table int_ita_db.user: ~4 rows (approximately)
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` (`userID`, `userEmail`, `userPassword`, `userHash`, `userStatus`, `username`, `role`) VALUES
+	(1, 'mail1@mail.com', 'qwerty', '67896', 0, 'user', 0),
+	(2, 'email', 'password', '098877', 0, 'user', 0),
+	(4, 'email1', 'password1', '232213', 1, 'user', 0),
+	(5, 'emaildd', 'passworfg', '232213', 0, 'user', 0);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+
+
 
 -- ----------------------------
 -- Table structure for videos
