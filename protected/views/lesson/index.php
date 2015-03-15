@@ -75,7 +75,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                         <?php echo 'Модуль: ';?>
                             <span><?php echo $lecture3->lectureModule; ?></span>
                     </li>
-                    <li><?php echo 'Урок '.$lecture3->lectureNumber.': ';?>
+                    <li><?php echo 'Заняття '.$lecture3->lectureNumber.': ';?>
                             <span><?php echo $lecture3->lectureNameText; ?></span>
                     </li>
                     <li><?php echo 'Тип: ';?>
@@ -86,13 +86,12 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                             <div id="lectureTimeText"><?php echo $lecture3->lectureTimeText; ?></div>
                             <div id="lectureTimeImage"><img src="<?php echo $lecture3->lectureTimeImage; ?>"></div>
                     </li>
+                    </br>
                     <li>
-                        <!-- Тег p--->
                             <?php echo '('.$lecture3->lectureNumber.' з '.$lecture3->lectureMaxNumber.' занять)'; ?>
                             <div id="iconImage">
                                 <img src="<?php echo $lecture3->lectureIconImage ;?>">
                             </div>
-                        <!--Тег p-->
                     </li>
                     <div id="counter">
                          <?php
@@ -111,6 +110,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 
         <div class="teacherBlock">
                 <img src="<?php echo $teacherIvanov->teacherImage; ?>">
+                <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">персональна сторінка &#187;</a>
                 <span>
                 <ul>
                     <li> <div class="teacherTitle">
@@ -201,7 +201,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
         <div class="lectureImageMain">
             <img src="<?php echo $lecture3->lectureImageMain; ?>">
         </div>
-        <div class="titlesBlock">
+        <div class="titlesBlock" id="titlesBlock">
             <ul>
                 <li>
                     <?php echo 'Модуль: ';?>
@@ -218,13 +218,12 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                     <div id="lectureTimeText"><?php echo $lecture3->lectureTimeText; ?></div>
                     <div id="lectureTimeImage"><img src="<?php echo $lecture3->lectureTimeImage; ?>"></div>
                 </li>
+                </br>
                 <li>
-                    <!-- Тег p--->
                     <?php echo '('.$lecture3->lectureNumber.' з '.$lecture3->lectureMaxNumber.' занять)'; ?>
                     <div id="iconImage">
                         <img src="<?php echo $lecture3->lectureIconImage ;?>">
                     </div>
-                    <!--Тег p-->
                 </li>
                 <div id="counter">
                     <?php
@@ -237,6 +236,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                 </div>
             </ul>
         </div>
+
         <p><a href="#"><input type="submit" value="Онлайн домомога"></a></p>
         <p><a href="#"><input type="submit" value="Онлайн консультація"></a></p>
     </div>
