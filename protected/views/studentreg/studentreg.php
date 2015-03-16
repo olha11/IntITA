@@ -68,10 +68,10 @@
         </table>
 
         <div class="rowRadioButton">
-            <?php $model->role ='0'; ?>
+            <?php $model->role =0; ?>
             <?php echo $form->labelEx($model,'role'); ?>
             <div class="radiolabelRole">
-                <?php echo $form->radioButtonList($model,'role',array('0'=>'Студент','1'=>'Викладач'), array('separator'=>' '));?>
+                <?php echo $form->radioButtonList($model,'role',array(0=>'Студент',1=>'Викладач'), array('separator'=>' '));?>
             </div>
         </div>
         <div class="row">
@@ -113,7 +113,7 @@
             <?php $model->educform ='0'; ?>
             <?php echo $form->labelEx($model,'educform'); ?>
             <div class="radiolabel">
-                <?php echo $form->radioButtonList($model,'educform',array('0'=>'online','1'=>'offline'), array('separator'=>' '));?>
+                <?php echo $form->checkBoxList($model,'educform',array(0=>'online',1=>'offline'), array('separator'=>' '));?>
             </div>
         </div>
         <div class="row">
@@ -169,7 +169,8 @@
             <input tabindex="-1" type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
             <input tabindex="-1" class="uploadAvatar" type="submit">
         </div>
-        <div id="avatarInfo">Розмір фото до 512кб</div>
+        <div id="avatarHelp">Розмір фото до 512кб</div>
+        <div id="avatarInfo">Файл не вибрано...</div>
         <div class="avatarError">
             <?php if(Yii::app()->user->hasFlash('avatarmessage')):
                 echo Yii::app()->user->getFlash('avatarmessage');

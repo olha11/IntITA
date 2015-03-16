@@ -154,7 +154,8 @@ $post=StudentReg::model()->findByPk(1);
             <input tabindex="-1" type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
             <input tabindex="-1" class="uploadAvatar" type="submit">
         </div>
-        <div id="avatarInfo">Розмір фото до 512кб</div>
+        <div id="avatarHelp">Розмір фото до 512кб</div>
+        <div id="avatarInfo">Файл не вибрано...</div>
         <div class="avatarError">
             <?php if(Yii::app()->user->hasFlash('avatarmessage')):
                 echo Yii::app()->user->getFlash('avatarmessage');

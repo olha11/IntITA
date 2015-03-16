@@ -58,8 +58,8 @@ $post=StudentReg::model()->findByPk(1);
                             $date_b = new DateTime();
                             $interval = $date_b->diff($date_a);
                             echo $interval->format("%Y");
+                            $post::getYearsTermination($interval->format("%Y"));
                             ?>
-                            років
                         </p>
                     </div>
                     <div class="aboutInfo">
@@ -138,6 +138,8 @@ $post=StudentReg::model()->findByPk(1);
             <section id="myCourse">
                 <div class="profileCourse">
                     <p>Курс:</br> <span class="colorP">"Апгрейд головного мозку"</span></p>
+                    <p class="courseLevLang">Рівень курсу: <span class="colorP">початковий</span></p>
+                    <p class="courseLevLang">Мова курсу: <span class="colorP">українська</span></p>
                 </div>
                 <div class="profileModule">
                     <p>Модуль:</br> <span class="colorP">Модуль 4. Модульне око, модульний ніс</span></p>

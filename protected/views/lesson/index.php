@@ -72,6 +72,10 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
             <div class="titlesBlock" id="titlesBlock">
                 <ul>
                     <li>
+                        <?php echo 'Курс: ';?>
+                        <span>Програмування для чайників</span>(мова:UA)
+                    </li>
+                    <li>
                         <?php echo 'Модуль: ';?>
                             <span><?php echo $lecture3->lectureModule; ?></span>
                     </li>
@@ -198,11 +202,12 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <div class="lessonBlock" id="lessonBlock">
 <!--navigation vertical-->
     <div id="sidebarLesson">
-        <div class="lectureImageMain">
-            <img src="<?php echo $lecture3->lectureImageMain; ?>">
-        </div>
         <div class="titlesBlock" id="titlesBlock">
             <ul>
+                <li>
+                    <?php echo 'Курс: ';?>
+                    <span>Програмування для чайників</span>(мова:UA)
+                </li>
                 <li>
                     <?php echo 'Модуль: ';?>
                     <span><?php echo $lecture3->lectureModule; ?></span>
@@ -243,7 +248,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 <!--navigation vertical-->
         <div class="lessonText">
             <h1 class="lessonTheme">Змінні та типи даних в PHP </h1>
-            <span class="listTheme">Зміст </span><span class="spoilerLinks"><span class="spoilerClick" id="123456">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+            <span class="listTheme">Зміст </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
 
                 <div class="spoilerBody">
                    <p><a href="#Частина 1: Типи змінних та перемінних">Частина 1: Типи змінних та перемінних</a></p>
@@ -255,7 +260,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
             <div class="lessonCode"><p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>
             <span class="colorBlack">Імена змінних</span>
             <p>Будь-яка змінна в РНР має ім'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>
-            <h3><span class="subChapter">Відео 1.</span></h3>
+            <h3><span class="subChapter">Відео</span></h3>
             <iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>
 
             <a name="Частина 1: Типи змінних та перемінних"></a>
