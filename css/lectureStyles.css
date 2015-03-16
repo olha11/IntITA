@@ -137,4 +137,6 @@ font-size:16px;
     font-size: small;
     line-height: 100%;
 }
- 
+.teacherBlock a:hover{
+    color:#666666;
+}

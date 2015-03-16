@@ -107,10 +107,12 @@ table.profileInfo {
     box-shadow:0 0 3px #4b75a4;
     cursor: pointer;
 }
-.rowRadioButton input[type="radio"]
+.rowRadioButton input[type="radio"],.rowRadioButton input[type="checkbox"]
 {
     float:left;
     width: 20px;
+    height: 36px;
+    line-height: 40px;
 }
 .radiolabel label, .radiolabelRole label
 {
@@ -118,7 +120,7 @@ table.profileInfo {
     text-align: left;
     margin-bottom: 8px;
 }
-.rowRadioButton input[type="radio"]:hover
+.rowRadioButton input[type="radio"]:hover,.rowRadioButton input[type="checkbox"]:hover
 {
     box-shadow:0 0 3px #ffffff;
 }
@@ -128,10 +130,11 @@ table.profileInfo {
     border-color:#4b75a4;
     cursor: text;
 }
-.rowRadioButton input[type="radio"]:focus
+.rowRadioButton input[type="radio"]:focus,.rowRadioButton input[type="checkbox"]:focus
 {
     box-shadow:0 0 3px #ffffff;
 }
+
 /* ����� �����*/
 .studPhoto{
     display:inline-block;
@@ -156,6 +159,9 @@ table.titleProfile{
     display:inline-block;
     font-size: smaller;
     line-height: 120%;
+}
+.titleProfile a:hover{
+    color:#666666;
 }
 table.titleProfileAv{
     margin:16px 0px 16px 0;
@@ -206,10 +212,15 @@ table.titleProfileAv{
 .photoButton  input[type="submit"] {
     margin:10px 0px 30px 22px;
 }
-
+#avatarHelp{
+    color:#666666;
+    margin:0;
+    height:20px;
+    font-size: small;
+}
 #avatarInfo{
     color:#666666;
-    margin:10px 0 140px 0;
+    margin:0 0 140px 0;
 	height:20px;
 }
 #photoForm {
@@ -222,6 +233,7 @@ table.titleProfileAv{
     width: 176px;
 	height:45px;
     margin-top: 22px;
+    margin-bottom: -5px;
 }
 
 .fileform .uploadAvatar {
@@ -358,8 +370,15 @@ label.tabsUp1,label.tabsDown1{
     border-bottom:1px solid #d8d8d8;
     margin: 0px 10px 0 10px;
 }
-.profileCourse {
-
+.profileCourse{
+    padding-bottom: 20px;
+}
+.profileCourse p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+p.courseLevLang{
+    font-size: small;
 }
 #myCourse div.profileCoursePay{
     border-bottom:none;
@@ -385,7 +404,7 @@ label.tabsUp1,label.tabsDown1{
 .profileLesson {
     padding-left: 30px;
 }
-.profileLesson p, .profileCourse p,.profileCoursePay > p,.profileModule p, .aboutInfo > p{
+.profileLesson p, .colorP p,.profileCoursePay > p,.profileModule p, .aboutInfo > p{
     color: #666666;
 }
 /*My Course*/
