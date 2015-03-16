@@ -1,0 +1,147 @@
+/*header navigation*/
+div.subNavBlockCourse {
+    margin: 0 auto;
+    width: 960px;
+    clear: both;
+    overflow: hidden;
+}
+div.subLinksCourse{
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    display:inline-block;
+    margin-bottom: 28px;
+    float:left;
+}
+.subLinksCourse a{
+    color: #666666;
+}
+/*Main Block*/
+.courseBlock
+{
+    margin: 0 auto;
+    width: 960px;
+    border-top: 1px solid #d8d8d8;
+    color: #666666;
+    overflow: hidden;
+}
+.courseTitle h1{
+    font-weight: inherit;
+    color: #4B75A4;
+    margin: 24px 0 0 176px;
+    line-height: 100%;
+}
+img.courseImg{
+    position: absolute;
+    width: 140px;
+    margin-top: 20px;
+}
+.courseInfo {
+    display:inline-block;
+    margin-left: 18%;
+    margin-right: 2%;
+    width: 30%;
+    overflow: hidden;
+    vertical-align: top;
+}
+.courseModules {
+    display:inline-block;
+    width: 48%;
+    overflow: hidden;
+    vertical-align: top;
+}
+.courseInfo{
+    font-size: small;
+}
+.colorP{
+    color: #4b75a4;
+}
+.colorGrey{
+    color: #666666;
+}
+table.courseLevelLine{
+    width: 100%;
+}
+.courseInfo table{
+    border-spacing: 0;
+}
+td.courseLevel {
+    text-align: right;
+}
+.courseDetail td{
+    padding-right: 28px;
+    vertical-align: top;
+}
+.courseTeacherDetail td{
+    padding-right: 15px;
+    vertical-align: top;
+}
+p.subCourseInfo, p.courseAboutTeacher{
+    color: #4b75a4;
+    margin-bottom: 0;
+}
+.courseInfo ul{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+/*teachers*/
+.courseInfo h2{
+    border-top: 1px solid #cccccc;
+    font-weight: inherit;
+    color: #4B75A4;
+}
+.courseTeacherImg{
+    display:inline-block;
+    width: 70px;
+}
+.courseTeacherImg img{
+    width: 64px;
+}
+.courseTeacherInfo{
+    display:inline-block;
+    width: 210px;
+    margin-bottom: 20px;
+    vertical-align: top;
+}
+.courseTeacherInfo h3{
+    font-weight: inherit;
+    color: #4B75A4;
+    margin: 0 0 5px 0;
+}
+/*teachers*/
+/*modules*/
+.courseModuleNumber{
+    display:inline-block;
+    width: 74px;
+}
+.courseModuleInfo{
+    display:inline-block;
+    width: 378px;
+    vertical-align: top;
+}
+div.cModuleNumber{
+    float: right;
+    margin-right: 12px;
+}
+.cModuleNumber{
+    text-align: center;
+    font-size: xx-large;
+    border: 1px solid;
+    width: 45px;
+    height: 45px;
+    border-radius: 150px;
+}
+.courseModuleInfo h2{
+    font-weight: inherit;
+    font-size: larger;
+    color: #4B75A4;
+    margin: 0 0 0 0;
+    line-height: 100%;
+}
+.cModule{
+    margin: 15px 0 10px 0;
+}
+.cModule p{
+    font-size: small;
+}
+/*modules*/
