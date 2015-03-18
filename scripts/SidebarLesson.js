@@ -8,9 +8,9 @@ $(function() {
     $(window).scroll(function() {
         if (($(window).scrollTop() > mainBlockCoord-56) && ($(window).scrollTop()+sideBarHeight+100) < (document.getElementById('subViewLessons').getBoundingClientRect().top + $(window).scrollTop())) {
             document.getElementById('sidebarLesson').style.display='block';
-            $("#sidebarLesson").stop().animate({
-                marginTop: $(window).scrollTop() -  mainBlockCoord
-            },0);
+            document.getElementById('sidebarLesson').style.position='fixed';
+            document.getElementById('sidebarLesson').style.top='50px';
+            ;
         } else {
             document.getElementById('sidebarLesson').style.display='none';
             $("#sidebarLesson").stop().animate({
