@@ -21,6 +21,19 @@
         cursor: pointer;
     }
 </style>
+<!-- Підключення BBCode WysiBB -->
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/jquery.wysibb.min.js"></script>
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/theme/default/wbbtheme.css" type="text/css" />
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/lang/ua.js"></script>
+
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/BBCode.js"></script>
+<!-- Підключення BBCode WysiBB -->
+<!-- Spoiler -->
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/SpoilerContent.js"></script>
+<!-- Spoiler -->
+<!--Sidebar-->
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/SidebarLesson.js"></script>
+<!--Sidebar-->
 <?php
 /* @var $this LessonController */
 /* @var $model LessonTop */
@@ -147,58 +160,6 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
     </div> <!-- Finish Main Block -->
 
 <!-- lesson main part -->
-<!--JS BBCode-->
-<script>
-    $(document).ready(function() {
-        var wbbOpt = {
-            lang: "ua",
-            buttons: "bold,italic,underline,|,code,bullist,numlist"
-        }
-        $("#editor").wysibb(wbbOpt);
-        $("#editor2").wysibb(wbbOpt);
-        $("#editor3").wysibb(wbbOpt);
-    });
-</script>
-<!--JS BBCode-->
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.spoilerLinks').click(function(){
-            var nameSpoiler = $(this).children("span:first").text();
-            if(nameSpoiler=="(показати)"){
-                $(this).children("span:first").text("(приховати)");
-                $(this).children("span:last").text("\u25B2");
-            } else if(nameSpoiler=="(приховати)"){
-                $(this).children("span:first").text("(показати)");
-                $(this).children("span:last").text("\u25BC");
-            }
-            $(this).next('.spoilerBody').toggle('normal');
-            return false;
-        });
-    });
-</script>
-<!--JS BBCode-->
-<!--Sidebar-->
-<script type="text/javascript">
-    $(function() {
-        var sideBarHeight =document.getElementById('titlesBlock').getBoundingClientRect().bottom - document.getElementById('titlesBlock').getBoundingClientRect().top+100;
-        var mainBlockCoord =$(window).scrollTop()+document.getElementById('titlesBlock').getBoundingClientRect().bottom;
-
-        $(window).scroll(function() {
-            if (($(window).scrollTop() > mainBlockCoord-56) && ($(window).scrollTop()+sideBarHeight+100) < (document.getElementById('subViewLessons').getBoundingClientRect().top + $(window).scrollTop())) {
-                document.getElementById('sidebarLesson').style.display='block';
-                $("#sidebarLesson").stop().animate({
-                    marginTop: $(window).scrollTop() -  mainBlockCoord
-                },0);
-            } else {
-                document.getElementById('sidebarLesson').style.display='none';
-                $("#sidebarLesson").stop().animate({
-                    marginTop: 0
-                },0);
-            };
-        });
-    });
-</script>
-<!--Sidebar-->
 <!--Перша частина-->
 <div class="lessonBlock" id="lessonBlock">
 <!--navigation vertical-->
@@ -352,7 +313,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                         </ol>
                         <div class="BBCode">
                             <form action="" method="post">
-                                <textarea id="editor"></textarea>
+                                <textarea class="editor"></textarea>
                                 <input  id="lessonTask1" type="submit" value="Відповісти">
                             </form>
                         </div>
@@ -452,7 +413,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                         </ol>
                         <div class="BBCode">
                             <form action="" method="post">
-                                <textarea id="editor2"></textarea>
+                                <textarea class="editor"></textarea>
                                 <input  id="lessonTask2" type="submit" value="Відповісти">
                             </form>
                         </div>
@@ -481,7 +442,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                         </ol>
                         <div class="BBCode">
                             <form action="" method="post">
-                                <textarea id="editor3"></textarea>
+                                <textarea class="editor"></textarea>
                                 <input  id="lessonTask3" type="submit" value="Відповісти">
                             </form>
                         </div>

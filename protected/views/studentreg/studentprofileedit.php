@@ -40,16 +40,8 @@ $post=StudentReg::model()->findByPk(1);
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.numeric.extensions.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.custom.extensions.js"></script>
 
-<script type="text/javascript">
-    jQuery(function() {
-        $(".date").inputmask("d/m/y", { "placeholder": "дд.мм.гггг" });
-    });
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/mask.js"></script>
 
-
-    jQuery(function() {
-        $(".phone").inputmask("+38(999)9999999");
-    });
-</script>
 <div class="formStudProfNav">
     <?php
     $this->breadcrumbs=array(

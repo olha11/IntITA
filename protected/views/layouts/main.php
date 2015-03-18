@@ -57,11 +57,6 @@
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/syntaxhighlighter/prettify.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/syntaxhighlighter/prettify.init.js"></script>
     <!-- Підсвітка синтаксису -->
-    <!-- Підключення BBCode WysiBB -->
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/jquery.wysibb.min.js"></script>
-    <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/theme/default/wbbtheme.css" type="text/css" />
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/lang/ua.js"></script>
-    <!-- Підключення BBCode WysiBB -->
 
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
