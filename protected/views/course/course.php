@@ -13,13 +13,12 @@
 <?php
 $post=Course::model()->findByPk(1);
 ?>
+<?php
+$this->breadcrumbs=array(
+    'Курси'=>Yii::app()->request->baseUrl."/index.php/?r=courses",'Програмування для чайників',
+);
+?>
 <!-- BD -))) -->
-<div class="subNavBlockCourse">
-    <div class="subLinksCourse">
-        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Головна</a> &#187; <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/?r=courses">Курси</a> &#187; <a href="#">Програмування для чайників</a>
-    </div>
-</div>
-
 <div class="courseBlock">
     <img class="courseImg" src="<?php echo Yii::app()->request->baseUrl.$post->course_img ?>" />
     <div class="courseTitle">

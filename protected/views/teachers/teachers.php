@@ -16,9 +16,11 @@ $post=TeachersTemp::model()->findAll();
 <!-- BD -))) -->
 
 <div class="subNavBlockTeachers">
-    <div class="subLinksTeachers">
-        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Головна</a> &#187; <a href="#">Викладачі</a>
-    </div>
+    <?php
+    $this->breadcrumbs=array(
+    'Викладачі',
+    );
+    ?>
     <div class="ifYouTeachers">
     Якщо ви професійний ІТ-шник і бажаєте викладати окремі ІТ курси чи модулі і співпрацювати з нами в напрямку підготовки програмістів, напишіть нам листа.
     </div>
@@ -78,7 +80,7 @@ $post=TeachersTemp::model()->findAll();
                     <?php
                     }
                     ?>
-                    <a href="#">Отзывы о преподавателе &#187;</a>
+                    <a href="#">Відгуки &#187;</a>
                 </div>
             </div>
             <?php
@@ -135,7 +137,7 @@ $post=TeachersTemp::model()->findAll();
                     <?php
                     }
                     ?>
-                    <a href="#">Отзывы о преподавателе &#187;</a>
+                    <a href="#">Відгуки &#187;</a>
                 </div>
             </div>
             <?php

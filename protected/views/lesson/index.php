@@ -28,7 +28,7 @@
 
 
 $this->breadcrumbs=array(
-    'Users',
+    'Курс Програмування'=>Yii::app()->request->baseUrl."/?r=course",'Модуль PHP'=>Yii::app()->request->baseUrl."/?r=course",'Заняття 2: Змінні та типи данних в PHP',
 );
 ?>
 
@@ -139,6 +139,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                         <?php echo $teacherIvanov->linkName; ?>
                         </a>
                     </li>
+                    <p><a href="#"><input type="submit" value="Запланувати консультацію"></a></p>
                 </ul>
                 </span>
         </div>

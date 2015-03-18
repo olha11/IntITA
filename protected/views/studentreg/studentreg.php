@@ -25,6 +25,9 @@
 /* @var $regExtended Regextended*/
 /* @var $form CActiveForm */
 
+$this->breadcrumbs=array(
+    'Реєстрація',
+);
 ?>
 
 <!--Role-->
@@ -41,13 +44,22 @@
     });
 </script>
 <!--Role-->
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.extensions.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.date.extensions.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.numeric.extensions.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.custom.extensions.js"></script>
+
+<script type="text/javascript">
+    jQuery(function() {
+        $(".date").inputmask("d/m/y", { "placeholder": "дд.мм.гггг" });
+    });
 
 
-<div class="formStudProfNav">
-    <div class="regLinks">
-        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Головна</a> &#187; <a href="#">Реєстрація</a>
-    </div>
-</div>
+    jQuery(function() {
+        $(".phone").inputmask("+38(999)9999999");
+    });
+</script>
 <div class="formStudProf">
     <?php $form=$this->beginWidget('CActiveForm', array(
         'id'=>'studentreg-form',
@@ -89,14 +101,16 @@
             <?php echo $form->textField($model,'nickname',array('maxlength'=>255)); ?>
             <span><?php echo $form->error($model,'nickname'); ?></span>
         </div>
-        <div class="row">
+        <div class="rowDate">
             <?php echo $form->label($model,'birthday'); ?>
-            <?php echo $form->textField($model,'birthday',array('maxlength'=>11, 'placeholder'=>'введіть в форматі дд.мм.рррр')); ?>
+            <?php echo $form->textField($model,'birthday',array('maxlength'=>11, 'class'=>'date', 'placeholder'=>'введіть в форматі дд.мм.рррр'));?>
             <span><?php echo $form->error($model,'birthday'); ?></span>
         </div>
-        <div class="row">
+        <div class="rowPhone">
             <?php echo $form->labelEx($model,'phone'); ?>
-            <?php echo $form->textField($model,'phone',array('maxlength'=>15)); ?>
+            <div class="user_phone">
+              <?php echo $form->textField($model,'phone',array('class'=>'phone','maxlength'=>15)); ?>
+            </div>
             <span><?php echo $form->error($model,'phone'); ?></span>
         </div>
         <div class="row">
@@ -110,10 +124,10 @@
             <span><?php echo $form->error($model,'education'); ?></span>
         </div>
         <div class="rowRadioButton" id="rowEducForm">
-            <?php $model->educform ='0'; ?>
+            <?php $model->educform ='Онлайн'; ?>
             <?php echo $form->labelEx($model,'educform'); ?>
             <div class="radiolabel">
-                <?php echo $form->checkBoxList($model,'educform',array(0=>'online',1=>'offline'), array('separator'=>' '));?>
+                <?php echo $form->checkBoxList($model,'educform',array('Онлайн'=>'online','Офлайн'=>'offline'), array('separator'=>' '));?>
             </div>
         </div>
         <div class="row">

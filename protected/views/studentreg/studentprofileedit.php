@@ -34,10 +34,28 @@
 <?php
 $post=StudentReg::model()->findByPk(1);
 ?>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.extensions.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.date.extensions.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.numeric.extensions.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.custom.extensions.js"></script>
+
+<script type="text/javascript">
+    jQuery(function() {
+        $(".date").inputmask("d/m/y", { "placeholder": "дд.мм.гггг" });
+    });
+
+
+    jQuery(function() {
+        $(".phone").inputmask("+38(999)9999999");
+    });
+</script>
 <div class="formStudProfNav">
-    <div class="regLinks">
-        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Головна</a> &#187; <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/?r=studentreg/profile">Профіль</a>&#187; <a href="#">Редагувати профіль</a>
-    </div>
+    <?php
+    $this->breadcrumbs=array(
+        'Профіль'=>Yii::app()->request->baseUrl.'/index.php/?r=studentreg/profile','Редагувати профіль'
+    );
+    ?>
     <div class="profileStatus">
         <div>
             <?php echo $post->firstName;?></br>
@@ -82,14 +100,14 @@ $post=StudentReg::model()->findByPk(1);
             <?php echo $form->textField($model,'nickname',array('value'=>$post->nickname,'maxlength'=>255)); ?>
             <span><?php echo $form->error($model,'nickname'); ?></span>
         </div>
-        <div class="row">
+        <div class="rowDate">
             <?php echo $form->label($model,'birthday'); ?>
-            <?php echo $form->textField($model,'birthday',array('value'=>$post->birthday,'maxlength'=>11, 'placeholder'=>'введіть в форматі дд.мм.рррр')); ?>
+            <?php echo $form->textField($model,'birthday',array('value'=>$post->birthday, 'class'=>'date','maxlength'=>11, 'placeholder'=>'введіть в форматі дд.мм.рррр')); ?>
             <span><?php echo $form->error($model,'birthday'); ?></span>
         </div>
         <div class="row">
             <?php echo $form->labelEx($model,'phone'); ?>
-            <?php echo $form->textField($model,'phone',array('value'=>$post->phone,'maxlength'=>15)); ?>
+            <?php echo $form->textField($model,'phone',array('value'=>$post->phone,'class'=>'phone','maxlength'=>15)); ?>
             <span><?php echo $form->error($model,'phone'); ?></span>
         </div>
         <div class="row">

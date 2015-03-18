@@ -1,9 +1,9 @@
 /*header navigation*/
 .subNavBlockTeachers {
+    position: relative;
     margin: 0 auto;
     width: 960px;
     clear: both;
-    overflow: hidden;
 }
 div.subLinksTeachers{
     box-sizing:border-box;
@@ -14,11 +14,15 @@ div.subLinksTeachers{
     width: 30%;
 }
 div.ifYouTeachers{
+    position: absolute;
+    top:0;
+    right:0;
     box-sizing:border-box;
     -moz-box-sizing:border-box;
     display:inline-block;
     float:right;
     width: 460px;
+    top:-40px;
 }
 .subLinksTeachers a{
     color: #666666;

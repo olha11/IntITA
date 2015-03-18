@@ -126,6 +126,23 @@ class StudentRegController extends Controller
         $model=new StudentReg();
         if(isset($_POST['StudentReg']))
         {
+
+            if(isset($_POST['StudentReg']))
+            {
+                if(($_POST['StudentReg']['educform'][0]=='Онлайн') && ($_POST['StudentReg']['educform'][1]!=='Офлайн')){
+                    $_POST['StudentReg']['educform']='Онлайн';
+                }
+                if(($_POST['StudentReg']['educform'][1]!=='Онлайн') && ($_POST['StudentReg']['educform'][0]=='Офлайн')){
+                    $_POST['StudentReg']['educform']='Офлайн';
+                }
+                if(($_POST['StudentReg']['educform'][0]=='Онлайн') && ($_POST['StudentReg']['educform'][1]=='Офлайн')){
+                    $_POST['StudentReg']['educform']='Онлайн/Офлайн';
+                }
+                if(($_POST['StudentReg']['educform'][0]!=='Онлайн') && ($_POST['StudentReg']['educform'][0]!=='Офлайн')){
+                    $_POST['StudentReg']['educform']='Не вибрано';
+                }
+            }
+
             $model->attributes=$_POST['StudentReg'];
             if($model->validate())
             {
@@ -147,7 +164,7 @@ class StudentRegController extends Controller
                         $model->avatar="/css/images/".$_FILES["upload"]["name"];
                     }
                     $model->save();
-                    Yii::app()->user->setFlash('message','Ваші дані оновлено');
+
                     header('Location: '.$_SERVER['HTTP_REFERER']);
                 }
 

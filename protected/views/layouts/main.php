@@ -118,11 +118,15 @@
 
 <div class="main">
 
-    <div style="height: 105px; width: auto"></div>
+    <div style="height: 55px; width: auto"></div>
 
     <?php if(isset($this->breadcrumbs)):?>
         <?php $this->widget('zii.widgets.CBreadcrumbs', array(
             'links'=>$this->breadcrumbs,
+            'homeLink'=>CHtml::link('Головна','/index.php'),
+            'htmlOptions' => array(
+                'class' => 'my-cool-breadcrumbs'
+            )
         )); ?><!-- breadcrumbs -->
     <?php endif?>
 

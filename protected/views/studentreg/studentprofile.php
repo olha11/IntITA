@@ -14,9 +14,11 @@ $post=StudentReg::model()->findByPk(1);
 ?>
 
 <div class="formStudProfNav">
-    <div class="regLinks">
-        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Головна</a> &#187; <a href="#">Профіль</a>
-    </div>
+    <?php
+    $this->breadcrumbs=array(
+        'Профіль',
+    );
+    ?>
     <div class="profileStatus">
         <div>
             <?php echo $post->firstName;?></br>
@@ -54,6 +56,7 @@ $post=StudentReg::model()->findByPk(1);
                         <p><?php echo $post->address;?>,
                             <?php
                             $myAge = $post->birthday;
+                            $myAge = str_replace("/",".",$myAge);
                             $date_a = new DateTime($myAge);
                             $date_b = new DateTime();
                             $interval = $date_b->diff($date_a);
@@ -89,6 +92,9 @@ $post=StudentReg::model()->findByPk(1);
                     </div>
                     <div class="aboutInfo">
                         <p> <span class="colorP">Звідки дізнався про Вас:</span> </br><?php echo $post->aboutUs;?></p>
+                    </div>
+                    <div class="aboutInfo">
+                        <p> <span class="colorP">Форма навчання:</span> </br><?php echo $post->educform;?></p>
                     </div>
                     <div class="aboutInfo">
                         <p> <span class="colorP">Завершенні курси:</span> </br>Курси самогоних апаратів 6-го рівня</p>

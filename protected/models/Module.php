@@ -159,19 +159,19 @@ class Module extends CActiveRecord
         //Тогда подставляем окончание "ЕВ"
         if($number > 10 and $number < 15)
         {
-            $term = "ів";
+            $term = "ь";
         }
         else
         {
 
             $number = substr($number, -1);
 
-            if($number == 0) {$term = "ів";}
-            if($number == 1 ) {$term = "к";}
-            if($number > 1 ) {$term = "а";}
-            if($number > 4 ) {$term = "ів";}
+            if($number == 0) {$term = "ь";}
+            if($number == 1 ) {$term = "тя";}
+            if($number > 1 ) {$term = "тя";}
+            if($number > 4 ) {$term = "ь";}
         }
 
-        echo  ' урок'.$term;
+        echo  ' занят'.$term;
     }
 }

@@ -140,3 +140,22 @@ font-size:16px;
 .teacherBlock a:hover{
     color:#666666;
 }
+
+
+.teacherBlock input[type="submit"] {
+    width: 220px;
+    height:30px;
+    border-radius: 5px;
+    border:none;
+    color:#ffffff;
+    background-color:#4b75a4;
+    box-shadow:0px 2px 0px #7f7f7f;
+    font-size: medium;
+    margin-top: 20px;
+}
+.teacherBlock input[type="submit"]:hover {
+    border-top-color: #454545;
+    background: #454545;
+    color: #fcfcfc;
+    cursor: pointer;
+}

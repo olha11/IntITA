@@ -238,7 +238,6 @@ p {
     margin-top:145px;
     margin-left:408px;
 
-
 }
 .zagolovok
 {
@@ -318,21 +317,27 @@ p {
     transition: .2s linear;
 }
 .button1{
-    width:220px;
-    height:55px;
-    background-color:#4b75a4;
-    margin-top:10px;
-    margin-left:150px;
-    border:solid 2px #ffffff;
-    border-radius: 6px;
-    background: linear-gradient(#4b75a4, #2b4a6c);
-    font:30px Arial, Helvetica, sans-serif;
+    width:200px;
+    height:50px;
+    border-radius: 10px;
+    border:none;
+    border-top:1px solid #007cbf;
     color:#ffffff;
+    background:#4b75a4;
+    margin-bottom: 30px;
+    box-shadow:0px 3px 0px #7f7f7f;
+    font-size:       21px;
+    font: normal     400 28px/50px "MyriadPro";
+    margin-left: 174px;
+    margin-top: 15px;
+    padding-top: 0px;
+    padding-right: 30px;
+
 }
+
 .button1:hover {  /* при наведении курсора мышки */
-    outline: none;
-    box-shadow: 0 0 20px rgba(35,146,243,.5);
-    transition: .2s linear;
+    background: #454545;
+    cursor: pointer;
 }
 .lineForm{
     width:440px;
@@ -355,4 +360,84 @@ p {
     margin-top:20px;
 }
 /****************registration***********/
+/* Cначала обозначаем стили для IE8 и более старых версий
+т.е. здесь мы немного облагораживаем стандартный чекбокс. */
+#regCheckbox {
+    vertical-align: top;
+    margin: 13px 3px 0 0;
+    width: 15px;
+    height: 15px;
+}
+/* Это для всех браузеров, кроме совсем старых, которые не поддерживают
+селекторы с плюсом. Показываем, что label кликабелен. */
+#regCheckbox + label {
+    cursor: pointer;
+}
 
+/* Далее идет оформление чекбокса в современных браузерах, а также IE9 и выше.
+Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
+в них все нижеследующие стили не сработают. */
+
+/* Прячем оригинальный чекбокс. */
+#regCheckbox:not(checked) {
+    position: absolute;
+    opacity: 0;
+}
+#regCheckbox:not(checked) + label {
+    position: relative; /* будем позиционировать псевдочекбокс относительно label */
+    padding: 0 0 0 42px; /* оставляем слева от label место под псевдочекбокс */
+}
+/* Оформление первой части чекбокса в выключенном состоянии (фон). */
+#regCheckbox:not(checked) + label:before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 2px;
+    width: 26px;
+    height: 14px;
+    border-radius: 13px;
+    background: #4B75A4;
+    box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+}
+/* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
+#regCheckbox:not(checked) + label:after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    transition: all .2s; /* анимация, чтобы чекбокс переключался плавно */
+}
+/* Меняем фон чекбокса, когда он включен. */
+#regCheckbox:checked + label:before {
+    background: #26ab36;
+}
+/* Сдвигаем переключатель чекбокса, когда он включен. */
+#regCheckbox:checked + label:after {
+    left: 16px;
+}
+/* Показываем получение фокуса. */
+#regCheckbox:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(126,180,234,.5);
+}
+.fon label{
+    color:#4B75A4;
+}
+.fon label:hover{
+    color:#666666;
+}
+/* breadcrumbs */
+.my-cool-breadcrumbs{
+    margin-bottom: 24px;
+    display: inline-block;
+    margin-top: 40px;
+    color: #666666;
+}
+.my-cool-breadcrumbs a:visited{
+    color: #666666;
+}
+/* breadcrumbs */

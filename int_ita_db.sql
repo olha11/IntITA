@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50525
 File Encoding         : 65001
 
-Date: 2015-03-13 20:56:07
+Date: 2015-03-18 15:28:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -236,8 +236,14 @@ INSERT INTO `carousel` VALUES ('4', '4.jpg', '<p>Слайдер фото 4</p>',
 DROP TABLE IF EXISTS `course`;
 CREATE TABLE `course` (
   `course_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `course_name` varchar(45) NOT NULL,
-  `course_duration_hours` int(11) NOT NULL,
+  `course_name` varchar(45) DEFAULT NULL,
+  `course_duration_hours` int(11) DEFAULT NULL,
+  `modules_count` int(255) DEFAULT NULL,
+  `course_price` decimal(10,0) DEFAULT NULL,
+  `for_whom` text,
+  `what_you_learn` text,
+  `what_you_get` text,
+  `course_img` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`course_ID`),
   UNIQUE KEY `course_name` (`course_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
@@ -245,15 +251,15 @@ CREATE TABLE `course` (
 -- ----------------------------
 -- Records of course
 -- ----------------------------
-INSERT INTO `course` VALUES ('1', 'Course 1. OOP', '40');
-INSERT INTO `course` VALUES ('2', 'Course 2. Programming', '120');
-INSERT INTO `course` VALUES ('3', 'Course 3. Math', '30');
-INSERT INTO `course` VALUES ('4', 'Course 4. Discrete math', '40');
-INSERT INTO `course` VALUES ('5', 'Course 5', '36');
-INSERT INTO `course` VALUES ('6', 'Course 6', '130');
-INSERT INTO `course` VALUES ('7', 'Course 7', '64');
-INSERT INTO `course` VALUES ('8', 'Course 8', '54');
-INSERT INTO `course` VALUES ('9', 'Course 9', '90');
+INSERT INTO `course` VALUES ('1', 'Програмування для чайників', '89', '7', '6548', 'хто відповідає за постановку завдань на розробку;для дизайнерів, які готові почати не просто малювати красиві картинки, а й навчитися тому, як створювати працюючі і зручні інтерфейси;для розробників, які хочуть самостійно створити або змінити свій проект;', 'Ви навчитеся писати чистий код;Користуватися системами контролю версій;Дізнаєтеся, з чого складається сучасний додаток;Для чого потрібен безперервна інтеграція (СІ) сервер;Чому потрібно тестувати свої програми і як це робити;', 'Відеозаписи та текстові матеріали всіх онлайн-занять;Спілкування з розумними одногрупниками;Сертифікат про закінчення навчання;Прилаштованість на робоче місце в силіконовій долині;', '/css/images/courseimg1.png');
+INSERT INTO `course` VALUES ('2', 'Course 2. Programming', '120', '0', '0', '', '', '', null);
+INSERT INTO `course` VALUES ('3', 'Course 3. Math', '30', '0', '0', '', '', '', null);
+INSERT INTO `course` VALUES ('4', 'Course 4. Discrete math', '40', '0', '0', '', '', '', null);
+INSERT INTO `course` VALUES ('5', 'Course 5', '36', '0', '0', '', '', '', null);
+INSERT INTO `course` VALUES ('6', 'Course 6', '130', '0', '0', '', '', '', null);
+INSERT INTO `course` VALUES ('7', 'Course 7', '64', '0', '0', '', '', '', null);
+INSERT INTO `course` VALUES ('8', 'Course 8', '54', '0', '0', '', '', '', null);
+INSERT INTO `course` VALUES ('9', 'Course 9', '90', '0', '0', '', '', '', null);
 
 -- ----------------------------
 -- Table structure for footer
@@ -414,7 +420,7 @@ CREATE TABLE `mainpage` (
 -- ----------------------------
 -- Records of mainpage
 -- ----------------------------
-INSERT INTO `mainpage` VALUES ('0', 'UA', 'IntITA - Академія програмування', 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Програміст — сама древня сучасна професія на планеті Земля!', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png', 'Готові розпочати?', 'Введіть дані в форму нижче', 'розширена реєстрація', 'Розпочати', 'Ви можете також зареєструватися через соцмережі:', '/css/images/networking.png', '/css/images/formFon.png');
+INSERT INTO `mainpage` VALUES ('0', 'UA', 'IntITA - Академія програмування', 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Програміст — сама древня сучасна професія на планеті Земля!', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png', 'Готові розпочати?', 'Введіть дані в форму нижче', 'розширена реєстрація', 'ПОЧАТИ', 'Ви можете також зареєструватися через соцмережі:', '/css/images/networking.png', '/css/images/formFon.png');
 INSERT INTO `mainpage` VALUES ('1', 'RU', 'IntITA - Академия программирования', 'ПРОГРАММИРУЙ БУДУЩЕЕ', 'Программист - наиболее древняя профессия на планете Земля!', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'НАЧАТЬ', ' О нас', '/css/images/line1.png', 'кое-что, что Вам нужно знать о наших курсах', '1', 'Как организовано обучение?', 'далее пошаговое обьяснение, как Вы будете учиться', '1', '958px', 'детальнее ...', '/css/images/hexagon.png', 'Готовы начать?', 'Введите данные в форму ниже', 'расширенная регистрация', 'Начать', 'Вы также можете зарегистрироваться через соцсети:', '/css/images/networking.png', '/css/images/formFon.png');
 
 -- ----------------------------
@@ -426,6 +432,13 @@ CREATE TABLE `modules` (
   `module_name` varchar(45) NOT NULL,
   `module_duration_hours` int(11) NOT NULL,
   `module_duration_days` int(11) NOT NULL,
+  `lesson_count` int(11) DEFAULT NULL,
+  `module_price` decimal(10,0) DEFAULT NULL,
+  `for_whom` text,
+  `what_you_learn` text,
+  `what_you_get` text,
+  `module_img` varchar(255) DEFAULT NULL,
+  `about_module` text,
   PRIMARY KEY (`module_ID`),
   UNIQUE KEY `module_ID` (`module_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
@@ -433,9 +446,9 @@ CREATE TABLE `modules` (
 -- ----------------------------
 -- Records of modules
 -- ----------------------------
-INSERT INTO `modules` VALUES ('1', 'Module 1', '40', '20');
-INSERT INTO `modules` VALUES ('2', 'Module 2', '30', '15');
-INSERT INTO `modules` VALUES ('3', 'Module 3', '60', '30');
+INSERT INTO `modules` VALUES ('1', 'Основи PHP', '14', '20', '6', '1256', 'для менеджерів проектів і тих, хто відповідає за постановку завдань на розробку;для дизайнерів, які готові почати не просто малювати красиві картинки, а й навчитися тому, як створювати працюючі і зручні інтерфейси;для розробників, які хочуть самостійно створити або змінити свій проект;', 'Ви навчитеся писати чистий код;Користуватися системами контролю версій;Дізнаєтеся, з чого складається сучасний додаток;Для чого потрібен безперервна інтеграція (СІ) сервер;Чому потрібно тестувати свої програми і як це робити;', 'Відеозаписи та текстові матеріали всіх онлайн-занять;Спілкування з розумними одногрупниками;Сертифікат про закінчення навчання;Прилаштованість на робоче місце в силіконовій долині;', '/css/images/courseimg1.png', null);
+INSERT INTO `modules` VALUES ('2', 'Module 2', '30', '15', null, null, null, null, null, null, null);
+INSERT INTO `modules` VALUES ('3', 'Module 3', '60', '30', null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for regextended
@@ -509,19 +522,19 @@ CREATE TABLE `studentprofile` (
   `phone` varchar(15) DEFAULT NULL,
   `address` text,
   `education` varchar(255) DEFAULT NULL,
-  `educform` decimal(60,0) DEFAULT NULL,
+  `educform` varchar(60) DEFAULT NULL,
   `interests` text,
   `aboutUs` text,
   `aboutMy` varchar(255) DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   `role` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of studentprofile
 -- ----------------------------
-INSERT INTO `studentprofile` VALUES ('1', 'Вова', 'Джа', 'Марля', 'Wizlight', '21.03.1988', 'Wizlightdragon@gmail.com', '', '911', 'Ямайка', 'ВДПУ', '1', 'Ковбаска, колобки, раста', 'Інтернет', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', '/css/images/1id.jpg', null);
+INSERT INTO `studentprofile` VALUES ('1', 'Вова', 'Джа', 'Марля', 'Wizlight', '21/03/1997', 'Wizlightdragon@gmail.com', '', '911', 'Ямайка', 'ВДПУ', 'Онлайн', 'Ковбаска, колобки, раста', 'Інтернет', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', '/css/images/1id.jpg', null);
 
 -- ----------------------------
 -- Table structure for students
