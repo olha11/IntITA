@@ -526,7 +526,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 		{
 ?>
 					<div class="preLessons">
-						<p class="lesname">Заняття <?php echo $footNav->getPreNumber() ?>: <?php echo $footNav->getPreName() ?></p>
+						<p class="lesname">Заняття <?php echo $footNav->getPreNumber() ?>: <b><?php echo $footNav->getPreName() ?></b></p>
 						<table class="typeLesson">
 							<tr>
 								<td><p>Тип:</p></td>
@@ -584,7 +584,7 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
 		{
 ?>
 					<div class="nextLessons">
-						<p class="lesname">Заняття <?php echo $footNav->getPostNumber() ?>: <?php echo $footNav->getPostName() ?></p>
+						<p class="lesname">Заняття <?php echo $footNav->getPostNumber() ?>: <b><?php echo $footNav->getPostName() ?></b></p>
 						<table class="typeLesson">
 							<tr>
 								<td><p>Тип:</p></td>
