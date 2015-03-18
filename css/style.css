@@ -317,22 +317,27 @@ p {
     transition: .2s linear;
 }
 .button1{
-    width:200px;
-    height:50px;
+    width:195px;
+    height:52px;
     border-radius: 10px;
     border:none;
-    border-top:1px solid #007cbf;
+    border-top:1px solid #9fb5ce;
     color:#ffffff;
     background:#4b75a4;
     margin-bottom: 30px;
-    box-shadow:0px 3px 0px #7f7f7f;
-    font-size:       21px;
+    box-shadow:0px 2px 0px #7f7f7f;
     font: normal     400 28px/50px "MyriadPro";
-    margin-left: 174px;
+    font-size:       25px;
+    letter-spacing:1px;
+    margin-left: 177px;
     margin-top: 15px;
     padding-top: 0px;
     padding-right: 30px;
-
+    text-shadow:1px 1px 1px black;
+}
+input[type="submit"]::-moz-focus-inner { /* убираем внутренний отступ у кнопки в FF, который зарезервирован для рамки при фокусе */
+    padding:0;
+    border:0;
 }
 
 .button1:hover {  /* при наведении курсора мышки */

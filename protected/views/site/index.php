@@ -192,7 +192,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
             <br>
             <br>
                     <div class="button">
-                <input type="submit" name="button" class="button1" style="background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png'); background-repeat: no-repeat; background-position: 145px 55%;" value="<?php echo $mainpage['formButtonStart']; ?>"/>
+                <input type="submit" name="button" class="button1" style="background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png'); background-repeat: no-repeat; background-position: 144px 17px;" value="<?php echo $mainpage['formButtonStart']; ?>"/>
                 </form>
         </div>
 
