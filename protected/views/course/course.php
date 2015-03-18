@@ -29,7 +29,7 @@ $this->breadcrumbs=array(
         <table class="courseLevelLine">
             <tr>
                 <td>
-                    <p><span class="colorP"><b>Рівень курсу: </b></span>початковий</p>
+                    <p><span class="colorP"><b>Рівень курсу: </b></span>сильний початківець</p>
                 </td>
                 <td class="courseLevel">
                     <?php
