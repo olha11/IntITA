@@ -4,8 +4,9 @@
  * This is the model class for table "mainpage".
  *
  * The followings are the available columns in table 'mainpage':
- * @property integer $mainpageID
+ * @property integer $id
  * @property string $language
+ * @property string $category
  * @property string $title
  * @property string $sliderHeader
  * @property string $sliderText
@@ -29,6 +30,10 @@
  * @property string $socialText
  * @property string $imageNetwork
  * @property string $formFon
+ *
+ * The followings are the available model relations:
+ * @property Mainpagetranslated $id0
+ * @property Mainpagetranslated[] $mainpagetranslateds
  */
 class Mainpage extends CActiveRecord
 {
@@ -40,35 +45,31 @@ class Mainpage extends CActiveRecord
 		return 'mainpage';
 	}
 
-	function Mainpage($id){
-		//$this->setValueById($id);
+	public function setValueById($id)
+	{
+		//$this->title=$this->getTitle();
+		$this->sliderText=$this->getSliderText();
+		//$this->header1=$this->getHeader1();
+		$this->header2=$this->findByPk($id)->header2;
+		$this->linkName=$this->findByPk($id)->linkName;
+		$this->sliderTextureURL=Yii::app()->request->baseUrl.$this->findByPk($id)->sliderTextureURL;
+		$this->sliderHeader=$this->getSliderHeader();
+		$this->stepSize=$this->findByPk($id)->stepSize;
+		$this->subheader1=$this->findByPk($id)->subheader1;
+		$this->subheader2=$this->findByPk($id)->subheader2;
+		$this->subLineImage=Yii::app()->request->baseUrl.$this->findByPk($id)->subLineImage;
+		$this->hexagon=Yii::app()->request->baseUrl.$this->findByPk($id)->hexagon;
+		$this->sliderLineURL=Yii::app()->request->baseUrl.$this->findByPk($id)->sliderLineURL;
+		$this->sliderButtonText=$this->findByPk($id)->sliderButtonText;
+		$this->formHeader1 = $this->findByPk($id)->formHeader1;
+		$this->formHeader2 = $this->findByPk($id)->formHeader2;
+		$this->regText = $this->findByPk($id)->regText;
+		$this->buttonStart = $this->findByPk($id)->buttonStart;
+		$this->socialText = $this->findByPk($id)->socialText;
+		$this->imageNetwork = Yii::app()->request->baseUrl.$this->findByPk($id)->imageNetwork;
+		$this->formFon = Yii::app()->request->baseUrl.$this->findByPk($id)->formFon;
+		return $this;
 	}
-
-    public function setValueById($id)
-    {
-		$this->title=$this->findByPk($id)->title;
-		$this->sliderText=$this->findByPk($id)->sliderText;
-        $this->header1=$this->findByPk($id)->header1;
-        $this->header2=$this->findByPk($id)->header2;
-        $this->linkName=$this->findByPk($id)->linkName;
-        $this->sliderTextureURL=Yii::app()->request->baseUrl.$this->findByPk($id)->sliderTextureURL;
-        $this->sliderHeader=$this->findByPk($id)->sliderHeader;
-        $this->stepSize=$this->findByPk($id)->stepSize;
-        $this->subheader1=$this->findByPk($id)->subheader1;
-        $this->subheader2=$this->findByPk($id)->subheader2;
-        $this->subLineImage=Yii::app()->request->baseUrl.$this->findByPk($id)->subLineImage;
-        $this->hexagon=Yii::app()->request->baseUrl.$this->findByPk($id)->hexagon;
-        $this->sliderLineURL=Yii::app()->request->baseUrl.$this->findByPk($id)->sliderLineURL;
-        $this->sliderButtonText=$this->findByPk($id)->sliderButtonText;
-        $this->formHeader1 = $this->findByPk($id)->formHeader1;
-        $this->formHeader2 = $this->findByPk($id)->formHeader2;
-        $this->regText = $this->findByPk($id)->regText;
-        $this->buttonStart = $this->findByPk($id)->buttonStart;
-        $this->socialText = $this->findByPk($id)->socialText;
-        $this->imageNetwork = Yii::app()->request->baseUrl.$this->findByPk($id)->imageNetwork;
-        $this->formFon = Yii::app()->request->baseUrl.$this->findByPk($id)->formFon;
-        return $this;
-    }
 
 	/**
 	 * @return array validation rules for model attributes.
@@ -78,17 +79,18 @@ class Mainpage extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('mainpageID, language, title, sliderHeader, sliderText, sliderTextureURL, sliderLineURL, sliderButtonText, header1, subLineImage, subheader1, arrayBlocks, header2, subheader2, arraySteps, stepSize, linkName, hexagon, formHeader1, formHeader2, regText, buttonStart, socialText, imageNetwork, formFon', 'required'),
-			array('mainpageID', 'numerical', 'integerOnly'=>true),
+			array('id, language, category, title, sliderHeader, sliderText, sliderTextureURL, sliderLineURL, sliderButtonText, header1, subLineImage, subheader1, arrayBlocks, header2, subheader2, arraySteps, stepSize, linkName, hexagon, formHeader1, formHeader2, regText, buttonStart, socialText, imageNetwork, formFon', 'required'),
+			array('id', 'numerical', 'integerOnly'=>true),
 			array('language', 'length', 'max'=>2),
-			array('title, subheader1, subheader2', 'length', 'max'=>100),
+			array('category', 'length', 'max'=>32),
+			array('title, message, subheader1, subheader2', 'length', 'max'=>100),
 			array('sliderHeader, header1, header2, formHeader1, formHeader2, regText, buttonStart, socialText', 'length', 'max'=>50),
 			array('sliderText, sliderTextureURL, sliderLineURL, subLineImage, hexagon, imageNetwork, formFon', 'length', 'max'=>255),
 			array('sliderButtonText, linkName', 'length', 'max'=>20),
 			array('arrayBlocks, arraySteps, stepSize', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('mainpageID, language, title, sliderHeader, sliderText, sliderTextureURL, sliderLineURL, sliderButtonText, header1, subLineImage, subheader1, arrayBlocks, header2, subheader2, arraySteps, stepSize, linkName, hexagon, formHeader1, formHeader2, regText, buttonStart, socialText, imageNetwork, formFon', 'safe', 'on'=>'search'),
+			array('id, language, category, title, sliderHeader, sliderText, sliderTextureURL, sliderLineURL, sliderButtonText, header1, subLineImage, subheader1, arrayBlocks, header2, subheader2, arraySteps, stepSize, linkName, hexagon, formHeader1, formHeader2, regText, buttonStart, socialText, imageNetwork, formFon', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -100,6 +102,8 @@ class Mainpage extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'id0' => array(self::BELONGS_TO, 'Mainpagetranslated', 'id'),
+			'mainpagetranslateds' => array(self::HAS_MANY, 'Mainpagetranslated', 'id'),
 		);
 	}
 
@@ -109,8 +113,9 @@ class Mainpage extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'mainpageID' => 'Mainpage',
+			'id' => 'ID',
 			'language' => 'Language',
+			'category' => 'Category',
 			'title' => 'Title',
 			'sliderHeader' => 'Slider Header',
 			'sliderText' => 'Slider Text',
@@ -155,8 +160,9 @@ class Mainpage extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('mainpageID',$this->mainpageID);
+		$criteria->compare('id',$this->id);
 		$criteria->compare('language',$this->language,true);
+		$criteria->compare('category',$this->category,true);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('sliderHeader',$this->sliderHeader,true);
 		$criteria->compare('sliderText',$this->sliderText,true);
@@ -195,5 +201,24 @@ class Mainpage extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function getTitle(){
+		return Yii::t('mainpage', 'IntITA - Академія програмування');
+	}
+
+	public function getSliderText(){
+		return Yii::t('mainpage', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту і стань класним спеціалістом!');
+	}
+
+	public function getSliderHeader(){
+		return Yii::t('mainpage', 'ПРОГРАМУЙ МАЙБУТНЄ');
+	}
+	public function getHeader1(){
+		return Yii::t('mainpage','Про нас');
+	}
+
+	public function getSubheader1(){
+		return Yii::t('mainpage', 'дещо, що Вам потрібно знати про наші курси');
 	}
 }

@@ -39,7 +39,7 @@ class TeachersController  extends Controller
             array('last_name', 'string', 'Прізвище', array('show')),
             array('first_name', 'string', 'Ім\'я', array('show')),
             array('middle_name', 'string', 'По-батькові', array('show')),
-            array('foto_url', 'image', 'Фото', array('show', 'directoryPath'=>'/../css/images')),
+            array('foto_url', 'image', 'Фото', array('show', 'directoryPath'=>'/../css/images/')),
             array('subjects', 'text', 'Веде курси', array('show', 'directoryPath'=>'./')),
             array('profile_text', 'text', 'Профіль (коротко)', array('show', 'directoryPath'=>'./')),
             array('profile_text_big', 'text', 'Профіль викладача', array('show', 'directoryPath'=>'./')),

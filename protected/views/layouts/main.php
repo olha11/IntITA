@@ -83,18 +83,18 @@
     </div>
     <div id="lang">
         <form action="" method="post" onsubmit="" name="fff">
-            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'ua'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
 
-            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'EN'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'en'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
 
-            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'RU'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'ru'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
 
         </form>
     </div>
 </div>
 <div id="button_border">
 </div>
-<a id="enter_button" href="<?php echo Yii::app()->createUrl('site/login');?>">
+<a id="enter_button" href="#form">
     <?php echo $this->buttonText; ?></a>
 
 <script>

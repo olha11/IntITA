@@ -5183,3 +5183,1507 @@ in D:\xampp\htdocs\IntITA\index.php (13)
 in D:\xampp\htdocs\IntITA\index.php (13)
 2015/03/13 16:53:22 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
 in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/14 10:31:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/14 10:32:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/14 10:32:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/14 10:32:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/14 10:49:25 [error] [php] include(Users.php): failed to open stream: No such file or directory (D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php:432)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\components\UserIdentity.php(17): spl_autoload_call()
+#1 D:\xampp\htdocs\IntITA\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#2 D:\xampp\htdocs\IntITA\protected\framework\validators\CInlineValidator.php(42): LoginForm->authenticate()
+#3 D:\xampp\htdocs\IntITA\protected\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute()
+#4 D:\xampp\htdocs\IntITA\protected\framework\base\CModel.php(159): CInlineValidator->validate()
+#5 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(217): LoginForm->validate()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php?r=site/login
+in D:\xampp\htdocs\IntITA\protected\components\UserIdentity.php (17)
+in D:\xampp\htdocs\IntITA\protected\models\LoginForm.php (52)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (217)
+2015/03/16 13:09:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/16 13:10:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/16 13:10:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aaaut...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aaauth/login
+---
+2015/03/16 13:11:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aaaut...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aaauth/login
+---
+2015/03/16 13:11:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/16 13:11:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/16 13:12:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/16 13:12:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/16 13:13:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/16 13:14:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/16 13:15:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "autoAdmin/aaauth/users".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('autoAdmin/aaaut...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=autoAdmin/aaauth/users
+---
+2015/03/16 13:16:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/16 13:16:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/16 13:17:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/16 13:17:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "aaauth/login".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('aaauth/login')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=aaauth/login
+---
+2015/03/16 13:45:34 [error] [php] include(WebUser.php): failed to open stream: No such file or directory (D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php:432)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php(303): class_exists()
+#2 D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php(196): import()
+#3 D:\xampp\htdocs\IntITA\protected\framework\base\CModule.php(393): createComponent()
+#4 D:\xampp\htdocs\IntITA\protected\framework\base\CModule.php(103): CWebApplication->getComponent()
+#5 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(220): CWebApplication->__get()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php/site/login
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (220)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 14:24:08 [error] [exception.CException] exception 'CException' with message 'Property "WebUser.title" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\auth\CWebUser.php(146): CComponent->__get('title')
+#1 D:\xampp\htdocs\IntITA\protected\views\site\index.php(40): CWebUser->__get('title')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(115): CController->render('index', Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController(false)
+#13 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/IntITA/index.php
+HTTP_REFERER=http://localhost/IntITA/index.php/site/login
+---
+2015/03/16 15:19:45 [error] [php] Undefined index: sliderTexture (D:\xampp\htdocs\IntITA\protected\views\site\index.php:6)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#2 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(120): SiteController->render()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (6)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (120)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 15:20:30 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\views\site\index.php:6)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#2 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(120): SiteController->render()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (6)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (120)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 15:29:39 [error] [php] Undefined variable: dataProvider1 (D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php:85)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php?r=gii
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (85)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 15:29:48 [error] [php] Undefined variable: dataProvider1 (D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php:85)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (85)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 15:30:01 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\views\site\index.php:5)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#2 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(124): SiteController->render()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (5)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (124)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 15:56:05 [error] [php] include(mainpageLocale.php): failed to open stream: No such file or directory (D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php:432)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(395): spl_autoload_call()
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(182): model()
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(230): CActiveFinder->getModel()
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(912): CActiveFinder->__construct()
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(280): Mainpage->getActiveFinder()
+#6 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): Mainpage->getRelated()
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(113): Mainpage->__get()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->getTitle()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 15:56:23 [error] [php] include(mainpageLocale.php): failed to open stream: No such file or directory (D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php:432)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(395): spl_autoload_call()
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(182): model()
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(230): CActiveFinder->getModel()
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(912): CActiveFinder->__construct()
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(280): Mainpage->getActiveFinder()
+#6 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): Mainpage->getRelated()
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(113): Mainpage->__get()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->getTitle()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php?r=gii
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 15:56:45 [error] [php] include(mainpageLocale.php): failed to open stream: No such file or directory (D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php:432)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(395): spl_autoload_call()
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(182): model()
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(230): CActiveFinder->getModel()
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(912): CActiveFinder->__construct()
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(280): Mainpage->getActiveFinder()
+#6 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): Mainpage->getRelated()
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(113): Mainpage->__get()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->getTitle()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php?r=gii
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 15:56:49 [error] [php] include(mainpageLocale.php): failed to open stream: No such file or directory (D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php:432)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(395): spl_autoload_call()
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(182): model()
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(230): CActiveFinder->getModel()
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(912): CActiveFinder->__construct()
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(280): Mainpage->getActiveFinder()
+#6 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): Mainpage->getRelated()
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(113): Mainpage->__get()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->getTitle()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php?r=gii
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 15:57:58 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 15:58:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 15:58:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 15:58:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 15:59:29 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.3" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('3')
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(661): CActiveRecord->__get('3')
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Mainpage))
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Mainpage))
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Mainpage))
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('titleTitleTempl...')
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(113): CActiveRecord->__get('titleTitleTempl...')
+#7 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/16 15:59:56 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 16:00:57 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 16:01:56 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 16:02:49 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 16:03:22 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.TitleTemplate" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('TitleTemplate')
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(661): CActiveRecord->__get('TitleTemplate')
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Mainpage))
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Mainpage))
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Mainpage))
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('titleTitleTempl...')
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(113): CActiveRecord->__get('titleTitleTempl...')
+#7 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/16 16:03:54 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 16:06:22 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 16:06:42 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 16:07:14 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(124): SiteController->render()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (41)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (124)
+2015/03/16 16:09:37 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(124): SiteController->render()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (41)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (124)
+2015/03/16 16:10:27 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:112)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(124): SiteController->render()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (112)
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (41)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (124)
+2015/03/16 16:10:37 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:112)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(124): SiteController->render()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (112)
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (41)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (124)
+2015/03/16 16:12:40 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:112)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (112)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:12:59 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/16 16:13:05 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:112)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (112)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:14:47 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.id" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(661): CActiveRecord->__get('id')
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Mainpage))
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Mainpage))
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Mainpage))
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('titleTitleTempl...')
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(112): CActiveRecord->__get('titleTitleTempl...')
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/16 16:15:03 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:112)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (112)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:17:08 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:112)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (112)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:19:37 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:112)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (112)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:20:06 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:112)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (112)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:23:08 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.TitleTemplate" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('TitleTemplate')
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(661): CActiveRecord->__get('TitleTemplate')
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Mainpage))
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Mainpage))
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Mainpage))
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('titleTitleTempl...')
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(112): CActiveRecord->__get('titleTitleTempl...')
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/16 16:24:08 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.TitleTemplate" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('TitleTemplate')
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(661): CActiveRecord->__get('TitleTemplate')
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Mainpage))
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Mainpage))
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Mainpage))
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('titleTitleTempl...')
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(112): CActiveRecord->__get('titleTitleTempl...')
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/16 16:25:01 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.TitleTemplate" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('TitleTemplate')
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(661): CActiveRecord->__get('TitleTemplate')
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Mainpage))
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Mainpage))
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Mainpage))
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('titleTitleTempl...')
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(112): CActiveRecord->__get('titleTitleTempl...')
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/16 16:25:29 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:112)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (112)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:26:35 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.TitleTitleTemplateid" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('TitleTitleTempl...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(661): CActiveRecord->__get('TitleTitleTempl...')
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Mainpage))
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Mainpage))
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Mainpage))
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('titleTitleTempl...')
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(112): CActiveRecord->__get('titleTitleTempl...')
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/16 16:26:55 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:112)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (112)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:27:43 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:112)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (112)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:28:27 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:112)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (112)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:29:13 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:30:01 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:33:43 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.id" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(661): CActiveRecord->__get('id')
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Mainpage))
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Mainpage))
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Mainpage))
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('titleT')
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(113): CActiveRecord->__get('titleT')
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/16 16:34:30 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:37:17 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:40:29 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:40:54 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.id" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(661): CActiveRecord->__get('id')
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Mainpage))
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Mainpage))
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Mainpage))
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('titleT')
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(113): CActiveRecord->__get('titleT')
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/16 16:41:36 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.id" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(661): CActiveRecord->__get('id')
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Mainpage))
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Mainpage))
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Mainpage))
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('titleT')
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(113): CActiveRecord->__get('titleT')
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/16 16:42:08 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:43:01 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:43:19 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:46:50 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.titleT" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('titleT')
+#1 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(113): CActiveRecord->__get('titleT')
+#2 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#3 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/16 16:47:11 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:48:16 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/16 16:49:00 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.TitleTitleTemplateId" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('TitleTitleTempl...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(661): CActiveRecord->__get('TitleTitleTempl...')
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Mainpage))
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Mainpage))
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Mainpage))
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('titleTitleTempl...')
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(113): CActiveRecord->__get('titleTitleTempl...')
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/16 16:49:11 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.TitleTitleTemplateId" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('TitleTitleTempl...')
+#1 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(661): CActiveRecord->__get('TitleTitleTempl...')
+#2 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Mainpage))
+#3 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveFinder.php(163): CJoinElement->lazyFind(Object(Mainpage))
+#4 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Mainpage))
+#5 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('titleTitleTempl...')
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(113): CActiveRecord->__get('titleTitleTempl...')
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/16 16:51:35 [error] [php] Trying to get property of non-object (D:\xampp\htdocs\IntITA\protected\models\Mainpage.php:113)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/index.php
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (113)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/17 17:22:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/17 17:22:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/17 17:22:29 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/17 17:28:48 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/17 17:28:50 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/17 17:36:32 [error] [exception.CException] exception 'CException' with message 'Mainpage and its behaviors do not have a method or closure named "title".' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(227): CComponent->__call('title', Array)
+#1 D:\xampp\htdocs\IntITA\protected\views\site\index.php(41): CActiveRecord->__call('title', Array)
+#2 D:\xampp\htdocs\IntITA\protected\views\site\index.php(41): Mainpage->title()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(124): CController->render('index', Array)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/17 17:43:32 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.title_en_us" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('title_en_us')
+#1 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(203): CActiveRecord->__get('title_en_us')
+#2 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#3 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/17 17:44:32 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.title_en_us" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('title_en_us')
+#1 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(203): CActiveRecord->__get('title_en_us')
+#2 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#3 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#10 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/17 18:08:36 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.message' in 'field list'. Выполнявшийся SQL-запрос: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language.
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (202)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/17 18:08:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.message' in 'field list'. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language' in D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(130): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(86): CDbMessageSource->loadMessagesFromDb('mainpage', 'ru')
+#3 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(103): CDbMessageSource->loadMessages('mainpage', 'ru')
+#4 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(85): CMessageSource->translateMessage('mainpage', NULL, 'ru')
+#5 D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php(589): CMessageSource->translate('mainpage', NULL, NULL)
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(202): YiiBase::t('mainpage', NULL)
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/17 18:13:08 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. Выполнявшийся SQL-запрос: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language.
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (202)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/17 18:13:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language' in D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(130): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(86): CDbMessageSource->loadMessagesFromDb('mainpage', 'ru')
+#3 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(103): CDbMessageSource->loadMessages('mainpage', 'ru')
+#4 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(85): CMessageSource->translateMessage('mainpage', NULL, 'ru')
+#5 D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php(589): CMessageSource->translate('mainpage', NULL, NULL)
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(202): YiiBase::t('mainpage', NULL)
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/17 18:13:12 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. Выполнявшийся SQL-запрос: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language.
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (202)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/17 18:13:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language' in D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(130): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(86): CDbMessageSource->loadMessagesFromDb('mainpage', 'ru')
+#3 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(103): CDbMessageSource->loadMessages('mainpage', 'ru')
+#4 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(85): CMessageSource->translateMessage('mainpage', NULL, 'ru')
+#5 D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php(589): CMessageSource->translate('mainpage', NULL, NULL)
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(202): YiiBase::t('mainpage', NULL)
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/17 18:16:16 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language.
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (202)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (49)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/17 18:16:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language' in D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(130): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(86): CDbMessageSource->loadMessagesFromDb('mainpage', 'ru_RU')
+#3 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(103): CDbMessageSource->loadMessages('mainpage', 'ru_RU')
+#4 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(85): CMessageSource->translateMessage('mainpage', NULL, 'ru_RU')
+#5 D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php(589): CMessageSource->translate('mainpage', NULL, NULL)
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(202): YiiBase::t('mainpage', NULL)
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(49): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/17 18:18:36 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/17 18:18:39 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/17 18:18:46 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/17 18:18:50 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/17 18:19:09 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/17 18:21:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language.
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (212)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (55)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/17 18:21:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language' in D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(130): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(86): CDbMessageSource->loadMessagesFromDb('mainpage', 'ru_RU')
+#3 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(103): CDbMessageSource->loadMessages('mainpage', 'ru_RU')
+#4 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(85): CMessageSource->translateMessage('mainpage', NULL, 'ru_RU')
+#5 D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php(589): CMessageSource->translate('mainpage', NULL, NULL)
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(212): YiiBase::t('mainpage', NULL)
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(55): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/17 18:27:05 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language.
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (212)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (55)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/17 18:27:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language' in D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(130): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(86): CDbMessageSource->loadMessagesFromDb('mainpage', 'ru_RU')
+#3 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(103): CDbMessageSource->loadMessages('mainpage', 'ru_RU')
+#4 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(85): CMessageSource->translateMessage('mainpage', NULL, 'ru_RU')
+#5 D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php(589): CMessageSource->translate('mainpage', NULL, NULL)
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(212): YiiBase::t('mainpage', NULL)
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(55): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/17 18:27:07 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language.
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (212)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (55)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/17 18:27:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language' in D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(130): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(86): CDbMessageSource->loadMessagesFromDb('mainpage', 'ru_RU')
+#3 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(103): CDbMessageSource->loadMessages('mainpage', 'ru_RU')
+#4 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(85): CMessageSource->translateMessage('mainpage', NULL, 'ru_RU')
+#5 D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php(589): CMessageSource->translate('mainpage', NULL, NULL)
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(212): YiiBase::t('mainpage', NULL)
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(55): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/17 18:28:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language.
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (212)
+in D:\xampp\htdocs\IntITA\protected\models\Mainpage.php (55)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
+2015/03/17 18:28:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't1.id' in 'where clause'. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
+FROM `mainpage` `t1`, `mainpagetranslated` `t2`
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language' in D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(130): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(86): CDbMessageSource->loadMessagesFromDb('mainpage', 'ru_RU')
+#3 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(103): CDbMessageSource->loadMessages('mainpage', 'ru_RU')
+#4 D:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(85): CMessageSource->translateMessage('mainpage', NULL, 'ru_RU')
+#5 D:\xampp\htdocs\IntITA\protected\framework\YiiBase.php(589): CMessageSource->translate('mainpage', NULL, NULL)
+#6 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(212): YiiBase::t('mainpage', NULL)
+#7 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(55): Mainpage->getTitle()
+#8 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/17 18:31:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/17 18:31:50 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/17 18:32:09 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.students' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `students`.
+in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/17 18:37:25 [error] [exception.CException] exception 'CException' with message 'Property "Mainpage.getTitle" is not defined.' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('getTitle')
+#1 D:\xampp\htdocs\IntITA\protected\models\Mainpage.php(54): CActiveRecord->__get('getTitle')
+#2 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/17 19:00:19 [error] [exception.CException] exception 'CException' with message 'В классе Mainpage и его поведениях не найден метод или замыкание с именем "header1".' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(227): CComponent->__call('header1', Array)
+#1 D:\xampp\htdocs\IntITA\protected\views\site\index.php(32): CActiveRecord->__call('header1', Array)
+#2 D:\xampp\htdocs\IntITA\protected\views\site\index.php(32): Mainpage->header1()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(124): CController->render('index', Array)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#14 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/IntITA/index.php
+---
+2015/03/17 19:16:24 [error] [exception.CException] exception 'CException' with message 'Контроллер RegextendedController не может найти представление "index".' in D:\xampp\htdocs\IntITA\protected\framework\web\CController.php:878
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#1 D:\xampp\htdocs\IntITA\protected\controllers\RegextendedController.php(7): CController->render('index')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): RegextendedController->actionIndex()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('regextended')
+#8 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/IntITA/index.php?r=regextended
+---
+2015/03/18 13:34:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "changeLang".' in D:\xampp\htdocs\IntITA\protected\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(270): CController->missingAction('changeLang')
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('changeLang')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('site/changeLang')
+#3 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/IntITA/index.php?r=site/changeLang&lang=ru
+HTTP_REFERER=http://localhost/IntITA/index.php
+---
+2015/03/18 14:59:17 [error] [php] Undefined variable: mainpage (D:\xampp\htdocs\IntITA\protected\views\site\_form.php:9)
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 D:\xampp\htdocs\IntITA\protected\views\site\index.php(147): SiteController->renderPartial()
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require()
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#6 D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(124): SiteController->render()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/
+in D:\xampp\htdocs\IntITA\protected\views\site\_form.php (9)
+in D:\xampp\htdocs\IntITA\protected\views\site\index.php (147)
+in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (124)

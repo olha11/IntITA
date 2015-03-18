@@ -14,12 +14,12 @@
  */
 class User extends CActiveRecord
 {
-	const ROLE_AUTHOR=1;
-	const ROLE_MODERATOR=3;
-	const ROLE_ADMIN=5;
-	const PASSWORD_EXPIRY=90;
-	public $passwordSave;
-	public $repeatPassword;
+	/*  Создаем сценарий для регистрации */
+	const SCENARIO_REGISTRATION = 'registration';
+
+	/* Роли */
+	const ROLE_GUEST = '0', ROLE_USER = '1', ROLE_ADMIN = '2', ROLE_MODER = '3';
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -36,7 +36,6 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('userEmail, userPassword, username, role', 'required'),
 			array('userStatus, role', 'numerical', 'integerOnly'=>true),
 			array('userEmail', 'length', 'max'=>35),
 			array('userPassword', 'length', 'max'=>40),
@@ -45,6 +44,28 @@ class User extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('userID, userEmail, userPassword, userHash, userStatus, username, role', 'safe', 'on'=>'search'),
+			array(/* обязательные поля для сценария регистрации */
+				'userEmail, userPassword','required',
+				'on'      =>  self::SCENARIO_REGISTRATION,
+				'message' => '{attribute} не заполнен'
+			),
+			array(/* уникальные поля, которые не могут повториться с уже существующими */
+				'userEmail','unique',
+				'on'      => self::SCENARIO_REGISTRATION,
+				'message' => 'Этот {attribute} уже занят'
+			),
+			array(/* болванная регулярка для email */
+				'userEmail', 'match',
+				'pattern' => '/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/',
+				'on'      => self::SCENARIO_REGISTRATION,
+				'message' => '{attribute} содержит ошибку'
+			),
+			array(/* указание нужной длянны пароля */
+				'userPassword', 'length',
+				'on'    => self::SCENARIO_REGISTRATION,
+				'min'   => 8, 'max' => 32
+			),
+
 		);
 	}
 
@@ -65,13 +86,13 @@ class User extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'userID' => 'User',
-			'userEmail' => 'User Email',
-			'userPassword' => 'User Password',
+			'userID' => 'Користувач',
+			'userEmail' => 'Email',
+			'userPassword' => 'Пароль',
 			'userHash' => 'User Hash',
 			'userStatus' => 'User Status',
-			'username' => 'Username',
-			'role' => 'Role',
+			'username' => 'Нік',
+			'role' => 'Роль',
 		);
 	}
 
@@ -144,35 +165,6 @@ class User extends CActiveRecord
 		}
 	}
 
-	public function beforeSave() {
-		parent::beforeSave();
-//add the password hash if it's a new record
-		if ($this->isNewRecord) {
-			$this->password = md5($this->passwordSave);
-			$this->create_date=new CDbExpression("NOW()");
-			$this->password_expiry_date=new CDbExpression("DATE_ADD(NOW(), INTERVAL ".self::PASSWORD_EXPIRY." DAY) ");
-		}
-		else if (!empty($this->passwordSave)&&!empty($this->repeatPassword)&&($this->passwordSave===$this->repeatPassword))
-//if it's not a new password, save the password only if it not empty and the two passwords match
-		{
-			$this->password = md5($this->passwordSave);
-			$this->password_expiry_date=new CDbExpression("DATE_ADD(NOW(), INTERVAL ".self::PASSWORD_EXPIRY." DAY) ");
-		}
-		return true;
-	}
-	/**
-	 * Compare Expiry date and today's date
-	 * @return type - positive number equals valid user
-	 */
-	public function checkExpiryDate() {
-		$expDate=DateTime::createFromFormat('Y-m-d H:i:s',$this->password_expiry_date);
-		$today=new DateTime("now");
-		fb($today->diff($expDate)->format('%a'),"PASSWORD EXPIRY");
-		return ($today->diff($expDate)->format('%a'));
-	}
-	/**
-	 * @return array relational rules.
-	 */
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
@@ -216,5 +208,15 @@ class User extends CActiveRecord
 		return parent::model($className);
 	}
 
+	protected function beforeSave(){
+
+		$this->userPassword = md5('Vasiliy.pup.2014_4102'.$this->userPassword);
+		return parent::beforeSave();
+
+	}
+
+	public function createUser(){
+
+	}
 
 }

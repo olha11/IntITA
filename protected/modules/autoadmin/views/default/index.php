@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 
 <h2>Головна сторінка</h2>
 <ul>
-	<li><a href="?r=autoadmin/mainpage/mainpageGeneral/">Заголовки</a></li>
+	<li><a href="/mainpage/mainpageGeneral/">Заголовки</a></li>
 	<li><a href="?r=autoadmin/mainpage/menu/">Меню сайта</a></li>
 	<li><a href="?r=autoadmin/mainpage/carousel/">Слайдер</a></li>
 	<li><a href="?r=autoadmin/aboutus/blocklist/">Блоки</a></li>

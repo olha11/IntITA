@@ -46,22 +46,27 @@ class LoginForm extends CFormModel
 	 * Authenticates the password.
 	 * This is the 'authenticate' validator as declared in rules().
 	 */
-	public function authenticate($attribute,$params)
+	public function authenticate($attribute=null, $params=null)
 	{
-		$identity=new UserIdentity($this->userEmail,$this->userPassword);
+		$identity = new UserIdentity($this->userEmail, $this->userPassword);
 		$identity->authenticate();
+
 		switch($identity->errorCode)
 		{
 			case UserIdentity::ERROR_NONE:
-				Yii::app()->user->login($identity);
-				break;
-			case UserIdentity::ERROR_USERNAME_INVALID:
-				//Yii::app()->user->login($identity);
-				break;
+			{
+				$duration = $this->rememberMe ? 3600*24*7 : 0; // 30 days
+				Yii::app()->user->login($identity, $duration);
+				return true;
+			}
 			case UserIdentity::ERROR_PASSWORD_INVALID:
-				//Yii::app()->user->login($identity);
+				$this->addError('login', Yii::t('errors', 'Sorry, your account is blocked'));
+				break;
+			default:
+				$this->addError('password', Yii::t('errors', 'Login or password is incorrect'));
 				break;
 		}
+		return false;
 	}
 
 	/**

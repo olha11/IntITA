@@ -38,7 +38,7 @@ $post=TeachersTemp::model()->findAll();
                 <table>
                     <tr>
                         <td>
-                            <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
+                            <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->pathImages.$teacherValue->foto_url ?>"/>
                         </td>
                         <td>
                             <h2><?php echo $teacherValue->last_name ?></h2>
@@ -86,7 +86,7 @@ $post=TeachersTemp::model()->findAll();
                 <table>
                     <tr>
                         <td>
-                            <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
+                            <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->pathImages.$teacherValue->foto_url ?>"/>
                         </td>
                         <td>
                             <h2><?php echo $teacherValue->last_name ?></h2>

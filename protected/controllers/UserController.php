@@ -170,4 +170,16 @@ class UserController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function actionLogin($email, $password){
+		$identity=new UserIdentity($email,$password);
+		if($identity->authenticate())
+			Yii::app()->user->login($identity);
+		else
+			echo $identity->errorMessage;
+	}
+
+	public function actionLogout(){
+		Yii::app()->user->logout();
+	}
 }
