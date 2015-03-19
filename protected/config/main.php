@@ -9,11 +9,11 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'INTITA',
 
+	'sourceLanguage'=>'ua',
+	'language'=>'ru',
+
 	// preloading 'log' component
 	'preload'=>array('log'),
-
-    'sourceLanguage'=>'ua',
-    'language'=>'ru',
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -39,7 +39,7 @@ return array(
 		'autoadmin'=>array(
 			'class'=>'ext.autoadmin.AutoAdmin',
 			'basePath' => dirname(__FILE__).'/../modules/autoadmin',
-			'wwwDirName' => 'views', //your DocumentRoot
+			'wwwDirName' => 'www', //your DocumentRoot
 			'authMode' => true, //Switch on authorization system
 			'openMode' => true, //Use for temporary switching off all access limitations
 			'logMode' => false,
@@ -60,12 +60,16 @@ return array(
             'translatedMessageTable'=>'mainpagetranslated',
         ),
 
-		'user'=>array(
-			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+		'user' => array(
+			'class'          => 'application.components.WebUser',
+			'loginUrl'       => array('/?r=register/submitForm'),
+			'allowAutoLogin' => true,
 		),
 
-		// uncomment the following to enable URLs in path-format
+		'authManager' => array(
+			'class'         => 'application.components.AuthManager',
+			'defaultRoles'  => array('0'), // по умолчанию 0, то есть гость
+		),
 
 		'urlManager'=>array(
 			//'urlFormat'=>'path',
@@ -77,6 +81,7 @@ return array(
 				'/<module:autoadmin>' => 'autoadmin/default/index',
 				'/<module:autoadmin>/<controller:\w+>' => 'autoadmin/<controller>/index',
 				'/<module:autoadmin>/<controller:\w+>/<action:\w+>' => 'autoadmin/<controller>/<action>',
+				'/<controller:\w+>/<action:\w+>' => 'autoadmin/<controller>/<action>',
 
 				'<controller:aajax>/<action:\w+>' => 'autoadmin/<controller>/<action>',
 				'<controller:afile>/<action:\w+>' => 'autoadmin/<controller>/<action>',
@@ -88,7 +93,6 @@ return array(
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
 		'db2'=>require(dirname(__FILE__).'/database.php'),
-
 		'dbAdmin' => require(dirname(__FILE__).'/database.php'),
 
 		'errorHandler'=>array(
@@ -112,6 +116,12 @@ return array(
 			),
 		),
 
+		'messages'=>array(
+			'class' => 'CDbMessageSource',
+			'translatedMessageTable' => 'mainpagetranslated',
+			'sourceMessageTable' => 'mainpage',
+			'cachingDuration'=>3600.
+		),
 	),
 
 	// application-level parameters that can be accessed

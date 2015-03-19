@@ -28,7 +28,7 @@ $model = new Mainpage();
 
 <?php
 
-$this->pageTitle=$model->getTitle();
+$this->pageTitle=$mainpage['title'];
 $headerText = $mainpage['header1'];
 $subheaderText = $mainpage['subheader1'];
 $subLineImage = $mainpage['subLineImage'];

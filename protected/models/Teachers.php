@@ -24,6 +24,9 @@
  * @property string $degree
  * @property string $articles
  * @property string $otherTeacherDetailes
+ *
+ * The followings are the available model relations:
+ * @property Users $email0
  */
 class Teachers extends CActiveRecord
 {
@@ -64,6 +67,7 @@ class Teachers extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'email0' => array(self::BELONGS_TO, 'Users', 'email'),
 		);
 	}
 

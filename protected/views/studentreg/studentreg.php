@@ -6,16 +6,20 @@
         background-position:left bottom;
     }
     .formStudProf input[type="submit"]{
+        font-size: 18px;
+        letter-spacing:1px;
+        padding-right: 20px;
+        text-shadow:1px 1px 1px rgba(0,0,0,.5);
         background:#4b75a4;
         background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
         background-repeat: no-repeat;
-        background-position: 140px 50%;
+        background-position: 145px 50%;
     }
     .formStudProf input[type="submit"]:hover {
         background: #454545;
         background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
         background-repeat: no-repeat;
-        background-position: 140px 50%;
+        background-position: 145px 50%;
         cursor: pointer;
     }
 </style>
@@ -101,7 +105,7 @@ $this->breadcrumbs=array(
         <div class="rowPhone">
             <?php echo $form->labelEx($model,'phone'); ?>
             <div class="user_phone">
-              <?php echo $form->textField($model,'phone',array('class'=>'phone','maxlength'=>15)); ?>
+                <?php echo $form->textField($model,'phone',array('class'=>'phone','maxlength'=>15)); ?>
             </div>
             <span><?php echo $form->error($model,'phone'); ?></span>
         </div>

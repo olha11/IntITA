@@ -29,10 +29,14 @@ div.subLinks{
     display:none;
 }
 .lessonText {
-    position: relative;
-    float: left;
-    width:66%;
-    z-index: 0;
+    display:inline-block;
+    float:left;
+    width: 66%;
+}
+.lessonNav{
+    display:inline-block;
+    float: right;
+    width: 33%;
 }
 .lessonBlock span {
     font-weight: bold;
@@ -41,13 +45,11 @@ h1.lessonTheme{
      color: #4b75a4;
      font-size: xx-large;
      margin: 0px;
-    font-weight: normal;
 }
 h1.lessonPart{
     color: #4b75a4;
     font-size: x-large;
     margin-top: 34px;
-    font-weight: normal;
 }
 span.listTheme{
     font-size: large;
@@ -55,13 +57,6 @@ span.listTheme{
 }
 span.spoilerLinks,span.spoilerLinksHidden {
     cursor:pointer;
-}
-span.spoilerClick:hover{
-    cursor:pointer;
-    color:#666666;
-}
-.spoilerLinksHidden{
-    margin-left: 44px;
 }
 span.spoilerClick {
     text-decoration:underline;
@@ -71,8 +66,7 @@ span.spoilerClick {
 }
 span.spoilerTriangle {
     font-size: xx-small;
-    color: #4b75a4;
-    margin-left: 3px;
+    color: #000000;
 }
 span.subChapter{
     color: #4b75a4;
@@ -80,60 +74,45 @@ span.subChapter{
     font-size: larger;
 }
 .spoilerBody p {
-    margin:0;
+    margin:0 0 0 20px ;
 }
-.spoilerBody a{
-    text-decoration: none;
-    color: #666666;
-}
-div.lessonCode {
+.lessonCode {
     background-color: #d6ebe0;
-    color: #114988;
-    padding: 7px 0px 7px 20px;
-    font-weight:bold;
-}
-.lessonCode p{
     color:#114988;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    padding: 0px 0px 0px 20px;
+    font-weight:bold;
 }
 div.lessonBG {
     border-top:3px solid #ffffff;
-    background-color: #dbe3ed;
+    background-color: #d6ebe0;
     overflow:hidden;
     background-image: -webkit-linear-gradient(left,
     #becdde 0%,
     #becdde 11%,
-    #dbe3ed 11%,
-    #dbe3ed 100%);
+    #d6ebe0 11%,
+    #d6ebe0 100%);
     background-image: -moz-linear-gradient(left,
     #becdde 0%,
     #becdde 11%,
-    #dbe3ed 11%,
-    #dbe3ed 100%);
+    #d6ebe0 11%,
+    #d6ebe0 100%);
     background-image: -o-linear-gradient(left,
     #becdde 0%,
     #becdde 11%,
-    #dbe3ed 11%,
-    #dbe3ed 100%);
+    #d6ebe0 11%,
+    #d6ebe0 100%);
     background-image: linear-gradient(left,
     #becdde 0%,
     #becdde 11%,
-    #dbe3ed 11%,
-    #dbe3ed 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#becdde', endColorstr='#dbe3ed',GradientType=1 );//Ie6-9
+    #d6ebe0 11%,
+    #d6ebe0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#becdde', endColorstr='#d6ebe0',GradientType=1 );//Ie6-9
 }
 span.colorO {
     color:#de5940;
 }
 span.colorBP {
     color: #114988;
-}
-span.colorBlack {
-    color: #000000;
-}
-span.colorGreen {
-    color: #45ad45;
 }
 .lessonText > p {
     text-indent: 20px;
@@ -201,7 +180,6 @@ img.lessonButFinal  {
     width: 164px;
     height:32px;
 }
-
 div.lessonButFinal
 {
     position: absolute;
@@ -235,41 +213,4 @@ div.lessonButFinal
     border-top-color: #454545;
     background: #454545;
     color: #fcfcfc;
-}
-
-/*vertical navigation*/
-#sidebarLesson {
-    display: none;
-    position: absolute;
-    padding-top: 50px;
-    margin-left: 640px;
-    z-index: 1;
-    width: 480px;
-}
-#sidebarLesson p{
-    margin-left: 100px;
-}
-
-#sidebarLesson input[type="submit"] {
-    width: 170px;
-    height:30px;
-    border-radius: 5px;
-    border:none;
-    color:#ffffff;
-    background-color:#4b75a4;
-    box-shadow:0px 2px 0px #7f7f7f;
-    font-size: medium;
-}
-#sidebarLesson input[type="submit"]:hover {
-    border-top-color: #454545;
-    background: #454545;
-    color: #fcfcfc;
-    cursor: pointer;
-}
-#sidebarLesson a {
-    text-decoration: none;
-}
-#sidebarLesson .titlesBlock{
-    margin-bottom: 10px;
-    margin-left: 0;
 }

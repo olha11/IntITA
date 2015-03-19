@@ -6,9 +6,9 @@ class MainpageController extends Controller
 		$this->pageTitle = 'Головна сторінка';
 
 		$this->module->tableName('mainpage');
-		$this->module->setPK('mainpageID');
+		$this->module->setPK('id');
 		$fieldsConf = array(
-			array('language', 'string', 'Мова', array('show')),//array('UA'=>'UA', 'EN'=>'EN', 'RU'=>'RU')),
+			array('language', 'string', 'Мова', array('show')),
 			array('title', 'string', 'Заголовок сторінки', array('show')),
 			array('header1', 'string', 'Заголовок 1', array('show')),
 			array('subheader1', 'string', 'Підзаголовок 1', array('show')),
@@ -29,6 +29,7 @@ class MainpageController extends Controller
 			array('order', 'string', 'Порядок', array('show')),
 			array('pictureURL', 'image', 'Фото', array('show', 'directoryPath'=>'./css/images/slider_img/small')),
 			array('description', 'text', 'Опис', array('show', 'directoryPath'=>'./')),
+			array('text', 'string', 'Текст на фото', array('show')),
 		);
 		$this->module->fieldsConf($fieldsConf);
 		$this->module->sortDefault(array('order'));
@@ -70,7 +71,7 @@ class MainpageController extends Controller
 	public function actionForm(){
 		$this->pageTitle = 'Форма реєстрації на головній сторінці';
 		$this->module->tableName('mainpage');
-		$this->module->setPK('mainpageID');
+		$this->module->setPK('id');
 		$fieldsConf = array(
 			array('language', 'string', 'Мова', array('show')),
 			array('formHeader1', 'string', 'Заголовок форми', array('show')),

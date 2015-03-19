@@ -66,7 +66,7 @@ table.profileInfo {
     margin: 10px 10px 80px 22px;
 }
 .row,.rowDate,.rowPhone {
-	margin-bottom: 7px;
+    margin-bottom: 7px;
 }
 .rowPass {
     margin-top: 28px;
@@ -201,6 +201,7 @@ table.titleProfileAv{
     box-shadow:0px 2px 0px #7f7f7f;
     font-size: medium;
 }
+
 .formStudProf input[type="button"]:hover  {
     background: #454545;
     cursor: pointer;
@@ -225,7 +226,7 @@ table.titleProfileAv{
 #avatarInfo{
     color:#666666;
     margin:0 0 140px 0;
-	height:20px;
+    height:20px;
 }
 #photoForm {
     margin-top:10px;
@@ -235,7 +236,7 @@ table.titleProfileAv{
     overflow: hidden;
     position: relative;
     width: 176px;
-	height:45px;
+    height:45px;
     margin-top: 22px;
     margin-bottom: -5px;
 }
@@ -250,7 +251,7 @@ table.titleProfileAv{
     opacity: 0;
     height: 40px;
     z-index:1;
-	cursor: pointer;
+    cursor: pointer;
 }
 input[type="file"].chooseAvatar{
     position:absolute;
@@ -276,8 +277,8 @@ span.interestBG{
 .formStudProf .errorMessage
 {
     margin-left: 180px;
-	color: red;
-	font-size: 0.9em;
+    color: red;
+    font-size: 0.9em;
 }
 .avatarError
 {

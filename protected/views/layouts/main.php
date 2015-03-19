@@ -5,7 +5,6 @@
   
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="language" content="en">
-
     <!-- for tabs -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- for tabs -->
@@ -57,16 +56,21 @@
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/syntaxhighlighter/prettify.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/syntaxhighlighter/prettify.init.js"></script>
     <!-- Підсвітка синтаксису -->
+    <!-- Підключення BBCode WysiBB -->
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/jquery.wysibb.min.js"></script>
+    <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/theme/default/wbbtheme.css" type="text/css" />
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/lang/ua.js"></script>
+    <!-- Підключення BBCode WysiBB -->
 
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
 <body>
 
-<div id="navigation" class="down">
+<div id="navigation">
     <div class="main">
-        <div id="logo_img" class="down">
-            <img id="logo" src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png"/>
+        <div id="logo_img">
+           <a href="<?php echo Yii::app()->request->baseUrl; ?>"> <img id="logo" src="<?php echo $this->logoURL; ?>"/></a>
         </div>
 
         <ul>
@@ -77,20 +81,21 @@
         </ul>
 
     </div>
-    <div id="lang" class="down">
+    <div id="lang">
         <form action="" method="post" onsubmit="" name="fff">
-            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'ua'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
 
-            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'EN'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'en'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
 
-            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'RU'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'ru'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
 
         </form>
     </div>
 </div>
-<div id="button_border" class="down">
+<div id="button_border">
 </div>
-<a id="enter_button" href="#" class="down"><?php echo $this->buttonText; ?></a>
+<a id="enter_button" href="<?php echo Yii::app()->request->baseUrl;?>#form">
+    <?php echo $this->buttonText; ?></a>
 
 <script>
     function changeLang(n){
@@ -105,15 +110,36 @@
         document.getElementById(n.id).className = "selectedLang";
     }
 
+    var key = document.getElementById('enter_button');
+    var nav = document.getElementById('navigation');
+    var logo = document.getElementById('logo_img');
+    var border = document.getElementById('button_border');
+    window.onscroll = function() {
+        var pageY = window.pageYOffset || document.documentElement.scrollTop;
+        if (pageY >= key.offsetHeight) {
+            document.getElementById('logo').src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png";
 
-
+            key.className = "down";
+            logo.className = "down";
+            nav.style.height = "68px";
+            nav.className = "down";
+            border.className = "down";
+        } else {
+            document.getElementById('logo').src="<?php echo $this->logoURL; ?>";
+            border.className = "";
+            key.className = "";
+            logo.className = "";
+            nav.className = "";
+            nav.style.height = "100px";
+        }
+    }
 </script>
 <div class="clear"></div>
 
 
 <div class="main">
 
-    <div style="height: 55px; width: auto"></div>
+    <div style="height: 105px; width: auto"></div>
 
     <?php if(isset($this->breadcrumbs)):?>
         <?php $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -145,7 +171,7 @@
         </div>
         <div class="footer">
             <div>
-                <img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png" style="max-width: 140px;">
+                <a href="<?php echo Yii::app()->request->baseUrl;?>"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png" style="max-width: 140px;"></a>
             </div>
             <div>
                 <p> <?php echo $this->phone; ?><br/>
@@ -164,7 +190,7 @@
             </div>
         </div>
         <div class="footer">
-            <a href="#"><img src="<?php echo $this->imageUp; ?>" style="margin-top: 20px;"/></a>
+            <a href="<?php echo Yii::app()->request->baseUrl;?>"><img src="<?php echo $this->imageUp; ?>" style="margin-top: 20px;"/></a>
         </div>
     <div class="footer"></div>
 </div>

@@ -6,7 +6,7 @@
 <?php
 $this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
-    'Course',
+    'Курси',
 );
 
 	class Course
@@ -59,7 +59,6 @@ $this->breadcrumbs=array(
 	$courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
 
 	?>
-
 <div id='coursesMainBox'>
 
 

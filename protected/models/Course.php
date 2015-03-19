@@ -1,12 +1,19 @@
 <?php
-
 /**
  * This is the model class for table "course".
  *
  * The followings are the available columns in table 'course':
- * @property integer $CourseID
- * @property string $CourseName
- * @property integer $CourseDurationHours
+ * @property integer $course_ID
+ * @property string $course_name
+ * @property integer $course_duration_hours
+ * @property integer $modules_count
+ * @property string $course_price
+ * @property string $for_whom
+ * @property string $what_you_learn
+ * @property string $what_you_get
+ *
+ * The followings are the available model relations:
+ * @property Studentsaccess[] $studentsaccesses
  */
 class Course extends CActiveRecord
 {
@@ -26,15 +33,15 @@ class Course extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('CourseName, CourseDurationHours', 'required'),
-			array('CourseDurationHours', 'numerical', 'integerOnly'=>true),
-			array('CourseName', 'length', 'max'=>45),
+			array('course_duration_hours, modules_count', 'numerical', 'integerOnly'=>true),
+			array('course_name', 'length', 'max'=>45),
+			array('course_price', 'length', 'max'=>10),
+			array('for_whom, what_you_learn, what_you_get', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('CourseID, CourseName, CourseDurationHours', 'safe', 'on'=>'search'),
+			array('course_ID, course_name, course_duration_hours, modules_count, course_price, for_whom, what_you_learn, what_you_get', 'safe', 'on'=>'search'),
 		);
 	}
-
 	/**
 	 * @return array relational rules.
 	 */
@@ -43,6 +50,7 @@ class Course extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'studentsaccesses' => array(self::HAS_MANY, 'Studentsaccess', 'courseID'),
 		);
 	}
 
@@ -52,9 +60,14 @@ class Course extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'CourseID' => 'Course ID',
-			'CourseName' => 'Course title',
-			'CourseDurationHours' => 'Course duration (in hours)',
+			'course_ID' => 'Course',
+			'course_name' => 'Course Name',
+			'course_duration_hours' => 'Course Duration Hours',
+			'modules_count' => 'Modules Count',
+			'course_price' => 'Course Price',
+			'for_whom' => 'For Whom',
+			'what_you_learn' => 'What You Learn',
+			'what_you_get' => 'What You Get',
 		);
 	}
 
@@ -76,9 +89,14 @@ class Course extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('CourseID',$this->CourseID);
-		$criteria->compare('CourseName',$this->CourseName,true);
-		$criteria->compare('CourseDurationHours',$this->CourseDurationHours);
+		$criteria->compare('course_ID',$this->course_ID);
+		$criteria->compare('course_name',$this->course_name,true);
+		$criteria->compare('course_duration_hours',$this->course_duration_hours);
+		$criteria->compare('modules_count',$this->modules_count);
+		$criteria->compare('course_price',$this->course_price,true);
+		$criteria->compare('for_whom',$this->for_whom,true);
+		$criteria->compare('what_you_learn',$this->what_you_learn,true);
+		$criteria->compare('what_you_get',$this->what_you_get,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -94,5 +112,54 @@ class Course extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function getHoursTermination ($num)
+	{
+		//Оставляем две последние цифры от $num
+		$number = substr($num, -2);
+
+		//Если 2 последние цифры входят в диапазон от 11 до 14
+		//Тогда подставляем окончание "ЕВ"
+		if($number > 10 and $number < 15)
+		{
+			$term = "";
+		}
+		else
+		{
+
+			$number = substr($number, -1);
+
+			if($number == 0) {$term = "";}
+			if($number == 1 ) {$term = "а";}
+			if($number > 1 ) {$term = "и";}
+			if($number > 4 ) {$term = "";}
+		}
+
+		echo  ' годин'.$term;
+	}
+	public function getModulesTermination ($num)
+	{
+		//Оставляем две последние цифры от $num
+		$number = substr($num, -2);
+
+		//Если 2 последние цифры входят в диапазон от 11 до 14
+		//Тогда подставляем окончание "ЕВ"
+		if($number > 10 and $number < 15)
+		{
+			$term = "ів";
+		}
+		else
+		{
+
+			$number = substr($number, -1);
+
+			if($number == 0) {$term = "ів";}
+			if($number == 1 ) {$term = "ь";}
+			if($number > 1 ) {$term = "я";}
+			if($number > 4 ) {$term = "ів";}
+		}
+
+		echo  ' модул'.$term;
 	}
 }

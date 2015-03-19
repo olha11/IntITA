@@ -47,6 +47,7 @@ $this->breadcrumbs=array(
 <?php
 //Object Lecture, you can use designer. Ther is only one object, thats why I dont use it.))
 $lecture3=new LessonTop();
+
 $lecture3->lectureImageMain=Yii::app()->request->baseUrl.'/css/images/lectureImage.png';
 $lecture3->lectureModule='Мова програмування PHP';
 $lecture3->lectureNumber=3;
@@ -159,6 +160,27 @@ $teacher->linkName = 'детальніше';
 </div> <!-- Finish Main Block -->
 
 <!-- lesson main part -->
+<!--JS BBCode-->
+<script>
+    $(document).ready(function() {
+        var wbbOpt = {
+            lang: "ua",
+            buttons: "bold,italic,underline,|,code,bullist,numlist"
+        }
+        $("#editor").wysibb(wbbOpt);
+        $("#editor2").wysibb(wbbOpt);
+        $("#editor3").wysibb(wbbOpt);
+    });
+</script>
+<!--JS BBCode-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.spoilerLinks').click(function(){
+            $(this).next('.spoilerBody').toggle('normal');
+            return false;
+        });
+    });
+</script>
 <!--Перша частина-->
 <div class="lessonBlock" id="lessonBlock">
     <!--navigation vertical-->
@@ -210,7 +232,6 @@ $teacher->linkName = 'детальніше';
     <div class="lessonText">
         <h1 class="lessonTheme">Змінні та типи даних в PHP </h1>
         <span class="listTheme">Зміст </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
-
         <div class="spoilerBody">
             <p><a href="#Частина 1: Типи змінних та перемінних">Частина 1: Типи змінних та перемінних</a></p>
             <p><a href="#Частина 7: Типи данних та математичний аналіз">Частина 7: Типи данних та математичний аналіз</a></p>
@@ -322,7 +343,11 @@ $teacher->linkName = 'детальніше';
         <a name="Частина 7: Типи данних та математичний аналіз"></a>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/borderLesson.png">
     </div>
+        <div class="lessonNav">
+        </div>
+    </div>
     <!--Друга частина-->
+    <div class="lessonVisb2">
     <div class="lessonText">
         <h1 class="lessonPart">Частина 7: Типи данних та математичний аналіз</h1>
         <span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:
@@ -421,7 +446,11 @@ $teacher->linkName = 'детальніше';
         </div>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/borderLesson.png">
     </div>
+        <div class="lessonNav">
+        </div>
+    </div>
     <!--Заключна частина-->
+    <div class="lessonVisb3">
     <div class="lessonText">
         <div class="lessonTask">
             <img class="lessonButFinal" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButtonFinale.png">
@@ -434,16 +463,17 @@ $teacher->linkName = 'детальніше';
                 <div class="instrTaskText">
                     <ol>
                         <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>
-                        <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>
-                        <li>An if statement is made up of the if keyword, a condition like we've seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>
-                        <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>
-                        <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>
-                    </ol>
-                    <div class="BBCode">
-                        <form action="" method="post">
-                            <textarea class="editor"></textarea>
-                            <input  id="lessonTask3" type="submit" value="Відповісти">
-                        </form>
+                            <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
+                            <li>An if statement is made up of the if keyword, a condition like we've seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>
+                            <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png">Відповісти</span></a>
+                            <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>
+                        </ol>
+                        <div class="BBCode">
+                            <form action="" method="post">
+                                <textarea id="editor3"></textarea>
+                                <input  id="lessonTask3" type="submit" value="Відповісти">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -456,143 +486,143 @@ $teacher->linkName = 'детальніше';
 <?php
 
 //Загальні параметри блоку
-$footNavSize='960px'; // Ширина блоку
-$footNavMaxMark='6'; // Шкала оцінювання - максимальна кількість балів, поділок
+	$footNavSize='960px'; // Ширина блоку
+	$footNavMaxMark='6'; // Шкала оцінювання - максимальна кількість балів, поділок
 
 // База даних - проста база даних для прикладу
-$lessonInfo1=array('1','Назва уроку1','практична робота','Тайм1','3','Зараховано');
-$lessonInfo2=array('2','Назва уроку2','лекція','Тайм2','4','Зараховано');
-$lessonInfo3=array('3','Назва уроку3','практична робота','Тайм3','2','Зараховано');
-$lessonInfo4=array('4','Назва уроку4','практична робота','Тайм4','3','Зараховано');
-$lessonInfo5=array('5','Назва уроку5','практична робота','Тайм5','1','Не Зараховано');
-$lessonInfo6=array('6','Назва уроку6','лекція','Тайм6','0','Не Зараховано');
-$lessonInfo7=array('7','Назва уроку7','лекція','Тайм7','0','Не Зараховано');
-$lessonInfo8=array('8','Назва уроку8','практична робота','Тайм8','0','Не Зараховано');
-$lessonInfo9=array('9','Назва уроку9','практична робота','Тайм9','0','Не Зараховано');
-$lessonInfo10=array('10','Назва уроку10','лекція','Тайм10','0','Не Зараховано');
+	$lessonInfo1=array('1','Назва уроку1','практична робота','Тайм1','3','Зараховано');
+	$lessonInfo2=array('2','Назва уроку2','лекція','Тайм2','4','Зараховано');
+	$lessonInfo3=array('3','Назва уроку3','практична робота','Тайм3','2','Зараховано');
+	$lessonInfo4=array('4','Назва уроку4','практична робота','Тайм4','3','Зараховано');
+	$lessonInfo5=array('5','Назва уроку5','практична робота','Тайм5','1','Не Зараховано');
+	$lessonInfo6=array('6','Назва уроку6','лекція','Тайм6','0','Не Зараховано');
+	$lessonInfo7=array('7','Назва уроку7','лекція','Тайм7','0','Не Зараховано');
+	$lessonInfo8=array('8','Назва уроку8','практична робота','Тайм8','0','Не Зараховано');
+	$lessonInfo9=array('9','Назва уроку9','практична робота','Тайм9','0','Не Зараховано');
+	$lessonInfo10=array('10','Назва уроку10','лекція','Тайм10','0','Не Зараховано');
 
-$allLessons=array($lessonInfo1,$lessonInfo2,$lessonInfo3,$lessonInfo4,$lessonInfo5,$lessonInfo6,$lessonInfo7,$lessonInfo8,$lessonInfo9,$lessonInfo10);
+	$allLessons=array($lessonInfo1,$lessonInfo2,$lessonInfo3,$lessonInfo4,$lessonInfo5,$lessonInfo6,$lessonInfo7,$lessonInfo8,$lessonInfo9,$lessonInfo10);
 
-// Ініціалізуємо обьєкт класу який проиймає номер сторінки і інформацію про уроки з бази даних
-$footNav=new LessonFooter ('3',$allLessons);
+	// Ініціалізуємо обьєкт класу який проиймає номер сторінки і інформацію про уроки з бази даних
+	$footNav=new LessonFooter ('3',$allLessons);
 
 ?>
 <!  Верстка на основі обьекта $footNav >
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/lessonFooter.css" />
 
-<div class="subViewLessons" id="subViewLessons"	style="width:<?php echo $footNavSize; ?>" >
-    <?php
-    if (  $footNav->getPre()=='True' )
-    {
-        ?>
-        <div class="preLessons">
-            <p class="lesname">Заняття <?php echo $footNav->getPreNumber() ?>: <b><?php echo $footNav->getPreName() ?></b></p>
-            <table class="typeLesson">
-                <tr>
-                    <td><p>Тип:</p></td>
-                    <td><span><?php echo $footNav->getPreType() ?></span></td>
-                    <td><img src="<?php
-                        switch ($footNav->getPreType())
-                        {
-                            case 'лекція':
-                                echo Yii::app()->request->baseUrl."/css/images/lectureIco.png";
-                                break;
-                            case 'практична робота':
-                                echo Yii::app()->request->baseUrl."/css/images/practicalIco.png";
-                                break;
-                        }
-                        ?> " style="width:<?php echo $footNavSize*0.02 . 'px'; ?>"></td>
-                    <td><p>Тривалість:</p></td>
-                    <td><span><?php echo $footNav->getPreDur() ?></span></td>
-                    <td><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/timeIco.png" style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
-                </tr>
-            </table>
-            <table class="ratingLeson">
-                <tr>
-                    <?php
-                    for ($i=0; $i<$footNav->getPreRait(); $i++)
-                    {
-                        ?>
-                        <td>	<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco1.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
-                    <?php
-                    }
-                    for ($j=0; $j<$footNavMaxMark-$footNav->getPreRait(); $j++)
-                    {
-                        ?>
-                        <td>	<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco0.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
-                    <?php
-                    }
-                    ?>
-                    <td><img src="<?php
-                        if ($footNav->getPreMedal()=='Зараховано')
-                        {
-                            echo Yii::app()->request->baseUrl."/css/images/medalIco.png";
-                        } else {
-                            echo Yii::app()->request->baseUrl."/css/images/medalIcoFalse.png";
-                        }
-                        ?> " style="width:<?php echo $footNavSize*0.035 . 'px'; ?>"></td>
-                </tr>
-            </table>
-            <div class="preLesonLink">
-                <p><a href="#">&#171 переглянути знову попередній урок</a></p>
-            </div>
-        </div>
-    <?php
-    }
+		<div class="subViewLessons" 	style="width:<?php echo $footNavSize; ?>" >
+<?php
+	if (  $footNav->getPre()=='True' )
+		{
+?>
+					<div class="preLessons">
+						<p class="lesname">Урок <?php echo $footNav->getPreNumber() ?>: <b><?php echo $footNav->getPreName() ?></b></p>
+						<table class="typeLesson">
+							<tr>
+								<td><p>Тип:</p></td>
+								<td><span><?php echo $footNav->getPreType() ?></span></td>
+								<td><img src="<?php
+																	switch ($footNav->getPreType())
+																				{
+																					case 'лекція':
+																						echo Yii::app()->request->baseUrl."/css/images/lectureIco.png";
+																						break;
+																					case 'практична робота':
+																						echo Yii::app()->request->baseUrl."/css/images/practicalIco.png";
+																						break;
+																				}
+														?> " style="width:<?php echo $footNavSize*0.02 . 'px'; ?>"></td>
+								<td><p>Тривалість:</p></td>
+								<td><span><?php echo $footNav->getPreDur() ?></span></td>
+								<td><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/timeIco.png" style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
+							</tr>
+						</table>
+						<table class="ratingLeson">
+							<tr>
+								<?php
+									for ($i=0; $i<$footNav->getPreRait(); $i++)
+									{
+								?>
+									<td>	<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco1.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
+								<?php
+									}
+									for ($j=0; $j<$footNavMaxMark-$footNav->getPreRait(); $j++)
+									{
+								?>
+									<td>	<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco0.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
+								<?php
+									}
+								?>
+								<td><img src="<?php
+															if ($footNav->getPreMedal()=='Зараховано')
+																				{
+																					echo Yii::app()->request->baseUrl."/css/images/medalIco.png";
+																				} else {
+																						echo Yii::app()->request->baseUrl."/css/images/medalIcoFalse.png";
+																				}
+														?> " style="width:<?php echo $footNavSize*0.035 . 'px'; ?>"></td>
+							</tr>
+						</table>
+						<div class="preLesonLink">
+							<p><a href="#">&#171 переглянути знову попередній урок</a></p>
+						</div>
+					</div>
+<?php
+		}
 
-    if (  $footNav->getPost()=='True' )
-    {
-    ?>
-    <div class="nextLessons">
-        <p class="lesname">Заняття <?php echo $footNav->getPostNumber() ?>: <b><?php echo $footNav->getPostName() ?></b></p>
-        <table class="typeLesson">
-            <tr>
-                <td><p>Тип:</p></td>
-                <td><span><?php echo $footNav->getPostType() ?></span></td>
-                <td><img src="<?php
-                    switch ($footNav->getPostType())
-                    {
-                        case 'лекція':
-                            echo Yii::app()->request->baseUrl."/css/images/lectureIco.png";
-                            break;
-                        case 'практична робота':
-                            echo Yii::app()->request->baseUrl."/css/images/practicalIco.png";
-                            break;
-                    }
-                    ?> "style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
-                <td><p>Тривалість:</p></td>
-                <td><span><?php echo $footNav->getPostDur() ?></span></td>
-                <td><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/timeIco.png" style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
-            </tr>
-        </table>
-        <table class="ratingLeson">
-            <tr>
-                <?php
-                for ($i=0; $i<$footNav->getPostRait(); $i++)
-                {
-                    ?>
-                    <td>	<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco1.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
-                <?php
-                }
-                for ($j=0; $j<$footNavMaxMark-$footNav->getPostRait(); $j++)
-                {
-                    ?>
-                    <td>	<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco0.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
-                <?php
-                }
-                ?>
-                <td><img src="<?php
-                    if ($footNav->getPostMedal()=='Зараховано')
-                    {
-                        echo Yii::app()->request->baseUrl."/css/images/medalIco.png";
-                    } else {
-                        echo Yii::app()->request->baseUrl."/css/images/medalIcoFalse.png";
-                    }
-                    ?> " style="width:<?php echo $footNavSize*0.035 . 'px';?>"></td>
-            </tr>
-        </table>
-        <?php if($footNav->getThisMedal()=='Зараховано') { ?>
-            <div class="nextLesonLink">
+	if (  $footNav->getPost()=='True' )
+		{
+?>
+					<div class="nextLessons">
+						<p class="lesname">Урок <?php echo $footNav->getPostNumber() ?>: <b><?php echo $footNav->getPostName() ?></b></p>
+						<table class="typeLesson">
+							<tr>
+								<td><p>Тип:</p></td>
+								<td><span><?php echo $footNav->getPostType() ?></span></td>
+								<td><img src="<?php
+																	switch ($footNav->getPostType())
+																				{
+																					case 'лекція':
+																						echo Yii::app()->request->baseUrl."/css/images/lectureIco.png";
+																						break;
+																					case 'практична робота':
+																						echo Yii::app()->request->baseUrl."/css/images/practicalIco.png";
+																						break;
+																				}
+														?> "style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
+								<td><p>Тривалість:</p></td>
+								<td><span><?php echo $footNav->getPostDur() ?></span></td>
+								<td><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/timeIco.png" style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
+							</tr>
+						</table>
+						<table class="ratingLeson">
+							<tr>
+								<?php
+									for ($i=0; $i<$footNav->getPostRait(); $i++)
+									{
+								?>
+									<td>	<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco1.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
+								<?php
+									}
+									for ($j=0; $j<$footNavMaxMark-$footNav->getPostRait(); $j++)
+									{
+								?>
+									<td>	<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco0.png" style="width:<?php echo $footNavSize*0.015 . 'px';?>; padding:0px;"></td>
+								<?php
+									}
+								?>
+									<td><img src="<?php
+																	if ($footNav->getPostMedal()=='Зараховано')
+																				{
+																					echo Yii::app()->request->baseUrl."/css/images/medalIco.png";
+																				} else {
+																						echo Yii::app()->request->baseUrl."/css/images/medalIcoFalse.png";
+																				}
+														?> " style="width:<?php echo $footNavSize*0.035 . 'px';?>"></td>
+							</tr>
+						</table>
+						<?php if($footNav->getThisMedal()=='Зараховано') { ?>
+							<div class="nextLesonLink">
                 <p><a href="#"><input class="nextLessButt" type="submit" value="НАСТУПНИЙ УРОК"></a></p>
             </div>
         <?php  }?>

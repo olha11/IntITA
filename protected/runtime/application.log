@@ -6687,394 +6687,15 @@ REQUEST_URI=/IntITA/
 in D:\xampp\htdocs\IntITA\protected\views\site\_form.php (9)
 in D:\xampp\htdocs\IntITA\protected\views\site\index.php (147)
 in D:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (124)
-2015/03/18 21:46:20 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.mainpagetranslated' doesn't exist. Выполнявшийся SQL-запрос: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
-FROM `mainpage` `t1`, `mainpagetranslated` `t2`
-WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language.
-in C:\xampp\htdocs\IntITA\protected\models\Mainpage.php (211)
-in C:\xampp\htdocs\IntITA\protected\models\Mainpage.php (51)
-in C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (44)
-2015/03/18 21:46:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.mainpagetranslated' doesn't exist. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
-FROM `mainpage` `t1`, `mainpagetranslated` `t2`
-WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language' in C:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
+2015/03/19 19:01:18 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "TeachersTemp.pathImages".' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
 Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
-#1 C:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(130): CDbCommand->queryAll()
-#2 C:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(86): CDbMessageSource->loadMessagesFromDb('mainpage', 'ru')
-#3 C:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(103): CDbMessageSource->loadMessages('mainpage', 'ru')
-#4 C:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(85): CMessageSource->translateMessage('mainpage', '\xD0\x9D\xD0\xB5 \xD1\x83\xD0\xBF\xD1\x83\xD1\x81\xD1\x82...', 'ru')
-#5 C:\xampp\htdocs\IntITA\protected\framework\YiiBase.php(589): CMessageSource->translate('mainpage', '\xD0\x9D\xD0\xB5 \xD1\x83\xD0\xBF\xD1\x83\xD1\x81\xD1\x82...', NULL)
-#6 C:\xampp\htdocs\IntITA\protected\models\Mainpage.php(211): YiiBase::t('mainpage', '\xD0\x9D\xD0\xB5 \xD1\x83\xD0\xBF\xD1\x83\xD1\x81\xD1\x82...')
-#7 C:\xampp\htdocs\IntITA\protected\models\Mainpage.php(51): Mainpage->getSliderText()
-#8 C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(44): Mainpage->setValueById(0)
-#9 C:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#10 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#11 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#12 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#13 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
-#14 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#15 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#16 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
-#17 {main}
-REQUEST_URI=/IntITA/
----
-2015/03/18 21:56:03 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 21:56:05 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 21:56:05 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 21:56:07 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 21:58:41 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 21:58:42 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 21:58:42 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 21:58:43 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:01:21 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/index.php
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:01:21 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:03:00 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/index.php
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:03:00 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:03:04 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/index.php
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:03:04 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:03:04 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:03:21 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/index.php
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:03:21 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:03:21 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:06:18 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/index.php
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:06:18 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:06:19 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:27)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (27)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:07:10 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:28)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/index.php
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (28)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:07:10 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:28)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (28)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:07:17 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\IntITA\protected\components\Controller.php:28)
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#1 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/
-in C:\xampp\htdocs\IntITA\protected\components\Controller.php (28)
-in C:\xampp\htdocs\IntITA\index.php (13)
-2015/03/18 22:07:26 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Carousel.text".' in C:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('text')
-#1 C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(76): CActiveRecord->__get('text')
-#2 C:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#3 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#4 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#5 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#6 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
-#7 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#8 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#9 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
-#10 {main}
-REQUEST_URI=/IntITA/index.php
----
-2015/03/19 00:26:50 [error] [exception.CException] exception 'CException' with message 'Mainpage and its behaviors do not have a method or closure named "getSliderHeader".' in C:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:266
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(227): CComponent->__call('getSliderHeader', Array)
-#1 C:\xampp\htdocs\IntITA\protected\views\site\index.php(14): CActiveRecord->__call('getSliderHeader', Array)
-#2 C:\xampp\htdocs\IntITA\protected\views\site\index.php(14): Mainpage->getSliderHeader()
-#3 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
-#4 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
-#5 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
-#6 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
-#7 C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(118): CController->render('index', Array)
-#8 C:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#9 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#10 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#11 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#12 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
-#13 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#14 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#15 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
-#16 {main}
-REQUEST_URI=/IntITA/
----
-2015/03/19 00:45:21 [error] [exception.CException] exception 'CException' with message 'В классе Mainpage и его поведениях не найден метод или замыкание с именем "getSliderHeader".' in C:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:266
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(227): CComponent->__call('getSliderHeader', Array)
-#1 C:\xampp\htdocs\IntITA\protected\views\site\index.php(14): CActiveRecord->__call('getSliderHeader', Array)
-#2 C:\xampp\htdocs\IntITA\protected\views\site\index.php(14): Mainpage->getSliderHeader()
-#3 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
-#4 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
-#5 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
-#6 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
-#7 C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(118): CController->render('index', Array)
-#8 C:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#9 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#10 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#11 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#12 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
-#13 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#14 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#15 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
-#16 {main}
-REQUEST_URI=/IntITA/index.php
----
-2015/03/19 00:46:25 [error] [exception.CException] exception 'CException' with message 'В классе Mainpage и его поведениях не найден метод или замыкание с именем "getHeader1".' in C:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:266
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(227): CComponent->__call('getHeader1', Array)
-#1 C:\xampp\htdocs\IntITA\protected\views\site\index.php(32): CActiveRecord->__call('getHeader1', Array)
-#2 C:\xampp\htdocs\IntITA\protected\views\site\index.php(32): Mainpage->getHeader1()
-#3 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
-#4 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
-#5 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
-#6 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
-#7 C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(118): CController->render('index', Array)
-#8 C:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#9 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#10 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#11 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#12 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
-#13 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#14 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#15 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
-#16 {main}
-REQUEST_URI=/IntITA/index.php
----
-2015/03/19 00:46:41 [error] [exception.CException] exception 'CException' with message 'В классе Mainpage и его поведениях не найден метод или замыкание с именем "header1".' in C:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:266
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(227): CComponent->__call('header1', Array)
-#1 C:\xampp\htdocs\IntITA\protected\views\site\index.php(32): CActiveRecord->__call('header1', Array)
-#2 C:\xampp\htdocs\IntITA\protected\views\site\index.php(32): Mainpage->header1()
-#3 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
-#4 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
-#5 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
-#6 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
-#7 C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(118): CController->render('index', Array)
-#8 C:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#9 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#10 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#11 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#12 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
-#13 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#14 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#15 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
-#16 {main}
-REQUEST_URI=/IntITA/index.php
----
-2015/03/19 07:55:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.sourcemessage' doesn't exist. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
-FROM `SourceMessage` `t1`, `Message` `t2`
-WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language.
-in C:\xampp\htdocs\IntITA\protected\models\Mainpage.php (209)
-in C:\xampp\htdocs\IntITA\protected\models\Mainpage.php (50)
-in C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (45)
-2015/03/19 07:55:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.sourcemessage' doesn't exist. The SQL statement executed was: SELECT `t1`.`message` AS `message`, `t2`.`translation` AS `translation`
-FROM `SourceMessage` `t1`, `Message` `t2`
-WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language' in C:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php:543
-Stack trace:
-#0 C:\xampp\htdocs\IntITA\protected\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
-#1 C:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(130): CDbCommand->queryAll()
-#2 C:\xampp\htdocs\IntITA\protected\framework\i18n\CDbMessageSource.php(86): CDbMessageSource->loadMessagesFromDb('mainpage', 'en')
-#3 C:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(103): CDbMessageSource->loadMessages('mainpage', 'en')
-#4 C:\xampp\htdocs\IntITA\protected\framework\i18n\CMessageSource.php(85): CMessageSource->translateMessage('mainpage', 'IntITA - \xD0\x90\xD0\xBA\xD0\xB0...', 'en')
-#5 C:\xampp\htdocs\IntITA\protected\framework\YiiBase.php(589): CMessageSource->translate('mainpage', 'IntITA - \xD0\x90\xD0\xBA\xD0\xB0...', NULL)
-#6 C:\xampp\htdocs\IntITA\protected\models\Mainpage.php(209): YiiBase::t('mainpage', 'IntITA - \xD0\x90\xD0\xBA\xD0\xB0...')
-#7 C:\xampp\htdocs\IntITA\protected\models\Mainpage.php(50): Mainpage->getTitle()
-#8 C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(45): Mainpage->setValueById(0)
-#9 C:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#10 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#11 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#12 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#13 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
-#14 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#15 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#16 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
-#17 {main}
-REQUEST_URI=/IntITA/
----
-2015/03/19 14:51:28 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "StudentReg.role".' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:173
-Stack trace:
-#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(161): CComponent->__set('role', 0)
-#1 D:\xampp\htdocs\IntITA\protected\views\studentreg\studentreg.php(75): CActiveRecord->__set('role', 0)
-#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
-#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
-#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
-#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('studentreg', Array, true)
-#6 D:\xampp\htdocs\IntITA\protected\controllers\StudentregController.php(175): CController->render('studentreg', Array)
-#7 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StudentRegController->actionIndex()
-#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#10 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#12 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#13 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#14 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
-#15 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#16 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('index')
-#17 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/inde...')
-#18 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#19 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
-#20 {main}
-REQUEST_URI=/IntITA/index.php?r=studentreg/index
-HTTP_REFERER=http://localhost/IntITA/
----
-2015/03/19 14:56:15 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "StudentReg.role".' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:173
-Stack trace:
-#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(161): CComponent->__set('role', 0)
-#1 D:\xampp\htdocs\IntITA\protected\views\studentreg\studentreg.php(75): CActiveRecord->__set('role', 0)
-#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
-#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
-#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
-#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('studentreg', Array, true)
-#6 D:\xampp\htdocs\IntITA\protected\controllers\StudentregController.php(175): CController->render('studentreg', Array)
-#7 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StudentRegController->actionIndex()
-#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#10 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#12 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#13 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#14 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
-#15 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#16 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('index')
-#17 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/inde...')
-#18 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#19 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
-#20 {main}
-REQUEST_URI=/IntITA/index.php?r=studentreg/index
-HTTP_REFERER=http://localhost/IntITA/
----
-2015/03/19 16:09:39 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "TeachersTemp.pageTitle".' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:173
-Stack trace:
-#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(161): CComponent->__set('pageTitle', '\xD0\x9D\xD0\xB0\xD1\x88\xD1\x96 \xD0\xBA\xD1\x83\xD1\x80...')
-#1 D:\xampp\htdocs\IntITA\protected\views\teachers\teachers.php(14): CActiveRecord->__set('pageTitle', '\xD0\x9D\xD0\xB0\xD1\x88\xD1\x96 \xD0\xBA\xD1\x83\xD1\x80...')
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pathImages')
+#1 D:\xampp\htdocs\IntITA\protected\views\teachers\teachers.php(42): CActiveRecord->__get('pathImages')
 #2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
 #3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
 #4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
 #5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('teachers', Array, true)
-#6 D:\xampp\htdocs\IntITA\protected\controllers\TeachersController.php(128): CController->render('teachers', Array)
+#6 D:\xampp\htdocs\IntITA\protected\controllers\TeachersController.php(133): CController->render('teachers', Array)
 #7 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): TeachersController->actionIndex()
 #8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #9 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
@@ -7091,88 +6712,174 @@ Stack trace:
 #20 {main}
 REQUEST_URI=/IntITA/index.php?r=teachers
 ---
-2015/03/19 16:34:21 [error] [php] Undefined variable: teacherValue (D:\xampp\htdocs\IntITA\protected\views\lesson\index.php:130)
+2015/03/19 19:15:02 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "TeachersTemp.pathImages".' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
 Stack trace:
-#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): LessonController->renderFile()
-#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): LessonController->renderPartial()
-#2 D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php(7): LessonController->render()
-#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): LessonController->actionIndex()
-#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
-#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): LessonController->runAction()
-#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): LessonController->runActionWithFilters()
-#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): LessonController->run()
-#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/index.php?r=lesson
-in D:\xampp\htdocs\IntITA\protected\views\lesson\index.php (130)
-in D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php (7)
-in D:\xampp\htdocs\IntITA\index.php (13)
-2015/03/19 16:34:35 [error] [php] Undefined variable: teacherValue (D:\xampp\htdocs\IntITA\protected\views\lesson\index.php:130)
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pathImages')
+#1 D:\xampp\htdocs\IntITA\protected\views\teachers\teachers.php(42): CActiveRecord->__get('pathImages')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('teachers', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\controllers\TeachersController.php(133): CController->render('teachers', Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): TeachersController->actionIndex()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#15 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#17 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('teachers')
+#18 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/IntITA/index.php?r=teachers
+HTTP_REFERER=http://localhost/IntITA/index.php?r=site/aboutdetail
+---
+2015/03/19 19:16:10 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "TeachersTemp.pathImages".' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
 Stack trace:
-#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): LessonController->renderFile()
-#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): LessonController->renderPartial()
-#2 D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php(7): LessonController->render()
-#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): LessonController->actionIndex()
-#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
-#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): LessonController->runAction()
-#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): LessonController->runActionWithFilters()
-#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): LessonController->run()
-#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/index.php?r=lesson
-in D:\xampp\htdocs\IntITA\protected\views\lesson\index.php (130)
-in D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php (7)
-in D:\xampp\htdocs\IntITA\index.php (13)
-2015/03/19 16:36:20 [error] [php] Undefined variable: teacherValue (D:\xampp\htdocs\IntITA\protected\views\lesson\index.php:130)
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pathImages')
+#1 D:\xampp\htdocs\IntITA\protected\views\teachers\teachers.php(42): CActiveRecord->__get('pathImages')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('teachers', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\controllers\TeachersController.php(133): CController->render('teachers', Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): TeachersController->actionIndex()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#15 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#17 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('teachers')
+#18 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/IntITA/index.php?r=teachers
+HTTP_REFERER=http://localhost/IntITA/index.php?r=site/aboutdetail
+---
+2015/03/19 19:23:48 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Module.module_img".' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
 Stack trace:
-#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): LessonController->renderFile()
-#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): LessonController->renderPartial()
-#2 D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php(7): LessonController->render()
-#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): LessonController->actionIndex()
-#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
-#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): LessonController->runAction()
-#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): LessonController->runActionWithFilters()
-#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): LessonController->run()
-#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/index.php?r=lesson
-in D:\xampp\htdocs\IntITA\protected\views\lesson\index.php (130)
-in D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php (7)
-in D:\xampp\htdocs\IntITA\index.php (13)
-2015/03/19 16:36:37 [error] [php] Undefined variable: teacherValue (D:\xampp\htdocs\IntITA\protected\views\lesson\index.php:130)
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('module_img')
+#1 D:\xampp\htdocs\IntITA\protected\views\module\module.php(23): CActiveRecord->__get('module_img')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', NULL, true)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', NULL, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('module', NULL, true)
+#6 D:\xampp\htdocs\IntITA\protected\controllers\ModuleController.php(129): CController->render('module')
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): ModuleController->actionIndex()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#15 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#17 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('module')
+#18 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/IntITA/index.php?r=module
+---
+2015/03/19 19:26:37 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Tests.TestID".' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
 Stack trace:
-#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): LessonController->renderFile()
-#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): LessonController->renderPartial()
-#2 D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php(7): LessonController->render()
-#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): LessonController->actionIndex()
-#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
-#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): LessonController->runAction()
-#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): LessonController->runActionWithFilters()
-#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): LessonController->run()
-#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/index.php?r=lesson
-in D:\xampp\htdocs\IntITA\protected\views\lesson\index.php (130)
-in D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php (7)
-in D:\xampp\htdocs\IntITA\index.php (13)
-2015/03/19 16:57:03 [error] [php] Undefined variable: teacherValue (D:\xampp\htdocs\IntITA\protected\views\lesson\index.php:132)
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('TestID')
+#1 D:\xampp\htdocs\IntITA\protected\views\tests\_view.php(9): CActiveRecord->__get('TestID')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(130): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, false)
+#4 D:\xampp\htdocs\IntITA\protected\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('D:\\xampp\\htdocs...', Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 D:\xampp\htdocs\IntITA\protected\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(181): CBaseListView->run()
+#10 D:\xampp\htdocs\IntITA\protected\views\tests\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 D:\xampp\htdocs\IntITA\protected\controllers\TestsController.php(128): CController->render('index', Array)
+#16 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): TestsController->actionIndex()
+#17 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#24 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#26 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('tests')
+#27 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/IntITA/index.php?r=tests
+---
+2015/03/19 19:27:04 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Videos.VideoID".' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:130
 Stack trace:
-#0 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): LessonController->renderFile()
-#1 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): LessonController->renderPartial()
-#2 D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php(7): LessonController->render()
-#3 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): LessonController->actionIndex()
-#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
-#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): LessonController->runAction()
-#6 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): LessonController->runActionWithFilters()
-#7 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): LessonController->run()
-#8 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#9 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#10 D:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
-REQUEST_URI=/IntITA/index.php?r=lesson
-in D:\xampp\htdocs\IntITA\protected\views\lesson\index.php (132)
-in D:\xampp\htdocs\IntITA\protected\controllers\LessonController.php (7)
-in D:\xampp\htdocs\IntITA\index.php (13)
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(145): CComponent->__get('VideoID')
+#1 D:\xampp\htdocs\IntITA\protected\views\videos\_view.php(18): CActiveRecord->__get('VideoID')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(130): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, false)
+#4 D:\xampp\htdocs\IntITA\protected\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('D:\\xampp\\htdocs...', Array)
+#5 D:\xampp\htdocs\IntITA\protected\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 D:\xampp\htdocs\IntITA\protected\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(181): CBaseListView->run()
+#10 D:\xampp\htdocs\IntITA\protected\views\videos\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 D:\xampp\htdocs\IntITA\protected\controllers\VideosController.php(128): CController->render('index', Array)
+#16 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): VideosController->actionIndex()
+#17 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#24 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('')
+#26 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('videos')
+#27 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/IntITA/index.php?r=videos
+---
+2015/03/19 19:36:12 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "StudentReg.role".' in D:\xampp\htdocs\IntITA\protected\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\db\ar\CActiveRecord.php(161): CComponent->__set('role', 0)
+#1 D:\xampp\htdocs\IntITA\protected\views\studentreg\studentreg.php(63): CActiveRecord->__set('role', 0)
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('studentreg', Array, true)
+#6 D:\xampp\htdocs\IntITA\protected\controllers\StudentregController.php(175): CController->render('studentreg', Array)
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StudentRegController->actionIndex()
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#15 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('index')
+#17 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/inde...')
+#18 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/IntITA/index.php?r=studentreg/index
+HTTP_REFERER=http://localhost/IntITA/
+---
