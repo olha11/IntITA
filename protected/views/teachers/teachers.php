@@ -11,20 +11,26 @@
 <!-- teachers style -->
 <!-- BD -))) -->
 <?php
+$this->pageTitle = 'IntITA - Викладачі';
 $post=TeachersTemp::model()->findAll();
 ?>
 <!-- BD -))) -->
 
-<div class="subNavBlock">
-    <div class="subLinks">
-        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php"><?php echo $page['BCmain']?></a> &#187; <a href="#"><?php echo $page['BCteachers']?></a>
+<div class="subNavBlockTeachers">
+    <?php
+    $this->breadcrumbs=array(
+    'Викладачі',
+    );
+    ?>
+    <div class="ifYouTeachers">
+    Якщо ви професійний ІТ-шник і бажаєте викладати окремі ІТ курси чи модулі і співпрацювати з нами в напрямку підготовки програмістів, напишіть нам <a href="mailto: intita.hr@gmail.com">листа</a>.
     </div>
 </div>
 
 <div class='teachersList'>
 
     <div class="titleTeachers">
-                <h1><?php echo $page['header']?></h1>
+                <h1>Наші викладачі</h1>
     </div>
 
     <div class="leftTeacher">
@@ -37,8 +43,9 @@ $post=TeachersTemp::model()->findAll();
             <div class="teacherBlock">
                 <table>
                     <tr>
-                        <td>
-                            <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->pathImages.$teacherValue->foto_url ?>"/>
+                        <td  class="profileTeacher" >
+                            <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
+                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">персональна сторінка &#187;</a>
                         </td>
                         <td>
                             <h2><?php echo $teacherValue->last_name ?></h2>
@@ -46,7 +53,7 @@ $post=TeachersTemp::model()->findAll();
                             <h2><?php echo $teacherValue->first_name ?> <?php echo $teacherValue->middle_name ?></h2>
                             <?php echo $teacherValue->profile_text ?>
                             <p>
-                                <?php echo $page['courses']?>
+                                Ведет курсы:
                             </p>
                             <div class="teacherCourses">
                                 <ul>
@@ -61,13 +68,21 @@ $post=TeachersTemp::model()->findAll();
                                     ?>
                                 </ul>
                             </div>
-                            <div class="aboutMore">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>"><?php echo $page['link1']?> &#187;</a></br>
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/><a href="#"><?php echo $page['link2']?> &#187;</a>
-                            </div>
                         </td>
                     </tr>
                 </table>
+                <div class="aboutMore">
+                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Читать полностью &#187;</a></br>
+                    <?php
+                    for ($k=0; $k<10; $k++)
+                    {
+                        ?>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/>
+                    <?php
+                    }
+                    ?>
+                    <a href="#">Відгуки &#187;</a>
+                </div>
             </div>
             <?php
         }
@@ -85,8 +100,9 @@ $post=TeachersTemp::model()->findAll();
             <div class="teacherBlock">
                 <table>
                     <tr>
-                        <td>
-                            <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->pathImages.$teacherValue->foto_url ?>"/>
+                        <td  class="profileTeacher" >
+                            <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
+                            <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">персональна сторінка &#187;</a>
                         </td>
                         <td>
                             <h2><?php echo $teacherValue->last_name ?></h2>
@@ -94,7 +110,7 @@ $post=TeachersTemp::model()->findAll();
                             <h2><?php echo $teacherValue->first_name ?> <?php echo $teacherValue->middle_name ?></h2>
                             <?php echo $teacherValue->profile_text ?>
                             <p>
-                                <?php echo $page['courses']?>
+                                Ведет курсы:
                             </p>
                             <div class="teacherCourses">
                                 <ul>
@@ -109,13 +125,21 @@ $post=TeachersTemp::model()->findAll();
                                     ?>
                                 </ul>
                             </div>
-                            <div class="aboutMore">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="#"><?php echo $page['link1']?> &#187;</a></br>
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/><a href="#"><?php echo $page['link2']?> &#187;</a>
-                            </div>
                         </td>
                     </tr>
                 </table>
+                <div class="aboutMore">
+                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Читать полностью &#187;</a></br>
+                    <?php
+                    for ($k=0; $k<10; $k++)
+                    {
+                        ?>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/>
+                    <?php
+                    }
+                    ?>
+                    <a href="#">Відгуки &#187;</a>
+                </div>
             </div>
             <?php
         }

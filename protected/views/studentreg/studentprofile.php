@@ -14,14 +14,16 @@ $post=StudentReg::model()->findByPk(1);
 ?>
 
 <div class="formStudProfNav">
-    <div class="regLinks">
-        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Головна</a> &#187; <a href="#">Профіль</a>
-    </div>
+    <?php
+    $this->breadcrumbs=array(
+        'Профіль',
+    );
+    ?>
     <div class="profileStatus">
         <div>
             <?php echo $post->firstName;?></br>
-            <?php echo $post->middleName;?></br>
             <?php echo $post->secondName;?></br>
+            <?php echo $post->nickname;?></br>
             <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
         </div>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
@@ -47,19 +49,20 @@ $post=StudentReg::model()->findByPk(1);
        <table class='profileInfo'>
             <tr>
                 <td>
+                    <h1><?php echo $post->nickname;?></h1>
                     <h1><?php echo $post->firstName;?></h1>
-                    <h1><?php echo $post->middleName;?></h1>
                     <h1><?php echo $post->secondName;?></h1>
                     <div class="aboutInfo">
                         <p><?php echo $post->address;?>,
                             <?php
                             $myAge = $post->birthday;
+                            $myAge = str_replace("/",".",$myAge);
                             $date_a = new DateTime($myAge);
                             $date_b = new DateTime();
                             $interval = $date_b->diff($date_a);
                             echo $interval->format("%Y");
+                            $post::getYearsTermination($interval->format("%Y"));
                             ?>
-                            років
                         </p>
                     </div>
                     <div class="aboutInfo">
@@ -86,6 +89,12 @@ $post=StudentReg::model()->findByPk(1);
                                 }
                             ?>
                         </p>
+                    </div>
+                    <div class="aboutInfo">
+                        <p> <span class="colorP">Звідки дізнався про Вас:</span> </br><?php echo $post->aboutUs;?></p>
+                    </div>
+                    <div class="aboutInfo">
+                        <p> <span class="colorP">Форма навчання:</span> </br><?php echo $post->educform;?></p>
                     </div>
                     <div class="aboutInfo">
                         <p> <span class="colorP">Завершенні курси:</span> </br>Курси самогоних апаратів 6-го рівня</p>
@@ -135,6 +144,8 @@ $post=StudentReg::model()->findByPk(1);
             <section id="myCourse">
                 <div class="profileCourse">
                     <p>Курс:</br> <span class="colorP">"Апгрейд головного мозку"</span></p>
+                    <p class="courseLevLang">Рівень курсу: <span class="colorP">початковий</span></p>
+                    <p class="courseLevLang">Мова курсу: <span class="colorP">українська</span></p>
                 </div>
                 <div class="profileModule">
                     <p>Модуль:</br> <span class="colorP">Модуль 4. Модульне око, модульний ніс</span></p>

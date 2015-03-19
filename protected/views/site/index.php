@@ -11,7 +11,7 @@ $model = new Mainpage();
         <a class="sliderButton" href="#form"><?php echo $mainpage['buttonStart']; ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/> </a>
     </div>
     <div class="sliderText">
-        <?php echo Mainpage::model()->getSliderHeader(); ?><br>
+        <?php echo $mainpage['sliderHeader']; ?><br>
         <div class="sliderTextJr">
             _____<br><br>
             <?php echo $mainpage['sliderText']; ?>
@@ -29,8 +29,8 @@ $model = new Mainpage();
 <?php
 
 $this->pageTitle=$model->getTitle();
-$headerText = $model->getHeader1();
-$subheaderText = $model->subheader1;
+$headerText = $mainpage['header1'];
+$subheaderText = $mainpage['subheader1'];
 $subLineImage = $mainpage['subLineImage'];
 $linkName = $mainpage['linkName'];
 $massAbout=array($block1,$block2,$block3);
@@ -56,7 +56,7 @@ $massAbout=array($block1,$block2,$block3);
             <ul>
                 <li>
                     <div class="line2">
-                    <img src="<?php echo $val->line2Image;?>"> 
+                    <img src="<?php echo $val->line2Image;?>">
                     </div>
                     <div class="icon">
                       <img src="<?php echo $val->iconImage;?>">

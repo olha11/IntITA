@@ -7,9 +7,9 @@
     overflow: hidden;
 }
 .formStudProfNav{
+    position: relative;
     margin: 0 auto;
     width: 960px;
-    overflow: hidden;
 }
 div.regLinks{
     box-sizing:border-box;
@@ -18,16 +18,17 @@ div.regLinks{
     margin-top: 40px;
     margin-bottom: 28px;
     float:left;
+    border: 1px solid;
 }
 .regLinks a{
     color: #666666;
 }
 div.profileStatus{
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    display:inline-block;
-    float: right;
-    margin: 16px 0 10px 0;
+    position: absolute;
+    top:-70px;
+    right:0;
+    float:right;
+    display:block;
     overflow: hidden;
 }
 .profileStatus img {
@@ -58,10 +59,13 @@ div.profileStatus{
     border: 1px solid #d8d8d8;
     border-radius: 5px;
 }
+.studProfInf .avatarimg{
+    margin-left: 22px;
+}
 table.profileInfo {
     margin: 10px 10px 80px 22px;
 }
-.row {
+.row,.rowDate,.rowPhone {
 	margin-bottom: 7px;
 }
 .rowPass {
@@ -85,18 +89,21 @@ table.profileInfo {
 }
 .studProf input
 {
-    width: 356px;
+    padding-left: 8px;
+    width: 348px;
     height: 40px;
     border: 1px solid #d8d8d8;
     border-radius: 5px;
 }
+
 .studProf textarea
 {
     border: 1px solid #d8d8d8;
     border-radius: 5px;
     display: inline-block;
-    width: 352px;
+    width: 344px;
     height: 120px;
+    padding-left: 8px;
     margin-bottom: -4px;
 }
 .studProf input:hover,
@@ -104,7 +111,20 @@ table.profileInfo {
     box-shadow:0 0 3px #4b75a4;
     cursor: pointer;
 }
-.rowRadioButton input[type="radio"]:hover
+.rowRadioButton input[type="radio"],.rowRadioButton input[type="checkbox"]
+{
+    float:left;
+    width: 20px;
+    height: 36px;
+    line-height: 40px;
+}
+.radiolabel label, .radiolabelRole label
+{
+    width: 100px;
+    text-align: left;
+    margin-bottom: 8px;
+}
+.rowRadioButton input[type="radio"]:hover,.rowRadioButton input[type="checkbox"]:hover
 {
     box-shadow:0 0 3px #ffffff;
 }
@@ -114,10 +134,11 @@ table.profileInfo {
     border-color:#4b75a4;
     cursor: text;
 }
-.rowRadioButton input[type="radio"]:focus
+.rowRadioButton input[type="radio"]:focus,.rowRadioButton input[type="checkbox"]:focus
 {
     box-shadow:0 0 3px #ffffff;
 }
+
 /* ����� �����*/
 .studPhoto{
     display:inline-block;
@@ -125,6 +146,7 @@ table.profileInfo {
     width: 39%;
     border: 1px solid #d8d8d8;
     border-radius: 5px;
+    text-align: center;
 }
 .profileActivity{
     display:inline-block;
@@ -132,12 +154,21 @@ table.profileInfo {
     width: 59%;
 }
 img.avatarimg  {
-    display: block;
+    display: inline-block;
     width:176px;
-    margin: 0 32px 0 22px;
+    margin: 0 0 0 0;
 }
 table.titleProfile{
     margin:16px 0px 16px 22px;
+    display:inline-block;
+    font-size: smaller;
+    line-height: 120%;
+}
+.titleProfile a:hover{
+    color:#666666;
+}
+table.titleProfileAv{
+    margin:16px 0px 16px 0;
     display:inline-block;
     color: #4b75a4;
     font-size: smaller;
@@ -147,12 +178,18 @@ table.titleProfile{
     margin-bottom:-7px;
 }
 .titleProfile h2{
+    color: #4b75a4;
     font-weight: normal;
     margin-top: 0;
-    margin-right: 70px;
+    margin-bottom: 0;
+    margin-right: 60px;
+}
+.titleProfileAv h2{
+    color: #4b75a4;
+    font-weight: normal;
+    margin-top: 0;
     margin-bottom: 0;
 }
-
 .formStudProf input[type="submit"],.formStudProf input[type="button"] {
     width: 176px;
     height:43px;
@@ -164,15 +201,13 @@ table.titleProfile{
     box-shadow:0px 2px 0px #7f7f7f;
     font-size: medium;
 }
-.formStudProf input[type="submit"]:hover,.formStudProf input[type="button"]:hover  {
-    border-top-color: #454545;
+.formStudProf input[type="button"]:hover  {
     background: #454545;
-    color: #fcfcfc;
     cursor: pointer;
 }
 /*������ ��� �����*/
 .studProf input[type="submit"] {
-    margin:16px 0px 32px 359px;
+    margin:16px 0px 32px 358px;
 }
 /*������ ����� �����*/
 .studPhoto input[type="submit"], .profileActivity input[type="submit"] {
@@ -181,22 +216,28 @@ table.titleProfile{
 .photoButton  input[type="submit"] {
     margin:10px 0px 30px 22px;
 }
-
+#avatarHelp{
+    color:#666666;
+    margin:0;
+    height:20px;
+    font-size: small;
+}
 #avatarInfo{
     color:#666666;
-    margin:10px 0 140px 22px;
+    margin:0 0 140px 0;
 	height:20px;
 }
 #photoForm {
     margin-top:10px;
 }
 .fileform {
+    display: inline-block;
     overflow: hidden;
     position: relative;
     width: 176px;
 	height:45px;
-	margin-left:22px;
     margin-top: 22px;
+    margin-bottom: -5px;
 }
 
 .fileform .uploadAvatar {
@@ -219,7 +260,7 @@ input[type="file"].chooseAvatar{
 input[type="button"].avatar,input[type="submit"].avatar{
     position:absolute;
     z-index:2;
-    margin:0;
+    left:0;
 }
 
 span.required
@@ -229,8 +270,7 @@ span.required
 span.interestBG{
     background-color: #edf1f6;
     margin-right: 5px;
-    padding-left: 3px;
-    padding-right: 3px;
+
     border-radius: 5px;
 }
 .formStudProf .errorMessage
@@ -309,14 +349,10 @@ label.tabsUp1,label.tabsDown1{
 /* стили для активной вкладки */
 .tabs > input:checked + label {
     color: #cccccc;
-    -webkit-transform: scaleY(1.2);
-    -moz-transform: scaleY(1.2);
-    -o-transform: scaleY(1.2);
-    -ms-transform: scaleY(1.2);
-    -webkit-transform:translateY(-3px);
-    -moz-transform:translateY(-3px);
-    -o-transform:translateY(-3px);
-    -ms-transform:translateY(-3px);
+    -webkit-transform:translateY(-3px) scaleY(1.2);
+    -moz-transform:translateY(-3px) scaleY(1.2);
+    -o-transform:translateY(-3px) scaleY(1.2);
+    -ms-transform:translateY(-3px) scaleY(1.2);
     transform: translateY(-3px) scaleY(1.2);
 }
 /* активация секций с помощью переключателя :checked */
@@ -338,8 +374,15 @@ label.tabsUp1,label.tabsDown1{
     border-bottom:1px solid #d8d8d8;
     margin: 0px 10px 0 10px;
 }
-.profileCourse {
-
+.profileCourse{
+    padding-bottom: 20px;
+}
+.profileCourse p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+p.courseLevLang{
+    font-size: small;
 }
 #myCourse div.profileCoursePay{
     border-bottom:none;
@@ -365,7 +408,7 @@ label.tabsUp1,label.tabsDown1{
 .profileLesson {
     padding-left: 30px;
 }
-.profileLesson p, .profileCourse p,.profileCoursePay > p,.profileModule p, .aboutInfo > p{
+.profileLesson p, .colorP p,.profileCoursePay > p,.profileModule p, .aboutInfo > p{
     color: #666666;
 }
 /*My Course*/
@@ -406,3 +449,24 @@ label.tabsUp1,label.tabsDown1{
 }
 /*Form style*/
 
+/* PassEye */
+.passEye {
+    position:relative;display:inline-block;
+}
+.passEye input {
+    padding-right:0px;
+}
+.passEye input::-ms-reveal, .passEye input::-ms-clear {
+    display:none
+}
+.passEye .eye {
+    position:absolute;
+    right:10px;
+    top:50%;
+    margin-top:-4px;
+    display:block;
+    height:10px;
+    width:18px;
+    cursor:pointer;
+}
+/* PassEye */

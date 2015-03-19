@@ -5,10 +5,9 @@
  *
  * The followings are the available columns in table 'carousel':
  * @property integer $order
- * @property string $pictureURL
+ * @property string $picture_url
  * @property string $description
- * @property string $imagesPath
- * @property string $text
+ * @property string $images_path
  */
 class Carousel extends CActiveRecord
 {
@@ -28,14 +27,14 @@ class Carousel extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('order, pictureURL, description', 'required'),
+			array('order, picture_url, description', 'required'),
 			array('order', 'numerical', 'integerOnly'=>true),
-			array('pictureURL', 'length', 'max'=>50),
+			array('picture_url', 'length', 'max'=>50),
 			array('description', 'length', 'max'=>100),
-			array('imagesPath, text', 'length', 'max'=>255),
+			array('images_path', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('order, pictureURL, description, imagesPath, text', 'safe', 'on'=>'search'),
+			array('order, picture_url, description, images_path', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,10 +56,9 @@ class Carousel extends CActiveRecord
 	{
 		return array(
 			'order' => 'Order',
-			'pictureURL' => 'Picture Url',
+			'picture_url' => 'Picture Url',
 			'description' => 'Description',
-			'imagesPath' => 'Images Path',
-			'text' => 'Text',
+			'images_path' => 'Images Path',
 		);
 	}
 
@@ -83,10 +81,9 @@ class Carousel extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('order',$this->order);
-		$criteria->compare('pictureURL',$this->pictureURL,true);
+		$criteria->compare('picture_url',$this->picture_url,true);
 		$criteria->compare('description',$this->description,true);
-		$criteria->compare('imagesPath',$this->imagesPath,true);
-		$criteria->compare('text',$this->text,true);
+		$criteria->compare('images_path',$this->images_path,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

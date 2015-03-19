@@ -1,5 +1,4 @@
 <?php
-
 $this->pageTitle = Yii::t('AutoAdmin.access', 'Authentication');
 Yii::app()->clientScript
 	->registerCssFile(AutoAdmin::$assetPath.'/css/login.css');

@@ -23,9 +23,13 @@ p {
 /*************languages buttons*************/
 #lang {
     z-index: 6;
-    margin-left: 1141px;
-    margin-top: -45px;
+    margin-left: 1034px;
+    margin-top: -102px;
     position: fixed;
+}
+#lang.down {
+    margin-top: -45px;
+    margin-left: 1141px;
 }
 #lang #en {
     border-left: 1px solid #999999;
@@ -59,13 +63,16 @@ p {
     position: fixed;
     z-index: 5;
 }
+#navigation.down {
+    height: 55px;
+}
 
 #navigation ul {
     margin-left: 475px;
     margin-top: 65px;
 }
 #navigation.down ul {
-    margin-top: 22px;
+    margin-top: 13px;
 }
 
 #navigation li {
@@ -92,7 +99,7 @@ p {
     max-height: 75px;
 }
 #logo_img.down {
-    margin-top: 12px;
+    margin-top: 5px;
 }
 #logo_img.down img {
     max-height: 46px;
@@ -127,7 +134,7 @@ p {
     border: 2px solid #ffffff;
     color: white;
     vertical-align: middle;
-    font: 500 16px/33px "MyriadPro";
+    font: 16px/30px "MyriadPro";
     text-align:      center;
     text-decoration: none;
 }
@@ -138,7 +145,7 @@ p {
     background: #363636;
 }
 #enter_button.down {
-    margin-top: 18px;
+    margin-top: 9px;
 }
 #enter_button.down:hover{
     background: #454545;
@@ -149,25 +156,27 @@ p {
 /************navigation-bottom***********/
 
 #footer{
+    margin-top: 30px;
     margin-bottom: 20px;
     overflow: hidden;
-    border-bottom: 2px solid #33ccff;
+    border-bottom: 1px solid #33ccff;
 }
 #footer .main div {
     margin-left: 15px;
+    margin-top: 10px;
     float: left;
-    height: 65px;
+    height: 90px;
 }
 
 .footer {
-    border-left: 2px solid #33ccff;
-    padding-top: 20px;
+    border-left: 1px solid #33ccff;
     padding-left: 15px;
     color: #003399;
 }
-
+#footer ul {
+    margin-top: 5px;
+}
 #footer li {
-
     display:inline;
     padding: 8px;
 }
@@ -183,7 +192,7 @@ p {
 }
 
 #footer p{
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: 13px;
     color: #003399;
 }
@@ -228,7 +237,6 @@ p {
     height:428px;
     margin-top:145px;
     margin-left:408px;
-
 
 }
 .zagolovok
@@ -309,21 +317,32 @@ p {
     transition: .2s linear;
 }
 .button1{
-    width:220px;
-    height:55px;
-    background-color:#4b75a4;
-    margin-top:10px;
-    margin-left:150px;
-    border:solid 2px #ffffff;
-    border-radius: 6px;
-    background: linear-gradient(#4b75a4, #2b4a6c);
-    font:30px Arial, Helvetica, sans-serif;
+    width:195px;
+    height:52px;
+    border-radius: 10px;
+    border:none;
+    border-top:1px solid #9fb5ce;
     color:#ffffff;
+    background:#4b75a4;
+    margin-bottom: 30px;
+    box-shadow:0px 2px 0px #7f7f7f;
+    font: normal     400 28px/50px "MyriadPro";
+    font-size:       25px;
+    letter-spacing:1px;
+    margin-left: 177px;
+    margin-top: 15px;
+    padding-top: 0px;
+    padding-right: 30px;
+    text-shadow:1px 1px 1px black;
 }
+input[type="submit"]::-moz-focus-inner { /* убираем внутренний отступ у кнопки в FF, который зарезервирован для рамки при фокусе */
+    padding:0;
+    border:0;
+}
+
 .button1:hover {  /* при наведении курсора мышки */
-    outline: none;
-    box-shadow: 0 0 20px rgba(35,146,243,.5);
-    transition: .2s linear;
+    background: #454545;
+    cursor: pointer;
 }
 .lineForm{
     width:440px;
@@ -346,4 +365,84 @@ p {
     margin-top:20px;
 }
 /****************registration***********/
+/* Cначала обозначаем стили для IE8 и более старых версий
+т.е. здесь мы немного облагораживаем стандартный чекбокс. */
+#regCheckbox {
+    vertical-align: top;
+    margin: 13px 3px 0 0;
+    width: 15px;
+    height: 15px;
+}
+/* Это для всех браузеров, кроме совсем старых, которые не поддерживают
+селекторы с плюсом. Показываем, что label кликабелен. */
+#regCheckbox + label {
+    cursor: pointer;
+}
 
+/* Далее идет оформление чекбокса в современных браузерах, а также IE9 и выше.
+Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
+в них все нижеследующие стили не сработают. */
+
+/* Прячем оригинальный чекбокс. */
+#regCheckbox:not(checked) {
+    position: absolute;
+    opacity: 0;
+}
+#regCheckbox:not(checked) + label {
+    position: relative; /* будем позиционировать псевдочекбокс относительно label */
+    padding: 0 0 0 42px; /* оставляем слева от label место под псевдочекбокс */
+}
+/* Оформление первой части чекбокса в выключенном состоянии (фон). */
+#regCheckbox:not(checked) + label:before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 2px;
+    width: 26px;
+    height: 14px;
+    border-radius: 13px;
+    background: #4B75A4;
+    box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+}
+/* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
+#regCheckbox:not(checked) + label:after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    transition: all .2s; /* анимация, чтобы чекбокс переключался плавно */
+}
+/* Меняем фон чекбокса, когда он включен. */
+#regCheckbox:checked + label:before {
+    background: #26ab36;
+}
+/* Сдвигаем переключатель чекбокса, когда он включен. */
+#regCheckbox:checked + label:after {
+    left: 16px;
+}
+/* Показываем получение фокуса. */
+#regCheckbox:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(126,180,234,.5);
+}
+.fon label{
+    color:#4B75A4;
+}
+.fon label:hover{
+    color:#666666;
+}
+/* breadcrumbs */
+.my-cool-breadcrumbs{
+    margin-bottom: 24px;
+    display: inline-block;
+    margin-top: 40px;
+    color: #666666;
+}
+.my-cool-breadcrumbs a:visited{
+    color: #666666;
+}
+/* breadcrumbs */

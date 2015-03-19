@@ -80,8 +80,8 @@ margin-left:276px;
 {
 position:absolute;
 display:inline-block;
-margin-left:80px;
-margin-top:9px;
+margin-left:20px;
+margin-top:10px;
 }
 #counter
 {
@@ -127,5 +127,35 @@ font-size:16px;
  font-weight:bold;
  }
 
- 
- 
+.teacherBlock img{
+    display: block;
+}
+.teacherBlock > a{
+    display: inline-block;
+    width: 88px;
+    text-align: center;
+    font-size: small;
+    line-height: 100%;
+}
+.teacherBlock a:hover{
+    color:#666666;
+}
+
+
+.teacherBlock input[type="submit"] {
+    width: 220px;
+    height:30px;
+    border-radius: 5px;
+    border:none;
+    color:#ffffff;
+    background-color:#4b75a4;
+    box-shadow:0px 2px 0px #7f7f7f;
+    font-size: medium;
+    margin-top: 20px;
+}
+.teacherBlock input[type="submit"]:hover {
+    border-top-color: #454545;
+    background: #454545;
+    color: #fcfcfc;
+    cursor: pointer;
+}

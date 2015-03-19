@@ -20,21 +20,63 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'ModuleName'); ?>
-		<?php echo $form->textField($model,'ModuleName',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'ModuleName'); ?>
+		<?php echo $form->labelEx($model,'module_name'); ?>
+		<?php echo $form->textField($model,'module_name',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'module_name'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'ModuleDurationHours'); ?>
-		<?php echo $form->textField($model,'ModuleDurationHours'); ?>
-		<?php echo $form->error($model,'ModuleDurationHours'); ?>
+		<?php echo $form->labelEx($model,'module_duration_hours'); ?>
+		<?php echo $form->textField($model,'module_duration_hours'); ?>
+		<?php echo $form->error($model,'module_duration_hours'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'ModuleDurationDays'); ?>
-		<?php echo $form->textField($model,'ModuleDurationDays'); ?>
-		<?php echo $form->error($model,'ModuleDurationDays'); ?>
+		<?php echo $form->labelEx($model,'module_duration_days'); ?>
+		<?php echo $form->textField($model,'module_duration_days'); ?>
+		<?php echo $form->error($model,'module_duration_days'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'lesson_count'); ?>
+		<?php echo $form->textField($model,'lesson_count'); ?>
+		<?php echo $form->error($model,'lesson_count'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'module_price'); ?>
+		<?php echo $form->textField($model,'module_price',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->error($model,'module_price'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'for_whom'); ?>
+		<?php echo $form->textArea($model,'for_whom',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'for_whom'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'what_you_learn'); ?>
+		<?php echo $form->textArea($model,'what_you_learn',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'what_you_learn'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'what_you_get'); ?>
+		<?php echo $form->textArea($model,'what_you_get',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'what_you_get'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'module_img'); ?>
+		<?php echo $form->textField($model,'module_img',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'module_img'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'about_module'); ?>
+		<?php echo $form->textArea($model,'about_module',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'about_module'); ?>
 	</div>
 
 	<div class="row buttons">

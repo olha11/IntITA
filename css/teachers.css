@@ -1,19 +1,30 @@
 /*header navigation*/
-.subNavBlock {
+.subNavBlockTeachers {
+    position: relative;
     margin: 0 auto;
     width: 960px;
     clear: both;
-    overflow: hidden;
 }
-div.subLinks{
+div.subLinksTeachers{
     box-sizing:border-box;
     -moz-box-sizing:border-box;
     display:inline-block;
-    margin-top: 40px;
     margin-bottom: 28px;
     float:left;
+    width: 30%;
 }
-.subLinks a{
+div.ifYouTeachers{
+    position: absolute;
+    top:0;
+    right:0;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    display:inline-block;
+    float:right;
+    width: 460px;
+    top:-40px;
+}
+.subLinksTeachers a{
     color: #666666;
 }
 /*Main Block*/
@@ -46,6 +57,8 @@ div.titleTeachers {
 /*teacher Profile Block*/
 .teacherBlock {
     width:inherit;
+    margin-bottom: 40px;
+    overflow: hidden;
 }
 .teacherBlock p, .teacherBlock ul{
     margin-top: 10px;
@@ -53,7 +66,6 @@ div.titleTeachers {
 }
 img.teacherAvatar{
     display: block;
-    margin: 0 20px 0 0;
     width: 112px;
     height: 136px;
 }
@@ -81,6 +93,16 @@ div.aboutMore{
     text-align: right;
     color: #4B75A4;
 }
-.aboutMore img{
-    margin-right: 5px;
+
+td.profileTeacher{
+    text-align: center;
+    padding: 0 20px 0 0;
+}
+td.profileTeacher a{
+    display: inline-block;
+    font-size: small;
+    line-height: 100%;
+}
+.teacherBlock a:hover{
+    color:#666666;
 }

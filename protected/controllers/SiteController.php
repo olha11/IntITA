@@ -40,7 +40,8 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index1.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$modelCarousel = new Carousel();
-		$mainpage = new Mainpage(1);
+
+		$mainpage = new Mainpage();
 		$mainpage->setValueById(0);
 		$objAbout1 = new AboutUs(1);
 		$objAbout1->setValuesById(1);
@@ -70,26 +71,19 @@ class SiteController extends Controller
 			'step4'=>$step4,
 			'step5'=>$step5,
 		);
-
 		$sliderPictures = array(
 			'slider1'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(1)->imagesPath.$modelCarousel->findByPk(1)->pictureURL,
-			'sliderText1'=> $modelCarousel->findByPk(1)->text,
 			'slider2'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(2)->imagesPath.$modelCarousel->findByPk(2)->pictureURL,
-			'sliderText2'=> $modelCarousel->findByPk(2)->text,
 			'slider3'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(3)->imagesPath.$modelCarousel->findByPk(3)->pictureURL,
-			'sliderText3'=> $modelCarousel->findByPk(3)->text,
 			'slider4'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(4)->imagesPath.$modelCarousel->findByPk(4)->pictureURL,
-			'sliderText4'=> $modelCarousel->findByPk(4)->text,
 		);
+
+
 		$this->render('index', array(
 			'slider1'=>$sliderPictures['slider1'],
-			'sliderText1'=>$sliderPictures['sliderText1'],
 			'slider2'=>$sliderPictures['slider2'],
-			'sliderText2'=>$sliderPictures['sliderText2'],
 			'slider3'=>$sliderPictures['slider3'],
-			'sliderText3'=>$sliderPictures['sliderText3'],
 			'slider4'=>$sliderPictures['slider4'],
-			'sliderText4'=>$sliderPictures['sliderText4'],
 			'mainpage'=>array(
 				'sliderLine'=> $mainpage->sliderLineURL,
 				'sliderTexture'=> $mainpage->sliderTextureURL,
@@ -123,9 +117,10 @@ class SiteController extends Controller
 			'step5'=>$arraySteps['step5'],
 		));
 	}
-	public function actionAboutdetail()
+	
+		public function actionAboutdetail()
 	{
-		$mainpage = new Mainpage(0);
+		$mainpage = new Mainpage();
 		$mainpage->setValueById(0);
 		$objAbout1 = new AboutUs(1);
 		$objAbout1->setValuesById(1);
@@ -133,12 +128,15 @@ class SiteController extends Controller
 		$objAbout2->setValuesById(2);
 		$objAbout3 = new AboutUs(3);
 		$objAbout3->setValuesById(3);
+
 		$arrayAboutUs = array(
 			'objAbout1'=>$objAbout1,
 			'objAbout2'=>$objAbout2,
 			'objAbout3'=>$objAbout3,
 		);
+
 		$this->render('aboutdetail', array(
+
 			'mainpage'=>array(
 				'title'=>$mainpage->title,
 				'header1'=>$mainpage->header1,
@@ -172,19 +170,8 @@ class SiteController extends Controller
         {
             $this->redirect(array('studentreg/index'));
         }
-        $this->redirect(array('courses/index'));
+        $this->redirect(array('site/index'));
     }
-
-	public  function setLang($lang='UA'){
-		$this->actionIndex();
-	}
-
-
-	public function actionChangeLang($lang)
-	{
-		Yii::app()->language = $lang;
-		$this->redirect(Yii::app()->user->returnUrl);
-	}
 	/**
 	 * Displays the contact page
 	 */
@@ -216,7 +203,7 @@ class SiteController extends Controller
 	 */
 	public function actionLogin()
 	{
-		$model = new LoginForm;
+		$model=new LoginForm;
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
@@ -230,16 +217,11 @@ class SiteController extends Controller
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login()) {
+			if($model->validate() && $model->login())
 				$this->redirect(Yii::app()->user->returnUrl);
-			} else {
-				$this->redirect(Yii::app()->user->returnUrl);
-			}
 		}
-
 		// display the login form
 		$this->render('login',array('model'=>$model));
-
 	}
 
 	/**
