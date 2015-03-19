@@ -243,11 +243,13 @@ p {
 {
     font-size:45px;
     margin-bottom:2px;
+    color:#ffffff;
 }
 .zagolovok2
 {
     font-size:25px;
     margin-top:0px;
+    color:#ffffff;
 }
 .email-password{
     width:440px;

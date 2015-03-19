@@ -201,6 +201,7 @@ table.titleProfileAv{
     box-shadow:0px 2px 0px #7f7f7f;
     font-size: medium;
 }
+
 .formStudProf input[type="button"]:hover  {
     background: #454545;
     cursor: pointer;

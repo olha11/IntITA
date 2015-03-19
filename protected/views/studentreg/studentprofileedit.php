@@ -6,17 +6,25 @@
         background-position:left bottom;
     }
     .formStudProf input[type="submit"]{
+        font-size: 18px;
+        letter-spacing:1px;
+        padding-right: 20px;
+        text-shadow:1px 1px 1px rgba(0,0,0,.5);
         background:#4b75a4;
         background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
         background-repeat: no-repeat;
-        background-position: 130px 50%;
+        background-position: 132px 14px;
     }
     .formStudProf input[type="submit"]:hover {
         background: #454545;
         background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
         background-repeat: no-repeat;
-        background-position: 130px 50%;
+        background-position: 132px 14px;
         cursor: pointer;
+    }
+    input[type="submit"]::-moz-focus-inner { /* убираем внутренний отступ у кнопки в FF, который зарезервирован для рамки при фокусе */
+        padding:0;
+        border:0;
     }
 </style>
 <?php

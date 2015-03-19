@@ -144,7 +144,7 @@ $post=StudentReg::model()->findByPk(1);
             <section id="myCourse">
                 <div class="profileCourse">
                     <p>Курс:</br> <span class="colorP">"Апгрейд головного мозку"</span></p>
-                    <p class="courseLevLang">Рівень курсу: <span class="colorP">початковий</span></p>
+                    <p class="courseLevLang">Рівень курсу: <span class="colorP">сильний початківець</span></p>
                     <p class="courseLevLang">Мова курсу: <span class="colorP">українська</span></p>
                 </div>
                 <div class="profileModule">

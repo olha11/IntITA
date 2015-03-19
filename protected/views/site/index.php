@@ -185,8 +185,8 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
         <div class="formFon"style=" background:url('<?php echo $mainpage['formFon']; ?>');">
                 <form method = "POST" action="<?php echo Yii::app()->createUrl('site/submitForm');?>">
                     <div class="email-password">
-                        <input type="email" value="" name="email" class="email1" placeholder="E-mail" />
-                        <span class="passEye"><input type="password" value="" name="password" class="password1" placeholder="password"/></span><br>
+                        <input type="email" value="" name="email" class="email1" placeholder="Електронна пошта" />
+                        <span class="passEye"><input type="password" value="" name="password" class="password1" placeholder="Пароль"/></span><br>
                         <input type="checkbox" id="regCheckbox" value="" name="isExtended"/><label for="regCheckbox"><?php echo $mainpage['regText']; ?></label>
                     </div>
             <br>
