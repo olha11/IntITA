@@ -30,7 +30,7 @@ class Controller extends CController
 		$this->menu2 = Header::model()->findByPk(0)->menuItem2;
 		$this->menu3 = Header::model()->findByPk(0)->menuItem3;
 		$this->menu4 = Header::model()->findByPk(0)->menuItem4;
-		$this->link1 = Header::model()->findByPk(0)->item1Link;
+		$this->link1 = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->item1Link;
 		$this->link2 = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->item2Link;
 		$this->link3 = Header::model()->findByPk(0)->item3Link;
 		$this->link4 = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->item4Link;

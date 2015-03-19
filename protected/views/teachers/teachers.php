@@ -5,6 +5,7 @@
  * Date: 04.03.2015
  * Time: 12:25
  */
+$this->pageTitle = 'INTITA';
 ?>
 <!-- teachers style -->
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/teachers.css" />

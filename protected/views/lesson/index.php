@@ -37,9 +37,7 @@
 <?php
 /* @var $this LessonController */
 /* @var $model LessonTop */
-
-
-
+$this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
     'Курс Програмування'=>Yii::app()->request->baseUrl."/?r=course",'Модуль PHP'=>Yii::app()->request->baseUrl."/?r=course",'Заняття 2: Змінні та типи данних в PHP',
 );

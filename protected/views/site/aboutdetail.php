@@ -1,13 +1,12 @@
 <?php
 /* @var $this SiteController */
-
 ?>
 <html>
 <head>
 </head>
 <body onload=WindowShow(<?php echo (empty($_GET['id']))?1:$_GET['id']; ?>)>
 <?php
-$this->pageTitle=$mainpage['title'];
+$this->pageTitle = 'INTITA';
 
 $headerText = $mainpage['header1'];
 $subheaderText = $mainpage['subheader1'];
