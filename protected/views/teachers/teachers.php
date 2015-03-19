@@ -11,7 +11,6 @@
 <!-- teachers style -->
 <!-- BD -))) -->
 <?php
-$this->pageTitle = 'IntITA - Викладачі';
 $post=TeachersTemp::model()->findAll();
 ?>
 <!-- BD -))) -->
