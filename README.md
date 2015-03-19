@@ -15,6 +15,3 @@ password: password
 
 2. lesson - http://localhost/IntITA/index.php?r=lesson
 
-3. teacher profile -
-
-4. student profile -
