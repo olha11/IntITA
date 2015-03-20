@@ -11,14 +11,20 @@
         font-size: medium;
         background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
         background-repeat: no-repeat;
-        background-position: 192px 49%;
+        background-position: 192px 14px;
+    }
+    .nextLesonLink input[type="submit"], x:-moz-any-link {
+        background-position: 192px 15px;
     }
     .nextLesonLink input[type="submit"]:hover {
         background: #454545;
         background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
         background-repeat: no-repeat;
-        background-position: 192px 49%;
+        background-position: 192px 14px;
         cursor: pointer;
+    }
+    .nextLesonLink input[type="submit"]:hover, x:-moz-any-link {
+        background-position: 192px 15px;
     }
 </style>
 <!-- Підключення BBCode WysiBB -->

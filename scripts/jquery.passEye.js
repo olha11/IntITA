@@ -1,3 +1,4 @@
+/*Парольне око*/
 $(function(){
     $(".passEye").append('<span class="eye" title="Показати/сховати пароль"></span>');
  

@@ -75,8 +75,8 @@ $this->breadcrumbs=array(
 		?>
 		<div class='courseBox'>
 		<img src='<?php echo $val->courseImage; ?>'>
-		<div class='courseName'><?php
-				echo $val->courseName; ?>
+		<div class='courseName'> <a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=course"><?php
+				echo $val->courseName; ?></a>
 		</div>
 		<div class="courseLevelBox">
 			<?php echo $val->courseLevelTitle; ?>
@@ -118,8 +118,8 @@ $this->breadcrumbs=array(
 		?>
 		<div class='courseBox'>
 		<img src='<?php echo $val->courseImage; ?>'>
-		<div class='courseName'><?php
-				echo $val->courseName; ?>
+		<div class='courseName'><a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=course"><?php
+				echo $val->courseName; ?></a>
 		</div>
 		<div class="courseLevelBox">
 			<?php echo $val->courseLevelTitle; ?>

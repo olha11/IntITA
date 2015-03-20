@@ -1,3 +1,4 @@
+/*Текстовий редактор BBcode на сторінці заняття*/
 #WysiBB - WYSIWYG BBcode editor
 
 WysiBB is a jQuery visual WYSIWYG editor for BBcode.

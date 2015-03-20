@@ -1,3 +1,4 @@
+/*Виводить назву файла який загружаємо на аватарку*/
 function getName (str){
  if (str.lastIndexOf('\\')){
         var i = str.lastIndexOf('\\')+1;

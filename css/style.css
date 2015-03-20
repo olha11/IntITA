@@ -445,6 +445,6 @@ input[type="submit"]::-moz-focus-inner { /* убираем внутренний 
     color: #666666;
 }
 .my-cool-breadcrumbs a:visited{
-    color: #666666;
-}
+                     color: #666666;
+                 }
 /* breadcrumbs */

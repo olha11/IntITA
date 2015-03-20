@@ -9,22 +9,24 @@
         font-size: 18px;
         letter-spacing:1px;
         padding-right: 20px;
-        text-shadow:1px 1px 1px rgba(0,0,0,.5);
+        text-shadow:1px 2px 1px rgba(0,0,0,.5);
         background:#4b75a4;
         background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
         background-repeat: no-repeat;
-        background-position: 132px 14px;
+        background-position: 134px 14px;
+    }
+    .formStudProf input[type="submit"], x:-moz-any-link {
+        background-position: 134px 15px;
     }
     .formStudProf input[type="submit"]:hover {
         background: #454545;
         background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
         background-repeat: no-repeat;
-        background-position: 132px 14px;
+        background-position: 134px 14px;
         cursor: pointer;
     }
-    input[type="submit"]::-moz-focus-inner { /* убираем внутренний отступ у кнопки в FF, который зарезервирован для рамки при фокусе */
-        padding:0;
-        border:0;
+    .formStudProf input[type="submit"]:hover, x:-moz-any-link {
+        background-position: 134px 15px;
     }
 </style>
 <?php
