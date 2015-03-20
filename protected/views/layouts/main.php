@@ -15,7 +15,8 @@
     <!-- fonts -->
     <!-- layouts style -->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
-    <!-- layouts style -->
+    <!--   hamburger menu style -->
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/hamburgerMenu.css" />
     <!-- aboutUs style -->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/aboutusstyles.css" />
     <!-- teacherProfile style -->
@@ -84,6 +85,7 @@
         </ul>
 
     </div>
+    
     <div id="lang" class="down">
         <form action="" method="post" onsubmit="" name="fff">
             <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
@@ -94,12 +96,69 @@
 
         </form>
     </div>
+    
 </div>
-<div id="button_border" class="down">
+<div id="centerEnterButton">
+    <div id="button_border" class="down">
+    </div>
+    <a id="enter_button" href="#beginRegistration" class="down"><?php echo $this->buttonText; ?></a>
 </div>
-<a id="enter_button" href="#" class="down"><?php echo $this->buttonText; ?></a>
+<! Hamburger menu>
+
+<div id="hamburgerNavigation">
+<div id="hamburgerSenterNavigation">
+	<div id="burgerShadow">
+	</div>
+	<div id="hamburgerButton2" onclick="ShowHamburger()">
+		<ul>
+		<li><div class="hamburgerButtonLine2"></div></li>
+		<li><div class="hamburgerButtonLine2"></div></li>
+		<li><div class="hamburgerButtonLine2"></div></li>
+		</ul>
+	</div>
+	<div id="logo2" class="down">
+        <img  src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png"/>
+    </div>
+	<div id="hamburgerLang">
+        <form action="" method="post" onsubmit="" name="fff">
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
+
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'EN'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
+
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'RU'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
+
+        </form>
+    </div>
+</div>
+</div>
+
+<div id="hamburgerMainBox">
+	<div id="hamburgerSubBox">
+		<div class="hamburgerBox">
+			<a class="hamburgerLink" href="<?php echo $this->link1; ?>"><?php echo $this->menu1; ?></a>
+		</div>
+		<div class="hamburgerLine"></div>
+		<div class="hamburgerBox">
+			<a  class="hamburgerLink" href="<?php echo $this->link2; ?>"><?php echo $this->menu2; ?></a>
+		</div>
+		<div class="hamburgerLine"></div>
+		<div class="hamburgerBox">
+			<a  class="hamburgerLink" href="<?php echo $this->link3; ?>"><?php echo $this->menu3; ?></a>
+		</div>
+		<div class="hamburgerLine"></div>
+		<div class="hamburgerBox">
+			<a  class="hamburgerLink" href="<?php echo $this->link4; ?>"><?php echo $this->menu4; ?></a>
+		</div>
+		<div class="hamburgerLine"></div>
+		<div class="hamburgerBox2">
+			<a id="hamburgerEnterButton" href="#beginRegistration"><?php echo $this->buttonText; ?></a>
+		</div>
+	</div>
+</div>
+
 
 <script>
+
     function changeLang(n){
         for (var i=0; i< n.form.length; i++){
             if(n.form.elements[i].id !== n.id){
@@ -107,14 +166,68 @@
                 document.getElementById(n.form.elements[i].id).disabled = false;
                 document.getElementById(n.form.elements[i].id).className = "";
             }
-        }
-        document.getElementById(n.id).disabled = true;
-        document.getElementById(n.id).className = "selectedLang";
-    }
 
 
 
+		}
+	}
+var width=0;
+if (self.screen)
+{
+	width = screen.width
+}
+
+if (width>800)
+{
+	$('#hamburgerNavigation').css('display', 'none'); 
+	$('#contentBoxMain').css('margin-top', '-1000px'); 
+	$('#navigation').css('display', 'block'); 
+	$('#centerEnterButton').css('display', 'block');
+    var key = document.getElementById('enter_button');
+    var nav = document.getElementById('navigation');
+    var logo = document.getElementById('logo_img');
+    var border = document.getElementById('button_border');
+
+
+}
+else
+{
+	var  isShow=0;
+	$('#hamburgerNavigation').css('display', 'inline-block'); 
+	$('#navigation').css('display', 'none'); 
+	$('#centerEnterButton').css('display', 'none'); 
+	$('body').css('margin-top', '-23px'); 
+	$('#hamburgerSenterNavigation').css('width', width); 
+	$('#hamburgerSenterNavigation').css('margin-left', -(width/2)); 
+	$('#hamburgerLang').css('left', width-130); 
+
+	function ShowHamburger()
+	{
+		if (isShow==0)
+		{
+			isShow=1;
+			$('#hamburgerButton').css('display','none');       
+			$('.hamburgerButtonLine2').css('background-color',' #535353'); 			
+			$('#contentBoxMain').animate({left:'+=25%'},'fast');
+			$('#hamburgerNavigation').animate({left:'+=25%'},'fast');
+			$('#hamburgerMainBox').fadeIn('middle');
+			$('#hamburgerLang').animate({left:'-=0px'},'fast');
+		}
+		else
+		{
+			isShow=0;
+			$('#hamburgerButton').css('display','block');
+			$('.hamburgerButtonLine2').css('background-color','#4682B4'); 	
+			$('#hamburgerMainBox').css('display','none');		
+			$('#contentBoxMain').animate({left:'-=25%'});
+			$('#hamburgerNavigation').animate({left:'-=25%'});
+			$('#contentBoxMain').css('margin-left', '0%');
+			$('#hamburgerLang').animate({left:'+=0px'});
+		}
+	}
+}
 </script>
+
 <div class="clear"></div>
 
 
@@ -129,6 +242,7 @@
     <?php endif?>
 
 </div>
+<div id="contentBoxMain">
 <?php echo $content; ?>
 
 
@@ -138,13 +252,8 @@
 
 <div id="footer">
     <div class="main">
-        <div style="height: auto; margin-top: 25px;">
-            <a href="http://twitter.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/twitter.png"/></a>
-            <a href="http://youtube.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/youtube.png"/></a>
-            <a href="http://google.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/googlePlus.png"/><br/></a>
-            <a href="http://facebook.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/facebook.png"/></a>
-            <a href="http://odnoklasniki.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/odnoklasniki.png"/></a>
-            <a href="http://vk.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/vkontakte.png"/></a>
+        <div>
+            <img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/socials.png" style="margin-top: 10px;"/>
         </div>
         <div class="footer">
             <div>
@@ -172,5 +281,6 @@
     <div class="footer"></div>
 </div>
 </div><!-- footer -->
+</div>
 </body>
 </html>

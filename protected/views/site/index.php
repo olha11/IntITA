@@ -6,10 +6,23 @@
         background-position:left bottom;
     }
 </style>
+<body onload="centerPage()">
+
 <?php
 /* @var $this SiteController */
 ?>
 <script>
+var width=0;
+if (self.screen)
+{
+	width = screen.width
+}
+function centerPage()   
+{
+    $('.contentCenterBox').css('width', width); 
+    $('.contentCenterBox').css('left', "50%");
+    $('.contentCenterBox').css('margin-left', -width/2);  
+}
     var key = document.getElementById('enter_button');
     var nav = document.getElementById('navigation');
     var logo = document.getElementById('logo_img');
@@ -43,13 +56,15 @@
     }
 </script>
 
-
-
+<div id="sliderCenterBox">
 <div class="insideSlider">
+<div id="beginButtonCenter">
     <div class="lineAndButton">
         <img class="sliderLine" src="<?php echo $mainpage['sliderLine']; ?>">
-        <a class="sliderButton" href="#"><?php echo $mainpage['buttonStart']; ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/> </a>
+        <a class="sliderButton" href="#beginRegistration"><?php echo $mainpage['buttonStart']; ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/> </a>
     </div>
+</div>
+
     <div class="sliderText">
         <?php echo $mainpage['sliderHeader']; ?><br>
         <div class="sliderTextJr">
@@ -58,7 +73,11 @@
             <?php echo $mainpage['sliderText']; ?>
         </div>
     </div>
+
 </div>
+</div>
+
+
 
 <div id="slider" class="owl-carousel owl-theme">
     <div class="item"><img src="<?php echo $slider1; ?>"></div>
@@ -75,7 +94,7 @@ $subLineImage = $mainpage['subLineImage'];
 $linkName = $mainpage['linkName'];
 $massAbout=array($block1,$block2,$block3);
 ?>
-
+<div class="contentCenterBox"> 
 <div class="mainAbout">
     <div class="header">
         <?php echo $headerText; ?>
@@ -107,7 +126,7 @@ $massAbout=array($block1,$block2,$block3);
                             <?php echo $val->textAbout;?>
                         </p>
                     </div>
-                        <a href="<?php echo $val->linkAddress ?>">
+                        <a href="<?php echo $val->linkAddress ?>" target="_blank">
                         <?php echo $linkName; ?>
                         </a>
                 </li>
@@ -117,6 +136,7 @@ $massAbout=array($block1,$block2,$block3);
     }
     ?>
 
+</div>
 </div>
 <! Ініціалізація екземплярів класу>
 <?php
@@ -145,12 +165,15 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
                         <img class="grid" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/grid.png">
         		   		<img src="<?php echo $stepValue->stepImage; ?>">
         		    </div>
+					<div class="line">
+                    </div>
+
                     <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
 					<div class="stepArticle">
 						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
 						<p class="stepName"><?php echo $stepValue->stepName; ?></p>
 					</div>
-        			<div class="stepInfo">
+        			<div class="stepInfo" style="min-height:<?php echo $stepSize*0.23 . 'px';?> ">
           				  <h2><?php echo $stepValue->stepTitle; ?></h2>
               			  <p><?php echo $stepValue->stepText; ?></p>
           			</div>
@@ -162,9 +185,10 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 		 ?>
 		 <div class="stepRight" style="width:<?php echo $stepSize; ?>" >
 					<div class="stepUrl">
-                        <img class="grid" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/grid.png">
-        		   		<img src="<?php echo $stepValue->stepImage; ?>">
+        		   		 <img src="<?php echo $stepValue->stepImage; ?>">
         		    </div>
+					<div class="line">
+                    </div>
                      <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
 					<div class="stepArticle">
 						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
@@ -179,7 +203,9 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 	    }
 	}
 ?>
-
+<div class="contentCenterBox">
+<div id="beginRegistration">
+</div>
     <a name="form">
     <div class="fon"style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/fon.png') no-repeat;">
 
@@ -212,6 +238,12 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
                 </map>
             </div>
         </div>
+
     </div>
+
+</a>
+</div>
+</body>
+    
 
 
