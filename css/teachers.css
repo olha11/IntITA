@@ -1,9 +1,6 @@
 /*header navigation*/
 .subNavBlockTeachers {
-<<<<<<< HEAD
     position: relative;
-=======
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
     margin: 0 auto;
     width: 960px;
     clear: both;
@@ -15,7 +12,6 @@ div.subLinksTeachers{
     margin-bottom: 28px;
     float:left;
     width: 30%;
-<<<<<<< HEAD
 }
 div.ifYouTeachers{
     position: absolute;
@@ -28,16 +24,6 @@ div.ifYouTeachers{
     width: 460px;
     top:-40px;
 }
-=======
-}
-div.ifYouTeachers{
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    display:inline-block;
-    float:right;
-    width: 460px;
-}
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 .subLinksTeachers a{
     color: #666666;
 }
@@ -107,7 +93,6 @@ div.aboutMore{
     text-align: right;
     color: #4B75A4;
 }
-
 td.profileTeacher{
     text-align: center;
     padding: 0 20px 0 0;
@@ -116,10 +101,7 @@ td.profileTeacher a{
     display: inline-block;
     font-size: small;
     line-height: 100%;
-<<<<<<< HEAD
 }
-.teacherBlock a:hover{
-    color:#666666;
-=======
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
+.teacherBlock a:hover {
+    color: #666666;
 }

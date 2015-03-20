@@ -117,7 +117,7 @@
     <?php if(isset($this->breadcrumbs)):?>
         <?php $this->widget('zii.widgets.CBreadcrumbs', array(
             'links'=>$this->breadcrumbs,
-            'homeLink'=>CHtml::link('Головна','/index.php'),
+            'homeLink'=>CHtml::link('Головна',Yii::app()->request->baseUrl),
             'htmlOptions' => array(
                 'class' => 'my-cool-breadcrumbs'
             )
@@ -164,7 +164,6 @@
         </div>
         <div class="footer">
             <a href="<?php echo Yii::app()->request->baseUrl;?>"><img src="<?php echo $this->imageUp; ?>" style="margin-top: 20px;"/></a>
-            <a href="#"><img src="<?php echo $this->imageUp; ?>" style="margin-top: 20px;"/></a>
         </div>
     <div class="footer"></div>
 </div>

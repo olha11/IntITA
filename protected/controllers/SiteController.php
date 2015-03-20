@@ -168,12 +168,16 @@ class SiteController extends Controller
 	}
 
     public function actionSubmitForm(){
-
-        if(isset($_POST['isExtended']))
-        {
-            $this->redirect(array('studentreg/index'));
-        }
-        $this->redirect(array('courses/index'));
+		if(User::model()->isUserRegistered($_POST['email'], $_POST['password'])){
+			$http_response_header['buttonStart'] = 'Вихід';
+		}
+        else {
+			if (isset($_POST['isExtended'])) {
+				$this->redirect(array('studentreg/index'));
+			}
+			$this->redirect(array('courses/index'));
+		}
+		$this->redirect(Yii::app()->user->returnUrl);
     }
 
 	public  function setLang($lang='UA'){
