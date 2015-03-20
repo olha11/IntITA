@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-03-19 20:45:49
+-- Date/time:                    2015-03-20 16:51:54
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   KEY `user_id` (`user_id`),
   KEY `when_enter` (`when_enter`),
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- Dumping data for table int_ita_db.aa_authorizations: ~36 rows (approximately)
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
@@ -86,7 +86,9 @@ INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(33, 2, '2015-03-13 16:25:37', '::1'),
 	(34, 2, '2015-03-13 16:25:37', '::1'),
 	(35, 2, '2015-03-19 15:45:40', '::1'),
-	(36, 2, '2015-03-19 15:45:41', '::1');
+	(36, 2, '2015-03-19 15:45:41', '::1'),
+	(37, 2, '2015-03-20 15:14:18', '::1'),
+	(38, 2, '2015-03-20 15:14:18', '::1');
 /*!40000 ALTER TABLE `aa_authorizations` ENABLE KEYS */;
 
 
@@ -245,8 +247,8 @@ INSERT INTO `carousel` (`order`, `pictureURL`, `description`, `imagesPath`, `tex
 DROP TABLE IF EXISTS `course`;
 CREATE TABLE IF NOT EXISTS `course` (
   `course_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `course_name` varchar(45) DEFAULT NULL,
-  `course_duration_hours` int(11) DEFAULT NULL,
+  `course_name` varchar(45) NOT NULL,
+  `course_duration_hours` int(11) NOT NULL,
   `modules_count` int(255) DEFAULT NULL,
   `course_price` decimal(10,0) DEFAULT NULL,
   `for_whom` text,
@@ -321,27 +323,6 @@ INSERT INTO `header` (`headerID`, `language`, `logoURL`, `smallLogoURL`, `menuIt
 	(1, 'RU', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курсы', '/index.php?r=courses', 'Преподаватели', '/index.php?r=teachers', 'Форум', 'http://www.google.com', 'О нас', '/index.php?r=site/aboutdetail', 'Вход', 'Выход'),
 	(2, 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курси', '/index.php?r=courses', 'Викладачі', '/index.php?r=teachers', 'Форум', 'http://www.google.com', 'Про нас', '/index.php?r=site/aboutdetail', 'Вхід', 'Вхід');
 /*!40000 ALTER TABLE `header` ENABLE KEYS */;
-
-
--- Dumping structure for table int_ita_db.headerlang
-DROP TABLE IF EXISTS `headerlang`;
-CREATE TABLE IF NOT EXISTS `headerlang` (
-  `l_id` int(11) NOT NULL AUTO_INCREMENT,
-  `header_id` int(11) NOT NULL,
-  `lang_id` varchar(6) NOT NULL,
-  `l_menuItem1` varchar(30) NOT NULL,
-  `l_menuItem2` varchar(30) NOT NULL,
-  `l_menuItem3` varchar(30) NOT NULL,
-  `l_menuItem4` varchar(30) NOT NULL,
-  `l_enterButtonText` varchar(30) NOT NULL,
-  PRIMARY KEY (`l_id`),
-  KEY `FK_headerlang_header` (`header_id`),
-  CONSTRAINT `FK_headerlang_header` FOREIGN KEY (`header_id`) REFERENCES `header` (`headerID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Dumping data for table int_ita_db.headerlang: ~0 rows (approximately)
-/*!40000 ALTER TABLE `headerlang` DISABLE KEYS */;
-/*!40000 ALTER TABLE `headerlang` ENABLE KEYS */;
 
 
 -- Dumping structure for table int_ita_db.hometasks
@@ -449,7 +430,7 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.mainpage: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.mainpage: ~2 rows (approximately)
 /*!40000 ALTER TABLE `mainpage` DISABLE KEYS */;
 INSERT INTO `mainpage` (`id`, `language`, `title`, `sliderHeader`, `sliderText`, `category`, `message`, `sliderTextureURL`, `sliderLineURL`, `sliderButtonText`, `header1`, `subLineImage`, `subheader1`, `arrayBlocks`, `header2`, `subheader2`, `arraySteps`, `stepSize`, `linkName`, `hexagon`, `formHeader1`, `formHeader2`, `regText`, `buttonStart`, `socialText`, `imageNetwork`, `formFon`) VALUES
 	(0, 'UA', 'INTITA', 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту і стань класним спеціалістом!', 'mainpage', 'IntITA - Академія програмування', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png', 'Готові розпочати?', 'Введіть дані в форму нижче', 'розширена реєстрація', 'ПОЧАТИ', 'Ви можете також зареєструватися через соцмережі:', '/css/images/networking.png', '/css/images/formFon.png');
@@ -485,6 +466,33 @@ CREATE TABLE IF NOT EXISTS `mainpagetranslated` (
 INSERT INTO `mainpagetranslated` (`id`, `language`, `title`, `header1`, `subheader1`, `translation`, `header2`, `subheader2`, `sliderHeader`, `sliderText`, `sliderButtonText`, `linkName`, `formHeader1`, `formHeader2`, `regText`, `buttonStart`, `socialText`) VALUES
 	(0, 'ru', '', 'О нас', '', 'ПРОГРАММИРУЙ БУДУЩЕЕ', '', '', '', '', '', '', '', '', '', '', '');
 /*!40000 ALTER TABLE `mainpagetranslated` ENABLE KEYS */;
+
+
+-- Dumping structure for table int_ita_db.modules
+DROP TABLE IF EXISTS `modules`;
+CREATE TABLE IF NOT EXISTS `modules` (
+  `module_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `module_name` varchar(45) NOT NULL,
+  `module_duration_hours` int(11) NOT NULL,
+  `module_duration_days` int(11) NOT NULL,
+  `lesson_count` int(11) DEFAULT NULL,
+  `module_price` decimal(10,0) DEFAULT NULL,
+  `for_whom` text,
+  `what_you_learn` text,
+  `what_you_get` text,
+  `module_img` varchar(255) DEFAULT NULL,
+  `about_module` text,
+  PRIMARY KEY (`module_ID`),
+  UNIQUE KEY `module_ID` (`module_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table int_ita_db.modules: ~2 rows (approximately)
+/*!40000 ALTER TABLE `modules` DISABLE KEYS */;
+INSERT INTO `modules` (`module_ID`, `module_name`, `module_duration_hours`, `module_duration_days`, `lesson_count`, `module_price`, `for_whom`, `what_you_learn`, `what_you_get`, `module_img`, `about_module`) VALUES
+	(1, 'Основи PHP', 14, 20, 6, 1256, 'для менеджерів проектів і тих, хто відповідає за постановку завдань на розробку;для дизайнерів, які готові почати не просто малювати красиві картинки, а й навчитися тому, як створювати працюючі і зручні інтерфейси;для розробників, які хочуть самостійно створити або змінити свій проект;', 'Ви навчитеся писати чистий код;Користуватися системами контролю версій;Дізнаєтеся, з чого складається сучасний додаток;Для чого потрібен безперервна інтеграція (СІ) сервер;Чому потрібно тестувати свої програми і як це робити;', 'Відеозаписи та текстові матеріали всіх онлайн-занять;Спілкування з розумними одногрупниками;Сертифікат про закінчення навчання;Прилаштованість на робоче місце в силіконовій долині;', '/css/images/courseimg1.png', NULL),
+	(2, 'Module 2', 30, 15, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(3, 'Module 3', 60, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+/*!40000 ALTER TABLE `modules` ENABLE KEYS */;
 
 
 -- Dumping structure for table int_ita_db.regextended
@@ -565,7 +573,7 @@ CREATE TABLE IF NOT EXISTS `studentprofile` (
   `avatar` varchar(255) DEFAULT NULL,
   `role` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table int_ita_db.studentprofile: ~0 rows (approximately)
 /*!40000 ALTER TABLE `studentprofile` DISABLE KEYS */;
@@ -716,67 +724,6 @@ INSERT INTO `teacher_temp` (`teacher_id`, `lang`, `first_name`, `middle_name`, `
 /*!40000 ALTER TABLE `teacher_temp` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.team
-DROP TABLE IF EXISTS `team`;
-CREATE TABLE IF NOT EXISTS `team` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) DEFAULT NULL,
-  `post` varchar(64) DEFAULT NULL,
-  `pic` varchar(64) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
--- Dumping data for table int_ita_db.team: ~5 rows (approximately)
-/*!40000 ALTER TABLE `team` DISABLE KEYS */;
-INSERT INTO `team` (`id`, `name`, `post`, `pic`) VALUES
-	(1, 'Кузнецов  Андрей  Сергеевич', 'слесарь', '541dff9af18fe.jpg'),
-	(2, 'Квентин', 'сантехник', '541dffd7e4f9f.jpg'),
-	(3, 'Арни', 'электрик', '541e015b628be.jpg'),
-	(4, 'Аврил', 'пост', '541e01d395797.jpg'),
-	(5, 'Бриттани Мерфи', 'пост', '541e01ecd43b2.jpg');
-/*!40000 ALTER TABLE `team` ENABLE KEYS */;
-
-
--- Dumping structure for table int_ita_db.tests
-DROP TABLE IF EXISTS `tests`;
-CREATE TABLE IF NOT EXISTS `tests` (
-  `test_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `fkmodule_ID` int(11) NOT NULL,
-  `fklecture_ID` int(11) NOT NULL,
-  `test_title` varchar(45) NOT NULL,
-  `test_description` varchar(45) NOT NULL,
-  `test_url` varchar(45) NOT NULL,
-  PRIMARY KEY (`test_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- Dumping data for table int_ita_db.tests: ~2 rows (approximately)
-/*!40000 ALTER TABLE `tests` DISABLE KEYS */;
-INSERT INTO `tests` (`test_ID`, `fkmodule_ID`, `fklecture_ID`, `test_title`, `test_description`, `test_url`) VALUES
-	(1, 2, 2, 'Test 2', 'Description 2', 'URL 2'),
-	(2, 3, 3, 'Test 3', 'Description 3', 'URL 3');
-/*!40000 ALTER TABLE `tests` ENABLE KEYS */;
-
-
--- Dumping structure for table int_ita_db.theoreticalsmaterials
-DROP TABLE IF EXISTS `theoreticalsmaterials`;
-CREATE TABLE IF NOT EXISTS `theoreticalsmaterials` (
-  `tm_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `fkmodule_ID` int(11) NOT NULL,
-  `fklecture_ID` int(11) NOT NULL,
-  `TM_name` varchar(45) NOT NULL,
-  `TM_description` varchar(45) NOT NULL,
-  `TM_url` varchar(255) NOT NULL,
-  PRIMARY KEY (`tm_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- Dumping data for table int_ita_db.theoreticalsmaterials: ~2 rows (approximately)
-/*!40000 ALTER TABLE `theoreticalsmaterials` DISABLE KEYS */;
-INSERT INTO `theoreticalsmaterials` (`tm_ID`, `fkmodule_ID`, `fklecture_ID`, `TM_name`, `TM_description`, `TM_url`) VALUES
-	(1, 1, 1, 'TM 1', 'Description 1', 'URL 1'),
-	(2, 2, 2, 'TM 2', 'Description 2', 'URL 2');
-/*!40000 ALTER TABLE `theoreticalsmaterials` ENABLE KEYS */;
-
-
 -- Dumping structure for table int_ita_db.user
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
@@ -799,44 +746,5 @@ INSERT INTO `user` (`userID`, `userEmail`, `userPassword`, `userHash`, `userStat
 	(4, 'email1', 'password1', '232213', 1, 'user', 0),
 	(5, 'emaildd', 'passworfg', '232213', 0, 'user', 0);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
-
-
--- Dumping structure for table int_ita_db.users
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_email` varchar(35) NOT NULL,
-  `user_passwd` varchar(40) NOT NULL,
-  `user_hash` varchar(20) NOT NULL,
-  `user_status` tinyint(4) NOT NULL,
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `user_email` (`user_email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
--- Dumping data for table int_ita_db.users: ~0 rows (approximately)
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`user_id`, `user_email`, `user_passwd`, `user_hash`, `user_status`) VALUES
-	(1, 'mail1@mail.com', 'qwerty', '67896', 0);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-
-
--- Dumping structure for table int_ita_db.videos
-DROP TABLE IF EXISTS `videos`;
-CREATE TABLE IF NOT EXISTS `videos` (
-  `video_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `fkmodule_ID` int(11) NOT NULL,
-  `fklecture_ID` int(11) NOT NULL,
-  `video_name` varchar(45) NOT NULL,
-  `video_description` varchar(45) NOT NULL,
-  `video_url` varchar(45) NOT NULL,
-  `video_durationin_seconds` int(11) NOT NULL,
-  PRIMARY KEY (`video_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
--- Dumping data for table int_ita_db.videos: ~0 rows (approximately)
-/*!40000 ALTER TABLE `videos` DISABLE KEYS */;
-INSERT INTO `videos` (`video_ID`, `fkmodule_ID`, `fklecture_ID`, `video_name`, `video_description`, `video_url`, `video_durationin_seconds`) VALUES
-	(1, 1, 1, 'Video 1', 'Description 1', 'URL 1', 344);
-/*!40000 ALTER TABLE `videos` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
