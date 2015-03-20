@@ -43,7 +43,6 @@ div.profileStatus{
     line-height: 110%;
     color:#4b75a4;
 }
-
 /* ˳�� �����*/
 .studProf{
     display:inline-block;
@@ -95,7 +94,6 @@ table.profileInfo {
     border: 1px solid #d8d8d8;
     border-radius: 5px;
 }
-
 .studProf textarea
 {
     border: 1px solid #d8d8d8;
@@ -111,19 +109,12 @@ table.profileInfo {
     box-shadow:0 0 3px #4b75a4;
     cursor: pointer;
 }
-<<<<<<< HEAD
 .rowRadioButton input[type="radio"],.rowRadioButton input[type="checkbox"]
 {
     float:left;
     width: 20px;
     height: 36px;
     line-height: 40px;
-=======
-.rowRadioButton input[type="radio"]
-{
-    float:left;
-    width: 20px;
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 }
 .radiolabel label, .radiolabelRole label
 {
@@ -131,11 +122,7 @@ table.profileInfo {
     text-align: left;
     margin-bottom: 8px;
 }
-<<<<<<< HEAD
 .rowRadioButton input[type="radio"]:hover,.rowRadioButton input[type="checkbox"]:hover
-=======
-.rowRadioButton input[type="radio"]:hover
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 {
     box-shadow:0 0 3px #ffffff;
 }
@@ -149,7 +136,6 @@ table.profileInfo {
 {
     box-shadow:0 0 3px #ffffff;
 }
-
 /* ����� �����*/
 .studPhoto{
     display:inline-block;
@@ -164,7 +150,7 @@ table.profileInfo {
     float: right;
     width: 59%;
 }
-img.avatarimg  {
+img.avatarimg {
     display: inline-block;
     width:176px;
     margin: 0 0 0 0;
@@ -175,12 +161,9 @@ table.titleProfile{
     font-size: smaller;
     line-height: 120%;
 }
-<<<<<<< HEAD
 .titleProfile a:hover{
     color:#666666;
 }
-=======
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 table.titleProfileAv{
     margin:16px 0px 16px 0;
     display:inline-block;
@@ -215,11 +198,7 @@ table.titleProfileAv{
     box-shadow:0px 2px 0px #7f7f7f;
     font-size: medium;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
-.formStudProf input[type="button"]:hover  {
+.formStudProf input[type="button"]:hover {
     background: #454545;
     cursor: pointer;
 }
@@ -231,7 +210,7 @@ table.titleProfileAv{
 .studPhoto input[type="submit"], .profileActivity input[type="submit"] {
     margin:10px 0px 0px 22px;
 }
-.photoButton  input[type="submit"] {
+.photoButton input[type="submit"] {
     margin:10px 0px 30px 22px;
 }
 #avatarHelp{
@@ -242,13 +221,8 @@ table.titleProfileAv{
 }
 #avatarInfo{
     color:#666666;
-<<<<<<< HEAD
     margin:0 0 140px 0;
     height:20px;
-=======
-    margin:10px 0 140px 0;
-	height:20px;
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 }
 #photoForm {
     margin-top:10px;
@@ -258,15 +232,10 @@ table.titleProfileAv{
     overflow: hidden;
     position: relative;
     width: 176px;
-<<<<<<< HEAD
     height:45px;
-=======
-	height:45px;
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
     margin-top: 22px;
     margin-bottom: -5px;
 }
-
 .fileform .uploadAvatar {
     position:absolute;
     top:0;
@@ -289,7 +258,6 @@ input[type="button"].avatar,input[type="submit"].avatar{
     z-index:2;
     left:0;
 }
-
 span.required
 {
     color:red;
@@ -297,7 +265,6 @@ span.required
 span.interestBG{
     background-color: #edf1f6;
     margin-right: 5px;
-
     border-radius: 5px;
 }
 .formStudProf .errorMessage
@@ -316,7 +283,6 @@ label.avatarInfo{
     color:#4b75a4;
     margin-left:30px;
 }
-
 .formStudProf td, .subViewLessons td {
     vertical-align: top;
 }
@@ -330,7 +296,6 @@ label.avatarInfo{
 span.colorP {
     color: #4b75a4;
 }
-
 /*TABS*/
 /* стили секций с содержанием */
 .profileActivity section {
@@ -395,7 +360,6 @@ label.tabsUp1,label.tabsDown1{
     display: block;
 }
 /*TABS*/
-
 /*My Course*/
 #myCourse div{
     border-bottom:1px solid #d8d8d8;
@@ -439,7 +403,6 @@ p.courseLevLang{
     color: #666666;
 }
 /*My Course*/
-
 /*Form style*/
 #mylettersSend {
     padding-top: 50px;
@@ -475,7 +438,6 @@ p.courseLevLang{
     margin:16px 0px 32px 325px;
 }
 /*Form style*/
-
 /* PassEye */
 .passEye {
     position:relative;display:inline-block;
@@ -496,8 +458,4 @@ p.courseLevLang{
     width:18px;
     cursor:pointer;
 }
-<<<<<<< HEAD
 /* PassEye */
-=======
-/* PassEye */
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976

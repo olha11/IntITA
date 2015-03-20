@@ -1,11 +1,11 @@
 <?php
-/* @var $this StudentProfileController */
-/* @var $model StudentProfile */
+/* @var $this StudentprofileController */
+/* @var $model Studentprofile */
 /* @var $form CActiveForm */
-$this->pageTitle = 'INTITA';
+?>
+<?php
 $post=StudentReg::model()->findByPk(1);
 ?>
-
 <div class="formStudProfNav">
     <?php
     $this->breadcrumbs=array(
@@ -23,7 +23,6 @@ $post=StudentReg::model()->findByPk(1);
     </div>
 </div>
 <div class="formStudProf">
-
     <div class="studProfInf">
         <table class="titleProfile">
             <tr>
@@ -87,12 +86,9 @@ $post=StudentReg::model()->findByPk(1);
                         <p> <span class="colorP">Звідки дізнався про Вас:</span> </br><?php echo $post->aboutUs;?></p>
                     </div>
                     <div class="aboutInfo">
-<<<<<<< HEAD
                         <p> <span class="colorP">Форма навчання:</span> </br><?php echo $post->educform;?></p>
                     </div>
                     <div class="aboutInfo">
-=======
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
                         <p> <span class="colorP">Завершенні курси:</span> </br>Курси самогоних апаратів 6-го рівня</p>
                     </div>
                     <?php if(Yii::app()->user->hasFlash('messageedit')):
@@ -105,38 +101,27 @@ $post=StudentReg::model()->findByPk(1);
     <div class="profileActivity">
         <div class="tabs">
             <input id="tab1" type="radio" name="tabs" checked>
-            <label class="tabsUp1"  for="tab1" title="Мої курси">Мої курси</label>
-
+            <label class="tabsUp1" for="tab1" title="Мої курси">Мої курси</label>
             <input id="tab2" type="radio" name="tabs">
             <label for="tab2" title="Розклад">Розклад</label>
-
             <input id="tab3" type="radio" name="tabs">
             <label for="tab3" title="Консультації">Консультації</label>
-
             <input id="tab4" type="radio" name="tabs">
             <label for="tab4" title="Екзамени">Екзамени</label>
-
             <input id="tab5" type="radio" name="tabs">
             <label for="tab5" title="Мій рейтинг">Мій рейтинг</label>
-
             <div class="lineUnderTab"></div>
-
             <input id="tab6" type="radio" name="tabs">
-            <label class="tabsDown1"  for="tab6" title="Завантаження">Завантаження</label>
-
+            <label class="tabsDown1" for="tab6" title="Завантаження">Завантаження</label>
             <input id="tab7" type="radio" name="tabs">
-            <label class="tabsDown"  for="tab7" title="Листування">Листування</label>
-
+            <label class="tabsDown" for="tab7" title="Листування">Листування</label>
             <input id="tab8" type="radio" name="tabs">
-            <label class="tabsDown"  for="tab8" title="Мої оцінювання">Мої оцінювання</label>
-
+            <label class="tabsDown" for="tab8" title="Мої оцінювання">Мої оцінювання</label>
             <input id="tab9" type="radio" name="tabs">
-            <label class="tabsDown"  style="background-image:url(<?php echo Yii::app()->request->baseUrl; ?>/css/images/financeico.png);background-repeat: no-repeat;background-position:10px 3px;" for="tab9" title="Фінанси">
+            <label class="tabsDown" style="background-image:url(<?php echo Yii::app()->request->baseUrl; ?>/css/images/financeico.png);background-repeat: no-repeat;background-position:10px 3px;" for="tab9" title="Фінанси">
                 Фінанси
             </label>
-
             <div class="lineUnderTab"></div>
-
             <section id="myCourse">
                 <div class="profileCourse">
                     <p>Курс:</br> <span class="colorP">"Апгрейд головного мозку"</span></p>
@@ -190,11 +175,9 @@ $post=StudentReg::model()->findByPk(1);
                     <textarea id="send_letter" name="send_letter"></textarea></br>
                     <input type="submit" value="ВІДПРАВИТИ />" name="submit" />
                 </form>
-
                 <?php if(Yii::app()->user->hasFlash('messagemail')):
                     echo Yii::app()->user->getFlash('messagemail');
                 endif; ?>
-
             </section>
             <section id="myMark">
                 <p>
