@@ -203,9 +203,8 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
                 </div>
             </ul>
         </div>
-
-        <p><a href="#"><input type="submit" value="Онлайн домомога"></a></p>
-        <p><a href="#"><input type="submit" value="Онлайн консультація"></a></p>
+        <p><a href="#"><input type="submit" value="Skype"></a></p>
+        <p><a href="#"><input type="submit" value="Hangout"></a></p>
     </div>
 <!--navigation vertical-->
         <div class="lessonText">
