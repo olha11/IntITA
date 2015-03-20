@@ -1,125 +1,106 @@
 /*header navigation*/
 .subNavBlockTeachers {
-<<<<<<< HEAD
-    position: relative;
-=======
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
-    margin: 0 auto;
-    width: 960px;
-    clear: both;
+position: relative;
+margin: 0 auto;
+width: 960px;
+clear: both;
 }
 div.subLinksTeachers{
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    display:inline-block;
-    margin-bottom: 28px;
-    float:left;
-    width: 30%;
-<<<<<<< HEAD
+box-sizing:border-box;
+-moz-box-sizing:border-box;
+display:inline-block;
+margin-bottom: 28px;
+float:left;
+width: 30%;
 }
 div.ifYouTeachers{
-    position: absolute;
-    top:0;
-    right:0;
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    display:inline-block;
-    float:right;
-    width: 460px;
-    top:-40px;
+position: absolute;
+top:0;
+right:0;
+box-sizing:border-box;
+-moz-box-sizing:border-box;
+display:inline-block;
+float:right;
+width: 460px;
+top:-40px;
 }
-=======
-}
-div.ifYouTeachers{
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    display:inline-block;
-    float:right;
-    width: 460px;
-}
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 .subLinksTeachers a{
-    color: #666666;
+color: #666666;
 }
 /*Main Block*/
 .teachersList
 {
-    margin: 0 auto;
-    width: 960px;
-    overflow: hidden;
+margin: 0 auto;
+width: 960px;
+overflow: hidden;
 }
 /*Title*/
 div.titleTeachers {
-    padding: 0;
-    margin-bottom: 30px;
+padding: 0;
+margin-bottom: 30px;
 }
 .titleTeachers h1,h2 {
-    font-weight: inherit;
-    color: #4B75A4;
-    margin: 0 0 10px 0;
-    line-height: 100%;
+font-weight: inherit;
+color: #4B75A4;
+margin: 0 0 10px 0;
+line-height: 100%;
 }
 /*teacher Column*/
 .leftTeacher{
-    float:left;
-    width:460px;
+float:left;
+width:460px;
 }
 .rightTeacher{
-    float:right;
-    width:460px;
+float:right;
+width:460px;
 }
 /*teacher Profile Block*/
 .teacherBlock {
-    width:inherit;
-    margin-bottom: 40px;
-    overflow: hidden;
+width:inherit;
+margin-bottom: 40px;
+overflow: hidden;
 }
 .teacherBlock p, .teacherBlock ul{
-    margin-top: 10px;
-    margin-bottom: 10px;
+margin-top: 10px;
+margin-bottom: 10px;
 }
 img.teacherAvatar{
-    display: block;
-    width: 112px;
-    height: 136px;
+display: block;
+width: 112px;
+height: 136px;
 }
 .teacherBlock table,.teacherBlock td{
-    vertical-align: top;
-    border-collapse: collapse;
-    padding: 0;
+vertical-align: top;
+border-collapse: collapse;
+padding: 0;
 }
 .teacherBlock span{
-    font-weight: bold;
+font-weight: bold;
 }
 .teacherBlock ul {
-    padding-left: 20px;
+padding-left: 20px;
 }
 .teacherCourses {
-    padding-top:1px;
-    padding-bottom:1px;
-    background-color: #d6ebe0;
-    color:#467c98;
+padding-top:1px;
+padding-bottom:1px;
+background-color: #d6ebe0;
+color:#467c98;
 }
 div.aboutMore{
-    float:right;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: right;
-    color: #4B75A4;
+float:right;
+margin-top: 20px;
+margin-bottom: 20px;
+text-align: right;
+color: #4B75A4;
 }
-
 td.profileTeacher{
-    text-align: center;
-    padding: 0 20px 0 0;
+text-align: center;
+padding: 0 20px 0 0;
 }
 td.profileTeacher a{
-    display: inline-block;
-    font-size: small;
-    line-height: 100%;
-<<<<<<< HEAD
+display: inline-block;
+font-size: small;
+line-height: 100%;
 }
 .teacherBlock a:hover{
-    color:#666666;
-=======
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
-}
+color:#666666;
