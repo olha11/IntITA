@@ -3,6 +3,14 @@
 /* @var $mainpage Mainpage */
 
 ?>
+<style type="text/css">
+	.passEye .eye {
+		background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/passEye.png') no-repeat left 2px;
+	}
+	.passEye .openEye {
+		background-position:left bottom;
+	}
+</style>
 
 <a name="form"></a>
 <div class="fon"style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/fon.png') no-repeat;">

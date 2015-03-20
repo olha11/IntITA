@@ -38,12 +38,7 @@ html {
 /* @var $this StudentsController */
 /* @var $model Students */
 /* @var $form CActiveForm */
-?>
-
-<?php
-/* @var $this StudentsController */
-/* @var $model Students */
-/* @var $form CActiveForm */
+$this->pageTitle = 'INTITA';
 ?>
 <div class="formStudProf">
 

@@ -6883,3 +6883,35 @@ Stack trace:
 REQUEST_URI=/IntITA/index.php?r=studentreg/index
 HTTP_REFERER=http://localhost/IntITA/
 ---
+2015/03/19 20:02:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "studentprofile".' in D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentprofile')
+#1 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/index.php?r=studentprofile
+---
+2015/03/20 15:34:54 [error] [exception.Exception] exception 'Exception' with message 'DateTime::__construct(): Failed to parse time string (21/03/1997) at position 0 (2): Unexpected character' in D:\xampp\htdocs\IntITA\protected\views\studentreg\studentprofile.php:57
+Stack trace:
+#0 D:\xampp\htdocs\IntITA\protected\views\studentreg\studentprofile.php(57): DateTime->__construct('21/03/1997')
+#1 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#3 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#4 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): CController->renderPartial('studentprofile', Array, true)
+#5 D:\xampp\htdocs\IntITA\protected\controllers\StudentregController.php(225): CController->render('studentprofile', Array)
+#6 D:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): StudentRegController->actionProfile()
+#7 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 D:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#14 D:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): CController->run('profile')
+#16 D:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('studentreg/prof...')
+#17 D:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 D:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/IntITA/index.php?r=studentreg/profile
+---

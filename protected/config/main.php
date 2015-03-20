@@ -63,7 +63,7 @@ return array(
 		'user' => array(
 			'class'          => 'application.components.WebUser',
 			'loginUrl'       => array('/?r=register/submitForm'),
-			'allowAutoLogin' => true,
+			'allowAutoLogin' => false,
 		),
 
 		'authManager' => array(

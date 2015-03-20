@@ -1,16 +1,9 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Wizlight
- * Date: 04.03.2015
- * Time: 12:25
- */
-?>
 <!-- teachers style -->
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/teachers.css" />
 <!-- teachers style -->
 <!-- BD -))) -->
 <?php
+$this->pageTitle = 'INTITA';
 $post=TeachersTemp::model()->findAll();
 ?>
 <!-- BD -))) -->
@@ -80,7 +73,7 @@ $post=TeachersTemp::model()->findAll();
                         <?php
                         }
                         ?>
-                        <a href="#">Відгуки &#187;</a>
+                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=teacherprofile">Відгуки &#187;</a>
                     </div>
                 </div>
             <?php
@@ -137,7 +130,7 @@ $post=TeachersTemp::model()->findAll();
                         <?php
                         }
                         ?>
-                        <a href="#">Відгуки &#187;</a>
+                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=teacherprofile">Відгуки &#187;</a>
                     </div>
                 </div>
             <?php

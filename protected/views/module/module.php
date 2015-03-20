@@ -1,16 +1,10 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Wizlight
- * Date: 16.03.2015
- * Time: 16:43
- */
-?>
+
 <!-- Module style -->
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/module.css" />
 <!-- Module style -->
 <!-- BD -))) -->
 <?php
+$this->pageTitle = 'INTITA';
 $post=Module::model()->findByPk(1);
 ?>
 <!-- BD -))) -->
