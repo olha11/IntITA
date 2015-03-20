@@ -11,7 +11,8 @@ Back-end index page http://localhost/IntITA/www/_admin/
 6. [courses](http://localhost/IntITA/index.php?r=courses) - http://localhost/IntITA/index.php?r=courses <br/>
 7. [course](http://localhost/IntITA/index.php?r=course) - http://localhost/IntITA/index.php?r=course <br/>
 8. [about us](http://localhost/IntITA/index.php?r=site/aboutdetail) - http://localhost/IntITA/index.php?r=site/aboutdetail   
-9. [student profile]()
+9. [student profile](http://localhost/IntITA/index.php?r=studentreg/profile) - http://localhost/IntITA/index.php?r=studentreg/profile
+10. [student profile edit](http://localhost/IntITA/?r=studentreg/edit) - http://localhost/IntITA/?r=studentreg/edit
 
 
 <<<<<<< HEAD
