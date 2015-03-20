@@ -5,6 +5,7 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="language" content="en">
+
     <!-- for tabs -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- for tabs -->
@@ -71,7 +72,11 @@
     <div class="main">
         <div id="logo_img" class="down">
             <a href="<?php echo Yii::app()->request->baseUrl;?>">
+<<<<<<< HEAD
                 <img id="logo" src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png"/>
+=======
+            <img id="logo" src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png"/>
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
             </a>
         </div>
         <ul>
@@ -91,7 +96,12 @@
 </div>
 <div id="button_border" class="down">
 </div>
+<<<<<<< HEAD
 <a id="enter_button" href="<?php echo Yii::app()->request->baseUrl;?>#form" class="down"><?php echo $this->buttonText; ?></a>
+=======
+<a id="enter_button" href="#" class="down"><?php echo $this->buttonText; ?></a>
+
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 <script>
     function changeLang(n){
         for (var i=0; i< n.form.length; i++){
@@ -104,6 +114,12 @@
         document.getElementById(n.id).disabled = true;
         document.getElementById(n.id).className = "selectedLang";
     }
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 </script>
 <div class="clear"></div>
 
@@ -161,7 +177,11 @@
             </div>
         </div>
         <div class="footer">
+<<<<<<< HEAD
             <a href="<?php echo Yii::app()->request->baseUrl;?>"><img src="<?php echo $this->imageUp; ?>" style="margin-top: 20px;"/></a>
+=======
+            <a href="#"><img src="<?php echo $this->imageUp; ?>" style="margin-top: 20px;"/></a>
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
         </div>
     <div class="footer"></div>
 </div>

@@ -16,9 +16,12 @@
 p.lesname{
     width:100%;
     margin-left: 3px;
+<<<<<<< HEAD
 }
 .lesname b{
     color:#000000;
+=======
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 }
 .subViewLessons p, h1, h2, h3, h4, h5, h6, span{
     font-size:100%;

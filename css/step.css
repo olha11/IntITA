@@ -45,8 +45,13 @@ html{
 	background-color: #f3f3f3;
 	padding-top:60px;
 	padding-bottom:0px;
+<<<<<<< HEAD
 	margin-top: 20px;
 }
+=======
+    margin-top: 20px;
+	  }
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 /* Стиль екземплярів класу Step*/
 .stepLeft {
 	box-sizing:border-box;
@@ -79,8 +84,13 @@ html{
 	display:inline-block;
 	width:65%;
 	text-align:left;
+<<<<<<< HEAD
 	height:100%;
 }
+=======
+    height:100%;
+	      }
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 .stepUrl {
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
@@ -104,7 +114,11 @@ img.grid {
 }
 
 .hexagon {
+<<<<<<< HEAD
 	z-index:1;
+=======
+    z-index:1;
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 }
 .stepArticle {
 	position:absolute;
@@ -114,10 +128,17 @@ img.grid {
 	z-index:3;
 }
 .stepLeft .stepArticle {
+<<<<<<< HEAD
 	left:273px;
 }
 .stepRight .stepArticle {
 	right:273px;
+=======
+    left:273px;
+}
+.stepRight .stepArticle {
+    right:273px;
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 }
 p.stepNumber {
 	color:#3d4d60;
@@ -134,6 +155,7 @@ p.stepName {
 	margin:0px;
 }
 .stepLeft .hexagon  {
+<<<<<<< HEAD
 	position:absolute;
 	left:272px;
 }
@@ -144,6 +166,18 @@ p.stepName {
 .stepLeft .stepUrl {
 	float:left;
 	border-right: none;
+=======
+    position:absolute;
+    left:272px;
+}
+.stepRight .hexagon {
+    position:absolute;
+    right:272px;
+}
+.stepLeft .stepUrl {
+	float:left;
+    border-right: none;
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 }
 .stepLeft .line {
 	float:left;
@@ -153,7 +187,11 @@ p.stepName {
 }
 .stepRight .stepUrl {
 	float:right;
+<<<<<<< HEAD
 	border-left: none;
+=======
+    border-left: none;
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 }
 .stepLeft .stepInfo {
 	padding:0px 5px 0px 7%;

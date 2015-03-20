@@ -4,12 +4,20 @@
 </head>
 <body>
 <?php
+<<<<<<< HEAD
 $this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
     'Курси',
 );
 
 	class Course
+=======
+$this->breadcrumbs=array(
+    'Course',
+);
+
+	class Course 
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 	{
 		public $courseImage;
 		public $courseName;
@@ -59,6 +67,7 @@ $this->breadcrumbs=array(
 	$courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
 
 	?>
+
 <div id='coursesMainBox'>
 
 

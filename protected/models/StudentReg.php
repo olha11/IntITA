@@ -141,11 +141,14 @@ class StudentReg extends CActiveRecord
         $criteria->compare('avatar',$this->avatar,true);
         $criteria->compare('upload',$this->upload,true);
         $criteria->compare('role',$this->role,true);
+<<<<<<< HEAD
 
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
         ));
     }
+=======
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 
     /**
      * Returns the static model of the specified AR class.

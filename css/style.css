@@ -65,6 +65,10 @@ p {
 #navigation.down {
     height: 55px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 #navigation ul {
     margin-left: 475px;
     margin-top: 65px;
@@ -130,7 +134,7 @@ p {
     border: 2px solid #ffffff;
     color: white;
     vertical-align: middle;
-    font: 500 16px/33px "MyriadPro";
+    font: 16px/30px "MyriadPro";
     text-align:      center;
     text-decoration: none;
 }
@@ -141,7 +145,7 @@ p {
     background: #363636;
 }
 #enter_button.down {
-    margin-top: 18px;
+    margin-top: 9px;
 }
 #enter_button.down:hover{
     background: #454545;

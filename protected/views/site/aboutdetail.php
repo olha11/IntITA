@@ -7,7 +7,15 @@
 </head>
 <body onload=WindowShow(<?php echo (empty($_GET['id']))?1:$_GET['id']; ?>)>
 <?php
+<<<<<<< HEAD
 $this->pageTitle = 'INTITA';
+=======
+$this->breadcrumbs=array(
+    'About',
+);
+
+$this->pageTitle=$mainpage['title'];
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 
 $headerText = $mainpage['header1'];
 $subheaderText = $mainpage['subheader1'];

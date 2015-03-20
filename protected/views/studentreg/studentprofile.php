@@ -87,9 +87,12 @@ $post=StudentReg::model()->findByPk(1);
                         <p> <span class="colorP">Звідки дізнався про Вас:</span> </br><?php echo $post->aboutUs;?></p>
                     </div>
                     <div class="aboutInfo">
+<<<<<<< HEAD
                         <p> <span class="colorP">Форма навчання:</span> </br><?php echo $post->educform;?></p>
                     </div>
                     <div class="aboutInfo">
+=======
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
                         <p> <span class="colorP">Завершенні курси:</span> </br>Курси самогоних апаратів 6-го рівня</p>
                     </div>
                     <?php if(Yii::app()->user->hasFlash('messageedit')):

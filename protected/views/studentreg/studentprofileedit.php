@@ -6,6 +6,7 @@
         background-position:left bottom;
     }
     .formStudProf input[type="submit"]{
+<<<<<<< HEAD
         font-size: 18px;
         letter-spacing:1px;
         padding-right: 20px;
@@ -14,11 +15,18 @@
         background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
         background-repeat: no-repeat;
         background-position: 132px 14px;
+=======
+        background:#4b75a4;
+        background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
+        background-repeat: no-repeat;
+        background-position: 130px 50%;
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
     }
     .formStudProf input[type="submit"]:hover {
         background: #454545;
         background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
         background-repeat: no-repeat;
+<<<<<<< HEAD
         background-position: 132px 14px;
         cursor: pointer;
     }
@@ -26,6 +34,11 @@
         padding:0;
         border:0;
     }
+=======
+        background-position: 130px 50%;
+        cursor: pointer;
+    }
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 </style>
 
 <?php
@@ -56,7 +69,11 @@ $post=StudentReg::model()->findByPk(1);
             <?php echo $post->firstName;?></br>
             <?php echo $post->secondName;?></br>
             <?php echo $post->nickname;?></br>
+<<<<<<< HEAD
             <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
+=======
+         <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
         </div>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
     </div>
@@ -94,6 +111,7 @@ $post=StudentReg::model()->findByPk(1);
             <?php echo $form->label($model,'nickname'); ?>
             <?php echo $form->textField($model,'nickname',array('value'=>$post->nickname,'maxlength'=>255)); ?>
             <span><?php echo $form->error($model,'nickname'); ?></span>
+<<<<<<< HEAD
         </div>
         <div class="rowDate">
             <?php echo $form->label($model,'birthday'); ?>
@@ -103,6 +121,17 @@ $post=StudentReg::model()->findByPk(1);
         <div class="row">
             <?php echo $form->labelEx($model,'phone'); ?>
             <?php echo $form->textField($model,'phone',array('value'=>$post->phone,'class'=>'phone','maxlength'=>15)); ?>
+=======
+        </div>
+        <div class="row">
+            <?php echo $form->label($model,'birthday'); ?>
+            <?php echo $form->textField($model,'birthday',array('value'=>$post->birthday,'maxlength'=>11, 'placeholder'=>'введіть в форматі дд.мм.рррр')); ?>
+            <span><?php echo $form->error($model,'birthday'); ?></span>
+        </div>
+        <div class="row">
+            <?php echo $form->labelEx($model,'phone'); ?>
+            <?php echo $form->textField($model,'phone',array('value'=>$post->phone,'maxlength'=>15)); ?>
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
             <span><?php echo $form->error($model,'phone'); ?></span>
         </div>
         <div class="row">
@@ -167,8 +196,12 @@ $post=StudentReg::model()->findByPk(1);
             <input tabindex="-1" type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
             <input tabindex="-1" class="uploadAvatar" type="submit">
         </div>
+<<<<<<< HEAD
         <div id="avatarHelp">Розмір фото до 512кб</div>
         <div id="avatarInfo">Файл не вибрано...</div>
+=======
+        <div id="avatarInfo">Розмір фото до 512кб</div>
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
         <div class="avatarError">
             <?php if(Yii::app()->user->hasFlash('avatarmessage')):
                 echo Yii::app()->user->getFlash('avatarmessage');
