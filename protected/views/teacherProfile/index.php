@@ -2,12 +2,12 @@
 <head>
 </head>
 <body>
-
-
 <?php
 $this->pageTitle = 'INTITA';
+$this->breadcrumbs=array(
+    'Профіль викладача',
+);
         $model=new TeacherProfile;
-        
         $model->mainImage=Yii::app()->request->baseUrl.'/css/images/teacher1Image.png';
 		$model->firstName='Сіра';
         $model->lastName='Олександра Василівна';

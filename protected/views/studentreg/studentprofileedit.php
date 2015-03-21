@@ -33,6 +33,7 @@
 /* @var $form CActiveForm */
 ?>
 <?php
+$this->pageTitle = 'INTITA';
 $post=StudentReg::model()->findByPk(1);
 ?>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.js"></script>

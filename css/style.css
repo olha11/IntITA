@@ -25,13 +25,13 @@ p {
     width:150px;
     z-index: 6;
     left:50%;
-    margin-left: 404px;
+    margin-left: 402px;
     margin-top: -84px;
     position: fixed;
 }
 #lang.down {
     margin-top: -40px;
-    margin-left: 505px;
+    margin-left: 500px;
 }
 #lang #en {
     border-left: 1px solid #999999;
@@ -206,11 +206,9 @@ p {
     margin-right:auto;
     border:none;
     z-index: 2;
-
 }
 #fon{
     z-index: 0;
-
 }
 .textFon{
     position:absolute;
@@ -231,8 +229,6 @@ p {
     height:428px;
     margin-top:145px;
     margin-left:408px;
-
-
 }
 .zagolovok
 {
@@ -249,8 +245,6 @@ p {
     height:110px;
     margin-left:50px;
     margin-top:50px;
-
-
 }
 .email1{
     float:left;
@@ -274,20 +268,19 @@ p {
     font:22px Arial, Helvetica, sans-serif;
     color:black;
     font-size: 16pt;
-
 }
-.email1:hover {  /* при наведении курсора мышки */
+.email1:hover { /* при наведении курсора мышки */
     box-shadow: 0 0 0 1px #7eb4ea inset, 0 1px 2px rgba(0,0,0,.2) inset;
 }
-.email1:focus {  /* при фокусе, когда поле input активно */
+.email1:focus { /* при фокусе, когда поле input активно */
     outline: none;
     box-shadow: 0 0 0 1px #7eb4ea inset, 0 1px 2px rgba(0,0,0,.2) inset, 0 0 10px rgba(35,146,243,.5);
     transition: .2s linear;
 }
-.password1:hover {  /* при наведении курсора мышки */
+.password1:hover { /* при наведении курсора мышки */
     box-shadow: 0 0 0 1px #7eb4ea inset, 0 1px 2px rgba(0,0,0,.2) inset;
 }
-.password1:focus {  /* при фокусе, когда поле input активно */
+.password1:focus { /* при фокусе, когда поле input активно */
     outline: none;
     box-shadow: 0 0 0 1px #7eb4ea inset, 0 1px 2px rgba(0,0,0,.2) inset, 0 0 10px rgba(35,146,243,.5);
     transition: .2s linear;
@@ -306,7 +299,7 @@ p {
     color:#4b75a4;
     text-decoration:none;
 }
-.extendedRegistration a:hover {  /* при наведении курсора мышки */
+.extendedRegistration a:hover { /* при наведении курсора мышки */
     outline: none;
     color:#114988;
     transition: .2s linear;
@@ -359,11 +352,9 @@ input[type="submit"]::-moz-focus-inner { /* убираем внутренний 
     margin-top:20px;
 }
 /****************registration***********/
-
 /* Далее идет оформление чекбокса в современных браузерах, а также IE9 и выше.
 Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
 в них все нижеследующие стили не сработают. */
-
 /* Прячем оригинальный чекбокс. */
 #regCheckbox:not(checked) {
     position: absolute;

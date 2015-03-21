@@ -1,5 +1,6 @@
 #slider .item{
-    display: block;
+    display: table-cell;
+    text-align: center;
     width: 100%;
 }
 

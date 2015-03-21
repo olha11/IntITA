@@ -1,7 +1,6 @@
 <?php
 /* @var $this SiteController */
 /* @var $mainpage Mainpage */
-
 ?>
 <style type="text/css">
 	.passEye .eye {
@@ -18,8 +17,8 @@
 	<div class="formFon"style=" background:url('<?php echo $mainpage['formFon']; ?>');">
 		<form method = "POST" action="<?php echo Yii::app()->createUrl('site/submitForm');?>">
 			<div class="email-password">
-				<input type="email" value="" name="email" class="email1" placeholder="E-mail" />
-				<span class="passEye"><input type="password" value="" name="password" class="password1" placeholder="password"/></span><br>
+				<input type="email" value="" name="email" class="email1" placeholder="Електронна пошта" />
+				<span class="passEye"><input type="password" value="" name="password" class="password1" placeholder="Пароль"/></span><br>
 				<input type="checkbox" id="regCheckbox" value="" name="isExtended"/><label for="regCheckbox"><?php echo $mainpage['regText']; ?></label>
 			</div>
 			<br>
@@ -28,7 +27,6 @@
 				<input type="submit" name="button" class="button1" style="background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png'); background-repeat: no-repeat; background-position: 144px 17px;" value="<?php echo $mainpage['formButtonStart']; ?>"/>
 		</form>
 	</div>
-
 	<div class="lineForm"><hr color="#4b75a4" size="1px"></div>
 	<div class="social"><?php echo $mainpage['socialText']; ?></div>
 	<div class="image" > <img name="networking" src="<?php echo $mainpage['imageNetwork']; ?>" width="410" height="50" border="0" id="networking" usemap="#m_networking" alt="" />

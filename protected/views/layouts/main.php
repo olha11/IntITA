@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="language" content="en">
 
@@ -83,7 +83,7 @@
             <li><a href="<?php echo $this->link4; ?>"><?php echo $this->menu4; ?></a></li>
         </ul>
     </div>
-    
+
     <div id="lang" class="down">
         <form action="" method="post" onsubmit="" name="fff">
             <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
@@ -91,12 +91,12 @@
             <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'RU'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
         </form>
     </div>
-    
+
 </div>
 <div id="centerEnterButton">
     <div id="button_border" class="down">
     </div>
-    <a id="enter_button" href="#beginRegistration" class="down"><?php echo $this->buttonText; ?></a>
+    <a id="enter_button" href="<?php echo Yii::app()->request->baseUrl;?>#form" class="down"><?php echo $this->buttonText; ?></a>
 </div>
 <! Hamburger menu>
 
@@ -112,7 +112,9 @@
 		</ul>
 	</div>
 	<div id="logo2" class="down">
-        <img  src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png"/>
+        <a href="<?php echo Yii::app()->request->baseUrl;?>">
+            <img  src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png"/>
+        </a>
     </div>
 	<div id="hamburgerLang">
         <form action="" method="post" onsubmit="" name="fff">
@@ -146,7 +148,7 @@
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox2">
-			<a id="hamburgerEnterButton" href="#beginRegistration"><?php echo $this->buttonText; ?></a>
+			<a id="hamburgerEnterButton" href="<?php echo Yii::app()->request->baseUrl;?>#form"><?php echo $this->buttonText; ?></a>
 		</div>
 	</div>
 </div>
@@ -166,21 +168,17 @@
         document.getElementById(n.id).className = "selectedLang";
     }
 
-
-
-		}
-	}
 var width=0;
 if (self.screen)
 {
 	width = screen.width
 }
 
-if (width>800)
+if (width>80)
 {
-	$('#hamburgerNavigation').css('display', 'none'); 
-	$('#contentBoxMain').css('margin-top', '-1000px'); 
-	$('#navigation').css('display', 'block'); 
+	$('#hamburgerNavigation').css('display', 'none');
+	$('#contentBoxMain').css('margin-top', '-1000px');
+	$('#navigation').css('display', 'block');
 	$('#centerEnterButton').css('display', 'block');
     var key = document.getElementById('enter_button');
     var nav = document.getElementById('navigation');
@@ -192,21 +190,21 @@ if (width>800)
 else
 {
 	var  isShow=0;
-	$('#hamburgerNavigation').css('display', 'inline-block'); 
-	$('#navigation').css('display', 'none'); 
-	$('#centerEnterButton').css('display', 'none'); 
-	$('body').css('margin-top', '-23px'); 
-	$('#hamburgerSenterNavigation').css('width', width); 
-	$('#hamburgerSenterNavigation').css('margin-left', -(width/2)); 
-	$('#hamburgerLang').css('left', width-130); 
+	$('#hamburgerNavigation').css('display', 'inline-block');
+	$('#navigation').css('display', 'none');
+	$('#centerEnterButton').css('display', 'none');
+	$('body').css('margin-top', '-23px');
+    $('#hamburgerSenterNavigation').css('width', width);
+	$('#hamburgerSenterNavigation').css('margin-left', -(width/2));
+	$('#hamburgerLang').css('left', width-130);
 
 	function ShowHamburger()
 	{
 		if (isShow==0)
 		{
 			isShow=1;
-			$('#hamburgerButton').css('display','none');       
-			$('.hamburgerButtonLine2').css('background-color',' #535353'); 			
+			$('#hamburgerButton').css('display','none');
+			$('.hamburgerButtonLine2').css('background-color',' #535353');
 			$('#contentBoxMain').animate({left:'+=25%'},'fast');
 			$('#hamburgerNavigation').animate({left:'+=25%'},'fast');
 			$('#hamburgerMainBox').fadeIn('middle');
@@ -216,8 +214,8 @@ else
 		{
 			isShow=0;
 			$('#hamburgerButton').css('display','block');
-			$('.hamburgerButtonLine2').css('background-color','#4682B4'); 	
-			$('#hamburgerMainBox').css('display','none');		
+			$('.hamburgerButtonLine2').css('background-color','#4682B4');
+			$('#hamburgerMainBox').css('display','none');
 			$('#contentBoxMain').animate({left:'-=25%'});
 			$('#hamburgerNavigation').animate({left:'-=25%'});
 			$('#contentBoxMain').css('margin-left', '0%');
@@ -265,7 +263,9 @@ else
         </div>
         <div class="footer">
             <div>
-                <a href="<?php echo Yii::app()->request->baseUrl;?>"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png" style="max-width: 140px;"></a>
+                <a href="<?php echo Yii::app()->request->baseUrl;?>">
+                    <img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png" style="max-width: 140px;">
+                </a>
             </div>
             <div>
                 <p> <?php echo $this->phone; ?><br/>
