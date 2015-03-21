@@ -14,16 +14,3 @@ Back-end index page http://localhost/IntITA/www/_admin/
 9. [student profile](http://localhost/IntITA/index.php?r=studentreg/profile) - http://localhost/IntITA/index.php?r=studentreg/profile
 10. [student profile edit](http://localhost/IntITA/?r=studentreg/edit) - http://localhost/IntITA/?r=studentreg/edit
 
-
-<<<<<<< HEAD
-=======
-
-back-end index page http://localhost/IntITA/www/_admin/
-
-#Pages:
-
-1. main - http://localhost/IntITA/
-
-2. lesson - http://localhost/IntITA/index.php?r=lesson
-
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
