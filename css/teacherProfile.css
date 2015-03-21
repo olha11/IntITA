@@ -27,9 +27,9 @@
     top:120px;
 }
 
- 
- .TeacherProfiletextBlock
- {
+
+.TeacherProfiletextBlock
+{
     margin-top:0px;
     margin-left:168px;
 }
@@ -50,7 +50,7 @@
     margin-top: -5px;
 }
 
-.TeacherProfiletitles 
+.TeacherProfiletitles
 {
     display: inline-block;
     position: relative;
@@ -65,7 +65,7 @@
     margin-left:65px;
 }
 
-.TeacherProfilesectionText p 
+.TeacherProfilesectionText p
 {
     margin-top:-12px;
 }

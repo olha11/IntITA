@@ -5,7 +5,7 @@
 
 
 <?php
-	
+$this->pageTitle = 'INTITA';
         $model=new TeacherProfile;
         
         $model->mainImage=Yii::app()->request->baseUrl.'/css/images/teacher1Image.png';

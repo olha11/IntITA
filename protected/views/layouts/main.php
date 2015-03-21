@@ -73,27 +73,22 @@
     <div class="main">
         <div id="logo_img" class="down">
             <a href="<?php echo Yii::app()->request->baseUrl;?>">
-            <img id="logo" src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png"/>
+                <img id="logo" src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png"/>
             </a>
         </div>
-
         <ul>
             <li><a href="<?php echo $this->link1; ?>"><?php echo $this->menu1; ?></a></li>
             <li><a href="<?php echo $this->link2; ?>"><?php echo $this->menu2; ?></a></li>
             <li><a href="<?php echo $this->link3; ?>"><?php echo $this->menu3; ?></a></li>
             <li><a href="<?php echo $this->link4; ?>"><?php echo $this->menu4; ?></a></li>
         </ul>
-
     </div>
     
     <div id="lang" class="down">
         <form action="" method="post" onsubmit="" name="fff">
             <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
-
             <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'EN'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
-
             <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'RU'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
-
         </form>
     </div>
     
@@ -166,6 +161,10 @@
                 document.getElementById(n.form.elements[i].id).disabled = false;
                 document.getElementById(n.form.elements[i].id).className = "";
             }
+        }
+        document.getElementById(n.id).disabled = true;
+        document.getElementById(n.id).className = "selectedLang";
+    }
 
 
 
@@ -233,11 +232,15 @@ else
 
 <div class="main">
 
-    <div style="height: 105px; width: auto"></div>
+    <div style="height: 55px; width: auto"></div>
 
     <?php if(isset($this->breadcrumbs)):?>
         <?php $this->widget('zii.widgets.CBreadcrumbs', array(
             'links'=>$this->breadcrumbs,
+            'homeLink'=>CHtml::link('Головна',Yii::app()->request->baseUrl),
+            'htmlOptions' => array(
+                'class' => 'my-cool-breadcrumbs'
+            )
         )); ?><!-- breadcrumbs -->
     <?php endif?>
 
@@ -252,12 +255,17 @@ else
 
 <div id="footer">
     <div class="main">
-        <div>
-            <img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/socials.png" style="margin-top: 10px;"/>
+        <div style="height: auto; margin-top: 25px;">
+            <a href="http://twitter.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/twitter.png"/></a>
+            <a href="http://youtube.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/youtube.png"/></a>
+            <a href="http://google.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/googlePlus.png"/><br/></a>
+            <a href="http://facebook.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/facebook.png"/></a>
+            <a href="http://odnoklasniki.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/odnoklasniki.png"/></a>
+            <a href="http://vk.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/vkontakte.png"/></a>
         </div>
         <div class="footer">
             <div>
-                <img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png" style="max-width: 140px;">
+                <a href="<?php echo Yii::app()->request->baseUrl;?>"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png" style="max-width: 140px;"></a>
             </div>
             <div>
                 <p> <?php echo $this->phone; ?><br/>
@@ -276,7 +284,7 @@ else
             </div>
         </div>
         <div class="footer">
-            <a href="#"><img src="<?php echo $this->imageUp; ?>" style="margin-top: 20px;"/></a>
+            <a href="<?php echo Yii::app()->request->baseUrl;?>"><img src="<?php echo $this->imageUp; ?>" style="margin-top: 20px;"/></a>
         </div>
     <div class="footer"></div>
 </div>

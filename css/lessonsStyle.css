@@ -13,11 +13,15 @@ div.subLinks{
     margin-bottom: 28px;
     float:left;
 }
+<<<<<<< HEAD
+/*header navigation*/
+=======
 .subLinks a{
     color: #666666;
 }
 /*header navigation*/
 
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 .lessonBlock {
     margin: 0 auto;
     width: 960px;

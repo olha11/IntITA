@@ -2,7 +2,7 @@
 $(document).ready(function() {
      
     $('#slider .item').liCover({
-        veticalAlign : "middle",
+        verticalAlign : "middle",
         align : "center"
     });
     

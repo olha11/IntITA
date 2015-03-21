@@ -28,7 +28,7 @@ class Aboutus extends CActiveRecord
 	}
 
 	function AboutUs($id){
-		//$this->setValuesById($id);
+
 	}
 
 	public function setValuesById($id)

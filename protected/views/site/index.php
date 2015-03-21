@@ -126,7 +126,7 @@ $massAbout=array($block1,$block2,$block3);
                             <?php echo $val->textAbout;?>
                         </p>
                     </div>
-                        <a href="<?php echo $val->linkAddress ?>" target="_blank">
+                        <a href="<?php echo $val->linkAddress ?>">
                         <?php echo $linkName; ?>
                         </a>
                 </li>

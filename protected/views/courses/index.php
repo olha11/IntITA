@@ -4,8 +4,9 @@
 </head>
 <body>
 <?php
+$this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
-    'Course',
+	'Курси',
 );
 
 	class Course 

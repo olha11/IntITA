@@ -1,6 +1,11 @@
 <?php
-/* @var $this SiteController */
-
+/**
+ * Created by PhpStorm.
+ * User: Wizlight
+ * Date: 15.03.2015
+ * Time: 18:08
+ */
+$this->pageTitle = 'INTITA';
 ?>
 <html>
 <head>
@@ -8,7 +13,7 @@
 <body onload=WindowShow(<?php echo (empty($_GET['id']))?1:$_GET['id']; ?>);centerPage()>
 <?php
 $this->breadcrumbs=array(
-    'About',
+    'Курси'=>Yii::app()->request->baseUrl."/index.php/?r=courses",'Програмування для чайників',
 );
 
 $this->pageTitle=$mainpage['title'];

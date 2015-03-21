@@ -7,7 +7,10 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'IntITA',
+	'name'=>'INTITA',
+
+	'sourceLanguage'=>'ua',
+	'language'=>'ru',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -36,7 +39,7 @@ return array(
 		'autoadmin'=>array(
 			'class'=>'ext.autoadmin.AutoAdmin',
 			'basePath' => dirname(__FILE__).'/../modules/autoadmin',
-			'wwwDirName' => '', //your DocumentRoot
+			'wwwDirName' => 'www', //your DocumentRoot
 			'authMode' => true, //Switch on authorization system
 			'openMode' => true, //Use for temporary switching off all access limitations
 			'logMode' => false,
@@ -51,16 +54,25 @@ return array(
     		'class' => 'system.web.CClientScript'
     	),
 
-		'user'=>array(
-			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+        'messages'=>array(
+            'class'=>'CDbMessageSource',
+            'sourceMessageTable'=>'mainpage',
+            'translatedMessageTable'=>'mainpagetranslated',
+        ),
+
+		'user' => array(
+			'class'          => 'application.components.WebUser',
+			'loginUrl'       => array('/?r=register/submitForm'),
+			'allowAutoLogin' => false,
 		),
 
-		// uncomment the following to enable URLs in path-format
+		'authManager' => array(
+			'class'         => 'application.components.AuthManager',
+			'defaultRoles'  => array('0'), // по умолчанию 0, то есть гость
+		),
 
 		'urlManager'=>array(
 			//'urlFormat'=>'path',
-			//'class'=>'DLanguageUrlManager',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
@@ -69,6 +81,7 @@ return array(
 				'/<module:autoadmin>' => 'autoadmin/default/index',
 				'/<module:autoadmin>/<controller:\w+>' => 'autoadmin/<controller>/index',
 				'/<module:autoadmin>/<controller:\w+>/<action:\w+>' => 'autoadmin/<controller>/<action>',
+				'/<controller:\w+>/<action:\w+>' => 'autoadmin/<controller>/<action>',
 
 				'<controller:aajax>/<action:\w+>' => 'autoadmin/<controller>/<action>',
 				'<controller:afile>/<action:\w+>' => 'autoadmin/<controller>/<action>',
@@ -81,9 +94,6 @@ return array(
 		'db'=>require(dirname(__FILE__).'/database.php'),
 		'db2'=>require(dirname(__FILE__).'/database.php'),
 		'dbAdmin' => require(dirname(__FILE__).'/database.php'),
-
-		'sourceLanguage'=>'en',
-		'language'=>'ua',
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
@@ -106,11 +116,12 @@ return array(
 			),
 		),
 
-		'request'=>array(
-			//'class'=>'DLanguageHttpRequest',
-
-        ),
-
+		'messages'=>array(
+			'class' => 'CDbMessageSource',
+			'translatedMessageTable' => 'mainpagetranslated',
+			'sourceMessageTable' => 'mainpage',
+			'cachingDuration'=>3600.
+		),
 	),
 
 	// application-level parameters that can be accessed
@@ -118,11 +129,5 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
-		'translatedLanguages'=>array(
-			'ru'=>'Russian',
-			'en'=>'English',
-			'ua'=>'Ukraine',
-		),
-		'defaultLanguage'=>'ua',
 	),
 );

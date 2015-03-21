@@ -1,6 +1,5 @@
 #slider .item{
-    display: table-cell;
-    text-align: center;
+    display: block;
     width: 100%;
 }
 
@@ -15,13 +14,11 @@
     position: absolute;
     top: -100px;
 }
-
 .sliderLine {
     position: absolute;
     left:-100px;
     top: 240px;
 }
-
 .lineAndButton .sliderButton {
     position:        absolute;
     top:             345px;
@@ -42,14 +39,12 @@
     text-align:      center;
     text-decoration: none;
 }
-
 .sliderButton:hover {
     border-top-color: #454545;
     background: #454545;
     color: #fcfcfc;
     cursor: pointer;
 }
-
 .sliderButton:active {
     border-top-color: #363636;
     background: #363636;    
