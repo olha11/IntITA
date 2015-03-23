@@ -17,149 +17,149 @@
  */
 class Course extends CActiveRecord
 {
-    /**
-     * @return string the associated database table name
-     */
-    public function tableName()
-    {
-        return 'course';
-    }
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return 'course';
+	}
 
-    /**
-     * @return array validation rules for model attributes.
-     */
-    public function rules()
-    {
-        // NOTE: you should only define rules for those attributes that
-        // will receive user inputs.
-        return array(
-            array('course_duration_hours, modules_count', 'numerical', 'integerOnly'=>true),
-            array('course_name', 'length', 'max'=>45),
-            array('course_price', 'length', 'max'=>10),
-            array('for_whom, what_you_learn, what_you_get', 'length', 'max'=>255),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('course_ID, course_name, course_duration_hours, modules_count, course_price, for_whom, what_you_learn, what_you_get', 'safe', 'on'=>'search'),
-        );
-    }
-    /**
-     * @return array relational rules.
-     */
-    public function relations()
-    {
-        // NOTE: you may need to adjust the relation name and the related
-        // class name for the relations automatically generated below.
-        return array(
-            'studentsaccesses' => array(self::HAS_MANY, 'Studentsaccess', 'courseID'),
-        );
-    }
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('course_duration_hours, modules_count', 'numerical', 'integerOnly'=>true),
+			array('course_name', 'length', 'max'=>45),
+			array('course_price', 'length', 'max'=>10),
+			array('for_whom, what_you_learn, what_you_get', 'length', 'max'=>255),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('course_ID, course_name, course_duration_hours, modules_count, course_price, for_whom, what_you_learn, what_you_get', 'safe', 'on'=>'search'),
+		);
+	}
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+			'studentsaccesses' => array(self::HAS_MANY, 'Studentsaccess', 'courseID'),
+		);
+	}
 
-    /**
-     * @return array customized attribute labels (name=>label)
-     */
-    public function attributeLabels()
-    {
-        return array(
-            'course_ID' => 'Course',
-            'course_name' => 'Course Name',
-            'course_duration_hours' => 'Course Duration Hours',
-            'modules_count' => 'Modules Count',
-            'course_price' => 'Course Price',
-            'for_whom' => 'For Whom',
-            'what_you_learn' => 'What You Learn',
-            'what_you_get' => 'What You Get',
-        );
-    }
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'course_ID' => 'Course',
+			'course_name' => 'Course Name',
+			'course_duration_hours' => 'Course Duration Hours',
+			'modules_count' => 'Modules Count',
+			'course_price' => 'Course Price',
+			'for_whom' => 'For Whom',
+			'what_you_learn' => 'What You Learn',
+			'what_you_get' => 'What You Get',
+		);
+	}
 
-    /**
-     * Retrieves a list of models based on the current search/filter conditions.
-     *
-     * Typical usecase:
-     * - Initialize the model fields with values from filter form.
-     * - Execute this method to get CActiveDataProvider instance which will filter
-     * models according to data in model fields.
-     * - Pass data provider to CGridView, CListView or any similar widget.
-     *
-     * @return CActiveDataProvider the data provider that can return the models
-     * based on the search/filter conditions.
-     */
-    public function search()
-    {
-        // @todo Please modify the following code to remove attributes that should not be searched.
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
 
-        $criteria=new CDbCriteria;
+		$criteria=new CDbCriteria;
 
-        $criteria->compare('course_ID',$this->course_ID);
-        $criteria->compare('course_name',$this->course_name,true);
-        $criteria->compare('course_duration_hours',$this->course_duration_hours);
-        $criteria->compare('modules_count',$this->modules_count);
-        $criteria->compare('course_price',$this->course_price,true);
-        $criteria->compare('for_whom',$this->for_whom,true);
-        $criteria->compare('what_you_learn',$this->what_you_learn,true);
-        $criteria->compare('what_you_get',$this->what_you_get,true);
+		$criteria->compare('course_ID',$this->course_ID);
+		$criteria->compare('course_name',$this->course_name,true);
+		$criteria->compare('course_duration_hours',$this->course_duration_hours);
+		$criteria->compare('modules_count',$this->modules_count);
+		$criteria->compare('course_price',$this->course_price,true);
+		$criteria->compare('for_whom',$this->for_whom,true);
+		$criteria->compare('what_you_learn',$this->what_you_learn,true);
+		$criteria->compare('what_you_get',$this->what_you_get,true);
 
-        return new CActiveDataProvider($this, array(
-            'criteria'=>$criteria,
-        ));
-    }
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
 
-    /**
-     * Returns the static model of the specified AR class.
-     * Please note that you should have this exact method in all your CActiveRecord descendants!
-     * @param string $className active record class name.
-     * @return Course the static model class
-     */
-    public static function model($className=__CLASS__)
-    {
-        return parent::model($className);
-    }
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return Course the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
 
-    public function getHoursTermination ($num)
-    {
-        //Оставляем две последние цифры от $num
-        $number = substr($num, -2);
+	public function getHoursTermination ($num)
+	{
+		//Оставляем две последние цифры от $num
+		$number = substr($num, -2);
 
-        //Если 2 последние цифры входят в диапазон от 11 до 14
-        //Тогда подставляем окончание "ЕВ"
-        if($number > 10 and $number < 15)
-        {
-            $term = "";
-        }
-        else
-        {
+		//Если 2 последние цифры входят в диапазон от 11 до 14
+		//Тогда подставляем окончание "ЕВ"
+		if($number > 10 and $number < 15)
+		{
+			$term = "";
+		}
+		else
+		{
 
-            $number = substr($number, -1);
+			$number = substr($number, -1);
 
-            if($number == 0) {$term = "";}
-            if($number == 1 ) {$term = "а";}
-            if($number > 1 ) {$term = "и";}
-            if($number > 4 ) {$term = "";}
-        }
+			if($number == 0) {$term = "";}
+			if($number == 1 ) {$term = "а";}
+			if($number > 1 ) {$term = "и";}
+			if($number > 4 ) {$term = "";}
+		}
 
-        echo  ' годин'.$term;
-    }
-    public function getModulesTermination ($num)
-    {
-        //Оставляем две последние цифры от $num
-        $number = substr($num, -2);
+		echo  ' годин'.$term;
+	}
+	public function getModulesTermination ($num)
+	{
+		//Оставляем две последние цифры от $num
+		$number = substr($num, -2);
 
-        //Если 2 последние цифры входят в диапазон от 11 до 14
-        //Тогда подставляем окончание "ЕВ"
-        if($number > 10 and $number < 15)
-        {
-            $term = "ів";
-        }
-        else
-        {
+		//Если 2 последние цифры входят в диапазон от 11 до 14
+		//Тогда подставляем окончание "ЕВ"
+		if($number > 10 and $number < 15)
+		{
+			$term = "ів";
+		}
+		else
+		{
 
-            $number = substr($number, -1);
+			$number = substr($number, -1);
 
-            if($number == 0) {$term = "ів";}
-            if($number == 1 ) {$term = "ь";}
-            if($number > 1 ) {$term = "я";}
-            if($number > 4 ) {$term = "ів";}
-        }
+			if($number == 0) {$term = "ів";}
+			if($number == 1 ) {$term = "ь";}
+			if($number > 1 ) {$term = "я";}
+			if($number > 4 ) {$term = "ів";}
+		}
 
-        echo  ' модул'.$term;
-    }
+		echo  ' модул'.$term;
+	}
 }

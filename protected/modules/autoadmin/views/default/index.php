@@ -1,4 +1,5 @@
 <?php
+
 $this->pageTitle = 'Адмінка - головна';
 
 $this->breadcrumbs=array(
@@ -20,20 +21,18 @@ $this->breadcrumbs=array(
 <h2>Про нас</h2>
 <ul>
 	<li><a href="./aboutus/blockextended/">Блоки</a></li>
-
 </ul>
 
 <h2>Викладачі</h2>
 <ul>
-	<li><a href="www.google.com.ua">Викладачі</a></li>
-
+	<li><a href="./teachers/page/">Параметри сторінки <Наші викладачі></a></li>
+	<li><a href="./teachers/list/">Список викладачів</a></li>
 </ul>
 
 <h2>Реєстрація</h2>
 <ul>
 	<li><a href="./mainpage/form/">Форма швидкої реєстрації на головній</a></li>
 	<li><a href="./register/extended/">Розширена реєстрація</a></li>
-
 </ul>
 
 <br clear="both"/>

@@ -1,7 +1,6 @@
 /**
- * Created by Wizlight on 18.03.2015.
+ Вспливає меню справа при скролі уроку
  */
-/*Сайдбар справа уроку, зявляється і зникає, містить інформацію про заняття і меменджери*/
 $(function() {
     var sideBarHeight =document.getElementById('titlesBlock').getBoundingClientRect().bottom - document.getElementById('titlesBlock').getBoundingClientRect().top+100;
     var mainBlockCoord =$(window).scrollTop()+document.getElementById('titlesBlock').getBoundingClientRect().bottom;

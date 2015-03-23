@@ -1,15 +1,17 @@
 <html>
 <head>
-<link type="text/css" rel="stylesheet" href="courses.css" />
+
 </head>
 <body>
 <?php
+$this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
-    'Course',
+	'Курси',
 );
 
 	class Course 
 	{
+	    public $courseLang="Мова курсу:";
 		public $courseImage;
 		public $courseName;
 		public $courseLevel;
@@ -19,14 +21,14 @@ $this->breadcrumbs=array(
 		public $coursesHeader='Наші курси';
 		public $courseLevelTitle='Рівень курсу:  ';
 		public $coursesTextHeader='Концепція підготовки';
-		public $coursesTextFooter="<td  valign='top'><div class='coursesTextFooterBlock1'>Спочатку навчання створюється стійкий фундамент для підготовки програмістів: 
+		public $coursesTextFooter="Спочатку навчання створюється стійкий фундамент для підготовки програмістів: 
 		необхідні знання елементарної математики, будови комп’ютера і основ інформатики.
 		<p>Потім вивчаються основні принципи програмування на базі класичних комп'ютерних наук і методологій: алгоритмічна мова; 
-		лементи вищої та дискретної математики і комбінаторики; структури даних, розробка і аналіз алгоритмів.</div></td>
-		<td  valign='top'><div class='coursesTextFooterBlock2'>
+		лементи вищої та дискретної математики і комбінаторики; структури даних, розробка і аналіз алгоритмів.
+		<p>
 		Після чого формується база для переходу до сучасних технологій програмування: об’єктно-орієнтоване програмування; проектування баз даних.
 		<p>Завершення процесу підготовки шляхом конкретного застосування отриманих знань на реальних проектах із засвоєнням сучасних методів і технологій, 
-		які використовуються в ІТ індустрії компаніями.</div></td>";
+		які використовуються в ІТ індустрії компаніями.";
 		
 		function Course ( $courseImage,$courseName,$courseLevel,$courseNumberofModules,$courseReview)
 		{
@@ -69,6 +71,17 @@ $this->breadcrumbs=array(
 <table>
 <tr><td  valign="top">
 <div id='coursesPart1'>
+		<div class='courseBox'>
+    		<img src='<?php echo $course11->courseImage; ?>'>
+            <div class='courseName'>
+            <?php echo $course1->coursesTextHeader; ?>
+    		</div>
+    		        <span class='courseText'>
+
+	<?php echo $course1->coursesTextFooter; ?>
+    		</span>
+        </div>
+
 	<?php
 	foreach ($coursesArray1 as $val)   
 	{
@@ -101,6 +114,19 @@ $this->breadcrumbs=array(
 			?>
 			</div>
 		</div>
+        <div class="courseLang">
+        <?php echo $val->courseLang; ?>
+            <div id="coursesLang" class="down">
+                <form action="" method="post" onsubmit="" name="fff">
+                    <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
+        
+                    <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'EN'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
+        
+                    <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'RU'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
+        
+                </form>
+            </div>
+        </div>
 		<span class='courseText'><?php
 		echo $val->courseReview;
 		?>
@@ -144,6 +170,19 @@ $this->breadcrumbs=array(
 			?>
 			</div>
 		</div>
+        <div class="courseLang">
+        <?php echo $val->courseLang; ?>
+            <div id="coursesLang" class="down">
+                <form action="" method="post" onsubmit="" name="fff">
+                    <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
+        
+                    <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'EN'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
+        
+                    <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'RU'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
+        
+                </form>
+            </div>
+        </div>
 		<span class='courseText'><?php
 		echo $val->courseReview;
 		?>
@@ -156,17 +195,23 @@ $this->breadcrumbs=array(
 </td>
 </tr>
 </table>
-<table>
-<tr>
-	<div id='coursesHeader'>
-	<?php echo $course1->coursesTextHeader; ?>
-	</div>
-</tr>
-<tr>
-	<?php echo $course1->coursesTextFooter; ?>
-</tr>	
-</table>
+
 </div><! main box>
+
+<script>
+    function changeLang(n){
+        for (var i=0; i< n.form.length; i++){
+            if(n.form.elements[i].id !== n.id){
+                console.log(n.form.elements[i].id);
+                document.getElementById(n.form.elements[i].id).disabled = false;
+                document.getElementById(n.form.elements[i].id).className = "";
+            }
+
+
+
+		}
+	}
+ </script>
 
 </body>
 </html>

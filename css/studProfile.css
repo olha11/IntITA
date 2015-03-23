@@ -43,7 +43,6 @@ div.profileStatus{
     line-height: 110%;
     color:#4b75a4;
 }
-
 /* ˳�� �����*/
 .studProf{
     display:inline-block;
@@ -66,7 +65,7 @@ table.profileInfo {
     margin: 10px 10px 80px 22px;
 }
 .row,.rowDate,.rowPhone {
-	margin-bottom: 7px;
+    margin-bottom: 7px;
 }
 .rowPass {
     margin-top: 28px;
@@ -95,7 +94,6 @@ table.profileInfo {
     border: 1px solid #d8d8d8;
     border-radius: 5px;
 }
-
 .studProf textarea
 {
     border: 1px solid #d8d8d8;
@@ -138,7 +136,6 @@ table.profileInfo {
 {
     box-shadow:0 0 3px #ffffff;
 }
-
 /* ����� �����*/
 .studPhoto{
     display:inline-block;
@@ -153,7 +150,7 @@ table.profileInfo {
     float: right;
     width: 59%;
 }
-img.avatarimg  {
+img.avatarimg {
     display: inline-block;
     width:176px;
     margin: 0 0 0 0;
@@ -201,8 +198,7 @@ table.titleProfileAv{
     box-shadow:0px 2px 0px #7f7f7f;
     font-size: medium;
 }
-
-.formStudProf input[type="button"]:hover  {
+.formStudProf input[type="button"]:hover {
     background: #454545;
     cursor: pointer;
 }
@@ -214,7 +210,7 @@ table.titleProfileAv{
 .studPhoto input[type="submit"], .profileActivity input[type="submit"] {
     margin:10px 0px 0px 22px;
 }
-.photoButton  input[type="submit"] {
+.photoButton input[type="submit"] {
     margin:10px 0px 30px 22px;
 }
 #avatarHelp{
@@ -226,7 +222,7 @@ table.titleProfileAv{
 #avatarInfo{
     color:#666666;
     margin:0 0 140px 0;
-	height:20px;
+    height:20px;
 }
 #photoForm {
     margin-top:10px;
@@ -236,11 +232,10 @@ table.titleProfileAv{
     overflow: hidden;
     position: relative;
     width: 176px;
-	height:45px;
+    height:45px;
     margin-top: 22px;
     margin-bottom: -5px;
 }
-
 .fileform .uploadAvatar {
     position:absolute;
     top:0;
@@ -251,7 +246,7 @@ table.titleProfileAv{
     opacity: 0;
     height: 40px;
     z-index:1;
-	cursor: pointer;
+    cursor: pointer;
 }
 input[type="file"].chooseAvatar{
     position:absolute;
@@ -263,7 +258,6 @@ input[type="button"].avatar,input[type="submit"].avatar{
     z-index:2;
     left:0;
 }
-
 span.required
 {
     color:red;
@@ -271,14 +265,13 @@ span.required
 span.interestBG{
     background-color: #edf1f6;
     margin-right: 5px;
-
     border-radius: 5px;
 }
 .formStudProf .errorMessage
 {
     margin-left: 180px;
-	color: red;
-	font-size: 0.9em;
+    color: red;
+    font-size: 0.9em;
 }
 .avatarError
 {
@@ -290,7 +283,6 @@ label.avatarInfo{
     color:#4b75a4;
     margin-left:30px;
 }
-
 .formStudProf td, .subViewLessons td {
     vertical-align: top;
 }
@@ -304,7 +296,6 @@ label.avatarInfo{
 span.colorP {
     color: #4b75a4;
 }
-
 /*TABS*/
 /* стили секций с содержанием */
 .profileActivity section {
@@ -369,7 +360,6 @@ label.tabsUp1,label.tabsDown1{
     display: block;
 }
 /*TABS*/
-
 /*My Course*/
 #myCourse div{
     border-bottom:1px solid #d8d8d8;
@@ -413,7 +403,6 @@ p.courseLevLang{
     color: #666666;
 }
 /*My Course*/
-
 /*Form style*/
 #mylettersSend {
     padding-top: 50px;
@@ -449,7 +438,6 @@ p.courseLevLang{
     margin:16px 0px 32px 325px;
 }
 /*Form style*/
-
 /* PassEye */
 .passEye {
     position:relative;display:inline-block;

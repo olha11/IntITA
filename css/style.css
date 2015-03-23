@@ -22,14 +22,16 @@ p {
 
 /*************languages buttons*************/
 #lang {
+    width:150px;
     z-index: 6;
-    margin-left: 1034px;
-    margin-top: -102px;
+    left:50%;
+    margin-left: 402px;
+    margin-top: -84px;
     position: fixed;
 }
 #lang.down {
-    margin-top: -45px;
-    margin-left: 1141px;
+    margin-top: -40px;
+    margin-left: 500px;
 }
 #lang #en {
     border-left: 1px solid #999999;
@@ -40,7 +42,6 @@ p {
 #lang button{
     background:none!important;
     border:none;
-
     cursor: pointer;
     color: #4b70a3;
     font-size: 18px;
@@ -64,7 +65,7 @@ p {
     z-index: 5;
 }
 #navigation.down {
-    height: 55px;
+    height: 68px;
 }
 
 #navigation ul {
@@ -72,9 +73,8 @@ p {
     margin-top: 65px;
 }
 #navigation.down ul {
-    margin-top: 13px;
+    margin-top: 22px;
 }
-
 #navigation li {
     display:inline;
     padding: 10px;
@@ -89,7 +89,6 @@ p {
 #navigation ul a:hover{
     color: #003399;
 }
-
 #logo_img{
     float: left;
     margin-top: 13px;
@@ -99,7 +98,7 @@ p {
     max-height: 75px;
 }
 #logo_img.down {
-    margin-top: 5px;
+    margin-top: 12px;
 }
 #logo_img.down img {
     max-height: 46px;
@@ -145,7 +144,7 @@ p {
     background: #363636;
 }
 #enter_button.down {
-    margin-top: 9px;
+    margin-top: 18px;
 }
 #enter_button.down:hover{
     background: #454545;
@@ -154,7 +153,6 @@ p {
 /************************************/
 
 /************navigation-bottom***********/
-
 #footer{
     margin-top: 30px;
     margin-bottom: 20px;
@@ -167,20 +165,18 @@ p {
     float: left;
     height: 90px;
 }
-
 .footer {
     border-left: 1px solid #33ccff;
     padding-left: 15px;
     color: #003399;
 }
 #footer ul {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 #footer li {
     display:inline;
     padding: 8px;
 }
-
 #footer li a {
     text-decoration:none;
     font-family: "MyriadPro";
@@ -190,13 +186,11 @@ p {
 #footer li a:hover{
     color: #666666;
 }
-
 #footer p{
     margin-top: 10px;
     font-size: 13px;
     color: #003399;
 }
-
 /****************************************/
 
 
@@ -212,11 +206,9 @@ p {
     margin-right:auto;
     border:none;
     z-index: 2;
-
 }
 #fon{
     z-index: 0;
-
 }
 .textFon{
     position:absolute;
@@ -237,7 +229,6 @@ p {
     height:428px;
     margin-top:145px;
     margin-left:408px;
-
 }
 .zagolovok
 {
@@ -256,8 +247,6 @@ p {
     height:110px;
     margin-left:50px;
     margin-top:50px;
-
-
 }
 .email1{
     float:left;
@@ -281,20 +270,19 @@ p {
     font:22px Arial, Helvetica, sans-serif;
     color:black;
     font-size: 16pt;
-
 }
-.email1:hover {  /* при наведении курсора мышки */
+.email1:hover { /* при наведении курсора мышки */
     box-shadow: 0 0 0 1px #7eb4ea inset, 0 1px 2px rgba(0,0,0,.2) inset;
 }
-.email1:focus {  /* при фокусе, когда поле input активно */
+.email1:focus { /* при фокусе, когда поле input активно */
     outline: none;
     box-shadow: 0 0 0 1px #7eb4ea inset, 0 1px 2px rgba(0,0,0,.2) inset, 0 0 10px rgba(35,146,243,.5);
     transition: .2s linear;
 }
-.password1:hover {  /* при наведении курсора мышки */
+.password1:hover { /* при наведении курсора мышки */
     box-shadow: 0 0 0 1px #7eb4ea inset, 0 1px 2px rgba(0,0,0,.2) inset;
 }
-.password1:focus {  /* при фокусе, когда поле input активно */
+.password1:focus { /* при фокусе, когда поле input активно */
     outline: none;
     box-shadow: 0 0 0 1px #7eb4ea inset, 0 1px 2px rgba(0,0,0,.2) inset, 0 0 10px rgba(35,146,243,.5);
     transition: .2s linear;
@@ -313,7 +301,7 @@ p {
     color:#4b75a4;
     text-decoration:none;
 }
-.extendedRegistration a:hover {  /* при наведении курсора мышки */
+.extendedRegistration a:hover { /* при наведении курсора мышки */
     outline: none;
     color:#114988;
     transition: .2s linear;
@@ -328,8 +316,8 @@ p {
     background:#4b75a4;
     margin-bottom: 30px;
     box-shadow:0px 2px 0px #7f7f7f;
-    font: normal     400 28px/50px "MyriadPro";
-    font-size:       25px;
+    font: normal 400 28px/50px "MyriadPro";
+    font-size: 25px;
     letter-spacing:1px;
     margin-left: 177px;
     margin-top: 15px;
@@ -341,8 +329,7 @@ input[type="submit"]::-moz-focus-inner { /* убираем внутренний 
     padding:0;
     border:0;
 }
-
-.button1:hover {  /* при наведении курсора мышки */
+.button1:hover { /* при наведении курсора мышки */
     background: #454545;
     cursor: pointer;
 }
@@ -445,6 +432,6 @@ input[type="submit"]::-moz-focus-inner { /* убираем внутренний 
     color: #666666;
 }
 .my-cool-breadcrumbs a:visited{
-                     color: #666666;
-                 }
+    color: #666666;
+}
 /* breadcrumbs */

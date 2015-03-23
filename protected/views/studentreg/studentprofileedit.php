@@ -9,39 +9,31 @@
         font-size: 18px;
         letter-spacing:1px;
         padding-right: 20px;
-        text-shadow:1px 2px 1px rgba(0,0,0,.5);
+        text-shadow:1px 1px 1px rgba(0,0,0,.5);
         background:#4b75a4;
         background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
         background-repeat: no-repeat;
-        background-position: 134px 14px;
-    }
-    .formStudProf input[type="submit"], x:-moz-any-link {
-        background-position: 134px 15px;
+        background-position: 132px 14px;
     }
     .formStudProf input[type="submit"]:hover {
         background: #454545;
         background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
         background-repeat: no-repeat;
-        background-position: 134px 14px;
+        background-position: 132px 14px;
         cursor: pointer;
     }
-    .formStudProf input[type="submit"]:hover, x:-moz-any-link {
-        background-position: 134px 15px;
+    input[type="submit"]::-moz-focus-inner { /* убираем внутренний отступ у кнопки в FF, который зарезервирован для рамки при фокусе */
+        padding:0;
+        border:0;
     }
 </style>
-<?php
-/* @var $this StudentRegController */
-/* @var $model StudentReg */
-/* @var $form CActiveForm */
-?>
-
-
 <?php
 /* @var $this StudentregController */
 /* @var $model studentreg */
 /* @var $form CActiveForm */
 ?>
 <?php
+$this->pageTitle = 'INTITA';
 $post=StudentReg::model()->findByPk(1);
 ?>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.js"></script>
@@ -49,9 +41,7 @@ $post=StudentReg::model()->findByPk(1);
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.date.extensions.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.numeric.extensions.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.custom.extensions.js"></script>
-
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/mask.js"></script>
-
 <div class="formStudProfNav">
     <?php
     $this->breadcrumbs=array(
@@ -63,7 +53,7 @@ $post=StudentReg::model()->findByPk(1);
             <?php echo $post->firstName;?></br>
             <?php echo $post->secondName;?></br>
             <?php echo $post->nickname;?></br>
-         <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
+            <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
         </div>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
     </div>
@@ -72,10 +62,10 @@ $post=StudentReg::model()->findByPk(1);
     <?php $form=$this->beginWidget('CActiveForm', array(
         'id'=>'studentreg-form',
         'action'=> Yii::app()->request->baseUrl.'/?r=studentreg/rewrite',
-        // Please note: When you enable ajax validation, make sure the corresponding
-        // controller action is handling ajax validation correctly.
-        // There is a call to performAjaxValidation() commented in generated controller code.
-        // See class documentation of CActiveForm for details on this.
+// Please note: When you enable ajax validation, make sure the corresponding
+// controller action is handling ajax validation correctly.
+// There is a call to performAjaxValidation() commented in generated controller code.
+// See class documentation of CActiveForm for details on this.
         'enableAjaxValidation'=>false,
         'htmlOptions' => array('enctype' => 'multipart/form-data'),
     )); ?>
@@ -149,7 +139,7 @@ $post=StudentReg::model()->findByPk(1);
         </div>
         <div class="row">
             <?php echo $form->label($model,'password_repeat'); ?>
-            <span class="passEye">  <?php echo $form->passwordField($model,'password_repeat',array('maxlength'=>255)); ?></span>
+            <span class="passEye"> <?php echo $form->passwordField($model,'password_repeat',array('maxlength'=>255)); ?></span>
             <?php echo $form->error($model,'password_repeat'); ?>
         </div>
         <div class="rowbuttons">
@@ -167,7 +157,6 @@ $post=StudentReg::model()->findByPk(1);
                 </td>
             </tr>
         </table>
-
         <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/></br>
         <div class="fileform">
             <input class="avatar" type="button" value="ВИБЕРІТЬ ФАЙЛ">
@@ -185,5 +174,3 @@ $post=StudentReg::model()->findByPk(1);
     <?php $this->endWidget(); ?>
 </div><!-- form -->
 </div>
-
-

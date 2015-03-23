@@ -1,4 +1,5 @@
 <?php
+/*@var $model TeachersTemp*/
 
 class TeachersController extends Controller
 {
@@ -123,8 +124,12 @@ class TeachersController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('TeachersTemp');
+		$page = new Teacherspage(1);
+		$page = $page->setValuesById();
+
 		$this->render('teachers',array(
 			'dataProvider'=>$dataProvider,
+			'page'=>$page,
 		));
 	}
 
