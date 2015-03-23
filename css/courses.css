@@ -58,6 +58,12 @@
 	margin-top:0px;
 	margin-left:150px;
 }
+.courseName a
+{
+    color:#4682B4;
+    font-size:20px;
+    text-decoration: none;
+}
 
 .courseLevelBox
 {
