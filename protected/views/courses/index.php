@@ -1,8 +1,5 @@
-<html>
-<head>
-
-</head>
-<body>
+<!-- courses style -->
+<link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/courses.css" />
 <?php
 $this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(

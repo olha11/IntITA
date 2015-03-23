@@ -1,3 +1,9 @@
+<!-- studprofile style -->
+<link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/studProfile.css" />
+<!-- studprofile style -->
+<!-- uploadInfo, jQuery -->
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/uploadInfo.js"></script>
+<!-- uploadInfo, jQuery -->
 <style type="text/css">
     .passEye .eye {
         background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/passEye.png') no-repeat left 2px;

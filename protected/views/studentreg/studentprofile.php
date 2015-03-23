@@ -1,3 +1,6 @@
+<!-- studprofile style -->
+<link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/studProfile.css" />
+<!-- studprofile style -->
 <?php
 /* @var $this StudentprofileController */
 /* @var $model Studentprofile */
