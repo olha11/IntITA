@@ -198,7 +198,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 <div class="contentCenterBox">
 <div id="beginRegistration">
 </div>
-    <a name="form"></a>
+    <a name="form">
     <div class="fon"style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/fon.png') no-repeat;">
 
         <div class="textFon"><p class="zagolovok"><?php echo $mainpage['formHeader1']; ?></p><p class="zagolovok2"><?php echo $mainpage['formHeader2']; ?></p></div>
