@@ -254,12 +254,12 @@ else
 <div id="footer">
     <div class="main">
         <div style="height: auto; margin-top: 25px;">
-            <a href="http://twitter.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/twitter.png"/></a>
+            <a href="https://twitter.com/INTITA_EDU"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/twitter.png"/></a>
             <a href="http://youtube.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/youtube.png"/></a>
-            <a href="http://google.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/googlePlus.png"/><br/></a>
-            <a href="http://facebook.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/facebook.png"/></a>
+            <a href="https://plus.google.com/u/0/116490432477798418410/posts"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/googlePlus.png"/><br/></a>
+            <a href="https://www.facebook.com/pages/INTITA/320360351410183"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/facebook.png"/></a>
             <a href="http://odnoklasniki.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/odnoklasniki.png"/></a>
-            <a href="http://vk.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/vkontakte.png"/></a>
+            <a href="http://vk.com/intita"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/vkontakte.png"/></a>
         </div>
         <div class="footer">
             <div>

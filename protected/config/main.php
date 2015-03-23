@@ -72,20 +72,18 @@ return array(
 		),
 
 		'urlManager'=>array(
-			//'urlFormat'=>'path',
+			'urlFormat' => 'path',
+			'showScriptName'=>false,
+			'urlSuffix' => '',
 			'rules'=>array(
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 
-				'/<module:autoadmin>' => 'autoadmin/default/index',
-				'/<module:autoadmin>/<controller:\w+>' => 'autoadmin/<controller>/index',
-				'/<module:autoadmin>/<controller:\w+>/<action:\w+>' => 'autoadmin/<controller>/<action>',
-				'/<controller:\w+>/<action:\w+>' => 'autoadmin/<controller>/<action>',
+				''=>array('site/index', 'urlSuffix' => ''),
+				'<action:login|logout|register>' => 'site/<action>',
+				'feed.xml'=>array('blog/post/feed', 'urlSuffix' => ''),
+				'<module:\w+>/<controller:\w+>/<id:\d+>' => '<module>/<controller>/view',
+				'<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
+				'<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
 
-				'<controller:aajax>/<action:\w+>' => 'autoadmin/<controller>/<action>',
-				'<controller:afile>/<action:\w+>' => 'autoadmin/<controller>/<action>',
-				'<controller:\w+>/foreign-<key:\w+>' => 'autoadmin/<controller>/foreign<key>',
 			),
 		),
 
