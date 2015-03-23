@@ -33,18 +33,7 @@ $this->breadcrumbs=array(
 );
 ?>
 <!--Role-->
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.radiolabelRole input[type="radio"]').click(function(){
-            var roles=$(this).val();
-            if(roles=='1'){
-                document.getElementById('rowEducForm').style.display='none';
-            } else {
-                document.getElementById('rowEducForm').style.display='block';
-            }
-        });
-    });
-</script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/rolesReg.js"></script>
 <!--Role-->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.extensions.js"></script>

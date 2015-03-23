@@ -1,5 +1,5 @@
 /**
- * Created by Wizlight on 18.03.2015.
+ Вспливає меню справа при скролі уроку
  */
 $(function() {
     var sideBarHeight =document.getElementById('titlesBlock').getBoundingClientRect().bottom - document.getElementById('titlesBlock').getBoundingClientRect().top+100;

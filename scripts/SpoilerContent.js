@@ -1,5 +1,5 @@
 /**
- * Created by Wizlight on 18.03.2015.
+ Спойлер змісту і іншого контента
  */
 $(document).ready(function(){
     $('.spoilerLinks').click(function(){
