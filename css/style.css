@@ -234,11 +234,13 @@ p {
 {
     font-size:45px;
     margin-bottom:2px;
+    color:#ffffff;
 }
 .zagolovok2
 {
     font-size:25px;
     margin-top:0px;
+    color:#ffffff;
 }
 .email-password{
     width:440px;
@@ -352,9 +354,24 @@ input[type="submit"]::-moz-focus-inner { /* убираем внутренний 
     margin-top:20px;
 }
 /****************registration***********/
+/* Cначала обозначаем стили для IE8 и более старых версий
+т.е. здесь мы немного облагораживаем стандартный чекбокс. */
+#regCheckbox {
+    vertical-align: top;
+    margin: 13px 3px 0 0;
+    width: 15px;
+    height: 15px;
+}
+/* Это для всех браузеров, кроме совсем старых, которые не поддерживают
+селекторы с плюсом. Показываем, что label кликабелен. */
+#regCheckbox + label {
+    cursor: pointer;
+}
+
 /* Далее идет оформление чекбокса в современных браузерах, а также IE9 и выше.
 Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
 в них все нижеследующие стили не сработают. */
+
 /* Прячем оригинальный чекбокс. */
 #regCheckbox:not(checked) {
     position: absolute;

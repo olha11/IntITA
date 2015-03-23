@@ -198,21 +198,21 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 <div class="contentCenterBox">
 <div id="beginRegistration">
 </div>
-    <a name="form">
+    <a name="form"></a>
     <div class="fon"style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/fon.png') no-repeat;">
 
         <div class="textFon"><p class="zagolovok"><?php echo $mainpage['formHeader1']; ?></p><p class="zagolovok2"><?php echo $mainpage['formHeader2']; ?></p></div>
         <div class="formFon"style=" background:url('<?php echo $mainpage['formFon']; ?>');">
               <div class="email-password">
                 <form method = "POST"  action="<?php echo Yii::app()->createUrl('site/submitForm');?>">
-                    <input type="email" value="" name="email" class="email1" placeholder="E-mail" />
-                    <span class="passEye"><input type="password" value="" name="password" class="password1" placeholder="password"/></span><br>
-                    <input type="checkbox" value="" name="isExtended"/> <?php echo $mainpage['regText']; ?>
+                    <input type="email" value="" name="email" class="email1" placeholder="Електронна пошта" />
+                    <span class="passEye"><input type="password" value="" name="password" class="password1" placeholder="Пароль"/></span><br>
+                    <input type="checkbox" id="regCheckbox" value="" name="isExtended"/><label for="regCheckbox"><?php echo $mainpage['regText']; ?></label>
             </div>
             <br>
             <br>
             <div class="button">
-                <input type="submit" value="<?php echo $mainpage['formButtonStart']; ?>" name="button" class="button1"/>
+                <input type="submit" name="button" class="button1" style="background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png'); background-repeat: no-repeat; background-position: 144px 17px;" value="<?php echo $mainpage['formButtonStart']; ?>"/>
                 </form>
             </div>
             <div class="lineForm"><hr color="#4b75a4" size="1px"></div>
