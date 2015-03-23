@@ -215,8 +215,11 @@ class User extends CActiveRecord
 
 	}
 
-	public function createUser(){
-
+	public function isUserRegistered($email, $password){
+		if (User::model()->findByAttributes(array('userEmail'=>$email, 'userPassword'=>$password))){
+			return true;
+		}
+		return false;
 	}
 
 }

@@ -76,7 +76,6 @@
                 <img id="logo" src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png"/>
             </a>
         </div>
-
         <ul>
             <li><a href="<?php echo $this->link1; ?>"><?php echo $this->menu1; ?></a></li>
             <li><a href="<?php echo $this->link2; ?>"><?php echo $this->menu2; ?></a></li>
@@ -128,9 +127,7 @@
         </form>
     </div>
 </div>
-<div id="button_border">
 </div>
-<a id="enter_button" href="#form"><?php echo $this->buttonText; ?></a>
 
 <div id="hamburgerMainBox">
 	<div id="hamburgerSubBox">
@@ -177,6 +174,12 @@ if (self.screen)
 	width = screen.width
 }
 
+if (width>80)
+{
+	$('#hamburgerNavigation').css('display', 'none');
+	$('#contentBoxMain').css('margin-top', '-1000px');
+	$('#navigation').css('display', 'block');
+	$('#centerEnterButton').css('display', 'block');
     var key = document.getElementById('enter_button');
     var nav = document.getElementById('navigation');
     var logo = document.getElementById('logo_img');

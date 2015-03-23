@@ -1,21 +1,75 @@
+<body onload="centerPage()">
+
 <?php
 /* @var $this SiteController */
 ?>
+<script>
+var width=0;
+if (self.screen)
+{
+	width = screen.width
+}
+function centerPage()   
+{
+    $('.contentCenterBox').css('width', width); 
+    $('.contentCenterBox').css('left', "50%");
+    $('.contentCenterBox').css('margin-left', -width/2);  
+}
+    var key = document.getElementById('enter_button');
+    var nav = document.getElementById('navigation');
+    var logo = document.getElementById('logo_img');
+    var border = document.getElementById('button_border');
+    var lang = document.getElementById('lang');
 
-<img id="sliderTexture" src="<?php echo $mainpage['sliderTexture']; ?>">
+    key.className = "";
+    nav.className = "";
+    logo.className = "";
+    border.className = "";
+    lang.className = "";
+    document.getElementById('logo').src="<?php echo $this->logoURL; ?>";
+
+    window.onscroll = function() {
+        var pageY = window.pageYOffset || document.documentElement.scrollTop;
+        if (pageY >= key.offsetHeight) {
+            document.getElementById('logo').src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png";
+            key.className = "down";
+            logo.className = "down";
+            nav.className = "down";
+            border.className = "down";
+            lang.className = "down";
+        } else {
+            document.getElementById('logo').src="<?php echo $this->logoURL; ?>";
+            border.className = "";
+            key.className = "";
+            logo.className = "";
+            nav.className = "";
+            lang.className = "";
+        }
+    }
+</script>
+
+<div id="sliderCenterBox">
 <div class="insideSlider">
+<div id="beginButtonCenter">
     <div class="lineAndButton">
         <img class="sliderLine" src="<?php echo $mainpage['sliderLine']; ?>">
-        <a class="sliderButton" href="#form"><?php echo $mainpage['buttonStart']; ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/> </a>
+        <a class="sliderButton" href="#beginRegistration"><?php echo $mainpage['buttonStart']; ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/> </a>
     </div>
+</div>
+
     <div class="sliderText">
         <?php echo $mainpage['sliderHeader']; ?><br>
         <div class="sliderTextJr">
-            _____<br><br>
+            <br/>
+            <hr style="border: 1px solid #ffffff; width: 100px;">
             <?php echo $mainpage['sliderText']; ?>
         </div>
     </div>
+
 </div>
+</div>
+
+
 
 <div id="slider" class="owl-carousel owl-theme">
     <div class="item"><img src="<?php echo $slider1; ?>"></div>
@@ -32,7 +86,7 @@ $subLineImage = $mainpage['subLineImage'];
 $linkName = $mainpage['linkName'];
 $massAbout=array($block1,$block2,$block3);
 ?>
-
+<div class="contentCenterBox"> 
 <div class="mainAbout">
     <div class="header">
         <?php echo $headerText; ?>
@@ -74,6 +128,7 @@ $massAbout=array($block1,$block2,$block3);
     }
     ?>
 
+</div>
 </div>
 <! Ініціалізація екземплярів класу>
 <?php
@@ -122,8 +177,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 		 ?>
 		 <div class="stepRight" style="width:<?php echo $stepSize; ?>" >
 					<div class="stepUrl">
-                        <img class="grid" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/grid.png">
-        		   		<img src="<?php echo $stepValue->stepImage; ?>">
+        		   		 <img src="<?php echo $stepValue->stepImage; ?>">
         		    </div>
 					<div class="line">
                     </div>
@@ -132,7 +186,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
 						<p class="stepName"><?php echo $stepValue->stepName; ?></p>
 					</div>
-        			<div class="stepInfo" style="min-height:<?php echo $stepSize*0.229 . 'px';?> ">
+        			<div class="stepInfo">
           				  <h2><?php echo $stepValue->stepTitle; ?></h2>
               			  <p><?php echo $stepValue->stepText; ?></p>
           			</div>
@@ -141,25 +195,30 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 	    }
 	}
 ?>
-    <a name="form">
+<div class="contentCenterBox">
+<div id="beginRegistration">
+</div>
+    <a name="form"></a>
     <div class="fon"style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/fon.png') no-repeat;">
+
         <div class="textFon"><p class="zagolovok"><?php echo $mainpage['formHeader1']; ?></p><p class="zagolovok2"><?php echo $mainpage['formHeader2']; ?></p></div>
         <div class="formFon"style=" background:url('<?php echo $mainpage['formFon']; ?>');">
-            <div class="email-password">
-                <form method = "POST" action="<?php echo Yii::app()->createUrl('site/submitForm');?>">
-                    <input type="email" value="" name="email" class="email1" placeholder="E-mail" />
-                    <input type="password" value="" name="password" class="password1" placeholder="password"/><br>
-                    <input type="checkbox" value="" name="isExtended"/> <?php echo $mainpage['regText']; ?>
+              <div class="email-password">
+                <form method = "POST"  action="<?php echo Yii::app()->createUrl('site/submitForm');?>">
+                    <input type="email" value="" name="email" class="email1" placeholder="Електронна пошта" />
+                    <span class="passEye"><input type="password" value="" name="password" class="password1" placeholder="Пароль"/></span><br>
+                    <input type="checkbox" id="regCheckbox" value="" name="isExtended"/><label for="regCheckbox"><?php echo $mainpage['regText']; ?></label>
             </div>
             <br>
             <br>
             <div class="button">
-                <input type="submit" value="<?php echo $mainpage['formButtonStart']; ?>" name="button" class="button1"/>
+                <input type="submit" name="button" class="button1" style="background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png'); background-repeat: no-repeat; background-position: 144px 17px;" value="<?php echo $mainpage['formButtonStart']; ?>"/>
                 </form>
             </div>
             <div class="lineForm"><hr color="#4b75a4" size="1px"></div>
             <div class="social"><?php echo $mainpage['socialText']; ?></div>
-            <div class="image" > <img name="networking" src="<?php echo $mainpage['imageNetwork']; ?>" width="410" height="50" border="0" id="networking" usemap="#m_networking" alt="" /><map name="m_networking" id="m_networking">
+            <div class="image" > <img name="networking" src="<?php echo $mainpage['imageNetwork']; ?>" width="410" height="50" border="0" id="networking" usemap="#m_networking" alt="" />
+                <map name="m_networking" id="m_networking">
                     <area shape="circle" coords="354,26, 20" href="javascript:" title="instagram" />
                     <area shape="circle" coords="309,26, 21" href="javascript:" title="Rubka" />
                     <area shape="circle" coords="262,27, 20" href="javascript:" title="Вконтакте" />
@@ -168,8 +227,15 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
                     <area shape="circle" coords="121,26, 21" href="javascript:" title="Google +" />
                     <area shape="circle" coords="74,26, 20" href="javascript:" title="facebook" />
                     <area shape="circle" coords="27,25, 21" href="javascript:" title="twitter" />
-                </map></div>
+                </map>
+            </div>
         </div>
+
     </div>
+
+</a>
+</div>
+</body>
+    
 
 

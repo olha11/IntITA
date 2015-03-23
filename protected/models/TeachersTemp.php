@@ -14,7 +14,11 @@
  * @property string $profile_text_big
  * @property string $profile_text
  * @property string $readMoreLink
- * @property string $pathImages
+ * @property string $email
+ * @property string $tel
+ * @property string $skype
+ * @property string $title
+ * @property string $linkName
  */
 class TeachersTemp extends CActiveRecord
 {
@@ -46,14 +50,15 @@ class TeachersTemp extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('lang, first_name, middle_name, last_name, foto_url, subjects, profile_text_big, profile_text, readMoreLink, pathImages', 'required'),
+			array('lang, first_name, middle_name, last_name, foto_url, subjects, profile_text_big, profile_text, readMoreLink, email, tel, skype, title, linkName', 'required'),
 			array('lang', 'length', 'max'=>6),
 			array('first_name, middle_name, last_name', 'length', 'max'=>35),
-			array('foto_url, subjects', 'length', 'max'=>100),
-			array('readMoreLink, pathImages', 'length', 'max'=>255),
+			array('foto_url, subjects, tel', 'length', 'max'=>100),
+			array('readMoreLink', 'length', 'max'=>255),
+			array('email, skype, title, linkName', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('teacher_id, lang, first_name, middle_name, last_name, foto_url, subjects, profile_text_big, profile_text, readMoreLink, pathImages', 'safe', 'on'=>'search'),
+			array('teacher_id, lang, first_name, middle_name, last_name, foto_url, subjects, profile_text_big, profile_text, readMoreLink, email, tel, skype, title, linkName', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -84,7 +89,11 @@ class TeachersTemp extends CActiveRecord
 			'profile_text_big' => 'Profile Text Big',
 			'profile_text' => 'Profile Text',
 			'readMoreLink' => 'Read More Link',
-			'pathImages' => 'Path Images',
+			'email' => 'Email',
+			'tel' => 'Tel',
+			'skype' => 'Skype',
+			'title' => 'Title',
+			'linkName' => 'Link Name',
 		);
 	}
 
@@ -116,7 +125,11 @@ class TeachersTemp extends CActiveRecord
 		$criteria->compare('profile_text_big',$this->profile_text_big,true);
 		$criteria->compare('profile_text',$this->profile_text,true);
 		$criteria->compare('readMoreLink',$this->readMoreLink,true);
-		$criteria->compare('pathImages',$this->pathImages,true);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('tel',$this->tel,true);
+		$criteria->compare('skype',$this->skype,true);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('linkName',$this->linkName,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -69,14 +69,16 @@ $lecture3->lectureIconImage=Yii::app()->request->baseUrl.'/css/images/medalIcoFa
 
 
 //Oblect Teacher, you can use designer
-$teacherIvanov=new LessonTeacher();
+$teacher=new TeachersTemp();
 
-$teacherIvanov->teacherImage=Yii::app()->request->baseUrl.'/css/images/teacherImage.png';
-$teacherIvanov->teacherName='Іванов Іванов ВгадайПоБатькові';
-$teacherIvanov->teacherEmails='ivanov@intita.org, ivanov@gmail.com';
-$teacherIvanov->teacherPhoneNumbers='/067/56-569-56, /093/26-45-65';
-$teacherIvanov->teacherSkype='ivanov.ivanov';
-$teacherIvanov->linkAdress='https://www.google.com.ua/';
+$teacher->foto_url=Yii::app()->request->baseUrl.'/css/images/teacherImage.png';
+$teacher->first_name='Іванов Іванов ВгадайПоБатькові';
+$teacher->email='ivanov@intita.org, ivanov@gmail.com';
+$teacher->tel='/067/56-569-56, /093/26-45-65';
+$teacher->skype='ivanov.ivanov';
+$teacher->readMoreLink='https://www.google.com.ua/';
+$teacher->title = 'Викладач';
+$teacher->linkName = 'детальніше';
 
 ?>
 
@@ -132,30 +134,30 @@ $teacherIvanov->linkAdress='https://www.google.com.ua/';
     <!-- Print Class Teacher -->
 
     <div class="teacherBlock">
-        <img src="<?php echo $teacherIvanov->teacherImage; ?>">
-        <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">персональна сторінка &#187;</a>
+        <img src="<?php echo $teacher->foto_url; ?>">
+        <a href="<?php echo Yii::app()->request->baseUrl.$teacher->readMoreLink; ?>">персональна сторінка &#187;</a>
                 <span>
                 <ul>
                     <li> <div class="teacherTitle">
-                            <?php echo $teacherIvanov->teacherTitle; ?></div>
+                            <?php echo $teacher->title; ?></div>
                     </li>
                     <li>
-                        <?php echo $teacherIvanov->teacherName;?>
+                        <?php echo $teacher->first_name;?>
                     </li>
                     <li>
-                        <?php echo $teacherIvanov->teacherEmails; ?>
+                        <?php echo $teacher->email; ?>
                     </li>
                     <li>
-                        <?php echo $teacherIvanov->teacherPhoneNumbers; ?>
+                        <?php echo $teacher->tel; ?>
                     </li>
                     <li>
 
-                        <?php echo 'skype: '?><div id="teacherSkype"><?php echo $teacherIvanov->teacherSkype; ?>
+                        <?php echo 'skype: '?><div id="teacherSkype"><?php echo $teacher->skype; ?>
                         </div>
                     </li>
                     <li>
-                        <a href="<?php echo $teacherIvanov->linkAdress; ?>">
-                            <?php echo $teacherIvanov->linkName; ?>
+                        <a href="<?php echo $teacher->readMoreLink; ?>">
+                            <?php echo $teacher->linkName; ?>
                         </a>
                     </li>
                     <p><a href="#"><input type="submit" value="Запланувати консультацію"></a></p>

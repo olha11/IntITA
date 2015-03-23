@@ -1,4 +1,5 @@
 <?php
+
 $this->pageTitle = 'Адмінка - головна';
 
 $this->breadcrumbs=array(
