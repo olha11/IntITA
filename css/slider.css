@@ -1,5 +1,6 @@
 #slider .item{
-    display: block;
+    display: table-cell;
+    text-align: center;
     width: 100%;
 }
 
@@ -14,13 +15,11 @@
     position: absolute;
     top: -100px;
 }
-
 .sliderLine {
     position: absolute;
-    left:-30px;
-    top: 260px;
+    left:-100px;
+    top: 240px;
 }
-
 .lineAndButton .sliderButton {
     position:        absolute;
     top:             345px;
@@ -41,14 +40,12 @@
     text-align:      center;
     text-decoration: none;
 }
-
 .sliderButton:hover {
     border-top-color: #454545;
     background: #454545;
     color: #fcfcfc;
     cursor: pointer;
 }
-
 .sliderButton:active {
     border-top-color: #363636;
     background: #363636;    
@@ -62,10 +59,14 @@
     font-size: 48px;
     font-family: "MyriadPro";
     text-shadow:     1px 1px 1px #555;
+    padding:0px;
+    margin-left:-60px;
+    margin-top:70px;
 }
 
 .sliderTextJr {
     font-size: 20px;
+    margin-top: -10px;
 
 }
 

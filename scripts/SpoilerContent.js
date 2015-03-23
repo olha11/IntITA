@@ -1,7 +1,6 @@
 /**
  * Created by Wizlight on 18.03.2015.
  */
-/*Спойлер на сторінці уроку, міняється приховати/показати */
 $(document).ready(function(){
     $('.spoilerLinks').click(function(){
         var nameSpoiler = $(this).children("span:first").text();

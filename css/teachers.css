@@ -93,7 +93,6 @@ div.aboutMore{
     text-align: right;
     color: #4B75A4;
 }
-
 td.profileTeacher{
     text-align: center;
     padding: 0 20px 0 0;
@@ -103,6 +102,6 @@ td.profileTeacher a{
     font-size: small;
     line-height: 100%;
 }
-.teacherBlock a:hover{
-    color:#666666;
+.teacherBlock a:hover {
+    color: #666666;
 }

@@ -16,6 +16,12 @@
 p.lesname{
     width:100%;
     margin-left: 3px;
+<<<<<<< HEAD
+}
+.lesname b{
+    color:#000000;
+=======
+>>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 }
 .lesname b{
     color:#000000;

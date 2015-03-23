@@ -5,12 +5,16 @@
  *
  * The followings are the available columns in table 'teachers':
  * @property integer $teacherID
+ * @property integer $teacher_title
+ * @property integer $linkName
  * @property string $firstName
  * @property string $middleName
  * @property string $lastName
  * @property string $email
  * @property string $fotoURL
+ * @property string $link
  * @property string $coursesArray
+ * @property string $skype
  * @property string $tel
  * @property integer $gender
  * @property integer $dateOfBirth
@@ -42,16 +46,16 @@ class Teachers extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('firstName, middleName, lastName, email, fotoURL, coursesArray, tel, articles, otherTeacherDetailes', 'required'),
-			array('gender, dateOfBirth', 'numerical', 'integerOnly'=>true),
+			array('firstName, middleName, lastName, email, fotoURL, link, coursesArray, skype, tel, articles, otherTeacherDetailes', 'required'),
+			array('teacher_title, linkName, gender, dateOfBirth', 'numerical', 'integerOnly'=>true),
 			array('firstName, middleName, lastName, email', 'length', 'max'=>35),
-			array('fotoURL, education', 'length', 'max'=>100),
+			array('fotoURL, link, skype, education', 'length', 'max'=>100),
 			array('coursesArray', 'length', 'max'=>255),
 			array('tel', 'length', 'max'=>15),
 			array('subjects, jobTitle, degree', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('teacherID, firstName, middleName, lastName, email, fotoURL, coursesArray, tel, gender, dateOfBirth, subjects, jobTitle, education, degree, articles, otherTeacherDetailes', 'safe', 'on'=>'search'),
+			array('teacherID, teacher_title, linkName, firstName, middleName, lastName, email, fotoURL, link, coursesArray, skype, tel, gender, dateOfBirth, subjects, jobTitle, education, degree, articles, otherTeacherDetailes', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,16 +78,20 @@ class Teachers extends CActiveRecord
 	{
 		return array(
 			'teacherID' => 'Teacher',
-			'firstName' => 'Імя',
-			'middleName' => 'По-батькові',
-			'lastName' => 'Прізвище',
+			'teacher_title' => 'Teacher Title',
+			'linkName' => 'Link Name',
+			'firstName' => 'First Name',
+			'middleName' => 'Middle Name',
+			'lastName' => 'Last Name',
 			'email' => 'Email',
-			'fotoURL' => 'Фото',
-			'coursesArray' => 'Курси',
-			'tel' => 'Тел.',
-			'gender' => 'Стать',
-			'dateOfBirth' => 'Дата народження',
-			'subjects' => 'Предмети',
+			'fotoURL' => 'Foto Url',
+			'link' => 'Link',
+			'coursesArray' => 'Courses Array',
+			'skype' => 'Skype',
+			'tel' => 'Tel',
+			'gender' => 'Gender',
+			'dateOfBirth' => 'Date Of Birth',
+			'subjects' => 'Subjects',
 			'jobTitle' => 'Job Title',
 			'education' => 'Education',
 			'degree' => 'Degree',
@@ -111,12 +119,16 @@ class Teachers extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('teacherID',$this->teacherID);
+		$criteria->compare('teacher_title',$this->teacher_title);
+		$criteria->compare('linkName',$this->linkName);
 		$criteria->compare('firstName',$this->firstName,true);
 		$criteria->compare('middleName',$this->middleName,true);
 		$criteria->compare('lastName',$this->lastName,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('fotoURL',$this->fotoURL,true);
+		$criteria->compare('link',$this->link,true);
 		$criteria->compare('coursesArray',$this->coursesArray,true);
+		$criteria->compare('skype',$this->skype,true);
 		$criteria->compare('tel',$this->tel,true);
 		$criteria->compare('gender',$this->gender);
 		$criteria->compare('dateOfBirth',$this->dateOfBirth);
