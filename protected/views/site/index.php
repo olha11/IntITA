@@ -49,34 +49,37 @@ function centerPage()
 </script>
 
 <div id="sliderCenterBox">
-<div class="insideSlider">
-<div id="beginButtonCenter">
-    <div class="lineAndButton">
-        <img class="sliderLine" src="<?php echo $mainpage['sliderLine']; ?>">
-        <a class="sliderButton" href="#beginRegistration"><?php echo $mainpage['buttonStart']; ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/> </a>
-    </div>
+	<div class="insideSlider">
+		<div id="beginButtonCenter">
+			<div class="lineAndButton">
+				<img class="sliderLine" src="<?php echo $mainpage['sliderLine']; ?>">
+				<a class="sliderButton" href="#beginRegistration"><?php echo $mainpage['buttonStart']; ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/> </a>
+			</div>
+		</div>
+
+		<div class="sliderText">
+			<?php echo $mainpage['sliderHeader']; ?>
+			<hr style="border: 1px solid #ffffff; width: 100px;">
+		</div>
+	</div>
 </div>
 
-    <div class="sliderText">
-        <?php echo $mainpage['sliderHeader']; ?><br>
-        <div class="sliderTextJr">
-            <br/>
-            <hr style="border: 1px solid #ffffff; width: 100px;">
-            <?php echo $mainpage['sliderText']; ?>
-        </div>
-    </div>
-
+<div id="slider" class="owl-carousel">
+    <div style="background-image: url(<?php echo $slider1 ?>); height: 2000px;">
+		<p><br><br><br><br><br><br><br><br><br><br><br><br><br><?php echo $sliderText1 ?></p>
+	</div>
+	<div style="background-image: url(<?php echo $slider2 ?>); height: 1000px;">
+		<p><br><br><br><br><br><br><br><br><br><br><br><br><br><?php echo $sliderText2 ?></p>
+	</div>
+    <div style="background-image: url(<?php echo $slider3 ?>); height: 1000px;">
+		<p><br><br><br><br><br><br><br><br><br><br><br><br><br><?php echo $sliderText3 ?></p>
+	</div>
+    <div style="background-image: url(<?php echo $slider4 ?>); height: 1000px;">
+		<p><br><br><br><br><br><br><br><br><br><br><br><br><br><?php echo $sliderText4 ?></p>
+	</div>
 </div>
-</div>
 
 
-
-<div id="slider" class="owl-carousel owl-theme">
-    <div class="item"><img src="<?php echo $slider1; ?>"></div>
-    <div class="item"><img src="<?php echo $slider2; ?>"></div>
-    <div class="item"><img src="<?php echo $slider3; ?>"></div>
-    <div class="item"><img src="<?php echo $slider4; ?>"></div>
-</div>
 
 <?php
 $this->pageTitle=$mainpage['title'];

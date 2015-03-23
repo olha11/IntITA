@@ -7051,3 +7051,14 @@ Stack trace:
 REQUEST_URI=/IntITA/index.php/?r=studentreg
 in D:\xampp\htdocs\IntITA\protected\controllers\StudentregController.php (132)
 in D:\xampp\htdocs\IntITA\index.php (13)
+2015/03/23 14:07:07 [error] [php] Undefined index: sliderText1 (C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php:91)
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/intITA/index.php
+in C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (91)
+in C:\xampp\htdocs\IntITA\index.php (13)

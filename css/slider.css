@@ -1,9 +1,19 @@
-#slider .item{
-    display: table-cell;
-    text-align: center;
-    width: 100%;
-}
 
+#slider > div{
+  background : #ffffff;
+  text-align: center;
+  padding:29px 0px 0px;
+  margin:0px;
+  }
+  
+#slider  p{
+  font-size:20px; 
+  font-family: "MyriadPro";
+  font-weight: 200;
+  color: white;
+  text-shadow: 1px 1px 1px #555;
+  }
+  
 .insideSlider {
     position: absolute;
     margin: 13.5%;
@@ -17,8 +27,8 @@
 }
 .sliderLine {
     position: absolute;
-    left:-100px;
-    top: 240px;
+    left: 30px;
+    top: 270px;
 }
 .lineAndButton .sliderButton {
     position:        absolute;
@@ -61,14 +71,10 @@
     text-shadow:     1px 1px 1px #555;
     padding:0px;
     margin-left:-60px;
-    margin-top:70px;
+    margin-top:60px;
 }
 
-.sliderTextJr {
-    font-size: 20px;
-    margin-top: -10px;
 
-}
 
 #sliderTexture {
     position: absolute;

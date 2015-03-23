@@ -71,31 +71,35 @@ class SiteController extends Controller
 			'step5'=>$step5,
 		);
 
+		
 		$sliderPictures = array(
 			'slider1'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(1)->imagesPath.$modelCarousel->findByPk(1)->pictureURL,
-			'sliderText1'=> $modelCarousel->findByPk(1)->text,
 			'slider2'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(2)->imagesPath.$modelCarousel->findByPk(2)->pictureURL,
-			'sliderText2'=> $modelCarousel->findByPk(2)->text,
 			'slider3'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(3)->imagesPath.$modelCarousel->findByPk(3)->pictureURL,
-			'sliderText3'=> $modelCarousel->findByPk(3)->text,
 			'slider4'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(4)->imagesPath.$modelCarousel->findByPk(4)->pictureURL,
+		);
+		
+		$sliderText = array(
+			'sliderText1'=> $modelCarousel->findByPk(1)->text,
+			'sliderText2'=> $modelCarousel->findByPk(2)->text,
+			'sliderText3'=> $modelCarousel->findByPk(3)->text,
 			'sliderText4'=> $modelCarousel->findByPk(4)->text,
 		);
+		
 		$this->render('index', array(
 			'slider1'=>$sliderPictures['slider1'],
-			'sliderText1'=>$sliderPictures['sliderText1'],
 			'slider2'=>$sliderPictures['slider2'],
-			'sliderText2'=>$sliderPictures['sliderText2'],
 			'slider3'=>$sliderPictures['slider3'],
-			'sliderText3'=>$sliderPictures['sliderText3'],
 			'slider4'=>$sliderPictures['slider4'],
-			'sliderText4'=>$sliderPictures['sliderText4'],
+			'sliderText1'=>$sliderText['sliderText1'],
+			'sliderText2'=>$sliderText['sliderText2'],
+			'sliderText3'=>$sliderText['sliderText3'],
+			'sliderText4'=>$sliderText['sliderText4'],
 			'mainpage'=>array(
 				'sliderLine'=> $mainpage->sliderLineURL,
 				'sliderTexture'=> $mainpage->sliderTextureURL,
 				'buttonStart'=>$mainpage->sliderButtonText,
 				'sliderHeader'=>$mainpage->sliderHeader,
-				'sliderText'=>$mainpage->sliderText,
 				'title'=>$mainpage->title,
 				'header1'=>$mainpage->header1,
 				'header2'=>$mainpage->header2,
