@@ -13,7 +13,7 @@ $this->pageTitle = 'INTITA';
 <body onload=WindowShow(<?php echo (empty($_GET['id']))?1:$_GET['id']; ?>);centerPage()>
 <?php
 $this->breadcrumbs=array(
-    'Курси'=>Yii::app()->request->baseUrl."/index.php/?r=courses",'Програмування для чайників',
+    'Про нас',
 );
 
 $this->pageTitle=$mainpage['title'];
