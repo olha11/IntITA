@@ -13,15 +13,7 @@ div.subLinks{
     margin-bottom: 28px;
     float:left;
 }
-<<<<<<< HEAD
 /*header navigation*/
-=======
-.subLinks a{
-    color: #666666;
-}
-/*header navigation*/
-
->>>>>>> 9c09ab966b738ee596d017bfe76b9f6e72582976
 .lessonBlock {
     margin: 0 auto;
     width: 960px;
@@ -46,9 +38,9 @@ div.subLinks{
     font-weight: bold;
 }
 h1.lessonTheme{
-     color: #4b75a4;
-     font-size: xx-large;
-     margin: 0px;
+    color: #4b75a4;
+    font-size: xx-large;
+    margin: 0px;
     font-weight: normal;
 }
 h1.lessonPart{
@@ -63,6 +55,10 @@ span.listTheme{
 }
 span.spoilerLinks,span.spoilerLinksHidden {
     cursor:pointer;
+}
+span.spoilerClick:hover{
+    cursor:pointer;
+    color:#666666;
 }
 .spoilerLinksHidden{
     margin-left: 44px;
@@ -248,6 +244,7 @@ div.lessonButFinal
     padding-top: 50px;
     margin-left: 640px;
     z-index: 1;
+    width: 480px;
 }
 #sidebarLesson p{
     margin-left: 100px;
@@ -274,4 +271,5 @@ div.lessonButFinal
 }
 #sidebarLesson .titlesBlock{
     margin-bottom: 10px;
+    margin-left: 0;
 }
