@@ -129,7 +129,7 @@ class StudentRegController extends Controller
 
             if(isset($_POST['StudentReg']))
             {
-                if(($_POST['StudentReg']['educform'][0]=='Онлайн') && ($_POST['StudentReg']['educform'][1]!=='Офлайн')){
+                if(($_POST['StudentReg']['educform'][0]=='Онлайн') && (!isset($_POST['StudentReg']['educform'][1]))){
                     $_POST['StudentReg']['educform']='Онлайн';
                 }
                 if(($_POST['StudentReg']['educform'][1]!=='Онлайн') && ($_POST['StudentReg']['educform'][0]=='Офлайн')){
@@ -138,7 +138,7 @@ class StudentRegController extends Controller
                 if(($_POST['StudentReg']['educform'][0]=='Онлайн') && ($_POST['StudentReg']['educform'][1]=='Офлайн')){
                     $_POST['StudentReg']['educform']='Онлайн/Офлайн';
                 }
-                if(($_POST['StudentReg']['educform'][0]!=='Онлайн') && ($_POST['StudentReg']['educform'][0]!=='Офлайн')){
+                if($_POST['StudentReg']['educform'][0]==Null){
                     $_POST['StudentReg']['educform']='Не вибрано';
                 }
             }
