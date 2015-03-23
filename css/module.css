@@ -119,6 +119,12 @@ p.subModuleInfo, p.ModuleAboutTeacher{
     width: 378px;
     vertical-align: top;
 }
+.ModulesLessonInfo a{
+    display:inline-block;
+    width: 378px;
+    vertical-align: top;
+    text-decoration: none;
+}
 div.mLessonNumber{
     float: right;
     margin-right: 12px;

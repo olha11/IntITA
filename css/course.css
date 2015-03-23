@@ -114,10 +114,16 @@ p.subCourseInfo, p.courseAboutTeacher{
     display:inline-block;
     width: 74px;
 }
-.courseModuleInfo{
+.courseModuleInfo {
     display:inline-block;
     width: 378px;
     vertical-align: top;
+}
+.courseModuleInfo a{
+    display:inline-block;
+    width: 378px;
+    vertical-align: top;
+    text-decoration: none;
 }
 div.cModuleNumber{
     float: right;
