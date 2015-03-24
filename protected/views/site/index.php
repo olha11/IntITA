@@ -1,5 +1,7 @@
 <body onload="centerPage()">
-
+<!-- regform style -->
+<link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/regform.css" />
+<!-- regform style -->
 <?php
 /* @var $this SiteController */
 ?>
@@ -195,29 +197,53 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 	    }
 	}
 ?>
-<div class="contentCenterBox">
+</div>
+
+<?php
+$model=new StudentReg();
+?>
+
 <div id="beginRegistration">
 </div>
-    <a name="form">
-    <div class="fon"style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/fon.png') no-repeat;">
+    <a name="form"></a>
+<div class="regFormBG" style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/formfon.jpg') repeat-x;background-position: center center">
+    <div class="regFormBox">
 
-        <div class="textFon"><p class="zagolovok"><?php echo $mainpage['formHeader1']; ?></p><p class="zagolovok2"><?php echo $mainpage['formHeader2']; ?></p></div>
-        <div class="formFon"style=" background:url('<?php echo $mainpage['formFon']; ?>');">
-              <div class="email-password">
-                <form method = "POST"  action="<?php echo Yii::app()->createUrl('site/submitForm');?>">
-                    <input type="email" value="" name="email" class="email1" placeholder="Електронна пошта" />
-                    <span class="passEye"><input type="password" value="" name="password" class="password1" placeholder="Пароль"/></span><br>
-                    <input type="checkbox" id="regCheckbox" value="" name="isExtended"/><label for="regCheckbox"><?php echo $mainpage['regText']; ?></label>
+        <p class="zagolovok"><?php echo $mainpage['formHeader1']; ?></p>
+        <p class="zagolovok2"><?php echo $mainpage['formHeader2']; ?></p>
+
+        <div class="singInForm">
+            <?php $form=$this->beginWidget('CActiveForm', array(
+            'id'=>'studentreg-form',
+                'action'=> Yii::app()->createUrl('site/submitForm'),
+            // Please note: When you enable ajax validation, make sure the corresponding
+            // controller action is handling ajax validation correctly.
+            // There is a call to performAjaxValidation() commented in generated controller code.
+            // See class documentation of CActiveForm for details on this.
+            'enableAjaxValidation'=>false,
+        )); ?>
+            <div class="rowemail">
+                <?php echo $form->textField($model,'email',array('class'=>'singInEmail','placeholder'=>'Електронна пошта','size'=>60,'maxlength'=>255)); ?>
+                <?php echo $form->error($model,'email'); ?>
             </div>
-            <br>
-            <br>
-            <div class="button">
-                <input type="submit" name="button" class="button1" style="background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png'); background-repeat: no-repeat; background-position: 144px 17px;" value="<?php echo $mainpage['formButtonStart']; ?>"/>
-                </form>
+
+            <div class="rowpass">
+                <span class="passEye"> <?php echo $form->passwordField($model,'password',array('class'=>'singInPass','placeholder'=>'Пароль','size'=>60,'maxlength'=>255)); ?></span>
+                <?php echo $form->error($model,'password'); ?>
             </div>
-            <div class="lineForm"><hr color="#4b75a4" size="1px"></div>
-            <div class="social"><?php echo $mainpage['socialText']; ?></div>
-            <div class="image" > <img name="networking" src="<?php echo $mainpage['imageNetwork']; ?>" width="410" height="50" border="0" id="networking" usemap="#m_networking" alt="" />
+
+            <div class="regCheckbox">
+            <input type="checkbox" id="regCheckbox" value="" name="isExtended"/>
+            <label for="regCheckbox"><?php echo $mainpage['regText']; ?></label>
+            </div>
+
+            <div class="rowButtons">
+                <?php echo CHtml::submitButton('ПОЧАТИ', array('id' => "singInButton")); ?>
+            </div>
+
+            <div class="linesingInForm">Ви можете також увійти через соцмережі:</div>
+            <div class="image" >
+                <img name="networking" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/networking.png" width="410" height="50" border="0" id="networking" usemap="#m_networking" alt="" />
                 <map name="m_networking" id="m_networking">
                     <area shape="circle" coords="354,26, 20" href="javascript:" title="instagram" />
                     <area shape="circle" coords="309,26, 21" href="javascript:" title="Rubka" />
@@ -229,13 +255,13 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
                     <area shape="circle" coords="27,25, 21" href="javascript:" title="twitter" />
                 </map>
             </div>
-        </div>
 
+            <?php $this->endWidget(); ?>
+
+        </div><!-- form -->
     </div>
-
-</a>
 </div>
 </body>
-    
+
 
 

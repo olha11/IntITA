@@ -7144,3 +7144,53 @@ Stack trace:
 #27 {main}
 REQUEST_URI=/index.php?r=course
 ---
+2015/03/23 20:34:55 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.users' doesn't exist. Выполнявшийся SQL-запрос: SHOW FULL COLUMNS FROM `users`.
+in Z:\home\Ololo\www\index.php (13)
+2015/03/23 20:35:08 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'int_ita_db.users' doesn't exist. Выполнявшийся SQL-запрос: SHOW FULL COLUMNS FROM `users`.
+in Z:\home\Ololo\www\index.php (13)
+2015/03/23 23:26:29 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (Z:\home\Ololo\www\protected\framework\web\helpers\CHtml.php:108)
+Stack trace:
+#0 Z:\home\Ololo\www\protected\framework\web\helpers\CHtml.php(163): renderAttributes()
+#1 Z:\home\Ololo\www\protected\framework\web\helpers\CHtml.php(480): tag()
+#2 Z:\home\Ololo\www\protected\framework\web\helpers\CHtml.php(515): button()
+#3 Z:\home\Ololo\www\protected\views\site\index.php(240): submitButton()
+#4 Z:\home\Ololo\www\protected\framework\web\CBaseController.php(126): require()
+#5 Z:\home\Ololo\www\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#6 Z:\home\Ololo\www\protected\framework\web\CController.php(869): SiteController->renderFile()
+#7 Z:\home\Ololo\www\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#8 Z:\home\Ololo\www\protected\controllers\SiteController.php(124): SiteController->render()
+#9 Z:\home\Ololo\www\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 Z:\home\Ololo\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 Z:\home\Ololo\www\protected\framework\web\CController.php(286): SiteController->runAction()
+#12 Z:\home\Ololo\www\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#13 Z:\home\Ololo\www\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#14 Z:\home\Ololo\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 Z:\home\Ololo\www\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 Z:\home\Ololo\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in Z:\home\Ololo\www\protected\views\site\index.php (240)
+in Z:\home\Ololo\www\protected\controllers\SiteController.php (124)
+in Z:\home\Ololo\www\index.php (13)
+2015/03/23 23:27:07 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (Z:\home\Ololo\www\protected\framework\web\helpers\CHtml.php:108)
+Stack trace:
+#0 Z:\home\Ololo\www\protected\framework\web\helpers\CHtml.php(163): renderAttributes()
+#1 Z:\home\Ololo\www\protected\framework\web\helpers\CHtml.php(480): tag()
+#2 Z:\home\Ololo\www\protected\framework\web\helpers\CHtml.php(515): button()
+#3 Z:\home\Ololo\www\protected\views\site\index.php(240): submitButton()
+#4 Z:\home\Ololo\www\protected\framework\web\CBaseController.php(126): require()
+#5 Z:\home\Ololo\www\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#6 Z:\home\Ololo\www\protected\framework\web\CController.php(869): SiteController->renderFile()
+#7 Z:\home\Ololo\www\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#8 Z:\home\Ololo\www\protected\controllers\SiteController.php(124): SiteController->render()
+#9 Z:\home\Ololo\www\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 Z:\home\Ololo\www\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 Z:\home\Ololo\www\protected\framework\web\CController.php(286): SiteController->runAction()
+#12 Z:\home\Ololo\www\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#13 Z:\home\Ololo\www\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#14 Z:\home\Ololo\www\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 Z:\home\Ololo\www\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 Z:\home\Ololo\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in Z:\home\Ololo\www\protected\views\site\index.php (240)
+in Z:\home\Ololo\www\protected\controllers\SiteController.php (124)
+in Z:\home\Ololo\www\index.php (13)

@@ -4,35 +4,6 @@
 <!-- uploadInfo, jQuery -->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/uploadInfo.js"></script>
 <!-- uploadInfo, jQuery -->
-<style type="text/css">
-    .passEye .eye {
-        background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/passEye.png') no-repeat left 2px;
-    }
-    .passEye .openEye {
-        background-position:left bottom;
-    }
-    .formStudProf input[type="submit"]{
-        font-size: 18px;
-        letter-spacing:1px;
-        padding-right: 20px;
-        text-shadow:1px 1px 1px rgba(0,0,0,.5);
-        background:#4b75a4;
-        background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
-        background-repeat: no-repeat;
-        background-position: 132px 14px;
-    }
-    .formStudProf input[type="submit"]:hover {
-        background: #454545;
-        background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
-        background-repeat: no-repeat;
-        background-position: 132px 14px;
-        cursor: pointer;
-    }
-    input[type="submit"]::-moz-focus-inner { /* убираем внутренний отступ у кнопки в FF, который зарезервирован для рамки при фокусе */
-        padding:0;
-        border:0;
-    }
-</style>
 <?php
 /* @var $this StudentregController */
 /* @var $model studentreg */
@@ -149,7 +120,7 @@ $post=StudentReg::model()->findByPk(1);
             <?php echo $form->error($model,'password_repeat'); ?>
         </div>
         <div class="rowbuttons">
-            <?php echo CHtml::submitButton('ЗБЕРЕГТИ', array('id' => "submit")); ?>
+            <?php echo CHtml::submitButton('ЗБЕРЕГТИ', array('id' => "submitEdit")); ?>
         </div>
         <?php if(Yii::app()->user->hasFlash('message')):
             echo Yii::app()->user->getFlash('message');

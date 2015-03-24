@@ -198,6 +198,26 @@ table.titleProfileAv{
     box-shadow:0px 2px 0px #7f7f7f;
     font-size: medium;
 }
+.formStudProf input[type="submit"]{
+    font-size: 18px;
+    letter-spacing:1px;
+    padding-right: 20px;
+    text-shadow:1px 1px 1px rgba(0,0,0,.5);
+    background:#4b75a4;
+    background-image: url('images/pointersmall.png');
+    background-repeat: no-repeat;
+    background-position: 145px 50%;
+}
+.formStudProf input[type="submit"]:hover {
+    background: #454545;
+    background-image: url('images/pointersmall.png');
+    background-repeat: no-repeat;
+    background-position: 145px 50%;
+    cursor: pointer;
+}
+#submitEdit {
+    background-position: 135px 50%;
+}
 .formStudProf input[type="button"]:hover {
     background: #454545;
     cursor: pointer;
@@ -457,5 +477,9 @@ p.courseLevLang{
     height:10px;
     width:18px;
     cursor:pointer;
+    background:url('images/passEye.png') no-repeat left 2px;
+}
+.passEye .openEye {
+    background-position:left bottom;
 }
 /* PassEye */

@@ -10,40 +10,6 @@
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/jquery.wysibb.min.js"></script>
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/theme/default/wbbtheme.css" type="text/css" />
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/lang/ua.js"></script>
-<!-- Підключення BBCode WysiBB -->
-<style type="text/css">
-    .nextLesonLink input[type="submit"] {
-        margin-top: 5px;
-        width: 230px;
-        height:44px;
-        border-radius: 10px;
-        border:none;
-        color:#ffffff;
-        background-color:#4b75a4;
-        box-shadow:0 2px 0 #7f7f7f;
-        font-size: medium;
-        background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
-        background-repeat: no-repeat;
-        background-position: 192px 14px;
-    }
-    .nextLesonLink input[type="submit"], x:-moz-any-link {
-        background-position: 192px 15px;
-    }
-    .nextLesonLink input[type="submit"]:hover {
-        background: #454545;
-        background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
-        background-repeat: no-repeat;
-        background-position: 192px 14px;
-        cursor: pointer;
-    }
-    .nextLesonLink input[type="submit"]:hover, x:-moz-any-link {
-        background-position: 192px 15px;
-    }
-</style>
-<!-- Підключення BBCode WysiBB -->
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/jquery.wysibb.min.js"></script>
-<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/theme/default/wbbtheme.css" type="text/css" />
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/lang/ua.js"></script>
 
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/BBCode.js"></script>
 <!-- Підключення BBCode WysiBB -->
