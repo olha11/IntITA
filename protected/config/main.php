@@ -9,8 +9,8 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'INTITA',
 
-	'sourceLanguage'=>'ua',
-	'language'=>'ru',
+	'sourceLanguage'=>'en',
+	'language'=>'ua',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -56,8 +56,8 @@ return array(
 
         'messages'=>array(
             'class'=>'CDbMessageSource',
-            'sourceMessageTable'=>'mainpage',
-            'translatedMessageTable'=>'mainpagetranslated',
+            'sourceMessageTable'=>'sourceMessages',
+            'translatedMessageTable'=>'translatedMessages',
         ),
 
 		'user' => array(
@@ -74,16 +74,19 @@ return array(
 		'urlManager'=>array(
 			'urlFormat' => 'path',
 			'showScriptName'=>false,
-			'urlSuffix' => '',
+			'urlSuffix' => '/',
+			'caseSensitive' => true,
 			'rules'=>array(
 
+				/*array(
+					'class' => 'application.components.CoursesRule',
+					'connectionID' => 'db',
+				),*/
+
 				''=>array('site/index', 'urlSuffix' => ''),
-				'<action:login|logout|register>' => 'site/<action>',
-				'feed.xml'=>array('blog/post/feed', 'urlSuffix' => ''),
 				'<module:\w+>/<controller:\w+>/<id:\d+>' => '<module>/<controller>/view',
 				'<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
 				'<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
-
 			),
 		),
 
@@ -113,13 +116,6 @@ return array(
 				*/
 			),
 		),
-
-		'messages'=>array(
-			'class' => 'CDbMessageSource',
-			'translatedMessageTable' => 'mainpagetranslated',
-			'sourceMessageTable' => 'mainpage',
-			'cachingDuration'=>3600.
-		),
 	),
 
 	// application-level parameters that can be accessed
@@ -127,5 +123,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
+		'languages'=>array('en'=>'English', 'ua'=>'Ukrainian', 'ru'=>'Russian'),
 	),
 );

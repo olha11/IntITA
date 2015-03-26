@@ -19,19 +19,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/hamburgerMenu.css" />
     <!-- aboutUs style -->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/aboutusstyles.css" />
-    <!-- teacherProfile style -->
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/teacherProfile.css" />
-    <!-- steps style -->
     <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/step.css" />
     <!-- steps style -->
-    <!-- studprofile style -->
-    <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/studProfile.css" />
-    <!-- studprofile style -->
-    <!-- lesson style -->
-    <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/lessonsStyle.css" />
-	  <!-- courses style -->
-    <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/courses.css" />
-    <!-- lesson style -->
     <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/css/images/favicon.ico" type="image/x-icon"/>
     <!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
@@ -50,19 +39,6 @@
     <!-- passEye, jQuery -->
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/jquery.passEye.js"></script>
     <!-- passEye, jQuery -->
-    <!-- uploadInfo, jQuery -->
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/uploadInfo.js"></script>
-    <!-- uploadInfo, jQuery -->
-    <!-- Підсвітка синтаксису-->
-    <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/syntaxhighlighter/prettify.css" />
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/syntaxhighlighter/prettify.js"></script>
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/syntaxhighlighter/prettify.init.js"></script>
-    <!-- Підсвітка синтаксису -->
-    <!-- Підключення BBCode WysiBB -->
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/jquery.wysibb.min.js"></script>
-    <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/theme/default/wbbtheme.css" type="text/css" />
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/lang/ua.js"></script>
-    <!-- Підключення BBCode WysiBB -->
 
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -77,18 +53,26 @@
             </a>
         </div>
         <ul>
-            <li><a href="<?php echo $this->link1; ?>"><?php echo $this->menu1; ?></a></li>
-            <li><a href="<?php echo $this->link2; ?>"><?php echo $this->menu2; ?></a></li>
-            <li><a href="<?php echo $this->link3; ?>"><?php echo $this->menu3; ?></a></li>
-            <li><a href="<?php echo $this->link4; ?>"><?php echo $this->menu4; ?></a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('courses/index', array('courseID'=>1)); ?>"><?php echo Yii::t('header','Courses'); ?></a></li>
+            <li><a href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','Teachers'); ?></a></li>
+            <li><a href="<?php echo $this->link3; ?>"><?php echo Yii::t('header','Forum'); ?></a></li>
+            <li><a href="<?php echo $this->link4; ?>"><?php echo Yii::t('header','About us'); ?></a></li>
         </ul>
     </div>
 
     <div id="lang" class="down">
         <form action="" method="post" onsubmit="" name="fff">
-            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
-            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'EN'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
-            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'RU'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
+            <button formaction="" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>
+                <?php echo CHtml::link('ua',array('site/changeLang','lg'=>'ua')); ?>
+            </button>
+
+            <button formaction="" id="en" name="en" onclick="changeLang(this)">
+                <?php echo CHtml::link('en',array('site/changeLang','lg'=>'en')); ?>
+            </button>
+
+            <button formaction="" id="ru" name="ru" onclick="changeLang(this)">
+                <?php echo CHtml::link('ru',array('site/changeLang','lg'=>'ru')); ?>
+            </button>
         </form>
     </div>
 
@@ -96,7 +80,7 @@
 <div id="centerEnterButton">
     <div id="button_border" class="down">
     </div>
-    <a id="enter_button" href="<?php echo Yii::app()->request->baseUrl;?>#form" class="down"><?php echo $this->buttonText; ?></a>
+    <a id="enter_button" href="<?php echo Yii::app()->request->baseUrl;?>#form" class="down"><?php echo Yii::t('header','Sign in'); ?></a>
 </div>
 <! Hamburger menu>
 
@@ -118,12 +102,9 @@
     </div>
 	<div id="hamburgerLang">
         <form action="" method="post" onsubmit="" name="fff">
-            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
-
-            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'EN'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
-
-            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'RU'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
-
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lg'=>'ua'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lg'=>'en'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
+            <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lg'=>'ru'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
         </form>
     </div>
 </div>
@@ -132,23 +113,23 @@
 <div id="hamburgerMainBox">
 	<div id="hamburgerSubBox">
 		<div class="hamburgerBox">
-			<a class="hamburgerLink" href="<?php echo $this->link1; ?>"><?php echo $this->menu1; ?></a>
+			<a class="hamburgerLink" href="<?php echo $this->link1; ?>"><?php echo Yii::t('header','Courses'); ?></a>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox">
-			<a  class="hamburgerLink" href="<?php echo $this->link2; ?>"><?php echo $this->menu2; ?></a>
+			<a  class="hamburgerLink" href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','Teachers'); ?></a>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox">
-			<a  class="hamburgerLink" href="<?php echo $this->link3; ?>"><?php echo $this->menu3; ?></a>
+			<a  class="hamburgerLink" href="<?php echo $this->link3; ?>"><?php echo Yii::t('header','Forum'); ?></a>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox">
-			<a  class="hamburgerLink" href="<?php echo $this->link4; ?>"><?php echo $this->menu4; ?></a>
+			<a  class="hamburgerLink" href="<?php echo $this->link4; ?>"><?php echo Yii::t('header','About us'); ?></a>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox2">
-			<a id="hamburgerEnterButton" href="<?php echo Yii::app()->request->baseUrl;?>#form"><?php echo $this->buttonText; ?></a>
+			<a id="hamburgerEnterButton" href="<?php echo Yii::app()->request->baseUrl;?>#form"><?php echo Yii::t('header','Sign in'); ?></a>
 		</div>
 	</div>
 </div>
@@ -235,7 +216,7 @@ else
     <?php if(isset($this->breadcrumbs)):?>
         <?php $this->widget('zii.widgets.CBreadcrumbs', array(
             'links'=>$this->breadcrumbs,
-            'homeLink'=>CHtml::link('Головна',Yii::app()->request->getBaseUrl(true)),
+            'homeLink'=>CHtml::link(Yii::t('breadcrumbs', 'Home'),Yii::app()->request->getBaseUrl(true)),
             'htmlOptions' => array(
                 'class' => 'my-cool-breadcrumbs'
             )
@@ -258,7 +239,7 @@ else
             <a href="http://youtube.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/youtube.png"/></a>
             <a href="https://plus.google.com/u/0/116490432477798418410/posts"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/googlePlus.png"/><br/></a>
             <a href="https://www.facebook.com/pages/INTITA/320360351410183"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/facebook.png"/></a>
-            <a href="http://odnoklasniki.com"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/odnoklasniki.png"/></a>
+            <a href="https://www.linkedin.com/company/intita?trk=biz-companies-cym"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/odnoklasniki.png"/></a>
             <a href="http://vk.com/intita"><img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/vkontakte.png"/></a>
         </div>
         <div class="footer">
@@ -268,18 +249,18 @@ else
                 </a>
             </div>
             <div>
-                <p> <?php echo $this->phone; ?><br/>
-                    <?php echo $this->mobile; ?><br/>
-                    <?php echo $this->email; ?><br/>
-                    skype: int.ita
+                <p> <?php echo Yii::t('footer','tel: +38 0432 52 82 67');  ?><br/>
+                    <?php echo Yii::t('footer','mobile: +38 067 432 20 10');  ?><br/>
+                    <?php echo Yii::t('footer','e-mail: intita.hr@gmail.com'); ?><br/>
+                    <?php echo Yii::t('footer','skype: int.ita'); ?><br/>
                 </p>
             </div>
             <div>
                 <ul>
-                    <li><a href="<?php echo $this->link1; ?>"><?php echo $this->menu1; ?></a></li>
-                    <li><a href="<?php echo $this->link2; ?>"><?php echo $this->menu2; ?></a></li>
-                    <li><a href="<?php echo $this->link3; ?>"><?php echo $this->menu3; ?></a></li>
-                    <li><a href="<?php echo $this->link4; ?>"><?php echo $this->menu4; ?></a></li>
+                    <li><a href="<?php echo $this->link1; ?>"><?php echo Yii::t('header','Courses'); ?></a></li>
+                    <li><a href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','Teachers');  ?></a></li>
+                    <li><a href="<?php echo $this->link3; ?>"><?php echo Yii::t('header','Forum');  ?></a></li>
+                    <li><a href="<?php echo $this->link4; ?>"><?php echo Yii::t('header','About us');  ?></a></li>
                 </ul>
             </div>
         </div>

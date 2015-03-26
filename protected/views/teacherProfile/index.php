@@ -1,7 +1,6 @@
-<html>
-<head>
-</head>
-<body>
+<!-- teacherProfile style -->
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/teacherProfile.css" />
+<!-- steps style -->
 <?php
 $this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(

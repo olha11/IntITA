@@ -32,7 +32,7 @@ class StudentProfile extends CActiveRecord
     }
 	public function tableName()
 	{
-		return 'students';
+		return 'user';
 	}
 
 	/**

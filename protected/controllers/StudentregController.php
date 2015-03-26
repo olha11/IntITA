@@ -123,9 +123,12 @@ class StudentRegController extends Controller
 
     public function actionIndex()
     {
+
         $model=new StudentReg();
         if(isset($_POST['StudentReg']))
         {
+            if(is_null($_POST['StudentReg']['firstName']))
+                $this->redirect('courses');
 
             if(isset($_POST['StudentReg']))
             {
@@ -138,7 +141,7 @@ class StudentRegController extends Controller
                 if(($_POST['StudentReg']['educform'][0]=='Онлайн') && ($_POST['StudentReg']['educform'][1]=='Офлайн')){
                     $_POST['StudentReg']['educform']='Онлайн/Офлайн';
                 }
-                if($_POST['StudentReg']['educform'][0]==Null){
+                if($_POST['StudentReg']['educform'][0]== Null){
                     $_POST['StudentReg']['educform']='Не вибрано';
                 }
             }
@@ -164,14 +167,13 @@ class StudentRegController extends Controller
                         $model->avatar="/css/images/".$_FILES["upload"]["name"];
                     }
                     $model->save();
-
                     header('Location: '.$_SERVER['HTTP_REFERER']);
                 }
-
             } else {
                 $this->render("studentreg", array('model'=>$model));
             }
         }else {
+            $model->addError('empty', 'Дані не введені');
             $this->render("studentreg", array('model'=>$model));
         }
     }

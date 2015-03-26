@@ -1,32 +1,11 @@
-<style type="text/css">
-    .nextLesonLink input[type="submit"] {
-        margin-top: 5px;
-        width: 230px;
-        height:44px;
-        border-radius: 10px;
-        border:none;
-        color:#ffffff;
-        background-color:#4b75a4;
-        box-shadow:0 2px 0 #7f7f7f;
-        font-size: medium;
-        background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
-        background-repeat: no-repeat;
-        background-position: 192px 14px;
-    }
-    .nextLesonLink input[type="submit"], x:-moz-any-link {
-        background-position: 192px 15px;
-    }
-    .nextLesonLink input[type="submit"]:hover {
-        background: #454545;
-        background-image: url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointersmall.png');
-        background-repeat: no-repeat;
-        background-position: 192px 14px;
-        cursor: pointer;
-    }
-    .nextLesonLink input[type="submit"]:hover, x:-moz-any-link {
-        background-position: 192px 15px;
-    }
-</style>
+<!-- lesson style -->
+<link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/lessonsStyle.css" />
+<!-- lesson style -->
+<!-- Підсвітка синтаксису-->
+<link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/syntaxhighlighter/prettify.css" />
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/syntaxhighlighter/prettify.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/syntaxhighlighter/prettify.init.js"></script>
+<!-- Підсвітка синтаксису -->
 <!-- Підключення BBCode WysiBB -->
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/jquery.wysibb.min.js"></script>
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/wysibb/theme/default/wbbtheme.css" type="text/css" />

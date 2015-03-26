@@ -31,6 +31,8 @@ class SiteController extends Controller
 		);
 	}
 
+
+
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
@@ -42,35 +44,9 @@ class SiteController extends Controller
 		$modelCarousel = new Carousel();
 		$mainpage = new Mainpage();
 		$mainpage->setValueById(0);
-		$objAbout1 = new AboutUs(1);
-		$objAbout1->setValuesById(1);
-		$objAbout2 = new AboutUs(2);
-		$objAbout2->setValuesById(2);
-		$objAbout3 = new AboutUs(3);
-		$objAbout3->setValuesById(3);
-		$step1=new Step(1);
-		$step1->setValueById(1);
-		$step2=new Step(2);
-		$step2->setValueById(2);
-		$step3=new Step(3);
-		$step3->setValueById(3);
-		$step4=new Step(4);
-		$step4->setValueById(4);
-		$step5=new Step(5);
-		$step5->setValueById(5);
-		$arrayAboutUs = array(
-			'objAbout1'=>$objAbout1,
-			'objAbout2'=>$objAbout2,
-			'objAbout3'=>$objAbout3,
-		);
-		$arraySteps = array(
-			'step1'=>$step1,
-			'step2'=>$step2,
-			'step3'=>$step3,
-			'step4'=>$step4,
-			'step5'=>$step5,
-		);
 
+		$arraySteps = $this->initSteps();
+		$arrayAboutUs = $this->initAboutus();
 		$sliderPictures = array(
 			'slider1'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(1)->imagesPath.$modelCarousel->findByPk(1)->pictureURL,
 			'sliderText1'=> $modelCarousel->findByPk(1)->text,
@@ -93,23 +69,9 @@ class SiteController extends Controller
 			'mainpage'=>array(
 				'sliderLine'=> $mainpage->sliderLineURL,
 				'sliderTexture'=> $mainpage->sliderTextureURL,
-				'buttonStart'=>$mainpage->sliderButtonText,
-				'sliderHeader'=>$mainpage->sliderHeader,
-				'sliderText'=>$mainpage->sliderText,
-				'title'=>$mainpage->title,
-				'header1'=>$mainpage->header1,
-				'header2'=>$mainpage->header2,
 				'hexagon'=>$mainpage->hexagon,
-				'linkName'=>$mainpage->linkName,
 				'subLineImage'=>$mainpage->subLineImage,
 				'stepSize'=>$mainpage->stepSize,
-				'subheader1'=>$mainpage->subheader1,
-				'subheader2'=>$mainpage->subheader2,
-				'formHeader1'=>$mainpage->formHeader1,
-				'formHeader2'=>$mainpage->formHeader2,
-				'regText'=>$mainpage->regText,
-				'formButtonStart'=>$mainpage->buttonStart,
-				'socialText'=>$mainpage->socialText,
 				'imageNetwork'=>$mainpage->imageNetwork,
 				'formFon'=>$mainpage->formFon,
 			),
@@ -123,22 +85,65 @@ class SiteController extends Controller
 			'step5'=>$arraySteps['step5'],
 		));
 	}
-	
-	public function actionAboutdetail()
-	{
-		$mainpage = new Mainpage(0);
-		$mainpage->setValueById(0);
+
+	public function initAboutus(){
 		$objAbout1 = new AboutUs(1);
 		$objAbout1->setValuesById(1);
+		$objAbout1->titleText = Yii::t('aboutus', 'What you dream about?');
+		$objAbout1->textAbout = Yii::t('aboutus', 'Try to guess: their own apartment or even a house? A good car? Foreign travel may have to exotic countries?');
 		$objAbout2 = new AboutUs(2);
 		$objAbout2->setValuesById(2);
+		$objAbout2->titleText = Yii::t('aboutus', 'Learning of the future');
+		$objAbout2->textAbout = Yii::t('aboutus', 'Programming - it\'s not as hard as you can imagine. Of course, to become a good programmer, it takes time and effort.');
 		$objAbout3 = new AboutUs(3);
 		$objAbout3->setValuesById(3);
-		$arrayAboutUs = array(
+		$objAbout3->titleText = Yii::t('aboutus', 'Questions & feedback');
+		$objAbout3->textAbout = Yii::t('aboutus', 'Three whales INTITA Independent Programming Academy training schedule. Only 100% of the necessary knowledge. The acquisition of 100% of knowledge!');
+		return $arrayAboutUs = array(
 			'objAbout1'=>$objAbout1,
 			'objAbout2'=>$objAbout2,
 			'objAbout3'=>$objAbout3,
 		);
+	}
+
+	public function initSteps(){
+		$step1=new Step();
+		$step1->setValueById(1);
+		$step2=new Step();
+		$step2->setValueById(2);
+		$step3=new Step();
+		$step3->setValueById(3);
+		$step4=new Step();
+		$step4->setValueById(4);
+		$step5=new Step();
+		$step5->setValueById(5);
+
+		$step1->stepTitle =  Yii::t('step','Online Registration');
+		$step2->stepTitle =  Yii::t('step','Choosing course or module');
+		$step3->stepTitle =  Yii::t('step','Payment');
+		$step4->stepTitle =  Yii::t('step','Learning material');
+		$step5->stepTitle =  Yii::t('step','Completion of the course');
+
+		$step1->stepText =  Yii::t('step','To access the list of courses, modules and classes and pass free modules and classes register on the site. Registering will allow you to assess the quality and usability of our product that you will become a reliable partner and advisor to professional fulfillment.');
+		$step2->stepText =  Yii::t('step','To become a specialist in a certain direction and level (get professional specialization) choose to undergo appropriate course. If you are interested only deepen the knowledge in a particular area of IT, then choose the module to pass.');
+		$step3->stepText =  Yii::t('step','To start a course or module choose payment scheme (the entire amount for the course, month, potrymestrovo etc) and make a payment convenient way to You (payment scheme or course module can be changed also possible monthly payment on credit).');
+		$step4->stepText =  Yii::t('step','Learning material is possible by reading the text and / or viewing video for each session. During the development of the material classes perform intermediate tests. At the end of each session do the final test task. Each module ends with an individual project or exam. You can get individual counseling teacher or discuss the issue on the forum.');
+		$step5->stepText =  Yii::t('step','The result of course is the command thesis project, performed together with other students (the team recommends that forms an independent or executive who approved topic and terms of reference of the project). Filing project involves peredzahyst and protection in the online mode of presentation design.');
+
+		return $arraySteps = array(
+			'step1'=>$step1,
+			'step2'=>$step2,
+			'step3'=>$step3,
+			'step4'=>$step4,
+			'step5'=>$step5,
+		);
+	}
+
+	public function actionAboutdetail()
+	{
+		$mainpage = new Mainpage(0);
+		$mainpage->setValueById(0);
+		$arrayAboutUs = $this->initAboutus();
 		$this->render('aboutdetail', array(
 			'mainpage'=>array(
 				'title'=>$mainpage->title,
@@ -167,27 +172,36 @@ class SiteController extends Controller
 		}
 	}
 
-    public function actionSubmitForm(){
-		if(User::model()->isUserRegistered($_POST['email'], $_POST['password'])){
-			$http_response_header['buttonStart'] = 'Вихід';
+    public function actionSubmitForm()
+	{
+		//if(User::model()->isUserRegistered($_POST['email'], $_POST['password'])){
+		//$this->redirect(array('studentreg/index'));
+		//else {
+		if (isset($_POST['isExtended'])) {
+			$this->redirect(array('studentreg/index'));
+		} else {
+
+			$this->rapidRegister($_POST['StudentReg']);
 		}
-        else {
-			if (isset($_POST['isExtended'])) {
-				$this->redirect(array('studentreg/index'));
-			}
-			$this->redirect(array('courses/index'));
-		}
-		$this->redirect(Yii::app()->user->returnUrl);
     }
 
-	public  function setLang($lang='UA'){
-		$this->actionIndex();
+	public function rapidRegister(){
+		$model = new StudentReg();
+		$model->email = $_POST['StudentReg']['email'];
+		$model->password = $_POST['StudentReg']['password'];
+		$model->firstName = $_POST['StudentReg']['email'];
+		$model->password_repeat = $_POST['StudentReg']['password'];
+		$model->educform = 'Не вибрано';
+		$model->save();
+		$this->redirect(array('courses/index'));
 	}
 
-
-	public function actionChangeLang($lang)
+	public function actionChangeLang()
 	{
-		Yii::app()->language = $lang;
+		$app = Yii::app();
+		if (isset($_GET['lg'])) {
+			$app->session['lg'] = $_GET['lg'];
+		}
 		$this->redirect(Yii::app()->user->returnUrl);
 	}
 	/**

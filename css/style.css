@@ -232,14 +232,20 @@ p {
 }
 .zagolovok
 {
-    font-size:45px;
-    margin-bottom:2px;
+    font-size: 35px;
+    letter-spacing: 1px;
+    margin-bottom:0;
+    padding-bottom: 0;
     color:#ffffff;
+    line-height: 100%;
 }
 .zagolovok2
 {
-    font-size:25px;
-    margin-top:0px;
+    font-weight: 300;
+    font-size: 21px;
+    margin-top:0;
+    padding-top: 0;
+    margin-bottom: 35px;
     color:#ffffff;
 }
 .email-password{
@@ -352,77 +358,6 @@ input[type="submit"]::-moz-focus-inner { /* убираем внутренний 
     height:50px;
     margin-left:70px;
     margin-top:20px;
-}
-/****************registration***********/
-/* Cначала обозначаем стили для IE8 и более старых версий
-т.е. здесь мы немного облагораживаем стандартный чекбокс. */
-#regCheckbox {
-    vertical-align: top;
-    margin: 13px 3px 0 0;
-    width: 15px;
-    height: 15px;
-}
-/* Это для всех браузеров, кроме совсем старых, которые не поддерживают
-селекторы с плюсом. Показываем, что label кликабелен. */
-#regCheckbox + label {
-    cursor: pointer;
-}
-
-/* Далее идет оформление чекбокса в современных браузерах, а также IE9 и выше.
-Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
-в них все нижеследующие стили не сработают. */
-
-/* Прячем оригинальный чекбокс. */
-#regCheckbox:not(checked) {
-    position: absolute;
-    opacity: 0;
-}
-#regCheckbox:not(checked) + label {
-    position: relative; /* будем позиционировать псевдочекбокс относительно label */
-    padding: 0 0 0 42px; /* оставляем слева от label место под псевдочекбокс */
-}
-/* Оформление первой части чекбокса в выключенном состоянии (фон). */
-#regCheckbox:not(checked) + label:before {
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: 2px;
-    width: 26px;
-    height: 14px;
-    border-radius: 13px;
-    background: #4B75A4;
-    box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
-}
-/* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
-#regCheckbox:not(checked) + label:after {
-    content: '';
-    position: absolute;
-    top: 6px;
-    left: 4px;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background: #FFF;
-    box-shadow: 0 2px 5px rgba(0,0,0,.3);
-    transition: all .2s; /* анимация, чтобы чекбокс переключался плавно */
-}
-/* Меняем фон чекбокса, когда он включен. */
-#regCheckbox:checked + label:before {
-    background: #26ab36;
-}
-/* Сдвигаем переключатель чекбокса, когда он включен. */
-#regCheckbox:checked + label:after {
-    left: 16px;
-}
-/* Показываем получение фокуса. */
-#regCheckbox:focus + label:before {
-    box-shadow: 0 0 0 3px rgba(126,180,234,.5);
-}
-.fon label{
-    color:#4B75A4;
-}
-.fon label:hover{
-    color:#666666;
 }
 /* breadcrumbs */
 .my-cool-breadcrumbs{

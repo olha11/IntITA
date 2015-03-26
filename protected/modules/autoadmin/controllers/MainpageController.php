@@ -5,18 +5,27 @@ class MainpageController extends Controller
 	{
 		$this->pageTitle = 'Головна сторінка';
 
-		$this->module->tableName('mainpage');
+		$this->module->tableName('sourcemessages');
 		$this->module->setPK('id');
 		$fieldsConf = array(
-			array('language', 'string', 'Мова', array('show')),
-			array('title', 'string', 'Заголовок сторінки', array('show')),
-			array('header1', 'string', 'Заголовок 1', array('show')),
-			array('subheader1', 'string', 'Підзаголовок 1', array('show')),
-			array('header2', 'string', 'Заголовок 2', array('show')),
-			array('subheader2', 'string', 'Підзаголовок 2', array('show')),
+			array('category', 'string', 'Категорія', array('show')),
+			array('message', 'text', 'Англійською', array('show', 'directoryPath'=>'./')),
+			array('id', 'foreign', 'Українською', array(
+				'show', //Show in List mode
+				'search',   //User is allowed to search by this field
+				'bindBy'=>'id', //Country is fixed by previous interface. Set that field.
+				'foreign'=>array(   //Foreign key options
+					'table'     => 'translatedMessages', //Table which it belongs to
+					'pk'        => 'id',    //Foreign table's PK
+					'select'    => array('translation'),    //Foreign field to select for listing
+					'searchBy'  => array('translation'=>'Українською'),//Foreign field to search by
+					'order'     => 'translation',   //Foreign field to order by
+				)
+			)),
 		);
 		$this->module->fieldsConf($fieldsConf);
-		$this->module->sortDefault(array('title'));
+		$this->module->sortDefault(array('category'));
+		$this->module->rowsOnPage = 20;
 		$this->module->process();
 	}
 

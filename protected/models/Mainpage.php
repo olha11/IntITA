@@ -48,13 +48,13 @@ class Mainpage extends CActiveRecord
 
 	public function setValueById($id)
 	{
-		$this->title=$this->findByPk($id)->title;
+		$this->title=$this->getTitle();
 		$this->sliderText=$this->findByPk($id)->sliderText;
 		$this->header1=$this->findByPk($id)->header1;
 		$this->header2=$this->findByPk($id)->header2;
 		$this->linkName=$this->findByPk($id)->linkName;
 		$this->sliderTextureURL=Yii::app()->request->baseUrl.$this->findByPk($id)->sliderTextureURL;
-		$this->sliderHeader=$this->getSliderHeader();
+		//$this->sliderHeader=$this->getSliderHeader();
 		$this->stepSize=$this->findByPk($id)->stepSize;
 		$this->subheader1=$this->findByPk($id)->subheader1;
 		$this->subheader2=$this->findByPk($id)->subheader2;
@@ -118,8 +118,8 @@ class Mainpage extends CActiveRecord
 			'language' => 'Language',
 			'message' => 'Message',
 			'category' => 'Category',
-			'title' => 'Title',
-			'sliderHeader' => 'Slider Header',
+			'title' => 'Title',//Yii::t('mainpage', 'model.mainpage.title'),
+			'sliderHeader' => Yii::t('mainpage', 'model.mainpage.sliderHeader'),
 			'sliderText' => 'Slider Text',
 			'sliderTextureURL' => 'Slider Texture Url',
 			'sliderLineURL' => 'Slider Line Url',
@@ -207,7 +207,7 @@ class Mainpage extends CActiveRecord
 	}
 
 	public function getTitle(){
-		return Yii::t('mainpage', 'IntITA - Академія програмування');
+		return Yii::t('mainpage', 'INTITA');
 	}
 
 	public function getSliderText(){
@@ -215,8 +215,9 @@ class Mainpage extends CActiveRecord
 	}
 
 	public function getSliderHeader(){
-		return Yii::t('mainpage', 'ПРОГРАМУЙ МАЙБУТНЄ');
+		return Yii::t('mainpage', 'PROGRAM FUTURE');
 	}
+
 	public function getHeader1(){
 		return Yii::t('mainpage','Про нас');
 	}

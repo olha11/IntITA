@@ -4,6 +4,8 @@
  *
  * The followings are the available columns in table 'course':
  * @property integer $course_ID
+ *  @property string $alias
+ * @property string $language
  * @property string $course_name
  * @property integer $course_duration_hours
  * @property integer $modules_count
@@ -11,8 +13,10 @@
  * @property string $for_whom
  * @property string $what_you_learn
  * @property string $what_you_get
+ * @property string $course_img
  *
  * The followings are the available model relations:
+ * @property Modules[] $modules
  * @property Studentsaccess[] $studentsaccesses
  */
 class Course extends CActiveRecord
@@ -33,13 +37,16 @@ class Course extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('alias, language, course_name, course_duration_hours', 'required'),
 			array('course_duration_hours, modules_count', 'numerical', 'integerOnly'=>true),
+			array('alias, course_price', 'length', 'max'=>10),
+			array('language', 'length', 'max'=>6),
 			array('course_name', 'length', 'max'=>45),
-			array('course_price', 'length', 'max'=>10),
-			array('for_whom, what_you_learn, what_you_get', 'length', 'max'=>255),
+			array('course_img', 'length', 'max'=>255),
+			array('for_whom, what_you_learn, what_you_get', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('course_ID, course_name, course_duration_hours, modules_count, course_price, for_whom, what_you_learn, what_you_get', 'safe', 'on'=>'search'),
+			array('course_ID,alias, language, course_name, course_duration_hours, modules_count, course_price, for_whom, what_you_learn,what_you_get, course_img', 'safe', 'on'=>'search'),
 		);
 	}
 	/**
@@ -50,6 +57,7 @@ class Course extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'modules' => array(self::HAS_MANY, 'Modules', 'course'),
 			'studentsaccesses' => array(self::HAS_MANY, 'Studentsaccess', 'courseID'),
 		);
 	}
@@ -61,6 +69,8 @@ class Course extends CActiveRecord
 	{
 		return array(
 			'course_ID' => 'Course',
+			'alias' => 'Alias',
+			'language' => 'Language',
 			'course_name' => 'Course Name',
 			'course_duration_hours' => 'Course Duration Hours',
 			'modules_count' => 'Modules Count',
@@ -68,6 +78,7 @@ class Course extends CActiveRecord
 			'for_whom' => 'For Whom',
 			'what_you_learn' => 'What You Learn',
 			'what_you_get' => 'What You Get',
+			'course_img' => 'Course Img',
 		);
 	}
 
@@ -90,6 +101,8 @@ class Course extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('course_ID',$this->course_ID);
+		$criteria->compare('alias',$this->alias,true);
+		$criteria->compare('language',$this->language,true);
 		$criteria->compare('course_name',$this->course_name,true);
 		$criteria->compare('course_duration_hours',$this->course_duration_hours);
 		$criteria->compare('modules_count',$this->modules_count);
@@ -97,6 +110,7 @@ class Course extends CActiveRecord
 		$criteria->compare('for_whom',$this->for_whom,true);
 		$criteria->compare('what_you_learn',$this->what_you_learn,true);
 		$criteria->compare('what_you_get',$this->what_you_get,true);
+		$criteria->compare('course_img',$this->course_img,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -161,5 +175,17 @@ class Course extends CActiveRecord
 		}
 
 		echo  ' модул'.$term;
+	}
+
+	public function getCourseAlias($id){
+		return $this->findByPk($id)->alias;
+	}
+
+	public function exists($alias){
+		return $this->findCourseIDByAlias($alias);
+	}
+
+	public function findCourseIDByAlias($alias){
+		return $this->find('alias=:alias', array(':alias' == $alias))->course_ID;
 	}
 }

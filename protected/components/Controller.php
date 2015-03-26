@@ -26,21 +26,17 @@ class Controller extends CController
 	public function init(){
 		$this->logoURL = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->logoURL;
         $this->smallLogoURL = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->smallLogoURL;
-		$this->menu1 = Header::model()->findByPk(0)->menuItem1;
-		$this->menu2 = Header::model()->findByPk(0)->menuItem2;
-		$this->menu3 = Header::model()->findByPk(0)->menuItem3;
-		$this->menu4 = Header::model()->findByPk(0)->menuItem4;
 		$this->link1 = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->item1Link;
 		$this->link2 = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->item2Link;
 		$this->link3 = Header::model()->findByPk(0)->item3Link;
 		$this->link4 = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->item4Link;
-		$this->buttonText = Header::model()->findByPk(0)->enterButtonText;
-
-		$this->email = Footer::model()->findByPk(1)->email;
-		$this->phone = Footer::model()->findByPk(1)->phone;
-		$this->mobile = Footer::model()->findByPk(1)->mobile;
 		$this->imageSotial = Yii::app()->request->baseUrl.Footer::model()->findByPk(1)->imageSotial;
 		$this->imageUp = Yii::app()->request->baseUrl.Footer::model()->findByPk(1)->imageUp;
+
+		$app = Yii::app();
+		if (isset($app->session['lg'])) {
+			$app->language = $app->session['lg'];
+		}
 	}
 	/**
 	 * @var string the default layout for the controller view. Defaults to '//layouts/column1',

@@ -24,10 +24,6 @@ class Step extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
-	function Step($id){
-		//setValueById($id);
-	}
-
 	public function tableName()
 	{
 		return 'step';
@@ -37,10 +33,10 @@ class Step extends CActiveRecord
 	public function setValueById($id)
 	{
 		$this->stepImage=Yii::app()->request->baseUrl.$this->findByPk($id)->stepImagePath.$this->findByPk($id)->stepImage;
-		$this->stepTitle=$this->findByPk($id)->stepTitle;
-		$this->stepText=$this->findByPk($id)->stepText;
+		//$this->stepTitle=$this->findByPk($id)->stepTitle;
+		//$this->stepText=$this->findByPk($id)->stepText;
 		$this->stepNumber=$this->findByPk($id)->stepNumber;
-		$this->stepName=$this->findByPk($id)->stepName;
+		//$this->stepName=$this->findByPk($id)->stepName;
 	}
 	/**
 	 * @return array validation rules for model attributes.

@@ -18,7 +18,7 @@ $post=TeachersTemp::model()->findAll();
 <div class="subNavBlockTeachers">
     <?php
     $this->breadcrumbs=array(
-        'Викладачі',
+        Yii::t('breadcrumbs', 'Teachers'),
     );
     ?>
     <div class="ifYouTeachers">
