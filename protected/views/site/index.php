@@ -202,10 +202,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 <?php
 $model=new StudentReg();
 ?>
-
-<div id="beginRegistration">
-</div>
-    <a name="form"></a>
+<div style="position:relative;"><a name="form" style="position:absolute; top:-60px;"></a></div>
 <div class="regFormBG" style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/formfon.jpg') repeat-x;background-position: center center">
     <div class="regFormBox">
 
@@ -215,7 +212,7 @@ $model=new StudentReg();
         <div class="singInForm">
             <?php $form=$this->beginWidget('CActiveForm', array(
             'id'=>'studentreg-form',
-                'action'=> Yii::app()->createUrl('site/submitForm'),
+                'action'=> Yii::app()->createUrl('site/login'),
             // Please note: When you enable ajax validation, make sure the corresponding
             // controller action is handling ajax validation correctly.
             // There is a call to performAjaxValidation() commented in generated controller code.
@@ -241,7 +238,7 @@ $model=new StudentReg();
                 <?php echo CHtml::submitButton('ПОЧАТИ', array('id' => "singInButton")); ?>
             </div>
 
-            <div class="linesingInForm">Ви можете також увійти через соцмережі:</div>
+            <div class="linesingInForm"><?php echo $mainpage['socialText']; ?></div>
             <div class="image" >
                 <img name="networking" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/networking.png" width="410" height="50" border="0" id="networking" usemap="#m_networking" alt="" />
                 <map name="m_networking" id="m_networking">
