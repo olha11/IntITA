@@ -227,6 +227,11 @@ $model=new StudentReg();
             <div class="rowpass">
                 <span class="passEye"> <?php echo $form->passwordField($model,'password',array('class'=>'singInPass','placeholder'=>'Пароль','size'=>60,'maxlength'=>255)); ?></span>
                 <?php echo $form->error($model,'password'); ?>
+                <div style="color:red">
+                <?php if(Yii::app()->user->hasFlash('formerror')):
+                    echo Yii::app()->user->getFlash('formerror');
+                endif; ?>
+                </div>
             </div>
 
             <div class="regCheckbox">
