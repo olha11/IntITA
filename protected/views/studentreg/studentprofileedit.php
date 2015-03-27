@@ -11,7 +11,7 @@
 ?>
 <?php
 $this->pageTitle = 'INTITA';
-$post=StudentReg::model()->findByPk(1);
+$post=StudentReg::model()->findByPk(Yii::app()->user->id);
 ?>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.extensions.js"></script>
@@ -32,7 +32,7 @@ $post=StudentReg::model()->findByPk(1);
             <?php echo $post->nickname;?></br>
             <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
         </div>
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
+        <img src="<?php echo Yii::app()->request->baseUrl.$post->avatar; ?>"/>
     </div>
 </div>
 <div class="formStudProf">
@@ -134,7 +134,7 @@ $post=StudentReg::model()->findByPk(1);
                 </td>
             </tr>
         </table>
-        <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/></br>
+        <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl.$post->avatar; ?>"/></br>
         <div class="fileform">
             <input class="avatar" type="button" value="ВИБЕРІТЬ ФАЙЛ">
             <input tabindex="-1" type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
