@@ -34,9 +34,6 @@
     margin-top:50px;
     margin-bottom:8px;
 }
-.singInPass{
-    margin-bottom:8px;
-}
 input[type="submit"]#singInButton    {
     width:195px;
     height:52px;
@@ -124,21 +121,21 @@ div.linesingInForm{
     width: 26px;
     height: 14px;
     border-radius: 13px;
-    background: #dedede;
-    border:1px solid #dedede;
+    background: #FFF;
+    border:1px solid #4B75A4;
     transition: all .3s; /* анимация, чтобы чекбокс переключался плавно */
 }
 /* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
 #regCheckbox:not(checked) + label:after {
     content: '';
     position: absolute;
-    top: 4px;
-    left: 2px;
-    width: 14px;
-    height: 14px;
+    top: 6px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
     border-radius: 10px;
     background: #FFF;
-    border:1px solid #dedede;
+    border:1px solid #4B75A4;
     /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
     box-shadow: inset 1px -1px 1px rgba(0, 0, 0, .2);
 
@@ -156,7 +153,7 @@ div.linesingInForm{
 }
 /* Сдвигаем переключатель чекбокса, когда он включен. */
 #regCheckbox:checked + label:after {
-    left: 14px;
+    left: 17px;
     border:1px solid #4B75A4;
 }
 /* Показываем получение фокуса.*/
