@@ -168,16 +168,7 @@ class SiteController extends Controller
 	}
 
     public function actionSubmitForm(){
-		if(User::model()->isUserRegistered($_POST['email'], $_POST['password'])){
-			$http_response_header['buttonStart'] = 'Вихід';
-		}
-        else {
-			if (isset($_POST['isExtended'])) {
-				$this->redirect(array('studentreg/index'));
-			}
-			$this->redirect(array('courses/index'));
-		}
-		$this->redirect(Yii::app()->user->returnUrl);
+
     }
 
 	public  function setLang($lang='UA'){
@@ -221,7 +212,12 @@ class SiteController extends Controller
 	 */
 	public function actionLogin()
 	{
-		$model = new LoginForm;
+        if(isset($_POST['isExtended']))
+        {
+            $this->redirect(array('studentreg/index'));
+        }
+
+		$model = new StudentReg;
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
@@ -231,19 +227,27 @@ class SiteController extends Controller
 		}
 
 		// collect user input data
-		if(isset($_POST['LoginForm']))
+		if(isset($_POST['StudentReg']))
 		{
-			$model->attributes=$_POST['LoginForm'];
+			$model->attributes=$_POST['StudentReg'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login()) {
-				$this->redirect(Yii::app()->user->returnUrl);
+			if(!empty($_POST['StudentReg']['password']) && !empty($_POST['StudentReg']['email']) && $model->login()) {
+                $this->redirect(Yii::app()->user->returnUrl);
+			} else if(empty($_POST['StudentReg']['password']) || empty($_POST['StudentReg']['email'])) {
+                Yii::app()->user->setFlash('formerror', 'Заповніть поля для Входу або реєстрації' );
+                $this->redirect(Yii::app()->request->baseUrl.'/?r=site#form');
 			} else {
-				$this->redirect(Yii::app()->user->returnUrl);
-			}
+                Yii::app()->user->setFlash('mess', $_POST['StudentReg']['email'] );
+                $model->firstName=$_POST['StudentReg']['email'];
+                $model->email=$_POST['StudentReg']['email'];
+                $model->password=$_POST['StudentReg']['password'];
+                $model->password_repeat=$_POST['StudentReg']['password'];
+                $model->save();
+            }
 		}
 
 		// display the login form
-		$this->render('login',array('model'=>$model));
+        $this->redirect(Yii::app()->user->returnUrl);
 
 	}
 
