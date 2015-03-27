@@ -72,8 +72,6 @@ function centerPage()
 </div>
 </div>
 
-
-
 <div id="slider" class="owl-carousel owl-theme">
     <div class="item"><img src="<?php echo $slider1; ?>"></div>
     <div class="item"><img src="<?php echo $slider2; ?>"></div>
@@ -82,8 +80,7 @@ function centerPage()
 </div>
 
 <?php
-
-$this->pageTitle=Yii::t('mainpage','INTITA');
+$this->pageTitle = Yii::t('mainpage','INTITA');
 $headerText = Yii::t('mainpage','About us');
 $subheaderText = Yii::t('mainpage','something that you need to know about our courses');
 $subLineImage = $mainpage['subLineImage'];

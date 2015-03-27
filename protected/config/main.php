@@ -57,7 +57,7 @@ return array(
         'messages'=>array(
             'class'=>'CDbMessageSource',
             'sourceMessageTable'=>'sourceMessages',
-            'translatedMessageTable'=>'translatedMessages',
+            'translatedMessageTable'=>'translatedMessagesUA',
         ),
 
 		'user' => array(

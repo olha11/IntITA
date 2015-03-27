@@ -10,7 +10,7 @@
 /* @var $regExtended Regextended*/
 /* @var $form CActiveForm */
 $this->breadcrumbs=array(
-    'Реєстрація',
+    Yii::t('breadcrumbs', 'Register'),
 );
 ?>
 <!--Role-->

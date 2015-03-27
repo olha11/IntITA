@@ -22,7 +22,7 @@ $post=StudentReg::model()->findByPk(1);
 <div class="formStudProfNav">
     <?php
     $this->breadcrumbs=array(
-        'Профіль'=>Yii::app()->request->baseUrl.'/index.php/?r=studentreg/profile','Редагувати профіль'
+        Yii::t('breadcrumbs', 'Profile')=>Yii::app()->request->baseUrl.'/studentreg/profile',Yii::t('breadcrumbs', 'Edit profile')
     );
     ?>
     <div class="profileStatus">
@@ -38,7 +38,7 @@ $post=StudentReg::model()->findByPk(1);
 <div class="formStudProf">
     <?php $form=$this->beginWidget('CActiveForm', array(
         'id'=>'studentreg-form',
-        'action'=> Yii::app()->request->baseUrl.'/?r=studentreg/rewrite',
+        'action'=> Yii::app()->request->baseUrl.'/studentreg/rewrite',
 // Please note: When you enable ajax validation, make sure the corresponding
 // controller action is handling ajax validation correctly.
 // There is a call to performAjaxValidation() commented in generated controller code.

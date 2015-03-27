@@ -22,12 +22,12 @@ $post=TeachersTemp::model()->findAll();
     );
     ?>
     <div class="ifYouTeachers">
-        Якщо ви професійний ІТ-шник і бажаєте викладати окремі ІТ курси чи модулі і співпрацювати з нами в напрямку підготовки програмістів, напишіть нам листа.
+        <?php Yii::t('teachers', 'If you want professional IT and IT teach some courses or modules and cooperate with us in the field of training programmers write us a letter.');?>
     </div>
 </div>
 <div class='teachersList'>
     <div class="titleTeachers">
-        <h1>Наші викладачі</h1>
+        <h1><?php echo Yii::t('teachers', 'Our teachers'); ?></h1>
     </div>
     <div class="leftTeacher">
         <?php
@@ -41,14 +41,14 @@ $post=TeachersTemp::model()->findAll();
                         <tr>
                             <td class="profileTeacher" >
                                 <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
-                                <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">персональна сторінка &#187;</a>
+                                <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>"><?php echo Yii::t('teachers', 'personal page'); ?> &#187;</a>
                             </td>
                             <td>
                                 <h2><?php echo $teacherValue->last_name ?></h2>
                                 <h2><?php echo $teacherValue->first_name ?> <?php echo $teacherValue->middle_name ?></h2>
                                 <?php echo $teacherValue->profile_text ?>
                                 <p>
-                                    Ведет курсы:
+                                    <?php echo Yii::t('teachers', 'Read courses:'); ?>
                                 </p>
                                 <div class="teacherCourses">
                                     <ul>
@@ -67,7 +67,7 @@ $post=TeachersTemp::model()->findAll();
                         </tr>
                     </table>
                     <div class="aboutMore">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Читать полностью &#187;</a></br>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>"><?php echo Yii::t('teachers', 'Read more'); ?> &#187;</a></br>
                         <?php
                         for ($k=0; $k<10; $k++)
                         {
@@ -76,7 +76,7 @@ $post=TeachersTemp::model()->findAll();
                         <?php
                         }
                         ?>
-                        <a href="#">Відгуки &#187;</a>
+                        <a href="#"><?php echo Yii::t('teachers', 'Reviews'); ?> &#187;</a>
                     </div>
                 </div>
             <?php
@@ -96,14 +96,14 @@ $post=TeachersTemp::model()->findAll();
                         <tr>
                             <td class="profileTeacher" >
                                 <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
-                                <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">персональна сторінка &#187;</a>
+                                <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>"><?php echo Yii::t('teachers', 'personal page'); ?> &#187;</a>
                             </td>
                             <td>
                                 <h2><?php echo $teacherValue->last_name ?></h2>
                                 <h2><?php echo $teacherValue->first_name ?> <?php echo $teacherValue->middle_name ?></h2>
                                 <?php echo $teacherValue->profile_text ?>
                                 <p>
-                                    Ведет курсы:
+                                    <?php echo Yii::t('teachers', 'Read courses:'); ?>
                                 </p>
                                 <div class="teacherCourses">
                                     <ul>
@@ -122,7 +122,7 @@ $post=TeachersTemp::model()->findAll();
                         </tr>
                     </table>
                     <div class="aboutMore">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>">Читать полностью &#187;</a></br>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>"><?php echo Yii::t('teachers', 'Read more'); ?> &#187;</a></br>
                         <?php
                         for ($k=0; $k<10; $k++)
                         {
@@ -131,7 +131,7 @@ $post=TeachersTemp::model()->findAll();
                         <?php
                         }
                         ?>
-                        <a href="#">Відгуки &#187;</a>
+                        <a href="#"><?php echo Yii::t('teachers', 'Reviews'); ?> &#187;</a>
                     </div>
                 </div>
             <?php

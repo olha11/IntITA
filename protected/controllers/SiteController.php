@@ -200,9 +200,13 @@ class SiteController extends Controller
 	{
 		$app = Yii::app();
 		if (isset($_GET['lg'])) {
+			if ($_GET['lg'] == 'ru'){
+				Yii::app()->params['translatedMessageTable'] = 'translatedMessagesRU';
+			}
 			$app->session['lg'] = $_GET['lg'];
+
 		}
-		$this->redirect(Yii::app()->user->returnUrl);
+		$this->redirect($_SERVER['HTTP_REFERER']);
 	}
 	/**
 	 * Displays the contact page

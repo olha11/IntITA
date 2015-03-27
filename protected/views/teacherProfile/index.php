@@ -4,23 +4,24 @@
 <?php
 $this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
-    'Профіль викладача',
+    Yii::t('breadcrumbs', 'Teacher profile'),
 );
         $model=new TeacherProfile;
         $model->mainImage=Yii::app()->request->baseUrl.'/css/images/teacher1Image.png';
 		$model->firstName='Сіра';
         $model->lastName='Олександра Василівна';
-		$model->sectionTitle='Розділ: ';
         $model->arraySectionText=array('Програмування ПХП;','Java для IOS;');
-		$model->aboutTextMain='
-		<span class="TeacherProfiletitles">Про викладача:</span><p>
+        $tmp = Yii::t('teacher', 'About teacher:');
+        $tmp2 = Yii::t('teachers', 'Read courses:');
+		$model->aboutTextMain="
+		<span class='TeacherProfiletitles'>$tmp</span><p>
 <p>Народилася і виросла в Сакраменто, у 18 років вона переїхала до Лос-Анджелеса й незабаром стала вкладачем. У 2007, 2008 і 2010 рр.. вона виграла кілька номінацій премії AVN Awards (також була названа «Найкращою програмісткою» у 2007 році за версією XRCO). Паралельно з вікладауцью роботою та роботою програміста в Саша Грей грає головну роль в тестванні Інтернету.
 <p>Марина Енн Генціс народилася у родині механіка. Її батько мав грецьке походження. Батьки дівчинки розлучилися коли їй було 5 років, надалі її виховувала мати, яка вступила в повторний шлюб у 2000 роц. Марина не ладнала з вітчимом, і, коли їй виповнилося 16 років, дівчина повідомила матері, що збирається покинути будинок. Достеменно невідомо, втекла вона з свого будинку або ж її відпустила мати. Сама Олександра пізніше зізнавалася, що в той час робила все те, що не подобалося її батькам і що вони їй забороняли.
 <p>Главный бухгалтер акционерного предприятия, специализирующегося на:
 <p><ul><li>  оказании полезных услуг горизонтального характера;</li>
 <li> торговле, внешнеэкономической и    внутреннеэкономической;</li>
 <li>позитивное обучение швейного мастерства;</li></ul>
-<p>Веде курси:';
+<p>$tmp2";
 		$model->arrayCourseText=array(
             ' •  кройка и шитье сроков давности;'=>'https://www.google.com.ua/',
             ' •  программування самоубийств;'=>'https://www.google.com.ua/'
@@ -46,7 +47,7 @@ $this->breadcrumbs=array(
             </span>
             <div class="TeacherProfileseparator"></div>
             <span class="TeacherProfiletitles">
-                <?php echo $model->sectionTitle ?>
+                <?php echo Yii::t('teacher', 'Chapter:') ?>
             </span>
             <div class="TeacherProfilesectionText">
                 <?php 
