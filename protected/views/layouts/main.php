@@ -80,7 +80,11 @@
 <div id="centerEnterButton">
     <div id="button_border" class="down">
     </div>
-    <a id="enter_button" href="<?php echo Yii::app()->request->baseUrl;?>#form" class="down"><?php echo Yii::t('header','Sign in'); ?></a>
+    <?php if(Yii::app()->user->isGuest) {?>
+    <a id="enter_button" href="<?php echo Yii::app()->request->getBaseUrl(true); ?>#form" class="down"><?php echo $this->buttonText; ?></a>
+    <?php } else {?>
+        <a id="enter_button" href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/?r=site/logout" class="down">Вихід</a>
+    <?php }?>
 </div>
 <! Hamburger menu>
 

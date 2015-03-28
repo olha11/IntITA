@@ -29,6 +29,8 @@ class StudentReg extends CActiveRecord
     public $upload;
     public $letterTheme;
 
+    private $_identity;
+
     public function getDbConnection()
     {
         return Yii::app()->db;
@@ -103,6 +105,23 @@ class StudentReg extends CActiveRecord
             'upload'=> 'Up',
             'role'=> 'Роль',
         );
+    }
+
+    public function login()
+    {
+        if($this->_identity===null)
+        {
+            $this->_identity=new UserIdentity($this->email,$this->password);
+            $this->_identity->authenticate();
+        }
+        if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
+        {
+            $duration=3600*24*30; // 30 days
+            Yii::app()->user->login($this->_identity,$duration);
+            return true;
+        }
+        else
+            return false;
     }
 
     /**
@@ -184,5 +203,14 @@ class StudentReg extends CActiveRecord
             if($number > 4 ) {$term = " років";}
         }
         echo  $term;
+    }
+    public function validatePassword($password)
+    {
+        return CPasswordHelper::verifyPassword($password,$this->password);
+    }
+
+    public function hashPassword($password)
+    {
+        return CPasswordHelper::hashPassword($password);
     }
 }
