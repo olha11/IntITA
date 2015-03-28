@@ -2,11 +2,18 @@
 {
 position:relative;
 display:inline-block;
+
+}
+
+#a {
+
+
+
 }
 
 #centerEnterButton
 {
-position:absolute;
+position:relative;
 display:inline-block;
 margin-left:-631px;
 left:50%;
@@ -252,15 +259,6 @@ width:1200px;
 	border-radius:3px;
 }
 
-
-#sliderCenterBox
-{
-	position:absolute;
-	display:inline-block;
-	margin-left:-600px;
-	left:50%;
-	width:1200px;
-}
 
 #beginButtonCenter
 {
