@@ -82,7 +82,7 @@ function centerPage()
 </div>
 
 <?php
-
+ 
 $this->pageTitle=Yii::t('mainpage','INTITA');
 $headerText = Yii::t('mainpage','About us');
 $subheaderText = Yii::t('mainpage','something that you need to know about our courses');
