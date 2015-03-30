@@ -57,13 +57,13 @@ return array(
         'messages'=>array(
             'class'=>'CDbMessageSource',
             'sourceMessageTable'=>'sourceMessages',
-            'translatedMessageTable'=>'translatedMessages',
+            'translatedMessageTable'=>'translatedMessagesUA',
         ),
 
 		'user' => array(
 			'class'          => 'application.components.WebUser',
-			'loginUrl'       => array('/?r=register/submitForm'),
-			'allowAutoLogin' => false,
+			'loginUrl'       => array('/site/login'),
+			'allowAutoLogin' => true,
 		),
 
 		'authManager' => array(

@@ -90,9 +90,6 @@ $subLineImage = $mainpage['subLineImage'];
 $linkName = Yii::t('mainpage','read more ...');
 $massAbout=array($block1,$block2,$block3);
 ?>
-
-<div class="mouse11"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/mouse11.png"></div>
-
 <div class="contentCenterBox"> 
 <div class="mainAbout">
     <div class="header">

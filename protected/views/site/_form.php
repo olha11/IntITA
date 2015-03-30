@@ -1,7 +1,7 @@
 <?php
 $model=new StudentReg();
 ?>
-
+<link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/regform.css" />
 <div style="position:relative;"><a name="form" style="position:absolute; top:-60px;"></a></div>
 <div class="regFormBG" style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/formfon.jpg') repeat-x;background-position: center center">
 	<div class="regFormBox">
@@ -12,7 +12,7 @@ $model=new StudentReg();
 		<div class="singInForm">
 			<?php $form=$this->beginWidget('CActiveForm', array(
 				'id'=>'studentreg-form',
-				'action'=> Yii::app()->createUrl('site/submitForm'),
+				'action'=> Yii::app()->createUrl('site/login'),
 				// Please note: When you enable ajax validation, make sure the corresponding
 				// controller action is handling ajax validation correctly.
 				// There is a call to performAjaxValidation() commented in generated controller code.
@@ -29,6 +29,11 @@ $model=new StudentReg();
 				<?php $placeHolderPassword = Yii::t('regform','Password');?>
 				<span class="passEye"> <?php echo $form->passwordField($model,'password',array('class'=>'singInPass','placeholder'=>$placeHolderPassword,'size'=>60,'maxlength'=>255)); ?></span>
 				<?php echo $form->error($model,'password'); ?>
+				<div style="color:red">
+					<?php if(Yii::app()->user->hasFlash('forminfo')):
+						echo Yii::app()->user->getFlash('forminfo');
+					endif; ?>
+				</div>
 			</div>
 
 			<div class="regCheckbox">

@@ -15,7 +15,7 @@ $post=Course::model()->findByPk(1);
 ?>
 <?php
 $this->breadcrumbs=array(
-    'Курси'=>Yii::app()->request->baseUrl."/index.php/?r=courses",'Програмування для чайників',
+    Yii::t('breadcrumbs', 'Courses')=>Yii::app()->request->baseUrl."/index.php/?r=courses",'Програмування для чайників',
 );
 ?>
 <!-- BD -))) -->

@@ -1,6 +1,8 @@
 .regFormBG{
     padding-bottom: 100px;
     padding-top: 10px;
+    background:url('images/formfon.jpg') repeat-x;
+    background-position: center center;
 }
 .regFormBox{
     margin:0 auto;
@@ -23,7 +25,7 @@
     height:50px;
     border-radius:5px;
     border:1px solid #d8d8d8;
-    font-size:22px;
+    font-size:16px;
 }
 .singInForm input:hover{
     border-color: #1287bf;
@@ -32,9 +34,6 @@
 }
 .singInEmail{
     margin-top:50px;
-    margin-bottom:8px;
-}
-.singInPass{
     margin-bottom:8px;
 }
 input[type="submit"]#singInButton    {
@@ -75,7 +74,6 @@ input[type="submit"]#singInButton, x:-moz-any-link {
 div.linesingInForm{
     margin:0 auto;
     width:444px;
-    letter-spacing: 1px;
     font-size: 18px;
     border-top:1px solid #4b75a4;
     padding:10px 0 10px 0;
@@ -125,8 +123,9 @@ div.linesingInForm{
     width: 26px;
     height: 14px;
     border-radius: 13px;
-    background: #4B75A4;
-    box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+    background: #FFF;
+    border:1px solid #4B75A4;
+    transition: all .3s; /* анимация, чтобы чекбокс переключался плавно */
 }
 /* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
 #regCheckbox:not(checked) + label:after {
@@ -138,20 +137,33 @@ div.linesingInForm{
     height: 10px;
     border-radius: 10px;
     background: #FFF;
-    box-shadow: 0 2px 5px rgba(0,0,0,.3);
-    transition: all .2s; /* анимация, чтобы чекбокс переключался плавно */
+    border:1px solid #4B75A4;
+    /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 1px -1px 1px rgba(0, 0, 0, .2);
+
+      box-shadow: 0 .1em .1em rgba(0,0,0,.2) inset,
+     0 .45em 0 .1em rgba(0,0,0,.05) inset;
+     box-shadow: 0 .1em .1em .1em hsla(0,0%,100%,.8) inset,
+     0 0 .5em rgba(0,0,0,.3);
+     box-shadow: inset 1px -1px 1px rgba(0, 0, 0, .2);*/
+     transition: all .3s; /* анимация, чтобы чекбокс переключался плавно */
 }
 /* Меняем фон чекбокса, когда он включен. */
 #regCheckbox:checked + label:before {
-    background: #26ab36;
+    background: #4B75A4;
+    border:1px solid #4B75A4;
 }
 /* Сдвигаем переключатель чекбокса, когда он включен. */
 #regCheckbox:checked + label:after {
-    left: 16px;
+    left: 17px;
+    border:1px solid #4B75A4;
 }
-/* Показываем получение фокуса. */
+/* Показываем получение фокуса.*/
 #regCheckbox:focus + label:before {
-    box-shadow: 0 0 0 3px rgba(126,180,234,.5);
+    box-shadow: 0 0 1px #1287bf;
+}
+#regCheckbox:hover + label:before {
+    box-shadow: 0 0 1px #1287bf;
 }
 .regCheckbox{
     margin:0 auto;
@@ -169,7 +181,8 @@ div.linesingInForm{
 }
 /* PassEye */
 .passEye {
-    position:relative;display:inline-block;
+    position:relative;
+    display:inline-block;
 }
 .passEye input {
     padding-right:0px;
@@ -181,7 +194,7 @@ div.linesingInForm{
     position:absolute;
     right:10px;
     top:50%;
-    margin-top:-4px;
+    margin-top:-8px;
     display:block;
     height:10px;
     width:18px;

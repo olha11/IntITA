@@ -7,12 +7,12 @@
 /* @var $form CActiveForm */
 ?>
 <?php
-$post=StudentReg::model()->findByPk(1);
+$post=StudentReg::model()->findByPk(Yii::app()->user->id);
 ?>
 <div class="formStudProfNav">
     <?php
     $this->breadcrumbs=array(
-        'Профіль',
+        Yii::t('breadcrumbs', 'Profile'),
     );
     ?>
     <div class="profileStatus">
@@ -22,7 +22,7 @@ $post=StudentReg::model()->findByPk(1);
             <?php echo $post->nickname;?></br>
             <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
         </div>
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
+        <img src="<?php echo Yii::app()->request->baseUrl.$post->avatar; ?>"/>
     </div>
 </div>
 <div class="formStudProf">
@@ -40,7 +40,7 @@ $post=StudentReg::model()->findByPk(1);
                 </td>
             </tr>
         </table>
-        <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
+        <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl.$post->avatar; ?>"/>
         <table class='profileInfo'>
             <tr>
                 <td>

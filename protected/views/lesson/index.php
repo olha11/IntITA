@@ -26,7 +26,7 @@
 
 
 $this->breadcrumbs=array(
-    'Курс Програмування'=>Yii::app()->request->baseUrl."/?r=course",'Модуль PHP'=>Yii::app()->request->baseUrl."/?r=course",'Заняття 2: Змінні та типи данних в PHP',
+    Yii::t('breadcrumbs', 'Courses')=>Yii::app()->request->baseUrl."/courses",'Модуль PHP'=>Yii::app()->request->baseUrl."/course",'Заняття 2: Змінні та типи данних в PHP',
 );
 ?>
 

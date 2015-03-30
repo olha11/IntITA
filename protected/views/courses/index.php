@@ -17,7 +17,7 @@ $this->breadcrumbs=array(
 		public $courseMaxNumberofModules=4;
 		public $coursesHeader='Наші курси';
 		public $courseLevelTitle='Рівень курсу:  ';
-		public $coursesTextHeader='Концепція підготовки';
+		public $coursesTextHeader= '';
 		public $coursesTextFooter="Спочатку навчання створюється стійкий фундамент для підготовки програмістів: 
 		необхідні знання елементарної математики, будови комп’ютера і основ інформатики.
 		<p>Потім вивчаються основні принципи програмування на базі класичних комп'ютерних наук і методологій: алгоритмічна мова; 
@@ -62,7 +62,7 @@ $this->breadcrumbs=array(
 
 
 	<div id='coursesHeader'>
-	<?php echo $course1->coursesHeader; ?>
+	<?php echo Yii::t('courses', 'Our courses'); ?>
 	</div>
 
 <table>
@@ -71,7 +71,7 @@ $this->breadcrumbs=array(
 		<div class='courseBox'>
     		<img src='<?php echo $course11->courseImage; ?>'>
             <div class='courseName'>
-            <?php echo $course1->coursesTextHeader; ?>
+            <?php echo Yii::t('courses', 'Concept of learning'); ?>
     		</div>
     		        <span class='courseText'>
 
@@ -85,11 +85,11 @@ $this->breadcrumbs=array(
 		?>
 		<div class='courseBox'>
 		<img src='<?php echo $val->courseImage; ?>'>
-		<div class='courseName'> <a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=course"><?php
+		<div class='courseName'> <a href="<?php echo Yii::app()->request->baseUrl; ?>/course"><?php
 				echo $val->courseName; ?></a>
 		</div>
 		<div class="courseLevelBox">
-			<?php echo $val->courseLevelTitle; ?>
+			<?php echo Yii::t('courses', 'Level:'); ?>
 		
 			<span class="courseLevel">
 			<?php echo $val->courseLevel; ?>
@@ -112,7 +112,7 @@ $this->breadcrumbs=array(
 			</div>
 		</div>
         <div class="courseLang">
-        <?php echo $val->courseLang; ?>
+        <?php echo Yii::t('courses', 'Language:'); ?>
             <div id="coursesLang" class="down">
                 <form action="" method="post" onsubmit="" name="fff">
                     <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
