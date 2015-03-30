@@ -13,14 +13,19 @@ left:50%;
 width:1200px;
 }
 
-.mainAbout {
-    border:solid 0px;
-    left:50%;
+.mainAboutBlock {
+    margin: 0 auto;
     width: 960px;
-    height: 390px;
+}
+.mainAbout {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    border:solid 0px;
+    width: 960px;
+    height:100%;
+    overflow: hidden;
     display:inline-block;
     position:relative;
-    margin-left: -480px; margin-top:0px;
     font-family:MyriadPro;
  }
  
