@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="language" content="en">
 
@@ -78,11 +78,11 @@
 <div id="centerEnterButton">
     <div id="button_border" class="down">
     </div>
-    <?php if(Yii::app()->user->isGuest) {
-        echo CHtml::link($this->buttonText,array('site/#form'),array( 'id'=>'enter_button','class'=>'down'));
-    } else {
-        echo  CHtml::link('Вихід',array('site/logout'),array( 'id'=>'enter_button','class'=>'down'));
-    }?>
+    <?php if(Yii::app()->user->isGuest) {?>
+    <a id="enter_button" href="<?php echo Yii::app()->request->getBaseUrl(true); ?>#form" class="down"><?php echo Yii::t('header', 'Sign in'); ?></a>
+    <?php } else {?>
+        <a id="enter_button" href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/site/logout" class="down"><?php echo Yii::t('header', 'Sign out'); ?></a>
+    <?php }?>
 </div>
 <! Hamburger menu>
 

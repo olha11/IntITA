@@ -53,21 +53,11 @@ class SiteController extends Controller
 			'slider4'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(4)->imagesPath.$modelCarousel->findByPk(4)->pictureURL,
 		);
 		
-		$sliderText = array(
-			'sliderText1'=> $modelCarousel->findByPk(1)->text,
-			'sliderText2'=> $modelCarousel->findByPk(2)->text,
-			'sliderText3'=> $modelCarousel->findByPk(3)->text,
-			'sliderText4'=> $modelCarousel->findByPk(4)->text,
-		);
 		$this->render('index', array(
 			'slider1'=>$sliderPictures['slider1'],
-			'sliderText1'=>$sliderPictures['sliderText1'],
 			'slider2'=>$sliderPictures['slider2'],
-			'sliderText2'=>$sliderPictures['sliderText2'],
 			'slider3'=>$sliderPictures['slider3'],
-			'sliderText3'=>$sliderPictures['sliderText3'],
 			'slider4'=>$sliderPictures['slider4'],
-			'sliderText4'=>$sliderPictures['sliderText4'],
 			'mainpage'=>array(
 				'sliderLine'=> $mainpage->sliderLineURL,
 				'sliderTexture'=> $mainpage->sliderTextureURL,
@@ -267,23 +257,17 @@ class SiteController extends Controller
 			$model->attributes=$_POST['StudentReg'];
 			// validate user input and redirect to the previous page if valid
 			if(!empty($_POST['StudentReg']['password']) && !empty($_POST['StudentReg']['email']) && $model->login()) {
-                $this->redirect(Yii::app()->request->baseUrl.'/?r=courses');
-            } else if(empty($_POST['StudentReg']['password']) || empty($_POST['StudentReg']['email'])) {
-                Yii::app()->user->setFlash('forminfo', 'Заповніть поля для Входу або реєстрації' );
+                $this->redirect(Yii::app()->user->returnUrl);
+			} else if(empty($_POST['StudentReg']['password']) || empty($_POST['StudentReg']['email'])) {
+                Yii::app()->user->setFlash('formerror', 'Заповніть поля для Входу або реєстрації' );
                 $this->redirect(Yii::app()->request->baseUrl.'/?r=site#form');
 			} else {
+                Yii::app()->user->setFlash('mess', $_POST['StudentReg']['email'] );
                 $model->firstName=$_POST['StudentReg']['email'];
                 $model->email=$_POST['StudentReg']['email'];
                 $model->password=$_POST['StudentReg']['password'];
                 $model->password_repeat=$_POST['StudentReg']['password'];
-                if ($model->model()->count("email = :email", array(':email' => $model->email)))
-                {
-                    // Указанный email уже занят. Создаем ошибку и передаем в форму
-                    $model->addError('email', 'Email уже зайнятий');
-                }else
                 $model->save();
-                Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися. Введіть данні для авторизації' );
-                $this->redirect(Yii::app()->request->baseUrl.'/?r=site#form');
             }
 		}
 
@@ -300,5 +284,4 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
-
 }

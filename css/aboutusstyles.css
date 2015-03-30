@@ -1,18 +1,16 @@
 .contentCenterBox
 {
-position:relative;
-display:inline-block;
+    position:relative;
+    display:inline-block;
 }
-
 #centerEnterButton
 {
-position:absolute;
-display:inline-block;
-margin-left:-631px;
-left:50%;
-width:1200px;
+    position:absolute;
+    display:inline-block;
+    margin-left:-631px;
+    left:50%;
+    width:1200px;
 }
-
 .mainAboutBlock {
     margin: 0 auto;
     width: 960px;
@@ -27,9 +25,8 @@ width:1200px;
     display:inline-block;
     position:relative;
     font-family:MyriadPro;
- }
- 
-.header {  
+}
+.header {
     text-align: center ;
     position:relative;
     color: #666666;
@@ -39,18 +36,16 @@ width:1200px;
     margin-top:0px;
     margin-left:0px;
 }
-.header p {   
+.header p {
     color:#4682B4;
     font-size:19px;
     font-family:MyriadPro;
     margin-top:0px;
 }
-
-.line1{ 
+.line1{
     margin-left:272px;
     margin-top:-25px;
 }
-
 .block {
     border:solid 0px #DCDCDC;
     float:left;
@@ -62,7 +57,6 @@ width:1200px;
     margin-left: 50px;
     margin-top:35px;
 }
-   
 .block ul {
     display:inline-block;
     padding:0px;
@@ -70,22 +64,19 @@ width:1200px;
     list-style: none;
     margin-left:210px;
 }
-
 .block ul li {
     margin-left: -50px;
     padding: 0;
     display: inline-block ;
-	}
-
-.line2{    
-	position:absolute;
-    top:0px;   
+}
+.line2{
+    position:absolute;
+    top:0px;
     left:0px; }
-	
 .icon{
-	position:absolute;
-    top:0px;   
-	margin-top:-5px;
+    position:absolute;
+    top:0px;
+    margin-top:-5px;
     left:10%;
 }
 .title {
@@ -99,10 +90,9 @@ width:1200px;
 {
     cursor: pointer;
 }
-
 .title p {
     width:210px;
-    text-align:  left;
+    text-align: left;
     position:absolute;
     margin-top:5px;
     color:#696969;
@@ -112,7 +102,7 @@ width:1200px;
 }
 .block a {
     position:absolute;
-    top:94%;
+    top:92%;
     left:12%;
     color:#4682B4;
     font-size:16px;
@@ -127,16 +117,15 @@ width:1200px;
     position:relative;
     margin-top:20px;
 }
-
-#dropButton1 {    
+#dropButton1 {
     position:absolute;
     cursor: pointer;
     margin-left:80px;
     margin-top:285px;
     color: #4682B4;
     font-size:16px;
-	text-decoration:underline;
-	}
+    text-decoration:underline;
+}
 #dropButton1:hover{
     color: #252525;
 }
@@ -146,64 +135,54 @@ width:1200px;
 #dropButton3:hover{
     color: #252525;
 }
-	
-#dropButton2 {    
+#dropButton2 {
     position:absolute;
     cursor: pointer;
     margin-left:391px;
     margin-top:285px;
     color: #4682B4;
     font-size:16px;
-	text-decoration:underline;
-	}
-	
-#dropButton3 {    
+    text-decoration:underline;
+}
+#dropButton3 {
     position:absolute;
     cursor: pointer;
     margin-left:703px;
     margin-top:285px;
     color: #4682B4;
     font-size:16px;
-	text-decoration:underline;
-	}
-	
-#dropTextLayer1 
-{ 
-     position:relative;
-     display: none;
-         width:960px;
-    left:50%;
-    margin-left:-480px;
-
+    text-decoration:underline;
 }
- 
- #dropTextLayer2 
-{ 
-     position:relative;
-     display: none;
-         width:960px;
-    left:50%;
-    margin-left:-480px;
- }
- 
- #dropTextLayer3 
-{ 
-     position:relative;
-     display: none;
-         width:960px;
-    left:50%;
-    margin-left:-480px;
- }
-
-
-.textBox { 
-
+#dropTextLayer1
+{
     position:relative;
-	font-size:14px;
-	margin-bottom:0px; 
-	padding: 20px; 
+    display: none;
+    width:960px;
+    left:50%;
+    margin-left:-480px;
 }
-
+#dropTextLayer2
+{
+    position:relative;
+    display: none;
+    width:960px;
+    left:50%;
+    margin-left:-480px;
+}
+#dropTextLayer3
+{
+    position:relative;
+    display: none;
+    width:960px;
+    left:50%;
+    margin-left:-480px;
+}
+.textBox {
+    position:relative;
+    font-size:14px;
+    margin-bottom:0px;
+    padding: 20px;
+}
 .detailTitle1{
     color: #4682B4;
     font-size:19px;
@@ -212,23 +191,17 @@ width:1200px;
     font-weight:bold;
     font-size:16px;
 }
-
 .detailTitle3{
     font-weight:bold;
-    font-style:  italic;
+    font-style: italic;
     font-size:16px;
 }
-
-
 #detailTable{
     left:50%;
     border-spacing:0px;
 }
-
-
 #detailTable tr td
 {
-    
     text-indent:0em;
     border-left: 2px solid #dee5ef;
     text-align: left;
@@ -236,39 +209,26 @@ width:1200px;
     padding-left:40px;
     padding-top: 10px;
 }
-
-
 .listAbout
 {
     list-style-position: inside;
     text-indent:0em;
 }
-
 .aboutStepBlock{
     width:960px;
     border: 2px solid #d9d9d9;
-   	box-sizing:border-box;
-	position:relative;
-	-moz-box-sizing:border-box;
-	display:inline-block;
+    box-sizing:border-box;
+    position:relative;
+    -moz-box-sizing:border-box;
+    display:inline-block;
     padding:15px;
     background-color: #fff;
     margin-bottom:20px;
-	border-radius:3px;
-}
-
-
-#sliderCenterBox
-{
-	position:absolute;
-	display:inline-block;
-	margin-left:-600px;
-	left:50%;
-	width:1200px;
+    border-radius:3px;
 }
 
 #beginButtonCenter
 {
-position:absolute;
-margin-left:-60px
+    position:absolute;
+    margin-left:-60px
 }

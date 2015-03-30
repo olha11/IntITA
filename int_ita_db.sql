@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-03-27 18:42:11
+-- Date/time:                    2015-03-30 15:58:34
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -543,6 +543,20 @@ INSERT INTO `regextended` (`regID`, `language`, `mainLink`, `regLink`, `header`,
 /*!40000 ALTER TABLE `regextended` ENABLE KEYS */;
 
 
+-- Dumping structure for table int_ita_db.resource
+DROP TABLE IF EXISTS `resource`;
+CREATE TABLE IF NOT EXISTS `resource` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(20) NOT NULL,
+  `resourceId` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table int_ita_db.resource: ~0 rows (approximately)
+/*!40000 ALTER TABLE `resource` DISABLE KEYS */;
+/*!40000 ALTER TABLE `resource` ENABLE KEYS */;
+
+
 -- Dumping structure for table int_ita_db.sourcemessages
 DROP TABLE IF EXISTS `sourcemessages`;
 CREATE TABLE IF NOT EXISTS `sourcemessages` (
@@ -552,7 +566,7 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (original - English).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~68 rows (approximately)
+-- Dumping data for table int_ita_db.sourcemessages: ~67 rows (approximately)
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', 'INTITA'),
@@ -574,6 +588,7 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(17, 'header', 'Forum'),
 	(18, 'header', 'About us'),
 	(19, 'header', 'Sign in'),
+	(20, 'header', 'Sign out'),
 	(21, 'header', 'Teachers'),
 	(22, 'header', 'Sign out'),
 	(23, 'footer', 'tel: +38 0432 52 82 67'),
@@ -807,7 +822,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesru: ~68 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesru: ~67 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
 INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(1, 'ru', 'INTITA'),
@@ -822,13 +837,14 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(10, 'ru', 'Введите данные в форму ниже'),
 	(11, 'ru', 'расширенная регистрация'),
 	(12, 'ru', 'Вы также можете войти с помощью соцсетей:'),
-	(13, 'ru', 'СТАРТ'),
+	(13, 'ru', 'НАЧАТЬ'),
 	(14, 'ru', 'Электронная почта'),
 	(15, 'ru', 'Пароль'),
 	(16, 'ru', 'Курсы'),
 	(17, 'ru', 'Форум'),
 	(18, 'ru', 'О нас'),
 	(19, 'ru', 'Вход'),
+	(20, 'ru', 'Выход'),
 	(21, 'ru', 'Преподаватели'),
 	(22, 'ru', 'Выход'),
 	(23, 'ru', 'телефон: +38 0432 52 82 67 '),
@@ -891,7 +907,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   CONSTRAINT `FK_translatedmessages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
 
--- Dumping data for table int_ita_db.translatedmessagesua: ~66 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesua: ~63 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesua` DISABLE KEYS */;
 INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -913,6 +929,7 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(17, 'ua', 'Форум'),
 	(18, 'ua', 'Про нас'),
 	(19, 'ua', 'Вхід'),
+	(20, 'ua', 'Вихід'),
 	(21, 'ua', 'Викладачі'),
 	(22, 'ua', 'Вихід'),
 	(23, 'ua', 'телефон: +38 0432 52 82 67 '),
@@ -985,7 +1002,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `avatar` varchar(255) DEFAULT NULL,
   `role` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table int_ita_db.user: ~4 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
@@ -993,7 +1010,8 @@ INSERT INTO `user` (`id`, `firstName`, `middleName`, `secondName`, `nickname`, `
 	(1, 'Вова', 'Джа', 'Марля', 'Wizlight', '21/03/1997', 'Wizlightdragon@gmail.com', '', '911', '', 'Ямайка', 'ВДПУ', 'Онлайн', 'Ковбаска, колобки, раста', 'Інтернет', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', '/css/images/1id.jpg', ''),
 	(5, 't54wy6wy@ferwg.gtrf', NULL, NULL, NULL, NULL, 't54wy6wy@ferwg.gtrf', 'egrwhjet6', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
 	(6, 'dfesafhe@fjgr.gfrje', NULL, NULL, NULL, NULL, 'dfesafhe@fjgr.gfrje', 'fkrjgfrklfjrlk', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
-	(7, 'fhsdgfh@deyg.gdehj', NULL, NULL, NULL, NULL, 'fhsdgfh@deyg.gdehj', 'vfdvdf', NULL, '', NULL, NULL, 'Не вибрано', NULL, NULL, NULL, NULL, '');
+	(7, 'fhsdgfh@deyg.gdehj', NULL, NULL, NULL, NULL, 'fhsdgfh@deyg.gdehj', 'vfdvdf', NULL, '', NULL, NULL, 'Не вибрано', NULL, NULL, NULL, NULL, ''),
+	(8, 'admin@EHJBF.SNDFS', NULL, NULL, NULL, NULL, 'admin@EHJBF.SNDFS', 'd6877098041a8a30bc8bd8f9faeeb8e62afd682f', NULL, '', NULL, NULL, 'Не вибрано', NULL, NULL, NULL, NULL, '');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

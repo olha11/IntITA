@@ -1,25 +1,21 @@
-.owl-wrapper 
+.owl-wrapper
 {
 	width: 100%;
 }
-
-.owl-controls 
+.owl-controls
 {
 	position: absolute;
 	top: -1%;
 }
-
-.owl-wrapper-outer 
+.owl-wrapper-outer
 {
 	margin-top: 49px;
 }
-
-#slider 
+#slider
 {
-	z-index: 0;	
+	z-index: 0;
 }
-
-.slide p 
+.slide p
 {
 	position: absolute;
 	font-size: 0.5em;
@@ -30,93 +26,80 @@
 	text-align: center;
 	z-index: 1;
 	left: 50%;
-	top: 50%;	
+	top: 50%;
 }
-
-.slide img 
+.slide img
 {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	z-index: 0;
 }
-
 #sliderCenterBox
 {
 	position: absolute;
-    width: 100%; 
+	width: 100%;
 	z-index: 1;
 }
-
-.sliderCenterBoxText p 
+.sliderCenterBoxText p
 {
 	position: relative;
 	line-height: 5%;
 	text-align: center;
 	left: -2px;
 	color : #ffffff;
-    font-size: 1em;
-    font-family: "MyriadPro";
-    text-shadow: 0.05em 0.05em 0.05em #555;
+	font-size: 1em;
+	font-family: "MyriadPro";
+	text-shadow: 0.05em 0.05em 0.05em #555;
 }
-
-.sliderCenterBoxLine p 
+.sliderCenterBoxLine p
 {
 	position: relative;
 	line-height: 5%;
 	text-align: center;
 	color : #ffffff;
-    font-size: 0.4em;
-    font-family: "MyriadPro";
+	font-size: 0.4em;
+	font-family: "MyriadPro";
 }
-   
 .sliderSnake .snake img
 {
 	position: absolute;
 }
-
 .sliderSnake .button
 {
 	position: absolute;
 	top: 170%;
 	left: 50%;
 }
-
-
-
-
 .sliderSnake .button a
 {
 	position: absolute;
 	text-shadow: 0.1em 0.1em 0.1em black;
-    color: white;
+	color: white;
 	font: normal 400 0.54em/2.16em "MyriadPro";
 	line-height: 300%
-    vertical-align:  middle;
+vertical-align: middle;
 	text-align: center;
-    text-decoration: none;
+	text-decoration: none;
 	font-weight: 300;
-	border-top:      0.05em solid #007cbf;
-    background:      #4b70a3;
-    border-radius:   0.3em;
-    box-shadow:      0px 0.1em 0px black;
+	border-top: 0.05em solid #007cbf;
+	background: #4b70a3;
+	border-radius: 0.3em;
+	box-shadow: 0px 0.1em 0px black;
 	z-index: 4;
 }
-
 .sliderSnake .button a:hover
 {
-    border-top-color: #454545;
-    background: #454545;
-    color: #fcfcfc;
-    cursor: pointer;
+	border-top-color: #454545;
+	background: #454545;
+	color: #fcfcfc;
+	cursor: pointer;
 }
-
-.sliderSnake .button a:active 
+.sliderSnake .button a:active
 {
-    border-top-color: #363636;
-    background: #363636;    
+	border-top-color: #363636;
+	background: #363636;
 }
-
 .mouseLine img
 {
 	position: absolute;
