@@ -229,7 +229,7 @@ class SiteController extends Controller
 			$model->attributes=$_POST['StudentReg'];
 			// validate user input and redirect to the previous page if valid
 			if(!empty($_POST['StudentReg']['password']) && !empty($_POST['StudentReg']['email']) && $model->login()) {
-                $this->redirect($_SERVER['HTTP_REFERER']);
+                $this->redirect(Yii::app()->request->baseUrl.'/?r=courses');
             } else if(empty($_POST['StudentReg']['password']) || empty($_POST['StudentReg']['email'])) {
                 Yii::app()->user->setFlash('forminfo', 'Заповніть поля для Входу або реєстрації' );
                 $this->redirect(Yii::app()->request->baseUrl.'/?r=site#form');
