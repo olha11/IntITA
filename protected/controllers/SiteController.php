@@ -31,8 +31,6 @@ class SiteController extends Controller
 		);
 	}
 
-
-
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
@@ -47,28 +45,28 @@ class SiteController extends Controller
 
 		$arraySteps = $this->initSteps();
 		$arrayAboutUs = $this->initAboutus();
+		
 		$sliderPictures = array(
 			'slider1'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(1)->imagesPath.$modelCarousel->findByPk(1)->pictureURL,
-			'sliderText1'=> $modelCarousel->findByPk(1)->text,
 			'slider2'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(2)->imagesPath.$modelCarousel->findByPk(2)->pictureURL,
-			'sliderText2'=> $modelCarousel->findByPk(2)->text,
 			'slider3'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(3)->imagesPath.$modelCarousel->findByPk(3)->pictureURL,
-			'sliderText3'=> $modelCarousel->findByPk(3)->text,
 			'slider4'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(4)->imagesPath.$modelCarousel->findByPk(4)->pictureURL,
-			'sliderText4'=> $modelCarousel->findByPk(4)->text,
 		);
+		
 		$this->render('index', array(
 			'slider1'=>$sliderPictures['slider1'],
-			'sliderText1'=>$sliderPictures['sliderText1'],
 			'slider2'=>$sliderPictures['slider2'],
-			'sliderText2'=>$sliderPictures['sliderText2'],
 			'slider3'=>$sliderPictures['slider3'],
-			'sliderText3'=>$sliderPictures['sliderText3'],
 			'slider4'=>$sliderPictures['slider4'],
-			'sliderText4'=>$sliderPictures['sliderText4'],
 			'mainpage'=>array(
 				'sliderLine'=> $mainpage->sliderLineURL,
 				'sliderTexture'=> $mainpage->sliderTextureURL,
+				'buttonStart'=>$mainpage->sliderButtonText,
+				'sliderHeader'=>$mainpage->sliderHeader,
+				'sliderText'=>$mainpage->sliderText,
+				'title'=>$mainpage->title,
+				'header1'=>$mainpage->header1,
+				'header2'=>$mainpage->header2,
 				'hexagon'=>$mainpage->hexagon,
 				'subLineImage'=>$mainpage->subLineImage,
 				'stepSize'=>$mainpage->stepSize,
@@ -171,37 +169,12 @@ class SiteController extends Controller
 				$this->render('error', $error);
 		}
 	}
-
-    public function actionSubmitForm()
-	{
-		//if(User::model()->isUserRegistered($_POST['email'], $_POST['password'])){
-		//$this->redirect(array('studentreg/index'));
-		//else {
-		if (isset($_POST['isExtended'])) {
-			$this->redirect(array('studentreg/index'));
-		} else {
-
-			$this->rapidRegister($_POST['StudentReg']);
-		}
-    }
-
-	public function rapidRegister(){
-		$model = new StudentReg();
-		$model->email = $_POST['StudentReg']['email'];
-		$model->password = $_POST['StudentReg']['password'];
-		$model->firstName = $_POST['StudentReg']['email'];
-		$model->password_repeat = $_POST['StudentReg']['password'];
-		$model->educform = 'Не вибрано';
-		$model->save();
-		$this->redirect(array('courses/index'));
+	public function setLang($lang='UA'){
+		$this->actionIndex();
 	}
-
-	public function actionChangeLang()
+	public function actionChangeLang($lang)
 	{
-		$app = Yii::app();
-		if (isset($_GET['lg'])) {
-			$app->session['lg'] = $_GET['lg'];
-		}
+		Yii::app()->language = $lang;
 		$this->redirect(Yii::app()->user->returnUrl);
 	}
 	/**
@@ -221,7 +194,6 @@ class SiteController extends Controller
 					"Reply-To: {$model->email}\r\n".
 					"MIME-Version: 1.0\r\n".
 					"Content-Type: text/plain; charset=UTF-8";
-
 				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
 				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
 				$this->refresh();
@@ -229,38 +201,50 @@ class SiteController extends Controller
 		}
 		$this->render('contact',array('model'=>$model));
 	}
-
 	/**
 	 * Displays the login page
 	 */
 	public function actionLogin()
 	{
-		$model = new LoginForm;
-
-		// if it is ajax validation request
+		if(isset($_POST['isExtended']))
+		{
+			$this->redirect(array('studentreg/index'));
+		}
+		$model = new StudentReg;
+// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-
-		// collect user input data
-		if(isset($_POST['LoginForm']))
+// collect user input data
+		if(isset($_POST['StudentReg']))
 		{
-			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login()) {
-				$this->redirect(Yii::app()->user->returnUrl);
+			$model->attributes=$_POST['StudentReg'];
+// validate user input and redirect to the previous page if valid
+			if(!empty($_POST['StudentReg']['password']) && !empty($_POST['StudentReg']['email']) && $model->login()) {
+				$this->redirect(Yii::app()->request->baseUrl.'/courses');
+			} else if(empty($_POST['StudentReg']['password']) || empty($_POST['StudentReg']['email'])) {
+				Yii::app()->user->setFlash('forminfo', 'Заповніть поля для Входу або Реєстрації' );
+				$this->redirect(Yii::app()->request->baseUrl.'/site#form');
 			} else {
-				$this->redirect(Yii::app()->user->returnUrl);
+				$model->firstName=$_POST['StudentReg']['email'];
+				$model->email=$_POST['StudentReg']['email'];
+				$model->password=$_POST['StudentReg']['password'];
+				$model->password_repeat=$_POST['StudentReg']['password'];
+				if ($model->model()->count("email = :email", array(':email' => $model->email)))
+				{
+// Указанный email уже занят. Создаем ошибку и передаем в форму
+					$model->addError('email', 'Email уже зайнятий');
+				}else
+					$model->save();
+				Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися. Введіть дані для авторизації' );
+				$this->redirect(Yii::app()->request->baseUrl.'/site#form');
 			}
 		}
-
-		// display the login form
-		$this->render('login',array('model'=>$model));
-
+// display the login form
+		$this->redirect(Yii::app()->user->returnUrl);
 	}
-
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
