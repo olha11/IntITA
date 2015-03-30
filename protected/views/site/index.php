@@ -1,4 +1,4 @@
-<body onload="centerPage()">
+<body>
 <!-- regform style -->
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/regform.css" />
 <!-- regform style -->
@@ -11,11 +11,11 @@ if (self.screen)
 {
 	width = screen.width
 }
-function centerPage()   
+function centerPage()
 {
-    $('.contentCenterBox').css('width', width); 
+    $('.contentCenterBox').css('width', width);
     $('.contentCenterBox').css('left', "50%");
-    $('.contentCenterBox').css('margin-left', -width/2);  
+    $('.contentCenterBox').css('margin-left', -width/2);
 }
     var key = document.getElementById('enter_button');
     var nav = document.getElementById('navigation');
@@ -88,7 +88,7 @@ $subLineImage = $mainpage['subLineImage'];
 $linkName = $mainpage['linkName'];
 $massAbout=array($block1,$block2,$block3);
 ?>
-<div class="contentCenterBox"> 
+<div class="mainAboutBlock">
 <div class="mainAbout">
     <div class="header">
         <?php echo $headerText; ?>
@@ -109,7 +109,7 @@ $massAbout=array($block1,$block2,$block3);
             <ul>
                 <li>
                     <div class="line2">
-                    <img src="<?php echo $val->line2Image;?>"> 
+                    <img src="<?php echo $val->line2Image;?>">
                     </div>
                     <div class="icon">
                       <img src="<?php echo $val->iconImage;?>">
@@ -203,7 +203,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 $model=new StudentReg();
 ?>
 <div style="position:relative;"><a name="form" style="position:absolute; top:-60px;"></a></div>
-<div class="regFormBG" style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/formfon.jpg') repeat-x;background-position: center center">
+<div class="regFormBG">
     <div class="regFormBox">
 
         <p class="zagolovok"><?php echo $mainpage['formHeader1']; ?></p>
@@ -228,8 +228,8 @@ $model=new StudentReg();
                 <span class="passEye"> <?php echo $form->passwordField($model,'password',array('class'=>'singInPass','placeholder'=>'Пароль','size'=>60,'maxlength'=>255)); ?></span>
                 <?php echo $form->error($model,'password'); ?>
                 <div style="color:red">
-                <?php if(Yii::app()->user->hasFlash('formerror')):
-                    echo Yii::app()->user->getFlash('formerror');
+                <?php if(Yii::app()->user->hasFlash('forminfo')):
+                    echo Yii::app()->user->getFlash('forminfo');
                 endif; ?>
                 </div>
             </div>
