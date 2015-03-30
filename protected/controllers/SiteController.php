@@ -232,14 +232,18 @@ class SiteController extends Controller
 				$model->email=$_POST['StudentReg']['email'];
 				$model->password=$_POST['StudentReg']['password'];
 				$model->password_repeat=$_POST['StudentReg']['password'];
-				if ($model->model()->count("email = :email", array(':email' => $model->email)))
-				{
-// Указанный email уже занят. Создаем ошибку и передаем в форму
-					$model->addError('email', 'Email уже зайнятий');
-				}else
-					$model->save();
-				Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися. Введіть дані для авторизації' );
-				$this->redirect(Yii::app()->request->baseUrl.'/site#form');
+                if($model->validate()) {
+                    if ($model->model()->count("email = :email", array(':email' => $model->email))) {
+                        // Указанный email уже занят. Создаем ошибку и передаем в форму
+                        $model->addError('email', 'Email уже зайнятий');
+                    } else{
+                        $model->save();
+                        Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися. Введіть дані для авторизації');
+                        $this->redirect(Yii::app()->request->baseUrl . '/site#form');
+                    }
+                }
+                Yii::app()->user->setFlash('forminfo', 'Не вірно введені дані');
+                $this->redirect(Yii::app()->request->baseUrl . '/site#form');
 			}
 		}
 // display the login form

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="language" content="en">
 
@@ -225,6 +225,23 @@ else
         )); ?><!-- breadcrumbs -->
     <?php endif?>
 
+    <?php if(!Yii::app()->user->isGuest) {
+        $post=StudentReg::model()->findByPk(Yii::app()->user->id);
+    ?>
+    <div class="profileStatus">
+        <a href="<?php echo Yii::app()->request->baseUrl.'/studentreg/profile'; ?>">
+        <div>
+            <?php echo $post->firstName;?></br>
+            <?php echo $post->secondName;?></br>
+            <?php echo $post->nickname;?></br>
+            <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
+        </div>
+        <img src="<?php echo Yii::app()->request->baseUrl.$post->avatar; ?>"/>
+        </a>
+    </div>
+    <?php
+    }
+    ?>
 </div>
 <div id="contentBoxMain">
 <?php echo $content; ?>

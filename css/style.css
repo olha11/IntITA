@@ -3,6 +3,7 @@ body {
 }
 
 .main {
+    position: relative;
     width: 960px;
     margin: 0 auto;
     overflow: hidden;
@@ -40,6 +41,15 @@ p {
     padding-right: 8px;
 }
 #lang button{
+    background:none!important;
+    border:none;
+    cursor: pointer;
+    color: #4b70a3;
+    font-size: 18px;
+    font-family: "MyriadPro";
+    text-decoration: underline;
+}
+#lang button a{
     background:none!important;
     border:none;
     cursor: pointer;
@@ -362,7 +372,7 @@ input[type="submit"]::-moz-focus-inner { /* убираем внутренний 
 
 /* breadcrumbs */
 .my-cool-breadcrumbs{
-    margin-bottom: 24px;
+    padding-bottom: 24px;
     display: inline-block;
     margin-top: 40px;
     color: #666666;
@@ -371,3 +381,25 @@ input[type="submit"]::-moz-focus-inner { /* убираем внутренний 
     color: #666666;
 }
 /* breadcrumbs */
+/* profileStatus */
+div.profileStatus{
+    position: absolute;
+    top:76px;
+    right:0;
+    float:right;
+    display:block;
+    overflow: hidden;
+}
+.profileStatus img {
+    width:56px;
+    height:56px;
+    float: right;
+    margin-right: 10px;
+}
+.profileStatus div {
+    float: right;
+    font-size: smaller;
+    line-height: 110%;
+    color:#4b75a4;
+}
+/* profileStatus */

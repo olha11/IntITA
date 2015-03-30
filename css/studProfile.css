@@ -23,26 +23,7 @@ div.regLinks{
 .regLinks a{
     color: #666666;
 }
-div.profileStatus{
-    position: absolute;
-    top:-65px;
-    right:0;
-    float:right;
-    display:block;
-    overflow: hidden;
-}
-.profileStatus img {
-    width:56px;
-    height:56px;
-    float: right;
-    margin-right: 10px;
-}
-.profileStatus div {
-    float: right;
-    font-size: smaller;
-    line-height: 110%;
-    color:#4b75a4;
-}
+
 /* ˳�� �����*/
 .studProf{
     display:inline-block;

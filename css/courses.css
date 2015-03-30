@@ -130,10 +130,9 @@ display:inline-block;
 }
 
 #coursesLang{
-    z-index: 6;
     margin-left: 0px;
     margin-top: 0px;
-    position: relative;   
+    position: relative;
 }
 
 #coursesLang.down {
@@ -151,9 +150,10 @@ display:inline-block;
     border:none;
     cursor: pointer;
     color: #4b70a3;
-    font-size: 18px;
+    font-size: 14px;
     font-family: "MyriadPro";
     text-decoration: underline;
+    vertical-align: top;
 }
 #coursesLang .selectedLang {
     text-decoration: none;

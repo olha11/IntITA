@@ -15,15 +15,6 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
         Yii::t('breadcrumbs', 'Profile'),
     );
     ?>
-    <div class="profileStatus">
-        <div>
-            <?php echo $post->firstName;?></br>
-            <?php echo $post->secondName;?></br>
-            <?php echo $post->nickname;?></br>
-            <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
-        </div>
-        <img src="<?php echo Yii::app()->request->baseUrl.$post->avatar; ?>"/>
-    </div>
 </div>
 <div class="formStudProf">
     <div class="studProfInf">

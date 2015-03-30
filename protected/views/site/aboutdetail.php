@@ -95,7 +95,7 @@ $block1->drop2Text='<div class="aboutStepBlock"><span class="detailTitle1">На�
 </li></ul>';
 
 ?>
-
+<div class="mainAboutBlock">
 <div class="mainAbout">
     <div class="header">
 
@@ -212,6 +212,7 @@ function WindowShow(buttonNumber,anchor)
 </div>
 	
 
+</div>
 </div>
 
 <div id='aboutDetailMain'>
