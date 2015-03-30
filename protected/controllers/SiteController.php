@@ -42,54 +42,22 @@ class SiteController extends Controller
 		$modelCarousel = new Carousel();
 		$mainpage = new Mainpage();
 		$mainpage->setValueById(0);
-		$objAbout1 = new AboutUs(1);
-		$objAbout1->setValuesById(1);
-		$objAbout2 = new AboutUs(2);
-		$objAbout2->setValuesById(2);
-		$objAbout3 = new AboutUs(3);
-		$objAbout3->setValuesById(3);
-		$step1=new Step(1);
-		$step1->setValueById(1);
-		$step2=new Step(2);
-		$step2->setValueById(2);
-		$step3=new Step(3);
-		$step3->setValueById(3);
-		$step4=new Step(4);
-		$step4->setValueById(4);
-		$step5=new Step(5);
-		$step5->setValueById(5);
-		$arrayAboutUs = array(
-			'objAbout1'=>$objAbout1,
-			'objAbout2'=>$objAbout2,
-			'objAbout3'=>$objAbout3,
-		);
-		$arraySteps = array(
-			'step1'=>$step1,
-			'step2'=>$step2,
-			'step3'=>$step3,
-			'step4'=>$step4,
-			'step5'=>$step5,
-		);
 
+		$arraySteps = $this->initSteps();
+		$arrayAboutUs = $this->initAboutus();
+		
 		$sliderPictures = array(
 			'slider1'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(1)->imagesPath.$modelCarousel->findByPk(1)->pictureURL,
-			'sliderText1'=> $modelCarousel->findByPk(1)->text,
 			'slider2'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(2)->imagesPath.$modelCarousel->findByPk(2)->pictureURL,
-			'sliderText2'=> $modelCarousel->findByPk(2)->text,
 			'slider3'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(3)->imagesPath.$modelCarousel->findByPk(3)->pictureURL,
-			'sliderText3'=> $modelCarousel->findByPk(3)->text,
 			'slider4'=>Yii::app()->request->baseUrl.$modelCarousel->findByPk(4)->imagesPath.$modelCarousel->findByPk(4)->pictureURL,
-			'sliderText4'=> $modelCarousel->findByPk(4)->text,
 		);
+		
 		$this->render('index', array(
 			'slider1'=>$sliderPictures['slider1'],
-			'sliderText1'=>$sliderPictures['sliderText1'],
 			'slider2'=>$sliderPictures['slider2'],
-			'sliderText2'=>$sliderPictures['sliderText2'],
 			'slider3'=>$sliderPictures['slider3'],
-			'sliderText3'=>$sliderPictures['sliderText3'],
 			'slider4'=>$sliderPictures['slider4'],
-			'sliderText4'=>$sliderPictures['sliderText4'],
 			'mainpage'=>array(
 				'sliderLine'=> $mainpage->sliderLineURL,
 				'sliderTexture'=> $mainpage->sliderTextureURL,
@@ -100,16 +68,8 @@ class SiteController extends Controller
 				'header1'=>$mainpage->header1,
 				'header2'=>$mainpage->header2,
 				'hexagon'=>$mainpage->hexagon,
-				'linkName'=>$mainpage->linkName,
 				'subLineImage'=>$mainpage->subLineImage,
 				'stepSize'=>$mainpage->stepSize,
-				'subheader1'=>$mainpage->subheader1,
-				'subheader2'=>$mainpage->subheader2,
-				'formHeader1'=>$mainpage->formHeader1,
-				'formHeader2'=>$mainpage->formHeader2,
-				'regText'=>$mainpage->regText,
-				'formButtonStart'=>$mainpage->buttonStart,
-				'socialText'=>$mainpage->socialText,
 				'imageNetwork'=>$mainpage->imageNetwork,
 				'formFon'=>$mainpage->formFon,
 			),
@@ -123,22 +83,65 @@ class SiteController extends Controller
 			'step5'=>$arraySteps['step5'],
 		));
 	}
-	
-	public function actionAboutdetail()
-	{
-		$mainpage = new Mainpage(0);
-		$mainpage->setValueById(0);
+
+	public function initAboutus(){
 		$objAbout1 = new AboutUs(1);
 		$objAbout1->setValuesById(1);
+		$objAbout1->titleText = Yii::t('aboutus', 'What you dream about?');
+		$objAbout1->textAbout = Yii::t('aboutus', 'Try to guess: their own apartment or even a house? A good car? Foreign travel may have to exotic countries?');
 		$objAbout2 = new AboutUs(2);
 		$objAbout2->setValuesById(2);
+		$objAbout2->titleText = Yii::t('aboutus', 'Learning of the future');
+		$objAbout2->textAbout = Yii::t('aboutus', 'Programming - it\'s not as hard as you can imagine. Of course, to become a good programmer, it takes time and effort.');
 		$objAbout3 = new AboutUs(3);
 		$objAbout3->setValuesById(3);
-		$arrayAboutUs = array(
+		$objAbout3->titleText = Yii::t('aboutus', 'Questions & feedback');
+		$objAbout3->textAbout = Yii::t('aboutus', 'Three whales INTITA Independent Programming Academy training schedule. Only 100% of the necessary knowledge. The acquisition of 100% of knowledge!');
+		return $arrayAboutUs = array(
 			'objAbout1'=>$objAbout1,
 			'objAbout2'=>$objAbout2,
 			'objAbout3'=>$objAbout3,
 		);
+	}
+
+	public function initSteps(){
+		$step1=new Step();
+		$step1->setValueById(1);
+		$step2=new Step();
+		$step2->setValueById(2);
+		$step3=new Step();
+		$step3->setValueById(3);
+		$step4=new Step();
+		$step4->setValueById(4);
+		$step5=new Step();
+		$step5->setValueById(5);
+
+		$step1->stepTitle =  Yii::t('step','Online Registration');
+		$step2->stepTitle =  Yii::t('step','Choosing course or module');
+		$step3->stepTitle =  Yii::t('step','Payment');
+		$step4->stepTitle =  Yii::t('step','Learning material');
+		$step5->stepTitle =  Yii::t('step','Completion of the course');
+
+		$step1->stepText =  Yii::t('step','To access the list of courses, modules and classes and pass free modules and classes register on the site. Registering will allow you to assess the quality and usability of our product that you will become a reliable partner and advisor to professional fulfillment.');
+		$step2->stepText =  Yii::t('step','To become a specialist in a certain direction and level (get professional specialization) choose to undergo appropriate course. If you are interested only deepen the knowledge in a particular area of IT, then choose the module to pass.');
+		$step3->stepText =  Yii::t('step','To start a course or module choose payment scheme (the entire amount for the course, month, potrymestrovo etc) and make a payment convenient way to You (payment scheme or course module can be changed also possible monthly payment on credit).');
+		$step4->stepText =  Yii::t('step','Learning material is possible by reading the text and / or viewing video for each session. During the development of the material classes perform intermediate tests. At the end of each session do the final test task. Each module ends with an individual project or exam. You can get individual counseling teacher or discuss the issue on the forum.');
+		$step5->stepText =  Yii::t('step','The result of course is the command thesis project, performed together with other students (the team recommends that forms an independent or executive who approved topic and terms of reference of the project). Filing project involves peredzahyst and protection in the online mode of presentation design.');
+
+		return $arraySteps = array(
+			'step1'=>$step1,
+			'step2'=>$step2,
+			'step3'=>$step3,
+			'step4'=>$step4,
+			'step5'=>$step5,
+		);
+	}
+
+	public function actionAboutdetail()
+	{
+		$mainpage = new Mainpage(0);
+		$mainpage->setValueById(0);
+		$arrayAboutUs = $this->initAboutus();
 		$this->render('aboutdetail', array(
 			'mainpage'=>array(
 				'title'=>$mainpage->title,
@@ -166,13 +169,9 @@ class SiteController extends Controller
 				$this->render('error', $error);
 		}
 	}
-
-
-	public  function setLang($lang='UA'){
+	public function setLang($lang='UA'){
 		$this->actionIndex();
 	}
-
-
 	public function actionChangeLang($lang)
 	{
 		Yii::app()->language = $lang;
@@ -195,7 +194,6 @@ class SiteController extends Controller
 					"Reply-To: {$model->email}\r\n".
 					"MIME-Version: 1.0\r\n".
 					"Content-Type: text/plain; charset=UTF-8";
-
 				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
 				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
 				$this->refresh();
@@ -203,57 +201,50 @@ class SiteController extends Controller
 		}
 		$this->render('contact',array('model'=>$model));
 	}
-
 	/**
 	 * Displays the login page
 	 */
 	public function actionLogin()
 	{
-        if(isset($_POST['isExtended']))
-        {
-            $this->redirect(array('studentreg/index'));
-        }
-
+		if(isset($_POST['isExtended']))
+		{
+			$this->redirect(array('studentreg/index'));
+		}
 		$model = new StudentReg;
-
-		// if it is ajax validation request
+// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-
-		// collect user input data
+// collect user input data
 		if(isset($_POST['StudentReg']))
 		{
 			$model->attributes=$_POST['StudentReg'];
-			// validate user input and redirect to the previous page if valid
+// validate user input and redirect to the previous page if valid
 			if(!empty($_POST['StudentReg']['password']) && !empty($_POST['StudentReg']['email']) && $model->login()) {
-                $this->redirect(Yii::app()->request->baseUrl.'/?r=courses');
-            } else if(empty($_POST['StudentReg']['password']) || empty($_POST['StudentReg']['email'])) {
-                Yii::app()->user->setFlash('forminfo', 'Заповніть поля для Входу або реєстрації' );
-                $this->redirect(Yii::app()->request->baseUrl.'/?r=site#form');
+				$this->redirect(Yii::app()->request->baseUrl.'/courses');
+			} else if(empty($_POST['StudentReg']['password']) || empty($_POST['StudentReg']['email'])) {
+				Yii::app()->user->setFlash('forminfo', 'Заповніть поля для Входу або Реєстрації' );
+				$this->redirect(Yii::app()->request->baseUrl.'/site#form');
 			} else {
-                $model->firstName=$_POST['StudentReg']['email'];
-                $model->email=$_POST['StudentReg']['email'];
-                $model->password=$_POST['StudentReg']['password'];
-                $model->password_repeat=$_POST['StudentReg']['password'];
-                if ($model->model()->count("email = :email", array(':email' => $model->email)))
-                {
-                    // Указанный email уже занят. Создаем ошибку и передаем в форму
-                    $model->addError('email', 'Email уже зайнятий');
-                }else
-                $model->save();
-                Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися. Введіть данні для авторизації' );
-                $this->redirect(Yii::app()->request->baseUrl.'/?r=site#form');
-            }
+				$model->firstName=$_POST['StudentReg']['email'];
+				$model->email=$_POST['StudentReg']['email'];
+				$model->password=$_POST['StudentReg']['password'];
+				$model->password_repeat=$_POST['StudentReg']['password'];
+				if ($model->model()->count("email = :email", array(':email' => $model->email)))
+				{
+// Указанный email уже занят. Создаем ошибку и передаем в форму
+					$model->addError('email', 'Email уже зайнятий');
+				}else
+					$model->save();
+				Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися. Введіть дані для авторизації' );
+				$this->redirect(Yii::app()->request->baseUrl.'/site#form');
+			}
 		}
-
-		// display the login form
-        $this->redirect(Yii::app()->user->returnUrl);
-
+// display the login form
+		$this->redirect(Yii::app()->user->returnUrl);
 	}
-
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
@@ -262,5 +253,4 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
-
 }

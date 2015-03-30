@@ -20,6 +20,7 @@
  * @property string $aboutUs
  * @property string $aboutMy
  * @property string $role
+ * @property boolean $isExtended
  */
 class StudentReg extends CActiveRecord
 {
@@ -39,7 +40,7 @@ class StudentReg extends CActiveRecord
      */
     public function tableName()
     {
-        return 'studentprofile';
+        return 'user';
     }
 
     /**
@@ -160,6 +161,7 @@ class StudentReg extends CActiveRecord
         $criteria->compare('avatar',$this->avatar,true);
         $criteria->compare('upload',$this->upload,true);
         $criteria->compare('role',$this->role,true);
+        $criteria->compare('isExtended',$this->isExtended, true);
 
 
         return new CActiveDataProvider($this, array(
@@ -205,7 +207,6 @@ class StudentReg extends CActiveRecord
             if($number > 1 ) {$term = " роки";}
             if($number > 4 ) {$term = " років";}
         }
-
         echo  $term;
     }
     public function validatePassword($password)

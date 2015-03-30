@@ -26,7 +26,7 @@ class Module extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'modules';
+		return 'module';
 	}
 
 	/**
@@ -174,4 +174,8 @@ class Module extends CActiveRecord
 
         echo  ' занят'.$term;
     }
+
+	public function findModuleIDByAlias($alias){
+		return $this->find('alias=:alias', array(':alias' == $alias))->module_ID;
+	}
 }

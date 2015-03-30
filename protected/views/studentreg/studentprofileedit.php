@@ -22,7 +22,7 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
 <div class="formStudProfNav">
     <?php
     $this->breadcrumbs=array(
-        'Профіль'=>Yii::app()->request->baseUrl.'/index.php/?r=studentreg/profile','Редагувати профіль'
+        Yii::t('breadcrumbs', 'Profile')=>Yii::app()->request->baseUrl.'/studentreg/profile',Yii::t('breadcrumbs', 'Edit profile')
     );
     ?>
     <div class="profileStatus">

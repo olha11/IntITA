@@ -12,7 +12,7 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
 <div class="formStudProfNav">
     <?php
     $this->breadcrumbs=array(
-        'Профіль',
+        Yii::t('breadcrumbs', 'Profile'),
     );
     ?>
     <div class="profileStatus">

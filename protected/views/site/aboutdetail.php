@@ -5,7 +5,6 @@
  * Date: 15.03.2015
  * Time: 18:08
  */
-$this->pageTitle = 'INTITA';
 ?>
 <html>
 <head>
@@ -13,15 +12,15 @@ $this->pageTitle = 'INTITA';
 <body onload=WindowShow(<?php echo (empty($_GET['id']))?1:$_GET['id']; ?>);centerPage()>
 <?php
 $this->breadcrumbs=array(
-    'Про нас',
+    Yii::t('breadcrumbs', 'About us'),
 );
 
-$this->pageTitle=$mainpage['title'];
+$this->pageTitle=Yii::t('mainpage','INTITA');
 
-$headerText = $mainpage['header1'];
-$subheaderText = $mainpage['subheader1'];
+$headerText = Yii::t('mainpage','About us');
+$subheaderText = Yii::t('mainpage','something that you need to know about our courses');
 $subLineImage= $mainpage['subLineImage'];
-$dropName = $mainpage['linkName'];
+$dropName = Yii::t('mainpage','read more ...');
 
 $massAbout = array($block1,$block2,$block3);
 
