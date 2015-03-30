@@ -57,6 +57,9 @@
             <li><a href="<?php echo $this->link2; ?>"><?php echo $this->menu2; ?></a></li>
             <li><a href="<?php echo $this->link3; ?>"><?php echo $this->menu3; ?></a></li>
             <li><a href="<?php echo $this->link4; ?>"><?php echo $this->menu4; ?></a></li>
+            <?php if(!Yii::app()->user->isGuest) {?>
+                <li><a href="<?php echo Yii::app()->request->baseUrl.'/?r=studentreg/profile' ?>">Профіль</a></li>
+            <?php } ?>
         </ul>
     </div>
 
@@ -72,11 +75,11 @@
 <div id="centerEnterButton">
     <div id="button_border" class="down">
     </div>
-    <?php if(Yii::app()->user->isGuest) {?>
-    <a id="enter_button" href="<?php echo Yii::app()->request->getBaseUrl(true); ?>#form" class="down"><?php echo $this->buttonText; ?></a>
-    <?php } else {?>
-        <a id="enter_button" href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/?r=site/logout" class="down">Вихід</a>
-    <?php }?>
+    <?php if(Yii::app()->user->isGuest) {
+        echo CHtml::link($this->buttonText,array('site/#form'),array( 'id'=>'enter_button','class'=>'down'));
+    } else {
+        echo  CHtml::link('Вихід',array('site/logout'),array( 'id'=>'enter_button','class'=>'down'));
+    }?>
 </div>
 <! Hamburger menu>
 
