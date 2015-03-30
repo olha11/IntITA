@@ -169,42 +169,13 @@ class SiteController extends Controller
 				$this->render('error', $error);
 		}
 	}
-
-    public function actionSubmitForm()
-	{
-		//if(User::model()->isUserRegistered($_POST['email'], $_POST['password'])){
-		//$this->redirect(array('studentreg/index'));
-		//else {
-		if (isset($_POST['isExtended'])) {
-			$this->redirect(array('studentreg/index'));
-		} else {
-
-			$this->rapidRegister($_POST['StudentReg']);
-		}
-    }
-
-	public function rapidRegister(){
-		$model = new StudentReg();
-		$model->email = $_POST['StudentReg']['email'];
-		$model->password = $_POST['StudentReg']['password'];
-		$model->firstName = $_POST['StudentReg']['email'];
-		$model->password_repeat = $_POST['StudentReg']['password'];
-		$model->educform = 'Не вибрано';
-		$model->save();
-		$this->redirect(array('courses/index'));
+	public function setLang($lang='UA'){
+		$this->actionIndex();
 	}
-
-	public function actionChangeLang()
+	public function actionChangeLang($lang)
 	{
-		$app = Yii::app();
-		if (isset($_GET['lg'])) {
-			if ($_GET['lg'] == 'ru'){
-				Yii::app()->params['translatedMessageTable'] = 'translatedMessagesRU';
-			}
-			$app->session['lg'] = $_GET['lg'];
-
-		}
-		$this->redirect($_SERVER['HTTP_REFERER']);
+		Yii::app()->language = $lang;
+		$this->redirect(Yii::app()->user->returnUrl);
 	}
 	/**
 	 * Displays the contact page
@@ -223,7 +194,6 @@ class SiteController extends Controller
 					"Reply-To: {$model->email}\r\n".
 					"MIME-Version: 1.0\r\n".
 					"Content-Type: text/plain; charset=UTF-8";
-
 				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
 				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
 				$this->refresh();
@@ -231,51 +201,50 @@ class SiteController extends Controller
 		}
 		$this->render('contact',array('model'=>$model));
 	}
-
 	/**
 	 * Displays the login page
 	 */
 	public function actionLogin()
 	{
-        if(isset($_POST['isExtended']))
-        {
-            $this->redirect(array('studentreg/index'));
-        }
-
+		if(isset($_POST['isExtended']))
+		{
+			$this->redirect(array('studentreg/index'));
+		}
 		$model = new StudentReg;
-
-		// if it is ajax validation request
+// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-
-		// collect user input data
+// collect user input data
 		if(isset($_POST['StudentReg']))
 		{
 			$model->attributes=$_POST['StudentReg'];
-			// validate user input and redirect to the previous page if valid
+// validate user input and redirect to the previous page if valid
 			if(!empty($_POST['StudentReg']['password']) && !empty($_POST['StudentReg']['email']) && $model->login()) {
-                $this->redirect(Yii::app()->user->returnUrl);
+				$this->redirect(Yii::app()->request->baseUrl.'/courses');
 			} else if(empty($_POST['StudentReg']['password']) || empty($_POST['StudentReg']['email'])) {
-                Yii::app()->user->setFlash('formerror', 'Заповніть поля для Входу або реєстрації' );
-                $this->redirect(Yii::app()->request->baseUrl.'/?r=site#form');
+				Yii::app()->user->setFlash('forminfo', 'Заповніть поля для Входу або Реєстрації' );
+				$this->redirect(Yii::app()->request->baseUrl.'/site#form');
 			} else {
-                Yii::app()->user->setFlash('mess', $_POST['StudentReg']['email'] );
-                $model->firstName=$_POST['StudentReg']['email'];
-                $model->email=$_POST['StudentReg']['email'];
-                $model->password=$_POST['StudentReg']['password'];
-                $model->password_repeat=$_POST['StudentReg']['password'];
-                $model->save();
-            }
+				$model->firstName=$_POST['StudentReg']['email'];
+				$model->email=$_POST['StudentReg']['email'];
+				$model->password=$_POST['StudentReg']['password'];
+				$model->password_repeat=$_POST['StudentReg']['password'];
+				if ($model->model()->count("email = :email", array(':email' => $model->email)))
+				{
+// Указанный email уже занят. Создаем ошибку и передаем в форму
+					$model->addError('email', 'Email уже зайнятий');
+				}else
+					$model->save();
+				Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися. Введіть дані для авторизації' );
+				$this->redirect(Yii::app()->request->baseUrl.'/site#form');
+			}
 		}
-
-		// display the login form
-        $this->redirect(Yii::app()->user->returnUrl);
-
+// display the login form
+		$this->redirect(Yii::app()->user->returnUrl);
 	}
-
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
