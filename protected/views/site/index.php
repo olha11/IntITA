@@ -1,4 +1,4 @@
-<body onload="centerPage()">
+<body>
 <!-- regform style -->
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/regform.css" />
 <!-- regform style -->
@@ -246,7 +246,7 @@ $subLineImage = $mainpage['subLineImage'];
 $linkName = Yii::t('mainpage','read more ...');
 $massAbout=array($block1,$block2,$block3);
 ?>
-<div class="contentCenterBox"> 
+<div class="mainAboutBlock">
 <div class="mainAbout">
     <div class="header">
         <?php echo $headerText; ?>
@@ -267,7 +267,7 @@ $massAbout=array($block1,$block2,$block3);
             <ul>
                 <li>
                     <div class="line2">
-                    <img src="<?php echo $val->line2Image;?>"> 
+                    <img src="<?php echo $val->line2Image;?>">
                     </div>
                     <div class="icon">
                       <img src="<?php echo $val->iconImage;?>">
