@@ -56,29 +56,188 @@ function centerPage()
 <div id="beginButtonCenter">
     <div class="lineAndButton">
         <img class="sliderLine" src="<?php echo $mainpage['sliderLine']; ?>">
-        <a class="sliderButton" href="#form"><?php echo Yii::t('slider','ENTER'); ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/> </a>
+        <a class="sliderButton" href="#beginRegistration"><?php echo $mainpage['buttonStart']; ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/> </a>
     </div>
 </div>
 
     <div class="sliderText">
-        <?php echo Yii::t('slider','PROGRAM THE FUTURE'); ?><br>
+        <?php echo $mainpage['sliderHeader']; ?><br>
         <div class="sliderTextJr">
             <br/>
             <hr style="border: 1px solid #ffffff; width: 100px;">
-            <?php echo Yii::t('slider','Don\'t miss your chance to change the world - get high-quality and modern education class and become an expert!'); ?>
+            <?php echo $mainpage['sliderText']; ?>
         </div>
     </div>
 
 </div>
 </div>
 
-<div id="slider" class="owl-carousel owl-theme">
-    <div class="item"><img src="<?php echo $slider1; ?>"></div>
-    <div class="item"><img src="<?php echo $slider2; ?>"></div>
-    <div class="item"><img src="<?php echo $slider3; ?>"></div>
-    <div class="item"><img src="<?php echo $slider4; ?>"></div>
+<script type="text/javascript"> /* Маштабування слайдера відповідно до ширини екрану*/
+	$(function(){
+		$('.owl-item').height(document.body.clientWidth/3.1);
+		$(window).resize(function(){
+		$('.owl-item').height(document.body.clientWidth/3.1);
+		});
+	});
+
+	
+	function fontSize() {   /* Маштабування тексту слайдера*/
+		var width = 1440; 
+		var fontSize = 42; 
+		var bodyWidth = $('html').width();  
+		var multiplier = bodyWidth / width;  
+		if (document.body.clientWidth <= width) 
+			fontSize = Math.floor(fontSize * multiplier);  
+			$('.sliderCenterBoxText').css({fontSize: fontSize+'px'});
+			$('.sliderCenterBoxLine').css({fontSize: fontSize+'px'});
+			$('#slider').css({fontSize: fontSize+'px'});
+			$('.sliderSnake .button ').css({fontSize: fontSize+'px'}); 	 	
+	}  
+	$(function() { fontSize(); });  
+	$(window).resize(function() { fontSize(); });  
+
+	
+	function marginLeft() {  /* Маштабування змійки*/
+		var pictureWidht=911
+		if ( document.body.clientWidth <= 1440 ){
+			$('.sliderSnake .snake img').height(document.body.clientWidth*0.6/4.85);
+			$('.sliderSnake .snake img').width(document.body.clientWidth*0.6);
+			$('.sliderSnake .snake img').css('margin-left', (document.body.clientWidth*0.6/2-document.body.clientWidth*0.6)+'px');
+			$('.sliderSnake .snake img').css('left', '50%' );
+		}else {
+			$('.sliderSnake .snake img').height('auto');
+			$('.sliderSnake .snake img').width('auto');
+			$('.sliderSnake .snake img').css('margin-left', (pictureWidht/2-pictureWidht)+'px');
+			$('.sliderSnake .snake img').css('left', document.body.clientWidth/2 );
+		}	
+	}
+	$(function() { marginLeft(); });  
+	$(window).resize(function() { marginLeft(); });  
+
+
+	function textSliderCentr() { /* Центрування тексту картинки слайдеру*/
+		$('.slide p').width(document.body.clientWidth);	
+		$('.slide p').css('margin-left', (document.body.clientWidth/2-document.body.clientWidth)+'px');
+	}	
+	$(function() { textSliderCentr(); });  
+	$(window).resize(function() { textSliderCentr(); });  
+
+	
+	function sliderBoxCentr() { /* Центрування центрального боксу слайдера*/
+		if ( document.body.clientWidth <= 1440 ){
+			$('#sliderCenterBox').css('top', document.body.clientWidth/3.1/3.1+'px');
+		} else {
+			$('#sliderCenterBox').css('top', ((document.body.clientWidth)/3.1)/2-90+'px');	
+		}
+	}	
+	$(function() { sliderBoxCentr(); });  
+	$(window).resize(function() { sliderBoxCentr(); });  
+
+	
+	function sliderButtonSize() { /* Розмір кнопки на слайдері*/
+		if ( document.body.clientWidth <= 1440 ){
+			$('.sliderSnake .button a').css('margin-left', (document.body.clientWidth*0.11/2-document.body.clientWidth*0.11)+'px');
+			$('.sliderSnake .button a').css('width',document.body.clientWidth*0.11+'px');
+			$('.sliderSnake .button a').css('height',document.body.clientWidth/3.2*0.11+'px');
+		} else {
+			$('.sliderSnake .button a').css('margin-left', '-80px')
+			$('.sliderSnake .button a').css('width','160px');
+			$('.sliderSnake .button a').css('height','50px');
+		}
+	}	
+	$(function() { sliderButtonSize(); });  
+	$(window).resize(function() { sliderButtonSize(); });  
+ 
+ 
+	function sizeButttonImg() {  /* Маштабування картинки на кнопці*/
+		if ( document.body.clientWidth <= 1440 ){
+			$('.sliderSnake .button img').height(document.body.clientWidth*0.011/0.94);
+			$('.sliderSnake .button img').width(document.body.clientWidth*0.0125);
+		}else {
+			$('.sliderSnake .button img').height('16px');
+			$('.sliderSnake .button img').width('18px');
+		}	
+	}
+	$(function() { sizeButttonImg(); });  
+	$(window).resize(function() { sizeButttonImg(); });  
+
+
+	function centrSliderButtons() {  /* центрування кнопок прокрутки слайдеру*/
+		if ( document.body.clientWidth <= 1000){
+			$('.owl-controls').css('margin-left', '0')
+			$('.owl-controls').css('left', '0')
+			$('.owl-controls').css('width', 'auto')
+		}else {
+			$('.owl-controls').css('margin-left', '-538px');
+			$('.owl-controls').css('left', '50%') 
+			$('.owl-controls').css('width', '200px')
+		}	
+	}
+	$(function() { centrSliderButtons(); });  
+	$(window).resize(function() { centrSliderButtons(); });  
+
+
+	function centrMouseLine() {  /* Маштабування лінії з мишкою*/
+		$('.mouseLine').css('height', document.body.clientWidth/35+'px')
+		$('.mouseLine').css('width', document.body.clientWidth+'px')
+		$('.mouseLine img').css('height', document.body.clientWidth/21.5+'px')
+		$('.mouseLine img').css('width', document.body.clientWidth+'px')
+	}
+	$(function() { centrMouseLine(); });  
+	$(window).resize(function() { centrMouseLine(); });  
+
+</script>
+
+
+<div id="sliderCenterBox">
+	<div class="sliderCenterBoxText">
+		<p><?php echo $mainpage['sliderHeader']; ?></p> 
+	</div>
+	<div class="sliderCenterBoxLine">
+		<p>__________</p>
+	</div>
+	<div class="sliderSnake">
+		<div class="snake">
+			<img src="<?php echo $mainpage['sliderLine']; ?>">
+		</div>
+		<div class="button">
+			<a class="sliderButton" href="#beginRegistration"><?php echo $mainpage['buttonStart']; ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/></a>
+		</div>
+	</div>
 </div>
 
+<div id="slider" class="owl-carousel">
+	<div class="slide">
+		<div>
+			<p><?php echo $sliderText1 ?></p>
+			<img src="<?php echo $slider1 ?>" />
+		</div>
+	</div>
+	<div class="slide">
+		<div>
+			<p><?php echo $sliderText2 ?></p>
+			<img src="<?php echo $slider2 ?>" />
+		</div>
+	</div>
+	<div class="slide">
+		<div>
+			<p><?php echo $sliderText3 ?></p>
+			<img src="<?php echo $slider3 ?>" />
+		</div>
+	</div>
+	<div class="slide">
+		<div>
+			<p><?php echo $sliderText4 ?></p>
+			<img src="<?php echo $slider4 ?>" />
+		</div>
+	</div>
+</div>
+
+<div class="mouseLine">
+	<a id="mouseLine" href="#beginRegistration"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/mouseLine.png"/></a>
+</div>
+
+<div id="a">
 <?php
 $this->pageTitle = Yii::t('mainpage','INTITA');
 $headerText = Yii::t('mainpage','About us');

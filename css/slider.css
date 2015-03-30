@@ -1,81 +1,125 @@
-#slider .item{
-    display: table-cell;
-    text-align: center;
-    width: 100%;
+.owl-wrapper 
+{
+	width: 100%;
 }
 
-.insideSlider {
-    position: absolute;
-    margin: 13.5%;
-    margin-top: 200px;
-    z-index: 2;
+.owl-controls 
+{
+	position: absolute;
+	top: -1%;
 }
 
-.lineAndButton {
-    position: absolute;
-    top: -100px;
+.owl-wrapper-outer 
+{
+	margin-top: 49px;
 }
-.sliderLine {
-    position: absolute;
-    left:-100px;
-    top: 240px;
-}
-.lineAndButton .sliderButton {
-    position:        absolute;
-    top:             345px;
-    margin-left:     400px;
-    margin-right:    120px;
 
-    width:           200px;
-    height:          50px;
-    border-top:      1px solid #007cbf;
-    background:      #4b70a3;
-    border-radius:   10px;
-    box-shadow:      0px 2px 0px black;
-    text-shadow:     1px 1px 1px black;
-    color:           white;
-    font-size:       21px;
-    font: normal     400 28px/50px "MyriadPro";
+#slider 
+{
+	z-index: 0;	
+}
+
+.slide p 
+{
+	position: absolute;
+	font-size: 0.5em;
+	font-family: "MyriadPro";
+	font-weight: 200;
+	color: white;
+	text-shadow: 1px 1px 1px #555;
+	text-align: center;
+	z-index: 1;
+	left: 50%;
+	top: 50%;	
+}
+
+.slide img 
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+#sliderCenterBox
+{
+	position: absolute;
+    width: 100%; 
+	z-index: 1;
+}
+
+.sliderCenterBoxText p 
+{
+	position: relative;
+	line-height: 5%;
+	text-align: center;
+	left: -2px;
+	color : #ffffff;
+    font-size: 1em;
+    font-family: "MyriadPro";
+    text-shadow: 0.05em 0.05em 0.05em #555;
+}
+
+.sliderCenterBoxLine p 
+{
+	position: relative;
+	line-height: 5%;
+	text-align: center;
+	color : #ffffff;
+    font-size: 0.4em;
+    font-family: "MyriadPro";
+}
+   
+.sliderSnake .snake img
+{
+	position: absolute;
+}
+
+.sliderSnake .button
+{
+	position: absolute;
+	top: 170%;
+	left: 50%;
+}
+
+
+
+
+.sliderSnake .button a
+{
+	position: absolute;
+	text-shadow: 0.1em 0.1em 0.1em black;
+    color: white;
+	font: normal 400 0.54em/2.16em "MyriadPro";
+	line-height: 300%
     vertical-align:  middle;
-    text-align:      center;
+	text-align: center;
     text-decoration: none;
+	font-weight: 300;
+	border-top:      0.05em solid #007cbf;
+    background:      #4b70a3;
+    border-radius:   0.3em;
+    box-shadow:      0px 0.1em 0px black;
+	z-index: 4;
 }
-.sliderButton:hover {
+
+.sliderSnake .button a:hover
+{
     border-top-color: #454545;
     background: #454545;
     color: #fcfcfc;
     cursor: pointer;
 }
-.sliderButton:active {
+
+.sliderSnake .button a:active 
+{
     border-top-color: #363636;
     background: #363636;    
 }
 
-.sliderText {
-    position: absolute;
-    text-align: center;
-    width: 1000px;
-    color: white;
-    font-size: 48px;
-    font-family: "MyriadPro";
-    text-shadow:     1px 1px 1px #555;
-    padding:0px;
-    margin-left:-60px;
-    margin-top:70px;
+.mouseLine img
+{
+	position: absolute;
+	margin-top: -1.8%;
+	z-index: 2;
 }
-
-.sliderTextJr {
-    font-size: 20px;
-    margin-top: -10px;
-
-}
-
-#sliderTexture {
-    position: absolute;
-    width: 100%;
-    height: 600px;
-    z-index: 1;
-    opacity: 20%;
-}
-
-
