@@ -115,7 +115,7 @@ class StudentReg extends CActiveRecord
         }
         if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
         {
-            $duration=3600*24*30; // 30 days
+            $duration=3600*24; // 30 days
             Yii::app()->user->login($this->_identity,$duration);
             return true;
         }
@@ -167,6 +167,11 @@ class StudentReg extends CActiveRecord
         ));
     }
 
+    protected function beforeSave()
+    {
+        $this->password=sha1($this->password);
+        return parent::beforeSave();
+    }
 
     /**
      * Returns the static model of the specified AR class.
