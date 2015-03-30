@@ -24,12 +24,12 @@ class Controller extends CController
 	public $imageSotial;
 
 	public function init(){
-		$this->logoURL = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->logoURL;
-        $this->smallLogoURL = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->smallLogoURL;
-		$this->link1 = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->item1Link;
-		$this->link2 = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->item2Link;
-		$this->link3 = Header::model()->findByPk(0)->item3Link;
-		$this->link4 = Yii::app()->request->baseUrl.Header::model()->findByPk(0)->item4Link;
+		$this->logoURL = Yii::app()->request->baseUrl.Header::model()->findByPk(1)->logoURL;
+        $this->smallLogoURL = Yii::app()->request->baseUrl.Header::model()->findByPk(1)->smallLogoURL;
+		$this->link1 = Yii::app()->request->baseUrl.Header::model()->findByPk(1)->item1Link;
+		$this->link2 = Yii::app()->request->baseUrl.Header::model()->findByPk(1)->item2Link;
+		$this->link3 = Header::model()->findByPk(1)->item3Link;
+		$this->link4 = Yii::app()->request->baseUrl.Header::model()->findByPk(1)->item4Link;
 		$this->imageSotial = Yii::app()->request->baseUrl.Footer::model()->findByPk(1)->imageSotial;
 		$this->imageUp = Yii::app()->request->baseUrl.Footer::model()->findByPk(1)->imageUp;
 

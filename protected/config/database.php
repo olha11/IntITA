@@ -9,7 +9,7 @@ return array(
 	'connectionString' => 'mysql:host=localhost;dbname=int_ita_db',
 	'emulatePrepare' => true,
 	'username' => 'root',
-	'password' => '',
+	'password' => 'кщще',
 	'charset' => 'utf8',
 
 );
