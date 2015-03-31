@@ -252,9 +252,10 @@ class StudentRegController extends Controller
         $this->render("studentprofileedit", array('model'=>$model));
 
     }
-    public function actionRewrite($id)
+    public function actionRewrite()
     {
-        Yii::app()->user->setFlash('messageedit', $id );
+        $model=new StudentReg();
+        $id=$_POST['StudentReg']['id'];
 
             StudentReg::model()->updateByPk($id, array('firstName' => $_POST['StudentReg']['firstName']));
 
@@ -268,6 +269,7 @@ class StudentRegController extends Controller
 
             StudentReg::model()->updateByPk($id, array('email' => $_POST['StudentReg']['email']));
 
+        if(!empty($_POST['StudentReg']['password'])&& sha1($_POST['StudentReg']['password'])==sha1($_POST['StudentReg']['password_repeat']))
             StudentReg::model()->updateByPk($id, array('password' => sha1($_POST['StudentReg']['password'])));
 
             StudentReg::model()->updateByPk($id, array('phone' => $_POST['StudentReg']['phone']));
@@ -292,6 +294,7 @@ class StudentRegController extends Controller
                 $_FILES["upload"]["name"]=$id.'.'. $ext;
                 copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/avatars/".$_FILES['upload']['name']);
                 StudentReg::model()->updateByPk($id, array('avatar' => "/css/images/avatars/".$_FILES["upload"]["name"]));
+                Yii::app()->user->setFlash('messageedit', 'Оновлено' );
             }
         }
         header ('location: '. Yii::app()->request->baseUrl.'/index.php/?r=studentreg/profile');

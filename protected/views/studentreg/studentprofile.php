@@ -39,15 +39,17 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
                     <h1><?php echo $post->firstName;?></h1>
                     <h1><?php echo $post->secondName;?></h1>
                     <div class="aboutInfo">
-                        <p><?php echo $post->address;?>,
-                            <?php
+                        <p><?php echo $post->address;
+                            if(!empty($post->address)&&!empty($post->birthday)) echo ', ';
                             $myAge = $post->birthday;
                             $myAge = str_replace("/",".",$myAge);
                             $date_a = new DateTime($myAge);
                             $date_b = new DateTime();
                             $interval = $date_b->diff($date_a);
-                            echo $interval->format("%Y");
-                            $post::getYearsTermination($interval->format("%Y"));
+                            if($interval->format("%Y")!=='00'){
+                                echo $interval->format("%Y");
+                                $post::getYearsTermination($interval->format("%Y"));
+                            }
                             ?>
                         </p>
                     </div>

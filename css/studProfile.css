@@ -386,12 +386,14 @@ p.courseLevLang{
 .profileCoursePay p {
     margin-bottom: 5px;
 }
-#myCourse div.studPay {
+#myCourse .studPay p{
     color: #e10000;
     font-size: 0.9em;
     margin: 0;
     padding: 0 0 0 20px;
     line-height: 100%;
+}
+#myCourse div.studPay {
     border-bottom:none;
 }
 .profileModule {
