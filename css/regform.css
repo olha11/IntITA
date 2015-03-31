@@ -155,8 +155,8 @@ div.linesingInForm{
 }
 /* Сдвигаем переключатель чекбокса, когда он включен. */
 #regCheckbox:checked + label:after {
-    left: 17px;
-    border:1px solid #4B75A4;
+    left: 16px;
+    border:1px solid #FFF;
 }
 /* Показываем получение фокуса.*/
 #regCheckbox:focus + label:before {
@@ -194,7 +194,7 @@ div.linesingInForm{
     position:absolute;
     right:10px;
     top:50%;
-    margin-top:-8px;
+    margin-top:-6px;
     display:block;
     height:10px;
     width:18px;
