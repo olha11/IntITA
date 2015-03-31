@@ -288,7 +288,8 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 		 ?>
 		 <div class="stepRight" style="width:<?php echo $stepSize; ?>" >
 					<div class="stepUrl">
-        		   		 <img src="<?php echo $stepValue->stepImage; ?>">
+                        <img class="grid" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/grid.png">
+        		   		<img src="<?php echo $stepValue->stepImage; ?>">
         		    </div>
 					<div class="line">
                     </div>
