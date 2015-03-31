@@ -169,13 +169,17 @@ class SiteController extends Controller
 				$this->render('error', $error);
 		}
 	}
-	public function setLang($lang='UA'){
-		$this->actionIndex();
-	}
-	public function actionChangeLang($lang)
+
+	public function actionChangeLang($lg)
 	{
-		Yii::app()->language = $lang;
-		$this->redirect(Yii::app()->user->returnUrl);
+		$app = Yii::app();
+		if (isset($_GET['lg'])) {
+			if ($_GET['lg'] == 'ru'){
+				Yii::app()->params['translatedMessageTable'] = 'translatedMessagesRU';
+			}
+			$app->session['lg'] = $_GET['lg'];
+		}
+		$this->redirect($_SERVER['HTTP_REFERER']);
 	}
 	/**
 	 * Displays the contact page

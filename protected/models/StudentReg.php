@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "studentprofile".
+ * This is the model class for table "user".
  *
- * The followings are the available columns in table 'studentprofile':
+ * The followings are the available columns in table 'user':
  * @property integer $id
  * @property string $firstName
  * @property string $middleName

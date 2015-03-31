@@ -9,8 +9,8 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'INTITA',
 
-	'sourceLanguage'=>'en',
-	'language'=>'ua',
+	'sourceLanguage'=>'ru',
+	'language'=>'en',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -61,7 +61,6 @@ return array(
         ),
 
 		'user' => array(
-			'class'          => 'application.components.WebUser',
 			'loginUrl'       => array('/site/login'),
 			'allowAutoLogin' => true,
 		),
@@ -108,12 +107,6 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
-				// uncomment the following to show log messages on web pages
-				/*
-				array(
-					'class'=>'CWebLogRoute',
-				),
-				*/
 			),
 		),
 	),

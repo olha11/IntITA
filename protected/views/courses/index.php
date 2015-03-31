@@ -136,7 +136,7 @@ $this->breadcrumbs=array(
 		?>
 		<div class='courseBox'>
 		<img src='<?php echo $val->courseImage; ?>'>
-		<div class='courseName'><a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=course"><?php
+		<div class='courseName'><a href="<?php echo Yii::app()->request->baseUrl; ?>/course"><?php
 				echo $val->courseName; ?></a>
 		</div>
 		<div class="courseLevelBox">

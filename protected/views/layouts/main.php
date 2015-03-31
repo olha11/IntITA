@@ -51,7 +51,7 @@
             </a>
         </div>
         <ul>
-            <li><a href="<?php echo Yii::app()->createUrl('courses/index', array('courseID'=>1)); ?>"><?php echo Yii::t('header','Courses'); ?></a></li>
+            <li><a href="<?php echo $this->link1; ?>"><?php echo Yii::t('header','Courses'); ?></a></li>
             <li><a href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','Teachers'); ?></a></li>
             <li><a href="<?php echo $this->link3; ?>"><?php echo Yii::t('header','Forum'); ?></a></li>
             <li><a href="<?php echo $this->link4; ?>"><?php echo Yii::t('header','About us'); ?></a></li>
