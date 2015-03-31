@@ -166,7 +166,8 @@ class StudentRegController extends Controller
                         $model->avatar="/css/images/avatars/".$_FILES["upload"]["name"];
                     }
                     $model->save();
-                    header('Location: '.$_SERVER['HTTP_REFERER']);
+                    Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися. Введіть дані для авторизації');
+                    $this->redirect(Yii::app()->request->baseUrl . '/site#form');
                 }
             } else {
                 $this->render("studentreg", array('model'=>$model));
