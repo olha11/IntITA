@@ -172,11 +172,17 @@ class SiteController extends Controller
 	public function setLang($lang='UA'){
 		$this->actionIndex();
 	}
-	public function actionChangeLang($lang)
-	{
-		Yii::app()->language = $lang;
-		$this->redirect(Yii::app()->user->returnUrl);
-	}
+    public function actionChangeLang()
+    {
+        $app = Yii::app();
+        if (isset($_GET['lg'])) {
+            if ($_GET['lg'] == 'ru'){
+                Yii::app()->params['translatedMessageTable'] = 'translatedMessagesRU';
+            }
+            $app->session['lg'] = $_GET['lg'];
+        }
+        $this->redirect($_SERVER['HTTP_REFERER']);
+    }
 	/**
 	 * Displays the contact page
 	 */
@@ -232,6 +238,7 @@ class SiteController extends Controller
 				$model->email=$_POST['StudentReg']['email'];
 				$model->password=$_POST['StudentReg']['password'];
 				$model->password_repeat=$_POST['StudentReg']['password'];
+                $model->avatar=Yii::app()->request->baseUrl.'/css/images/avatars/noname.png';
                 if($model->validate()) {
                     if ($model->model()->count("email = :email", array(':email' => $model->email))) {
                         // Указанный email уже занят. Создаем ошибку и передаем в форму

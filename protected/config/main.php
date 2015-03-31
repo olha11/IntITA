@@ -61,7 +61,6 @@ return array(
         ),
 
 		'user' => array(
-			'class'          => 'application.components.WebUser',
 			'loginUrl'       => array('/site/login'),
 			'allowAutoLogin' => true,
 		),

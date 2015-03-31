@@ -161,10 +161,9 @@ class StudentRegController extends Controller
                         Yii::app()->user->setFlash('avatarmessage','Розмір файла перевищує 512кб');
                     }elseif (is_uploaded_file($_FILES["upload"]["tmp_name"])) {
                         $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
-                        $id='1'.'id';
-                        $_FILES["upload"]["name"]=$id . '.'. $ext;
-                        copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/".$_FILES['upload']['name']);
-                        $model->avatar="/css/images/".$_FILES["upload"]["name"];
+                        $_FILES["upload"]["name"]=$model->id.'.'. $ext;
+                        copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/avatars/".$_FILES['upload']['name']);
+                        $model->avatar="/css/images/avatars/".$_FILES["upload"]["name"];
                     }
                     $model->save();
                     header('Location: '.$_SERVER['HTTP_REFERER']);
@@ -255,7 +254,7 @@ class StudentRegController extends Controller
     }
     public function actionRewrite($id)
     {
-        $model=new StudentReg();
+        Yii::app()->user->setFlash('messageedit', $id );
 
             StudentReg::model()->updateByPk($id, array('firstName' => $_POST['StudentReg']['firstName']));
 
@@ -289,11 +288,10 @@ class StudentRegController extends Controller
                 Yii::app()->user->setFlash('avatarmessage','Розмір файла перевищує 512кб');
             }elseif (is_uploaded_file($_FILES["upload"]["tmp_name"])) {
                 $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
-                $id='1'.'id';
-                $_FILES["upload"]["name"]=$id . '.'. $ext;
-                copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/".$_FILES['upload']['name']);
-                StudentReg::model()->updateByPk($id, array('avatar' => "/css/images/".$_FILES["upload"]["name"]));
-                Yii::app()->user->setFlash('messageedit', 'Оновлено' );
+
+                $_FILES["upload"]["name"]=$id.'.'. $ext;
+                copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/avatars/".$_FILES['upload']['name']);
+                StudentReg::model()->updateByPk($id, array('avatar' => "/css/images/avatars/".$_FILES["upload"]["name"]));
             }
         }
         header ('location: '. Yii::app()->request->baseUrl.'/index.php/?r=studentreg/profile');
