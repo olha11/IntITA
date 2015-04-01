@@ -256,7 +256,7 @@ class StudentRegController extends Controller
     public function actionRewrite()
     {
         $model=new StudentReg();
-        $id=$_POST['StudentReg']['id'];
+        $id=$_POST['id'];
 
             StudentReg::model()->updateByPk($id, array('firstName' => $_POST['StudentReg']['firstName']));
 
@@ -291,7 +291,6 @@ class StudentRegController extends Controller
                 Yii::app()->user->setFlash('avatarmessage','Розмір файла перевищує 512кб');
             }elseif (is_uploaded_file($_FILES["upload"]["tmp_name"])) {
                 $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
-
                 $_FILES["upload"]["name"]=$id.'.'. $ext;
                 copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/avatars/".$_FILES['upload']['name']);
                 StudentReg::model()->updateByPk($id, array('avatar' => "/css/images/avatars/".$_FILES["upload"]["name"]));
