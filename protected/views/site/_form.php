@@ -1,5 +1,5 @@
 <?php
-$model=new StudentReg();
+    $model=new StudentReg();
 ?>
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/regform.css" />
 <div style="position:relative;"><a name="form" style="position:absolute; top:-60px;"></a></div>
@@ -23,6 +23,11 @@ $model=new StudentReg();
 				<?php $placeHolderEmail = Yii::t('regform','Email');?>
 				<?php echo $form->textField($model,'email',array('class'=>'singInEmail','placeholder'=>$placeHolderEmail,'size'=>60,'maxlength'=>255)); ?>
 				<?php echo $form->error($model,'email'); ?>
+                <div style="color:red">
+                    <?php if(Yii::app()->user->hasFlash('emailinfo')):
+                        echo Yii::app()->user->getFlash('emailinfo');
+                    endif; ?>
+                </div>
 			</div>
 
 			<div class="rowpass">
@@ -30,6 +35,9 @@ $model=new StudentReg();
 				<span class="passEye"> <?php echo $form->passwordField($model,'password',array('class'=>'singInPass','placeholder'=>$placeHolderPassword,'size'=>60,'maxlength'=>255)); ?></span>
 				<?php echo $form->error($model,'password'); ?>
 				<div style="color:red">
+                    <?php if(Yii::app()->user->hasFlash('passinfo')):
+                        echo Yii::app()->user->getFlash('passinfo');
+                    endif; ?>
 					<?php if(Yii::app()->user->hasFlash('forminfo')):
 						echo Yii::app()->user->getFlash('forminfo');
 					endif; ?>
