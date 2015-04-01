@@ -11,6 +11,7 @@
 <!-- Module style -->
 <!-- BD -))) -->
 <?php
+$this->pageTitle = 'INTITA';
 $post=Module::model()->findByPk(1);
 ?>
 <!-- BD -))) -->

@@ -9,6 +9,7 @@
 /* @var $model StudentReg */
 /* @var $regExtended Regextended*/
 /* @var $form CActiveForm */
+$this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
     Yii::t('breadcrumbs', 'Register'),
 );

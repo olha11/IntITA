@@ -155,25 +155,29 @@
 <div id="slider" class="owl-carousel">
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','Don\'t miss your chance to change the world - get high-quality and modern education class and become an expert!'); ?></p>
+            <p><?php echo Yii::t('slider','We guarantee you an offer of employment <br>
+After successful completion of training!'); ?></p>
             <img src="<?php echo $slider1 ?>" />
         </div>
     </div>
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','Want to become a highly qualified specialist, take the right decision - Join the IT Academy INTITA!'); ?></p>
+            <p><?php echo Yii::t('slider','Do not miss your chance to change the world - get high-quality and modern education <br>
+and become a specialist class !'); ?></p>
             <img src="<?php echo $slider2 ?>" />
         </div>
     </div>
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','One year of productive and interesting learning - and you will become a professional programmer. Learning to hard - but easy to find a job!'); ?></p>
+            <p><?php echo Yii::t('slider','One year of productive and interesting learning - and you will become a professional programmer <br>
+ready to work in the IT industry !'); ?></p>
             <img src="<?php echo $slider3 ?>" />
         </div>
     </div>
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','Do not lose your chance at a decent and interesting work - Store your future today!'); ?></p>
+            <p><?php echo Yii::t('slider','Want to become a high-class specialist ? <br>
+Takes correct and informed decision - Learn with us!'); ?></p>
             <img src="<?php echo $slider4 ?>" />
         </div>
     </div>

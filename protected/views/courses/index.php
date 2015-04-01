@@ -140,7 +140,7 @@ $this->breadcrumbs=array(
 				echo $val->courseName; ?></a>
 		</div>
 		<div class="courseLevelBox">
-			<?php echo $val->courseLevelTitle; ?>
+			<?php echo  Yii::t('courses', 'Level:'); ?>
 		
 			<span class="courseLevel">
 			<?php echo $val->courseLevel; ?>
@@ -163,7 +163,7 @@ $this->breadcrumbs=array(
 			</div>
 		</div>
         <div class="courseLang">
-        <?php echo $val->courseLang; ?>
+        <?php echo Yii::t('courses', 'Language:'); ?>
             <div id="coursesLang" class="down">
                 <form action="" method="post" onsubmit="" name="fff">
                     <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>

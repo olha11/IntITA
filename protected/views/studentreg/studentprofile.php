@@ -7,6 +7,7 @@
 /* @var $form CActiveForm */
 ?>
 <?php
+$this->pageTitle = 'INTITA';
 $post=StudentReg::model()->findByPk(Yii::app()->user->id);
 ?>
 <div class="formStudProfNav">

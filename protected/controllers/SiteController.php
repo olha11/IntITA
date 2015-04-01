@@ -243,7 +243,7 @@ class SiteController extends Controller
 				$model->email=$_POST['StudentReg']['email'];
 				$model->password=$_POST['StudentReg']['password'];
 				$model->password_repeat=$_POST['StudentReg']['password'];
-                $model->avatar=Yii::app()->request->baseUrl.'/css/images/avatars/noname.png';
+                $model->avatar='/css/images/avatars/noname.png';
                 if($model->validate()) {
                     if ($model->model()->count("email = :email", array(':email' => $model->email))) {
                         // Указанный email уже занят. Создаем ошибку и передаем в форму
