@@ -161,13 +161,13 @@ class StudentRegController extends Controller
                         Yii::app()->user->setFlash('avatarmessage','Розмір файла перевищує 512кб');
                     }elseif (is_uploaded_file($_FILES["upload"]["tmp_name"])) {
                         $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
-                        $id='1'.'id';
-                        $_FILES["upload"]["name"]=$id . '.'. $ext;
-                        copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/".$_FILES['upload']['name']);
-                        $model->avatar="/css/images/".$_FILES["upload"]["name"];
+                        $_FILES["upload"]["name"]=$_POST['StudentReg']['email'].'.'.$ext;
+                        copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/avatars/".$_FILES['upload']['name']);
+                        $model->avatar="/css/images/avatars/".$_FILES["upload"]["name"];
                     }
                     $model->save();
-                    header('Location: '.$_SERVER['HTTP_REFERER']);
+                    Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися. Введіть дані для авторизації');
+                    $this->redirect(Yii::app()->request->baseUrl . '/site#form');
                 }
             } else {
                 $this->render("studentreg", array('model'=>$model));
@@ -253,9 +253,10 @@ class StudentRegController extends Controller
         $this->render("studentprofileedit", array('model'=>$model));
 
     }
-    public function actionRewrite($id)
+    public function actionRewrite()
     {
         $model=new StudentReg();
+        $id=$_POST['id'];
 
             StudentReg::model()->updateByPk($id, array('firstName' => $_POST['StudentReg']['firstName']));
 
@@ -269,6 +270,7 @@ class StudentRegController extends Controller
 
             StudentReg::model()->updateByPk($id, array('email' => $_POST['StudentReg']['email']));
 
+        if(!empty($_POST['StudentReg']['password'])&& sha1($_POST['StudentReg']['password'])==sha1($_POST['StudentReg']['password_repeat']))
             StudentReg::model()->updateByPk($id, array('password' => sha1($_POST['StudentReg']['password'])));
 
             StudentReg::model()->updateByPk($id, array('phone' => $_POST['StudentReg']['phone']));
@@ -289,10 +291,9 @@ class StudentRegController extends Controller
                 Yii::app()->user->setFlash('avatarmessage','Розмір файла перевищує 512кб');
             }elseif (is_uploaded_file($_FILES["upload"]["tmp_name"])) {
                 $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
-                $id='1'.'id';
-                $_FILES["upload"]["name"]=$id . '.'. $ext;
-                copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/".$_FILES['upload']['name']);
-                StudentReg::model()->updateByPk($id, array('avatar' => "/css/images/".$_FILES["upload"]["name"]));
+                $_FILES["upload"]["name"]=$_POST['StudentReg']['email'].'.'. $ext;
+                copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/avatars/".$_FILES['upload']['name']);
+                StudentReg::model()->updateByPk($id, array('avatar' => "/css/images/avatars/".$_FILES["upload"]["name"]));
                 Yii::app()->user->setFlash('messageedit', 'Оновлено' );
             }
         }

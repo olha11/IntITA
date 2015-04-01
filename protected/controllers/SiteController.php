@@ -225,6 +225,13 @@ class SiteController extends Controller
 		if(isset($_POST['StudentReg']))
 		{
 			$model->attributes=$_POST['StudentReg'];
+
+            if(empty($_POST['StudentReg']['email']))
+                Yii::app()->user->setFlash('emailinfo', 'Введіть email' );
+            if(empty($_POST['StudentReg']['password']))
+                Yii::app()->user->setFlash('passinfo', 'Введіть пароль' );
+            if(empty($_POST['StudentReg']['password']) || empty($_POST['StudentReg']['email']))
+                $this->redirect(Yii::app()->request->baseUrl.'/site#form');
 // validate user input and redirect to the previous page if valid
 			if(!empty($_POST['StudentReg']['password']) && !empty($_POST['StudentReg']['email']) && $model->login()) {
 				$this->redirect(Yii::app()->request->baseUrl.'/courses');
@@ -236,22 +243,24 @@ class SiteController extends Controller
 				$model->email=$_POST['StudentReg']['email'];
 				$model->password=$_POST['StudentReg']['password'];
 				$model->password_repeat=$_POST['StudentReg']['password'];
+                $model->avatar=Yii::app()->request->baseUrl.'/css/images/avatars/noname.png';
                 if($model->validate()) {
                     if ($model->model()->count("email = :email", array(':email' => $model->email))) {
                         // Указанный email уже занят. Создаем ошибку и передаем в форму
                         $model->addError('email', 'Email уже зайнятий');
+                        Yii::app()->user->setFlash('emailinfo', 'Email уже зайнятий' );
+                        $this->redirect(Yii::app()->request->baseUrl . '/site#form');
                     } else{
                         $model->save();
                         Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися. Введіть дані для авторизації');
                         $this->redirect(Yii::app()->request->baseUrl . '/site#form');
                     }
                 }
-                Yii::app()->user->setFlash('forminfo', 'Не вірно введені дані');
+                Yii::app()->user->setFlash('emailinfo', 'Вы ввели не вірний Email');
                 $this->redirect(Yii::app()->request->baseUrl . '/site#form');
 			}
 		}
-// display the login form
-		$this->redirect(Yii::app()->user->returnUrl);
+
 	}
 	/**
 	 * Logs out the current user and redirect to homepage.

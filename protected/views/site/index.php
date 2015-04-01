@@ -307,10 +307,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 	}
 ?>
 </div>
-<?php $this->renderPartial('_form', array('mainpage'=>$mainpage)); ?>
-
-
-
+<?php $this->renderPartial('_form'); ?>
 </body>
 
 

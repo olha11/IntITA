@@ -34,7 +34,9 @@
 }
 .singInEmail{
     margin-top:50px;
-    margin-bottom:8px;
+}
+.singInPass{
+    margin-top: 8px;
 }
 input[type="submit"]#singInButton    {
     width:195px;
