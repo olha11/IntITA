@@ -46,10 +46,8 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
                 </td>
             </tr>
         </table>
-        <div class="row" style="display: none">
-            <?php echo $form->label($model,'id'); ?>
-            <?php echo $form->textField($model,'id',array('value'=>$post->id,'maxlength'=>255)); ?>
-        </div>
+        <?php echo CHtml::hiddenField('id', $post->id); ?>
+
         <div class="row">
             <?php echo $form->label($model,'firstName'); ?>
             <?php echo $form->textField($model,'firstName',array('value'=>$post->firstName,'maxlength'=>255)); ?>
