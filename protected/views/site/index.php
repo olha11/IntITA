@@ -46,9 +46,9 @@
 </script>
 <script type="text/javascript"> /* Маштабування слайдера відповідно до ширини екрану*/
     $(function(){
-        $('.owl-item').height(document.body.clientWidth/3.1);
+        $('.owl-item').height(document.body.clientWidth/2.31);
         $(window).resize(function(){
-            $('.owl-item').height(document.body.clientWidth/3.1);
+            $('.owl-item').height(document.body.clientWidth/2.31);
         });
     });
     function fontSize() { /* Маштабування тексту слайдера*/
@@ -68,30 +68,34 @@
     function marginLeft() { /* Маштабування змійки*/
         var pictureWidht=911
         if ( document.body.clientWidth <= 1440 ){
-            $('.sliderSnake .snake img').height(document.body.clientWidth*0.6/4.85);
-            $('.sliderSnake .snake img').width(document.body.clientWidth*0.6);
+            $('.sliderSnake .snake img').height(document.body.clientWidth*0.675/5.5);
+            $('.sliderSnake .snake img').width(document.body.clientWidth*0.675);
             $('.sliderSnake .snake img').css('margin-left', (document.body.clientWidth*0.6/2-document.body.clientWidth*0.6)+'px');
-            $('.sliderSnake .snake img').css('left', '50%' );
+            $('.sliderSnake .snake img').css('left', document.body.clientWidth/1.98+'px' );
+			
         }else {
             $('.sliderSnake .snake img').height('auto');
-            $('.sliderSnake .snake img').width('auto');
-            $('.sliderSnake .snake img').css('margin-left', (pictureWidht/2-pictureWidht)+'px');
-            $('.sliderSnake .snake img').css('left', document.body.clientWidth/2 );
+            $('.sliderSnake .snake img').width('1010px');
+            $('.sliderSnake .snake img').css('margin-left', (1161/2-1161)+'px');
+            $('.sliderSnake .snake img').css('left', document.body.clientWidth/1.98+130+'px' );
+		
         }
     }
     $(function() { marginLeft(); });
     $(window).resize(function() { marginLeft(); });
-    function textSliderCentr() { /* Центрування тексту картинки слайдеру*/
+    
+	function textSliderCentr() { /* Центрування тексту картинки слайдеру*/
         $('.slide p').width(document.body.clientWidth);
         $('.slide p').css('margin-left', (document.body.clientWidth/2-document.body.clientWidth)+'px');
     }
     $(function() { textSliderCentr(); });
     $(window).resize(function() { textSliderCentr(); });
-    function sliderBoxCentr() { /* Центрування центрального боксу слайдера*/
+    
+	function sliderBoxCentr() { /* Центрування центрального боксу слайдера*/
         if ( document.body.clientWidth <= 1440 ){
-            $('#sliderCenterBox').css('top', document.body.clientWidth/3.1/3.1+'px');
+            $('#sliderCenterBox').css('top', document.body.clientWidth/2.2/2.8+'px');
         } else {
-            $('#sliderCenterBox').css('top', ((document.body.clientWidth)/3.1)/2-90+'px');
+            $('#sliderCenterBox').css('top', ((document.body.clientWidth)/2.2)/2-90+'px');
         }
     }
     $(function() { sliderBoxCentr(); });
@@ -99,27 +103,17 @@
     function sliderButtonSize() { /* Розмір кнопки на слайдері*/
         if ( document.body.clientWidth <= 1440 ){
             $('.sliderSnake .button a').css('margin-left', (document.body.clientWidth*0.11/2-document.body.clientWidth*0.11)+'px');
-            $('.sliderSnake .button a').css('width',document.body.clientWidth*0.11+'px');
+            $('.sliderSnake .button a').css('width',document.body.clientWidth*0.12+'px');
             $('.sliderSnake .button a').css('height',document.body.clientWidth/3.2*0.11+'px');
         } else {
-            $('.sliderSnake .button a').css('margin-left', '-80px')
-            $('.sliderSnake .button a').css('width','160px');
+            $('.sliderSnake .button a').css('margin-left', '-85px')
+            $('.sliderSnake .button a').css('width','180px');
             $('.sliderSnake .button a').css('height','50px');
         }
     }
     $(function() { sliderButtonSize(); });
     $(window).resize(function() { sliderButtonSize(); });
-    function sizeButttonImg() { /* Маштабування картинки на кнопці*/
-        if ( document.body.clientWidth <= 1440 ){
-            $('.sliderSnake .button img').height(document.body.clientWidth*0.011/0.94);
-            $('.sliderSnake .button img').width(document.body.clientWidth*0.0125);
-        }else {
-            $('.sliderSnake .button img').height('16px');
-            $('.sliderSnake .button img').width('18px');
-        }
-    }
-    $(function() { sizeButttonImg(); });
-    $(window).resize(function() { sizeButttonImg(); });
+   
     function centrSliderButtons() { /* центрування кнопок прокрутки слайдеру*/
         if ( document.body.clientWidth <= 1000){
             $('.owl-controls').css('margin-left', '0')
@@ -154,7 +148,7 @@
             <img src="<?php echo $mainpage['sliderLine']; ?>">
         </div>
         <div class="button">
-            <a class="sliderButton" href="#form"><?php echo Yii::t('slider','ENTER'); ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/></a>
+            <a class="sliderButton" href="#form"><?php echo Yii::t('slider','ENTER'); ?></a>
         </div>
     </div>
 </div>
@@ -187,6 +181,11 @@
 <div class="mouseLine">
     <a id="mouseLine" href="#form"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/mouseLine.png"/></a>
 </div>
+
+
+
+
+
 
 <?php
 $this->pageTitle = Yii::t('mainpage','INTITA');
@@ -308,6 +307,9 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 ?>
 </div>
 <?php $this->renderPartial('_form', array('mainpage'=>$mainpage)); ?>
+
+
+
 </body>
 
 
