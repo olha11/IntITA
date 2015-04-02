@@ -11,6 +11,11 @@
  * @property integer $userStatus
  * @property string $username
  * @property integer $role
+ * @property string $identity
+ * @property string $network
+ * @property string $email
+ * @property string $full_name
+ * @property integer $state
  */
 class User extends CActiveRecord
 {
@@ -65,6 +70,12 @@ class User extends CActiveRecord
 				'on'    => self::SCENARIO_REGISTRATION,
 				'min'   => 8, 'max' => 32
 			),
+            array('identity, network', 'required'),
+            array('identity, network, email', 'length', 'max'=>255),
+            array('full_name', 'length', 'max'=>255),
+            // The following rule is used by search().
+            // Please remove those attributes that should not be searched.
+            array('identity, network, email, full_name, state', 'safe', 'on'=>'search'),
 
 		);
 	}
@@ -93,6 +104,11 @@ class User extends CActiveRecord
 			'userStatus' => 'User Status',
 			'username' => 'Нік',
 			'role' => 'Роль',
+            'identity' => 'Identity',
+            'network' => 'Network',
+            'email' => 'Email',
+            'full_name' => 'Full Name',
+            'state' => 'State',
 		);
 	}
 
@@ -191,6 +207,11 @@ class User extends CActiveRecord
 		$criteria->compare('userStatus',$this->userStatus);
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('role',$this->role);
+        $criteria->compare('identity',$this->identity,true);
+        $criteria->compare('network',$this->network,true);
+        $criteria->compare('email',$this->email,true);
+        $criteria->compare('full_name',$this->full_name,true);
+        $criteria->compare('state',$this->state);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

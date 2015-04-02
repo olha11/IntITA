@@ -1,6 +1,7 @@
 <body onload="centerPage()">
 <?php
 /* @var $this SiteController */
+
 ?>
 <script>
     var width=0;
@@ -148,7 +149,7 @@
             <img src="<?php echo $mainpage['sliderLine']; ?>">
         </div>
         <div class="button">
-            <a class="sliderButton" href="#form"><?php echo Yii::t('slider','ENTER'); ?></a>
+            <a class="sliderButton" href="#form"><?php echo Yii::t('slider','ENTER \>'); ?></a>
         </div>
     </div>
 </div>
