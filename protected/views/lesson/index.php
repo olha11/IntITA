@@ -190,7 +190,7 @@ $teacher->linkName = 'детальніше';
             </div>
         </ul>
     </div>
-    <p><a href="skype:olha11olha?chat"><input type="submit" value="Skype"></a></p>
+    <p><a href="skype:<?php echo $teacher->skype; ?>?chat"><input type="submit" value="Skype"></a></p>
     <p><a href="#"><input type="submit" value="Hangout"></a></p>
 </div>
 <!--navigation vertical-->
