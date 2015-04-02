@@ -1,21 +1,21 @@
 -- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Server version:               5.6.21 - MySQL Community Server (GPL)
--- Server OS:                    Win32
--- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-01 18:39:37
+-- Хост:                         127.0.0.1
+-- Версия сервера:               5.6.21 - MySQL Community Server (GPL)
+-- ОС Сервера:                   Win32
+-- HeidiSQL Версия:              9.1.0.4928
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!40014 SET FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping database structure for int_ita_db
+-- Дамп структуры базы данных int_ita_db
 CREATE DATABASE IF NOT EXISTS `int_ita_db` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `int_ita_db`;
 
 
--- Dumping structure for table int_ita_db.aa_access
+-- Дамп структуры для таблица int_ita_db.aa_access
 DROP TABLE IF EXISTS `aa_access`;
 CREATE TABLE IF NOT EXISTS `aa_access` (
   `user_id` smallint(5) unsigned NOT NULL,
@@ -30,12 +30,13 @@ CREATE TABLE IF NOT EXISTS `aa_access` (
   CONSTRAINT `aa_access_ibfk_2` FOREIGN KEY (`interface_id`) REFERENCES `aa_interfaces` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_access: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.aa_access: ~0 rows (приблизительно)
+DELETE FROM `aa_access`;
 /*!40000 ALTER TABLE `aa_access` DISABLE KEYS */;
 /*!40000 ALTER TABLE `aa_access` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.aa_authorizations
+-- Дамп структуры для таблица int_ita_db.aa_authorizations
 DROP TABLE IF EXISTS `aa_authorizations`;
 CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -48,7 +49,8 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_authorizations: ~34 rows (approximately)
+-- Дамп данных таблицы int_ita_db.aa_authorizations: ~44 rows (приблизительно)
+DELETE FROM `aa_authorizations`;
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
 INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(1, 2, '2015-03-02 15:33:25', '::1'),
@@ -98,7 +100,7 @@ INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 /*!40000 ALTER TABLE `aa_authorizations` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.aa_errors
+-- Дамп структуры для таблица int_ita_db.aa_errors
 DROP TABLE IF EXISTS `aa_errors`;
 CREATE TABLE IF NOT EXISTS `aa_errors` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -110,12 +112,13 @@ CREATE TABLE IF NOT EXISTS `aa_errors` (
   CONSTRAINT `aa_errors_ibfk_1` FOREIGN KEY (`authorization_id`) REFERENCES `aa_authorizations` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.aa_errors: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.aa_errors: ~0 rows (приблизительно)
+DELETE FROM `aa_errors`;
 /*!40000 ALTER TABLE `aa_errors` DISABLE KEYS */;
 /*!40000 ALTER TABLE `aa_errors` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.aa_interfaces
+-- Дамп структуры для таблица int_ita_db.aa_interfaces
 DROP TABLE IF EXISTS `aa_interfaces`;
 CREATE TABLE IF NOT EXISTS `aa_interfaces` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
@@ -130,12 +133,13 @@ CREATE TABLE IF NOT EXISTS `aa_interfaces` (
   CONSTRAINT `aa_interfaces_ibfk_1` FOREIGN KEY (`section_id`) REFERENCES `aa_sections` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_interfaces: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.aa_interfaces: ~0 rows (приблизительно)
+DELETE FROM `aa_interfaces`;
 /*!40000 ALTER TABLE `aa_interfaces` DISABLE KEYS */;
 /*!40000 ALTER TABLE `aa_interfaces` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.aa_logs
+-- Дамп структуры для таблица int_ita_db.aa_logs
 DROP TABLE IF EXISTS `aa_logs`;
 CREATE TABLE IF NOT EXISTS `aa_logs` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -151,12 +155,13 @@ CREATE TABLE IF NOT EXISTS `aa_logs` (
   CONSTRAINT `aa_logs_ibfk_2` FOREIGN KEY (`authorization_id`) REFERENCES `aa_authorizations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_logs: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.aa_logs: ~0 rows (приблизительно)
+DELETE FROM `aa_logs`;
 /*!40000 ALTER TABLE `aa_logs` DISABLE KEYS */;
 /*!40000 ALTER TABLE `aa_logs` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.aa_sections
+-- Дамп структуры для таблица int_ita_db.aa_sections
 DROP TABLE IF EXISTS `aa_sections`;
 CREATE TABLE IF NOT EXISTS `aa_sections` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
@@ -164,12 +169,13 @@ CREATE TABLE IF NOT EXISTS `aa_sections` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_sections: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.aa_sections: ~0 rows (приблизительно)
+DELETE FROM `aa_sections`;
 /*!40000 ALTER TABLE `aa_sections` DISABLE KEYS */;
 /*!40000 ALTER TABLE `aa_sections` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.aa_users
+-- Дамп структуры для таблица int_ita_db.aa_users
 DROP TABLE IF EXISTS `aa_users`;
 CREATE TABLE IF NOT EXISTS `aa_users` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
@@ -189,7 +195,8 @@ CREATE TABLE IF NOT EXISTS `aa_users` (
   UNIQUE KEY `login` (`login`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_users: ~2 rows (approximately)
+-- Дамп данных таблицы int_ita_db.aa_users: ~2 rows (приблизительно)
+DELETE FROM `aa_users`;
 /*!40000 ALTER TABLE `aa_users` DISABLE KEYS */;
 INSERT INTO `aa_users` (`id`, `level`, `login`, `password`, `interface_level`, `email`, `surname`, `firstname`, `middlename`, `regdate`, `info`, `salt`, `disabled`) VALUES
 	(2, 'root', 'root', '63a9f0ea7bb98050796b649e85481845', 1, 'root', 'root', 'root', 'root', '2015-03-02 15:33:13', NULL, NULL, 0),
@@ -197,7 +204,7 @@ INSERT INTO `aa_users` (`id`, `level`, `login`, `password`, `interface_level`, `
 /*!40000 ALTER TABLE `aa_users` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.aboutus
+-- Дамп структуры для таблица int_ita_db.aboutus
 DROP TABLE IF EXISTS `aboutus`;
 CREATE TABLE IF NOT EXISTS `aboutus` (
   `blockID` int(11) NOT NULL AUTO_INCREMENT,
@@ -216,7 +223,8 @@ CREATE TABLE IF NOT EXISTS `aboutus` (
   PRIMARY KEY (`blockID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.aboutus: ~6 rows (approximately)
+-- Дамп данных таблицы int_ita_db.aboutus: ~6 rows (приблизительно)
+DELETE FROM `aboutus`;
 /*!40000 ALTER TABLE `aboutus` DISABLE KEYS */;
 INSERT INTO `aboutus` (`blockID`, `language`, `line2Image`, `iconImage`, `titleText`, `textAbout`, `linkAddress`, `imagesPath`, `drop1Text`, `drop2Text`, `drop3Text`, `dropName`, `textLarge`) VALUES
 	(1, 'UA', '/css/images/line2.png', 'image1.png', 'Про що мрієш ти?', '<p>Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль? Закордонні подорожі, можливо, до екзотичних країн?</p>', '/index.php?r=site/aboutdetail&id=1', '/css/images/', '', '', '', '', '<p>Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль? Закордонні подорожі, можливо, до екзотичних країн? Забезпечене життя для себе та близьких, коли не доводиться думати про гроші?\nА, може, це свобода жити своїм життям? Самостійно керувати власним часом з можливістю працювати за зручним графіком без необхідності щодня їздити на роботу, але при цьому мати стабільно високий дохід?\n	Можливо ти хочеш заробляти, займаючись улюбленою справою і отримувати задоволення від сучасної професії?\nПро що б ти не мріяв, для здійснення більшості мрій потрібні гроші. Сьогодні середня зарплата в Україні є найнижчою в Європі: близько 3,5 тис грн у місяць. Навіть якщо брати сферу бізнесу, зарплати більшості робітників не перевищують 5-8 тис грн. \nЯк щодо 40 - 60 тис грн в місяць з можливістю працювати за гнучким графіком та дистанційно? Ти думаєш, що в нашій країні такі умови лише у керівників та власників бізнесу? У нас хороша новина: вже через рік-два-три так зможеш заробляти і ти.</p>\n\n<p><span class="detailTitle2">Професія майбутнього</span>\n Сьогодні у тебе є реальна можливість поєднати хороший заробіток, гнучкий графік роботи та зручність дистанційної роботи. І це не “заработок в интернете”, про який кричить банерна реклама на багатьох сайтах. Ми віримо у те, що високого стабільного доходу можна досягти лише за допомогою власних зусиль.\nМи живемо в епоху, коли головним двигуном розвитку світової економіки є інформаційні технології (ІТ). Вони дозволяють досягти нових проривних результатів у традиційних галузях: виробництві та послугах. Саме інформаційні технології повністю змінили і продовжують трансформувати індустрії звязку, розваг (книги, музика, фільми), банківських послуг, а також такі традиційні бізнеси, як послуги таксі (Uber), готелів (Airbnb), навчання (Coursera). \nГерої інформаційної епохи - це спеціалісти з інформаційних технологій. Вони знаходяться на передовій змін, вони придумали та продовжують розвивати Windows, iOS, Android, а також мільйони додатків до них, вони створюють соціальні мережі, сайти та бази даних. \nГарна новина для тебе: сьогодні таких спеціалістів не вистачає. Інформаційні технології розвиваються дуже швидко і стають потрібними усюди, тому людей не вистачає, існуючі навчальні заклади просто не встигають готувати потрібну кількість. Нестача спеціалістів означає, що зарплати на ринку стабільно зростають, і сягнули небачених для України значень: в середньому спеціалісти з інформаційних технологій сьогодні отримують 3-5 тис доларів у місяць, і при цьому роботодавці активно полюють на професіоналів. Секрет таких високих зарплат не лише у дефіциті кадрів, а й у тому, що для ІТ-галузі кордони - не проблема. Ти можеш працювати вдома зі своєї квартири в Україні над замовленням клієнта зі США чи Німеччини і отримувати винагороду у доларах чи євро з рівнем оплати, не набагато нижчим від американських чи європейських стандартів.  \nМи запрошуємо тебе приєднатися до світової інформаційної еліти та за короткий час стати професіоналом у сфері інформаційних технологій, щоб отримувати стабільно високий дохід та працювати в зручних умовах за гнучким графіком. </p>\n\n<p><span class="detailTitle2">Що очікується від тебе</span><br/>\nПрограмування - це не так складно, як ти можеш уявляти. Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля. Ризикнемо сказати, що крім часу та зусиль (та, зрозуміло, наявності простенького компютера) не потрібно більше ні-чо-го. Не потрібно бути сильним у математиці: навіть якщо у школі ти не любив математику, а твої оцінки не піднимались вище середнього рівня, ти зможеш стати чудовим програмістом. Не потрібно знати, як влаштований компютер чи бути досвіченим користувачем будь-яких програм. Достатньо часу на навчання та бажання займатися. Гарні знання з математики, логіки, комп’ютера можуть пришвидшити темп навчання, але й без них кожен зможе досягти високого рівня професіоналізму у програмуванні завдяки іноваційному підходу до навчання Академії Програмування ІНТІТА.</p>'),
@@ -228,7 +236,7 @@ INSERT INTO `aboutus` (`blockID`, `language`, `line2Image`, `iconImage`, `titleT
 /*!40000 ALTER TABLE `aboutus` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.carousel
+-- Дамп структуры для таблица int_ita_db.carousel
 DROP TABLE IF EXISTS `carousel`;
 CREATE TABLE IF NOT EXISTS `carousel` (
   `order` int(11) NOT NULL,
@@ -239,7 +247,8 @@ CREATE TABLE IF NOT EXISTS `carousel` (
   PRIMARY KEY (`order`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.carousel: ~4 rows (approximately)
+-- Дамп данных таблицы int_ita_db.carousel: ~4 rows (приблизительно)
+DELETE FROM `carousel`;
 /*!40000 ALTER TABLE `carousel` DISABLE KEYS */;
 INSERT INTO `carousel` (`order`, `pictureURL`, `description`, `imagesPath`, `text`) VALUES
 	(1, '1.jpg', '<p>Слайдер фото 1</p>', '/css/images/slider_img/', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту і стань класним спеціалістом!'),
@@ -249,7 +258,7 @@ INSERT INTO `carousel` (`order`, `pictureURL`, `description`, `imagesPath`, `tex
 /*!40000 ALTER TABLE `carousel` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.course
+-- Дамп структуры для таблица int_ita_db.course
 DROP TABLE IF EXISTS `course`;
 CREATE TABLE IF NOT EXISTS `course` (
   `course_ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -267,7 +276,8 @@ CREATE TABLE IF NOT EXISTS `course` (
   UNIQUE KEY `course_name` (`course_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.course: ~9 rows (approximately)
+-- Дамп данных таблицы int_ita_db.course: ~9 rows (приблизительно)
+DELETE FROM `course`;
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
 INSERT INTO `course` (`course_ID`, `alias`, `language`, `course_name`, `course_duration_hours`, `modules_count`, `course_price`, `for_whom`, `what_you_learn`, `what_you_get`, `course_img`) VALUES
 	(1, 'course1', 'ua', 'Програмування для чайників', 89, 7, 6548, 'хто відповідає за постановку завдань на розробку;для дизайнерів, які готові почати не просто малювати красиві картинки, а й навчитися тому, як створювати працюючі і зручні інтерфейси;для розробників, які хочуть самостійно створити або змінити свій проект;', 'Ви навчитеся писати чистий код;Користуватися системами контролю версій;Дізнаєтеся, з чого складається сучасний додаток;Для чого потрібен безперервна інтеграція (СІ) сервер;Чому потрібно тестувати свої програми і як це робити;', 'Відеозаписи та текстові матеріали всіх онлайн-занять;Спілкування з розумними одногрупниками;Сертифікат про закінчення навчання;Прилаштованість на робоче місце в силіконовій долині;', '/css/images/course1Image.png'),
@@ -282,7 +292,7 @@ INSERT INTO `course` (`course_ID`, `alias`, `language`, `course_name`, `course_d
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.courseresource
+-- Дамп структуры для таблица int_ita_db.courseresource
 DROP TABLE IF EXISTS `courseresource`;
 CREATE TABLE IF NOT EXISTS `courseresource` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -293,12 +303,13 @@ CREATE TABLE IF NOT EXISTS `courseresource` (
   CONSTRAINT `FK_courseresource_resource` FOREIGN KEY (`idResource`) REFERENCES `resource` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.courseresource: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.courseresource: ~0 rows (приблизительно)
+DELETE FROM `courseresource`;
 /*!40000 ALTER TABLE `courseresource` DISABLE KEYS */;
 /*!40000 ALTER TABLE `courseresource` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.footer
+-- Дамп структуры для таблица int_ita_db.footer
 DROP TABLE IF EXISTS `footer`;
 CREATE TABLE IF NOT EXISTS `footer` (
   `footerID` int(11) NOT NULL AUTO_INCREMENT,
@@ -311,7 +322,8 @@ CREATE TABLE IF NOT EXISTS `footer` (
   PRIMARY KEY (`footerID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.footer: ~3 rows (approximately)
+-- Дамп данных таблицы int_ita_db.footer: ~3 rows (приблизительно)
+DELETE FROM `footer`;
 /*!40000 ALTER TABLE `footer` DISABLE KEYS */;
 INSERT INTO `footer` (`footerID`, `language`, `imageSotial`, `phone`, `mobile`, `email`, `imageUp`) VALUES
 	(1, 'RU', '/css/images/sotial.gif', 'телефон: +38 0432 52 82 67 ', 'тел. моб. +38 067 432 20 10', 'e-mail: intita.hr@gmail.com', '/css/images/go_up.png'),
@@ -320,7 +332,7 @@ INSERT INTO `footer` (`footerID`, `language`, `imageSotial`, `phone`, `mobile`, 
 /*!40000 ALTER TABLE `footer` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.header
+-- Дамп структуры для таблица int_ita_db.header
 DROP TABLE IF EXISTS `header`;
 CREATE TABLE IF NOT EXISTS `header` (
   `headerID` int(11) NOT NULL AUTO_INCREMENT,
@@ -338,18 +350,19 @@ CREATE TABLE IF NOT EXISTS `header` (
   `enterButtonText` varchar(30) NOT NULL,
   `logoutButtonText` varchar(30) NOT NULL,
   PRIMARY KEY (`headerID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.header: ~3 rows (approximately)
+-- Дамп данных таблицы int_ita_db.header: ~3 rows (приблизительно)
+DELETE FROM `header`;
 /*!40000 ALTER TABLE `header` DISABLE KEYS */;
 INSERT INTO `header` (`headerID`, `language`, `logoURL`, `smallLogoURL`, `menuItem1`, `item1Link`, `menuItem2`, `item2Link`, `menuItem3`, `item3Link`, `menuItem4`, `item4Link`, `enterButtonText`, `logoutButtonText`) VALUES
 	(0, 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курси', '/courses', 'Викладачі', '/teachers', 'Форум', 'http://www.google.com', 'Про нас', '/site/aboutdetail', 'Вхід', 'Вхід'),
 	(1, 'RU', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курсы', '/courses', 'Преподаватели', '/teachers', 'Форум', 'http://www.google.com', 'О нас', '/site/aboutdetail', 'Вход', 'Выход'),
-	(2, 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курси', '/courses', 'Викладачі', '/teachers', 'Форум', 'http://www.google.com', 'Про нас', '/site/aboutdetail', 'Вхід', 'Вхід');
+	(3, 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курси', '/courses', 'Викладачі', '/teachers', 'Форум', 'http://www.google.com', 'Про нас', '/site/aboutdetail', 'Вхід', 'Вхід');
 /*!40000 ALTER TABLE `header` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.hometasks
+-- Дамп структуры для таблица int_ita_db.hometasks
 DROP TABLE IF EXISTS `hometasks`;
 CREATE TABLE IF NOT EXISTS `hometasks` (
   `hometask_ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -362,7 +375,8 @@ CREATE TABLE IF NOT EXISTS `hometasks` (
   UNIQUE KEY `fkmodule_ID` (`fkmodule_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.hometasks: ~2 rows (approximately)
+-- Дамп данных таблицы int_ita_db.hometasks: ~2 rows (приблизительно)
+DELETE FROM `hometasks`;
 /*!40000 ALTER TABLE `hometasks` DISABLE KEYS */;
 INSERT INTO `hometasks` (`hometask_ID`, `fkmodule_ID`, `fklecture_ID`, `hometask_name`, `hometask_description`, `hometask_url`) VALUES
 	(1, 23, 34, 'Hometask 1', 'Description 1', 'URL 1'),
@@ -370,7 +384,7 @@ INSERT INTO `hometasks` (`hometask_ID`, `fkmodule_ID`, `fklecture_ID`, `hometask
 /*!40000 ALTER TABLE `hometasks` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.language
+-- Дамп структуры для таблица int_ita_db.language
 DROP TABLE IF EXISTS `language`;
 CREATE TABLE IF NOT EXISTS `language` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -380,7 +394,8 @@ CREATE TABLE IF NOT EXISTS `language` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.language: ~3 rows (approximately)
+-- Дамп данных таблицы int_ita_db.language: ~3 rows (приблизительно)
+DELETE FROM `language`;
 /*!40000 ALTER TABLE `language` DISABLE KEYS */;
 INSERT INTO `language` (`id`, `code`, `language`, `country`) VALUES
 	(1, 'RU', 'русский', 'Россия'),
@@ -389,7 +404,7 @@ INSERT INTO `language` (`id`, `code`, `language`, `country`) VALUES
 /*!40000 ALTER TABLE `language` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.lecture
+-- Дамп структуры для таблица int_ita_db.lecture
 DROP TABLE IF EXISTS `lecture`;
 CREATE TABLE IF NOT EXISTS `lecture` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -412,14 +427,15 @@ CREATE TABLE IF NOT EXISTS `lecture` (
   CONSTRAINT `FK_lecture_module` FOREIGN KEY (`idModule`) REFERENCES `module` (`module_ID`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.lecture: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.lecture: ~0 rows (приблизительно)
+DELETE FROM `lecture`;
 /*!40000 ALTER TABLE `lecture` DISABLE KEYS */;
 INSERT INTO `lecture` (`id`, `image`, `alias`, `language`, `idModule`, `order`, `title`, `idType`, `durationInMinutes`, `maxNumber`, `iconIsDone`, `preLecture`, `nextLecture`, `idTeacher`, `lectureUnwatchedImage`) VALUES
 	(1, '/css/images/lectureImage.png', 'types', 'ua', 1, 3, 'Goal of classes 1', 10, 40, 6, '/css/images/medalIcoFalse.png', 2, 4, '2', 'css/images/ratIco0.png');
 /*!40000 ALTER TABLE `lecture` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.lectureresource
+-- Дамп структуры для таблица int_ita_db.lectureresource
 DROP TABLE IF EXISTS `lectureresource`;
 CREATE TABLE IF NOT EXISTS `lectureresource` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -430,12 +446,13 @@ CREATE TABLE IF NOT EXISTS `lectureresource` (
   CONSTRAINT `FK_lectureResource_resource` FOREIGN KEY (`idResource`) REFERENCES `resource` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.lectureresource: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.lectureresource: ~0 rows (приблизительно)
+DELETE FROM `lectureresource`;
 /*!40000 ALTER TABLE `lectureresource` DISABLE KEYS */;
 /*!40000 ALTER TABLE `lectureresource` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.mainpage
+-- Дамп структуры для таблица int_ita_db.mainpage
 DROP TABLE IF EXISTS `mainpage`;
 CREATE TABLE IF NOT EXISTS `mainpage` (
   `id` int(11) NOT NULL,
@@ -468,14 +485,15 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.mainpage: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.mainpage: ~0 rows (приблизительно)
+DELETE FROM `mainpage`;
 /*!40000 ALTER TABLE `mainpage` DISABLE KEYS */;
 INSERT INTO `mainpage` (`id`, `language`, `title`, `sliderHeader`, `sliderText`, `category`, `message`, `sliderTextureURL`, `sliderLineURL`, `sliderButtonText`, `header1`, `subLineImage`, `subheader1`, `arrayBlocks`, `header2`, `subheader2`, `arraySteps`, `stepSize`, `linkName`, `hexagon`, `formHeader1`, `formHeader2`, `regText`, `buttonStart`, `socialText`, `imageNetwork`, `formFon`) VALUES
 	(0, 'ua', 'INTITA', 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту і стань класним спеціалістом!', 'mainpage', 'PROGRAM FUTURE', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png', 'Готові розпочати?', 'Введіть дані в форму нижче', 'розширена реєстрація', 'ПОЧАТИ', 'Ви можете також зареєструватися через соцмережі:', '/css/images/networking.png', '/css/images/formFon.png');
 /*!40000 ALTER TABLE `mainpage` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.mainpagetranslated
+-- Дамп структуры для таблица int_ita_db.mainpagetranslated
 DROP TABLE IF EXISTS `mainpagetranslated`;
 CREATE TABLE IF NOT EXISTS `mainpagetranslated` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -497,16 +515,17 @@ CREATE TABLE IF NOT EXISTS `mainpagetranslated` (
   `socialText` varchar(50) NOT NULL,
   PRIMARY KEY (`id`,`language`),
   CONSTRAINT `FK__mainpage` FOREIGN KEY (`id`) REFERENCES `mainpage` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.mainpagetranslated: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.mainpagetranslated: ~0 rows (приблизительно)
+DELETE FROM `mainpagetranslated`;
 /*!40000 ALTER TABLE `mainpagetranslated` DISABLE KEYS */;
 INSERT INTO `mainpagetranslated` (`id`, `language`, `title`, `header1`, `subheader1`, `translation`, `header2`, `subheader2`, `sliderHeader`, `sliderText`, `sliderButtonText`, `linkName`, `formHeader1`, `formHeader2`, `regText`, `buttonStart`, `socialText`) VALUES
-	(0, 'ru', 'ИНТИТА', 'О нас', '', 'ПРОГРАММИРУЙ БУДУЩЕЕ', '', '', 'ПРОГРАММИРУЙ БУДУЩЕЕ', '', '', '', '', '', '', '', '');
+	(1, 'ru', 'ИНТИТА', 'О нас', '', 'ПРОГРАММИРУЙ БУДУЩЕЕ', '', '', 'ПРОГРАММИРУЙ БУДУЩЕЕ', '', '', '', '', '', '', '', '');
 /*!40000 ALTER TABLE `mainpagetranslated` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.module
+-- Дамп структуры для таблица int_ita_db.module
 DROP TABLE IF EXISTS `module`;
 CREATE TABLE IF NOT EXISTS `module` (
   `module_ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -529,7 +548,8 @@ CREATE TABLE IF NOT EXISTS `module` (
   CONSTRAINT `FK_module_course` FOREIGN KEY (`course`) REFERENCES `course` (`course_ID`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.module: ~3 rows (approximately)
+-- Дамп данных таблицы int_ita_db.module: ~3 rows (приблизительно)
+DELETE FROM `module`;
 /*!40000 ALTER TABLE `module` DISABLE KEYS */;
 INSERT INTO `module` (`module_ID`, `course`, `module_name`, `alias`, `language`, `module_duration_hours`, `module_duration_days`, `lesson_count`, `module_price`, `for_whom`, `what_you_learn`, `what_you_get`, `module_img`, `about_module`) VALUES
 	(1, 1, 'Основи PHP', 'start', 'ua', 14, 20, 6, 1256, 'для менеджерів проектів і тих, хто відповідає за постановку завдань на розробку;для дизайнерів, які готові почати не просто малювати красиві картинки, а й навчитися тому, як створювати працюючі і зручні інтерфейси;для розробників, які хочуть самостійно створити або змінити свій проект;', 'Ви навчитеся писати чистий код;Користуватися системами контролю версій;Дізнаєтеся, з чого складається сучасний додаток;Для чого потрібен безперервна інтеграція (СІ) сервер;Чому потрібно тестувати свої програми і як це робити;', 'Відеозаписи та текстові матеріали всіх онлайн-занять;Спілкування з розумними одногрупниками;Сертифікат про закінчення навчання;Прилаштованість на робоче місце в силіконовій долині;', '/css/images/courseimg1.png', NULL),
@@ -538,7 +558,7 @@ INSERT INTO `module` (`module_ID`, `course`, `module_name`, `alias`, `language`,
 /*!40000 ALTER TABLE `module` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.moduleresource
+-- Дамп структуры для таблица int_ita_db.moduleresource
 DROP TABLE IF EXISTS `moduleresource`;
 CREATE TABLE IF NOT EXISTS `moduleresource` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -549,12 +569,13 @@ CREATE TABLE IF NOT EXISTS `moduleresource` (
   CONSTRAINT `FK_moduleResource_moduleresource` FOREIGN KEY (`idResource`) REFERENCES `moduleresource` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.moduleresource: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.moduleresource: ~0 rows (приблизительно)
+DELETE FROM `moduleresource`;
 /*!40000 ALTER TABLE `moduleresource` DISABLE KEYS */;
 /*!40000 ALTER TABLE `moduleresource` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.regextended
+-- Дамп структуры для таблица int_ita_db.regextended
 DROP TABLE IF EXISTS `regextended`;
 CREATE TABLE IF NOT EXISTS `regextended` (
   `regID` int(11) NOT NULL AUTO_INCREMENT,
@@ -578,7 +599,8 @@ CREATE TABLE IF NOT EXISTS `regextended` (
   PRIMARY KEY (`regID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.regextended: ~2 rows (approximately)
+-- Дамп данных таблицы int_ita_db.regextended: ~2 rows (приблизительно)
+DELETE FROM `regextended`;
 /*!40000 ALTER TABLE `regextended` DISABLE KEYS */;
 INSERT INTO `regextended` (`regID`, `language`, `mainLink`, `regLink`, `header`, `headerFoto`, `firstName`, `middleName`, `lastName`, `dateOfBirth`, `education`, `tel`, `email`, `password`, `repeatPassword`, `submitButtonText`, `chooseFileButton`, `fileNotChoose`) VALUES
 	(1, 'UA', 'Головна', 'Реєстрація', 'Персональні', 'Завантажити фото профілю', 'Ім\'я', 'По-батькові', 'Прізвище', 'Дата народження', 'Освіта', 'Телефон', 'Email', 'Пароль', 'Повтор пароля', 'Відправити />', 'Виберіть файл', 'Файл не вибрано ...'),
@@ -586,7 +608,7 @@ INSERT INTO `regextended` (`regID`, `language`, `mainLink`, `regLink`, `header`,
 /*!40000 ALTER TABLE `regextended` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.resource
+-- Дамп структуры для таблица int_ita_db.resource
 DROP TABLE IF EXISTS `resource`;
 CREATE TABLE IF NOT EXISTS `resource` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -595,12 +617,13 @@ CREATE TABLE IF NOT EXISTS `resource` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.resource: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.resource: ~0 rows (приблизительно)
+DELETE FROM `resource`;
 /*!40000 ALTER TABLE `resource` DISABLE KEYS */;
 /*!40000 ALTER TABLE `resource` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.settings
+-- Дамп структуры для таблица int_ita_db.settings
 DROP TABLE IF EXISTS `settings`;
 CREATE TABLE IF NOT EXISTS `settings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -611,12 +634,13 @@ CREATE TABLE IF NOT EXISTS `settings` (
   KEY `category_key` (`category`,`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.settings: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.settings: ~0 rows (приблизительно)
+DELETE FROM `settings`;
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.sourcemessages
+-- Дамп структуры для таблица int_ita_db.sourcemessages
 DROP TABLE IF EXISTS `sourcemessages`;
 CREATE TABLE IF NOT EXISTS `sourcemessages` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -625,7 +649,8 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (original - English).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~90 rows (approximately)
+-- Дамп данных таблицы int_ita_db.sourcemessages: ~90 rows (приблизительно)
+DELETE FROM `sourcemessages`;
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', 'INTITA'),
@@ -635,7 +660,7 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(5, 'slider', 'PROGRAM THE FUTURE'),
 	(6, 'mainpage', 'something that you need to know about our courses'),
 	(7, 'mainpage', 'then explain how you will learn step by step'),
-	(8, 'slider', 'ENTER'),
+	(8, 'slider', 'ENTER \\>'),
 	(9, 'regform', 'Ready to get started?'),
 	(10, 'regform', 'Enter data into the form below'),
 	(11, 'regform', 'extended registration'),
@@ -721,7 +746,7 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 /*!40000 ALTER TABLE `sourcemessages` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.step
+-- Дамп структуры для таблица int_ita_db.step
 DROP TABLE IF EXISTS `step`;
 CREATE TABLE IF NOT EXISTS `step` (
   `stepID` int(11) NOT NULL AUTO_INCREMENT,
@@ -735,7 +760,8 @@ CREATE TABLE IF NOT EXISTS `step` (
   PRIMARY KEY (`stepID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.step: ~5 rows (approximately)
+-- Дамп данных таблицы int_ita_db.step: ~5 rows (приблизительно)
+DELETE FROM `step`;
 /*!40000 ALTER TABLE `step` DISABLE KEYS */;
 INSERT INTO `step` (`stepID`, `language`, `stepName`, `stepNumber`, `stepTitle`, `stepImagePath`, `stepImage`, `stepText`) VALUES
 	(1, 'UA', 'крок', 1, 'Реєстрація на сайті', '/css/images/', 'step1.jpg', 'Щоб отримати доступ до переліку курсів, модулів і занять та пройти безкоштовні модулі і заняття зареєструйся на сайті. Реєстрація дозволить тобі оцінити якість та зручність нашого продукт, який стане для тебе надійним партнером і порадником в професійній самореалізації.\r\n'),
@@ -746,7 +772,7 @@ INSERT INTO `step` (`stepID`, `language`, `stepName`, `stepNumber`, `stepTitle`,
 /*!40000 ALTER TABLE `step` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.students
+-- Дамп структуры для таблица int_ita_db.students
 DROP TABLE IF EXISTS `students`;
 CREATE TABLE IF NOT EXISTS `students` (
   `student_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -773,12 +799,13 @@ CREATE TABLE IF NOT EXISTS `students` (
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.students: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.students: ~0 rows (приблизительно)
+DELETE FROM `students`;
 /*!40000 ALTER TABLE `students` DISABLE KEYS */;
 /*!40000 ALTER TABLE `students` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.studentsaccess
+-- Дамп структуры для таблица int_ita_db.studentsaccess
 DROP TABLE IF EXISTS `studentsaccess`;
 CREATE TABLE IF NOT EXISTS `studentsaccess` (
   `accessID` int(11) NOT NULL AUTO_INCREMENT,
@@ -798,12 +825,13 @@ CREATE TABLE IF NOT EXISTS `studentsaccess` (
   CONSTRAINT `FK_studentsaccess_modules` FOREIGN KEY (`moduleID`) REFERENCES `module` (`module_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.studentsaccess: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.studentsaccess: ~0 rows (приблизительно)
+DELETE FROM `studentsaccess`;
 /*!40000 ALTER TABLE `studentsaccess` DISABLE KEYS */;
 /*!40000 ALTER TABLE `studentsaccess` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.teachers
+-- Дамп структуры для таблица int_ita_db.teachers
 DROP TABLE IF EXISTS `teachers`;
 CREATE TABLE IF NOT EXISTS `teachers` (
   `teacherID` int(11) NOT NULL AUTO_INCREMENT,
@@ -830,12 +858,13 @@ CREATE TABLE IF NOT EXISTS `teachers` (
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.teachers: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.teachers: ~0 rows (приблизительно)
+DELETE FROM `teachers`;
 /*!40000 ALTER TABLE `teachers` DISABLE KEYS */;
 /*!40000 ALTER TABLE `teachers` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.teacherspage
+-- Дамп структуры для таблица int_ita_db.teacherspage
 DROP TABLE IF EXISTS `teacherspage`;
 CREATE TABLE IF NOT EXISTS `teacherspage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -851,7 +880,8 @@ CREATE TABLE IF NOT EXISTS `teacherspage` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.teacherspage: ~2 rows (approximately)
+-- Дамп данных таблицы int_ita_db.teacherspage: ~2 rows (приблизительно)
+DELETE FROM `teacherspage`;
 /*!40000 ALTER TABLE `teacherspage` DISABLE KEYS */;
 INSERT INTO `teacherspage` (`id`, `lang`, `header`, `courses`, `link1`, `link2`, `BCmain`, `BCteachers`, `title`, `profile`) VALUES
 	(1, 'UA', 'Our teachers', 'Веде курси:', 'Читати повністю', 'Відгуки про викладача', 'Головна', 'Викладачі', 'ІНТІТА - Викладачі', 'Персональна сторінка'),
@@ -859,7 +889,7 @@ INSERT INTO `teacherspage` (`id`, `lang`, `header`, `courses`, `link1`, `link2`,
 /*!40000 ALTER TABLE `teacherspage` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.teacher_temp
+-- Дамп структуры для таблица int_ita_db.teacher_temp
 DROP TABLE IF EXISTS `teacher_temp`;
 CREATE TABLE IF NOT EXISTS `teacher_temp` (
   `teacher_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -881,7 +911,8 @@ CREATE TABLE IF NOT EXISTS `teacher_temp` (
   PRIMARY KEY (`teacher_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.teacher_temp: ~6 rows (approximately)
+-- Дамп данных таблицы int_ita_db.teacher_temp: ~6 rows (приблизительно)
+DELETE FROM `teacher_temp`;
 /*!40000 ALTER TABLE `teacher_temp` DISABLE KEYS */;
 INSERT INTO `teacher_temp` (`teacher_id`, `lang`, `first_name`, `middle_name`, `last_name`, `foto_url`, `subjects`, `profile_text_big`, `profile_text`, `readMoreLink`, `email`, `tel`, `skype`, `title`, `linkName`, `smallImage`) VALUES
 	(1, 'UA', 'Олександра', 'Василівна', 'Сіра', '/css/images/teacher1.jpg', 'кройка и шитье сроков; програмування самоубийств', 'Народилася і виросла в Сакраменто, у 18 років вона переїхала до Лос-Анджелеса й незабаром стала вкладачем. У 2007, 2008 і 2010 рр.. вона виграла кілька номінацій премії AVN Awards (також була названа «Найкращою програмісткою» у 2007 році за версією XRCO). Паралельно з вікладауцью роботою та роботою програміста в Саша Грей грає головну роль в тестванні Інтернету.\r\n\r\nМарина Енн Генціс народилася у родині механіка. Її батько мав грецьке походження. Батьки дівчинки розлучилися коли їй було 5 років, надалі її виховувала мати, яка вступила в повторний шлюб у 2000 роц. Марина не ладнала з вітчимом, і, коли їй виповнилося 16 років, дівчина повідомила матері, що збирається покинути будинок. Достеменно невідомо, втекла вона з свого будинку або ж її відпустила мати. Сама Олександра пізніше зізнавалася, що в той час робила все те, що не подобалося її батькам і що вони їй забороняли.\r\n\r\nГлавный бухгалтер акционерного предприятия, специализирующегося на:\r\n\r\n    оказании полезных услуг горизонтального характера;\r\n    торговле, внешнеэкономической и внутреннеэкономической;\r\n    позитивное обучение швейного мастерства;\r\n\r\n Олександра Сіра виконала головну роль у фільмі оскароносного режисера Стівена Содерберга «Дівчина за викликом»[27][28]. Олександра грає дівчину на ім\'я Челсі, яка надає ескорт послуги заможним людям. Содерберг взяв її на роль після того, як прочитав статтю про неї у журналі Los Angeles, коментуючи це так: «She\'s kind of a new breed, I think. She doesn\'t really fit the typical mold of someone who goes into the adult film business. … I\'d never heard anybody talk about the business the way that she talked about it». Журналіст Скотт Маколей каже, що можливо Грей вибрала саме цю роль через свій інтерес до незалежних режисерів, таких як Жан-Люк Годар, Хармоні Корін, Девід Гордон Грін, Мікеланджело Антоніоні, Аньєс Варда та Вільям Клейн.\r\n\r\nКоли Олександра готувалася до ролі у «Дівчині за викликом», Содерберг попросив її подивитися «Жити своїм життям» і «Божевільний П\'єро»[29]. У фільмі «Жити своїм життям» піднімаються проблеми проституції, звідки Грей могла взяти щось і для своєї ролі, в той час як у «Божевільному П\'єро» показані відносини, схожі на ті, що відбуваються між Челсі, її хлопцем і клієнтами.\'; ', '<p>Профессиональный преподаватель бухгалтерского и налогового учета Национальноготранспортного университета кафедры финансов, учета и аудита со стажем преподавательской работы более 25 лет. Закончила аспирантуру, автор 36 научных работ в области учета и аудита, в т.ч. уникальной обучающей методики написания бухгалтерских проводок: <span>"Как украсть и не сесть" </span> и <span>"Как украсть и посадить другого" </span>.</p><p>Главный бухгалтер акционерного предприятия, специализирующегося на:<ul><li>оказании полезных услуг горизонтального характера;</li><li>торговле, внешнеэкономической и внутреннеэкономической;</li><li>позитивное обучение швейного мастерства;</li></ul></p>', '/teacherProfile', '', '', '', '', '', '/css/images/teacherImage.png'),
@@ -893,7 +924,7 @@ INSERT INTO `teacher_temp` (`teacher_id`, `lang`, `first_name`, `middle_name`, `
 /*!40000 ALTER TABLE `teacher_temp` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.translatedmessagesru
+-- Дамп структуры для таблица int_ita_db.translatedmessagesru
 DROP TABLE IF EXISTS `translatedmessagesru`;
 CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -903,7 +934,8 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesru: ~67 rows (approximately)
+-- Дамп данных таблицы int_ita_db.translatedmessagesru: ~69 rows (приблизительно)
+DELETE FROM `translatedmessagesru`;
 /*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
 INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(1, 'ru', 'INTITA'),
@@ -913,7 +945,7 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(5, 'ru', 'ПРОГРАММИРУЙ БУДУЩЕЕ'),
 	(6, 'ru', 'кое-что, что Вы должны знать о наших курсах'),
 	(7, 'ru', 'далее о том, как Вы будете учиться шаг за шагом'),
-	(8, 'ru', 'СТАРТ'),
+	(8, 'ru', 'СТАРТ  \\>'),
 	(9, 'ru', 'Готовы начать?'),
 	(10, 'ru', 'Введите данные в форму ниже'),
 	(11, 'ru', 'расширенная регистрация'),
@@ -978,7 +1010,7 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 /*!40000 ALTER TABLE `translatedmessagesru` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.translatedmessagesua
+-- Дамп структуры для таблица int_ita_db.translatedmessagesua
 DROP TABLE IF EXISTS `translatedmessagesua`;
 CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -988,7 +1020,8 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   CONSTRAINT `FK_translatedmessages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
 
--- Dumping data for table int_ita_db.translatedmessagesua: ~90 rows (approximately)
+-- Дамп данных таблицы int_ita_db.translatedmessagesua: ~90 rows (приблизительно)
+DELETE FROM `translatedmessagesua`;
 /*!40000 ALTER TABLE `translatedmessagesua` DISABLE KEYS */;
 INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -998,7 +1031,7 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(5, 'ua', 'ПРОГРАМУЙ МАЙБУТНЄ'),
 	(6, 'ua', 'Важлива інформація про навчання разом з нами'),
 	(7, 'ua', 'П’ять кроків до здійснення твоїх мрій'),
-	(8, 'ua', 'ПОЧАТИ'),
+	(8, 'ua', 'ПОЧАТИ  \\>'),
 	(9, 'ua', 'Готові розпочати?'),
 	(10, 'ua', 'Введіть дані в форму нижче'),
 	(11, 'ua', 'розширена реєстрація'),
@@ -1084,7 +1117,7 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 /*!40000 ALTER TABLE `translatedmessagesua` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.typeresource
+-- Дамп структуры для таблица int_ita_db.typeresource
 DROP TABLE IF EXISTS `typeresource`;
 CREATE TABLE IF NOT EXISTS `typeresource` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1093,16 +1126,21 @@ CREATE TABLE IF NOT EXISTS `typeresource` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.typeresource: ~0 rows (approximately)
+-- Дамп данных таблицы int_ita_db.typeresource: ~0 rows (приблизительно)
+DELETE FROM `typeresource`;
 /*!40000 ALTER TABLE `typeresource` DISABLE KEYS */;
 /*!40000 ALTER TABLE `typeresource` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.user
+-- Дамп структуры для таблица int_ita_db.user
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `firstName` varchar(255) NOT NULL,
+  `identity` varchar(255) NOT NULL,
+  `network` varchar(255) NOT NULL,
+  `state` tinyint(1) NOT NULL,
+  `full_name` varchar(255) NOT NULL,
   `middleName` varchar(255) DEFAULT NULL,
   `secondName` varchar(255) DEFAULT NULL,
   `nickname` varchar(255) DEFAULT NULL,
@@ -1113,28 +1151,49 @@ CREATE TABLE IF NOT EXISTS `user` (
   `hash` varchar(20) NOT NULL,
   `address` text,
   `education` varchar(255) DEFAULT NULL,
-  `educform` varchar(60) DEFAULT NULL,
+  `educform` varchar(60) DEFAULT 'Не вибрано',
   `interests` text,
   `aboutUs` text,
   `aboutMy` varchar(255) DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   `role` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.user: ~7 rows (approximately)
+-- Дамп данных таблицы int_ita_db.user: ~10 rows (приблизительно)
+DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`id`, `firstName`, `middleName`, `secondName`, `nickname`, `birthday`, `email`, `password`, `phone`, `hash`, `address`, `education`, `educform`, `interests`, `aboutUs`, `aboutMy`, `avatar`, `role`) VALUES
-	(1, 'Вова', 'Джа', 'Марля', 'Wizlight', '21/03/1997', 'Wizlightdragon@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', '911', '', 'Ямайка', 'ВДПУ', 'Онлайн', 'Ковбаска, колобки, раста', 'Інтернет', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', '/css/images/1id.jpg', ''),
-	(5, 't54wy6wy@ferwg.gtrf', NULL, NULL, NULL, NULL, 't54wy6wy@ferwg.gtrf', 'egrwhjet6', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
-	(6, 'dfesafhe@fjgr.gfrje', NULL, NULL, NULL, NULL, 'dfesafhe@fjgr.gfrje', 'fkrjgfrklfjrlk', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
-	(7, 'fhsdgfh@deyg.gdehj', NULL, NULL, NULL, NULL, 'fhsdgfh@deyg.gdehj', 'vfdvdf', NULL, '', NULL, NULL, 'Не вибрано', NULL, NULL, NULL, NULL, ''),
-	(8, 'admin@EHJBF.SNDFS', NULL, NULL, NULL, NULL, 'admin@EHJBF.SNDFS', 'd6877098041a8a30bc8bd8f9faeeb8e62afd682f', NULL, '', NULL, NULL, 'Не вибрано', NULL, NULL, NULL, NULL, ''),
-	(9, 'gfvzdrgfregt', NULL, '', '', '', 'gfsGFea@EFSF.DEW', '011c945f30ce2cbafc452f39840f025693339c42', '', '', '', '', 'Онлайн', '', '', '', NULL, '0'),
-	(10, 'Wizlightdrago@gmail.com', NULL, NULL, NULL, NULL, 'Wizlightdrago@gmail.com', '17ba0791499db908433b80f37c5fbc89b870084b', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
-	(11, 'ivanna@yutr.rtr', NULL, '', '', '', 'ivanna@yutr.rtr', '011c945f30ce2cbafc452f39840f025693339c42', '', '', '', '', NULL, '', '', '', '/css/images/avatars/ivanna@yutr.rtr.png', ''),
-	(12, 'dawfawef@efew.rew', NULL, NULL, NULL, NULL, 'dawfawef@efew.rew', '011c945f30ce2cbafc452f39840f025693339c42', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/css/images/avatars/noname.png', ''),
-	(13, 'gtsgrstg@fretf.gtr', NULL, NULL, NULL, NULL, 'gtsgrstg@fretf.gtr', '011c945f30ce2cbafc452f39840f025693339c42', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/css/images/avatars/noname.png', '');
+INSERT INTO `user` (`id`, `firstName`, `identity`, `network`, `state`, `full_name`, `middleName`, `secondName`, `nickname`, `birthday`, `email`, `password`, `phone`, `hash`, `address`, `education`, `educform`, `interests`, `aboutUs`, `aboutMy`, `avatar`, `role`) VALUES
+	(1, 'Вова', '', '', 0, '', 'Джа', 'Марля', 'Wizlight', '21/03/1997', 'Wizlightdragon@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', '911', '', 'Ямайка', 'ВДПУ', 'Онлайн', 'Ковбаска, колобки, раста', 'Інтернет', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', '/css/images/1id.jpg', ''),
+	(5, 't54wy6wy@ferwg.gtrf', '', '', 0, '', NULL, NULL, NULL, NULL, 't54wy6wy@ferwg.gtrf', 'egrwhjet6', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
+	(6, 'dfesafhe@fjgr.gfrje', '', '', 0, '', NULL, NULL, NULL, NULL, 'dfesafhe@fjgr.gfrje', 'fkrjgfrklfjrlk', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
+	(7, 'fhsdgfh@deyg.gdehj', '', '', 0, '', NULL, NULL, NULL, NULL, 'fhsdgfh@deyg.gdehj', 'vfdvdf', NULL, '', NULL, NULL, 'Не вибрано', NULL, NULL, NULL, NULL, ''),
+	(8, 'admin@EHJBF.SNDFS', '', '', 0, '', NULL, NULL, NULL, NULL, 'admin@EHJBF.SNDFS', 'd6877098041a8a30bc8bd8f9faeeb8e62afd682f', NULL, '', NULL, NULL, 'Не вибрано', NULL, NULL, NULL, NULL, ''),
+	(9, 'gfvzdrgfregt', '', '', 0, '', NULL, '', '', '', 'gfsGFea@EFSF.DEW', '011c945f30ce2cbafc452f39840f025693339c42', '', '', '', '', 'Онлайн', '', '', '', NULL, '0'),
+	(10, 'Wizlightdrago@gmail.com', '', '', 0, '', NULL, NULL, NULL, NULL, 'Wizlightdrago@gmail.com', '17ba0791499db908433b80f37c5fbc89b870084b', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
+	(11, 'ivanna@yutr.rtr', '', '', 0, '', NULL, '', '', '', 'ivanna@yutr.rtr', '011c945f30ce2cbafc452f39840f025693339c42', '', '', '', '', NULL, '', '', '', '/css/images/avatars/ivanna@yutr.rtr.jpg', ''),
+	(12, 'dawfawef@efew.rew', '', '', 0, '', NULL, NULL, NULL, NULL, 'dawfawef@efew.rew', '011c945f30ce2cbafc452f39840f025693339c42', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/css/images/avatars/noname.png', ''),
+	(13, 'gtsgrstg@fretf.gtr', '', '', 0, '', NULL, NULL, NULL, NULL, 'gtsgrstg@fretf.gtr', '011c945f30ce2cbafc452f39840f025693339c42', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/css/images/avatars/noname.png', ''),
+	(14, 'fsef@sg.tgf', '', '', 0, '', NULL, NULL, NULL, NULL, 'fsef@sg.tgf', '8eddb6bdf9a5139e587bd661994c33d59ab3320d', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/css/images/avatars/noname.png', '');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
-/*!40014 SET FOREIGN_KEY_CHECKS=1 */;
+
+
+-- Дамп структуры для таблица int_ita_db.user1
+DROP TABLE IF EXISTS `user1`;
+CREATE TABLE IF NOT EXISTS `user1` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identity` varchar(255) NOT NULL,
+  `network` varchar(255) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `full_name` varchar(255) DEFAULT NULL,
+  `state` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы int_ita_db.user1: ~0 rows (приблизительно)
+DELETE FROM `user1`;
+/*!40000 ALTER TABLE `user1` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user1` ENABLE KEYS */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
