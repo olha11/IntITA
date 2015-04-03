@@ -13,52 +13,48 @@
 		<p class="zagolovok"><?php echo Yii::t('regform','Ready to get started?'); ?></p>
 		<p class="zagolovok2"><?php echo Yii::t('regform','Enter data into the form below'); ?></p>
 
-		<div class="singInForm">
+		<div class="signInForm">
 			<?php $form=$this->beginWidget('CActiveForm', array(
 				'id'=>'studentreg-form',
-				'action'=> Yii::app()->createUrl('site/login'),
+                'action' => array('site/rapidreg'),
 				// Please note: When you enable ajax validation, make sure the corresponding
 				// controller action is handling ajax validation correctly.
 				// There is a call to performAjaxValidation() commented in generated controller code.
 				// See class documentation of CActiveForm for details on this.
-				'enableAjaxValidation'=>false,
-			)); ?>
+                'enableClientValidation'=>true,
+                'enableAjaxValidation'=>true,
+                'clientOptions'=>array('validateOnSubmit'=>false,'validateOnChange'=>true),
+            )); ?>
 			<div class="rowemail">
 				<?php $placeHolderEmail = Yii::t('regform','Email');?>
-				<?php echo $form->textField($model,'email',array('class'=>'singInEmail','placeholder'=>$placeHolderEmail,'size'=>60,'maxlength'=>255)); ?>
+				<?php echo $form->textField($model,'email',array('class'=>'signInEmail','placeholder'=>$placeHolderEmail,'size'=>60,'maxlength'=>255)); ?>
 				<?php echo $form->error($model,'email'); ?>
-                <div style="color:red">
-                    <?php if(Yii::app()->user->hasFlash('emailinfo')):
-                        echo Yii::app()->user->getFlash('emailinfo');
-                    endif; ?>
-                </div>
 			</div>
 
 			<div class="rowpass">
 				<?php $placeHolderPassword = Yii::t('regform','Password');?>
-				<span class="passEye"> <?php echo $form->passwordField($model,'password',array('class'=>'singInPass','placeholder'=>$placeHolderPassword,'size'=>60,'maxlength'=>255)); ?></span>
+				<span class="passEye"> <?php echo $form->passwordField($model,'password',array('class'=>'signInPass','placeholder'=>$placeHolderPassword,'size'=>60,'maxlength'=>255)); ?></span>
 				<?php echo $form->error($model,'password'); ?>
-				<div style="color:red">
-                    <?php if(Yii::app()->user->hasFlash('passinfo')):
-                        echo Yii::app()->user->getFlash('passinfo');
+                <div class="forminfo">
+                    <?php if(Yii::app()->user->hasFlash('forminfo')):
+                        echo Yii::app()->user->getFlash('forminfo');
                     endif; ?>
-					<?php if(Yii::app()->user->hasFlash('forminfo')):
-						echo Yii::app()->user->getFlash('forminfo');
-					endif; ?>
-				</div>
+                </div">
 			</div>
 
-			<div class="regCheckbox">
-				<input type="checkbox" id="regCheckbox" value="" name="isExtended"/>
-				<label for="regCheckbox"><?php echo Yii::t('regform','extended registration'); ?></label>
-			</div>
+            <div class="regCheckboxW">
+                <div class="regCheckbox">
+                    <input type="checkbox" id="regCheckbox" value="" name="isExtended"/>
+                    <label for="regCheckbox"><?php echo Yii::t('regform','extended registration'); ?></label>
+                </div>
+            </div>
 
 			<div class="rowButtons">
 				<?php $labelButton = Yii::t('regform','JOIN');?>
-				<?php echo CHtml::submitButton($labelButton, array('id' => "singInButton")); ?>
+				<?php echo CHtml::submitButton($labelButton, array('id' => "signInButton")); ?>
 			</div>
 
-			<div class="linesingInForm"><?php echo Yii::t('regform','You can also enter by social networks:'); ?></div>
+			<div class="linesignInForm"><?php echo Yii::t('regform','You can also enter by social networks:'); ?></div>
 			<div class="image" >
 				<div id="singInFormCarousel">
 					<a href="#" class="arrow left-arrow" id="prev"><p><</p></a>
@@ -145,5 +141,6 @@ $s = get_file_contents('http://ulogin.ru/token.php?token=' .$_POST['token'] . '&
 
 
 		</div><!-- form -->
+
 	</div>
 </div>

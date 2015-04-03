@@ -45,7 +45,7 @@ $this->breadcrumbs=array(
             <?php $model->role =0; ?>
             <?php echo $form->labelEx($model,'role'); ?>
             <div class="radiolabelRole">
-                <?php echo $form->radioButtonList($model,'role',array(0=>'Студент',1=>'Викладач'), array('separator'=>' '));?>
+                <?php echo $form->radioButtonList($model,'role',array(0=>'Студент'), array('separator'=>' '));?>
             </div>
         </div>
         <div class="row">
@@ -65,7 +65,7 @@ $this->breadcrumbs=array(
         </div>
         <div class="rowDate">
             <?php echo $form->label($model,'birthday'); ?>
-            <?php echo $form->textField($model,'birthday',array('maxlength'=>11, 'class'=>'date', 'placeholder'=>'введіть в форматі дд.мм.рррр'));?>
+            <?php echo $form->textField($model,'birthday',array('maxlength'=>11, 'class'=>'date', 'placeholder'=>'введіть в форматі дд/мм/рррр'));?>
             <span><?php echo $form->error($model,'birthday'); ?></span>
         </div>
         <div class="rowPhone">
@@ -103,8 +103,7 @@ $this->breadcrumbs=array(
             <span><?php echo $form->error($model,'interests'); ?></span>
         </div>
         <div class="row">
-            <?php echo $form->label($model,'aboutUs'); ?>
-            <?php echo $form->textField($model,'aboutUs'); ?>
+            <?php echo $form->textField($model,'aboutUs',array('placeholder'=>'звідки Ви про нас дізналися?', 'id'=>'aboutUs')); ?>
             <span><?php echo $form->error($model,'aboutUs'); ?></span>
         </div>
         <div class="row">
