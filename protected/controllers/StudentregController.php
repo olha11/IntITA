@@ -124,7 +124,7 @@ class StudentRegController extends Controller
     public function actionIndex()
     {
 
-        $model=new StudentReg();
+        $model=new StudentReg('reguser');
         if(isset($_POST['StudentReg']))
         {
             if(is_null($_POST['StudentReg']['firstName']))
