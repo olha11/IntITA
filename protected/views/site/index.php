@@ -46,9 +46,9 @@
 </script>
 <script type="text/javascript"> /* Маштабування слайдера відповідно до ширини екрану*/
     $(function(){
-        $('.owl-item').height(document.body.clientWidth/2.31);
+        $('.owl-item').height(document.body.clientWidth/2.18);
         $(window).resize(function(){
-            $('.owl-item').height(document.body.clientWidth/2.31);
+            $('.owl-item').height(document.body.clientWidth/2.18);
         });
     });
     function fontSize() { /* Маштабування тексту слайдера*/
@@ -87,20 +87,22 @@
 	function textSliderCentr() { /* Центрування тексту картинки слайдеру*/
         $('.slide p').width(document.body.clientWidth);
         $('.slide p').css('margin-left', (document.body.clientWidth/2-document.body.clientWidth)+'px');
+		$('.slide p').css('top', document.body.clientWidth/4.05+'px');
     }
     $(function() { textSliderCentr(); });
     $(window).resize(function() { textSliderCentr(); });
     
 	function sliderBoxCentr() { /* Центрування центрального боксу слайдера*/
         if ( document.body.clientWidth <= 1440 ){
-            $('#sliderCenterBox').css('top', document.body.clientWidth/2.2/2.8+'px');
+            $('#sliderCenterBox').css('margin-top', document.body.clientWidth/3/2+'px');
         } else {
-            $('#sliderCenterBox').css('top', ((document.body.clientWidth)/2.2)/2-90+'px');
+            $('#sliderCenterBox').css('margin-top', document.body.clientWidth/4.05-120+'px');
         }
     }
     $(function() { sliderBoxCentr(); });
     $(window).resize(function() { sliderBoxCentr(); });
-    function sliderButtonSize() { /* Розмір кнопки на слайдері*/
+   
+   function sliderButtonSize() { /* Розмір кнопки на слайдері*/
         if ( document.body.clientWidth <= 1440 ){
             $('.sliderSnake .button a').css('margin-left', (document.body.clientWidth*0.11/2-document.body.clientWidth*0.11)+'px');
             $('.sliderSnake .button a').css('width',document.body.clientWidth*0.12+'px');
@@ -128,9 +130,9 @@
     $(function() { centrSliderButtons(); });
     $(window).resize(function() { centrSliderButtons(); });
     function centrMouseLine() { /* Маштабування лінії з мишкою*/
-        $('.mouseLine').css('height', document.body.clientWidth/35+'px')
+        $('.mouseLine').css('height', document.body.clientWidth/15+'px')
         $('.mouseLine').css('width', document.body.clientWidth+'px')
-        $('.mouseLine img').css('height', document.body.clientWidth/21.5+'px')
+        $('.mouseLine img').css('height', document.body.clientWidth/15.42+'px')
         $('.mouseLine img').css('width', document.body.clientWidth+'px')
     }
     $(function() { centrMouseLine(); });
@@ -141,7 +143,7 @@
         <p><?php echo Yii::t('slider','PROGRAM THE FUTURE'); ?></p>
     </div>
     <div class="sliderCenterBoxLine">
-        <p>__________</p>
+        <hr>
     </div>
     <div class="sliderSnake">
         <div class="snake">
