@@ -307,6 +307,9 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 	    }
 	}
 ?>
+    <?php if($model==Null)
+    $model=new StudentReg();
+    ?>
 </div>
 <?php $this->renderPartial('_form'); ?>
 </body>

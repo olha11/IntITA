@@ -43,7 +43,7 @@
 
 <body>
 
-<div id="navigation" class="down">
+<div id="navigation" class="down" >
     <div class="main">
         <div id="logo_img" class="down">
             <a href="<?php echo Yii::app()->request->baseUrl;?>">
@@ -75,12 +75,33 @@
     </div>
 
 </div>
+<!--SingIn modal-->
+<?php
+$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+    'id' => 'mydialog',
+    'themeUrl'=>'/css',
+    'cssFile'=>'jquery-ui.css',
+    'theme'=>'my',
+'options' => array(
+    'width'=>540,
+
+    'autoOpen' => false,
+    'modal' => true,
+    'resizable'=> false
+),
+));
+$this->renderPartial('/site/_signinform');
+
+$this->endWidget('zii.widgets.jui.CJuiDialog');
+?>
+<!--SignIn modal-->
+
 <div id="centerEnterButton">
     <div id="button_border" class="down">
     </div>
-    <?php if(Yii::app()->user->isGuest) {?>
-    <a id="enter_button" href="<?php echo Yii::app()->request->getBaseUrl(true); ?>#form" class="down"><?php echo Yii::t('header', 'Sign in'); ?></a>
-    <?php } else {?>
+    <?php if(Yii::app()->user->isGuest) {
+        echo CHtml::link(Yii::t('header', 'Sign in'), '#', array('id'=>'enter_button','class'=>'down','onclick' => '$("#mydialog").dialog("open"); return false;',));
+    } else {?>
         <a id="enter_button" href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/site/logout" class="down"><?php echo Yii::t('header', 'Sign out'); ?></a>
     <?php }?>
 </div>

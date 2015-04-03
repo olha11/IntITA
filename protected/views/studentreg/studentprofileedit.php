@@ -65,7 +65,7 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
         </div>
         <div class="rowDate">
             <?php echo $form->label($model,'birthday'); ?>
-            <?php echo $form->textField($model,'birthday',array('value'=>$post->birthday, 'class'=>'date','maxlength'=>11, 'placeholder'=>'введіть в форматі дд.мм.рррр')); ?>
+            <?php echo $form->textField($model,'birthday',array('value'=>$post->birthday, 'class'=>'date','maxlength'=>11, 'placeholder'=>'введіть в форматі дд/мм/рррр')); ?>
             <span><?php echo $form->error($model,'birthday'); ?></span>
         </div>
         <div class="row">
