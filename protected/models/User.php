@@ -18,11 +18,12 @@ class User extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return User the static model class
 	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
-
+	
+	public function getDbConnection()
+    {
+        return Yii::app()->db;
+    }
+	
 	/**
 	 * @return string the associated database table name
 	 */
@@ -95,5 +96,10 @@ class User extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
 	}
 }

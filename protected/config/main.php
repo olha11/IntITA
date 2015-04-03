@@ -9,8 +9,8 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'INTITA',
 
-	'sourceLanguage'=>'ru',
-	'language'=>'en',
+	'sourceLanguage'=>'en',
+	'language'=>'ua',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -54,6 +54,10 @@ return array(
     		'class' => 'system.web.CClientScript'
     	),
 
+		'cache'=>array(
+			'class'=>'system.caching.CFileCache',
+		),
+
         'messages'=>array(
             'class'=>'CDbMessageSource',
             'sourceMessageTable'=>'sourceMessages',
@@ -87,6 +91,7 @@ return array(
 				'<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
 				'<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
 			),
+
 		),
 
 
@@ -108,6 +113,10 @@ return array(
 					'levels'=>'error, warning',
 				),
 			),
+		),
+
+		'config' => array(
+			'class' => 'application.extensions.EConfig',
 		),
 	),
 

@@ -47,9 +47,9 @@
 </script>
 <script type="text/javascript"> /* Маштабування слайдера відповідно до ширини екрану*/
     $(function(){
-        $('.owl-item').height(document.body.clientWidth/2.31);
+        $('.owl-item').height(document.body.clientWidth/2.18);
         $(window).resize(function(){
-            $('.owl-item').height(document.body.clientWidth/2.31);
+            $('.owl-item').height(document.body.clientWidth/2.18);
         });
     });
     function fontSize() { /* Маштабування тексту слайдера*/
@@ -88,20 +88,22 @@
 	function textSliderCentr() { /* Центрування тексту картинки слайдеру*/
         $('.slide p').width(document.body.clientWidth);
         $('.slide p').css('margin-left', (document.body.clientWidth/2-document.body.clientWidth)+'px');
+		$('.slide p').css('top', document.body.clientWidth/4.05+'px');
     }
     $(function() { textSliderCentr(); });
     $(window).resize(function() { textSliderCentr(); });
     
 	function sliderBoxCentr() { /* Центрування центрального боксу слайдера*/
         if ( document.body.clientWidth <= 1440 ){
-            $('#sliderCenterBox').css('top', document.body.clientWidth/2.2/2.8+'px');
+            $('#sliderCenterBox').css('margin-top', document.body.clientWidth/3/2+'px');
         } else {
-            $('#sliderCenterBox').css('top', ((document.body.clientWidth)/2.2)/2-90+'px');
+            $('#sliderCenterBox').css('margin-top', document.body.clientWidth/4.05-120+'px');
         }
     }
     $(function() { sliderBoxCentr(); });
     $(window).resize(function() { sliderBoxCentr(); });
-    function sliderButtonSize() { /* Розмір кнопки на слайдері*/
+   
+   function sliderButtonSize() { /* Розмір кнопки на слайдері*/
         if ( document.body.clientWidth <= 1440 ){
             $('.sliderSnake .button a').css('margin-left', (document.body.clientWidth*0.11/2-document.body.clientWidth*0.11)+'px');
             $('.sliderSnake .button a').css('width',document.body.clientWidth*0.12+'px');
@@ -129,9 +131,9 @@
     $(function() { centrSliderButtons(); });
     $(window).resize(function() { centrSliderButtons(); });
     function centrMouseLine() { /* Маштабування лінії з мишкою*/
-        $('.mouseLine').css('height', document.body.clientWidth/35+'px')
+        $('.mouseLine').css('height', document.body.clientWidth/15+'px')
         $('.mouseLine').css('width', document.body.clientWidth+'px')
-        $('.mouseLine img').css('height', document.body.clientWidth/21.5+'px')
+        $('.mouseLine img').css('height', document.body.clientWidth/15.42+'px')
         $('.mouseLine img').css('width', document.body.clientWidth+'px')
     }
     $(function() { centrMouseLine(); });
@@ -142,7 +144,7 @@
         <p><?php echo Yii::t('slider','PROGRAM THE FUTURE'); ?></p>
     </div>
     <div class="sliderCenterBoxLine">
-        <p>__________</p>
+        <hr>
     </div>
     <div class="sliderSnake">
         <div class="snake">
@@ -201,79 +203,77 @@ $linkName = Yii::t('mainpage','read more ...');
 $massAbout=array($block1,$block2,$block3);
 ?>
 <div class="mainAboutBlock">
-<div class="mainAbout">
-    <div class="header">
-        <?php echo $headerText; ?>
-        <p>
-            <?php echo $subheaderText; ?>
-        </p>
-    </div>
-
-    <div class="line1">
-        <img src="<?php echo $subLineImage;?>">
-    </div>
-
-    <?php
-    foreach ($massAbout as $val)
-
-    {?>
-        <div class="block">
-            <ul>
-                <li>
-                    <div class="line2">
-                    <img src="<?php echo $val->line2Image;?>"> 
-                    </div>
-                    <div class="icon">
-                      <img src="<?php echo $val->iconImage;?>">
-                    </div>
-                    <div class="title">
-                        <?php echo $val->titleText; ?>
-                        <p>
-                            <?php echo $val->textAbout;?>
-                        </p>
-                    </div>
-                        <a href="<?php echo $val->linkAddress ?>">
-                        <?php echo $linkName; ?>
-                        </a>
-                </li>
-            </ul>
+    <div class="mainAbout">
+        <div class="header">
+            <?php echo $headerText; ?>
+            <p>
+                <?php echo $subheaderText; ?>
+            </p>
         </div>
-    <?php
-    }
-    ?>
 
-</div>
+        <div class="line1">
+            <img src="<?php echo $subLineImage;?>">
+        </div>
+
+        <?php
+        foreach ($massAbout as $val)
+        {?>
+            <div class="block">
+                <ul>
+                    <li>
+                        <div class="line2">
+                            <img src="<?php echo $val->line2Image;?>">
+                        </div>
+                        <div class="icon">
+                            <img src="<?php echo $val->iconImage;?>">
+                        </div>
+                        <div class="title">
+                            <?php echo $val->titleText; ?>
+                            <p>
+                                <?php echo $val->textAbout;?>
+                            </p>
+                        </div>
+                        <a href="<?php echo $val->linkAddress ?>">
+                            <?php echo $linkName; ?>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <?php
+        }
+        ?>
+
+    </div>
 </div>
 <! Ініціалізація екземплярів класу>
 <?php
 $stepHeader =  Yii::t('mainpage','How is the training?');
 $stepSubheader =  Yii::t('mainpage','then explain how you will learn step by step');
 $stepSize= $mainpage['stepSize'];
-
 $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 ?>
 
 <! Верстка за допомогою масиву з екземплярами класу>
 <div class="steps" >
-		<div class="stepHeaderCont" style="width:<?php echo $stepSize; ?>">
-			<div class="stepHeader">
-						<h1><?php echo $stepHeader; ?></h1>
-						<h3><?php echo $stepSubheader; ?></h3>
-			</div>
-		</div>
-<?php
+    <div class="stepHeaderCont" style="width:<?php echo $stepSize; ?>">
+        <div class="stepHeader">
+            <h1><?php echo $stepHeader; ?></h1>
+            <h3><?php echo $stepSubheader; ?></h3>
+        </div>
+    </div>
+    <?php
     foreach ($stepsArray as $stepValue)
     {
-		if ($stepValue->stepNumber % 2 <> 0)
-		 {
-?>
-         <div class="stepLeft" 	style="width:<?php echo $stepSize; ?>" >
-					<div class="stepUrl">
-                        <img class="grid" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/grid.png">
-        		   		<img src="<?php echo $stepValue->stepImage; ?>">
-        		    </div>
-					<div class="line">
-                    </div>
+        if ($stepValue->stepNumber % 2 <> 0)
+        {
+            ?>
+            <div class="stepLeft" 	style="width:<?php echo $stepSize; ?>" >
+                <div class="stepUrl">
+                    <img class="grid" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/grid.png">
+                    <img src="<?php echo $stepValue->stepImage; ?>">
+                </div>
+                <div class="line">
+                </div>
 
                     <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
 					<div class="stepArticle">

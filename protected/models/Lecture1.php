@@ -34,7 +34,7 @@ class Lecture extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'lecture';
+		return 'lectures';
 	}
 
 	function setLessonFooterValues ($lessNum,$allLess)

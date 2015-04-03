@@ -4,7 +4,10 @@
 class LessonController extends Controller{
 
     public function actionIndex(){
-        $this->render('index');
+        $dataProvider=new CActiveDataProvider('Lecture');
+        $this->render('index',array(
+            'dataProvider'=>$dataProvider,
+        ));
     }
 
 } 

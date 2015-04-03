@@ -67,6 +67,7 @@ table.profileInfo {
     line-height: 40px;
     color: #828282;
 }
+
 .studProf input
 {
     padding-left: 8px;
@@ -74,6 +75,9 @@ table.profileInfo {
     height: 40px;
     border: 1px solid #d8d8d8;
     border-radius: 5px;
+}
+#aboutUs{
+    margin-left: 176px;
 }
 .studProf textarea
 {
@@ -102,6 +106,10 @@ table.profileInfo {
     width: 100px;
     text-align: left;
     margin-bottom: 8px;
+}
+.radiolabelRole label
+{
+    width: 200px;
 }
 .rowRadioButton input[type="radio"]:hover,.rowRadioButton input[type="checkbox"]:hover
 {
@@ -443,16 +451,16 @@ p.courseLevLang{
 }
 /*Form style*/
 /* PassEye */
-.passEye {
+.studProf .passEye {
     position:relative;display:inline-block;
 }
-.passEye input {
+.studProf .passEye input {
     padding-right:0px;
 }
-.passEye input::-ms-reveal, .passEye input::-ms-clear {
+.studProf .passEye input::-ms-reveal, .studProf .passEye input::-ms-clear {
     display:none
 }
-.passEye .eye {
+.studProf .passEye .eye {
     position:absolute;
     right:10px;
     top:50%;
@@ -463,7 +471,7 @@ p.courseLevLang{
     cursor:pointer;
     background:url('images/passEye.png') no-repeat left 2px;
 }
-.passEye .openEye {
+.studProf .passEye .openEye {
     background-position:left bottom;
 }
 /* PassEye */
