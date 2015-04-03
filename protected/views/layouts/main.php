@@ -79,16 +79,15 @@
 <?php
 $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
     'id' => 'mydialog',
-    'themeUrl'=>'/css',
+    'themeUrl'=>Yii::app()->request->baseUrl.'/css',
     'cssFile'=>'jquery-ui.css',
     'theme'=>'my',
-'options' => array(
-    'width'=>540,
-
-    'autoOpen' => false,
-    'modal' => true,
-    'resizable'=> false
-),
+    'options' => array(
+        'width'=>540,
+        'autoOpen' => false,
+        'modal' => true,
+        'resizable'=> false
+    ),
 ));
 $this->renderPartial('/site/_signinform');
 

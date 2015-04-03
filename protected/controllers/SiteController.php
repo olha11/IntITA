@@ -175,24 +175,13 @@ class SiteController extends Controller
 		$app = Yii::app();
 		if (isset($_GET['lg'])) {
 			if ($_GET['lg'] == 'ru'){
-				Yii::app()->params['translatedMessageTable'] = 'translatedMessagesRU';
+				//Yii::app()->params['translatedMessageTable'] = 'translatedMessagesRU';
+				//Yii::app()->config->set('translatedMessageTable', 'translatedMessagesRU');
 			}
 			$app->session['lg'] = $_GET['lg'];
 		}
-		return Yii::app()->baseUrl; //= Yii::app()->request->urlReferrer;
-		//return parent::beforeAction();
+		$this->redirect(Yii::app()->user->returnUrl);
 	}
-    public function actionChangeLang()
-    {
-        $app = Yii::app();
-        if (isset($_GET['lg'])) {
-            if ($_GET['lg'] == 'ru'){
-                Yii::app()->params['translatedMessageTable'] = 'translatedMessagesRU';
-            }
-            $app->session['lg'] = $_GET['lg'];
-        }
-        $this->redirect($_SERVER['HTTP_REFERER']);
-    }
 	/**
 	 * Displays the contact page
 	 */
