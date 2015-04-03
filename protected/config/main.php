@@ -9,8 +9,8 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'INTITA',
 
-	'sourceLanguage'=>'en',
-	'language'=>'ua',
+	'sourceLanguage'=>'ru',
+	'language'=>'en',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -24,6 +24,8 @@ return array(
 		'ext.autoadmin.models.field.*',
 		'ext.autoadmin.helpers.*',
 		'ext.autoadmin.controllers.*',
+		// loading WYSIWYG-editor 'Imperavi'
+		'ext.imperavi-redactor-widget.ImperaviRedactorWidget',
 	),
 
 	'modules'=>array(
@@ -57,13 +59,12 @@ return array(
         'messages'=>array(
             'class'=>'CDbMessageSource',
             'sourceMessageTable'=>'sourceMessages',
-            'translatedMessageTable'=>'translatedMessages',
+            'translatedMessageTable'=>'translatedMessagesUA',
         ),
 
 		'user' => array(
-			'class'          => 'application.components.WebUser',
-			'loginUrl'       => array('/?r=register/submitForm'),
-			'allowAutoLogin' => false,
+			'loginUrl'       => array('/site/login'),
+			'allowAutoLogin' => true,
 		),
 
 		'authManager' => array(
@@ -108,12 +109,6 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
-				// uncomment the following to show log messages on web pages
-				/*
-				array(
-					'class'=>'CWebLogRoute',
-				),
-				*/
 			),
 		),
 	),

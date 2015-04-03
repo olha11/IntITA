@@ -41,6 +41,7 @@ class Mainpage extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+
 	public function tableName()
 	{
 		return 'mainpage';
@@ -48,25 +49,12 @@ class Mainpage extends CActiveRecord
 
 	public function setValueById($id)
 	{
-		$this->title=$this->getTitle();
-		$this->sliderText=$this->findByPk($id)->sliderText;
-		$this->header1=$this->findByPk($id)->header1;
-		$this->header2=$this->findByPk($id)->header2;
-		$this->linkName=$this->findByPk($id)->linkName;
+
 		$this->sliderTextureURL=Yii::app()->request->baseUrl.$this->findByPk($id)->sliderTextureURL;
-		//$this->sliderHeader=$this->getSliderHeader();
 		$this->stepSize=$this->findByPk($id)->stepSize;
-		$this->subheader1=$this->findByPk($id)->subheader1;
-		$this->subheader2=$this->findByPk($id)->subheader2;
 		$this->subLineImage=Yii::app()->request->baseUrl.$this->findByPk($id)->subLineImage;
 		$this->hexagon=Yii::app()->request->baseUrl.$this->findByPk($id)->hexagon;
 		$this->sliderLineURL=Yii::app()->request->baseUrl.$this->findByPk($id)->sliderLineURL;
-		$this->sliderButtonText=$this->findByPk($id)->sliderButtonText;
-		$this->formHeader1 = $this->findByPk($id)->formHeader1;
-		$this->formHeader2 = $this->findByPk($id)->formHeader2;
-		$this->regText = $this->findByPk($id)->regText;
-		$this->buttonStart = $this->findByPk($id)->buttonStart;
-		$this->socialText = $this->findByPk($id)->socialText;
 		$this->imageNetwork = Yii::app()->request->baseUrl.$this->findByPk($id)->imageNetwork;
 		$this->formFon = Yii::app()->request->baseUrl.$this->findByPk($id)->formFon;
 		return $this;
@@ -118,8 +106,8 @@ class Mainpage extends CActiveRecord
 			'language' => 'Language',
 			'message' => 'Message',
 			'category' => 'Category',
-			'title' => 'Title',//Yii::t('mainpage', 'model.mainpage.title'),
-			'sliderHeader' => Yii::t('mainpage', 'model.mainpage.sliderHeader'),
+			'title' => Yii::t('mainpage', 'INTITA'),
+			'sliderHeader' => Yii::t('mainpage', 'PROGRAM THE FUTURE'),
 			'sliderText' => 'Slider Text',
 			'sliderTextureURL' => 'Slider Texture Url',
 			'sliderLineURL' => 'Slider Line Url',

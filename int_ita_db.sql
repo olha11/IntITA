@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-03-26 20:16:43
+-- Date/time:                    2015-04-01 18:39:37
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -46,9 +46,9 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   KEY `user_id` (`user_id`),
   KEY `when_enter` (`when_enter`),
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_authorizations: ~44 rows (approximately)
+-- Dumping data for table int_ita_db.aa_authorizations: ~34 rows (approximately)
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
 INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(1, 2, '2015-03-02 15:33:25', '::1'),
@@ -282,6 +282,22 @@ INSERT INTO `course` (`course_ID`, `alias`, `language`, `course_name`, `course_d
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 
 
+-- Dumping structure for table int_ita_db.courseresource
+DROP TABLE IF EXISTS `courseresource`;
+CREATE TABLE IF NOT EXISTS `courseresource` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `idCourse` int(10) NOT NULL,
+  `idResource` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_courseresource_resource` (`idResource`),
+  CONSTRAINT `FK_courseresource_resource` FOREIGN KEY (`idResource`) REFERENCES `resource` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table int_ita_db.courseresource: ~0 rows (approximately)
+/*!40000 ALTER TABLE `courseresource` DISABLE KEYS */;
+/*!40000 ALTER TABLE `courseresource` ENABLE KEYS */;
+
+
 -- Dumping structure for table int_ita_db.footer
 DROP TABLE IF EXISTS `footer`;
 CREATE TABLE IF NOT EXISTS `footer` (
@@ -327,9 +343,9 @@ CREATE TABLE IF NOT EXISTS `header` (
 -- Dumping data for table int_ita_db.header: ~3 rows (approximately)
 /*!40000 ALTER TABLE `header` DISABLE KEYS */;
 INSERT INTO `header` (`headerID`, `language`, `logoURL`, `smallLogoURL`, `menuItem1`, `item1Link`, `menuItem2`, `item2Link`, `menuItem3`, `item3Link`, `menuItem4`, `item4Link`, `enterButtonText`, `logoutButtonText`) VALUES
-	(0, 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курси', '/index.php?r=courses', 'Викладачі', '/index.php?r=teachers', 'Форум', 'http://www.google.com', 'Про нас', '/index.php?r=site/aboutdetail', 'Вхід', 'Вхід'),
-	(1, 'RU', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курсы', '/index.php?r=courses', 'Преподаватели', '/index.php?r=teachers', 'Форум', 'http://www.google.com', 'О нас', '/index.php?r=site/aboutdetail', 'Вход', 'Выход'),
-	(2, 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курси', '/index.php?r=courses', 'Викладачі', '/index.php?r=teachers', 'Форум', 'http://www.google.com', 'Про нас', '/index.php?r=site/aboutdetail', 'Вхід', 'Вхід');
+	(0, 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курси', '/courses', 'Викладачі', '/teachers', 'Форум', 'http://www.google.com', 'Про нас', '/site/aboutdetail', 'Вхід', 'Вхід'),
+	(1, 'RU', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курсы', '/courses', 'Преподаватели', '/teachers', 'Форум', 'http://www.google.com', 'О нас', '/site/aboutdetail', 'Вход', 'Выход'),
+	(2, 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', 'Курси', '/courses', 'Викладачі', '/teachers', 'Форум', 'http://www.google.com', 'Про нас', '/site/aboutdetail', 'Вхід', 'Вхід');
 /*!40000 ALTER TABLE `header` ENABLE KEYS */;
 
 
@@ -376,36 +392,47 @@ INSERT INTO `language` (`id`, `code`, `language`, `country`) VALUES
 -- Dumping structure for table int_ita_db.lecture
 DROP TABLE IF EXISTS `lecture`;
 CREATE TABLE IF NOT EXISTS `lecture` (
-  `lectureID` int(11) NOT NULL AUTO_INCREMENT,
-  `lectureImageMain` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) NOT NULL,
   `alias` varchar(10) NOT NULL,
   `language` varchar(6) NOT NULL,
-  `lectureModule` int(11) NOT NULL,
-  `lectureNumber` int(11) NOT NULL,
-  `lectureNameText` varchar(100) NOT NULL,
-  `lectureTypeText` varchar(255) NOT NULL,
-  `lectureTypeImage` varchar(255) NOT NULL,
-  `lectureTimeText` varchar(20) NOT NULL,
-  `lectureMaxNumber` int(11) NOT NULL,
-  `lectureIconImage` varchar(255) NOT NULL,
+  `idModule` int(11) NOT NULL,
+  `order` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `idType` int(11) NOT NULL,
+  `durationInMinutes` int(11) NOT NULL,
+  `maxNumber` int(11) NOT NULL,
+  `iconIsDone` varchar(255) NOT NULL,
+  `preLecture` int(11) NOT NULL,
+  `nextLecture` int(11) NOT NULL,
+  `idTeacher` varchar(50) NOT NULL,
   `lectureUnwatchedImage` varchar(255) NOT NULL,
-  `lectureOverlookedImage` varchar(255) NOT NULL,
-  `infoLectures` varchar(50) NOT NULL DEFAULT '0',
-  `thisLectureInfo` varchar(255) NOT NULL DEFAULT '0',
-  `preLectureInfo` varchar(255) NOT NULL DEFAULT '0',
-  `postLessonInfo` varchar(255) NOT NULL DEFAULT '0',
-  `teacherTitle` varchar(50) NOT NULL DEFAULT '0',
-  `linkName` varchar(30) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`lectureID`),
-  KEY `FK_lectures_modules` (`lectureModule`),
-  CONSTRAINT `FK_lecture_modules` FOREIGN KEY (`lectureModule`) REFERENCES `module` (`module_ID`)
+  PRIMARY KEY (`id`),
+  KEY `FK_lecture_module` (`idModule`),
+  CONSTRAINT `FK_lecture_module` FOREIGN KEY (`idModule`) REFERENCES `module` (`module_ID`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.lecture: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.lecture: ~0 rows (approximately)
 /*!40000 ALTER TABLE `lecture` DISABLE KEYS */;
-INSERT INTO `lecture` (`lectureID`, `lectureImageMain`, `alias`, `language`, `lectureModule`, `lectureNumber`, `lectureNameText`, `lectureTypeText`, `lectureTypeImage`, `lectureTimeText`, `lectureMaxNumber`, `lectureIconImage`, `lectureUnwatchedImage`, `lectureOverlookedImage`, `infoLectures`, `thisLectureInfo`, `preLectureInfo`, `postLessonInfo`, `teacherTitle`, `linkName`) VALUES
-	(1, '/css/images/lectureImage.png', 'types', 'ua', 1, 0, 'Goal of classes 1', '10', '100', 'css/images/timeIco.p', 0, '', 'css/images/ratIco0.png', 'css/images/ratIco1.png', '0', '0', '0', '0', '0', '0');
+INSERT INTO `lecture` (`id`, `image`, `alias`, `language`, `idModule`, `order`, `title`, `idType`, `durationInMinutes`, `maxNumber`, `iconIsDone`, `preLecture`, `nextLecture`, `idTeacher`, `lectureUnwatchedImage`) VALUES
+	(1, '/css/images/lectureImage.png', 'types', 'ua', 1, 3, 'Goal of classes 1', 10, 40, 6, '/css/images/medalIcoFalse.png', 2, 4, '2', 'css/images/ratIco0.png');
 /*!40000 ALTER TABLE `lecture` ENABLE KEYS */;
+
+
+-- Dumping structure for table int_ita_db.lectureresource
+DROP TABLE IF EXISTS `lectureresource`;
+CREATE TABLE IF NOT EXISTS `lectureresource` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idLecture` int(11) NOT NULL,
+  `idResource` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_lectureResource_resource` (`idResource`),
+  CONSTRAINT `FK_lectureResource_resource` FOREIGN KEY (`idResource`) REFERENCES `resource` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table int_ita_db.lectureresource: ~0 rows (approximately)
+/*!40000 ALTER TABLE `lectureresource` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lectureresource` ENABLE KEYS */;
 
 
 -- Dumping structure for table int_ita_db.mainpage
@@ -441,7 +468,7 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.mainpage: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.mainpage: ~0 rows (approximately)
 /*!40000 ALTER TABLE `mainpage` DISABLE KEYS */;
 INSERT INTO `mainpage` (`id`, `language`, `title`, `sliderHeader`, `sliderText`, `category`, `message`, `sliderTextureURL`, `sliderLineURL`, `sliderButtonText`, `header1`, `subLineImage`, `subheader1`, `arrayBlocks`, `header2`, `subheader2`, `arraySteps`, `stepSize`, `linkName`, `hexagon`, `formHeader1`, `formHeader2`, `regText`, `buttonStart`, `socialText`, `imageNetwork`, `formFon`) VALUES
 	(0, 'ua', 'INTITA', 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту і стань класним спеціалістом!', 'mainpage', 'PROGRAM FUTURE', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png', 'Готові розпочати?', 'Введіть дані в форму нижче', 'розширена реєстрація', 'ПОЧАТИ', 'Ви можете також зареєструватися через соцмережі:', '/css/images/networking.png', '/css/images/formFon.png');
@@ -472,7 +499,7 @@ CREATE TABLE IF NOT EXISTS `mainpagetranslated` (
   CONSTRAINT `FK__mainpage` FOREIGN KEY (`id`) REFERENCES `mainpage` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.mainpagetranslated: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.mainpagetranslated: ~0 rows (approximately)
 /*!40000 ALTER TABLE `mainpagetranslated` DISABLE KEYS */;
 INSERT INTO `mainpagetranslated` (`id`, `language`, `title`, `header1`, `subheader1`, `translation`, `header2`, `subheader2`, `sliderHeader`, `sliderText`, `sliderButtonText`, `linkName`, `formHeader1`, `formHeader2`, `regText`, `buttonStart`, `socialText`) VALUES
 	(0, 'ru', 'ИНТИТА', 'О нас', '', 'ПРОГРАММИРУЙ БУДУЩЕЕ', '', '', 'ПРОГРАММИРУЙ БУДУЩЕЕ', '', '', '', '', '', '', '', '');
@@ -511,6 +538,22 @@ INSERT INTO `module` (`module_ID`, `course`, `module_name`, `alias`, `language`,
 /*!40000 ALTER TABLE `module` ENABLE KEYS */;
 
 
+-- Dumping structure for table int_ita_db.moduleresource
+DROP TABLE IF EXISTS `moduleresource`;
+CREATE TABLE IF NOT EXISTS `moduleresource` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idModule` int(11) NOT NULL,
+  `idResource` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_moduleResource_moduleresource` (`idResource`),
+  CONSTRAINT `FK_moduleResource_moduleresource` FOREIGN KEY (`idResource`) REFERENCES `moduleresource` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table int_ita_db.moduleresource: ~0 rows (approximately)
+/*!40000 ALTER TABLE `moduleresource` DISABLE KEYS */;
+/*!40000 ALTER TABLE `moduleresource` ENABLE KEYS */;
+
+
 -- Dumping structure for table int_ita_db.regextended
 DROP TABLE IF EXISTS `regextended`;
 CREATE TABLE IF NOT EXISTS `regextended` (
@@ -543,6 +586,36 @@ INSERT INTO `regextended` (`regID`, `language`, `mainLink`, `regLink`, `header`,
 /*!40000 ALTER TABLE `regextended` ENABLE KEYS */;
 
 
+-- Dumping structure for table int_ita_db.resource
+DROP TABLE IF EXISTS `resource`;
+CREATE TABLE IF NOT EXISTS `resource` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(20) NOT NULL,
+  `idResource` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table int_ita_db.resource: ~0 rows (approximately)
+/*!40000 ALTER TABLE `resource` DISABLE KEYS */;
+/*!40000 ALTER TABLE `resource` ENABLE KEYS */;
+
+
+-- Dumping structure for table int_ita_db.settings
+DROP TABLE IF EXISTS `settings`;
+CREATE TABLE IF NOT EXISTS `settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category` varchar(64) NOT NULL DEFAULT 'system',
+  `key` varchar(255) NOT NULL,
+  `value` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `category_key` (`category`,`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table int_ita_db.settings: ~0 rows (approximately)
+/*!40000 ALTER TABLE `settings` DISABLE KEYS */;
+/*!40000 ALTER TABLE `settings` ENABLE KEYS */;
+
+
 -- Dumping structure for table int_ita_db.sourcemessages
 DROP TABLE IF EXISTS `sourcemessages`;
 CREATE TABLE IF NOT EXISTS `sourcemessages` (
@@ -550,9 +623,9 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   `category` varchar(32) NOT NULL,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (original - English).';
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (original - English).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~47 rows (approximately)
+-- Dumping data for table int_ita_db.sourcemessages: ~90 rows (approximately)
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', 'INTITA'),
@@ -574,17 +647,18 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(17, 'header', 'Forum'),
 	(18, 'header', 'About us'),
 	(19, 'header', 'Sign in'),
+	(20, 'header', 'Sign out'),
 	(21, 'header', 'Teachers'),
 	(22, 'header', 'Sign out'),
 	(23, 'footer', 'tel: +38 0432 52 82 67'),
 	(24, 'footer', 'mobile: +38 067 432 20 10'),
 	(25, 'footer', 'e-mail: intita.hr@gmail.com'),
 	(26, 'footer', 'skype: int.ita'),
-	(27, 'slider', 'Don\'t miss your chance to change the world - get high-quality and modern education class and become an expert!'),
-	(28, 'slider', 'Want to become a highly qualified specialist, take the right decision - Join the IT Academy INTITA!'),
-	(29, 'slider', 'One year of productive and interesting learning - and you will become a professional programmer. Learning to hard - but easy to find a job!'),
-	(30, 'slider', 'Do not lose your chance at a decent and interesting work - Store your future today!'),
-	(31, 'slider', 'Fifth text on slider'),
+	(27, 'slider', 'We guarantee you an offer of employment <br>\r\nAfter successful completion of training!'),
+	(28, 'slider', 'Do not miss your chance to change the world - get high-quality and modern education <br>\r\nand become a specialist class !'),
+	(29, 'slider', 'One year of productive and interesting learning - and you will become a professional programmer <br>\r\nready to work in the IT industry !'),
+	(30, 'slider', 'Want to become a high-class specialist ? <br>\r\nTakes correct and informed decision - Learn with us!'),
+	(31, 'slider', 'Do not lose your chance for creative , interesting, and challenging decent work - <br>\r\n plan their professional future today!'),
 	(32, 'aboutus', 'What you dream about?'),
 	(33, 'aboutus', 'Learning of the future'),
 	(34, 'aboutus', 'Questions & feedback'),
@@ -606,7 +680,44 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(50, 'breadcrumbs', 'Courses'),
 	(51, 'breadcrumbs', 'About us'),
 	(52, 'breadcrumbs', 'Teachers'),
-	(53, 'breadcrumbs', 'Forum');
+	(53, 'breadcrumbs', 'Forum'),
+	(54, 'breadcrumbs', 'Profile'),
+	(55, 'breadcrumbs', 'Edit profile'),
+	(56, 'breadcrumbs', 'Register'),
+	(57, 'breadcrumbs', 'Teacher profile'),
+	(58, 'teachers', 'Our teachers'),
+	(59, 'teachers', 'personal page'),
+	(60, 'teachers', 'If you want professional IT and IT teach some courses or modules and cooperate with us in the field of training programmers write us a letter.\r\n'),
+	(61, 'teachers', 'Read courses:'),
+	(62, 'teachers', 'Read more'),
+	(63, 'teachers', 'Reviews'),
+	(64, 'teacher', 'Chapter:'),
+	(65, 'teacher', 'About teacher:'),
+	(66, 'courses', 'Our courses'),
+	(67, 'courses', 'Concept of learning'),
+	(68, 'courses', 'Level:'),
+	(69, 'courses', 'Language:'),
+	(70, 'lecture', 'Course:'),
+	(71, 'lecture', 'Module:'),
+	(72, 'lecture', 'Lecture '),
+	(73, 'lecture', 'lang:'),
+	(74, 'lecture', 'Type:'),
+	(75, 'lecture', 'Duration:'),
+	(76, 'lecture', 'min'),
+	(77, 'lecture', 'Teacher'),
+	(78, 'lecture', 'read more...'),
+	(79, 'lecture', 'Schedule consultation'),
+	(80, 'lecture', 'Table of contents'),
+	(81, 'lecture', 'show'),
+	(82, 'lecture', 'hide'),
+	(83, 'lecture', 'Video'),
+	(84, 'lecture', 'Code example'),
+	(85, 'lecture', 'Instruction'),
+	(86, 'lecture', 'Exercise'),
+	(87, 'lecture', 'show again previous lecture'),
+	(88, 'lecture', 'NEXT LECTURE'),
+	(89, 'lecture', 'Answer'),
+	(90, 'lecture', 'Final task');
 /*!40000 ALTER TABLE `sourcemessages` ENABLE KEYS */;
 
 
@@ -683,7 +794,7 @@ CREATE TABLE IF NOT EXISTS `studentsaccess` (
   KEY `FK_studentsaccess_modules` (`moduleID`),
   CONSTRAINT `FK_courseaccess_students` FOREIGN KEY (`studentID`) REFERENCES `user` (`id`),
   CONSTRAINT `FK_studentsaccess_course` FOREIGN KEY (`courseID`) REFERENCES `course` (`course_ID`),
-  CONSTRAINT `FK_studentsaccess_lectures` FOREIGN KEY (`lectureID`) REFERENCES `lecture` (`lectureID`),
+  CONSTRAINT `FK_studentsaccess_lectures` FOREIGN KEY (`lectureID`) REFERENCES `lecture` (`id`),
   CONSTRAINT `FK_studentsaccess_modules` FOREIGN KEY (`moduleID`) REFERENCES `module` (`module_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -766,41 +877,127 @@ CREATE TABLE IF NOT EXISTS `teacher_temp` (
   `skype` varchar(50) NOT NULL,
   `title` varchar(50) NOT NULL,
   `linkName` varchar(50) NOT NULL,
+  `smallImage` varchar(255) NOT NULL,
   PRIMARY KEY (`teacher_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table int_ita_db.teacher_temp: ~6 rows (approximately)
 /*!40000 ALTER TABLE `teacher_temp` DISABLE KEYS */;
-INSERT INTO `teacher_temp` (`teacher_id`, `lang`, `first_name`, `middle_name`, `last_name`, `foto_url`, `subjects`, `profile_text_big`, `profile_text`, `readMoreLink`, `email`, `tel`, `skype`, `title`, `linkName`) VALUES
-	(1, 'UA', 'Олександра', 'Василівна', 'Сіра', '/css/images/teacher1.jpg', 'кройка и шитье сроков; програмування самоубийств', 'Народилася і виросла в Сакраменто, у 18 років вона переїхала до Лос-Анджелеса й незабаром стала вкладачем. У 2007, 2008 і 2010 рр.. вона виграла кілька номінацій премії AVN Awards (також була названа «Найкращою програмісткою» у 2007 році за версією XRCO). Паралельно з вікладауцью роботою та роботою програміста в Саша Грей грає головну роль в тестванні Інтернету.\r\n\r\nМарина Енн Генціс народилася у родині механіка. Її батько мав грецьке походження. Батьки дівчинки розлучилися коли їй було 5 років, надалі її виховувала мати, яка вступила в повторний шлюб у 2000 роц. Марина не ладнала з вітчимом, і, коли їй виповнилося 16 років, дівчина повідомила матері, що збирається покинути будинок. Достеменно невідомо, втекла вона з свого будинку або ж її відпустила мати. Сама Олександра пізніше зізнавалася, що в той час робила все те, що не подобалося її батькам і що вони їй забороняли.\r\n\r\nГлавный бухгалтер акционерного предприятия, специализирующегося на:\r\n\r\n    оказании полезных услуг горизонтального характера;\r\n    торговле, внешнеэкономической и внутреннеэкономической;\r\n    позитивное обучение швейного мастерства;\r\n\r\n Олександра Сіра виконала головну роль у фільмі оскароносного режисера Стівена Содерберга «Дівчина за викликом»[27][28]. Олександра грає дівчину на ім\'я Челсі, яка надає ескорт послуги заможним людям. Содерберг взяв її на роль після того, як прочитав статтю про неї у журналі Los Angeles, коментуючи це так: «She\'s kind of a new breed, I think. She doesn\'t really fit the typical mold of someone who goes into the adult film business. … I\'d never heard anybody talk about the business the way that she talked about it». Журналіст Скотт Маколей каже, що можливо Грей вибрала саме цю роль через свій інтерес до незалежних режисерів, таких як Жан-Люк Годар, Хармоні Корін, Девід Гордон Грін, Мікеланджело Антоніоні, Аньєс Варда та Вільям Клейн.\r\n\r\nКоли Олександра готувалася до ролі у «Дівчині за викликом», Содерберг попросив її подивитися «Жити своїм життям» і «Божевільний П\'єро»[29]. У фільмі «Жити своїм життям» піднімаються проблеми проституції, звідки Грей могла взяти щось і для своєї ролі, в той час як у «Божевільному П\'єро» показані відносини, схожі на ті, що відбуваються між Челсі, її хлопцем і клієнтами.\'; ', '<p>Профессиональный преподаватель бухгалтерского и налогового учета Национальноготранспортного университета кафедры финансов, учета и аудита со стажем преподавательской работы более 25 лет. Закончила аспирантуру, автор 36 научных работ в области учета и аудита, в т.ч. уникальной обучающей методики написания бухгалтерских проводок: <span>"Как украсть и не сесть" </span> и <span>"Как украсть и посадить другого" </span>.</p><p>Главный бухгалтер акционерного предприятия, специализирующегося на:<ul><li>оказании полезных услуг горизонтального характера;</li><li>торговле, внешнеэкономической и внутреннеэкономической;</li><li>позитивное обучение швейного мастерства;</li></ul></p>', '/index.php?r=teacherprofile', '', '', '', '', ''),
-	(2, 'UA', 'Константин', 'Константинович', 'Константинопольский', '/css/images/teacher2.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/index.php?r=teacherprofile', '', '', '', '', ''),
-	(3, 'UA', 'Любовь', 'Анатольевна', 'Ктоятакая-Замухриншская', '/css/images/teacher3.jpg', 'Бухгалтер с «О» и до первой отсидки; Программирование своего позитивного прошлого', '', '<p>Практикующий главный бухгалтер. Учредитель ПП <span>«Логика тут безсильна»</span>;</p>\r\n<p>Образование высшее - ДонГУ (1987г.)</p>\r\n<p>Опыт работы 27 лет, в т. ч. преподавания - 9 лет.</p>\r\n<ul><li>специалист по позитивной энергетике;</li><li>эксперт по эффективному ремонту баянов;</li><li>мастер психотерапии для сложных бабушек и дедушек;</li></ul>', '/index.php?r=teacherprofile', '', '', '', '', ''),
-	(4, 'UA', 'Василий', 'Васильевич', 'Меняетпроффесию', '/css/images/teacher4.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/index.php?r=teacherprofile', '', '', '', '', ''),
-	(5, 'UA', 'Ия', 'Тожевна', 'Воваяготова', '/css/images/teacher5.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/index.php?r=teacherprofile', '', '', '', '', ''),
-	(6, 'UA', 'Петросян', 'Петросянович', 'Забугорный', '/css/images/teacher6.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/index.php?r=teacherprofile', '', '', '', '', '');
+INSERT INTO `teacher_temp` (`teacher_id`, `lang`, `first_name`, `middle_name`, `last_name`, `foto_url`, `subjects`, `profile_text_big`, `profile_text`, `readMoreLink`, `email`, `tel`, `skype`, `title`, `linkName`, `smallImage`) VALUES
+	(1, 'UA', 'Олександра', 'Василівна', 'Сіра', '/css/images/teacher1.jpg', 'кройка и шитье сроков; програмування самоубийств', 'Народилася і виросла в Сакраменто, у 18 років вона переїхала до Лос-Анджелеса й незабаром стала вкладачем. У 2007, 2008 і 2010 рр.. вона виграла кілька номінацій премії AVN Awards (також була названа «Найкращою програмісткою» у 2007 році за версією XRCO). Паралельно з вікладауцью роботою та роботою програміста в Саша Грей грає головну роль в тестванні Інтернету.\r\n\r\nМарина Енн Генціс народилася у родині механіка. Її батько мав грецьке походження. Батьки дівчинки розлучилися коли їй було 5 років, надалі її виховувала мати, яка вступила в повторний шлюб у 2000 роц. Марина не ладнала з вітчимом, і, коли їй виповнилося 16 років, дівчина повідомила матері, що збирається покинути будинок. Достеменно невідомо, втекла вона з свого будинку або ж її відпустила мати. Сама Олександра пізніше зізнавалася, що в той час робила все те, що не подобалося її батькам і що вони їй забороняли.\r\n\r\nГлавный бухгалтер акционерного предприятия, специализирующегося на:\r\n\r\n    оказании полезных услуг горизонтального характера;\r\n    торговле, внешнеэкономической и внутреннеэкономической;\r\n    позитивное обучение швейного мастерства;\r\n\r\n Олександра Сіра виконала головну роль у фільмі оскароносного режисера Стівена Содерберга «Дівчина за викликом»[27][28]. Олександра грає дівчину на ім\'я Челсі, яка надає ескорт послуги заможним людям. Содерберг взяв її на роль після того, як прочитав статтю про неї у журналі Los Angeles, коментуючи це так: «She\'s kind of a new breed, I think. She doesn\'t really fit the typical mold of someone who goes into the adult film business. … I\'d never heard anybody talk about the business the way that she talked about it». Журналіст Скотт Маколей каже, що можливо Грей вибрала саме цю роль через свій інтерес до незалежних режисерів, таких як Жан-Люк Годар, Хармоні Корін, Девід Гордон Грін, Мікеланджело Антоніоні, Аньєс Варда та Вільям Клейн.\r\n\r\nКоли Олександра готувалася до ролі у «Дівчині за викликом», Содерберг попросив її подивитися «Жити своїм життям» і «Божевільний П\'єро»[29]. У фільмі «Жити своїм життям» піднімаються проблеми проституції, звідки Грей могла взяти щось і для своєї ролі, в той час як у «Божевільному П\'єро» показані відносини, схожі на ті, що відбуваються між Челсі, її хлопцем і клієнтами.\'; ', '<p>Профессиональный преподаватель бухгалтерского и налогового учета Национальноготранспортного университета кафедры финансов, учета и аудита со стажем преподавательской работы более 25 лет. Закончила аспирантуру, автор 36 научных работ в области учета и аудита, в т.ч. уникальной обучающей методики написания бухгалтерских проводок: <span>"Как украсть и не сесть" </span> и <span>"Как украсть и посадить другого" </span>.</p><p>Главный бухгалтер акционерного предприятия, специализирующегося на:<ul><li>оказании полезных услуг горизонтального характера;</li><li>торговле, внешнеэкономической и внутреннеэкономической;</li><li>позитивное обучение швейного мастерства;</li></ul></p>', '/teacherProfile', '', '', '', '', '', '/css/images/teacherImage.png'),
+	(2, 'UA', 'Константин', 'Константинович', 'Константинопольский', '/css/images/teacher2.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/teacherProfile', '', '', '', '', '', '/css/images/teacherImage.png'),
+	(3, 'UA', 'Любовь', 'Анатольевна', 'Ктоятакая-Замухриншская', '/css/images/teacher3.jpg', 'Бухгалтер с «О» и до первой отсидки; Программирование своего позитивного прошлого', '', '<p>Практикующий главный бухгалтер. Учредитель ПП <span>«Логика тут безсильна»</span>;</p>\r\n<p>Образование высшее - ДонГУ (1987г.)</p>\r\n<p>Опыт работы 27 лет, в т. ч. преподавания - 9 лет.</p>\r\n<ul><li>специалист по позитивной энергетике;</li><li>эксперт по эффективному ремонту баянов;</li><li>мастер психотерапии для сложных бабушек и дедушек;</li></ul>', '/teacherProfile', '', '', '', '', '', '/css/images/teacherImage.png'),
+	(4, 'UA', 'Василий', 'Васильевич', 'Меняетпроффесию', '/css/images/teacher4.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/teacherProfile', '', '', '', '', '', '/css/images/teacherImage.png'),
+	(5, 'UA', 'Ия', 'Тожевна', 'Воваяготова', '/css/images/teacher5.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/teacherProfile', '', '', '', '', '', '/css/images/teacherImage.png'),
+	(6, 'UA', 'Петросян', 'Петросянович', 'Забугорный', '/css/images/teacher6.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/teacherProfile', '', '', '', '', '', '/css/images/teacherImage.png');
 /*!40000 ALTER TABLE `teacher_temp` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.translatedmessages
-DROP TABLE IF EXISTS `translatedmessages`;
-CREATE TABLE IF NOT EXISTS `translatedmessages` (
+-- Dumping structure for table int_ita_db.translatedmessagesru
+DROP TABLE IF EXISTS `translatedmessagesru`;
+CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `language` varchar(16) NOT NULL,
+  `translation` text NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table int_ita_db.translatedmessagesru: ~67 rows (approximately)
+/*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
+INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
+	(1, 'ru', 'INTITA'),
+	(2, 'ru', 'О нас'),
+	(3, 'ru', 'Как проходит обучение?'),
+	(4, 'ru', 'далее ...'),
+	(5, 'ru', 'ПРОГРАММИРУЙ БУДУЩЕЕ'),
+	(6, 'ru', 'кое-что, что Вы должны знать о наших курсах'),
+	(7, 'ru', 'далее о том, как Вы будете учиться шаг за шагом'),
+	(8, 'ru', 'СТАРТ'),
+	(9, 'ru', 'Готовы начать?'),
+	(10, 'ru', 'Введите данные в форму ниже'),
+	(11, 'ru', 'расширенная регистрация'),
+	(12, 'ru', 'Вы также можете войти с помощью соцсетей:'),
+	(13, 'ru', 'НАЧАТЬ'),
+	(14, 'ru', 'Электронная почта'),
+	(15, 'ru', 'Пароль'),
+	(16, 'ru', 'Курсы'),
+	(17, 'ru', 'Форум'),
+	(18, 'ru', 'О нас'),
+	(19, 'ru', 'Вход'),
+	(20, 'ru', 'Выход'),
+	(21, 'ru', 'Преподаватели'),
+	(22, 'ru', 'Выход'),
+	(23, 'ru', 'телефон: +38 0432 52 82 67 '),
+	(24, 'ru', 'тел. моб. +38 067 432 20 10'),
+	(25, 'ru', 'e-mail: intita.hr@gmail.com'),
+	(26, 'ru', 'скайп: int.ita'),
+	(27, 'ru', 'Мы гарантируем получение предложения работы<br>\r\nпосле успешного завершеня обучения!'),
+	(28, 'ru', 'Хочешь стать классным специалистом, принимай правильное решение - поступай в ЫТ Академию  ИНТИТА!'),
+	(29, 'ru', 'Один год упорного и интересного обучения - и ты станешь проессиональным программистом. Учиться тяжело -зато легко найти работу!'),
+	(30, 'ru', 'Не упускай свой шанс на достойную и интересную работу - программируй свое будущее уже сегодня!'),
+	(31, 'ru', 'Текст на пятой картинке слайдера'),
+	(32, 'ru', 'О чем ты мечтаешь?'),
+	(33, 'ru', 'Обучение будущего'),
+	(34, 'ru', 'Вопросы и отзывы'),
+	(35, 'ru', ''),
+	(36, 'ru', ''),
+	(37, 'ru', ''),
+	(38, 'ru', 'Регистрация на сайте'),
+	(39, 'ru', 'Выбор курса или модуля'),
+	(40, 'ru', 'Оплата'),
+	(41, 'ru', 'Изучение материала'),
+	(42, 'ru', 'Завершение курса'),
+	(43, 'ru', 'шаг'),
+	(44, 'ru', ''),
+	(45, 'ru', ''),
+	(46, 'ru', ''),
+	(47, 'ru', ''),
+	(48, 'ru', ''),
+	(49, 'ru', 'Главная'),
+	(50, 'ru', 'Курсы'),
+	(51, 'ru', 'О нас'),
+	(52, 'ru', 'Преподаватели'),
+	(53, 'ru', 'Форум'),
+	(54, 'ru', 'Профиль'),
+	(55, 'ru', 'Редактировать профиль'),
+	(56, 'ru', 'Регистрация'),
+	(57, 'ru', 'Профиль преподавателя'),
+	(58, 'ru', 'Наши преподаватели'),
+	(59, 'ru', 'персональная страница'),
+	(60, 'ru', 'Если Вы профессиональный ІТ-шник и хотите преподавать некоторые ІТ курсы и сотрудничать с нами в подготовке программистов, напишите нам письмо.'),
+	(61, 'ru', 'Ведет курсы:'),
+	(62, 'ru', 'Читать полностью'),
+	(63, 'ru', 'Отзывы'),
+	(64, 'ru', 'Раздел:'),
+	(65, 'ru', 'О преподавателе:'),
+	(66, 'ru', 'Наши курсы'),
+	(67, 'ru', 'Концепция подготовки'),
+	(68, 'ru', 'Уровень курса:'),
+	(69, 'ru', 'Язык курса:');
+/*!40000 ALTER TABLE `translatedmessagesru` ENABLE KEYS */;
+
+
+-- Dumping structure for table int_ita_db.translatedmessagesua
+DROP TABLE IF EXISTS `translatedmessagesua`;
+CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `language` varchar(16) NOT NULL,
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedmessages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). ';
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
 
--- Dumping data for table int_ita_db.translatedmessages: ~47 rows (approximately)
-/*!40000 ALTER TABLE `translatedmessages` DISABLE KEYS */;
-INSERT INTO `translatedmessages` (`id`, `language`, `translation`) VALUES
+-- Dumping data for table int_ita_db.translatedmessagesua: ~90 rows (approximately)
+/*!40000 ALTER TABLE `translatedmessagesua` DISABLE KEYS */;
+INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
 	(2, 'ua', 'Про нас'),
-	(3, 'ua', 'Як проводиться навчання?'),
+	(3, 'ua', 'Як розпочати навчання?'),
 	(4, 'ua', 'детальніше ...'),
 	(5, 'ua', 'ПРОГРАМУЙ МАЙБУТНЄ'),
-	(6, 'ua', 'дещо, що Вам потрібно знати про наші курси'),
-	(7, 'ua', 'далі пояснення як ви будете вчитися крок за кроком'),
+	(6, 'ua', 'Важлива інформація про навчання разом з нами'),
+	(7, 'ua', 'П’ять кроків до здійснення твоїх мрій'),
 	(8, 'ua', 'ПОЧАТИ'),
 	(9, 'ua', 'Готові розпочати?'),
 	(10, 'ua', 'Введіть дані в форму нижче'),
@@ -813,40 +1010,92 @@ INSERT INTO `translatedmessages` (`id`, `language`, `translation`) VALUES
 	(17, 'ua', 'Форум'),
 	(18, 'ua', 'Про нас'),
 	(19, 'ua', 'Вхід'),
+	(20, 'ua', 'Вихід'),
 	(21, 'ua', 'Викладачі'),
 	(22, 'ua', 'Вихід'),
 	(23, 'ua', 'телефон: +38 0432 52 82 67 '),
 	(24, 'ua', 'тел. моб. +38 067 432 20 10'),
 	(25, 'ua', 'e-mail: intita.hr@gmail.com'),
-	(26, 'ua', 'skype: int.ita'),
-	(27, 'ua', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту і стань класним спеціалістом!'),
-	(28, 'ua', 'Хочеш стати висококласним спеціалістом, приймай вірне рішення - вступай до ІТ Академії ІНТІТА!'),
-	(29, 'ua', 'Один рік наполегливого і цікавого навчання - і ти станеш професійним програмістом. Навчатись важко - зате роботу знайти легко!'),
-	(30, 'ua', 'Не втрачай свій шанс на гідну та цікаву працю – програмуй своє майбутнє вже сьогодні!'),
-	(31, 'ua', 'Текст на п\'ятому слайдері'),
+	(26, 'ua', 'скайп: int.ita'),
+	(27, 'ua', 'Ми гарантуємо тобі отримання пропозиції працевлаштування<br>\r\nпісля успішного завершення навчання!'),
+	(28, 'ua', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту<br>\r\nі стань класним спеціалістом!'),
+	(29, 'ua', 'Один рік наполегливого та цікавого навчання - і ти станеш професійним програмістом<br>\r\nготовим працювати в індустрії інформаційних технологій!\r\n'),
+	(30, 'ua', 'Хочеш стати висококласним спеціалістом?<br>\r\nПриймай вірне і виважене рішення - навчайся разом з нами! \r\n'),
+	(31, 'ua', 'Не втрачай свій шанс на творчу, цікаву, гідну та перспективну працю –<br>\r\n плануй своє професійне майбутнє вже сьогодні!'),
 	(32, 'ua', 'Про що мрієш ти?'),
 	(33, 'ua', 'Навчання майбутнього'),
 	(34, 'ua', 'Питання та відгуки'),
-	(35, 'ua', '<p>Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль? Закордонні подорожі, можливо, до екзотичних країн?</p>'),
-	(36, 'ua', '<p>Програмування – це не так складно, як ти можеш уявляти. Безумовно, щоб стати хорошим програмістом, потрібен час та зусилля.</p>'),
-	(37, 'ua', '<p>Три кити Академії Програмування ІНТІТА Самостійний графік навчання. Лише 100% необхідні знання. Засвоєння 100% знань!</p>'),
+	(35, 'ua', 'Можливо, це свобода жити своїм життям? \r\nСамостійно керувати власним часом\r\nз можливістю заробляти, займаючись \r\nулюбленою справою і отримувати \r\nзадоволення від сучасної професії?'),
+	(36, 'ua', 'На відміну від традиційних закладів, \r\nми не навчаємо задля оцінок.  \r\nМи працюємо індивідуально  \r\nз кожним студентом, щоб досягти \r\n100% засвоєння необхідних знань. '),
+	(37, 'ua', 'Ми пропонуємо кожному нашому \r\nвипускнику гарантоване отримання \r\nпропозиції працевлаштування \r\nпротягом 4-6-ти місяців після \r\nуспішного завершення навчання.'),
 	(38, 'ua', 'Реєстрація на сайті'),
 	(39, 'ua', 'Вибір курсу чи модуля'),
-	(40, 'ua', 'Проплата'),
+	(40, 'ua', 'Проплата за навчання'),
 	(41, 'ua', 'Освоєння матеріалу'),
 	(42, 'ua', 'Завершення курсу'),
 	(43, 'ua', 'крок'),
-	(44, 'ua', 'Щоб отримати доступ до переліку курсів, модулів і занять та пройти безкоштовні модулі і заняття зареєструйся на сайті. Реєстрація дозволить тобі оцінити якість та зручність нашого продукт, який стане для тебе надійним партнером і порадником в професійній самореалізації.'),
-	(45, 'ua', 'Щоб стати спеціалістом певного напрямку та рівня (отримати професійну спеціалізацію) вибери для проходження відповідний курс. Якщо Тебе цікавить виключно поглиблення знань в певному напрямку ІТ, то вибери відповідний модуль для проходження.'),
-	(46, 'ua', 'Щоб розпочати проходження курсу чи модуля вибери схему оплати (вся сума за курс, помісячно, потриместрово тощо) та здійсни оплату зручним Тобі способом (схему оплати курсу чи модуля можна змінювати, також можлива помісячна оплата в кредит).'),
-	(47, 'ua', 'Вивчення матеріалу можливе шляхом читання тексту чи/і перегляду відео для кожного заняття. Протягом освоєння матеріалу заняття виконуй Проміжні тестові завдання. По завершенню кожного заняття виконуй Підсумкове тестове завдання. Кожен модуль завершується Індивідуальним проектом чи Екзаменом. Можна отримати індивідуальну консультацію викладача чи обговорити питання на форумі.'),
-	(48, 'ua', 'Підсумком курсу є Командний дипломний проект, який виконується разом з іншими студентами (склад команди формуєш самостійно чи рекомендує керівник, який затверджує тему і технічне завдання проекту). Здача проекту передбачає передзахист та захист в он-лайн режимі із представленням технічної документації.'),
+	(44, 'ua', 'Щоб отримати доступ до курсів та пройти безкоштовні модулі і заняття зареєструйся на сайті. Реєстрація дозволить тобі оцінити якість та зручність нашого продукт, який стане для тебе надійним партнером і порадником в професійній самореалізації.'),
+	(45, 'ua', 'Щоб стати спеціалістом певного напрямку та рівня (отримати професійну спеціалізацію) вибери для проходження відповідний курс. Якщо Тебе цікавить виключно поглиблення знань в певному напрямку інформаційних технологій, то вибери відповідний модуль для проходження.'),
+	(46, 'ua', 'Щоб розпочати проходження курсу чи модуля вибери схему оплати (вся сума за курс, оплата модулів, оплата потриместрово, помісячно тощо) та здійсни оплату зручним Тобі способом (схему оплати курсу чи модуля можна змінювати, також можлива помісячна оплата в кредит).'),
+	(47, 'ua', 'Вивчення матеріалу можливе шляхом читання тексту чи/і перегляду відео для кожного заняття. Під час проходження заняття виконуй Проміжні тестові завдання. По завершенню кожного заняття виконуй Підсумкове тестове завдання. Кожен модуль завершується Індивідуальним проектом чи Екзаменом. 	Можна отримати індивідуальну консультацію викладача чи консультацію онлайн.'),
+	(48, 'ua', 'Підсумком курсу є Командний дипломний проект, який виконується разом з іншими студентами (склад команди формуєш самостійно чи рекомендує керівник, який затверджує тему і технічне завдання проекту). Здача проекту передбачає передзахист та захист в он-лайн режимі із представленням технічної документації. Після захисту видається диплом та рекомендація для працевлаштування.'),
 	(49, 'ua', 'Головна'),
 	(50, 'ua', 'Курси'),
 	(51, 'ua', 'Про нас'),
 	(52, 'ua', 'Викладачі'),
-	(53, 'ua', 'Форум');
-/*!40000 ALTER TABLE `translatedmessages` ENABLE KEYS */;
+	(53, 'ua', 'Форум'),
+	(54, 'ua', 'Профіль'),
+	(55, 'ua', 'Редагувати профіль'),
+	(56, 'ua', 'Реєстрація'),
+	(57, 'ua', 'Профіль викладача'),
+	(58, 'ua', 'Наші викладачі'),
+	(59, 'ua', 'персональна сторінка'),
+	(60, 'ua', 'Якщо ви професійний ІТ-шник і бажаєте викладати окремі ІТ курси чи модулі і співпрацювати з нами в напрямку підготовки програмістів, напишіть нам листа.'),
+	(61, 'ua', 'Веде курси:'),
+	(62, 'ua', 'Читати повністю'),
+	(63, 'ua', 'Відгуки'),
+	(64, 'ua', 'Розділ:'),
+	(65, 'ua', 'Про викладача:'),
+	(66, 'ua', 'Наші курси'),
+	(67, 'ua', 'Концепція підготовки'),
+	(68, 'ua', 'Рівень курсу:'),
+	(69, 'ua', 'Мова курсу:'),
+	(70, 'ua', 'Курс:'),
+	(71, 'ua', 'мова:'),
+	(72, 'ua', 'Модуль:'),
+	(73, 'ua', 'Заняття:'),
+	(74, 'ua', 'Тип:'),
+	(75, 'ua', 'Тривалість:'),
+	(76, 'ua', 'хв'),
+	(77, 'ua', 'Викладач'),
+	(78, 'ua', 'детальніше'),
+	(79, 'ua', 'Запланувати консультацію'),
+	(80, 'ua', 'Зміст'),
+	(81, 'ua', 'показати'),
+	(82, 'ua', 'приховати'),
+	(83, 'ua', 'Відео'),
+	(84, 'ua', 'Зразок коду'),
+	(85, 'ua', 'Інструкція'),
+	(86, 'ua', 'Завдання'),
+	(87, 'ua', 'переглянути знову попередній урок'),
+	(88, 'ua', 'НАСТУПНИЙ УРОК'),
+	(89, 'ua', 'Відповісти'),
+	(90, 'ua', 'Підсумкове завдання');
+/*!40000 ALTER TABLE `translatedmessagesua` ENABLE KEYS */;
+
+
+-- Dumping structure for table int_ita_db.typeresource
+DROP TABLE IF EXISTS `typeresource`;
+CREATE TABLE IF NOT EXISTS `typeresource` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(50) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table int_ita_db.typeresource: ~0 rows (approximately)
+/*!40000 ALTER TABLE `typeresource` DISABLE KEYS */;
+/*!40000 ALTER TABLE `typeresource` ENABLE KEYS */;
 
 
 -- Dumping structure for table int_ita_db.user
@@ -871,15 +1120,21 @@ CREATE TABLE IF NOT EXISTS `user` (
   `avatar` varchar(255) DEFAULT NULL,
   `role` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.user: ~4 rows (approximately)
+-- Dumping data for table int_ita_db.user: ~7 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `firstName`, `middleName`, `secondName`, `nickname`, `birthday`, `email`, `password`, `phone`, `hash`, `address`, `education`, `educform`, `interests`, `aboutUs`, `aboutMy`, `avatar`, `role`) VALUES
-	(1, 'Вова', 'Джа', 'Марля', 'Wizlight', '21/03/1997', 'Wizlightdragon@gmail.com', '', '911', '', 'Ямайка', 'ВДПУ', 'Онлайн', 'Ковбаска, колобки, раста', 'Інтернет', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', '/css/images/1id.jpg', ''),
+	(1, 'Вова', 'Джа', 'Марля', 'Wizlight', '21/03/1997', 'Wizlightdragon@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', '911', '', 'Ямайка', 'ВДПУ', 'Онлайн', 'Ковбаска, колобки, раста', 'Інтернет', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', '/css/images/1id.jpg', ''),
 	(5, 't54wy6wy@ferwg.gtrf', NULL, NULL, NULL, NULL, 't54wy6wy@ferwg.gtrf', 'egrwhjet6', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
 	(6, 'dfesafhe@fjgr.gfrje', NULL, NULL, NULL, NULL, 'dfesafhe@fjgr.gfrje', 'fkrjgfrklfjrlk', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
-	(7, 'fhsdgfh@deyg.gdehj', NULL, NULL, NULL, NULL, 'fhsdgfh@deyg.gdehj', 'vfdvdf', NULL, '', NULL, NULL, 'Не вибрано', NULL, NULL, NULL, NULL, '');
+	(7, 'fhsdgfh@deyg.gdehj', NULL, NULL, NULL, NULL, 'fhsdgfh@deyg.gdehj', 'vfdvdf', NULL, '', NULL, NULL, 'Не вибрано', NULL, NULL, NULL, NULL, ''),
+	(8, 'admin@EHJBF.SNDFS', NULL, NULL, NULL, NULL, 'admin@EHJBF.SNDFS', 'd6877098041a8a30bc8bd8f9faeeb8e62afd682f', NULL, '', NULL, NULL, 'Не вибрано', NULL, NULL, NULL, NULL, ''),
+	(9, 'gfvzdrgfregt', NULL, '', '', '', 'gfsGFea@EFSF.DEW', '011c945f30ce2cbafc452f39840f025693339c42', '', '', '', '', 'Онлайн', '', '', '', NULL, '0'),
+	(10, 'Wizlightdrago@gmail.com', NULL, NULL, NULL, NULL, 'Wizlightdrago@gmail.com', '17ba0791499db908433b80f37c5fbc89b870084b', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
+	(11, 'ivanna@yutr.rtr', NULL, '', '', '', 'ivanna@yutr.rtr', '011c945f30ce2cbafc452f39840f025693339c42', '', '', '', '', NULL, '', '', '', '/css/images/avatars/ivanna@yutr.rtr.png', ''),
+	(12, 'dawfawef@efew.rew', NULL, NULL, NULL, NULL, 'dawfawef@efew.rew', '011c945f30ce2cbafc452f39840f025693339c42', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/css/images/avatars/noname.png', ''),
+	(13, 'gtsgrstg@fretf.gtr', NULL, NULL, NULL, NULL, 'gtsgrstg@fretf.gtr', '011c945f30ce2cbafc452f39840f025693339c42', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/css/images/avatars/noname.png', '');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

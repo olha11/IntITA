@@ -1,14 +1,9 @@
 
-$(document).ready(function() {
-     
-    $('#slider .item').liCover({
-        verticalAlign : "middle",
-        align : "center"
-    });
+$(document).ready(function($) {
+
     
     $("#slider").owlCarousel({
 
-        itemHeight : "600px",
         slideSpeed : 500,   //0.5 sec
         paginationSpeed : 2000, //2 sec
         rewindSpeed : 3000,  //3 sec
@@ -16,7 +11,6 @@ $(document).ready(function() {
         stopOnHover : true,
         singleItem: true
     }); 
-
+	
+	
 });
-
-

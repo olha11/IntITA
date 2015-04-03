@@ -38,8 +38,8 @@ html{
 .steps {
 	background-color: #f3f3f3;
 	padding-top:60px;
-	padding-bottom:0px;
 	margin-top: 20px;
+    padding-bottom:20px;
 }
 /* Стиль екземплярів класу Step*/
 .stepLeft {

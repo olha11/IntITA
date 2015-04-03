@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "studentprofile".
+ * This is the model class for table "user".
  *
- * The followings are the available columns in table 'studentprofile':
+ * The followings are the available columns in table 'user':
  * @property integer $id
  * @property string $firstName
  * @property string $middleName
@@ -28,6 +28,8 @@ class StudentReg extends CActiveRecord
     public $send_letter;
     public $upload;
     public $letterTheme;
+
+    private $_identity;
 
     public function getDbConnection()
     {
@@ -105,6 +107,23 @@ class StudentReg extends CActiveRecord
         );
     }
 
+    public function login()
+    {
+        if($this->_identity===null)
+        {
+            $this->_identity=new UserIdentity($this->email,$this->password);
+            $this->_identity->authenticate();
+        }
+        if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
+        {
+            $duration=3600*24; // 30 days
+            Yii::app()->user->login($this->_identity,$duration);
+            return true;
+        }
+        else
+            return false;
+    }
+
     /**
      * Retrieves a list of models based on the current search/filter conditions.
      *
@@ -150,6 +169,11 @@ class StudentReg extends CActiveRecord
         ));
     }
 
+    protected function beforeSave()
+    {
+        $this->password=sha1($this->password);
+        return parent::beforeSave();
+    }
 
     /**
      * Returns the static model of the specified AR class.
@@ -184,5 +208,14 @@ class StudentReg extends CActiveRecord
             if($number > 4 ) {$term = " років";}
         }
         echo  $term;
+    }
+    public function validatePassword($password)
+    {
+        return CPasswordHelper::verifyPassword($password,$this->password);
+    }
+
+    public function hashPassword($password)
+    {
+        return CPasswordHelper::hashPassword($password);
     }
 }

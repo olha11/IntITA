@@ -23,26 +23,7 @@ div.regLinks{
 .regLinks a{
     color: #666666;
 }
-div.profileStatus{
-    position: absolute;
-    top:-65px;
-    right:0;
-    float:right;
-    display:block;
-    overflow: hidden;
-}
-.profileStatus img {
-    width:56px;
-    height:56px;
-    float: right;
-    margin-right: 10px;
-}
-.profileStatus div {
-    float: right;
-    font-size: smaller;
-    line-height: 110%;
-    color:#4b75a4;
-}
+
 /* ˳�� �����*/
 .studProf{
     display:inline-block;
@@ -125,6 +106,7 @@ table.profileInfo {
 .rowRadioButton input[type="radio"]:hover,.rowRadioButton input[type="checkbox"]:hover
 {
     box-shadow:0 0 3px #ffffff;
+    cursor: pointer;
 }
 .studProf input:focus,
 .studProf textarea:focus{
@@ -405,12 +387,14 @@ p.courseLevLang{
 .profileCoursePay p {
     margin-bottom: 5px;
 }
-#myCourse div.studPay {
+#myCourse .studPay p{
     color: #e10000;
     font-size: 0.9em;
     margin: 0;
     padding: 0 0 0 20px;
     line-height: 100%;
+}
+#myCourse div.studPay {
     border-bottom:none;
 }
 .profileModule {

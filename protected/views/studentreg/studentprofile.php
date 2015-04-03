@@ -7,23 +7,15 @@
 /* @var $form CActiveForm */
 ?>
 <?php
-$post=StudentReg::model()->findByPk(1);
+$this->pageTitle = 'INTITA';
+$post=StudentReg::model()->findByPk(Yii::app()->user->id);
 ?>
 <div class="formStudProfNav">
     <?php
     $this->breadcrumbs=array(
-        'Профіль',
+        Yii::t('breadcrumbs', 'Profile'),
     );
     ?>
-    <div class="profileStatus">
-        <div>
-            <?php echo $post->firstName;?></br>
-            <?php echo $post->secondName;?></br>
-            <?php echo $post->nickname;?></br>
-            <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
-        </div>
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
-    </div>
 </div>
 <div class="formStudProf">
     <div class="studProfInf">
@@ -40,7 +32,7 @@ $post=StudentReg::model()->findByPk(1);
                 </td>
             </tr>
         </table>
-        <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
+        <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl.$post->avatar; ?>"/>
         <table class='profileInfo'>
             <tr>
                 <td>
@@ -48,15 +40,17 @@ $post=StudentReg::model()->findByPk(1);
                     <h1><?php echo $post->firstName;?></h1>
                     <h1><?php echo $post->secondName;?></h1>
                     <div class="aboutInfo">
-                        <p><?php echo $post->address;?>,
-                            <?php
+                        <p><?php echo $post->address;
+                            if(!empty($post->address)&&!empty($post->birthday)) echo ', ';
                             $myAge = $post->birthday;
                             $myAge = str_replace("/",".",$myAge);
                             $date_a = new DateTime($myAge);
                             $date_b = new DateTime();
                             $interval = $date_b->diff($date_a);
-                            echo $interval->format("%Y");
-                            $post::getYearsTermination($interval->format("%Y"));
+                            if($interval->format("%Y")!=='00'){
+                                echo $interval->format("%Y");
+                                $post::getYearsTermination($interval->format("%Y"));
+                            }
                             ?>
                         </p>
                     </div>

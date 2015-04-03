@@ -28,9 +28,7 @@
     <!-- carousel-plugins -->
     <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/plugins/owl-carousel/owl.theme.css"/>
     <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/plugins/owl-carousel/owl.carousel.css"/>
-    <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/plugins/liCover/css/liCover.css">
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/plugins/owl-carousel/owl.carousel.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/plugins/liCover/js/jquery.liCover.js"></script>
     <!-- carousel-plugins -->
     <!-- carousel -->
     <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/slider.css">
@@ -53,7 +51,7 @@
             </a>
         </div>
         <ul>
-            <li><a href="<?php echo Yii::app()->createUrl('courses/index', array('courseID'=>1)); ?>"><?php echo Yii::t('header','Courses'); ?></a></li>
+            <li><a href="<?php echo $this->link1; ?>"><?php echo Yii::t('header','Courses'); ?></a></li>
             <li><a href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','Teachers'); ?></a></li>
             <li><a href="<?php echo $this->link3; ?>"><?php echo Yii::t('header','Forum'); ?></a></li>
             <li><a href="<?php echo $this->link4; ?>"><?php echo Yii::t('header','About us'); ?></a></li>
@@ -80,7 +78,11 @@
 <div id="centerEnterButton">
     <div id="button_border" class="down">
     </div>
-    <a id="enter_button" href="<?php echo Yii::app()->request->baseUrl;?>#form" class="down"><?php echo Yii::t('header','Sign in'); ?></a>
+    <?php if(Yii::app()->user->isGuest) {?>
+    <a id="enter_button" href="<?php echo Yii::app()->request->getBaseUrl(true); ?>#form" class="down"><?php echo Yii::t('header', 'Sign in'); ?></a>
+    <?php } else {?>
+        <a id="enter_button" href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/site/logout" class="down"><?php echo Yii::t('header', 'Sign out'); ?></a>
+    <?php }?>
 </div>
 <! Hamburger menu>
 
@@ -223,6 +225,23 @@ else
         )); ?><!-- breadcrumbs -->
     <?php endif?>
 
+    <?php if(!Yii::app()->user->isGuest) {
+        $post=StudentReg::model()->findByPk(Yii::app()->user->id);
+    ?>
+    <div class="profileStatus">
+        <a href="<?php echo Yii::app()->request->baseUrl.'/studentreg/profile'; ?>">
+        <div>
+            <?php echo $post->firstName;?></br>
+            <?php echo $post->secondName;?></br>
+            <?php echo $post->nickname;?></br>
+            <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
+        </div>
+        <img src="<?php echo Yii::app()->request->baseUrl.$post->avatar; ?>"/>
+        </a>
+    </div>
+    <?php
+    }
+    ?>
 </div>
 <div id="contentBoxMain">
 <?php echo $content; ?>

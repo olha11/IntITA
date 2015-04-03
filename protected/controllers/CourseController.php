@@ -138,7 +138,7 @@ class CourseController extends Controller
 				'delay'=>'300',
 			),
 		));*/
-		$this->render('course');
+		$this->render('index');
 	}
 
 	/**

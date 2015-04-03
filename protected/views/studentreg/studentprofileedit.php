@@ -11,7 +11,7 @@
 ?>
 <?php
 $this->pageTitle = 'INTITA';
-$post=StudentReg::model()->findByPk(1);
+$post=StudentReg::model()->findByPk(Yii::app()->user->id);
 ?>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/inputmask/jquery.inputmask.extensions.js"></script>
@@ -22,23 +22,15 @@ $post=StudentReg::model()->findByPk(1);
 <div class="formStudProfNav">
     <?php
     $this->breadcrumbs=array(
-        'Профіль'=>Yii::app()->request->baseUrl.'/index.php/?r=studentreg/profile','Редагувати профіль'
+        Yii::t('breadcrumbs', 'Profile')=>Yii::app()->request->baseUrl.'/studentreg/profile',Yii::t('breadcrumbs', 'Edit profile')
     );
     ?>
-    <div class="profileStatus">
-        <div>
-            <?php echo $post->firstName;?></br>
-            <?php echo $post->secondName;?></br>
-            <?php echo $post->nickname;?></br>
-            <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
-        </div>
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/>
-    </div>
+
 </div>
 <div class="formStudProf">
     <?php $form=$this->beginWidget('CActiveForm', array(
         'id'=>'studentreg-form',
-        'action'=> Yii::app()->request->baseUrl.'/?r=studentreg/rewrite',
+        'action'=> Yii::app()->createUrl('studentreg/rewrite', array('id'=>$post->id)),
 // Please note: When you enable ajax validation, make sure the corresponding
 // controller action is handling ajax validation correctly.
 // There is a call to performAjaxValidation() commented in generated controller code.
@@ -54,6 +46,8 @@ $post=StudentReg::model()->findByPk(1);
                 </td>
             </tr>
         </table>
+        <?php echo CHtml::hiddenField('id', $post->id); ?>
+
         <div class="row">
             <?php echo $form->label($model,'firstName'); ?>
             <?php echo $form->textField($model,'firstName',array('value'=>$post->firstName,'maxlength'=>255)); ?>
@@ -134,7 +128,7 @@ $post=StudentReg::model()->findByPk(1);
                 </td>
             </tr>
         </table>
-        <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/></br>
+        <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl.$post->avatar; ?>"/></br>
         <div class="fileform">
             <input class="avatar" type="button" value="ВИБЕРІТЬ ФАЙЛ">
             <input tabindex="-1" type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
