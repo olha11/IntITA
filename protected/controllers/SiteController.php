@@ -179,7 +179,8 @@ class SiteController extends Controller
 			}
 			$app->session['lg'] = $_GET['lg'];
 		}
-		$this->redirect($_SERVER['HTTP_REFERER']);
+		return Yii::app()->baseUrl; //= Yii::app()->request->urlReferrer;
+		//return parent::beforeAction();
 	}
 	/**
 	 * Displays the contact page

@@ -58,15 +58,14 @@
 				<?php echo CHtml::submitButton($labelButton, array('id' => "singInButton")); ?>
 			</div>
 
-
 			<div class="linesingInForm"><?php echo Yii::t('regform','You can also enter by social networks:'); ?></div>
 			<div class="image" >
 				<div id="singInFormCarousel">
 					<a href="#" class="arrow left-arrow" id="prev"><p><</p></a>
 						<div id="uLogin" x-ulogin-params="display=buttons;fields=first_name,last_name;
-								redirect_uri=;callback=ucall">
+								redirect_uri='//+[HTTP_HOST]+[REQUEST_URI]'">
 							<ul id="uLoginImages">
-								<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/google_plus.png" x-ulogin-button = "googleplus"/></li>
+								<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/google_plus.png" x-ulogin-button = "googleplus" /></li>
 								<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/google.png" x-ulogin-button = "google"/></li></li>
 								<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/vkontakte.png" x-ulogin-button = "vkontakte"/></li>
 								<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/facebook.png" x-ulogin-button = "facebook"/></li>
@@ -123,6 +122,13 @@ document.getElementById('next').onclick = function() {
   ul.style.marginLeft = position + 'px';
   return false;
 };
+
+$s = get_file_contents('http://ulogin.ru/token.php?token=' .$_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
+	$user = json_decode($s, true);
+	//$user['network']
+	//$user['identity']
+    //$user['first_name']
+	//$user['last_name']
 
 </script>
 

@@ -19,6 +19,8 @@
  * @property integer $nextLecture
  * @property string $idTeacher
  * @property string $lectureUnwatchedImage
+ * @property string $lectureTimeImage
+ * @property string $lectureOverlookedImage
  */
 class Lecture extends CActiveRecord
 {
@@ -30,8 +32,9 @@ class Lecture extends CActiveRecord
 		return 'lecture';
 	}
 
-	function init ($id)
+	function init ()
 	{
+		/*$id = 1;
 		$this->image=Yii::app()->request->baseUrl.$this->findByPk($id)->image;
 		$this->idModule=$this->findByPk($id)->idModule;
 		$this->order=$this->findByPk($id)->order;
@@ -42,7 +45,8 @@ class Lecture extends CActiveRecord
 		$this->idTeacher = $this->findByPk($id)->idTeacher;
 		$this->language = $this->findByPk($id)->language;
 		$this->preLecture = $this->findByPk($id)->preLecture;
-		$this->nextLecture = $this->findByPk($id)->nextLecture;
+		$this->nextLecture = $this->findByPk($id)->nextLecture;*/
+		return $this->findByPk(1);
 	}
 
 	/**
@@ -62,7 +66,7 @@ class Lecture extends CActiveRecord
 			array('idTeacher', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, image, alias, language, idModule, order, title, idType, durationInMinutes, maxNumber, iconIsDone, preLecture, nextLecture, idTeacher, lectureUnwatchedImage', 'safe', 'on'=>'search'),
+			array('id, image, alias, language, idModule, order, title, idType, durationInMinutes, maxNumber, iconIsDone, preLecture, nextLecture, idTeacher, lectureUnwatchedImage, lectureOverlookedImage', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -98,8 +102,11 @@ class Lecture extends CActiveRecord
 			'nextLecture' => 'Next Lecture',
 			'idTeacher' => 'Id Teacher',
 			'lectureUnwatchedImage' => 'Lecture Unwatched Image',
+			'lectureOverlookedImage' => 'lecture Overlooked Image',
 		);
 	}
+
+
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
@@ -134,6 +141,8 @@ class Lecture extends CActiveRecord
 		$criteria->compare('nextLecture',$this->nextLecture);
 		$criteria->compare('idTeacher',$this->idTeacher,true);
 		$criteria->compare('lectureUnwatchedImage',$this->lectureUnwatchedImage,true);
+		$criteria->compare('lectureOverlookedImage',$this->lectureOverlookedImage,true);
+		$criteria->compare('lectureTimeImage',$this->lectureTimeImage,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -164,4 +173,57 @@ class Lecture extends CActiveRecord
 			return 'True';  // Існування елемента
 		}
 	}
+
+	public function getModuleInfoById($id){
+		$module = new Module();
+		$module->findByPk($id);
+		return array(
+			'moduleTitle' => $module->module_name,
+			'countLessons' =>  $module->lesson_count,
+			'idCourse' => $module->course,
+		);
+	}
+
+	public function getCourseInfoById($id){
+	$course = new Course;
+		$course->findByPk($id);
+	return array(
+		'courseTitle' => $course->course_name,
+		'courseLang' =>  $course->language,
+		);
+	}
+
+	public function getLectureInfoByOrder($order){
+		$lecture = Lecture::model()->findBySql('order=:order',	array(':order' == $order));
+		return array(
+			'order' => $lecture->order,
+			'title' =>  $lecture->title,
+			'typeImage' => $this->getTypeInfo($lecture->idType)[0],
+			'typeText' => $this->getTypeInfo($lecture->idType)[1],
+			'duration' => $lecture->durationInMinutes,
+		);
+	}
+
+	public function getTypeInfo($id){
+		$type = Lecturetype::model()->findByPk($id);
+		return array(
+			'image' => $type->image,
+			'text' => $type->text,
+		);
+	}
+
+	public function getTeacherInfoById($id){
+		$teacher = TeachersTemp::model()->findByPk($id);
+		return array(
+			'full_name' => $teacher->first_name.$teacher->middle_name.$teacher->last_name,
+			'email' =>  $teacher->email,
+			'tel' => $teacher->tel,
+			'skype' => $teacher->skype,
+			'readMoreLink' => $teacher->readMoreLink,
+			'photo' => $teacher->smallImage,
+		);
+	}
+
+
+
 }
