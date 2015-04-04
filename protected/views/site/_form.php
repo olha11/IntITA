@@ -39,7 +39,7 @@
                     <?php if(Yii::app()->user->hasFlash('forminfo')):
                         echo Yii::app()->user->getFlash('forminfo');
                     endif; ?>
-                </div">
+                </div>
 			</div>
 
             <div class="regCheckboxW">

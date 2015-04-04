@@ -233,7 +233,7 @@ class SiteController extends Controller
                 Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися.');
                 $this->redirect(Yii::app()->request->baseUrl . '/site#form');
 			}
-            Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися.');
+            Yii::app()->user->setFlash('forminfo', 'Ви ввели не вірні дані.');
             $this->redirect(Yii::app()->request->baseUrl . '/site#form');
 		}
 
