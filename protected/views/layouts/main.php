@@ -37,7 +37,6 @@
     <!-- passEye, jQuery -->
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/jquery.passEye.js"></script>
     <!-- passEye, jQuery -->
-
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -75,25 +74,7 @@
     </div>
 
 </div>
-<!--SingIn modal-->
-<?php
-$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
-    'id' => 'mydialog',
-    'themeUrl'=>Yii::app()->request->baseUrl.'/css',
-    'cssFile'=>'jquery-ui.css',
-    'theme'=>'my',
-    'options' => array(
-        'width'=>540,
-        'autoOpen' => false,
-        'modal' => true,
-        'resizable'=> false
-    ),
-));
-$this->renderPartial('/site/_signinform');
 
-$this->endWidget('zii.widgets.jui.CJuiDialog');
-?>
-<!--SignIn modal-->
 
 <div id="centerEnterButton">
     <div id="button_border" class="down">
@@ -307,6 +288,25 @@ else
             <a href="<?php echo Yii::app()->request->baseUrl;?>"><img src="<?php echo $this->imageUp; ?>" style="margin-top: 20px;"/></a>
         </div>
     <div class="footer"></div>
+        <!--SingIn modal-->
+        <?php
+        $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+            'id' => 'mydialog',
+            'themeUrl'=>Yii::app()->request->baseUrl.'/css',
+            'cssFile'=>'jquery-ui.css',
+            'theme'=>'my',
+            'options' => array(
+                'width'=>540,
+                'autoOpen' => false,
+                'modal' => true,
+                'resizable'=> false
+            ),
+        ));
+        $this->renderPartial('/site/_signinform');
+
+        $this->endWidget('zii.widgets.jui.CJuiDialog');
+        ?>
+        <!--SignIn modal-->
 </div>
 </div><!-- footer -->
 </div>
