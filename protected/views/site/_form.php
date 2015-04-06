@@ -7,7 +7,7 @@
 
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/regform.css" />
 <div style="position:relative;"><a name="form" style="position:absolute; top:-60px;"></a></div>
-<div class="regFormBG" style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/formfon.jpg') repeat-x;background-position: center center">
+<div class="regFormBG" >
 	<div class="regFormBox">
 
 		<p class="zagolovok"><?php echo Yii::t('regform','Ready to get started?'); ?></p>
@@ -58,8 +58,9 @@
 			<div class="image" >
 				<div id="singInFormCarousel">
 					<a href="#" class="arrow left-arrow" id="prev"><p><</p></a>
-						<div id="uLogin" x-ulogin-params="display=buttons;fields=first_name,last_name;
-								redirect_uri='//+[HTTP_HOST]+[REQUEST_URI]'">
+                    <script src="//ulogin.ru/js/ulogin.js"></script>
+                    <div id="uReg" x-ulogin-params="display=buttons;fields=email;optional=first_name,last_name,nickname,bdate,phone,photo,city;
+								redirect_uri=<?php echo Yii::app()->request->baseUrl.'/site/socialreg'?>">
 							<ul id="uLoginImages">
 								<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/google_plus.png" x-ulogin-button = "googleplus" title = "Google +"/></li>
 								<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/google.png" x-ulogin-button = "google" title = "Google"/></li></li>
@@ -90,56 +91,6 @@
 			</div>
 
 			<?php $this->endWidget(); ?>
-
-			
-<script type="text/javascript">
-var width = 43; // ширина изображения
-var count = 8; // количество изображений
-
-var ul = document.getElementById('uLoginImages');
-var imgs = ul.getElementsByTagName('li');
-
-var position = 0; // текущий сдвиг влево
-
-document.getElementById('prev').onclick = function() {
-  if (position >= 0) return false; // уже до упора
-
-  // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
-  position = Math.min(position + width*count, 0)
-  ul.style.marginLeft = position + 'px';
-  return false;
-}
-
-document.getElementById('next').onclick = function() {
-  if (position <= -width*(imgs.length-count)) return false; // уже до упора
-
-  // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
-  position = Math.max(position-width*count, -width*(imgs.length-count));
-  ul.style.marginLeft = position + 'px';
-  return false;
-};
-
-$s = get_file_contents('http://ulogin.ru/token.php?token=' .$_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
-	$user = json_decode($s, true);
-	//$user['network']
-	//$user['identity']
-    //$user['first_name']
-	//$user['last_name']
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
 		</div><!-- form -->
 
 	</div>
