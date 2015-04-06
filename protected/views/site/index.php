@@ -312,6 +312,35 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 ?>
 </div>
 <?php $this->renderPartial('_form'); ?>
+
+<script type="text/javascript">
+    var width = 43; // ширина изображения
+    var count = 8; // количество изображений
+
+    var ul = document.getElementById('uLoginImages');
+    var imgs = ul.getElementsByTagName('li');
+
+    var position = 0; // текущий сдвиг влево
+
+    document.getElementById('prev').onclick = function() {
+        if (position >= 0) return false; // уже до упора
+
+        // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
+        position = Math.min(position + width*count, 0)
+        ul.style.marginLeft = position + 'px';
+        return false;
+    }
+
+    document.getElementById('next').onclick = function() {
+        if (position <= -width*(imgs.length-count)) return false; // уже до упора
+
+        // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
+        position = Math.max(position-width*count, -width*(imgs.length-count));
+        ul.style.marginLeft = position + 'px';
+        return false;
+    };
+</script>
+
 </body>
 
 
