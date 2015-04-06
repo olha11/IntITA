@@ -1,5 +1,6 @@
 <?php
     $model=new StudentReg();
+    $mainpage = new Mainpage();
 ?>
 
 <script src="//ulogin.ru/js/ulogin.js"></script>
@@ -10,8 +11,8 @@
 <div class="regFormBG" style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/formfon.jpg') repeat-x;background-position: center center">
 	<div class="regFormBox">
 
-		<p class="zagolovok"><?php echo Yii::t('regform','Ready to get started?'); ?></p>
-		<p class="zagolovok2"><?php echo Yii::t('regform','Enter data into the form below'); ?></p>
+		<p class="zagolovok"><?php echo $mainpage->getFormHeader1(); ?></p>
+		<p class="zagolovok2"><?php echo $mainpage->getFormHeader2(); ?></p>
 
 		<div class="signInForm">
 			<?php $form=$this->beginWidget('CActiveForm', array(
@@ -26,13 +27,13 @@
                 'clientOptions'=>array('validateOnSubmit'=>false,'validateOnChange'=>true),
             )); ?>
 			<div class="rowemail">
-				<?php $placeHolderEmail = Yii::t('regform','Email');?>
+				<?php $placeHolderEmail = Yii::t('regform','0014');?>
 				<?php echo $form->textField($model,'email',array('class'=>'signInEmail','placeholder'=>$placeHolderEmail,'size'=>60,'maxlength'=>255)); ?>
 				<?php echo $form->error($model,'email'); ?>
 			</div>
 
 			<div class="rowpass">
-				<?php $placeHolderPassword = Yii::t('regform','Password');?>
+				<?php $placeHolderPassword = Yii::t('regform','0015');?>
 				<span class="passEye"> <?php echo $form->passwordField($model,'password',array('class'=>'signInPass','placeholder'=>$placeHolderPassword,'size'=>60,'maxlength'=>255)); ?></span>
 				<?php echo $form->error($model,'password'); ?>
                 <div class="forminfo">
@@ -45,16 +46,16 @@
             <div class="regCheckboxW">
                 <div class="regCheckbox">
                     <input type="checkbox" id="regCheckbox" value="" name="isExtended"/>
-                    <label for="regCheckbox"><?php echo Yii::t('regform','extended registration'); ?></label>
+                    <label for="regCheckbox"><?php echo $mainpage->getRegText(); ?></label>
                 </div>
             </div>
 
 			<div class="rowButtons">
-				<?php $labelButton = Yii::t('regform','JOIN');?>
+				<?php $labelButton = $mainpage->getButtonStart();?>
 				<?php echo CHtml::submitButton($labelButton, array('id' => "signInButton")); ?>
 			</div>
 
-			<div class="linesignInForm"><?php echo Yii::t('regform','You can also enter by social networks:'); ?></div>
+			<div class="linesignInForm"><?php echo $mainpage->getSocialText(); ?></div>
 			<div class="image" >
 				<div id="singInFormCarousel">
 					<a href="#" class="arrow left-arrow" id="prev"><p><</p></a>

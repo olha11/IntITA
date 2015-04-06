@@ -9,7 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'INTITA',
 
-	'sourceLanguage'=>'en',
+	'sourceLanguage'=>'xs',
 	'language'=>'ua',
 
 	// preloading 'log' component
@@ -59,7 +59,7 @@ return array(
 		),
 
         'messages'=>array(
-            'class'=>'CDbMessageSource',
+            'class'=>'MyCDbMessageSource',
             'sourceMessageTable'=>'sourceMessages',
             'translatedMessageTable'=>'translatedMessagesUA',
         ),

@@ -12,15 +12,15 @@
 <body onload=WindowShow(<?php echo (empty($_GET['id']))?1:$_GET['id']; ?>);centerPage()>
 <?php
 $this->breadcrumbs=array(
-    Yii::t('breadcrumbs', 'About us'),
+    Yii::t('breadcrumbs', '0051'),
 );
 
-$this->pageTitle=Yii::t('mainpage','INTITA');
+$this->pageTitle=Yii::t('mainpage','0001');
 
-$headerText = Yii::t('mainpage','About us');
-$subheaderText = Yii::t('mainpage','something that you need to know about our courses');
+$headerText = Yii::t('mainpage','0002');
+$subheaderText = Yii::t('mainpage','0006');
 $subLineImage= $mainpage['subLineImage'];
-$dropName = Yii::t('mainpage','read more ...');
+$dropName = Yii::t('mainpage','0004');
 
 $massAbout = array($block1,$block2,$block3);
 

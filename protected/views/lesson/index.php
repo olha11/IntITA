@@ -24,7 +24,7 @@
 /* @var $model LessonTop */
 $this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
-    Yii::t('breadcrumbs', 'Courses')=>Yii::app()->request->baseUrl."/courses",'Модуль PHP'=>Yii::app()->request->baseUrl."/course",'Заняття 2: Змінні та типи данних в PHP',
+    Yii::t('breadcrumbs', '0050')=>Yii::app()->request->baseUrl."/courses",'Модуль PHP'=>Yii::app()->request->baseUrl."/course",'Заняття 2: Змінні та типи данних в PHP',
 );
 ?>
 
@@ -53,7 +53,7 @@ $teacher->first_name='Іванов Іванов ВгадайПоБатькові
 $teacher->email='ivanov@intita.org, ivanov@gmail.com';
 $teacher->tel='/067/56-569-56, /093/26-45-65';
 $teacher->skype='ivanov.ivanov';
-$teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherProfile';
+$teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherprofile';
 ?>
 
 
@@ -67,22 +67,22 @@ $teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherProfile';
     <div class="titlesBlock" id="titlesBlock">
         <ul>
             <li>
-                <?php echo Yii::t('lecture','Course:'); ?>
-                <span>Програмування для чайників</span>(<?php echo Yii::t('lecture','lang:'); ?>UA)
+                <?php echo Yii::t('lecture','0070'); ?>
+                <span>Програмування для чайників</span>(<?php echo Yii::t('lecture','0071'); ?>UA)
             </li>
             <li>
-                <?php echo Yii::t('lecture','Module:'); ?>
+                <?php echo Yii::t('lecture','0072'); ?>
                 <span><?php echo $lecture3->lectureModule; ?></span>
             </li>
-            <li><?php echo Yii::t('lecture','Lecture ').$lecture3->lectureNumber.': ';?>
+            <li><?php echo Yii::t('lecture','0073').$lecture3->lectureNumber.': ';?>
                 <span><?php echo $lecture3->lectureNameText; ?></span>
             </li>
-            <li><?php echo Yii::t('lecture','Type:'); ?>
+            <li><?php echo Yii::t('lecture','0074'); ?>
                 <div id="lectionTypeText"><?php echo $lecture3->lectureTypeText; ?></div>
                 <div id="lectionTypeImage"><img src="<?php echo $lecture3->lectureTypeImage; ?>"></div>
             </li>
-            <li><div id="subTitle"><?php echo Yii::t('lecture','Duration:'); ?></div>
-                <div id="lectureTimeText">40<?php echo Yii::t('lecture','min'); ?></div>
+            <li><div id="subTitle"><?php echo Yii::t('lecture','0075'); ?></div>
+                <div id="lectureTimeText">40<?php echo Yii::t('lecture','0076'); ?></div>
                 <div id="lectureTimeImage"><img src="<?php echo $lecture3->lectureTimeImage; ?>"></div>
             </li>
             </br>
@@ -109,11 +109,11 @@ $teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherProfile';
 
     <div class="teacherBlock">
         <img src="<?php echo $teacher->foto_url; ?>">
-        <a href="<?php echo Yii::app()->request->baseUrl.$teacher->readMoreLink; ?>"><?php echo Yii::t('teachers','personal page'); ?> &#187;</a>
+        <a href="<?php echo Yii::app()->request->baseUrl.$teacher->readMoreLink; ?>"><?php echo Yii::t('teachers','0059'); ?> &#187;</a>
                 <span>
                 <ul>
                     <li> <div class="teacherTitle">
-                            <?php echo Yii::t('lecture','Teacher'); ?></div>
+                            <?php echo Yii::t('lecture','0077'); ?></div>
                     </li>
                     <li>
                         <?php echo $teacher->first_name;?>
@@ -131,10 +131,10 @@ $teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherProfile';
                     </li>
                     <li>
                         <a href="<?php echo $teacher->readMoreLink; ?>">
-                            <?php echo Yii::t('lecture','read more...'); ?>
+                            <?php echo Yii::t('lecture','0078'); ?>
                         </a>
                     </li>
-                    <p><a href="#"><input type="submit" value="<?php echo Yii::t('lecture','Schedule consultation'); ?>"></a></p>
+                    <p><a href="#"><input type="submit" value="<?php echo Yii::t('lecture','0079'); ?>"></a></p>
                 </ul>
                 </span>
     </div>
@@ -149,22 +149,22 @@ $teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherProfile';
     <div class="titlesBlock" id="titlesBlock">
         <ul>
             <li>
-                <?php echo Yii::t('lecture','Course:'); ?>
-                <span>Програмування для чайників</span>(<?php echo Yii::t('lecture','lang:'); ?>UA)
+                <?php echo Yii::t('lecture','0070'); ?>
+                <span>Програмування для чайників</span>(<?php echo Yii::t('lecture','0071'); ?>UA)
             </li>
             <li>
-                <?php echo Yii::t('lecture','Module:'); ?>
+                <?php echo Yii::t('lecture','0072'); ?>
                 <span><?php echo $lecture3->lectureModule; ?></span>
             </li>
-            <li><?php echo Yii::t('lecture','Lecture ').$lecture3->lectureNumber.': ';?>
+            <li><?php echo Yii::t('lecture','0073').$lecture3->lectureNumber.': ';?>
                 <span><?php echo $lecture3->lectureNameText; ?></span>
             </li>
-            <li><?php echo Yii::t('lecture','Type:'); ?>
+            <li><?php echo Yii::t('lecture','0074'); ?>
                 <div id="lectionTypeText"><?php echo $lecture3->lectureTypeText; ?></div>
                 <div id="lectionTypeImage"><img src="<?php echo $lecture3->lectureTypeImage; ?>"></div>
             </li>
-            <li><div id="subTitle"><?php echo Yii::t('lecture','Duration:'); ?></div>
-                <div id="lectureTimeText">40<?php echo Yii::t('lecture','min'); ?></div>
+            <li><div id="subTitle"><?php echo Yii::t('lecture','0075'); ?></div>
+                <div id="lectureTimeText">40<?php echo Yii::t('lecture','0076'); ?></div>
                 <div id="lectureTimeImage"><img src="<?php echo $lecture3->lectureTimeImage; ?>"></div>
             </li>
             </br>
@@ -357,11 +357,11 @@ $teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherProfile';
 &lt;/html&gt;
 </pre>
     </div>
-    <h3><span class="subChapter"><?php echo Yii::t('lecture','Video:'); ?> 1.</span></h3>
+    <h3><span class="subChapter"><?php echo Yii::t('lecture','0083'); ?> 1.</span></h3>
     <iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>
     <div class="lessonInstr">
         <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">
-        <div class="lessonButName" unselectable = "on"><?php echo Yii::t('lecture','Instruction'); ?></div>
+        <div class="lessonButName" unselectable = "on"><?php echo Yii::t('lecture','0085'); ?></div>
         <div class="lessonLine"></div>
         <div class="lessonBG">
             <div class="instrTaskImg">
@@ -378,7 +378,7 @@ $teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherProfile';
 
     <div class="lessonTask">
         <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">
-        <div class="lessonButName" unselectable = "on"><?php echo Yii::t('lecture','Exercise'); ?> 1</div>
+        <div class="lessonButName" unselectable = "on"><?php echo Yii::t('lecture','0086'); ?> 1</div>
         <div class="lessonLine"></div>
         <div class="lessonBG">
             <div class="instrTaskImg">
@@ -407,7 +407,7 @@ $teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherProfile';
 <div class="lessonText">
     <div class="lessonTask">
         <img class="lessonButFinal" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButtonFinale.png">
-        <div class="lessonButFinal" unselectable = "on"><?php echo Yii::t('lecture','Final task'); ?></div>
+        <div class="lessonButFinal" unselectable = "on"><?php echo Yii::t('lecture','0090'); ?></div>
         <div class="lessonLine"></div>
         <div class="lessonBG">
             <div class="instrTaskImg">
@@ -424,7 +424,7 @@ $teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherProfile';
                 <div class="BBCode">
                     <form action="" method="post">
                         <textarea class="editor"></textarea>
-                        <input  id="lessonTask3" type="submit" value="<?php echo Yii::t('lecture','Answer'); ?>">
+                        <input  id="lessonTask3" type="submit" value="<?php echo Yii::t('lecture','0089'); ?>">
                     </form>
                 </div>
             </div>
@@ -467,10 +467,10 @@ $footNav=new LessonFooter ('3',$allLessons);
     {
         ?>
         <div class="preLessons">
-            <p class="lesname"><?php echo Yii::t('lecture','Lecture '); ?> <?php echo $footNav->getPreNumber() ?>: <b><?php echo $footNav->getPreName() ?></b></p>
+            <p class="lesname"><?php echo Yii::t('lecture','0073'); ?> <?php echo $footNav->getPreNumber() ?>: <b><?php echo $footNav->getPreName() ?></b></p>
             <table class="typeLesson">
                 <tr>
-                    <td><p><?php echo Yii::t('lecture','Type:'); ?></p></td>
+                    <td><p><?php echo Yii::t('lecture','0074'); ?></p></td>
                     <td><span><?php echo $footNav->getPreType() ?></span></td>
                     <td><img src="<?php
                         switch ($footNav->getPreType())
@@ -515,7 +515,7 @@ $footNav=new LessonFooter ('3',$allLessons);
                 </tr>
             </table>
             <div class="preLesonLink">
-                <p><a href="#">&#171 <?php echo Yii::t('lecture','show again previous lecture'); ?></a></p>
+                <p><a href="#">&#171 <?php echo Yii::t('lecture','0087'); ?></a></p>
             </div>
         </div>
     <?php
@@ -525,10 +525,10 @@ $footNav=new LessonFooter ('3',$allLessons);
     {
     ?>
     <div class="nextLessons">
-        <p class="lesname"><?php echo Yii::t('lecture','Lecture '); ?> <?php echo $footNav->getPostNumber() ?>: <b><?php echo $footNav->getPostName() ?></b></p>
+        <p class="lesname"><?php echo Yii::t('lecture','0073'); ?> <?php echo $footNav->getPostNumber() ?>: <b><?php echo $footNav->getPostName() ?></b></p>
         <table class="typeLesson">
             <tr>
-                <td><p><?php echo Yii::t('lecture','Type:'); ?></td>
+                <td><p><?php echo Yii::t('lecture','0074'); ?></td>
                 <td><span><?php echo $footNav->getPostType() ?></span></td>
                 <td><img src="<?php
                     switch ($footNav->getPostType())
@@ -541,7 +541,7 @@ $footNav=new LessonFooter ('3',$allLessons);
                             break;
                     }
                     ?> "style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
-                <td><p><?php echo Yii::t('lecture','Duration:'); ?></p></td>
+                <td><p><?php echo Yii::t('lecture','0074'); ?></p></td>
                 <td><span><?php echo $footNav->getPostDur() ?></span></td>
                 <td><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/timeIco.png" style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
             </tr>
@@ -574,7 +574,7 @@ $footNav=new LessonFooter ('3',$allLessons);
         </table>
         <?php if($footNav->getThisMedal()=='Зараховано') { ?>
             <div class="nextLesonLink">
-                <p><a href="#"><input class="nextLessButt" type="submit" value="<?php echo Yii::t('lecture','NEXT LECTURE'); ?>"></a></p>
+                <p><a href="#"><input class="nextLessButt" type="submit" value="<?php echo Yii::t('lecture','0088'); ?>"></a></p>
             </div>
         <?php  }?>
     </div>

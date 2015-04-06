@@ -105,4 +105,20 @@ class Footer extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public function getEmail(){
+        return Yii::t('footer', '0025');
+    }
+
+    public function getTel(){
+        return Yii::t('footer', '0023');
+    }
+
+    public function getSkype(){
+        return Yii::t('footer', '0026');
+    }
+
+    public function getMobile(){
+        return Yii::t('footer', '0024');
+    }
 }

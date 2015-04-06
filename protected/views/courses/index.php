@@ -3,7 +3,7 @@
 <?php
 $this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
-	Yii::t('breadcrumbs', 'Courses'),
+	Yii::t('breadcrumbs', '0050'),
 );
 
 	class Course 
@@ -63,7 +63,7 @@ $this->breadcrumbs=array(
 <tr><td  valign="top">
 <div id='coursesPart1'>
     <div id='coursesHeader'>
-        <?php echo Yii::t('courses', 'Our courses'); ?>
+        <?php echo Yii::t('courses', '0066'); ?>
     </div>
 	<?php
 	foreach ($coursesArray1 as $val)   
@@ -75,7 +75,7 @@ $this->breadcrumbs=array(
 				echo $val->courseName; ?></a>
 		</div>
 		<div class="courseLevelBox">
-			<?php echo Yii::t('courses', 'Level:'); ?>
+			<?php echo Yii::t('courses', '0068'); ?>
 		
 			<span class="courseLevel">
 			<?php echo $val->courseLevel; ?>
@@ -98,7 +98,7 @@ $this->breadcrumbs=array(
 			</div>
 		</div>
         <div class="courseLang">
-        <?php echo Yii::t('courses', 'Language:'); ?>
+        <?php echo Yii::t('courses', '0069'); ?>
             <div id="coursesLang" class="down">
                 <form action="" method="post" onsubmit="" name="fff">
                     <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
@@ -123,7 +123,7 @@ $this->breadcrumbs=array(
 <div id='coursesPart2'>
     <div class='courseBox'>
         <div class='conceptName'>
-            <?php echo Yii::t('courses', 'КОНЦЕПЦІЯ ПІДГОТОВКИ'); ?><!-- Concept of learning-->
+            <?php echo Yii::t('courses', '0067'); ?><!-- Concept of learning-->
         </div>
         <span class='concepText'>
         	<?php echo $course1->coursesTextFooter; ?>
@@ -140,7 +140,7 @@ $this->breadcrumbs=array(
 				echo $val->courseName; ?></a>
 		</div>
 		<div class="courseLevelBox">
-			<?php echo  Yii::t('courses', 'Level:'); ?>
+			<?php echo  Yii::t('courses', '0068'); ?>
 		
 			<span class="courseLevel">
 			<?php echo $val->courseLevel; ?>
@@ -163,7 +163,7 @@ $this->breadcrumbs=array(
 			</div>
 		</div>
         <div class="courseLang">
-        <?php echo Yii::t('courses', 'Language:'); ?>
+        <?php echo Yii::t('courses', '0069'); ?>
             <div id="coursesLang" class="down">
                 <form action="" method="post" onsubmit="" name="fff">
                     <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>

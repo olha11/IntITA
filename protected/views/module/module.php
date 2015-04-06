@@ -17,7 +17,7 @@ $post=Module::model()->findByPk(1);
 <!-- BD -))) -->
 <?php
 $this->breadcrumbs=array(
-    Yii::t('breadcrumbs', 'Courses')=>Yii::app()->request->baseUrl."/courses",'Програмування для чайників'=>Yii::app()->request->baseUrl."/course",'Основи PHP',
+    Yii::t('breadcrumbs', '0050')=>Yii::app()->request->baseUrl."/courses",'Програмування для чайників'=>Yii::app()->request->baseUrl."/course",'Основи PHP',
 );
 ?>
 <div class="ModuleBlock">

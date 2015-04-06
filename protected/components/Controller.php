@@ -36,9 +36,8 @@ class Controller extends CController
 		$app = Yii::app();
 		if (isset($app->session['lg'])) {
 			$app->language = $app->session['lg'];
-			//$var = Yii::app()->config->set('translatedMessageTable', 'translatedMessagesUA');
-			//http://habrahabr.ru/post/172737/
 		}
+        $app->session['translatedMessageTable'] = 'translatedMessagesUA';
 	}
 	/**
 	 * @var string the default layout for the controller view. Defaults to '//layouts/column1',

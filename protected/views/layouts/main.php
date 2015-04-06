@@ -1,4 +1,5 @@
-<?php /* @var $this Controller */ ?>
+<?php /* @var $this Controller */
+$header = new Header();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +43,6 @@
 </head>
 
 <body>
-
 <div id="navigation" class="down" >
     <div class="main">
         <div id="logo_img" class="down">
@@ -51,10 +51,10 @@
             </a>
         </div>
         <ul>
-            <li><a href="<?php echo $this->link1; ?>"><?php echo Yii::t('header','Courses'); ?></a></li>
-            <li><a href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','Teachers'); ?></a></li>
-            <li><a href="<?php echo $this->link3; ?>"><?php echo Yii::t('header','Forum'); ?></a></li>
-            <li><a href="<?php echo $this->link4; ?>"><?php echo Yii::t('header','About us'); ?></a></li>
+            <li><a href="<?php echo $this->link1; ?>"><?php echo $header->getMenuItem1(); ?></a></li>
+            <li><a href="<?php echo $this->link2; ?>"><?php echo $header->getMenuItem2(); ?></a></li>
+            <li><a href="<?php echo $this->link3; ?>"><?php echo $header->getMenuItem3(); ?></a></li>
+            <li><a href="<?php echo $this->link4; ?>"><?php echo $header->getMenuItem4(); ?></a></li>
         </ul>
     </div>
 
@@ -99,9 +99,9 @@ $this->endWidget('zii.widgets.jui.CJuiDialog');
     <div id="button_border" class="down">
     </div>
     <?php if(Yii::app()->user->isGuest) {
-        echo CHtml::link(Yii::t('header', 'Sign in'), '#', array('id'=>'enter_button','class'=>'down','onclick' => '$("#mydialog").dialog("open"); return false;',));
+        echo CHtml::link($header->getEnterButton(), '#', array('id'=>'enter_button','class'=>'down','onclick' => '$("#mydialog").dialog("open"); return false;',));
     } else {?>
-        <a id="enter_button" href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/site/logout" class="down"><?php echo Yii::t('header', 'Sign out'); ?></a>
+        <a id="enter_button" href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/site/logout" class="down"><?php echo $header->getLogoutButton(); ?></a>
     <?php }?>
 </div>
 <! Hamburger menu>
@@ -135,23 +135,23 @@ $this->endWidget('zii.widgets.jui.CJuiDialog');
 <div id="hamburgerMainBox">
 	<div id="hamburgerSubBox">
 		<div class="hamburgerBox">
-			<a class="hamburgerLink" href="<?php echo $this->link1; ?>"><?php echo Yii::t('header','Courses'); ?></a>
+			<a class="hamburgerLink" href="<?php echo $this->link1; ?>"><?php echo $header->getMenuItem1(); ?></a>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox">
-			<a  class="hamburgerLink" href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','Teachers'); ?></a>
+			<a  class="hamburgerLink" href="<?php echo $this->link2; ?>"><?php echo $header->getMenuItem2(); ?></a>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox">
-			<a  class="hamburgerLink" href="<?php echo $this->link3; ?>"><?php echo Yii::t('header','Forum'); ?></a>
+			<a  class="hamburgerLink" href="<?php echo $this->link3; ?>"><?php echo $header->getMenuItem3(); ?></a>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox">
-			<a  class="hamburgerLink" href="<?php echo $this->link4; ?>"><?php echo Yii::t('header','About us'); ?></a>
+			<a  class="hamburgerLink" href="<?php echo $this->link4; ?>"><?php echo $header->getMenuItem4(); ?></a>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox2">
-			<a id="hamburgerEnterButton" href="<?php echo Yii::app()->request->baseUrl;?>#form"><?php echo Yii::t('header','Sign in'); ?></a>
+			<a id="hamburgerEnterButton" href="<?php echo Yii::app()->request->baseUrl;?>#form"><?php echo $header->getEnterButton(); ?></a>
 		</div>
 	</div>
 </div>
@@ -238,7 +238,7 @@ else
     <?php if(isset($this->breadcrumbs)):?>
         <?php $this->widget('zii.widgets.CBreadcrumbs', array(
             'links'=>$this->breadcrumbs,
-            'homeLink'=>CHtml::link(Yii::t('breadcrumbs', 'Home'),Yii::app()->request->getBaseUrl(true)),
+            'homeLink'=>CHtml::link(Yii::t('breadcrumbs', '0049'),Yii::app()->request->getBaseUrl(true)),
             'htmlOptions' => array(
                 'class' => 'my-cool-breadcrumbs'
             )
@@ -270,7 +270,7 @@ else
 
 <div class="clear"></div>
 
-
+<?php $footer = new Footer();?>
 <div id="footer">
     <div class="main">
         <div style="height: auto; margin-top: 25px;">
@@ -288,18 +288,18 @@ else
                 </a>
             </div>
             <div>
-                <p> <?php echo Yii::t('footer','tel: +38 0432 52 82 67');  ?><br/>
-                    <?php echo Yii::t('footer','mobile: +38 067 432 20 10');  ?><br/>
-                    <?php echo Yii::t('footer','e-mail: intita.hr@gmail.com'); ?><br/>
-                    <?php echo Yii::t('footer','skype: int.ita'); ?><br/>
+                <p> <?php echo $footer->getTel();  ?><br/>
+                    <?php echo $footer->getMobile();  ?><br/>
+                    <?php echo $footer->getEmail(); ?><br/>
+                    <?php echo $footer->getSkype(); ?><br/>
                 </p>
             </div>
             <div>
                 <ul>
-                    <li><a href="<?php echo $this->link1; ?>"><?php echo Yii::t('header','Courses'); ?></a></li>
-                    <li><a href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','Teachers');  ?></a></li>
-                    <li><a href="<?php echo $this->link3; ?>"><?php echo Yii::t('header','Forum');  ?></a></li>
-                    <li><a href="<?php echo $this->link4; ?>"><?php echo Yii::t('header','About us');  ?></a></li>
+                    <li><a href="<?php echo $this->link1; ?>"><?php echo $header->getMenuItem1(); ?></a></li>
+                    <li><a href="<?php echo $this->link2; ?>"><?php echo $header->getMenuItem2();  ?></a></li>
+                    <li><a href="<?php echo $this->link3; ?>"><?php echo $header->getMenuItem3();  ?></a></li>
+                    <li><a href="<?php echo $this->link4; ?>"><?php echo $header->getMenuItem4();  ?></a></li>
                 </ul>
             </div>
         </div>
