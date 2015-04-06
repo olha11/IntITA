@@ -46,12 +46,11 @@ input[type="submit"]#singInButton    {
     background:#4b75a4;
     margin-top: 25px;
     box-shadow:0px 2px 0px #7f7f7f;
-    font: normal     400 28px/50px "MyriadPro";
+    font: normal     400 28px/50px "MyriadPro2";
     font-size:       25px;
     letter-spacing:1px;
     text-shadow:1px 1px 1px black;
-    padding-right: 25px;
-    background-image: url('images/pointer.png');
+	text-align: center;
     text-shadow:1px 2px 1px rgba(0,0,0,.5);
     background-repeat: no-repeat;
     background-position: 145px 18px;
@@ -60,7 +59,6 @@ input#singInButton:hover {
     background: #454545;
     box-shadow:0px 2px 0px #7f7f7f;
     cursor: pointer;
-    background-image: url('images/pointer.png');
     background-repeat: no-repeat;
     background-position: 145px 18px;
 }
@@ -218,7 +216,7 @@ div.linesingInForm{
 }
 #singInFormCarousel .arrow {
   position: absolute;
-  top: 2px;
+  top: 0px;
   padding: 3px 8px 8px 9px;
   border-radius: 15px;
   font-size: 19px;
@@ -235,8 +233,9 @@ div.linesingInForm{
 
 #singInFormCarousel p {
 	font-family: "MyriadPro2";
+	font-size:       25px;
 	font-weight: 900;
-    line-height: 7px;
+    line-height: 0px;
     color: #4b75a4;
 }
 
@@ -263,8 +262,8 @@ div.linesingInForm{
   width: 40px;
   height: 40px;
   display: block;
-  filter: Alpha(Opacity=40);/*IE7 fix*/
-  opacity: 0.4;
+  filter: Alpha(Opacity=10);/*IE7 fix*/
+  opacity: 0.1;
  }
  
  #singInFormCarousel #uLogin img:hover {

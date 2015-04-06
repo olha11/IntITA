@@ -129,7 +129,8 @@
     }
     $(function() { centrSliderButtons(); });
     $(window).resize(function() { centrSliderButtons(); });
-    function centrMouseLine() { /* Маштабування лінії з мишкою*/
+    
+	function centrMouseLine() { /* Маштабування лінії з мишкою*/
         $('.mouseLine').css('height', document.body.clientWidth/15+'px')
         $('.mouseLine').css('width', document.body.clientWidth+'px')
         $('.mouseLine img').css('height', document.body.clientWidth/15.42+'px')
