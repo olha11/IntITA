@@ -58,6 +58,10 @@ return array(
 			'class'=>'system.caching.CFileCache',
 		),
 
+        'config' => array(
+            'class' => 'application.extensions.EConfig',
+        ),
+
         'messages'=>array(
             'class'=>'CDbMessageSource',
             'sourceMessageTable'=>'sourceMessages',
@@ -113,10 +117,6 @@ return array(
 					'levels'=>'error, warning',
 				),
 			),
-		),
-
-		'config' => array(
-			'class' => 'application.extensions.EConfig',
 		),
 	),
 

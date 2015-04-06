@@ -46,14 +46,14 @@ $lecture3->lectureIconImage=Yii::app()->request->baseUrl.'/css/images/medalIcoFa
 
 
 //Oblect Teacher, you can use designer
-$teacher=new TeachersTemp();
+$teacher=new Teacher();
 
 $teacher->foto_url=Yii::app()->request->baseUrl.'/css/images/teacherImage.png';
 $teacher->first_name='Іванов Іванов ВгадайПоБатькові';
 $teacher->email='ivanov@intita.org, ivanov@gmail.com';
 $teacher->tel='/067/56-569-56, /093/26-45-65';
 $teacher->skype='ivanov.ivanov';
-$teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherProfile';
+$teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherprofile';
 ?>
 
 

@@ -206,7 +206,8 @@ $massAbout=array($block1,$block2,$block3);
     <div class="mainAbout">
         <div class="header">
             <?php echo $headerText; ?>
-            <p>
+            <?php echo Yii::app()->messages->translatedMessageTable; ?>
+             <p>
                 <?php echo $subheaderText; ?>
             </p>
         </div>

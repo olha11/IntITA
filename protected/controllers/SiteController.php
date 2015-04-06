@@ -173,10 +173,11 @@ class SiteController extends Controller
 	public function actionChangeLang($lg)
 	{
 		$app = Yii::app();
+
 		if (isset($_GET['lg'])) {
 			if ($_GET['lg'] == 'ru'){
-				//Yii::app()->params['translatedMessageTable'] = 'translatedMessagesRU';
-				//Yii::app()->config->set('translatedMessageTable', 'translatedMessagesRU');
+                CDbMessageSource::$translatedMessageTable = 'translatedMessagesRU';
+                //Yii::app()->messages->translatedMessageTable = 'translatedmessagesru';
 			}
 			$app->session['lg'] = $_GET['lg'];
 		}

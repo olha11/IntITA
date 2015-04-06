@@ -1,7 +1,4 @@
-<!-- teacherProfile style -->
-<script src="https://apis.google.com/js/platform.js" async defer>
-    {lang: 'uk'}
-</script>
+
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/teacherProfile.css" />
 <!-- steps style -->
 <?php
@@ -73,5 +70,4 @@ $model->aboutTextSecond="
     <div class="TeacherProfileblock2">
     </div>
 </div>
-</body>
-</html>
+

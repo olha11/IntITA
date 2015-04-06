@@ -63,14 +63,14 @@ class TeachersController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new TeachersTemp;
+		$model=new Teacher();
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['TeachersTemp']))
+		if(isset($_POST['Teacher']))
 		{
-			$model->attributes=$_POST['TeachersTemp'];
+			$model->attributes=$_POST['Teacher'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->teacher_id));
 		}
@@ -92,9 +92,9 @@ class TeachersController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['TeachersTemp']))
+		if(isset($_POST['Teacher']))
 		{
-			$model->attributes=$_POST['TeachersTemp'];
+			$model->attributes=$_POST['Teacher'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->teacher_id));
 		}
@@ -123,13 +123,10 @@ class TeachersController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('TeachersTemp');
-		$page = new Teacherspage(1);
-		$page = $page->setValuesById();
+		$dataProvider=new CActiveDataProvider('Teacher');
 
 		$this->render('teachers',array(
 			'dataProvider'=>$dataProvider,
-			'page'=>$page,
 		));
 	}
 
@@ -138,10 +135,10 @@ class TeachersController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new TeachersTemp('search');
+		$model=new Teacher('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['TeachersTemp']))
-			$model->attributes=$_GET['TeachersTemp'];
+		if(isset($_GET['Teacher']))
+			$model->attributes=$_GET['Teacher'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -157,7 +154,7 @@ class TeachersController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=TeachersTemp::model()->findByPk($id);
+		$model=Teacher::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

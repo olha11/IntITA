@@ -88,12 +88,12 @@ class Mainpage extends CActiveRecord
 	 */
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
+     	// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
 			'id0' => array(self::BELONGS_TO, 'Mainpagetranslated', 'id'),
-			'mainpagetranslateds' => array(self::HAS_MANY, 'Mainpagetranslated', 'id'),
-		);
+			'mainpagetranslateds' => array(self::HAS_MANY, 'Mainpagetranslated', 'id')
+        );
 	}
 
 	/**
@@ -106,27 +106,27 @@ class Mainpage extends CActiveRecord
 			'language' => 'Language',
 			'message' => 'Message',
 			'category' => 'Category',
-			'title' => Yii::t('mainpage', 'INTITA'),
-			'sliderHeader' => Yii::t('mainpage', 'PROGRAM THE FUTURE'),
-			'sliderText' => 'Slider Text',
-			'sliderTextureURL' => 'Slider Texture Url',
-			'sliderLineURL' => 'Slider Line Url',
-			'sliderButtonText' => 'Slider Button Text',
-			'header1' => 'Header1',
-			'subLineImage' => 'Sub Line Image',
-			'subheader1' => 'Subheader1',
-			'arrayBlocks' => 'Array Blocks',
-			'header2' => 'Header2',
-			'subheader2' => 'Subheader2',
-			'arraySteps' => 'Array Steps',
-			'stepSize' => 'Step Size',
-			'linkName' => 'Link Name',
+			'title' => Yii::t('mainpage', '0001'),
+			'sliderHeader' => Yii::t('mainpage', '0005'),
+			'sliderText' => Yii::t('mainpage', '0027'),
+			'sliderTextureURL' => 'Slider texture',
+			'sliderLineURL' => 'Slider line',
+			'sliderButtonText' => Yii::t('mainpage', '0008'),
+			'header1' => Yii::t('mainpage', '0002'),
+			'subLineImage' => Yii::t('mainpage', ''),
+			'subheader1' => Yii::t('mainpage', ''),
+			'arrayBlocks' => 'Blocks',
+			'header2' => Yii::t('mainpage', ''),
+			'subheader2' => Yii::t('mainpage', ''),
+			'arraySteps' => 'Steps',
+			'stepSize' => Yii::t('mainpage', ''),
+			'linkName' => Yii::t('mainpage', ''),
 			'hexagon' => 'Hexagon',
-			'formHeader1' => 'Form Header1',
-			'formHeader2' => 'Form Header2',
-			'regText' => 'Reg Text',
-			'buttonStart' => 'Button Start',
-			'socialText' => 'Social Text',
+			'formHeader1' => Yii::t('mainpage', ''),
+			'formHeader2' => Yii::t('mainpage', ''),
+			'regText' => Yii::t('mainpage', ''),
+			'buttonStart' => Yii::t('mainpage', ''),
+			'socialText' => Yii::t('mainpage', ''),
 			'imageNetwork' => 'Image Network',
 			'formFon' => 'Form Fon',
 		);
@@ -194,9 +194,6 @@ class Mainpage extends CActiveRecord
 		return parent::model($className);
 	}
 
-	public function getTitle(){
-		return Yii::t('mainpage', 'INTITA');
-	}
 
 	public function getSliderText(){
 		return Yii::t('mainpage', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту і стань класним спеціалістом!');

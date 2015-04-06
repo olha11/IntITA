@@ -13,7 +13,7 @@
 <!-- BD -))) -->
 <?php
 $this->pageTitle = 'INTITA';
-$post=TeachersTemp::model()->findAll();
+$post=Teacher::model()->findAll();
 ?>
 <!-- BD -))) -->
 <div class="subNavBlockTeachers">

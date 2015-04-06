@@ -21,14 +21,14 @@
  * @property string $linkName
  * @property string $smallImage
  */
-class TeachersTemp extends CActiveRecord
+class Teacher extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'teacher_temp';
+		return 'teacher';
 	}
 
 	public function setValuesByID($id){
