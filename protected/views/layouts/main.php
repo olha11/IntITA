@@ -66,7 +66,6 @@
     </div>
     <?php
     $app = Yii::app();
-    echo $app->session['lg'];
     switch ($app->session['lg']) {
         case 'ua':
             ?>
