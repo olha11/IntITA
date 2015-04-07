@@ -95,7 +95,52 @@ $header = new Header();?>
         break;
     }
     ?>
+    <?php
+    $app = Yii::app();
+    switch ($app->session['lg']) {
+        case 'ua':
+            ?>
+        <script>
+            document.getElementById('ua').disabled = true;
+            document.getElementById('ua').className = "selectedLang";
+        </script>
+            <?php
+            break;
+        case 'en':
+            ?>
+        <script>
+            document.getElementById('en').disabled = true;
+            document.getElementById('en').className = "selectedLang";
+        </script>
+        <?php
+            break;
+        case 'ru':
+        ?>
+        <script>
+            document.getElementById('ru').disabled = true;
+            document.getElementById('ru').className = "selectedLang";
+        </script>
+        <?php
+            break;
+    }
+    ?>
 </div>
+<!--SingIn modal-->
+<?php
+$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+    'id' => 'mydialog',
+    'themeUrl'=>Yii::app()->request->baseUrl.'/css',
+    'cssFile'=>'jquery-ui.css',
+    'theme'=>'my',
+    'options' => array(
+        'width'=>540,
+        'autoOpen' => false,
+        'modal' => true,
+        'resizable'=> false
+    ),
+));
+$this->renderPartial('/site/_signinform');
+
 
 <div id="centerEnterButton">
     <div id="button_border" class="down">
@@ -313,6 +358,25 @@ else
             ),
         ));
         $this->renderPartial('/site/_signinform');
+        $this->endWidget('zii.widgets.jui.CJuiDialog');
+        ?>
+        <!--SignIn modal-->
+        <!--SingIn modal-->
+        <?php
+        $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+            'id' => 'mydialog',
+            'themeUrl'=>Yii::app()->request->baseUrl.'/css',
+            'cssFile'=>'jquery-ui.css',
+            'theme'=>'my',
+            'options' => array(
+                'width'=>540,
+                'autoOpen' => false,
+                'modal' => true,
+                'resizable'=> false
+            ),
+        ));
+        $this->renderPartial('/site/_signinform');
+
         $this->endWidget('zii.widgets.jui.CJuiDialog');
         ?>
         <!--SignIn modal-->

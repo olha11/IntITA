@@ -1,18 +1,19 @@
 <?php
     $model=new StudentReg();
-    $mainpage = new Mainpage();
 ?>
 
 <script src="//ulogin.ru/js/ulogin.js"></script>
 
-
+<!-- checkbox validation -->
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/checkValid.js"></script>
+<!-- checkbox validation -->
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/regform.css" />
 <div style="position:relative;"><a name="form" style="position:absolute; top:-60px;"></a></div>
-<div class="regFormBG" style="background:url('<?php echo Yii::app()->request->baseUrl; ?>/css/images/formfon.jpg') repeat-x;background-position: center center">
+<div class="regFormBG" >
 	<div class="regFormBox">
 
-		<p class="zagolovok"><?php echo $mainpage->getFormHeader1(); ?></p>
-		<p class="zagolovok2"><?php echo $mainpage->getFormHeader2(); ?></p>
+		<p class="zagolovok"><?php echo Yii::t('regform','Ready to get started?'); ?></p>
+		<p class="zagolovok2"><?php echo Yii::t('regform','Enter data into the form below'); ?></p>
 
 		<div class="signInForm">
 			<?php $form=$this->beginWidget('CActiveForm', array(
@@ -24,18 +25,18 @@
 				// See class documentation of CActiveForm for details on this.
                 'enableClientValidation'=>true,
                 'enableAjaxValidation'=>true,
-                'clientOptions'=>array('validateOnSubmit'=>false,'validateOnChange'=>true),
+                'clientOptions'=>array('validateOnSubmit'=>true,'validateOnChange'=>false),
             )); ?>
 			<div class="rowemail">
 				<?php $placeHolderEmail = Yii::t('regform','0014');?>
 				<?php echo $form->textField($model,'email',array('class'=>'signInEmail','placeholder'=>$placeHolderEmail,'size'=>60,'maxlength'=>255)); ?>
-				<?php echo $form->error($model,'email'); ?>
+				<?php echo $form->error($model,'email',array('id'=>'emailErr')); ?>
 			</div>
 
 			<div class="rowpass">
 				<?php $placeHolderPassword = Yii::t('regform','0015');?>
 				<span class="passEye"> <?php echo $form->passwordField($model,'password',array('class'=>'signInPass','placeholder'=>$placeHolderPassword,'size'=>60,'maxlength'=>255)); ?></span>
-				<?php echo $form->error($model,'password'); ?>
+				<?php echo $form->error($model,'password',array('id'=>'passErr')); ?>
                 <div class="forminfo">
                     <?php if(Yii::app()->user->hasFlash('forminfo')):
                         echo Yii::app()->user->getFlash('forminfo');
@@ -45,8 +46,8 @@
 
             <div class="regCheckboxW">
                 <div class="regCheckbox">
-                    <input type="checkbox" id="regCheckbox" value="" name="isExtended"/>
-                    <label for="regCheckbox"><?php echo $mainpage->getRegText(); ?></label>
+                    <input type="checkbox" id="regCheckbox" value="" name="isExtended" onchange="extReg()"/>
+                    <label for="regCheckbox"><?php echo Yii::t('regform','extended registration'); ?></label>
                 </div>
             </div>
 
@@ -59,8 +60,9 @@
 			<div class="image" >
 				<div id="singInFormCarousel">
 					<a href="#" class="arrow left-arrow" id="prev"><p><</p></a>
-						<div id="uLogin" x-ulogin-params="display=buttons;fields=first_name,last_name;
-								redirect_uri='//+[HTTP_HOST]+[REQUEST_URI]'">
+                    <script src="//ulogin.ru/js/ulogin.js"></script>
+                    <div id="uReg" x-ulogin-params="display=buttons;fields=email;optional=first_name,last_name,nickname,bdate,phone,photo,city;
+								redirect_uri=<?php echo Yii::app()->request->baseUrl.'/site/socialreg'?>">
 							<ul id="uLoginImages">
 								<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/google_plus.png" x-ulogin-button = "googleplus" title = "Google +"/></li>
 								<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/google.png" x-ulogin-button = "google" title = "Google"/></li></li>

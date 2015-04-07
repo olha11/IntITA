@@ -244,10 +244,12 @@ class SiteController extends Controller
 // validate user input and redirect to the previous page if valid
             if($model->validate()) {
                 $model->save();
-                Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися.');
-                $this->redirect(Yii::app()->request->baseUrl . '/site#form');
+                $modellogin = new StudentReg('loginuser');
+                $modellogin->attributes=$_POST['StudentReg'];
+                if($modellogin->login())
+                    $this->redirect(Yii::app()->request->baseUrl.'/courses');
 			}
-            Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися.');
+            Yii::app()->user->setFlash('forminfo', 'Ви ввели не вірні дані.');
             $this->redirect(Yii::app()->request->baseUrl . '/site#form');
 		}
 
@@ -279,4 +281,55 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+    public function actionSocialReg()
+    {
+        $model = new StudentReg('repidreg');
+
+        $s = file_get_contents('http://ulogin.ru/token.php?token=' .$_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
+        $user = json_decode($s, true);
+        //$user['network']
+        //$user['identity']
+        //$user['first_name']
+        //$user['last_name']
+
+        $model->email=$user['email'];
+        $model->firstName=$user['first_name'];
+        $model->secondName=$user['last_name'];
+        $model->nickname=$user['nickname'];
+        $model->birthday=$user['bdate'];
+        $model->phone=$user['phone'];
+        $model->avatar=$user['photo_big'];
+        $model->address=$user['city'];
+
+        $model->password='1111';
+        if($model->validate()) {
+            $model->save();
+            if($model->socialLogin())
+                $this->redirect(Yii::app()->request->baseUrl.'/courses');
+        } else {
+            Yii::app()->user->setFlash('forminfo', 'Ви уже зареєстровані');
+            $this->redirect(Yii::app()->request->baseUrl . '/site#form');
+        }
+    }
+
+    public function actionSocialLogin()
+    {
+        $model = new StudentReg('sociallogin');
+
+        $s = file_get_contents('http://ulogin.ru/token.php?token=' .$_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
+        $user = json_decode($s, true);
+        //$user['network']
+        //$user['identity']
+        //$user['first_name']
+        //$user['last_name']
+
+        $model->email=$user['email'];
+        if($model->socialLogin())
+            $this->redirect(Yii::app()->request->baseUrl.'/courses');
+        else {
+            Yii::app()->user->setFlash('forminfo', 'Зареєструйтесь спочатку через соцмережу');
+            $this->redirect(Yii::app()->request->baseUrl . '/site#form');
+        }
+    }
 }

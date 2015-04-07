@@ -52,11 +52,11 @@ class StudentReg extends CActiveRecord
         // will receive user inputs.
         return array(
             array('firstName, email, password, password_repeat', 'required', 'message'=>'Будь ласка введіть {attribute}.','on'=>'reguser'),
-            array('email, password', 'required', 'message'=>'Будь ласка введіть {attribute}.','on'=>'repidreg,loginuser'),
+            array('email, password', 'required', 'message'=>'Будь ласка введіть {attribute}.','on'=>'repidreg,loginuser,sociallogin'),
             array('email', 'email', 'message'=>'Email не являється правильною {attribute} адресою'),
             array('email','unique', 'caseSensitive'=>true, 'allowEmpty'=>true,'message'=>'Email уже зайнятий','on'=>'repidreg,reguser'),
             array('password', 'authenticate','on'=>'loginuser'),
-            // array('birthday', 'date','format' => 'dd/MM/yyyy','message'=>'Введіть дату народження в форматі дд.мм.рррр'),
+            //array('birthday', 'date','format' => 'dd/MM/yyyy','message'=>'Введіть дату народження в форматі дд.мм.рррр'),
             array('password', 'compare', 'compareAttribute'=>'password_repeat', 'message'=>'Паролі не співпадають','on'=>'reguser'),
             array('firstName, secondName, nickname, email, password, education', 'length', 'max'=>255),
             array('birthday', 'length', 'max'=>11),
@@ -123,6 +123,22 @@ class StudentReg extends CActiveRecord
             $this->_identity->authenticate();
         }
         if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
+        {
+            $duration=3600*24; // 30 days
+            Yii::app()->user->login($this->_identity,$duration);
+            return true;
+        }
+        else
+            return false;
+    }
+    public function socialLogin()
+    {
+        if($this->_identity===null)
+        {
+            $this->_identity=new SocialUserIdentity($this->email,$this->email);
+            $this->_identity->authenticate();
+        }
+        if($this->_identity->errorCode===SocialUserIdentity::ERROR_NONE)
         {
             $duration=3600*24; // 30 days
             Yii::app()->user->login($this->_identity,$duration);
