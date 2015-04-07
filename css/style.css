@@ -35,12 +35,12 @@ p {
     margin-left: 500px;
 }
 #lang #en {
-    border-left: 1px solid #999999;
-    border-right: 1px solid #999999;
-    padding-left: 8px;
-    padding-right: 8px;
-}
-#lang button{
+     border-left: 1px solid #999999;
+     border-right: 1px solid #999999;
+     padding-left: 8px;
+     padding-right: 8px;
+ }
+#lang input[type="button"]{
     background:none!important;
     border:none;
     cursor: pointer;
@@ -49,16 +49,7 @@ p {
     font-family: "MyriadPro";
     text-decoration: underline;
 }
-#lang button a{
-    background:none!important;
-    border:none;
-    cursor: pointer;
-    color: #4b70a3;
-    font-size: 18px;
-    font-family: "MyriadPro";
-    text-decoration: underline;
-}
-#lang .selectedLang {
+#lang input[type="button"].selectedLang {
     text-decoration: none;
     color: #999999;
 }
@@ -244,8 +235,8 @@ p {
 {
     font-size: 35px;
     letter-spacing: 1px;
-    margin-bottom:0;
-    padding-bottom: 0;
+    margin:0;
+    padding: 0;
     color:#ffffff;
     line-height: 100%;
 }
