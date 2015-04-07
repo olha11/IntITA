@@ -1,5 +1,17 @@
 <!-- courses style -->
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/courses.css" />
+
+<script type="text/javascript">
+    function wrt(x)
+    {
+        document.getElementById("razv").innerHTML=x;
+        if (x!="")
+        {document.getElementById("sver").innerHTML="Приховати";}
+        else
+        {document.getElementById("sver").innerHTML=""; document.getElementById("razv").innerHTML="Далі";}
+    }
+</script>
+
 <?php
 $this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
@@ -16,17 +28,17 @@ $this->breadcrumbs=array(
 		public $courseReview;
 		public $courseMaxNumberofModules=4;
 		public $coursesHeader='Наші курси';
-		public $courseLevelTitle='Рівень курсу:  ';
-		public $coursesTextHeader= '';
-		public $coursesTextFooter="Спочатку навчання створюється стійкий фундамент для підготовки програмістів: 
-		необхідні знання елементарної математики, будови комп’ютера і основ інформатики.
-		<p>Потім вивчаються основні принципи програмування на базі класичних комп'ютерних наук і методологій: алгоритмічна мова; 
-		лементи вищої та дискретної математики і комбінаторики; структури даних, розробка і аналіз алгоритмів.
-		<p>
-		Після чого формується база для переходу до сучасних технологій програмування: об’єктно-орієнтоване програмування; проектування баз даних.
-		<p>Завершення процесу підготовки шляхом конкретного застосування отриманих знань на реальних проектах із засвоєнням сучасних методів і технологій, 
-		які використовуються в ІТ індустрії компаніями.";
-		
+		public $courseLevelTitle='Рівень курсу:';
+		public $coursesTextHeader= 'Концепція підготовки';
+		public $coursesTextFooter="<p><span id='courseText2'>Спочатку навчання створюється стійкий фундамент для підготовки програмістів:
+		необхідні знання елементарної математики, будови комп’ютера і основ інформатики.</span>";
+        public $coursesTextFooter2="<p><span id='courseText2'>Потім вивчаються основні принципи програмування на базі класичних комп'ютерних наук і методологій: алгоритмічна мова;
+		лементи вищої та дискретної математики і комбінаторики; структури даних, розробка і аналіз алгоритмів.</span>
+		<p><span id='courseText2'>
+		Після чого формується база для переходу до сучасних технологій програмування: об’єктно-орієнтоване програмування; проектування баз даних.</span>
+		<p><span id='courseText2'>Завершення процесу підготовки шляхом конкретного застосування отриманих знань на реальних проектах із засвоєнням сучасних методів і технологій,
+		які використовуються в ІТ індустрії компаніями.</span>";
+
 		function Course ( $courseImage,$courseName,$courseLevel,$courseNumberofModules,$courseReview)
 		{
 		$this->courseImage=$courseImage;
@@ -42,16 +54,17 @@ $this->breadcrumbs=array(
 	$course3=new Course (Yii::app()->request->baseUrl.'/css/images/course3Image.png','Основи програмування','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
 	$course4=new Course (Yii::app()->request->baseUrl.'/css/images/course4Image.png','Основи програмування','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
 	$course5=new Course (Yii::app()->request->baseUrl.'/css/images/course5Image.png','Основи програмування','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-	
-	$coursesArray1=array($course1,$course2,$course3,$course4,$course5);
+    $course11=new Course (Yii::app()->request->baseUrl.'/css/images/course11Image.png','Основи нейролінгвістичного програмування','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+
+	$coursesArray1=array($course1,$course2,$course3,$course4,$course5,$course11);
 	
 	$course7=new Course (Yii::app()->request->baseUrl.'/css/images/course7Image.png','Основи нейролінгвістичного програмування ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
 	$course8=new Course (Yii::app()->request->baseUrl.'/css/images/course8Image.png','Основи нейролінгвістичного програмування','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
 	$course9=new Course (Yii::app()->request->baseUrl.'/css/images/course9Image.png','Основи нейролінгвістичного програмування ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
 	$course10=new Course (Yii::app()->request->baseUrl.'/css/images/course10Image.png','Основи нейролінгвістичного програмування ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-	$course11=new Course (Yii::app()->request->baseUrl.'/css/images/course11Image.png','Основи нейролінгвістичного програмування','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+
 	
-	$coursesArray2=array($course7,$course8,$course9,$course10,$course11,);
+	$coursesArray2=array($course7,$course8,$course9,$course10);
 	
 	$courseDisableImage=Yii::app()->request->baseUrl.'/css/images/ratIco0.png';
 	$courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
@@ -60,24 +73,34 @@ $this->breadcrumbs=array(
 
 <div id='coursesMainBox'>
 
+    <h1><?php echo $course1->coursesHeader; ?></h1>
 
-	<div id='coursesHeader'>
-	<?php echo Yii::t('courses', 'Our courses'); ?>
-	</div>
+    <table>
+        <tr>
+            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(100)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(2)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(34)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(4)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(4)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(56)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(40)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(9)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+
+</tr>
+</table>
+
+
+
+    <div class="coursesline1">
+        <a id="coursesline1" href="#form"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline1.png"/></a>
+    </div>
+
+
 
 <table>
 <tr><td  valign="top">
 <div id='coursesPart1'>
-		<div class='courseBox'>
-    		<img src='<?php echo $course11->courseImage; ?>'>
-            <div class='courseName'>
-            <?php echo Yii::t('courses', 'Concept of learning'); ?>
-    		</div>
-    		        <span class='courseText'>
 
-	<?php echo $course1->coursesTextFooter; ?>
-    		</span>
-        </div>
 
 	<?php
 	foreach ($coursesArray1 as $val)   
@@ -111,16 +134,26 @@ $this->breadcrumbs=array(
 			?>
 			</div>
 		</div>
-        <div class="courseLang">
+
+
+            <div class="courseStatus">
+                <p>Стан курсу: <span id="courseStatus1">доступний</span></p>
+            </div>
+
+
+
+
+
+            <div class="courseLang">
         <?php echo Yii::t('courses', 'Language:'); ?>
             <div id="coursesLang" class="down">
                 <form action="" method="post" onsubmit="" name="fff">
                     <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
-        
+
                     <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'EN'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
-        
+
                     <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'RU'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
-        
+
                 </form>
             </div>
         </div>
@@ -131,17 +164,43 @@ $this->breadcrumbs=array(
 		</div> <?php
 	}
 	?>
+
 </div></td>
 
 <td >
 <div id='coursesPart2'>
-	<?php
+           <div class="bgBlue">
+                                                   <table>
+                                                       <tr>
+                                                           <td  valign="top">
+                                                                  <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/course99.png">
+                                                           </td>
+                                                           <td>
+                                                               <div id='coursesHeader'>
+                                                                   <?php echo $course1->coursesTextHeader; ?>
+                                                               </div>
+                                                           </td>
+                                                       </tr>
+                                                   </table>
+    <div class='courseBox'>
+
+	<?php echo $course1->coursesTextFooter; ?>
+
+        <div id="razv" onclick='wrt(" dds")'>
+            Далі
+        </div>
+        <br><br>
+        <div id="sver" onclick='wrt("");'></div>
+
+    </div>
+            </div>
+    <?php
 	foreach ($coursesArray2 as $val)   
 	{
 		?>
 		<div class='courseBox'>
 		<img src='<?php echo $val->courseImage; ?>'>
-		<div class='courseName'><a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=course"><?php
+		<div class='courseName'><a id="disabled" href="<?php echo Yii::app()->request->baseUrl; ?>/?r=course"><?php
 				echo $val->courseName; ?></a>
 		</div>
 		<div class="courseLevelBox">
@@ -167,7 +226,11 @@ $this->breadcrumbs=array(
 			?>
 			</div>
 		</div>
-        <div class="courseLang">
+            <div class="courseStatus">
+                <p>Стан курсу:<span id="courseStatus2"> розробляється </span></p>
+            </div>
+
+            <div class="courseLang">
         <?php echo $val->courseLang; ?>
             <div id="coursesLang" class="down">
                 <form action="" method="post" onsubmit="" name="fff">
@@ -186,14 +249,17 @@ $this->breadcrumbs=array(
 		</span>
 		</div> <?php
 	}
-	
 	?>
 </div>
 </td>
 </tr>
 </table>
+</div>
 
-</div><! main box>
+
+
+
+<! main box>
 
 <script>
     function changeLang(n){
