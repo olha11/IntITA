@@ -180,7 +180,7 @@ class SiteController extends Controller
 			}
 			$app->session['lg'] = $_GET['lg'];
 		}
-		$this->redirect(Yii::app()->user->returnUrl);
+		$this->redirect($_SERVER["HTTP_REFERER"]);
 	}
 	/**
 	 * Displays the contact page
@@ -230,8 +230,10 @@ class SiteController extends Controller
 // validate user input and redirect to the previous page if valid
             if($model->validate()) {
                 $model->save();
-                Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися.');
-                $this->redirect(Yii::app()->request->baseUrl . '/site#form');
+                $modellogin = new StudentReg('loginuser');
+                $modellogin->attributes=$_POST['StudentReg'];
+                if($modellogin->login())
+                    $this->redirect(Yii::app()->request->baseUrl.'/courses');
 			}
             Yii::app()->user->setFlash('forminfo', 'Ви ввели не вірні дані.');
             $this->redirect(Yii::app()->request->baseUrl . '/site#form');
