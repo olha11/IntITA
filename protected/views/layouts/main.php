@@ -58,21 +58,42 @@
     </div>
 
     <div id="lang" class="down">
-        <form action="" method="post" onsubmit="" name="fff">
-            <button formaction="" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>
-                <?php echo CHtml::link('ua',array('site/changeLang','lg'=>'ua')); ?>
-            </button>
-
-            <button formaction="" id="en" name="en" onclick="changeLang(this)">
-                <?php echo CHtml::link('en',array('site/changeLang','lg'=>'en')); ?>
-            </button>
-
-            <button formaction="" id="ru" name="ru" onclick="changeLang(this)">
-                <?php echo CHtml::link('ru',array('site/changeLang','lg'=>'ru')); ?>
-            </button>
+        <form  method="" onsubmit="" name="fff">
+            <?php echo CHtml::button('ua', array('submit' => array('site/changeLang','lg'=>'ua'),'id'=>"ua",'name'=>"ua")); ?>
+            <?php echo CHtml::button('en', array('submit' => array('site/changeLang','lg'=>'en'),'id'=>"en",'name'=>"en")); ?>
+            <?php echo CHtml::button('ru', array('submit' => array('site/changeLang','lg'=>'ru'),'id'=>"ru",'name'=>"ru")); ?>
         </form>
     </div>
-
+    <?php
+    $app = Yii::app();
+    echo $app->session['lg'];
+    switch ($app->session['lg']) {
+        case 'ua':
+            ?>
+        <script>
+            document.getElementById('ua').disabled = true;
+            document.getElementById('ua').className = "selectedLang";
+        </script>
+            <?php
+            break;
+        case 'en':
+            ?>
+        <script>
+            document.getElementById('en').disabled = true;
+            document.getElementById('en').className = "selectedLang";
+        </script>
+        <?php
+            break;
+        case 'ru':
+        ?>
+        <script>
+            document.getElementById('ru').disabled = true;
+            document.getElementById('ru').className = "selectedLang";
+        </script>
+        <?php
+            break;
+    }
+    ?>
 </div>
 
 
@@ -137,21 +158,7 @@
 	</div>
 </div>
 
-
 <script>
-
-    function changeLang(n){
-        for (var i=0; i< n.form.length; i++){
-            if(n.form.elements[i].id !== n.id){
-                console.log(n.form.elements[i].id);
-                document.getElementById(n.form.elements[i].id).disabled = false;
-                document.getElementById(n.form.elements[i].id).className = "";
-            }
-        }
-        document.getElementById(n.id).disabled = true;
-        document.getElementById(n.id).className = "selectedLang";
-    }
-
 var width=0;
 if (self.screen)
 {
