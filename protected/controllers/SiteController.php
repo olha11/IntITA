@@ -15,6 +15,9 @@ class SiteController extends Controller
 	/**
 	 * Declares class-based actions.
 	 */
+
+    public $sourceMessages;
+
 	public function actions()
 	{
 		return array(
@@ -180,12 +183,18 @@ class SiteController extends Controller
 	{
 		$app = Yii::app();
 		if (isset($_GET['lg'])) {
-			if ($_GET['lg'] == 'ru'){
-                //$app->session['translatedMessagesTable'] = 'translatedmessagesru';
-			}
-			//$app->session['lg'] = $_GET['lg'];
+			if($_GET['lg'] == 'ru') {
+                $app->session['translatedTable'] = 'translatedMessagesRU';
+            }
+            if($_GET['lg'] == 'en') {
+                $app->session['translatedTable'] = 'translatedMessagesEN';
+            }
+            if($_GET['lg'] == 'ua') {
+                $app->session['translatedTable'] = 'translatedMessagesUA';
+            }
+			$app->session['lg'] = $_GET['lg'];
 		}
-		$this->redirect(Yii::app()->user->returnUrl);
+        $this->redirect($_SERVER["HTTP_REFERER"]);
 	}
 	/**
 	 * Displays the contact page

@@ -77,16 +77,16 @@ class MyCDbMessageSource extends CDbMessageSource{
         return $this->_db;
     }
 
-    public function changeTranslatedTable(){
-        $this->translatedMessageTable = Yii::app()->session['translatedMessagesTable'];
+    public function changeTranslatedTable($table){
+        $this->translatedMessageTable = $table;
     }
 
     protected function loadMessagesFromDb($category,$language)
     {
-
+        $app = Yii::app();
         $command=$this->getDbConnection()->createCommand()
             ->select("t1.message AS message, t2.translation AS translation")
-            ->from(array("{$this->sourceMessageTable} t1","{$this->translatedMessageTable} t2"))
+            ->from(array("{$this->sourceMessageTable} t1","{$app->session['translatedTable']} t2"))
             ->where('t1.id=t2.id AND t1.category=:category AND t2.language=:language',array(':category'=>$category,':language'=>$language))
         ;
         $messages=array();

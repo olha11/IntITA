@@ -40,7 +40,7 @@ p {
     padding-left: 8px;
     padding-right: 8px;
 }
-#lang button{
+#lang input[type="button"]{
     background:none!important;
     border:none;
     cursor: pointer;
@@ -49,16 +49,7 @@ p {
     font-family: "MyriadPro";
     text-decoration: underline;
 }
-#lang button a{
-    background:none!important;
-    border:none;
-    cursor: pointer;
-    color: #4b70a3;
-    font-size: 18px;
-    font-family: "MyriadPro";
-    text-decoration: underline;
-}
-#lang .selectedLang {
+#lang input[type="button"].selectedLang {
     text-decoration: none;
     color: #999999;
 }

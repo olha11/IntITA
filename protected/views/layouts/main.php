@@ -43,6 +43,7 @@ $header = new Header();?>
 </head>
 
 <body>
+
 <div id="navigation" class="down" >
     <div class="main">
         <div id="logo_img" class="down">
@@ -51,49 +52,50 @@ $header = new Header();?>
             </a>
         </div>
         <ul>
-            <li><a href="<?php echo $this->link1; ?>"><?php echo $header->getMenuItem1(); ?></a></li>
-            <li><a href="<?php echo $this->link2; ?>"><?php echo $header->getMenuItem2(); ?></a></li>
-            <li><a href="<?php echo $this->link3; ?>"><?php echo $header->getMenuItem3(); ?></a></li>
-            <li><a href="<?php echo $this->link4; ?>"><?php echo $header->getMenuItem4(); ?></a></li>
+            <li><a href="<?php echo $this->link1; ?>"><?php echo Yii::t('header','0016'); ?></a></li>
+            <li><a href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','0020'); ?></a></li>
+            <li><a href="<?php echo $this->link3; ?>"><?php echo Yii::t('header','0017'); ?></a></li>
+            <li><a href="<?php echo $this->link4; ?>"><?php echo Yii::t('header','0018'); ?></a></li>
         </ul>
     </div>
 
     <div id="lang" class="down">
-        <form action="" method="post" onsubmit="" name="fff">
-            <button formaction="" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>
-                <?php echo CHtml::link('ua',array('site/changeLang','lg'=>'ua')); ?>
-            </button>
-
-            <button formaction="" id="en" name="en" onclick="changeLang(this)">
-                <?php echo CHtml::link('en',array('site/changeLang','lg'=>'en')); ?>
-            </button>
-
-            <button formaction="" id="ru" name="ru" onclick="changeLang(this)">
-                <?php echo CHtml::link('ru',array('site/changeLang','lg'=>'ru')); ?>
-            </button>
+        <form  method="" onsubmit="" name="fff">
+            <?php echo CHtml::button('ua', array('submit' => array('site/changeLang','lg'=>'ua'),'id'=>"ua",'name'=>"ua")); ?>
+            <?php echo CHtml::button('en', array('submit' => array('site/changeLang','lg'=>'en'),'id'=>"en",'name'=>"en")); ?>
+            <?php echo CHtml::button('ru', array('submit' => array('site/changeLang','lg'=>'ru'),'id'=>"ru",'name'=>"ru")); ?>
         </form>
     </div>
-
+    <?php
+    $app = Yii::app();
+    switch ($app->session['lg']) {
+    case 'ua':
+        ?>
+        <script>
+            document.getElementById('ua').disabled = true;
+            document.getElementById('ua').className = "selectedLang";
+        </script>
+    <?php
+    break;
+    case 'en':
+    ?>
+        <script>
+            document.getElementById('en').disabled = true;
+            document.getElementById('en').className = "selectedLang";
+        </script>
+    <?php
+    break;
+    case 'ru':
+    ?>
+        <script>
+            document.getElementById('ru').disabled = true;
+            document.getElementById('ru').className = "selectedLang";
+        </script>
+        <?php
+        break;
+    }
+    ?>
 </div>
-<!--SingIn modal-->
-<?php
-$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
-    'id' => 'mydialog',
-    'themeUrl'=>Yii::app()->request->baseUrl.'/css',
-    'cssFile'=>'jquery-ui.css',
-    'theme'=>'my',
-    'options' => array(
-        'width'=>540,
-        'autoOpen' => false,
-        'modal' => true,
-        'resizable'=> false
-    ),
-));
-$this->renderPartial('/site/_signinform');
-
-$this->endWidget('zii.widgets.jui.CJuiDialog');
-?>
-<!--SignIn modal-->
 
 <div id="centerEnterButton">
     <div id="button_border" class="down">
@@ -135,19 +137,19 @@ $this->endWidget('zii.widgets.jui.CJuiDialog');
 <div id="hamburgerMainBox">
 	<div id="hamburgerSubBox">
 		<div class="hamburgerBox">
-			<a class="hamburgerLink" href="<?php echo $this->link1; ?>"><?php echo $header->getMenuItem1(); ?></a>
+			<a class="hamburgerLink" href="<?php echo $this->link1; ?>"><?php echo Yii::t('header','0016'); ?></a>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox">
-			<a  class="hamburgerLink" href="<?php echo $this->link2; ?>"><?php echo $header->getMenuItem2(); ?></a>
+			<a  class="hamburgerLink" href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','0020'); ?></a>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox">
-			<a  class="hamburgerLink" href="<?php echo $this->link3; ?>"><?php echo $header->getMenuItem3(); ?></a>
+			<a  class="hamburgerLink" href="<?php echo $this->link3; ?>"><?php echo Yii::t('header','0017'); ?></a>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox">
-			<a  class="hamburgerLink" href="<?php echo $this->link4; ?>"><?php echo $header->getMenuItem4(); ?></a>
+			<a  class="hamburgerLink" href="<?php echo $this->link4; ?>"><?php echo Yii::t('header','0018'); ?></a>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox2">
@@ -159,17 +161,6 @@ $this->endWidget('zii.widgets.jui.CJuiDialog');
 
 <script>
 
-    function changeLang(n){
-        for (var i=0; i< n.form.length; i++){
-            if(n.form.elements[i].id !== n.id){
-                console.log(n.form.elements[i].id);
-                document.getElementById(n.form.elements[i].id).disabled = false;
-                document.getElementById(n.form.elements[i].id).className = "";
-            }
-        }
-        document.getElementById(n.id).disabled = true;
-        document.getElementById(n.id).className = "selectedLang";
-    }
 
 var width=0;
 if (self.screen)
@@ -296,10 +287,10 @@ else
             </div>
             <div>
                 <ul>
-                    <li><a href="<?php echo $this->link1; ?>"><?php echo $header->getMenuItem1(); ?></a></li>
-                    <li><a href="<?php echo $this->link2; ?>"><?php echo $header->getMenuItem2();  ?></a></li>
-                    <li><a href="<?php echo $this->link3; ?>"><?php echo $header->getMenuItem3();  ?></a></li>
-                    <li><a href="<?php echo $this->link4; ?>"><?php echo $header->getMenuItem4();  ?></a></li>
+                    <li><a href="<?php echo $this->link1; ?>"><?php echo Yii::t('header','0016'); ?></a></li>
+                    <li><a href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','0020');  ?></a></li>
+                    <li><a href="<?php echo $this->link3; ?>"><?php echo Yii::t('header','0017');  ?></a></li>
+                    <li><a href="<?php echo $this->link4; ?>"><?php echo Yii::t('header','0018');  ?></a></li>
                 </ul>
             </div>
         </div>
@@ -307,6 +298,24 @@ else
             <a href="<?php echo Yii::app()->request->baseUrl;?>"><img src="<?php echo $this->imageUp; ?>" style="margin-top: 20px;"/></a>
         </div>
     <div class="footer"></div>
+        <!--SingIn modal-->
+        <?php
+        $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+            'id' => 'mydialog',
+            'themeUrl'=>Yii::app()->request->baseUrl.'/css',
+            'cssFile'=>'jquery-ui.css',
+            'theme'=>'my',
+            'options' => array(
+                'width'=>540,
+                'autoOpen' => false,
+                'modal' => true,
+                'resizable'=> false
+            ),
+        ));
+        $this->renderPartial('/site/_signinform');
+        $this->endWidget('zii.widgets.jui.CJuiDialog');
+        ?>
+        <!--SignIn modal-->
 </div>
 </div><!-- footer -->
 </div>

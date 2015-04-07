@@ -22,6 +22,7 @@ class Controller extends CController
 	public $mobile;
 	public $email;
 	public $imageSotial;
+    public  $sourceMessages;
 
 	public function init(){
 		$this->logoURL = Yii::app()->request->baseUrl.Header::model()->findByPk(1)->logoURL;
@@ -37,7 +38,9 @@ class Controller extends CController
 		if (isset($app->session['lg'])) {
 			$app->language = $app->session['lg'];
 		}
-        $app->session['translatedMessageTable'] = 'translatedMessagesUA';
+        if (!isset($app->session['translatedTable'])) {
+            $app->session['translatedTable'] = 'translatedMessagesRU';
+        }
 	}
 	/**
 	 * @var string the default layout for the controller view. Defaults to '//layouts/column1',
