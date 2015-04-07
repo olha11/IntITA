@@ -4,7 +4,9 @@
 
 <script src="//ulogin.ru/js/ulogin.js"></script>
 
-
+<!-- checkbox validation -->
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/checkValid.js"></script>
+<!-- checkbox validation -->
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/regform.css" />
 <div style="position:relative;"><a name="form" style="position:absolute; top:-60px;"></a></div>
 <div class="regFormBG" >
@@ -23,18 +25,18 @@
 				// See class documentation of CActiveForm for details on this.
                 'enableClientValidation'=>true,
                 'enableAjaxValidation'=>true,
-                'clientOptions'=>array('validateOnSubmit'=>false,'validateOnChange'=>true),
+                'clientOptions'=>array('validateOnSubmit'=>true,'validateOnChange'=>false),
             )); ?>
 			<div class="rowemail">
 				<?php $placeHolderEmail = Yii::t('regform','Email');?>
 				<?php echo $form->textField($model,'email',array('class'=>'signInEmail','placeholder'=>$placeHolderEmail,'size'=>60,'maxlength'=>255)); ?>
-				<?php echo $form->error($model,'email'); ?>
+				<?php echo $form->error($model,'email',array('id'=>'emailErr')); ?>
 			</div>
 
 			<div class="rowpass">
 				<?php $placeHolderPassword = Yii::t('regform','Password');?>
 				<span class="passEye"> <?php echo $form->passwordField($model,'password',array('class'=>'signInPass','placeholder'=>$placeHolderPassword,'size'=>60,'maxlength'=>255)); ?></span>
-				<?php echo $form->error($model,'password'); ?>
+				<?php echo $form->error($model,'password',array('id'=>'passErr')); ?>
                 <div class="forminfo">
                     <?php if(Yii::app()->user->hasFlash('forminfo')):
                         echo Yii::app()->user->getFlash('forminfo');
@@ -44,7 +46,7 @@
 
             <div class="regCheckboxW">
                 <div class="regCheckbox">
-                    <input type="checkbox" id="regCheckbox" value="" name="isExtended"/>
+                    <input type="checkbox" id="regCheckbox" value="" name="isExtended" onchange="extReg()"/>
                     <label for="regCheckbox"><?php echo Yii::t('regform','extended registration'); ?></label>
                 </div>
             </div>
@@ -53,7 +55,6 @@
 				<?php $labelButton = Yii::t('regform','JOIN');?>
 				<?php echo CHtml::submitButton($labelButton, array('id' => "signInButton")); ?>
 			</div>
-
 			<div class="linesignInForm"><?php echo Yii::t('regform','You can also enter by social networks:'); ?></div>
 			<div class="image" >
 				<div id="singInFormCarousel">
@@ -92,6 +93,5 @@
 
 			<?php $this->endWidget(); ?>
 		</div><!-- form -->
-
 	</div>
 </div>

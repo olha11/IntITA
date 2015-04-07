@@ -1,8 +1,10 @@
 .regFormBG{
     padding-bottom: 100px;
-    padding-top: 10px;
     background:url('images/formfon.jpg') repeat-x;
     background-position: center center;
+    margin-top: 0;
+    height:100%;
+    padding-top: 40px;
 }
 .regFormBox{
     margin:0 auto;
@@ -83,6 +85,7 @@ div.linesignInForm{
 }
 .rowButtons{
     margin-bottom:25px;
+    position: relative;
 }
 .image{
     margin:0 auto;
@@ -293,6 +296,7 @@ select.error
 }
 #studentreg-form{
     padding-bottom: 20px;
+    overflow: hidden;
 }
 .signIn .image{
     margin-bottom: 20px;
@@ -342,26 +346,26 @@ select.error
     color: #4b75a4;
 }
 
-#singInFormCarousel #uLogin {
+#singInFormCarousel #uLogin,#singInFormCarousel #uReg {
   width: 344px;
   overflow: hidden;
 }
 
-#singInFormCarousel #uLogin ul {
+#singInFormCarousel #uLogin ul,#singInFormCarousel #uReg ul {
  width: 9999px;
   margin: 0;
   padding: 0;
   list-style: none;
  }
  
-#singInFormCarousel #uLogin ul li {
+#singInFormCarousel #uLogin ul li,#singInFormCarousel #uReg ul li {
 	float: left;
 	margin-left: 1.5px;
 	margin-right: 1.5px;
 	}
 	
 
-#singInFormCarousel #uLogin img {
+#singInFormCarousel #uLogin img,#singInFormCarousel #uReg img {
   width: 40px;
   height: 40px;
   display: block;
@@ -369,7 +373,7 @@ select.error
   opacity: 0.4;
  }
  
- #singInFormCarousel #uLogin img:hover {
+ #singInFormCarousel #uLogin img:hover, #singInFormCarousel #uReg img:hover {
 	filter: Alpha(Opacity=100);/*IE7 fix*/
 	opacity: 1.0;
  }
