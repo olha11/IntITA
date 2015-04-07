@@ -53,7 +53,7 @@ $header = new Header();?>
         </div>
         <ul>
             <li><a href="<?php echo $this->link1; ?>"><?php echo Yii::t('header','0016'); ?></a></li>
-            <li><a href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','0020'); ?></a></li>
+            <li><a href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','0021'); ?></a></li>
             <li><a href="<?php echo $this->link3; ?>"><?php echo Yii::t('header','0017'); ?></a></li>
             <li><a href="<?php echo $this->link4; ?>"><?php echo Yii::t('header','0018'); ?></a></li>
         </ul>
@@ -141,7 +141,7 @@ $header = new Header();?>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox">
-			<a  class="hamburgerLink" href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','0020'); ?></a>
+			<a  class="hamburgerLink" href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','0021'); ?></a>
 		</div>
 		<div class="hamburgerLine"></div>
 		<div class="hamburgerBox">
@@ -288,7 +288,7 @@ else
             <div>
                 <ul>
                     <li><a href="<?php echo $this->link1; ?>"><?php echo Yii::t('header','0016'); ?></a></li>
-                    <li><a href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','0020');  ?></a></li>
+                    <li><a href="<?php echo $this->link2; ?>"><?php echo Yii::t('header','0021');  ?></a></li>
                     <li><a href="<?php echo $this->link3; ?>"><?php echo Yii::t('header','0017');  ?></a></li>
                     <li><a href="<?php echo $this->link4; ?>"><?php echo Yii::t('header','0018');  ?></a></li>
                 </ul>
