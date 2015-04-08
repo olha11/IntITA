@@ -49,16 +49,16 @@ $this->breadcrumbs=array(
 		}
 	}
 	
-	$course1=new Course (Yii::app()->request->baseUrl.'/css/images/course1Image.png','Основи програмування','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-	$course2=new Course (Yii::app()->request->baseUrl.'/css/images/course2Image.png','Основи програмування','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-	$course3=new Course (Yii::app()->request->baseUrl.'/css/images/course3Image.png','Основи програмування','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-	$course4=new Course (Yii::app()->request->baseUrl.'/css/images/course4Image.png','Основи програмування','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-	$course5=new Course (Yii::app()->request->baseUrl.'/css/images/course5Image.png','Основи програмування','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-    $course11=new Course (Yii::app()->request->baseUrl.'/css/images/course11Image.png','Основи нейролінгвістичного програмування','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course1=new Course (Yii::app()->request->baseUrl.'/css/images/course1Image.png','Інтернет програміст (РНР)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course2=new Course (Yii::app()->request->baseUrl.'/css/images/course2Image.png','програміст (Java Script)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course3=new Course (Yii::app()->request->baseUrl.'/css/images/course3Image.png','Програміст (Java)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course4=new Course (Yii::app()->request->baseUrl.'/css/images/course4Image.png','Програміст (C#)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course5=new Course (Yii::app()->request->baseUrl.'/css/images/course5Image.png','Програміст (С++)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+    $course11=new Course (Yii::app()->request->baseUrl.'/css/images/course11Image.png','Тестувальник (QA) ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
 
 	$coursesArray1=array($course1,$course2,$course3,$course4,$course5,$course11);
 	
-	$course7=new Course (Yii::app()->request->baseUrl.'/css/images/course7Image.png','Основи нейролінгвістичного програмування ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course7=new Course (Yii::app()->request->baseUrl.'/css/images/course7Image.png','Основи програмування','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
 	$course8=new Course (Yii::app()->request->baseUrl.'/css/images/course8Image.png','Основи нейролінгвістичного програмування','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
 	$course9=new Course (Yii::app()->request->baseUrl.'/css/images/course9Image.png','Основи нейролінгвістичного програмування ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
 	$course10=new Course (Yii::app()->request->baseUrl.'/css/images/course10Image.png','Основи нейролінгвістичного програмування ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
@@ -77,14 +77,14 @@ $this->breadcrumbs=array(
 
     <table>
         <tr>
-            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(100)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(2)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(34)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(4)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(4)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(56)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(40)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">sourse</a>&nbsp;(9)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">Усі курси</a>&nbsp;(25)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">Для початківців</a>&nbsp;(2)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">Веб-дизайн</a>&nbsp;(1)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">Під Android </a>&nbsp;(2)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">Під Apple</a>&nbsp;(2)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">Просунені курси</a>&nbsp;(12)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">UI/UIX</a>&nbsp;(1)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">Адміністрування</a>&nbsp;(1)</div></td>
 
 </tr>
 </table>
@@ -203,10 +203,10 @@ $this->breadcrumbs=array(
 		<div class='courseName'><a id="disabled" href="<?php echo Yii::app()->request->baseUrl; ?>/?r=course"><?php
 				echo $val->courseName; ?></a>
 		</div>
-		<div class="courseLevelBox">
+		<div class="courseLevelBox2">
 			<?php echo $val->courseLevelTitle; ?>
 		
-			<span class="courseLevel">
+			<span class="courseLevel2">
 			<?php echo $val->courseLevel; ?>
 			</span>
 			<div class='courseLevelIndex'>
@@ -226,11 +226,11 @@ $this->breadcrumbs=array(
 			?>
 			</div>
 		</div>
-            <div class="courseStatus">
+            <div class="courseStatus2">
                 <p>Стан курсу:<span id="courseStatus2"> розробляється </span></p>
             </div>
 
-            <div class="courseLang">
+            <div class="courseLang2">
         <?php echo $val->courseLang; ?>
             <div id="coursesLang" class="down">
                 <form action="" method="post" onsubmit="" name="fff">
@@ -243,7 +243,7 @@ $this->breadcrumbs=array(
                 </form>
             </div>
         </div>
-		<span class='courseText'><?php
+		<span class='courseText2'><?php
 		echo $val->courseReview;
 		?>
 		</span>
