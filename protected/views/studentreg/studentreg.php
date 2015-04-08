@@ -50,7 +50,7 @@ $this->breadcrumbs=array(
         </div>
         <div class="row">
             <?php echo $form->labelEx($model,'firstName'); ?>
-            <?php echo $form->textField($model,'firstName',array('maxlength'=>255)); ?>
+            <?php echo $form->textField($model,'firstName',array('maxlength'=>255, 'autofocus'=>'true')); ?>
             <span><?php echo $form->error($model,'firstName'); ?></span>
         </div>
         <div class="row">
