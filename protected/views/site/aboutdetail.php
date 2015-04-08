@@ -215,16 +215,36 @@ function WindowShow(buttonNumber,anchor)
 </div>
 
 <div id='aboutDetailMain'>
-    // use editor WYSIWYG Imperavi
+
     <?php
+    // use editor WYSIWYG Imperavi
     $this->widget('ImperaviRedactorWidget', array(
         // use editor to field .aboutStepBlock
         'selector' => '.aboutStepBlock',
         'options' => array(
+            'imageUpload' => $this->createUrl('files/upload'),
             'lang' => 'ua',
             'toolbar' => true,
             'iframe' => true,
             'css' => 'wym.css',
+        ),
+        'plugins' => array(
+            'fullscreen' => array(
+                'js' => array('fullscreen.js',),
+            ),
+            'video' => array(
+                'js' => array('video.js',),
+            ),
+            'fontsize' => array(
+                'js' => array('fontsize.js',),
+            ),
+            'fontfamily' => array(
+                'js' => array('fontfamily.js',),
+            ),
+            'fontcolor' => array(
+                'js' => array('fontcolor.js',),
+            ),
+
         ),
     ));
     ?>

@@ -133,7 +133,7 @@ class ImperaviRedactorWidget extends CInputWidget
 	 */
 	public function getAssetsPath()
 	{
-		return  dirname(__FILE__) . '/assets';
+		return  dirname(__FILE__) . '/files';
 	}
 
 	/**

@@ -145,6 +145,7 @@ $teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherProfile';
 <!--Перша частина-->
 <div class="lessonBlock" id="lessonBlock">
 <!--navigation vertical-->
+
 <div id="sidebarLesson">
     <div class="titlesBlock" id="titlesBlock">
         <ul>
@@ -189,7 +190,9 @@ $teacher->readMoreLink=Yii::app()->request->baseUrl.'/teacherProfile';
     <p><a href="#"><input type="submit" value="Hangout"></a></p>
 </div>
 <!--navigation vertical-->
+
 <div class="lessonText">
+
     <h1 class="lessonTheme">Змінні та типи даних в PHP </h1>
     <span class="listTheme">Зміст </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
 
