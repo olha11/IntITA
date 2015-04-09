@@ -1,5 +1,6 @@
 <?php
     $model=new StudentReg();
+    $mainpage = new Mainpage();
 ?>
 
 <script src="//ulogin.ru/js/ulogin.js"></script>

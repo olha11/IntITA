@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-07 17:44:27
+-- Date/time:                    2015-04-09 18:54:10
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -46,9 +46,9 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   KEY `user_id` (`user_id`),
   KEY `when_enter` (`when_enter`),
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_authorizations: ~48 rows (approximately)
+-- Dumping data for table int_ita_db.aa_authorizations: ~50 rows (approximately)
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
 INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(1, 2, '2015-03-02 15:33:25', '::1'),
@@ -98,7 +98,9 @@ INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(45, 2, '2015-04-02 16:57:52', '::1'),
 	(46, 2, '2015-04-02 16:57:52', '::1'),
 	(47, 2, '2015-04-07 16:12:17', '::1'),
-	(48, 2, '2015-04-07 16:12:17', '::1');
+	(48, 2, '2015-04-07 16:12:17', '::1'),
+	(49, 2, '2015-04-09 13:46:07', '::1'),
+	(50, 2, '2015-04-09 13:46:07', '::1');
 /*!40000 ALTER TABLE `aa_authorizations` ENABLE KEYS */;
 
 
@@ -286,22 +288,6 @@ INSERT INTO `course` (`course_ID`, `alias`, `language`, `course_name`, `course_d
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.courseresource
-DROP TABLE IF EXISTS `courseresource`;
-CREATE TABLE IF NOT EXISTS `courseresource` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `idCourse` int(10) NOT NULL,
-  `idResource` int(10) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_courseresource_resource` (`idResource`),
-  CONSTRAINT `FK_courseresource_resource` FOREIGN KEY (`idResource`) REFERENCES `resource` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Dumping data for table int_ita_db.courseresource: ~0 rows (approximately)
-/*!40000 ALTER TABLE `courseresource` DISABLE KEYS */;
-/*!40000 ALTER TABLE `courseresource` ENABLE KEYS */;
-
-
 -- Dumping structure for table int_ita_db.footer
 DROP TABLE IF EXISTS `footer`;
 CREATE TABLE IF NOT EXISTS `footer` (
@@ -372,52 +358,6 @@ INSERT INTO `language` (`id`, `code`, `language`, `country`) VALUES
 /*!40000 ALTER TABLE `language` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.lecture
-DROP TABLE IF EXISTS `lecture`;
-CREATE TABLE IF NOT EXISTS `lecture` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `image` varchar(255) NOT NULL,
-  `alias` varchar(10) NOT NULL,
-  `language` varchar(6) NOT NULL,
-  `idModule` int(11) NOT NULL,
-  `order` int(11) NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `idType` int(11) NOT NULL,
-  `durationInMinutes` int(11) NOT NULL,
-  `maxNumber` int(11) NOT NULL,
-  `iconIsDone` varchar(255) NOT NULL,
-  `preLecture` int(11) NOT NULL,
-  `nextLecture` int(11) NOT NULL,
-  `idTeacher` varchar(50) NOT NULL,
-  `lectureUnwatchedImage` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_lecture_module` (`idModule`),
-  CONSTRAINT `FK_lecture_module` FOREIGN KEY (`idModule`) REFERENCES `module` (`module_ID`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
--- Dumping data for table int_ita_db.lecture: ~1 rows (approximately)
-/*!40000 ALTER TABLE `lecture` DISABLE KEYS */;
-INSERT INTO `lecture` (`id`, `image`, `alias`, `language`, `idModule`, `order`, `title`, `idType`, `durationInMinutes`, `maxNumber`, `iconIsDone`, `preLecture`, `nextLecture`, `idTeacher`, `lectureUnwatchedImage`) VALUES
-	(1, '/css/images/lectureImage.png', 'types', 'ua', 1, 3, 'Goal of classes 1', 10, 40, 6, '/css/images/medalIcoFalse.png', 2, 4, '2', 'css/images/ratIco0.png');
-/*!40000 ALTER TABLE `lecture` ENABLE KEYS */;
-
-
--- Dumping structure for table int_ita_db.lectureresource
-DROP TABLE IF EXISTS `lectureresource`;
-CREATE TABLE IF NOT EXISTS `lectureresource` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idLecture` int(11) NOT NULL,
-  `idResource` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_lectureResource_resource` (`idResource`),
-  CONSTRAINT `FK_lectureResource_resource` FOREIGN KEY (`idResource`) REFERENCES `resource` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Dumping data for table int_ita_db.lectureresource: ~0 rows (approximately)
-/*!40000 ALTER TABLE `lectureresource` DISABLE KEYS */;
-/*!40000 ALTER TABLE `lectureresource` ENABLE KEYS */;
-
-
 -- Dumping structure for table int_ita_db.lectures
 DROP TABLE IF EXISTS `lectures`;
 CREATE TABLE IF NOT EXISTS `lectures` (
@@ -444,9 +384,9 @@ CREATE TABLE IF NOT EXISTS `lectures` (
 -- Dumping data for table int_ita_db.lectures: ~3 rows (approximately)
 /*!40000 ALTER TABLE `lectures` DISABLE KEYS */;
 INSERT INTO `lectures` (`id`, `image`, `alias`, `language`, `idModule`, `order`, `title`, `idType`, `durationInMinutes`, `maxNumber`, `iconIsDone`, `preLecture`, `nextLecture`, `idTeacher`, `lectureUnwatchedImage`, `lectureOverlookedImage`, `lectureTimeImage`) VALUES
-	(1, '/css/images/lectureImage.png', 'lecture3', 'UA', 1, 3, 'Змінні та типи даних в PHP', 1, 40, 6, '/css/images/medalIcoFalse.png', 2, 4, '2', 'css/images/ratIco0.png', 'css/images/ratIco1.png', 'css/images/timeIco.png'),
-	(2, '/css/images/lectureImage.png', 'lecture2', 'UA', 1, 2, 'Змінні та типи даних в PHP', 1, 50, 6, '/css/images/medalIcoFalse.png', 1, 3, '2', 'css/images/ratIco0.png', 'css/images/ratIco1.png', 'css/images/timeIco.png'),
-	(3, '/css/images/lectureImage.png', 'lecture4', 'UA', 1, 4, 'Змінні та типи даних в PHP', 1, 60, 6, '/css/images/medalIcoFalse.png', 3, 5, '3', 'css/images/ratIco0.png', 'css/images/ratIco1.png', 'css/images/timeIco.png');
+	(1, '/css/images/lectureImage.png', 'lecture1', 'UA', 1, 3, 'Змінні та типи даних в PHP', 1, 40, 6, '/css/images/medalIcoFalse.png', 2, 4, '2', '/css/images/ratIco0.png', '/css/images/ratIco1.png', '/css/images/timeIco.png'),
+	(2, '/css/images/lectureImage.png', 'lecture2', 'UA', 1, 2, 'Змінні та типи даних в PHP', 1, 50, 6, '/css/images/medalIcoFalse.png', 1, 3, '2', '/css/images/ratIco0.png', '/css/images/ratIco1.png', '/css/images/timeIco.png'),
+	(3, '/css/images/lectureImage.png', 'lecture3', 'UA', 1, 4, 'Змінні та типи даних в PHP', 1, 60, 6, '/css/images/medalIcoFalse.png', 3, 5, '3', '/css/images/ratIco0.png', '/css/images/ratIco1.png', '/css/images/timeIco.png');
 /*!40000 ALTER TABLE `lectures` ENABLE KEYS */;
 
 
@@ -466,6 +406,50 @@ INSERT INTO `lecturetype` (`id`, `image`, `text`, `description`) VALUES
 	(1, '/css/images/lectureType.png', 'лекція', ''),
 	(2, '/css/images/lectureType.png', 'практична робота', '');
 /*!40000 ALTER TABLE `lecturetype` ENABLE KEYS */;
+
+
+-- Dumping structure for table int_ita_db.lecture_element
+DROP TABLE IF EXISTS `lecture_element`;
+CREATE TABLE IF NOT EXISTS `lecture_element` (
+  `id_lecture` int(11) NOT NULL,
+  `order` int(11) NOT NULL,
+  `type` varchar(10) NOT NULL,
+  `html_block` text NOT NULL,
+  PRIMARY KEY (`id_lecture`,`order`),
+  CONSTRAINT `FK__lectures` FOREIGN KEY (`id_lecture`) REFERENCES `lectures` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Chapters and other lecture''s resources ';
+
+-- Dumping data for table int_ita_db.lecture_element: ~27 rows (approximately)
+/*!40000 ALTER TABLE `lecture_element` DISABLE KEYS */;
+INSERT INTO `lecture_element` (`id_lecture`, `order`, `type`, `html_block`) VALUES
+	(1, 1, 'text', '    <h1 class="lessonPart">Вступ</h1>\r\n    <span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:\r\n    \r\n   '),
+	(1, 2, 'code', '<div class="lessonCode"><p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>'),
+	(1, 3, 'text', ' <span class="colorBlack">Імена змінних</span>\r\n    <p>Будь-яка змінна в РНР має ім\'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>'),
+	(1, 4, 'video', '<iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>'),
+	(1, 5, 'label', '    <a name="Частина 1: Типи змінних та перемінних"></a>'),
+	(1, 6, 'text', '    <h1 class="lessonPart">Частина 1: Типи змінних та перемінних</h1>\r\n    <span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:'),
+	(1, 7, 'code', '<div class="lessonCode"><p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>'),
+	(1, 8, 'text', '    <span class="colorBlack">Імена змінних</span>\r\n    <p>Будь-яка змінна в РНР має ім\'я, що починається із знаку $, наприклад Svariable. При такому способі формування \r\n        імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим,\r\n        що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. \r\n        Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>'),
+	(1, 9, 'code', '<div class="lessonCode">\r\n        <p>$names="value";</p>\r\n        <p>$names=5;</p>\r\n        <p>echo $$name;</p>\r\n    </div>'),
+	(1, 10, 'text', '    <p>Змінні в РНР представляються у вигляді рядка, що починається знаком долара, а за ним слідує ім\'я змінної. Ім\'я змінної може складатися з латинських літер, звичайних цифр і деяких символів або комбінацій літер, цифр і символів.</p>'),
+	(1, 11, 'example', '<span class="subChapter">Зразок коду 1:</span>\r\n<pre class="prettyprint linenums">\r\n&lt;html&gt;\r\n  &lt;head&gt;\r\n  &lt;/head&gt;\r\n  &lt;body&gt;\r\n    &lt;p&gt;\r\n      &lt;?php\r\n      $items= //Set this to a number greater than 5! Type the string &quot;Arr, matey!&quot;\r\n\r\n      if ($items&lt;5) {\r\n      echo &quot;You get a 10% discount!&quot;;\r\n      }\r\n    ?&gt;\r\n    &lt;/p&gt;\r\n &lt;/body&gt;\r\n&lt;/html&gt;\r\n</pre>'),
+	(1, 12, 'example', '<span class="subChapter">Зразок коду 2  </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>'),
+	(1, 13, 'video', '<h3><span class="subChapter">Відео 1.</span></h3>\r\n    <iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>'),
+	(1, 14, 'instructio', '<div class="lessonInstr">\r\n        <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">\r\n        <div class="lessonButName" unselectable = "on">Інструкція</div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/instr.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set <span class="colorBP"><span class="colorGreen">$</span>terms</span> equal to a number greater than 5. Make sure to put a semicolon at the end of the line.</li>\r\n                    <li>On line 9, edit the state condition so that your program will be out Some expressions return a \' logical value": TRUE or FALSE, text like thise:<span class="colorAlert">You get a 10% discount!</span></li>\r\n                </ol>\r\n            </div>\r\n        </div>\r\n    </div>'),
+	(1, 15, 'task', ' <div class="lessonTask">\r\n        <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">\r\n        <div class="lessonButName" unselectable = "on"><?php echo Yii::t(\'lecture\',\'Exercise\'); ?> 1</div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>\r\n                    <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>An if statement is made up of the if keyword, a condition like we\'ve seen before <span class="colorBP"><span class="colorGreen">$</span>terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>\r\n                    <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP"><span class="colorGreen">$</span>terms</span> браузера или с разрешением экрана)</li>\r\n                </ol>\r\n                <div class="BBCode">\r\n                    <form action="" method="post">\r\n                        <textarea class="editor"></textarea>\r\n                        <input  id="lessonTask1" type="submit" value="Відповісти">\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>'),
+	(1, 16, 'label', '    <a name="Частина 7: Типи данних та математичний аналіз"></a>\r\n    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/borderLesson.png">'),
+	(1, 17, 'text', '<span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:'),
+	(1, 18, 'code', '<div class="lessonCode"><p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>'),
+	(1, 19, 'text', '    <span class="colorBlack">Імена змінних</span>\r\n    <p>Будь-яка змінна в РНР має ім\'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>'),
+	(1, 20, 'code', '    <div class="lessonCode">\r\n        <p>$names="value";</p>\r\n        <p>$names=5;</p>\r\n        <p>echo $$name;</p>\r\n    </div>'),
+	(1, 21, 'text', '    <p>Змінні в РНР представляються у вигляді рядка, що починається знаком долара, а за ним слідує ім\'я змінної. Ім\'я змінної може складатися з латинських літер, звичайних цифр і деяких символів або комбінацій літер, цифр і символів.</p>'),
+	(1, 22, 'example', '<span class="subChapter">Зразок коду 1:</span>\r\n<pre class="prettyprint linenums">\r\n&lt;html&gt;\r\n  &lt;head&gt;\r\n  &lt;/head&gt;\r\n  &lt;body&gt;\r\n    &lt;p&gt;\r\n      &lt;?php\r\n      $items= //Set this to a number greater than 5! Type the string &quot;Arr, matey!&quot;\r\n\r\n      if ($items&lt;5) {\r\n      echo &quot;You get a 10% discount!&quot;;\r\n      }\r\n    ?&gt;\r\n    &lt;/p&gt;\r\n &lt;/body&gt;\r\n&lt;/html&gt;\r\n</pre>'),
+	(1, 23, 'example', '    <span class="subChapter"><?php echo Yii::t(\'lecture\',\'Code example\'); ?> 2  </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>\r\n    <div class="spoilerBody">\r\n<pre class="prettyprint linenums">\r\n&lt;html&gt;\r\n  &lt;head&gt;\r\n  &lt;/head&gt;\r\n  &lt;body&gt;\r\n    &lt;p&gt;\r\n      &lt;?php\r\n      $items= //Set this to a number greater than 5! Type the string &quot;Arr, matey!&quot;\r\n\r\n      if ($items&lt;5) {\r\n      echo &quot;You get a 10% discount!&quot;;\r\n      }\r\n    ?&gt;\r\n    &lt;/p&gt;\r\n &lt;/body&gt;\r\n&lt;/html&gt;\r\n</pre>\r\n    </div>'),
+	(1, 24, 'video', '<h3><span class="subChapter"><?php echo Yii::t(\'lecture\',\'0083\'); ?> 1.</span></h3>\r\n    <iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>'),
+	(1, 25, 'instructio', '<div class="lessonInstr">\r\n        <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">\r\n        <div class="lessonButName" unselectable = "on"><?php echo Yii::t(\'lecture\',\'0085\'); ?></div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/instr.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set <span class="colorBP"><span class="colorGreen">$</span>items</span> equal to a number greater than 5. Make sure to put a semicolon at the end of the line.</li>\r\n                    <li>On line 9, edit the state condition so that your program will be out Some expressions return a \' logical value": TRUE or FALSE, text like thise:<span class="colorAlert">You get a 10% discount!</span></li>\r\n                </ol>\r\n            </div>\r\n        </div>\r\n    </div>'),
+	(1, 26, 'task', '<div class="lessonTask">\r\n        <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">\r\n        <div class="lessonButName" unselectable = "on"><?php echo Yii::t(\'lecture\',\'0086\'); ?> 1</div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>\r\n                    <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>An if statement is made up of the if keyword, a condition like we\'ve seen before <span class="colorBP"><span class="colorGreen">$</span>terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>\r\n                    <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP"><span class="colorGreen">$</span>terms</span> браузера или с разрешением экрана)</li>\r\n                </ol>\r\n                <div class="BBCode">\r\n                    <form action="" method="post">\r\n                        <textarea class="editor"></textarea>\r\n                        <input  id="lessonTask2" type="submit" value="Відповісти">\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>'),
+	(1, 27, 'final task', '<div class="lessonText">\r\n    <div class="lessonTask">\r\n        <img class="lessonButFinal" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButtonFinale.png">\r\n        <div class="lessonButFinal" unselectable = "on"><?php echo Yii::t(\'lecture\',\'0090\'); ?></div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>\r\n                    <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>An if statement is made up of the if keyword, a condition like we\'ve seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>\r\n                    <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>\r\n                </ol>\r\n                <div class="BBCode">\r\n                    <form action="" method="post">\r\n                        <textarea class="editor"></textarea>\r\n                        <input  id="lessonTask3" type="submit" value="<?php echo Yii::t(\'lecture\',\'0089\'); ?>">\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>');
+/*!40000 ALTER TABLE `lecture_element` ENABLE KEYS */;
 
 
 -- Dumping structure for table int_ita_db.mainpage
@@ -540,50 +524,18 @@ INSERT INTO `module` (`module_ID`, `course`, `module_name`, `alias`, `language`,
 /*!40000 ALTER TABLE `module` ENABLE KEYS */;
 
 
--- Dumping structure for table int_ita_db.moduleresource
-DROP TABLE IF EXISTS `moduleresource`;
-CREATE TABLE IF NOT EXISTS `moduleresource` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idModule` int(11) NOT NULL,
-  `idResource` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_moduleResource_moduleresource` (`idResource`),
-  CONSTRAINT `FK_moduleResource_moduleresource` FOREIGN KEY (`idResource`) REFERENCES `moduleresource` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Dumping structure for table int_ita_db.permissions
+DROP TABLE IF EXISTS `permissions`;
+CREATE TABLE IF NOT EXISTS `permissions` (
+  `id_user` int(11) NOT NULL,
+  `id_resource` int(11) NOT NULL,
+  `rigths` bit(32) NOT NULL,
+  PRIMARY KEY (`id_user`,`id_resource`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='User rights for lectures: BIT (32) \r\n0 - view\r\n1 - edit\r\n2 - create\r\n3 - delete  ';
 
--- Dumping data for table int_ita_db.moduleresource: ~0 rows (approximately)
-/*!40000 ALTER TABLE `moduleresource` DISABLE KEYS */;
-/*!40000 ALTER TABLE `moduleresource` ENABLE KEYS */;
-
-
--- Dumping structure for table int_ita_db.resource
-DROP TABLE IF EXISTS `resource`;
-CREATE TABLE IF NOT EXISTS `resource` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` varchar(20) NOT NULL,
-  `idResource` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Dumping data for table int_ita_db.resource: ~0 rows (approximately)
-/*!40000 ALTER TABLE `resource` DISABLE KEYS */;
-/*!40000 ALTER TABLE `resource` ENABLE KEYS */;
-
-
--- Dumping structure for table int_ita_db.settings
-DROP TABLE IF EXISTS `settings`;
-CREATE TABLE IF NOT EXISTS `settings` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `category` varchar(64) NOT NULL DEFAULT 'system',
-  `key` varchar(255) NOT NULL,
-  `value` text NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `category_key` (`category`,`key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Dumping data for table int_ita_db.settings: ~0 rows (approximately)
-/*!40000 ALTER TABLE `settings` DISABLE KEYS */;
-/*!40000 ALTER TABLE `settings` ENABLE KEYS */;
+-- Dumping data for table int_ita_db.permissions: ~0 rows (approximately)
+/*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
 
 
 -- Dumping structure for table int_ita_db.sourcemessages
@@ -593,9 +545,9 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   `category` varchar(32) NOT NULL,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (original - English).';
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~91 rows (approximately)
+-- Dumping data for table int_ita_db.sourcemessages: ~93 rows (approximately)
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', '0001'),
@@ -688,7 +640,9 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(88, 'lecture', '0088'),
 	(89, 'lecture', '0089'),
 	(90, 'lecture', '0090'),
-	(91, 'regform', '0091');
+	(91, 'regform', '0091'),
+	(92, 'regform', '0092'),
+	(93, 'regform', '0093');
 /*!40000 ALTER TABLE `sourcemessages` ENABLE KEYS */;
 
 
@@ -715,30 +669,6 @@ INSERT INTO `step` (`stepID`, `language`, `stepName`, `stepNumber`, `stepTitle`,
 	(4, 'UA', 'крок', 4, 'Освоєння матеріалу', '/css/images/', 'step4.jpg', '<p>Вивчення матеріалу можливе шляхом читання тексту чи/і перегляду відео для кожного заняття.\n    Протягом освоєння матеріалу заняття виконуй Проміжні тестові завдання. По завершенню кожного заняття виконуй Підсумкове тестове завдання. Кожен модуль завершується Індивідуальним проектом чи Екзаменом.\n    Можна отримати індивідуальну консультацію викладача чи обговорити питання на форумі.</p>'),
 	(5, 'UA', 'крок', 5, 'Завершення курсу', '/css/images/', 'step5.jpg', 'Підсумком курсу є Командний дипломний проект, який виконується разом з іншими студентами (склад команди формуєш самостійно чи рекомендує керівник, який затверджує тему і технічне завдання проекту). Здача проекту передбачає передзахист та захист в он-лайн режимі із представленням технічної документації.');
 /*!40000 ALTER TABLE `step` ENABLE KEYS */;
-
-
--- Dumping structure for table int_ita_db.studentsaccess
-DROP TABLE IF EXISTS `studentsaccess`;
-CREATE TABLE IF NOT EXISTS `studentsaccess` (
-  `accessID` int(11) NOT NULL AUTO_INCREMENT,
-  `studentID` int(11) NOT NULL,
-  `courseID` int(11) NOT NULL,
-  `moduleID` int(11) NOT NULL,
-  `lectureID` int(11) NOT NULL,
-  `dateChange` date NOT NULL,
-  PRIMARY KEY (`accessID`),
-  KEY `FK_courseaccess_students` (`studentID`),
-  KEY `FK_studentsaccess_course` (`courseID`),
-  KEY `FK_studentsaccess_lectures` (`lectureID`),
-  KEY `FK_studentsaccess_modules` (`moduleID`),
-  CONSTRAINT `FK_studentsaccess_course` FOREIGN KEY (`courseID`) REFERENCES `course` (`course_ID`),
-  CONSTRAINT `FK_studentsaccess_lectures` FOREIGN KEY (`lectureID`) REFERENCES `lecture` (`id`),
-  CONSTRAINT `FK_studentsaccess_modules` FOREIGN KEY (`moduleID`) REFERENCES `module` (`module_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Dumping data for table int_ita_db.studentsaccess: ~0 rows (approximately)
-/*!40000 ALTER TABLE `studentsaccess` DISABLE KEYS */;
-/*!40000 ALTER TABLE `studentsaccess` ENABLE KEYS */;
 
 
 -- Dumping structure for table int_ita_db.teacher
@@ -840,9 +770,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesen` (
   `language` varchar(16) NOT NULL,
   `translation` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesen: ~92 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesen: ~93 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesen` DISABLE KEYS */;
 INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(1, 'en', 'INTITA'),
@@ -868,7 +798,7 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(21, 'en', 'Teachers'),
 	(22, 'en', 'Exit'),
 	(23, 'en', 'phone: +38 0432 52 82 67'),
-	(24, 'en', 'tel. Mob. +38 067 432 October 20'),
+	(24, 'en', 'mobile: +38 067 432 50 20'),
 	(25, 'en', 'e-mail: intita.hr@gmail.com'),
 	(26, 'en', 'skype: int.ita'),
 	(27, 'en', 'We guarantee you an offer of employment<br>\r\nafter successful completion of training!'),
@@ -915,13 +845,13 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(68, 'en', 'Level of course:'),
 	(69, 'en', 'Language course:'),
 	(70, 'en', 'Course:'),
-	(71, 'en', 'Language'),
-	(72, 'en', 'module:'),
+	(71, 'en', 'lang:'),
+	(72, 'en', 'Module:'),
 	(73, 'en', 'Lecture:'),
 	(74, 'en', 'Type:'),
-	(75, 'en', 'time:'),
+	(75, 'en', 'Duration:'),
 	(76, 'en', 'min'),
-	(77, 'en', 'teacher'),
+	(77, 'en', 'Teacher'),
 	(78, 'en', 'more'),
 	(79, 'en', 'Plan consultation'),
 	(80, 'en', 'Content'),
@@ -936,7 +866,8 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(89, 'en', 'Reply'),
 	(90, 'en', 'Final task'),
 	(91, 'en', 'You can also enter by social networks:'),
-	(92, 'en', '');
+	(92, 'en', 'Forget password?'),
+	(93, 'en', 'SIGN IN');
 /*!40000 ALTER TABLE `translatedmessagesen` ENABLE KEYS */;
 
 
@@ -948,9 +879,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesru: ~91 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesru: ~93 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
 INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(1, 'ru', 'INTITA'),
@@ -979,10 +910,10 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(24, 'ru', 'тел. моб. +38 067 432 20 10'),
 	(25, 'ru', 'e-mail: intita.hr@gmail.com'),
 	(26, 'ru', 'скайп: int.ita'),
-	(27, 'ru', 'Мы гарантируем получение предложения работы<br>\r\nпосле успешного завершеня обучения!'),
+	(27, 'ru', 'Мы гарантируем получение предложения работы<br>\r\nпосле успешного завершения обучения!'),
 	(28, 'ru', 'Хочешь стать классным специалистом?<br>\r\nпринимай правильное решение - поступай в IТ Академию  ИНТИТА!'),
-	(29, 'ru', 'Один год упорного и интересного обучения - и ты станешь проессиональным программистом. Учиться тяжело -зато легко найти работу!'),
-	(30, 'ru', 'Не упускай свой шанс на достойную и интересную работу - программируй свое будущее уже сегодня!'),
+	(29, 'ru', 'Один год упорного и интересного обучения - и ты станешь проессиональным программистом.<br>\r\nУчиться тяжело -зато легко найти работу!'),
+	(30, 'ru', 'Не упускай свой шанс на достойную и интересную работу - <br>\r\nпрограммируй свое будущее уже сегодня!'),
 	(31, 'ru', 'Текст на пятой картинке слайдера'),
 	(32, 'ru', 'О чем ты мечтаешь?'),
 	(33, 'ru', 'Обучение будущего'),
@@ -1043,7 +974,9 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(88, 'ru', 'НАСТУПНИЙ УРОК'),
 	(89, 'ru', 'Ответить'),
 	(90, 'ru', 'Итоговое задание'),
-	(91, 'ru', 'Вы также можете ввойти с помощью соцсетей:');
+	(91, 'ru', 'Вы также можете ввойти с помощью соцсетей:'),
+	(92, 'ru', 'Забыли пароль?'),
+	(93, 'ru', 'ВОЙТИ');
 /*!40000 ALTER TABLE `translatedmessagesru` ENABLE KEYS */;
 
 
@@ -1055,9 +988,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedmessages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
 
--- Dumping data for table int_ita_db.translatedmessagesua: ~91 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesua: ~93 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesua` DISABLE KEYS */;
 INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -1150,22 +1083,10 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(88, 'ua', 'НАСТУПНИЙ УРОК'),
 	(89, 'ua', 'Відповісти'),
 	(90, 'ua', 'Підсумкове завдання'),
-	(91, 'ua', 'Ви можете також увійти через соцмережі:');
+	(91, 'ua', 'Ви можете також увійти через соцмережі:'),
+	(92, 'ua', 'Забули пароль?'),
+	(93, 'ua', 'ВВІЙТИ');
 /*!40000 ALTER TABLE `translatedmessagesua` ENABLE KEYS */;
-
-
--- Dumping structure for table int_ita_db.typeresource
-DROP TABLE IF EXISTS `typeresource`;
-CREATE TABLE IF NOT EXISTS `typeresource` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` varchar(50) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Dumping data for table int_ita_db.typeresource: ~0 rows (approximately)
-/*!40000 ALTER TABLE `typeresource` DISABLE KEYS */;
-/*!40000 ALTER TABLE `typeresource` ENABLE KEYS */;
 
 
 -- Dumping structure for table int_ita_db.user
@@ -1187,7 +1108,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `hash` varchar(20) NOT NULL,
   `address` text,
   `education` varchar(255) DEFAULT NULL,
-  `educform` varchar(60) DEFAULT 'Не вибрано',
+  `educform` varchar(60) DEFAULT NULL,
   `interests` text,
   `aboutUs` text,
   `aboutMy` varchar(255) DEFAULT NULL,

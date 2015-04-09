@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-07 17:43:20
+-- Date/time:                    2015-04-09 18:50:42
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesen` (
   `language` varchar(16) NOT NULL,
   `translation` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesen: ~82 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesen: ~93 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesen` DISABLE KEYS */;
 INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(1, 'en', 'INTITA'),
@@ -45,7 +45,7 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(21, 'en', 'Teachers'),
 	(22, 'en', 'Exit'),
 	(23, 'en', 'phone: +38 0432 52 82 67'),
-	(24, 'en', 'tel. Mob. +38 067 432 October 20'),
+	(24, 'en', 'mobile: +38 067 432 50 20'),
 	(25, 'en', 'e-mail: intita.hr@gmail.com'),
 	(26, 'en', 'skype: int.ita'),
 	(27, 'en', 'We guarantee you an offer of employment<br>\r\nafter successful completion of training!'),
@@ -92,13 +92,13 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(68, 'en', 'Level of course:'),
 	(69, 'en', 'Language course:'),
 	(70, 'en', 'Course:'),
-	(71, 'en', 'Language'),
-	(72, 'en', 'module:'),
+	(71, 'en', 'lang:'),
+	(72, 'en', 'Module:'),
 	(73, 'en', 'Lecture:'),
 	(74, 'en', 'Type:'),
-	(75, 'en', 'time:'),
+	(75, 'en', 'Duration:'),
 	(76, 'en', 'min'),
-	(77, 'en', 'teacher'),
+	(77, 'en', 'Teacher'),
 	(78, 'en', 'more'),
 	(79, 'en', 'Plan consultation'),
 	(80, 'en', 'Content'),
@@ -113,7 +113,8 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(89, 'en', 'Reply'),
 	(90, 'en', 'Final task'),
 	(91, 'en', 'You can also enter by social networks:'),
-	(92, 'en', '');
+	(92, 'en', 'Forget password?'),
+	(93, 'en', 'SIGN IN');
 /*!40000 ALTER TABLE `translatedmessagesen` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
