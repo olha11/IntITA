@@ -16,16 +16,15 @@ $this->pageTitle = 'INTITA';
 $post=TeachersTemp::model()->findAll();
 ?>
 <!-- BD -))) -->
+
 <div class="subNavBlockTeachers">
     <?php
     $this->breadcrumbs=array(
         Yii::t('breadcrumbs', 'Teachers'),
     );
     ?>
-    <div class="ifYouTeachers">
-        <?php Yii::t('teachers', 'If you want professional IT and IT teach some courses or modules and cooperate with us in the field of training programmers write us a letter.');?>
-    </div>
 </div>
+
 <div class='teachersList'>
     <div class="titleTeachers">
         <h1><?php echo Yii::t('teachers', 'Our teachers'); ?></h1>
@@ -86,12 +85,52 @@ $post=TeachersTemp::model()->findAll();
         ?>
     </div>
     <div class="rightTeacher">
+        <div class="ifYouTeachers">
+<table>
+    <tr>
+        <td valign="top"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher123.png"/></td>
+        <td valign="center"><div id="formTeacher3">Якщо ви професійний ІТ-шник і бажаєте викладати окремі ІТ курси чи модулі і співпрацювати
+            в нами в напрямку підготовки програмістів, напишіть нам листа.</div></td>
+        </tr>
+    </table>
+        <form method="post" action="#">
+                <label id="formTeacher" for="name" style="margin-left: 50px">Ім'я</label>
+                <input class="formTeacher1" required type="text" name="firstname">
+                <br>  <br>
+                <label id="formTeacher" for="name" style="margin-left: 8px">Прізвище</label>
+                <input class="formTeacher1" required type="text" name="lastname">
+                <br> <br>
+                <label id="formTeacher" for="name" style="margin-left: 52px">Вік</label>
+                <input class="formTeacher1" required type="text" name="yearname">
+                <br> <br>
+                <label id="formTeacher" for="name" style="margin-left: 30px">Освіта</label>
+                <input class="formTeacher1" required type="text" name="educationname">
+                <br> <br>
+                <label id="formTeacher" for="name" style="margin-left: 15px">Телефон</label>
+                <input class="formTeacher1" required type="text" name="phonename">
+                <br> <br>
+            <table>
+                <tr>
+                    <td>
+                <label id="formTeacher" for="text">Які курси <br> Ви готові <br> викладати</label>
+                    </td>
+                    <td>
+                <textarea class="formTeacher1" id="formTeacher2" required type="text" name="textname"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <ul class="actions">
+                <input id="send_btn" type="submit" value="Отправить" />
+            </ul>
+            </form>
+        </div>
         <?php
         $i=0;
         foreach ($post as $teacherValue) {
             $i++;
             if ($i % 2 == 0) {
                 ?>
+
                 <div class="teacherBlock">
                     <table>
                         <tr>
