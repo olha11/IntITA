@@ -11,6 +11,12 @@
         {document.getElementById("sver").innerHTML=""; document.getElementById("razv").innerHTML="Далі";}
     }
 </script>
+<script>
+    function xexx()
+    {
+        document.getElementById('xex').style.display='none'
+    }
+</script>
 
 <?php
 $this->pageTitle = 'INTITA';
@@ -26,7 +32,7 @@ $this->breadcrumbs=array(
 		public $courseLevel;
 		public $courseNumberofModules;
 		public $courseReview;
-		public $courseMaxNumberofModules=4;
+		public $courseMaxNumberofModules=5;
 		public $coursesHeader='Наші курси';
 		public $courseLevelTitle='Рівень курсу:';
 		public $coursesTextHeader= 'Концепція підготовки';
@@ -167,9 +173,9 @@ $this->breadcrumbs=array(
 
 </div></td>
 
-<td >
-<div id='coursesPart2'>
-           <div class="bgBlue">
+<td  >
+    <div id='coursesPart2'>
+           <div class="bgBlue" id="xex">
                                                    <table>
                                                        <tr>
                                                            <td  valign="top">
@@ -182,18 +188,24 @@ $this->breadcrumbs=array(
                                                            </td>
                                                        </tr>
                                                    </table>
-    <div class='courseBox2'>
+               <div class='courseBox2'>
+                   <?php echo $course1->coursesTextFooter; ?>
 
-	<?php echo $course1->coursesTextFooter; ?>
-
-        <div id="razv" onclick='wrt("<p> Потім вивчаються основні принципи програмування на базі класичних компютерних наук і методологій алгоритмічна мова; eлементи вищої та дискретної математики і комбінаторики; структури даних, розробка і аналіз алгоритмів.<p>Після чого формується база для переходу до сучасних технологій програмування об’єктно-орієнтоване програмування; проектування баз даних.<p>Завершення процесу підготовки шляхом конкретного застосування отриманих знань на реальних проектах із засвоєнням сучасних методів і технологій,які використовуються в ІТ індустрії компаніями.")'>
+        <div id="razv" onclick='wrt("<p><span> Потім вивчаються основні принципи програмування на базі класичних компютерних наук і методологій алгоритмічна мова; eлементи вищої та дискретної математики і комбінаторики; структури даних, розробка і аналіз алгоритмів.<p>Після чого формується база для переходу до сучасних технологій програмування об’єктно-орієнтоване програмування; проектування баз даних.<p>Завершення процесу підготовки шляхом конкретного застосування отриманих знань на реальних проектах із засвоєнням сучасних методів і технологій,які використовуються в ІТ індустрії компаніями.</span>")'>
             Далі
         </div>
         <br><br>
         <div id="sver" onclick='wrt("");'></div>
 
-    </div>
+                   <div id="xex" onclick='xexx("")'   style="margin-left: 390px;font-size: 24px; position: relative; top: -20px;  cursor: pointer;  ">X</div>
+
+               </div>
             </div>
+
+
+
+
+
     <?php
 	foreach ($coursesArray2 as $val)   
 	{
@@ -224,16 +236,19 @@ $this->breadcrumbs=array(
 				</span><?php
 			}
 			?>
+
 			</div>
+
 		</div>
+
             <div class="courseStatus2">
-                <p>Стан курсу:<span id="courseStatus2"> розробляється </span></p>
+                <p>Стан курсу:<span id="courseStatus2"> 2розробляється </span></p>
             </div>
 
             <div class="courseLang2">
         <?php echo $val->courseLang; ?>
             <div id="coursesLang" class="down">
-                <form action="" method="post" onsubmit="" name="fff">
+                <form  action="" method="post" onsubmit="" name="fff">
                     <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
         
                     <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'EN'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
@@ -243,6 +258,7 @@ $this->breadcrumbs=array(
                 </form>
             </div>
         </div>
+
 		<span class='courseText2'><?php
 		echo $val->courseReview;
 		?>

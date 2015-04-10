@@ -3,7 +3,7 @@
 	position:relative;
 	width:1200px;
 	left:50%;
-	margin-left:-480px;
+	margin-left: -620px;
 	 font-family:MyriadPro;
 }
 
@@ -15,22 +15,22 @@
 	margin:20px;
 }
 
+
 #coursesPart1
 {
 	display:inline-block;
 	position:relative;
-	width:450px;
-    top: -50px;
+	width:580px;
+
 }
 
 
 #coursesPart2
 {
-	width:450px;
+	width:600px;
     position:relative;
-    margin-left:60px;
-    top: -51px;
-    margin-top:50px;
+    margin-left:20px;
+    height: 1500px;
 
 }
 
@@ -41,10 +41,12 @@
 	position:relative;
 	 font-family:MyriadPro;
 	margin-left:5px;
-    margin-bottom:40px;
-    margin-top:40px;
+    margin-bottom:20px;
+    margin-top:20px;
     font-size: 14px;
 }
+
+
 .courseBox2
 {
     display:inline-block;
@@ -52,9 +54,8 @@
     font-family:MyriadPro;
     margin-left:5px;
     margin-bottom:30px;
-    margin-top:30px;
+height: 100px;
     font-size: 14px;
-  
 }
 
 
@@ -99,23 +100,29 @@
 .courseLevelImage
 {
 	margin-right:20px;
+
 }
 
 .courseLevelIndex
 {
-	position:absolute;
+	position:relative;
 	display:inline-block;
-	margin-left: 25px;
-	margin-top:8px;
+    float:right
+
 }
 
 .courseLevel
 {
+    position:relative;
      color:#4682B4;
+    left: px;
+
 }
 .courseLevel2
 {
+    position:relative;
     color:#696969;
+    left: px;
 }
 
 
@@ -123,7 +130,7 @@
 {
 display:inline-block;
 	position:relative;
-    color:#696969;
+    color: #696969;
     font-size:14px;
 	margin-left:150px;
     color: #000000;
@@ -180,19 +187,21 @@ display:inline-block;
     z-index: 6;
     margin-left: 0px;
     margin-top: 0px;
-    position: relative;   
+    position: relative;
+    float:right
 }
 
 #coursesLang.down {
-    margin-left: 150px;
-    margin-top: -26px;
-top: -2px;
+
+ float: right;
+
 }
 #coursesLang #en {
     border-left: 1px solid #999999;
     border-right: 1px solid #999999;
     padding-left: 8px;
     padding-right: 8px;
+
 }
 #coursesLang button{
     background:none!important;
@@ -202,7 +211,8 @@ top: -2px;
     font-size: 18px;
     font-family: "MyriadPro";
     text-decoration: underline;
-    top: -4px;
+    position: relative;
+    float: right;
 }
 #coursesLang .selectedLang {
     text-decoration: none;
@@ -212,7 +222,7 @@ top: -2px;
 
 .coursesline1  img {
     height: 3px;
-    width: 960px;
+    width: 1200px;
     position:relative;
     top: -15px;
 }
@@ -254,17 +264,21 @@ width: 370px;
 }
 .courseStatus2 p{
     margin-left: 150px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     position: relative;
     color: #696969;
 }
 
 #courseStatus1 {
     color: green;
+    float: right;
+    z-index: 3
+position: relative ;
 }
 #courseStatus2 {
     color: #ff0000;
+    float:right;
 }
 .sourse{
     color:gray;
@@ -280,54 +294,60 @@ position: relative;
     top: 4px;
 }
 table {
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 
 .bgBlue{
     background-color:#4B75A4;
     color: #ffffff;
-
+    position: relative;
  margin-bottom: 40px;
     margin-top: 40px;
-
+    margin-left:0px;
+    display:inline-block;
+left: 150px;
+    width: 425px;
 }
+
+
 .bgBlue img{
     margin: 10px;
 
 }
 #sver{
     margin-left: 40px;
+    background-color:#4B75A4;
+    cursor: pointer
 }
 
 #razv {
       margin-left: 40px;
+    cursor: pointer;
   }
 #disabled {
     pointer-events: none;
     cursor: default;
     color: #696969;
 }
-#razv {
 
 
-    cursor: pointer;
-margin-bottom: 40px;
-}
-
-
-#sver {
-    cursor: pointer
-
-
-}
 
 #razv p{
-position: relative;
-left: 0px;
-right: 20px;
-color: #ffffff;
-display:inline-block;
-width: 370px;
-font-size: 14px;
+height: px;
+    left: 40px;
+    right: 20px;
+    color: #ffffff;
+    display:inline-block;
+    width: 370px;
+    font-size: 14px;
+margin-left: 0px;
+
+}
+.bgBlue #razv p span{
+    background-color: #4B75A4;
+    color: #ffffff;
+    width: 445px;
+    border-left: 40px;
+    height: 350px;
 }
