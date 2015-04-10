@@ -274,4 +274,26 @@ class Lecture extends CActiveRecord
             'photo' => $teacher->smallImage,
         );
     }
+
+    public function loadContent($id = 1){
+        $lectureElements = LectureElement::model()->findAll(array(
+            'select'=>'id_lecture, block_order',
+            'condition'=>'id_lecture =:id',
+            'params'=>array(':id'=>$id),
+            'order'=> 'block_order ASC',
+        ));
+
+        if (count($lectureElements) == 0){
+            return false;
+        } else {
+            $contentList = array();
+            for ($i = count($lectureElements); $i > 0; $i--){
+                array_push($contentList,
+                    LectureElement::model()->findByPk(array('id_lecture'=>$id,'block_order'=>$i))
+                );
+            }
+            return $contentList;
+        }
+
+    }
 }

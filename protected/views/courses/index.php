@@ -108,7 +108,7 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
                                     echo $val->courseName; ?></a>
                             </div>
                             <div class="courseLevelBox">
-                                <?php echo Yii::t('courses', 'Level:'); ?>
+                                <?php echo Yii::t('courses', '0068'); ?>
 
                                 <span class="courseLevel">
 			<?php echo $val->courseLevel; ?>
@@ -133,7 +133,7 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
 
 
                             <div class="courseStatus">
-                                <p>Стан курсу: <span id="courseStatus1">доступний</span></p>
+                                <p><?php echo Yii::t('courses','0094');?> <span id="courseStatus1">доступний</span></p>
                             </div>
 
 
@@ -141,7 +141,7 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
 
 
                             <div class="courseLang">
-                                <?php echo Yii::t('courses', 'Language:'); ?>
+                                <?php echo Yii::t('courses', '0069'); ?>
                                 <div id="coursesLang" class="down">
                                     <form action="" method="post" onsubmit="" name="fff">
                                         <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
@@ -173,7 +173,7 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
                                 </td>
                                 <td>
                                     <div id='coursesHeader'>
-                                        <?php echo $course1->coursesTextHeader; ?>
+                                        <?php echo Yii::t('courses', '0067') ?>
                                     </div>
                                 </td>
                             </tr>
@@ -194,7 +194,7 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
                         ?>
                         <div class='courseBox'>
                             <img src='<?php echo $val->courseImage; ?>'>
-                            <div class='courseName'><a id="disabled" href="<?php echo Yii::app()->request->baseUrl; ?>/?r=course"><?php
+                            <div class='courseName'><a id="disabled" href="<?php echo Yii::app()->request->baseUrl; ?>/course"><?php
                                     echo $val->courseName; ?></a>
                             </div>
                             <div class="courseLevelBox2">
@@ -221,7 +221,7 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
                                 </div>
                             </div>
                             <div class="courseStatus2">
-                                <p>Стан курсу:<span id="courseStatus2"> розробляється </span></p>
+                                <p><?php echo Yii::t('courses','0094');?><span id="courseStatus2"> розробляється </span></p>
                             </div>
 
                             <div class="courseLang2">

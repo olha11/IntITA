@@ -29,9 +29,9 @@ $form = $this->beginWidget('CActiveForm', array(
     </div>
 
     <div class="forgotPass">
-        <?php echo CHtml::link('Забули пароль?', '#', array('id'=>'forgotPass',)); ?>
+        <?php echo CHtml::link(Yii::t('regform','0092'), '#', array('id'=>'forgotPass',)); ?>
     </div>
-    <?php $labelButton = Yii::t('regform','ВВІЙТИ');?>
+    <?php $labelButton = Yii::t('regform',Yii::t('regform','0093'));?>
     <?php echo CHtml::submitButton($labelButton, array('id' => "signInButtonM")); ?>
 
 

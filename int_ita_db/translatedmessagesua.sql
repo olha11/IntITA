@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-09 18:50:42
+-- Date/time:                    2015-04-10 18:50:05
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,9 +18,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedmessages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
 
--- Dumping data for table int_ita_db.translatedmessagesua: ~93 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesua: ~94 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesua` DISABLE KEYS */;
 INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -115,7 +115,8 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(90, 'ua', 'Підсумкове завдання'),
 	(91, 'ua', 'Ви можете також увійти через соцмережі:'),
 	(92, 'ua', 'Забули пароль?'),
-	(93, 'ua', 'ВВІЙТИ');
+	(93, 'ua', 'ВВІЙТИ'),
+	(94, 'ua', 'Стан курсу: ');
 /*!40000 ALTER TABLE `translatedmessagesua` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

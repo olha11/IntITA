@@ -14,16 +14,27 @@ div.subLinksTeachers{
     width: 30%;
 }
 div.ifYouTeachers{
-    position: absolute;
-    top:0;
-    right:0;
+    float:right;
+    width:460px;
     box-sizing:border-box;
     -moz-box-sizing:border-box;
     display:inline-block;
-    float:right;
-    width: 460px;
-    top:-40px;
+    margin: 0 auto;
+    /*margin-left: 20px;*/
+    /*max-width:95%;*/
+    padding:20px;
+    background:#4B75A4;
+
+    margin-bottom: 40px;
+    overflow: hidden;
 }
+div.ifYouTeachers label{
+    float: left;
+}
+div.ifYouTeachers input{
+    float: right;
+}
+
 .subLinksTeachers a{
     color: #666666;
 }
@@ -31,8 +42,10 @@ div.ifYouTeachers{
 .teachersList
 {
     margin: 0 auto;
+    /*margin-right: 20px;*/
     width: 960px;
     overflow: hidden;
+    /*float: left;*/
 }
 /*Title*/
 div.titleTeachers {
@@ -104,4 +117,49 @@ td.profileTeacher a{
 }
 .teacherBlock a:hover {
     color: #666666;
+}
+
+/*.container {*/
+/*overflow:hidden;*/
+/*width:1090px;*/
+/*margin: 0 auto 0 auto;*/
+/*}*/
+#formTeacher {
+    color: white;
+    text-align: right;
+    position: relative;
+    left: 20px;
+}
+
+.formTeacher1 {
+    border-radius: 5px;
+    shadow: none;
+    height: 30px;
+    width: 300px;
+    text-align: left;
+    text-indent: 5px;
+
+}
+#formTeacher2 {
+    border-radius: 5px;
+    height: 90px;
+    text-align: left;
+    text-indent: 5px;
+    float:right;
+    position: relative;
+    left: 37px;
+}
+
+#formTeacher3 {
+    height: 110px;
+    color: #ffffff;
+}
+#send_btn {
+    width: 100px;
+    height:30px;
+    border-radius: 10px;
+    border:none;
+    color:#467c98;
+    background-color:#EEEEEE;
+    font-size: medium;
 }

@@ -28,6 +28,14 @@ $this->breadcrumbs=array(
     Yii::t('breadcrumbs', '0050')=>Yii::app()->request->baseUrl."/courses",'Модуль PHP'=>Yii::app()->request->baseUrl."/course",'Заняття 2: Змінні та типи данних в PHP',
 );
 $lecture = new Lecture();
+$content = $lecture->loadContent(1);
+if ($content){
+    for ($i = count($content); $i > 0; $i--){
+        $lecture;
+    }
+} else{
+    throw new CHttpException(404,'Такої лекції немає');
+}
 
 
 ?>

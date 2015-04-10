@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-09 18:50:42
+-- Date/time:                    2015-04-10 18:50:05
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesen` (
   `language` varchar(16) NOT NULL,
   `translation` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesen: ~93 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesen: ~94 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesen` DISABLE KEYS */;
 INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(1, 'en', 'INTITA'),
@@ -89,8 +89,8 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(65, 'en', 'About the teacher:'),
 	(66, 'en', 'Our courses'),
 	(67, 'en', 'The concept of training'),
-	(68, 'en', 'Level of course:'),
-	(69, 'en', 'Language course:'),
+	(68, 'en', 'Level: '),
+	(69, 'en', 'Language: '),
 	(70, 'en', 'Course:'),
 	(71, 'en', 'lang:'),
 	(72, 'en', 'Module:'),
@@ -114,7 +114,8 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(90, 'en', 'Final task'),
 	(91, 'en', 'You can also enter by social networks:'),
 	(92, 'en', 'Forget password?'),
-	(93, 'en', 'SIGN IN');
+	(93, 'en', 'SIGN IN'),
+	(94, 'en', 'Status:');
 /*!40000 ALTER TABLE `translatedmessagesen` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

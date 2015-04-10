@@ -369,8 +369,8 @@ select.error
   width: 40px;
   height: 40px;
   display: block;
-  filter: Alpha(Opacity=10);/*IE7 fix*/
-  opacity: 0.1;
+  filter: Alpha(Opacity=40);/*IE7 fix*/
+  opacity: 0.4;
  }
  
  #singInFormCarousel #uLogin img:hover, #singInFormCarousel #uReg img:hover {

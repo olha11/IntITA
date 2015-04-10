@@ -141,7 +141,7 @@ class StudentRegController extends Controller
                 if(($_POST['StudentReg']['educform'][0]=='Онлайн') && ($_POST['StudentReg']['educform'][1]=='Офлайн')){
                     $_POST['StudentReg']['educform']='Онлайн/Офлайн';
                 }
-                if($_POST['StudentReg']['educform'][0]== Null){
+                if(($_POST['StudentReg']['educform'][0]!=='Онлайн')&& ($_POST['StudentReg']['educform'][1]!=='Офлайн')){
                     $_POST['StudentReg']['educform']='Не вибрано';
                 }
             }

@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-09 18:50:42
+-- Date/time:                    2015-04-10 18:50:05
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,9 +18,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesru: ~93 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesru: ~94 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
 INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(1, 'ru', 'INTITA'),
@@ -115,7 +115,8 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(90, 'ru', 'Итоговое задание'),
 	(91, 'ru', 'Вы также можете ввойти с помощью соцсетей:'),
 	(92, 'ru', 'Забыли пароль?'),
-	(93, 'ru', 'ВОЙТИ');
+	(93, 'ru', 'ВОЙТИ'),
+	(94, 'ru', 'Статус курса: ');
 /*!40000 ALTER TABLE `translatedmessagesru` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
