@@ -3,6 +3,6 @@
 
 .idea/*
 protected/runtime/*
-cache/
+mibew/cache/stash/
 
 
