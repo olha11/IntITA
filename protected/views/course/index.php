@@ -442,6 +442,7 @@ $this->breadcrumbs=array(
                     </td>
                     <td>
                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Основи PHP</span></a>
+                        <div style="color: green">доступний</div>
                     </td>
                 </tr>
             </table>
@@ -453,6 +454,7 @@ $this->breadcrumbs=array(
                     </td>
                     <td>
                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Семантичне ядро сайту</span></a>
+                        <div style="color: green">доступний</div>
                     </td>
                 </tr>
             </table>
@@ -464,6 +466,7 @@ $this->breadcrumbs=array(
                     </td>
                     <td>
                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Зовнішні ресурси в просуванні</span></a>
+                        <div>недоступний</div>
                     </td>
                 </tr>
             </table>
@@ -475,6 +478,7 @@ $this->breadcrumbs=array(
                     </td>
                     <td>
                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Запити HTTP, URL параметри і форми HTML котрі допомагають справжньому програмісту</span></a>
+                        <div>недоступний</div>
                     </td>
                 </tr>
             </table>
@@ -486,6 +490,7 @@ $this->breadcrumbs=array(
                     </td>
                     <td>
                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Cookies Урок і сесії</span></a>
+                        <div>недоступний</div>
                     </td>
                 </tr>
             </table>
@@ -497,6 +502,7 @@ $this->breadcrumbs=array(
                     </td>
                     <td>
                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Робота з файлами</span></a>
+                        <div>недоступний</div>
                     </td>
                 </tr>
             </table>
@@ -508,6 +514,7 @@ $this->breadcrumbs=array(
                     </td>
                     <td>
                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Урок Робота з базою даних</span></a>
+                        <div>недоступний</div>
                     </td>
                 </tr>
             </table>
@@ -518,6 +525,7 @@ $this->breadcrumbs=array(
                     </td>
                     <td>
                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Урок Робота з базою даних</span></a>
+                        <div>недоступний</div>
                     </td>
                 </tr>
             </table>
