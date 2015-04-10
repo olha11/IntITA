@@ -87,7 +87,7 @@
 								<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/4sq.png" x-ulogin-button = "foursquare" title = "Foursquare"/></li>
 							</ul>
 						</div>						
-					<a href="#" class="arrow right-arrow" id="next"><p>></p></a>
+					<a href="#" class="arrow right-arrow" id="next"><p></p></a>
 				</div>
 			</div>
 
