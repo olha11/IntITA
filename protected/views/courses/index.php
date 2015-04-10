@@ -242,7 +242,7 @@ $this->breadcrumbs=array(
 		</div>
 
             <div class="courseStatus2">
-                <p>Стан курсу:<span id="courseStatus2"> 2розробляється </span></p>
+                <p>Стан курсу:<span id="courseStatus2"> розробляється </span></p>
             </div>
 
             <div class="courseLang2">

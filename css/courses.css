@@ -3,7 +3,7 @@
 	position:relative;
 	width:1200px;
 	left:50%;
-	margin-left: -620px;
+	margin-left: -480px;
 	 font-family:MyriadPro;
 }
 
@@ -130,7 +130,6 @@ height: 100px;
 {
 display:inline-block;
 	position:relative;
-    color: #696969;
     font-size:14px;
 	margin-left:150px;
     color: #000000;
@@ -142,7 +141,6 @@ display:inline-block;
     color:#696969;
     font-size:14px;
     margin-left:150px;
-    color: #696969 ;
 }
 .courseText p
 {
@@ -168,40 +166,28 @@ display:inline-block;
 
 .courseLang
 {
-
-    margin-top:0px;
-	margin-bottom:0px;
 	margin-left:150px;
  color: #000000;
 }
 .courseLang2
 {
-
-    margin-top:0px;
-    margin-bottom:0px;
     margin-left:150px;
     color: #696969;
 }
 
 #coursesLang{
     z-index: 6;
-    margin-left: 0px;
-    margin-top: 0px;
     position: relative;
     float:right
 }
-
 #coursesLang.down {
-
  float: right;
-
 }
 #coursesLang #en {
     border-left: 1px solid #999999;
     border-right: 1px solid #999999;
     padding-left: 8px;
     padding-right: 8px;
-
 }
 #coursesLang button{
     background:none!important;
@@ -218,8 +204,6 @@ display:inline-block;
     text-decoration: none;
     color: #999999;
 }
-
-
 .coursesline1  img {
     height: 3px;
     width: 1200px;
@@ -237,7 +221,6 @@ display:inline-block;
     color: #ffffff;
     margin: 0 0 0px 0;
     line-height: 100%;
-
 }
 
 #courseText2 {
@@ -248,19 +231,13 @@ color: #ffffff;
     display:inline-block;
 width: 370px;
     font-size: 14px;
-
 }
-
-
-
 .courseStatus p{
-
     margin-left: 150px;
     margin-top: 0px;
     margin-bottom: 0px;
     position: relative;
     color: #000000;
-
 }
 .courseStatus2 p{
     margin-left: 150px;
@@ -269,11 +246,9 @@ width: 370px;
     position: relative;
     color: #696969;
 }
-
 #courseStatus1 {
     color: green;
     float: right;
-    z-index: 3
 position: relative ;
 }
 #courseStatus2 {
@@ -296,8 +271,6 @@ position: relative;
 table {
     margin-top: 0px;
 }
-
-
 .bgBlue{
     background-color:#4B75A4;
     color: #ffffff;
@@ -309,18 +282,14 @@ table {
 left: 150px;
     width: 425px;
 }
-
-
 .bgBlue img{
     margin: 10px;
-
 }
 #sver{
     margin-left: 40px;
     background-color:#4B75A4;
     cursor: pointer
 }
-
 #razv {
       margin-left: 40px;
     cursor: pointer;
@@ -330,9 +299,6 @@ left: 150px;
     cursor: default;
     color: #696969;
 }
-
-
-
 #razv p{
 height: px;
     left: 40px;
@@ -343,11 +309,4 @@ height: px;
     font-size: 14px;
 margin-left: 0px;
 
-}
-.bgBlue #razv p span{
-    background-color: #4B75A4;
-    color: #ffffff;
-    width: 445px;
-    border-left: 40px;
-    height: 350px;
 }
