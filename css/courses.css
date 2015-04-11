@@ -20,24 +20,25 @@
 {
 	display:inline-block;
 	position:relative;
-	width:580px;
+	width:570px;
 
 }
 
 
 #coursesPart2
 {
-	width:600px;
+	width:570px;
     position:relative;
-    margin-left:20px;
+    margin-left:60px;
     height: 1500px;
-
+margin-right: 50px;
 }
 
 .courseBox
 {
 	display:inline-block;
-	//height:200px;
+	height:158px;
+    width: 565px;
 	position:relative;
 	 font-family:MyriadPro;
 	margin-left:5px;
@@ -54,7 +55,8 @@
     font-family:MyriadPro;
     margin-left:5px;
     margin-bottom:30px;
-height: 100px;
+height: 158px;
+    width: 565px;
     font-size: 14px;
 }
 
@@ -107,7 +109,9 @@ height: 100px;
 {
 	position:relative;
 	display:inline-block;
-    float:right
+    float:right;
+    height: 10px;
+    top: 7px;
 
 }
 
@@ -182,6 +186,10 @@ display:inline-block;
 }
 #coursesLang.down {
  float: right;
+    position: relative;
+    height: 20px;
+    buttom: 3px;
+
 }
 #coursesLang #en {
     border-left: 1px solid #999999;
@@ -194,7 +202,7 @@ display:inline-block;
     border:none;
     cursor: pointer;
     color: #4b70a3;
-    font-size: 18px;
+    font-size: 14px;
     font-family: "MyriadPro";
     text-decoration: underline;
     position: relative;
@@ -241,8 +249,8 @@ width: 370px;
 }
 .courseStatus2 p{
     margin-left: 150px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     position: relative;
     color: #696969;
 }
@@ -250,10 +258,12 @@ width: 370px;
     color: green;
     float: right;
 position: relative ;
+    padding-right: 6px;
 }
 #courseStatus2 {
     color: #ff0000;
     float:right;
+    padding-right: 6px;
 }
 .sourse{
     color:gray;

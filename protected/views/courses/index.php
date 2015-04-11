@@ -154,11 +154,11 @@ $this->breadcrumbs=array(
         <?php echo Yii::t('courses', 'Language:'); ?>
             <div id="coursesLang" class="down">
                 <form action="" method="post" onsubmit="" name="fff">
-                    <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>
+                    <button  formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" style="padding-bottom: 0px;padding-top: 0px;height: 20px;" disabled>ua</button>
 
-                    <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'EN'));?>" id="en" name="en" onclick="changeLang(this)">en</button>
+                    <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'EN'));?>" id="en" name="en" onclick="changeLang(this)" style="padding-bottom: 0px;padding-top: 0px;height: 20px;">en</button>
 
-                    <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'RU'));?>" id="ru" name="ru" onclick="changeLang(this)">ru</button>
+                    <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'RU'));?>" id="ru" name="ru" onclick="changeLang(this)" style="padding-bottom: 0px;padding-top: 0px;height: 20px;">ru</button>
 
                 </form>
             </div>
