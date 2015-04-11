@@ -34,13 +34,15 @@ class Controller extends CController
 		$this->imageSotial = Yii::app()->request->baseUrl.Footer::model()->findByPk(1)->imageSotial;
 		$this->imageUp = Yii::app()->request->baseUrl.Footer::model()->findByPk(1)->imageUp;
         echo 'Controller:init';
-        var_dump(Yii::app()->session['translatedTable']);die();
+
 		$app = Yii::app();
 		if (isset($app->session['lg'])) {
 			$app->language = $app->session['lg'];
 		}
         if ($app->session['translatedTable'] == null) {
             $app->session['translatedTable'] = 'translatedmessagesua';
+        } else {
+            $app->session['translatedTable'] = strtolower($app->session['translatedTable']);
         }
 	}
 	/**
