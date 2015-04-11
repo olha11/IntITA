@@ -8,64 +8,73 @@
         if (x!="")
         {document.getElementById("sver").innerHTML="Приховати";}
         else
-        {document.getElementById("sver").innerHTML=""; document.getElementById("razv").innerHTML="Далі";}
+        {document.getElementById("sver").innerHTML=""; document.getElementById("razv").innerHTML="Показати";}
+    }
+</script>
+<script>
+    function xexx()
+    {
+        document.getElementById('xex').style.display='none'
     }
 </script>
 
 <?php
 $this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
-    Yii::t('breadcrumbs', 'Courses'),
+    Yii::t('breadcrumbs', '0050'),
 );
-class Course
-{
-    public $courseLang="Мова курсу:";
-    public $courseImage;
-    public $courseName;
-    public $courseLevel;
-    public $courseNumberofModules;
-    public $courseReview;
-    public $courseMaxNumberofModules=4;
-    public $coursesHeader='Наші курси';
-    public $courseLevelTitle='Рівень курсу:';
-    public $coursesTextHeader= 'Концепція підготовки';
-    public $coursesTextFooter="<p><span id='courseText2'>Спочатку навчання створюється стійкий фундамент для підготовки програмістів:
+	class Course
+	{
+	    public $courseLang="Мова курсу:";
+		public $courseImage;
+		public $courseName;
+		public $courseLevel;
+		public $courseNumberofModules;
+		public $courseReview;
+		public $courseMaxNumberofModules=5;
+		public $coursesHeader='Наші курси';
+		public $courseLevelTitle='Рівень курсу:';
+		public $coursesTextHeader= 'Концепція підготовки';
+		public $coursesTextFooter="<p><span id='courseText2'>Спочатку навчання створюється стійкий фундамент для підготовки програмістів:
 		необхідні знання елементарної математики, будови комп’ютера і основ інформатики.</span>";
-    public $coursesTextFooter2="<p><span id='courseText2'>Потім вивчаються основні принципи програмування на базі класичних комп'ютерних наук і методологій: алгоритмічна мова;
+        public $coursesTextFooter2="<p><span id='courseText2'>Потім вивчаються основні принципи програмування на базі класичних комп'ютерних наук і методологій: алгоритмічна мова;
 		лементи вищої та дискретної математики і комбінаторики; структури даних, розробка і аналіз алгоритмів.</span>
 		<p><span id='courseText2'>
 		Після чого формується база для переходу до сучасних технологій програмування: об’єктно-орієнтоване програмування; проектування баз даних.</span>
 		<p><span id='courseText2'>Завершення процесу підготовки шляхом конкретного застосування отриманих знань на реальних проектах із засвоєнням сучасних методів і технологій,
 		які використовуються в ІТ індустрії компаніями.</span>";
-    function Course ( $courseImage,$courseName,$courseLevel,$courseNumberofModules,$courseReview)
-    {
-        $this->courseImage=$courseImage;
-        $this->courseName=$courseName;
-        $this->courseLevel=$courseLevel;
-        $this->courseNumberofModules=$courseNumberofModules;
-        $this->courseReview=$courseReview;
-    }
-}
 
-$course1=new Course (Yii::app()->request->baseUrl.'/css/images/course1Image.png','Інтернет програміст (РНР)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-$course2=new Course (Yii::app()->request->baseUrl.'/css/images/course2Image.png','програміст (Java Script)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-$course3=new Course (Yii::app()->request->baseUrl.'/css/images/course3Image.png','Програміст (Java)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-$course4=new Course (Yii::app()->request->baseUrl.'/css/images/course4Image.png','Програміст (C#)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-$course5=new Course (Yii::app()->request->baseUrl.'/css/images/course5Image.png','Програміст (С++)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-$course11=new Course (Yii::app()->request->baseUrl.'/css/images/course11Image.png','Тестувальник (QA) ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-$coursesArray1=array($course1,$course2,$course3,$course4,$course5,$course11);
+		function Course ( $courseImage,$courseName,$courseLevel,$courseNumberofModules,$courseReview)
+		{
+		$this->courseImage=$courseImage;
+		$this->courseName=$courseName;
+		$this->courseLevel=$courseLevel;
+		$this->courseNumberofModules=$courseNumberofModules;
+		$this->courseReview=$courseReview;
+		}
+	}
 
-$course7=new Course (Yii::app()->request->baseUrl.'/css/images/course7Image.png','Основи програмування','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-$course8=new Course (Yii::app()->request->baseUrl.'/css/images/course8Image.png','Основи нейролінгвістичного програмування','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-$course9=new Course (Yii::app()->request->baseUrl.'/css/images/course9Image.png','Основи нейролінгвістичного програмування ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
-$course10=new Course (Yii::app()->request->baseUrl.'/css/images/course10Image.png','Основи нейролінгвістичного програмування ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course1=new Course (Yii::app()->request->baseUrl.'/css/images/course1Image.png','Інтернет програміст (РНР)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course2=new Course (Yii::app()->request->baseUrl.'/css/images/course2Image.png','програміст (Java Script)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course3=new Course (Yii::app()->request->baseUrl.'/css/images/course3Image.png','Програміст (Java)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course4=new Course (Yii::app()->request->baseUrl.'/css/images/course4Image.png','Програміст (C#)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course5=new Course (Yii::app()->request->baseUrl.'/css/images/course5Image.png','Програміст (С++)','середній',2,'Интерактивные веб-приложения разработка программного  for a for aобеспечения/ Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+    $course11=new Course (Yii::app()->request->baseUrl.'/css/images/course11Image.png','Тестувальник (QA) ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
 
-$coursesArray2=array($course7,$course8,$course9,$course10);
+	$coursesArray1=array($course1,$course2,$course3,$course4,$course5,$course11);
 
-$courseDisableImage=Yii::app()->request->baseUrl.'/css/images/ratIco0.png';
-$courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
+	$course7=new Course (Yii::app()->request->baseUrl.'/css/images/course7Image.png','Основи програмування','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course8=new Course (Yii::app()->request->baseUrl.'/css/images/course8Image.png','Основи нейролінгвістичного програмування','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course9=new Course (Yii::app()->request->baseUrl.'/css/images/course9Image.png','Основи нейролінгвістичного програмування ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
+	$course10=new Course (Yii::app()->request->baseUrl.'/css/images/course10Image.png','Основи нейролінгвістичного програмування ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
 
-?>
+
+	$coursesArray2=array($course7,$course8,$course9,$course10);
+
+	$courseDisableImage=Yii::app()->request->baseUrl.'/css/images/ratIco0.png';
+	$courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
+
+	?>
 
 <div id='coursesMainBox'>
 
@@ -82,8 +91,8 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
             <td  valign="top"> <div class='sourse'><a href="#">UI/UIX</a>&nbsp;(1)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
             <td  valign="top"> <div class='sourse'><a href="#">Адміністрування</a>&nbsp;(1)</div></td>
 
-        </tr>
-    </table>
+</tr>
+</table>
 
 
 
@@ -93,9 +102,9 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
 
 
 
-    <table>
-        <tr><td  valign="top">
-                <div id='coursesPart1'>
+<table>
+<tr><td  valign="top">
+<div id='coursesPart1'>
 
 
                     <?php
@@ -165,7 +174,7 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
 
             <td >
                 <div id='coursesPart2'>
-                    <div class="bgBlue">
+           <div class="bgBlue" id="xex">
                         <table>
                             <tr>
                                 <td  valign="top">
@@ -181,10 +190,12 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
                         <div class='courseBox2'>
                             <?php echo $course1->coursesTextFooter; ?>
                             <div id="razv" onclick='wrt("<p> Потім вивчаються основні принципи програмування на базі класичних компютерних наук і методологій алгоритмічна мова; eлементи вищої та дискретної математики і комбінаторики; структури даних, розробка і аналіз алгоритмів.<p>Після чого формується база для переходу до сучасних технологій програмування об’єктно-орієнтоване програмування; проектування баз даних.<p>Завершення процесу підготовки шляхом конкретного застосування отриманих знань на реальних проектах із засвоєнням сучасних методів і технологій,які використовуються в ІТ індустрії компаніями.")'>
-                                Далі >>>
+                                Показати
                             </div>
                             <br><br>
                             <div id="sver" onclick='wrt("");'></div>
+
+                   <div id="xex" onclick='xexx("")'   style="margin-left: 390px;font-size: 24px; position: relative; top: -20px;  cursor: pointer;  ">X</div>
 
                         </div>
                     </div>
