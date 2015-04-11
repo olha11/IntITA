@@ -20,7 +20,7 @@ class MyCDbMessageSource extends CDbMessageSource{
     /**
      * @var string the name of the translated message table. Defaults to 'Message'.
      */
-    public $translatedMessageTable='Message';
+    public $translatedMessageTable='message';
     /**
      * @var integer the time in seconds that the messages can remain valid in cache.
      * Defaults to 0, meaning the caching is disabled.

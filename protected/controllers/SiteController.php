@@ -43,7 +43,9 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index1.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$modelCarousel = new Carousel();
+
 		$mainpage = new Mainpage();
+        var_dump(Yii::app()->session['translatedTable']);
 		$mainpage->setValueById(0);
         if (!(Yii::app()->session['translatedTable'])) {
             $source = new MyCDbMessageSource();
