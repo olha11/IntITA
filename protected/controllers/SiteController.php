@@ -47,7 +47,7 @@ class SiteController extends Controller
 		$mainpage->setValueById(0);
         if (!(Yii::app()->session['translatedTable'])) {
             $source = new MyCDbMessageSource();
-            $source->changeTranslatedTable('translatedMessagesUA');
+            $source->changeTranslatedTable('translatedmessagesua');
         }
 		$arraySteps = $this->initSteps();
 		$arrayAboutUs = $this->initAboutus();
