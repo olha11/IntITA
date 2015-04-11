@@ -45,7 +45,10 @@ class SiteController extends Controller
 		$modelCarousel = new Carousel();
 		$mainpage = new Mainpage();
 		$mainpage->setValueById(0);
-
+        if (!(Yii::app()->session['translatedTable'])) {
+            $source = new MyCDbMessageSource();
+            $source->changeTranslatedTable('translatedMessagesUA');
+        }
 		$arraySteps = $this->initSteps();
 		$arrayAboutUs = $this->initAboutus();
 		
@@ -278,7 +281,9 @@ class SiteController extends Controller
 	 */
 	public function actionLogout()
 	{
+        $tmp = Yii::app()->session['translatedTable'];
 		Yii::app()->user->logout();
+        Yii::app()->session['translatedTable'] = $tmp;
 		$this->redirect(Yii::app()->homeUrl);
 	}
 
