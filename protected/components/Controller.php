@@ -39,7 +39,7 @@ class Controller extends CController
 			$app->language = $app->session['lg'];
 		}
         if ($app->session['translatedTable'] == null) {
-            $app->session['translatedTable'] = 'translatedMessagesUA';
+            $app->session['translatedTable'] = 'translatedmessagesua';
         }
 	}
 	/**

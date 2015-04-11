@@ -16,7 +16,7 @@ class MyCDbMessageSource extends CDbMessageSource{
     /**
      * @var string the name of the source message table. Defaults to 'SourceMessage'.
      */
-    public $sourceMessageTable='SourceMessage';
+    public $sourceMessageTable='sourcemessage';
     /**
      * @var string the name of the translated message table. Defaults to 'Message'.
      */

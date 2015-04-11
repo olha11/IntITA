@@ -187,13 +187,13 @@ class SiteController extends Controller
 		$app = Yii::app();
 		if (isset($_GET['lg'])) {
 			if($_GET['lg'] == 'ru') {
-                $app->session['translatedTable'] = 'translatedMessagesRU';
+                $app->session['translatedTable'] = 'translatedmessagesru';
             }
             if($_GET['lg'] == 'en') {
-                $app->session['translatedTable'] = 'translatedMessagesEN';
+                $app->session['translatedTable'] = 'translatedmessagesen';
             }
             if($_GET['lg'] == 'ua') {
-                $app->session['translatedTable'] = 'translatedMessagesUA';
+                $app->session['translatedTable'] = 'translatedmessagesua';
             }
 			$app->session['lg'] = $_GET['lg'];
 		}
