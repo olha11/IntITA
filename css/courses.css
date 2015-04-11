@@ -298,7 +298,8 @@ left: 150px;
 #sver{
     margin-left: 40px;
     background-color:#4B75A4;
-    cursor: pointer
+    cursor: pointer;
+    width: 200px;
 }
 #razv {
       margin-left: 40px;
