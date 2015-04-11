@@ -46,6 +46,7 @@ class SiteController extends Controller
 
 		$mainpage = new Mainpage();
         var_dump(Yii::app()->session['translatedTable']);
+        die();
 		$mainpage->setValueById(0);
         if (!(Yii::app()->session['translatedTable'])) {
             $source = new MyCDbMessageSource();
