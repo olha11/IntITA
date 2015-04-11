@@ -38,9 +38,9 @@ class Controller extends CController
 		if (isset($app->session['lg'])) {
 			$app->language = $app->session['lg'];
 		}
-        if (!isset($app->session['translatedTable'])) {
-            $app->session['translatedTable'] = 'translatedMessagesRU';
-        }
+               if ($app->session['translatedTable'] == null) {
+            		$app->session['translatedTable'] = 'translatedMessagesUA';
+        	}
 	}
 	/**
 	 * @var string the default layout for the controller view. Defaults to '//layouts/column1',
