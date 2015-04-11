@@ -33,7 +33,7 @@ class Controller extends CController
 		$this->link4 = Yii::app()->request->baseUrl.Header::model()->findByPk(1)->item4Link;
 		$this->imageSotial = Yii::app()->request->baseUrl.Footer::model()->findByPk(1)->imageSotial;
 		$this->imageUp = Yii::app()->request->baseUrl.Footer::model()->findByPk(1)->imageUp;
-
+        var_dump(Yii::app()->session['translatedTable']);die();
 		$app = Yii::app();
 		if (isset($app->session['lg'])) {
 			$app->language = $app->session['lg'];
