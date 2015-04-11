@@ -60,7 +60,7 @@ return array(
 
         'messages'=>array(
             'class'=>'MyCDbMessageSource',
-            'sourceMessageTable'=>'sourceMessages',
+            'sourceMessageTable'=>'sourcemessages',
             'translatedMessageTable'=>'translatedmessagesua',
         ),
 
