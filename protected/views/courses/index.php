@@ -185,6 +185,10 @@ $this->breadcrumbs=array(
                                                                <div id='coursesHeader'>
                                                                    <?php echo $course1->coursesTextHeader; ?>
                                                                </div>
+
+                                                           </td>
+                                                           <td>
+                                                               <div id="xex" onclick='xexx("")'   style=" left: 39px;font-size: 24px; position: relative; top: -35px;  cursor: pointer; width: 15px;  ">x</div>
                                                            </td>
                                                        </tr>
                                                    </table>
@@ -192,18 +196,13 @@ $this->breadcrumbs=array(
                    <?php echo $course1->coursesTextFooter; ?>
 
         <div id="razv" onclick='wrt("<p><span> Потім вивчаються основні принципи програмування на базі класичних компютерних наук і методологій алгоритмічна мова; eлементи вищої та дискретної математики і комбінаторики; структури даних, розробка і аналіз алгоритмів.<p>Після чого формується база для переходу до сучасних технологій програмування об’єктно-орієнтоване програмування; проектування баз даних.<p>Завершення процесу підготовки шляхом конкретного застосування отриманих знань на реальних проектах із засвоєнням сучасних методів і технологій,які використовуються в ІТ індустрії компаніями.</span>")'>
+            <br>
             Далі
         </div>
-        <br><br>
-        <div id="sver" onclick='wrt("");'></div>
-
-                   <div id="xex" onclick='xexx("")'   style="margin-left: 390px;font-size: 24px; position: relative; top: -20px;  cursor: pointer;  ">X</div>
-
+<br>
+        <div id="sver" onclick='wrt("");'></div> <br>
                </div>
             </div>
-
-
-
 
 
     <?php
