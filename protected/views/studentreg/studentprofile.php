@@ -1,5 +1,5 @@
 <!-- studprofile style -->
-<link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/studProfile.css" />
+<link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/profile.css" />
 <!-- studprofile style -->
 <?php
 /* @var $this StudentprofileController */
@@ -10,13 +10,10 @@
 $this->pageTitle = 'INTITA';
 $post=StudentReg::model()->findByPk(Yii::app()->user->id);
 ?>
-<div class="formStudProfNav">
-    <?php
-    $this->breadcrumbs=array(
-        Yii::t('breadcrumbs', 'Profile'),
-    );
-    ?>
-</div>
+<?php
+$this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
+);
+?>
 <div class="formStudProf">
     <div class="studProfInf">
         <table class="titleProfile">
