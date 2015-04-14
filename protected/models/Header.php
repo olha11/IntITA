@@ -133,4 +133,28 @@ class Header extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public function getMenuItem1(){
+        return Yii::t('header', '0016');
+    }
+
+    public function getMenuItem2(){
+        return Yii::t('header', '0021');
+    }
+
+    public function getMenuItem3(){
+        return Yii::t('header', '0017');
+    }
+
+    public function getMenuItem4(){
+        return Yii::t('header', '0018');
+    }
+
+    public function getEnterButton(){
+        return Yii::t('header', '0019');
+    }
+
+    public function getLogoutButton(){
+        return Yii::t('header', '0020');
+    }
 }

@@ -140,7 +140,7 @@
 </script>
 <div id="sliderCenterBox">
     <div class="sliderCenterBoxText">
-        <p><?php echo Yii::t('slider','PROGRAM THE FUTURE'); ?></p>
+        <p><?php echo Yii::t('slider','0005'); ?></p>
     </div>
     <div class="sliderCenterBoxLine">
         <hr>
@@ -150,36 +150,36 @@
             <img src="<?php echo $mainpage['sliderLine']; ?>">
         </div>
         <div class="button">
-            <a class="sliderButton" href="#form"><?php echo Yii::t('slider','ENTER \>'); ?></a>
+            <a class="sliderButton" href="#form"><?php echo Yii::t('slider', '0008'); ?></a>
         </div>
     </div>
 </div>
 <div id="slider" class="owl-carousel">
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','We guarantee you an offer of employment <br>
-After successful completion of training!'); ?></p>
+            <p><?php echo Yii::t('slider','0027<br>
+sliderText1'); ?></p>
             <img src="<?php echo $slider1 ?>" />
         </div>
     </div>
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','Do not miss your chance to change the world - get high-quality and modern education <br>
-and become a specialist class !'); ?></p>
+            <p><?php echo Yii::t('slider','0028<br>
+sliderText2'); ?></p>
             <img src="<?php echo $slider2 ?>" />
         </div>
     </div>
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','One year of productive and interesting learning - and you will become a professional programmer <br>
-ready to work in the IT industry !'); ?></p>
+            <p><?php echo Yii::t('slider','0029<br>
+sliderText3'); ?></p>
             <img src="<?php echo $slider3 ?>" />
         </div>
     </div>
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','Want to become a high-class specialist ? <br>
-Takes correct and informed decision - Learn with us!'); ?></p>
+            <p><?php echo Yii::t('slider','0030<br>
+sliderText4'); ?></p>
             <img src="<?php echo $slider4 ?>" />
         </div>
     </div>
@@ -194,11 +194,12 @@ Takes correct and informed decision - Learn with us!'); ?></p>
 
 
 <?php
-$this->pageTitle = Yii::t('mainpage','INTITA');
-$headerText = Yii::t('mainpage','About us');
-$subheaderText = Yii::t('mainpage','something that you need to know about our courses');
+$mainpageModel = new Mainpage();
+$this->pageTitle = $mainpageModel->getTitle();
+$headerText = $mainpageModel->getHeader1();
+$subheaderText = $mainpageModel->getSubheader1();
 $subLineImage = $mainpage['subLineImage'];
-$linkName = Yii::t('mainpage','read more ...');
+$linkName = $mainpageModel->getLinkName();
 $massAbout=array($block1,$block2,$block3);
 ?>
 <div class="mainAboutBlock">
@@ -244,15 +245,14 @@ $massAbout=array($block1,$block2,$block3);
 
     </div>
 </div>
-<! Ініціалізація екземплярів класу>
+
 <?php
-$stepHeader =  Yii::t('mainpage','How is the training?');
-$stepSubheader =  Yii::t('mainpage','then explain how you will learn step by step');
-$stepSize= $mainpage['stepSize'];
+$stepHeader =  $mainpageModel->getHeader2();
+$stepSubheader =  $mainpageModel->getSubheader2();
+$stepSize = $mainpage['stepSize'];
 $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 ?>
 
-<! Верстка за допомогою масиву з екземплярами класу>
 <div class="steps" >
     <div class="stepHeaderCont" style="width:<?php echo $stepSize; ?>">
         <div class="stepHeader">
@@ -299,7 +299,7 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
                      <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
 					<div class="stepArticle">
 						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
-						<p class="stepName"><?php echo Yii::t('step','step'); ?></p>
+						<p class="stepName"><?php echo Yii::t('step','0043'); ?></p>
 					</div>
         			<div class="stepInfo">
           				  <h2><?php echo $stepValue->stepTitle; ?></h2>

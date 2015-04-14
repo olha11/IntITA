@@ -14,13 +14,13 @@ $form = $this->beginWidget('CActiveForm', array(
 ?>
 <div class="signIn">
     <div class="rowemail">
-        <?php $placeHolderEmail = Yii::t('regform','Email');?>
+        <?php $placeHolderEmail = Yii::t('regform','0014');?>
         <?php echo $form->textField($qForm,'email',array('class'=>'signInEmailM','placeholder'=>$placeHolderEmail,'size'=>60,'maxlength'=>255)); ?>
         <span><?php echo $form->error($qForm,'email'); ?></span>
     </div>
 
     <div class="rowpass">
-        <?php $placeHolderPassword = Yii::t('regform','Password');?>
+        <?php $placeHolderPassword = Yii::t('regform','0015');?>
         <span class="passEye"> <?php echo $form->passwordField($qForm,'password',array('class'=>'signInPassM','placeholder'=>$placeHolderPassword,'size'=>60,'maxlength'=>255)); ?></span>
         <span><?php echo $form->error($qForm,'password'); ?></span>
         <?php if(Yii::app()->user->hasFlash('info')):
@@ -29,13 +29,13 @@ $form = $this->beginWidget('CActiveForm', array(
     </div>
 
     <div class="forgotPass">
-        <?php echo CHtml::link('Забули пароль?', '#', array('id'=>'forgotPass',)); ?>
+        <?php echo CHtml::link(Yii::t('regform','0092'), '#', array('id'=>'forgotPass',)); ?>
     </div>
-    <?php $labelButton = Yii::t('regform','ВВІЙТИ');?>
+    <?php $labelButton = Yii::t('regform',Yii::t('regform','0093'));?>
     <?php echo CHtml::submitButton($labelButton, array('id' => "signInButtonM")); ?>
 
 
-    <div class="linesignInForm"><?php echo Yii::t('regform','You can also enter by social networks:'); ?></div>
+    <div class="linesignInForm"><?php echo Yii::t('regform','0091'); ?></div>
     <div class="image" >
         <div id="singInFormCarousel">
             <a href="#" class="arrow left-arrow" id="prev"><p><</p></a>

@@ -127,7 +127,7 @@ class TeachersController extends Controller
 		$page = new Teacherspage(1);
 		$page = $page->setValuesById();
 
-		$this->render('teachers',array(
+		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 			'page'=>$page,
 		));

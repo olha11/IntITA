@@ -1,4 +1,7 @@
 <!-- teacherProfile style -->
+<?php
+/*@var $this TeacherProfileController */
+?>
 <script src="https://apis.google.com/js/platform.js" async defer>
     {lang: 'uk'}
 </script>
@@ -7,15 +10,15 @@
 <?php
 $this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
-    Yii::t('breadcrumbs', 'Teacher profile'),
+    Yii::t('breadcrumbs', '0057'),
 );
 $model=new TeacherProfile;
 $model->mainImage=Yii::app()->request->baseUrl.'/css/images/teacher1Image.png';
 $model->firstName='Сіра';
 $model->lastName='Олександра Василівна';
 $model->arraySectionText=array('Програмування ПХП;','Java для IOS;');
-$tmp = Yii::t('teacher', 'About teacher:');
-$tmp2 = Yii::t('teachers', 'Read courses:');
+$tmp = Yii::t('teacher', '0065');
+$tmp2 = Yii::t('teachers', '0061');
 $model->aboutTextMain="
 <span class='TeacherProfiletitles'>$tmp</span><p>
 <p>Народилася і виросла в Сакраменто, у 18 років вона переїхала до Лос-Анджелеса й незабаром стала вкладачем. У 2007, 2008 і 2010 рр.. вона виграла кілька номінацій премії AVN Awards (також була названа «Найкращою програмісткою» у 2007 році за версією XRCO). Паралельно з вікладауцью роботою та роботою програміста в Саша Грей грає головну роль в тестванні Інтернету.
@@ -45,7 +48,7 @@ $model->aboutTextSecond="
 </span>
             <div class="TeacherProfileseparator"></div>
 <span class="TeacherProfiletitles">
-<?php echo Yii::t('teacher', 'Chapter:') ?>
+<?php echo Yii::t('teacher', '0064') ?>
 </span>
             <div class="TeacherProfilesectionText">
                 <?php

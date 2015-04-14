@@ -216,12 +216,6 @@ p.subCourseInfo, p.courseAboutTeacher{
     margin: -7px 0 10px -3px;
     font-size: 16px;
 }
-.cModule div {
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
-    line-height: 10px;
-}
 .cModule td{
     vertical-align: top;
 }

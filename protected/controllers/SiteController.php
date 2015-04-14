@@ -15,6 +15,9 @@ class SiteController extends Controller
 	/**
 	 * Declares class-based actions.
 	 */
+
+    public $sourceMessages;
+
 	public function actions()
 	{
 		return array(
@@ -40,9 +43,13 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index1.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$modelCarousel = new Carousel();
+
 		$mainpage = new Mainpage();
 		$mainpage->setValueById(0);
-
+        if (!(Yii::app()->session['translatedTable'])) {
+            $source = new MyCDbMessageSource();
+            $source->changeTranslatedTable('translatedmessagesua');
+        }
 		$arraySteps = $this->initSteps();
 		$arrayAboutUs = $this->initAboutus();
 		
@@ -58,6 +65,7 @@ class SiteController extends Controller
 			'slider2'=>$sliderPictures['slider2'],
 			'slider3'=>$sliderPictures['slider3'],
 			'slider4'=>$sliderPictures['slider4'],
+            'mainpageModel'=>$mainpage,
 			'mainpage'=>array(
 				'sliderLine'=> $mainpage->sliderLineURL,
 				'sliderTexture'=> $mainpage->sliderTextureURL,
@@ -87,16 +95,16 @@ class SiteController extends Controller
 	public function initAboutus(){
 		$objAbout1 = new AboutUs(1);
 		$objAbout1->setValuesById(1);
-		$objAbout1->titleText = Yii::t('aboutus', 'What you dream about?');
-		$objAbout1->textAbout = Yii::t('aboutus', 'Try to guess: their own apartment or even a house? A good car? Foreign travel may have to exotic countries?');
+		$objAbout1->titleText = Yii::t('aboutus', '0032');
+		$objAbout1->textAbout = Yii::t('aboutus', '0035');
 		$objAbout2 = new AboutUs(2);
 		$objAbout2->setValuesById(2);
-		$objAbout2->titleText = Yii::t('aboutus', 'Learning of the future');
-		$objAbout2->textAbout = Yii::t('aboutus', 'Programming - it\'s not as hard as you can imagine. Of course, to become a good programmer, it takes time and effort.');
+		$objAbout2->titleText = Yii::t('aboutus', '0033');
+		$objAbout2->textAbout = Yii::t('aboutus', '0036');
 		$objAbout3 = new AboutUs(3);
 		$objAbout3->setValuesById(3);
-		$objAbout3->titleText = Yii::t('aboutus', 'Questions & feedback');
-		$objAbout3->textAbout = Yii::t('aboutus', 'Three whales INTITA Independent Programming Academy training schedule. Only 100% of the necessary knowledge. The acquisition of 100% of knowledge!');
+		$objAbout3->titleText = Yii::t('aboutus', '0034');
+		$objAbout3->textAbout = Yii::t('aboutus', '0037');
 		return $arrayAboutUs = array(
 			'objAbout1'=>$objAbout1,
 			'objAbout2'=>$objAbout2,
@@ -116,17 +124,22 @@ class SiteController extends Controller
 		$step5=new Step();
 		$step5->setValueById(5);
 
-		$step1->stepTitle =  Yii::t('step','Online Registration');
-		$step2->stepTitle =  Yii::t('step','Choosing course or module');
-		$step3->stepTitle =  Yii::t('step','Payment');
-		$step4->stepTitle =  Yii::t('step','Learning material');
-		$step5->stepTitle =  Yii::t('step','Completion of the course');
+		$step1->stepTitle =  Yii::t('step','0038');
+		$step2->stepTitle =  Yii::t('step','0039');
+		$step3->stepTitle =  Yii::t('step','0040');
+		$step4->stepTitle =  Yii::t('step','0041');
+		$step5->stepTitle =  Yii::t('step','0042');
 
-		$step1->stepText =  Yii::t('step','To access the list of courses, modules and classes and pass free modules and classes register on the site. Registering will allow you to assess the quality and usability of our product that you will become a reliable partner and advisor to professional fulfillment.');
-		$step2->stepText =  Yii::t('step','To become a specialist in a certain direction and level (get professional specialization) choose to undergo appropriate course. If you are interested only deepen the knowledge in a particular area of IT, then choose the module to pass.');
-		$step3->stepText =  Yii::t('step','To start a course or module choose payment scheme (the entire amount for the course, month, potrymestrovo etc) and make a payment convenient way to You (payment scheme or course module can be changed also possible monthly payment on credit).');
-		$step4->stepText =  Yii::t('step','Learning material is possible by reading the text and / or viewing video for each session. During the development of the material classes perform intermediate tests. At the end of each session do the final test task. Each module ends with an individual project or exam. You can get individual counseling teacher or discuss the issue on the forum.');
-		$step5->stepText =  Yii::t('step','The result of course is the command thesis project, performed together with other students (the team recommends that forms an independent or executive who approved topic and terms of reference of the project). Filing project involves peredzahyst and protection in the online mode of presentation design.');
+		$step1->stepText =  Yii::t('step','0044');
+		//To access the list of courses, modules and classes and pass free modules and classes register on the site. Registering will allow you to assess the quality and usability of our product that you will become a reliable partner and advisor to professional fulfillment.');
+		$step2->stepText =  Yii::t('step','0045');
+		//To become a specialist in a certain direction and level (get professional specialization) choose to undergo appropriate course. If you are interested only deepen the knowledge in a particular area of IT, then choose the module to pass.');
+		$step3->stepText =  Yii::t('step','0046');
+		//To start a course or module choose payment scheme (the entire amount for the course, month, potrymestrovo etc) and make a payment convenient way to You (payment scheme or course module can be changed also possible monthly payment on credit).');
+		$step4->stepText =  Yii::t('step','0047');
+		//Learning material is possible by reading the text and / or viewing video for each session. During the development of the material classes perform intermediate tests. At the end of each session do the final test task. Each module ends with an individual project or exam. You can get individual counseling teacher or discuss the issue on the forum.');
+		$step5->stepText =  Yii::t('step','0048');
+		//The result of course is the command thesis project, performed together with other students (the team recommends that forms an independent or executive who approved topic and terms of reference of the project). Filing project involves peredzahyst and protection in the online mode of presentation design.');
 
 		return $arraySteps = array(
 			'step1'=>$step1,
@@ -174,13 +187,18 @@ class SiteController extends Controller
 	{
 		$app = Yii::app();
 		if (isset($_GET['lg'])) {
-			if ($_GET['lg'] == 'ru'){
-				//Yii::app()->params['translatedMessageTable'] = 'translatedMessagesRU';
-				//Yii::app()->config->set('translatedMessageTable', 'translatedMessagesRU');
-			}
+			if($_GET['lg'] == 'ru') {
+                $app->session['translatedTable'] = 'translatedmessagesru';
+            }
+            if($_GET['lg'] == 'en') {
+                $app->session['translatedTable'] = 'translatedmessagesen';
+            }
+            if($_GET['lg'] == 'ua') {
+                $app->session['translatedTable'] = 'translatedmessagesua';
+            }
 			$app->session['lg'] = $_GET['lg'];
 		}
-		$this->redirect($_SERVER["HTTP_REFERER"]);
+        $this->redirect($_SERVER["HTTP_REFERER"]);
 	}
 	/**
 	 * Displays the contact page
@@ -264,7 +282,9 @@ class SiteController extends Controller
 	 */
 	public function actionLogout()
 	{
+        $tmp = Yii::app()->session['translatedTable'];
 		Yii::app()->user->logout();
+        Yii::app()->session['translatedTable'] = $tmp;
 		$this->redirect(Yii::app()->homeUrl);
 	}
 
