@@ -97,62 +97,42 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
     </div>
     <div class="profileActivity">
         <div class="tabs">
-            <input id="tab1" type="radio" name="tabs" checked>
+            <input id="tab1" type="radio" name="tabs" >
             <label class="tabsUp1" for="tab1" title="Мої курси">Мої курси</label>
-            <input id="tab2" type="radio" name="tabs">
+            <input id="tab2" type="radio" name="tabs" checked>
             <label for="tab2" title="Розклад">Розклад</label>
-            <input id="tab3" type="radio" name="tabs">
+            <input id="tab3" type="radio" name="tabs" >
             <label for="tab3" title="Консультації">Консультації</label>
             <input id="tab4" type="radio" name="tabs">
             <label for="tab4" title="Екзамени">Екзамени</label>
             <input id="tab5" type="radio" name="tabs">
-            <label for="tab5" title="Мій рейтинг">Мій рейтинг</label>
+            <label for="tab5" title="Мої проекти">Проекти</label>
             <div class="lineUnderTab"></div>
             <input id="tab6" type="radio" name="tabs">
-            <label class="tabsDown1" for="tab6" title="Завантаження">Завантаження</label>
+            <label class="tabsDown1" for="tab6" title="Мій рейтинг">Мій рейтинг</label>
             <input id="tab7" type="radio" name="tabs">
-            <label class="tabsDown" for="tab7" title="Листування">Листування</label>
+            <label for="tab7" title="Завантаження">Завантаження</label>
             <input id="tab8" type="radio" name="tabs">
-            <label class="tabsDown" for="tab8" title="Мої оцінювання">Мої оцінювання</label>
+            <label class="tabsDown" for="tab8" title="Листування">Листування</label>
             <input id="tab9" type="radio" name="tabs">
-            <label class="tabsDown" style="background-image:url(<?php echo Yii::app()->request->baseUrl; ?>/css/images/financeico.png);background-repeat: no-repeat;background-position:10px 3px;" for="tab9" title="Фінанси">
-                Фінанси
-            </label>
+            <label class="tabsDown" for="tab9" title="Мої оцінювання">Мої оцінювання</label>
+            <input id="tab10" type="radio" name="tabs">
+            <label class="tabsDown" style="background-image:url(<?php echo Yii::app()->request->baseUrl; ?>/css/images/financeico.png);background-repeat: no-repeat;background-position:10px 3px;" for="tab10" title="Фінанси">Фінанси</label>
             <div class="lineUnderTab"></div>
             <section id="myCourse">
-                <div class="profileCourse">
-                    <p>Курс:</br> <span class="colorP">"Апгрейд головного мозку"</span></p>
-                    <p class="courseLevLang">Рівень курсу: <span class="colorP">сильний початківець</span></p>
-                    <p class="courseLevLang">Мова курсу: <span class="colorP">українська</span></p>
-                </div>
-                <div class="profileModule">
-                    <p>Модуль:</br> <span class="colorP">Модуль 4. Модульне око, модульний ніс</span></p>
-                </div>
-                <div class="profileLesson">
-                    <p>Заняття:</br> <span class="colorP">Заняття 6. Повторіння мать учіння</span></p>
-                </div>
-                <div class="profileCoursePay">
-                    <p>Курс:</br> <span class="colorP">"Як прокачати ельфа до 81-го рівня"</span></p>
-                    <div class="studPay">
-                        <p>Необхідно здійснити наступну проплату до 30.12.2015</p>
-                        <p>Сума проплати: 1000грн</p>
-                    </div>
-                </div>
+                <?php $this->renderPartial('_mycourse'); ?>
             </section>
             <section id="timetable">
-                <p>
-                    Тут буде розклад
-                </p>
+                <?php $this->renderPartial('_timetable'); ?>
             </section>
-            <section id="advice">
-                <p>
-                    Консультації
-                </p>
+            <section id="consultation">
+                <?php $this->renderPartial('_consultation'); ?>
             </section>
             <section id="exams">
-                <p>
-                    Екзамени
-                </p>
+                <?php $this->renderPartial('_exams'); ?>
+            </section>
+            <section id="projects">
+                <?php $this->renderPartial('_projects'); ?>
             </section>
             <section id="myRatting">
                 <p>
