@@ -13,7 +13,7 @@
     background:#ffffff;
     margin:0 auto;
     width:540px;
-    min-height:420px;
+    min-height:440px;
     border-radius:10px;
     box-shadow: 0 2px 4px rgba(24, 37, 51, .5);
     text-align:center;
@@ -211,41 +211,15 @@ div.linesingInForm{
   padding: 8px 40px;
   margin-left: -7px;
   margin-top: -9px;
-  
-
-}
-#singInFormCarousel .arrow {
-  position: absolute;
-  top: 0px;
-  padding: 3px 8px 8px 9px;
-  border-radius: 15px;
-  font-size: 19px;
-  color: #444;
-  text-decoration: none;
-}
-
-#singInFormCarousel .left-arrow {
-  left: 7px;
-}
-#singInFormCarousel .right-arrow {
-  right: 9px;
-}
-
-#singInFormCarousel p {
-	font-family: "MyriadPro2";
-	font-size:       25px;
-	font-weight: 900;
-    line-height: 0px;
-    color: #4b75a4;
 }
 
 #singInFormCarousel #uLogin {
-  width: 344px;
+  width: 500px;
   overflow: hidden;
+  margin-left: -40px;
 }
 
 #singInFormCarousel #uLogin ul {
- width: 9999px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -253,22 +227,63 @@ div.linesingInForm{
  
 #singInFormCarousel #uLogin ul li {
 	float: left;
-	margin-left: 1.5px;
-	margin-right: 1.5px;
-	}
-	
+	margin-left: 5px;
+	margin-right: 5px;
+}
 
 #singInFormCarousel #uLogin img {
-  width: 40px;
-  height: 40px;
+  width: 75px;
+  height: 75px;
   display: block;
-  filter: Alpha(Opacity=10);/*IE7 fix*/
-  opacity: 0.1;
+  filter: Alpha(Opacity=30);/*IE7 fix*/
+  opacity: 0.3;
  }
  
  #singInFormCarousel #uLogin img:hover {
 	filter: Alpha(Opacity=100);/*IE7 fix*/
 	opacity: 1.0;
  }
+ 
+ 
+ 
+ #uLoginImages .facebook {
+	background: url(images/iconsSingin/facebook.png);
+ }
+
+ #uLoginImages .facebook:hover {
+	background: url(images/iconsSingin/facebook2.png)
+ }
+ 
+ #uLoginImages .googleplus {
+	background: url(images/iconsSingin/googleplus.png);
+ }
+
+ #uLoginImages .googleplus:hover {
+	background: url(images/iconsSingin/googleplus2.png)
+ }
+ 
+ #uLoginImages .linkedin {
+	background: url(images/iconsSingin/linkedin.png);
+ }
+
+ #uLoginImages .linkedin:hover {
+	background: url(images/iconsSingin/linkedin2.png)
+}
+
+#uLoginImages .vkontakte {
+	background: url(images/iconsSingin/vkontakte.png);
+ }
+
+ #uLoginImages .vkontakte:hover {
+	background: url(images/iconsSingin/vkontakte2.png)
+ }
+ 
+ #uLoginImages .twitter {
+	background: url(images/iconsSingin/twitter.png);
+ }
+
+ #uLoginImages .twitter:hover {
+	background: url(images/iconsSingin/twitter2.png)
+}
 
 /* Slider Registration Form */
