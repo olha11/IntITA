@@ -1,0 +1,314 @@
+2015/03/31 11:18:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "font/myriadpro/light.woff".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('font/myriadpro/...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/font/myriadpro/light.woff
+HTTP_REFERER=http://localhost/IntITA/css/fontface.css
+---
+2015/03/31 11:18:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "font/myriadpro/bold.woff".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('font/myriadpro/...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/font/myriadpro/bold.woff
+HTTP_REFERER=http://localhost/IntITA/css/fontface.css
+---
+2015/03/31 11:18:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "font/myriadpro/regular.woff".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('font/myriadpro/...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/font/myriadpro/regular.woff
+HTTP_REFERER=http://localhost/IntITA/css/fontface.css
+---
+2015/03/31 11:18:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "font/myriadpro/bold.ttf".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('font/myriadpro/...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/font/myriadpro/bold.ttf
+HTTP_REFERER=http://localhost/IntITA/css/fontface.css
+---
+2015/03/31 11:18:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "font/myriadpro/light.ttf".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('font/myriadpro/...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/font/myriadpro/light.ttf
+HTTP_REFERER=http://localhost/IntITA/css/fontface.css
+---
+2015/03/31 11:18:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "font/myriadpro/regular.ttf".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('font/myriadpro/...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/font/myriadpro/regular.ttf
+HTTP_REFERER=http://localhost/IntITA/css/fontface.css
+---
+2015/04/01 16:26:41 [error] [php] Undefined index: token (C:\xampp\htdocs\IntITA\protected\views\site\_form.php:117)
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\IntITA\protected\views\site\index.php(309): SiteController->renderPartial()
+#2 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#5 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#6 C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(84): SiteController->render()
+#7 C:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#10 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#12 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/intITA/site/changeLang/lg/ua/
+in C:\xampp\htdocs\IntITA\protected\views\site\_form.php (117)
+in C:\xampp\htdocs\IntITA\protected\views\site\index.php (309)
+in C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (84)
+2015/04/01 16:28:19 [error] [php] Undefined index: token (C:\xampp\htdocs\IntITA\protected\views\site\_form.php:135)
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\IntITA\protected\views\site\index.php(309): SiteController->renderPartial()
+#2 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#5 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#6 C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(84): SiteController->render()
+#7 C:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#10 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#12 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/intITA/site/changeLang/lg/ua/
+in C:\xampp\htdocs\IntITA\protected\views\site\_form.php (135)
+in C:\xampp\htdocs\IntITA\protected\views\site\index.php (309)
+in C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (84)
+2015/04/01 16:31:52 [error] [php] Undefined index: token (C:\xampp\htdocs\IntITA\protected\views\site\_form.php:131)
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\IntITA\protected\views\site\index.php(309): SiteController->renderPartial()
+#2 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#5 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#6 C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(84): SiteController->render()
+#7 C:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#10 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#12 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/intITA/site/changeLang/lg/ua/
+in C:\xampp\htdocs\IntITA\protected\views\site\_form.php (131)
+in C:\xampp\htdocs\IntITA\protected\views\site\index.php (309)
+in C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (84)
+2015/04/01 17:13:11 [error] [php] include(StudentReg.php): failed to open stream: No such file or directory (C:\xampp\htdocs\IntITA\protected\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\views\site\_form.php(2): spl_autoload_call()
+#1 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#3 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#4 C:\xampp\htdocs\IntITA\protected\views\site\index.php(309): SiteController->renderPartial()
+#5 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#7 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#8 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#9 C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(84): SiteController->render()
+#10 C:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#11 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#13 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#14 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#15 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/
+in C:\xampp\htdocs\IntITA\protected\views\site\_form.php (2)
+in C:\xampp\htdocs\IntITA\protected\views\site\index.php (309)
+in C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (84)
+2015/04/04 11:58:44 [error] [php] Undefined variable: labelButton (C:\xampp\htdocs\IntITA\protected\views\site\_form.php:45)
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\IntITA\protected\views\site\index.php(312): SiteController->renderPartial()
+#2 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#5 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#6 C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(84): SiteController->render()
+#7 C:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#10 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#12 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/intITA/index.php
+in C:\xampp\htdocs\IntITA\protected\views\site\_form.php (45)
+in C:\xampp\htdocs\IntITA\protected\views\site\index.php (312)
+in C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (84)
+2015/04/04 11:59:03 [error] [php] Undefined variable: labelButton (C:\xampp\htdocs\IntITA\protected\views\site\_form.php:45)
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\IntITA\protected\views\site\index.php(312): SiteController->renderPartial()
+#2 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\IntITA\protected\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(869): SiteController->renderFile()
+#5 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(782): SiteController->renderPartial()
+#6 C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php(84): SiteController->render()
+#7 C:\xampp\htdocs\IntITA\protected\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(286): SiteController->runAction()
+#10 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): SiteController->run()
+#12 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/intITA/index.php
+in C:\xampp\htdocs\IntITA\protected\views\site\_form.php (45)
+in C:\xampp\htdocs\IntITA\protected\views\site\index.php (312)
+in C:\xampp\htdocs\IntITA\protected\controllers\SiteController.php (84)
+2015/04/07 18:28:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('admin')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/intITA/index.php/admin
+---
+2015/04/09 14:47:36 [error] [php] Uninitialized string offset: 0 (C:\xampp\htdocs\IntITA\protected\controllers\StudentregController.php:135)
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(133): StudentRegController->runAction()
+#1 C:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\IntITA\protected\framework\web\filters\CInlineFilter.php(58): StudentRegController->filterAccessControl()
+#4 C:\xampp\htdocs\IntITA\protected\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\IntITA\protected\framework\web\CController.php(265): StudentRegController->runActionWithFilters()
+#7 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(282): StudentRegController->run()
+#8 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\IntITA\index.php(13): CWebApplication->run()
+REQUEST_URI=/IntITA/studentreg/index/
+in C:\xampp\htdocs\IntITA\protected\controllers\StudentregController.php (135)
+in C:\xampp\htdocs\IntITA\index.php (13)
+2015/04/09 21:40:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "www/admin".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('www/admin')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/intITA/index.php/www/admin
+---
+2015/04/14 15:33:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/iconsSingin/facebook2.png".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/icon...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/css/images/iconsSingin/facebook2.png
+HTTP_REFERER=http://localhost/IntITA/css/regform.css
+---
+2015/04/14 15:33:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/iconsSingin/facebook2.png".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/icon...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/css/images/iconsSingin/facebook2.png
+HTTP_REFERER=http://localhost/IntITA/css/regform.css
+---
+2015/04/14 15:34:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/iconsSingin/facebook2.png".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/icon...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/css/images/iconsSingin/facebook2.png
+HTTP_REFERER=http://localhost/IntITA/css/regform.css
+---
+2015/04/14 15:35:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/iconsSingin/google_plus.png".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/icon...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/css/images/iconsSingin/google_plus.png
+HTTP_REFERER=http://localhost/IntITA/index.php
+---
+2015/04/14 15:35:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/iconsSingin/vkontakte.png".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/icon...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/css/images/iconsSingin/vkontakte.png
+HTTP_REFERER=http://localhost/IntITA/index.php
+---
+2015/04/14 15:35:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/iconsSingin/linkedin.png".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/icon...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/css/images/iconsSingin/linkedin.png
+HTTP_REFERER=http://localhost/IntITA/index.php
+---
+2015/04/14 15:35:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/iconsSingin/twitter.png".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/icon...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/css/images/iconsSingin/twitter.png
+HTTP_REFERER=http://localhost/IntITA/index.php
+---
+2015/04/14 15:35:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/iconsSingin/twitter.png".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/icon...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/css/images/iconsSingin/twitter.png
+HTTP_REFERER=http://localhost/IntITA/index.php
+---
+2015/04/14 15:35:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/iconsSingin/vkontakte.png".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/icon...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/css/images/iconsSingin/vkontakte.png
+HTTP_REFERER=http://localhost/IntITA/index.php
+---
+2015/04/14 15:35:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/iconsSingin/linkedin.png".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/icon...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/css/images/iconsSingin/linkedin.png
+HTTP_REFERER=http://localhost/IntITA/index.php
+---
+2015/04/14 15:35:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/iconsSingin/google_plus.png".' in C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\IntITA\protected\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/icon...')
+#1 C:\xampp\htdocs\IntITA\protected\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\IntITA\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/IntITA/css/images/iconsSingin/google_plus.png
+HTTP_REFERER=http://localhost/IntITA/index.php
+---
