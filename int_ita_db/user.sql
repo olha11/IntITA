@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-10 18:50:05
+-- Date/time:                    2015-04-14 19:44:11
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -33,12 +33,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   `interests` text,
   `aboutUs` text,
   `aboutMy` varchar(255) DEFAULT NULL,
-  `avatar` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT '/css/images/avatars/noname.png',
   `role` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.user: ~16 rows (approximately)
+-- Dumping data for table int_ita_db.user: ~22 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `firstName`, `identity`, `network`, `state`, `full_name`, `middleName`, `secondName`, `nickname`, `birthday`, `email`, `password`, `phone`, `hash`, `address`, `education`, `educform`, `interests`, `aboutUs`, `aboutMy`, `avatar`, `role`) VALUES
 	(1, 'Вова', '', '', 0, '', 'Джа', 'Марля', 'Wizlight', '21/03/1997', 'Wizlightdragon@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', '911', '', 'Ямайка', 'ВДПУ', 'Онлайн', 'Ковбаска, колобки, раста', 'Інтернет', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', '/css/images/1id.jpg', ''),
@@ -56,7 +56,13 @@ INSERT INTO `user` (`id`, `firstName`, `identity`, `network`, `state`, `full_nam
 	(16, 'bdkjfvh', '', '', 0, '', NULL, '', '', '', 'bbbbbgg@bb.bb', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2', '', '', '', '', '', '', '', '', NULL, '0'),
 	(17, 'fsdgdrhdh', '', '', 0, '', NULL, '', '', '', 'rgdrgjjrtfg@fdr.uky', '011c945f30ce2cbafc452f39840f025693339c42', '', '', '', '', 'Онлайн/Офлайн', '', '', '', NULL, '0'),
 	(18, 'bdkjfvh', '', '', 0, '', NULL, '', '', '', 'bbbbhb@bb.bb', '011c945f30ce2cbafc452f39840f025693339c42', '', '', '', '', '', '', '', '', NULL, '0'),
-	(19, 'rsysryyu', '', '', 0, '', NULL, '', '', '', 'tesys45y@yt.uy', '12c6fc06c99a462375eeb3f43dfd832b08ca9e17', '', '', '', '', 'Не вибрано', '', '', '', NULL, '0');
+	(19, 'rsysryyu', '', '', 0, '', NULL, '', '', '', 'tesys45y@yt.uy', '12c6fc06c99a462375eeb3f43dfd832b08ca9e17', '', '', '', '', 'Не вибрано', '', '', '', NULL, '0'),
+	(20, '', '', '', 0, '', NULL, NULL, NULL, NULL, 'hsvfhjs@dewj.few', '12c6fc06c99a462375eeb3f43dfd832b08ca9e17', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
+	(21, 'kjhkohlnk', '', '', 0, '', NULL, '', '', '', 'hchh+5@opjuigbliy.gkyugf', '73bf9dfd2709e0dfc11bc4ce8cf259a347556dcb', '', '', '', '', 'Не вибрано', '', '', '', '/css/images/avatar/noname.png', '0'),
+	(22, 'tttttt', '', '', 0, '', NULL, '', '', '', 'ttttt@tttt.com', '20eabe5d64b0e216796e834f52d61fd0b70332fc', '', '', '', '', 'Не вибрано', '', '', '', '/css/images/avatars/ttttt@tttt.com.jpg', '0'),
+	(23, '', '', '', 0, '', NULL, '', '', '', 'gjgugug@hh.ij', '12c6fc06c99a462375eeb3f43dfd832b08ca9e17', '', '', '', '', NULL, '', '', '', '/css/images/avatars/gjgugug@hh.ij.jpg', ''),
+	(24, '', '', '', 0, '', NULL, NULL, NULL, NULL, 'vhfvyh@ft.huh', 'f2c42640c920871074aea6971d71d038f95e8cf6', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/noname.png', ''),
+	(25, '', '', '', 0, '', NULL, NULL, NULL, NULL, 'bjhbi@fyh.ji', 'b4aa1b38a0c42a0854f1a39b3f47171d48bd7887', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/css/images/avatars/noname.png', '');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-10 18:50:05
+-- Date/time:                    2015-04-14 19:44:11
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -56,9 +56,9 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(32, 'en', 'What are you dreaming?'),
 	(33, 'en', 'Future Studies'),
 	(34, 'en', 'Questions and comments'),
-	(35, 'en', 'Maybe this freedom to live their lives?\\r\\nIndependently manage own time\\r\\nwith opportunity to earn by doing \\r\\nthings you love and get business and get \\r\\nmeet the modern profession?'),
-	(36, 'en', 'Unlike traditional schools, \\r\\n We do not teach for the sake of ratings. \\r\\nWe work individually \\r\\nwith each student to achieve \\r\\n100% mastering the necessary knowledge.'),
-	(37, 'en', 'We offer each of our \\r\\graduate guaranteed receipt \\r\\nemployment offers \\r\\nfor 4-6 months after the \\r\\nsuccessful completion of training.'),
+	(35, 'en', 'Maybe this freedom to live their lives? Independently manage own time with opportunity to earn by doing things you love and get business and get meet the modern profession?'),
+	(36, 'en', 'Unlike traditional schools, We do not teach for the sake of ratings. We work individually with each student to achieve 100% mastering the necessary knowledge.'),
+	(37, 'en', 'We offer each of our graduate guaranteed receipt employment offers for 4-6 months after the successful completion of training.'),
 	(38, 'en', 'Register Online'),
 	(39, 'en', 'Choice of course or module'),
 	(40, 'en', 'Payment for training'),
