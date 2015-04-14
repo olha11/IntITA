@@ -4,7 +4,7 @@
         <tr>
             <td>
                 <p style="margin-left: 35px">Поточний курс:</p>
-                <span class="colorP">"Апгрейд головного мозку" </span>
+                <a href="<?php echo Yii::app()->request->baseUrl; ?>/course"><span class="colorP">"Апгрейд головного мозку" </span></a>
             </td>
             <td>
                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/actualcourse.png"/>
@@ -16,17 +16,17 @@
     <p class="courseLevLang">Мова курсу: <span class="colorP">українська</span></p>
 </div>
 <div class="profileModule">
-    <p>Модуль:</br> <span class="colorP">Модуль 4. Модульне око, модульний ніс</span></p>
+    <p>Модуль:</br> <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Модуль 4. Модульне око, модульний ніс</span></a></p>
 </div>
 <div class="profileLesson">
-    <p>Заняття:</br> <span class="colorP">Заняття 6. Повторіння мать учіння</span></p>
+    <p>Заняття:</br> <a href="<?php echo Yii::app()->request->baseUrl; ?>/lesson"><span class="colorP">Заняття 6. Повторіння мать учіння</span></a></p>
 </div>
 <div style="border-bottom:none" class="profileCourse">
     <table>
         <tr>
             <td>
                 <p style="margin-left: 35px">Незавершений курс:</p>
-                <span class="colorP">"Як прокачати ельфа до 81-го рівня" </span>
+                <a href="<?php echo Yii::app()->request->baseUrl; ?>/course"><span class="colorP">"Як прокачати ельфа до 81-го рівня" </span></a>
             </td>
             <td>
                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/incompletecourse.png"/>
@@ -43,7 +43,7 @@
         <tr>
             <td>
                 <p style="margin-left: 35px">Завершений курс:</p>
-                <span class="colorP">"Відкрий у собі гобліна"</span>
+                <a href="<?php echo Yii::app()->request->baseUrl; ?>/course"><span class="colorP">"Відкрий у собі гобліна"</span></a>
             </td>
             <td>
                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/completecourse.png"/>

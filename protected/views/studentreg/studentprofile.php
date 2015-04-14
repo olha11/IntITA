@@ -94,7 +94,7 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
     </div>
     <div class="profileActivity">
         <div class="tabs">
-            <input id="tab1" type="radio" name="tabs" >
+            <input id="tab1" type="radio" name="tabs" checked>
             <label class="tabsUp1" for="tab1" title="Мої курси">Мої курси</label>
             <input id="tab2" type="radio" name="tabs" >
             <label for="tab2" title="Розклад">Розклад</label>
@@ -102,7 +102,7 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
             <label for="tab3" title="Консультації">Консультації</label>
             <input id="tab4" type="radio" name="tabs">
             <label for="tab4" title="Екзамени">Екзамени</label>
-            <input id="tab5" type="radio" name="tabs" checked>
+            <input id="tab5" type="radio" name="tabs" >
             <label for="tab5" title="Мої проекти">Проекти</label>
             <div class="lineUnderTab"></div>
             <input id="tab6" type="radio" name="tabs">

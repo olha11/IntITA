@@ -158,7 +158,9 @@ p.tabHeader{
     border-bottom:1px solid #d8d8d8;
     margin: 0 10px 0 0;
 }
-
+#myCourse a{
+    text-decoration: none;
+}
 .profileCourse div{
     padding-bottom: 20px;
 }
