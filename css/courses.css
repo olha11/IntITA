@@ -3,28 +3,22 @@
     position:relative;
     width:1200px;
     left:50%;
-    margin-left: -480px;
+    margin-left: -600px;
     font-family:MyriadPro;
 }
-
 #coursesHeader
 {
-    width:1100px;
+    width:230px;
     color: #ffffff;
     font-size:24px;
     margin:20px;
 }
-
-
 #coursesPart1
 {
     display:inline-block;
     position:relative;
     width:570px;
-
 }
-
-
 #coursesPart2
 {
     width:570px;
@@ -33,7 +27,6 @@
     height: 1500px;
     margin-right: 50px;
 }
-
 .courseBox
 {
     display:inline-block;
@@ -46,28 +39,23 @@
     margin-top:20px;
     font-size: 14px;
 }
-
-
 .courseBox2
 {
     display:inline-block;
     position:relative;
     font-family:MyriadPro;
-    margin-left:5px;
-    margin-bottom:30px;
-    height: 158px;
-    width: 565px;
+    /*margin-left:5px;*/
+    /*margin-bottom:20px;*/
+    height: 50px;
+    width: 400px;
     font-size: 14px;
 }
-
-
 .courseBox img
 {
     position:absolute;
     margin-left:0px;
     margin-bottom:0px;
 }
-
 .courseName
 {
     position:relative;
@@ -83,7 +71,6 @@
     font-size:20px;
     text-decoration: none;
 }
-
 .courseLevelBox
 {
     margin-top:0px;
@@ -96,15 +83,12 @@
     margin-bottom:0px;
     margin-left:150px;
     color:#696969;
-
 }
-
 .courseLevelImage
 {
     margin-right:20px;
 
 }
-
 .courseLevelIndex
 {
     position:relative;
@@ -112,15 +96,12 @@
     float:right;
     height: 10px;
     top: 7px;
-
 }
-
 .courseLevel
 {
     position:relative;
     color:#4682B4;
     left: px;
-
 }
 .courseLevel2
 {
@@ -128,8 +109,6 @@
     color:#696969;
     left: px;
 }
-
-
 .courseText
 {
     display:inline-block;
@@ -151,7 +130,6 @@
     margin-top:-0px;
     margin-bottom:-0px;
 }
-
 .coursesTextFooterBlock1
 {
     display:inline-block;
@@ -159,7 +137,6 @@
     width:450px;
     padding:20px;
 }
-
 .coursesTextFooterBlock2
 {
     width:450px;
@@ -167,7 +144,6 @@
     top:52px;
     padding:20px;
 }
-
 .courseLang
 {
     margin-left:150px;
@@ -178,7 +154,6 @@
     margin-left:150px;
     color: #696969;
 }
-
 #coursesLang{
     z-index: 6;
     position: relative;
@@ -189,7 +164,6 @@
     position: relative;
     height: 20px;
     buttom: 3px;
-
 }
 #coursesLang #en {
     border-left: 1px solid #999999;
@@ -230,7 +204,6 @@
     margin: 0 0 0px 0;
     line-height: 100%;
 }
-
 #courseText2 {
     position: relative;
     left: 40px;
@@ -285,11 +258,11 @@ table {
     background-color:#4B75A4;
     color: #ffffff;
     position: relative;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     margin-left:0px;
     display:inline-block;
-    left: 150px;
+    left: 50px;
     width: 425px;
 }
 .bgBlue img{
@@ -311,13 +284,11 @@ table {
     color: #696969;
 }
 #razv p{
-    height: px;
+    height: 10px;
     left: 40px;
     right: 20px;
     color: #ffffff;
     display:inline-block;
     width: 370px;
     font-size: 14px;
-    margin-left: 0px;
-
 }
