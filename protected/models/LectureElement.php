@@ -10,7 +10,7 @@
  * @property string $html_block
  *
  * The followings are the available model relations:
- * @property Lectures $idLecture
+ * @property Lecture $idLecture
  */
 class LectureElement extends CActiveRecord
 {
@@ -95,7 +95,7 @@ class LectureElement extends CActiveRecord
                 )
             ),
             'pagination'=>array(
-                'pageSize'=>1000,
+                'pageSize'=>count($criteria),
             ),
 		));
 	}
