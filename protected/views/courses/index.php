@@ -21,7 +21,7 @@
 <?php
 $this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
-    Yii::t('breadcrumbs', 'Courses'),
+    Yii::t('breadcrumbs', '0050'),
 );
 class Course
 {
@@ -75,7 +75,7 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
 
 <div id='coursesMainBox'>
 
-    <h1><?php echo $course1->coursesHeader; ?></h1>
+    <h1><?php echo  Yii::t('courses', '0066'); ?></h1>
 
     <table>
         <tr>
