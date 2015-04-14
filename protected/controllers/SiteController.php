@@ -12,11 +12,11 @@ class SiteController extends Controller
 	/* @var $objAbout1 AboutUs*/
 	/* @var $objAbout2 AboutUs*/
 	/* @var $objAbout3 AboutUs*/
-	/**
+	/* @var $sourceMessages MyCDbMessageSource*/
+    /*
 	 * Declares class-based actions.
 	 */
-
-    public $sourceMessages;
+    public $source;
 
 	public function actions()
 	{
@@ -46,6 +46,10 @@ class SiteController extends Controller
 
 		$mainpage = new Mainpage();
 		$mainpage->setValueById(0);
+//        if ($this->sourceMessages == null){
+//            $this->sourceMessages = new MyCDbMessageSource();
+//            $this->sourceMessages->changeTranslatedTable('translatedmessagesua');
+//        }
         if (!(Yii::app()->session['translatedTable'])) {
             $source = new MyCDbMessageSource();
             $source->changeTranslatedTable('translatedmessagesua');
@@ -185,7 +189,27 @@ class SiteController extends Controller
 
 	public function actionChangeLang($lg)
 	{
-		$app = Yii::app();
+       /* if ($this->sourceMessages == null){
+            $this->sourceMessages = new MyCDbMessageSource();
+            $this->sourceMessages->changeTranslatedTable('translatedmessagesua');
+        } else {
+            switch($_GET['lg']){
+                case 'ru':
+                    $this->sourceMessages->changeTranslatedTable('translatedmessagesru');
+                    break;
+                case 'en':
+                    $this->sourceMessages->changeTranslatedTable('translatedmessagesen');
+                    break;
+                case 'ua':
+                    $this->sourceMessages->changeTranslatedTable('translatedmessagesua');
+                    break;
+                default:
+                    $this->sourceMessages->changeTranslatedTable('translatedmessagesua');
+                    break;
+            }
+        }*/
+
+        $app = Yii::app();
 		if (isset($_GET['lg'])) {
 			if($_GET['lg'] == 'ru') {
                 $app->session['translatedTable'] = 'translatedmessagesru';
