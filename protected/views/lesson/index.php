@@ -54,7 +54,6 @@ $dataProvider = new CActiveDataProvider('LectureElement');
 $this->widget('zii.widgets.CListView', array(
     'dataProvider'=>$dataProvider,
     'itemView'=>'_content',
-    'enablePagination' => false,
     'summaryText' => '',
     'emptyText' => 'В данной лекции еще ничего нет (',
 ));

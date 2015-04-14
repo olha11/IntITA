@@ -235,6 +235,11 @@ class Lecture extends CActiveRecord
         );
     }
 
+    public function getCountLessons(){
+       $tmp = new Module();
+        return $tmp->findByPk($this->idModule)->lesson_count;
+    }
+
     public function getCourseInfoById($id){
         $course = new Course;
         $course->findByPk($id);
