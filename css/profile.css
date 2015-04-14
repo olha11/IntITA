@@ -298,9 +298,13 @@ table.timeTable tr:first-child td{
 #consultation img{
     display: block;
 }
-.selectedTab {
+table.exmCons span.selectedTab {
     text-decoration: none;
     color: #999999;
+}
+table.exmCons span.unselectedTab {
+    text-decoration: underline;
+    color: #4B75A4;
 }
 /*Timetable*/
 /*consultation*/

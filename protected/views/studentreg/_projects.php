@@ -6,25 +6,13 @@
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/exam.png"/>
         </td>
         <td>
-            <span onclick="changeTabs()">Екзамени</span>
+            <span class='selectedTab' onclick="changeTabs(this)">Індивідуальний модульний проект</span>
         </td>
         <td>
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/consultation.png"/>
         </td>
         <td>
-            <span id='consult' onclick="changeTabs()">Консультації</span>
-        </td>
-        <td>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/exam.png"/>
-        </td>
-        <td>
-            <span onclick="changeTabs()">індивідуальний модульний проект</span>
-        </td>
-        <td>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/consultation.png"/>
-        </td>
-        <td>
-            <span id='consult' onclick="changeTabs()">командний дипломний проект</span>
+            <span class='selectedTab' onclick="changeTabs(this)">Командний дипломний проект</span>
         </td>
     </tr>
 </table>
@@ -47,7 +35,7 @@
             <div>Тема</div>
         </td>
     </tr>
-    <tr>
+    <tr class="imp">
         <td>
             <div>ІМП</div>
         </td>
@@ -65,7 +53,7 @@
         </td>
     </tr>
 
-    <tr>
+    <tr class="imp">
         <td>
             <div>ІМП</div>
         </td>
@@ -83,7 +71,7 @@
         </td>
     </tr>
 
-    <tr>
+    <tr class="imp">
         <td>
             <div>ІМП</div>
         </td>
@@ -101,7 +89,7 @@
         </td>
     </tr>
 
-    <tr>
+    <tr  class="kdp">
         <td>
             <div>КДП</div>
         </td>
@@ -119,7 +107,7 @@
         </td>
     </tr>
 
-    <tr>
+    <tr  class="kdp">
         <td>
             <div>КДП</div>
         </td>
@@ -137,7 +125,7 @@
         </td>
     </tr>
 
-    <tr>
+    <tr  class="kdp">
         <td>
             <div>КДП</div>
         </td>
@@ -155,7 +143,7 @@
         </td>
     </tr>
 
-    <tr>
+    <tr  class="kdp">
         <td>
             <div>КДП</div>
         </td>

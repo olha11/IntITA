@@ -1,34 +1,5 @@
 <p class="tabHeader">Екзамени</p>
 
-<table class="exmCons">
-    <tr>
-        <td>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/exam.png"/>
-        </td>
-        <td>
-            <span onclick="changeTabs()">Екзамени</span>
-        </td>
-        <td>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/consultation.png"/>
-        </td>
-        <td>
-            <span id='consult' onclick="changeTabs()">Консультації</span>
-        </td>
-        <td>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/exam.png"/>
-        </td>
-        <td>
-            <span onclick="changeTabs()">індивідуальний модульний проект</span>
-        </td>
-        <td>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/consultation.png"/>
-        </td>
-        <td>
-            <span id='consult' onclick="changeTabs()">командний дипломний проект</span>
-        </td>
-    </tr>
-</table>
-
 <table class="timeTable">
     <tr>
         <td>
