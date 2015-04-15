@@ -219,17 +219,17 @@ class StudentReg extends CActiveRecord
         //Тогда подставляем окончание "ЕВ"
         if($number > 10 and $number < 15)
         {
-            $term = " років";
+            $term = Yii::t('profile', '0097');
         }
         else
         {
 
             $number = substr($number, -1);
 
-            if($number == 0) {$term = " років";}
-            if($number == 1 ) {$term = " рік";}
-            if($number > 1 ) {$term = " роки";}
-            if($number > 4 ) {$term = " років";}
+            if($number == 0) {$term = Yii::t('profile', '0097');}
+            if($number == 1 ) {$term = Yii::t('profile', '0098');}
+            if($number > 1 ) {$term = Yii::t('profile', '0099');}
+            if($number > 4 ) {$term = Yii::t('profile', '0097');}
         }
         echo  $term;
     }
