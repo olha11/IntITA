@@ -41,11 +41,11 @@ $form = $this->beginWidget('CActiveForm', array(
             <div id="uLogin" x-ulogin-params="display=buttons;fields=email;
 								redirect_uri=<?php echo Yii::app()->request->baseUrl.'/site/sociallogin'?>">
                 <ul id="uLoginImages">
-                    <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/facebook.png" x-ulogin-button = "facebook" title = "Facebook"/></li>
-                    <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/google_plus.png" x-ulogin-button = "googleplus" title = "Google +"/></li>
-                    <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/linkedin.png" x-ulogin-button = "linkedin" title = "LinkedIn"/></li>
-                    <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/vkontakte.png" x-ulogin-button = "vkontakte" title = "Вконтакте"/></li>
-                    <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/twitter.png" x-ulogin-button = "twitter" title = "Twitter"/></li>
+                    <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/facebook2.png" x-ulogin-button = "facebook" title = "Facebook"/></li>
+                    <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/googleplus2.png" x-ulogin-button = "googleplus" title = "Google +"/></li>
+                    <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/linkedin2.png" x-ulogin-button = "linkedin" title = "LinkedIn"/></li>
+                    <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/vkontakte2.png" x-ulogin-button = "vkontakte" title = "Вконтакте"/></li>
+                    <li><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/iconsSingin/twitter2.png" x-ulogin-button = "twitter" title = "Twitter"/></li>
                 </ul>
             </div>
     </div>

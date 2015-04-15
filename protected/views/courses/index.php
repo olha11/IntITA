@@ -25,7 +25,6 @@ $this->breadcrumbs=array(
 );
 class Course
 {
-    public $courseLang="Мова курсу:";
     public $courseImage;
     public $courseName;
     public $courseLevel;
@@ -33,7 +32,6 @@ class Course
     public $courseReview;
     public $courseMaxNumberofModules=5;
     public $coursesHeader='Наші курси';
-    public $courseLevelTitle='Рівень курсу:';
     public $coursesTextHeader= 'Концепція підготовки';
     public $coursesTextFooter="<p><span id='courseText2'>Спочатку навчання створюється стійкий фундамент для підготовки програмістів:
 		необхідні знання елементарної математики, будови комп’ютера і основ інформатики.</span>";
@@ -67,10 +65,8 @@ $course9=new Course (Yii::app()->request->baseUrl.'/css/images/course9Image.png'
 $course10=new Course (Yii::app()->request->baseUrl.'/css/images/course10Image.png','Основи нейролінгвістичного програмування ','професійний',4,'Профессиональная разработка программного обеспечения for a for a Zombie Outlaws Completion Badge. Build faster and more secure web apps with Rails 4.');
 
 $coursesArray2=array($course7,$course8,$course9,$course10);
-
 $courseDisableImage=Yii::app()->request->baseUrl.'/css/images/ratIco0.png';
 $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
-
 ?>
 
 <div id='coursesMainBox'>
@@ -80,30 +76,20 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
     <table>
         <tr>
             <td  valign="top"> <div class='sourse'><a href="#">Усі курси</a>&nbsp;(25)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">Для початківців</a>&nbsp;(2)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">Веб-дизайн</a>&nbsp;(1)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">Під Android </a>&nbsp;(2)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">Під Apple</a>&nbsp;(2)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">Просунені курси</a>&nbsp;(12)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">UI/UIX</a>&nbsp;(1)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
-            <td  valign="top"> <div class='sourse'><a href="#">Адміністрування</a>&nbsp;(1)</div></td>
-
+            <td  valign="top"> <div class='sourse'><a href="#">Для стажерів</a>&nbsp;(2)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">Для початківців</a>&nbsp;(1)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">Для сильних початківців</a>&nbsp;(2)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">Середній рівень</a>&nbsp;(2)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
+            <td  valign="top"> <div class='sourse'><a href="#">Високий рівень</a>&nbsp;(12)</div></td>   <td><div class='sourse'>&nbsp;&nbsp;<img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline2.png"/>&nbsp;&nbsp;</div></td>
         </tr>
     </table>
-
-
 
     <div class="coursesline1">
         <a id="coursesline1" href="#form"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/coursesline1.png"/></a>
     </div>
-
-
-
     <table>
         <tr><td  valign="top">
                 <div id='coursesPart1'>
-
-
                     <?php
                     foreach ($coursesArray1 as $val)
                     {
@@ -114,7 +100,7 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
                                     echo $val->courseName; ?></a>
                             </div>
                             <div class="courseLevelBox">
-                                <?php echo Yii::t('courses', 'Level:'); ?>
+                                <?php echo Yii::t('courses', '0068'); ?>
 
                                 <span class="courseLevel">
 			<?php echo $val->courseLevel; ?>
@@ -136,18 +122,11 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
                                     ?>
                                 </div>
                             </div>
-
-
                             <div class="courseStatus">
-                                <p>Стан курсу: <span id="courseStatus1">доступний</span></p>
+                                <p><?php echo Yii::t('courses', '0094'); ?><span id="courseStatus1">доступний</span></p>
                             </div>
-
-
-
-
-
                             <div class="courseLang">
-                                <?php echo Yii::t('courses', 'Language:'); ?>
+                                <?php echo Yii::t('courses', '0069'); ?>
                                 <div id="coursesLang" class="down">
                                     <form action="" method="post" onsubmit="" name="fff">
                                         <button  formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" style="padding-bottom: 0px;padding-top: 0px;height: 20px;" disabled>ua</button>
@@ -211,7 +190,7 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
                                     echo $val->courseName; ?></a>
                             </div>
                             <div class="courseLevelBox2">
-                                <?php echo $val->courseLevelTitle; ?>
+                                <?php echo Yii::t('courses', '0068');  ?>
 
                                 <span class="courseLevel2">
 			<?php echo $val->courseLevel; ?>
@@ -237,11 +216,11 @@ $courseEnableImage= Yii::app()->request->baseUrl.'/css/images/ratIco1.png';
                             </div>
 
                             <div class="courseStatus2">
-                                <p>Стан курсу:<span id="courseStatus2"> розробляється </span></p>
+                                <p><?php echo Yii::t('courses', '0094'); ?><span id="courseStatus2"> розробляється </span></p>
                             </div>
 
                             <div class="courseLang2">
-                                <?php echo $val->courseLang; ?>
+                                <?php echo Yii::t('courses', '0069'); ?>
                                 <div id="coursesLang" class="down">
                                     <form  action="" method="post" onsubmit="" name="fff">
                                         <button formaction="<?php echo Yii::app()->createUrl('site/changeLang', array('lang'=>'UA'));?>" id="ua" name="ua" onclick="changeLang(this)" class="selectedLang" disabled>ua</button>

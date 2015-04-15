@@ -318,19 +318,14 @@ class SiteController extends Controller
 
         $s = file_get_contents('http://ulogin.ru/token.php?token=' .$_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
         $user = json_decode($s, true);
-        //$user['network']
-        //$user['identity']
-        //$user['first_name']
-        //$user['last_name']
-
         $model->email=$user['email'];
         $model->firstName=$user['first_name'];
         $model->secondName=$user['last_name'];
-        $model->nickname=$user['nickname'];
-        $model->birthday=$user['bdate'];
-        $model->phone=$user['phone'];
-        $model->avatar=$user['photo_big'];
-        $model->address=$user['city'];
+        //$model->nickname=$user['nickname'];
+        //$model->birthday=$user['bdate'];
+        //$model->phone=$user['phone'];
+        //$model->avatar=$user['photo_big'];
+        //$model->address=$user['city'];
 
         $model->password='1111';
         if($model->validate()) {
