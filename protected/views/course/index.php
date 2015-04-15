@@ -180,12 +180,12 @@ $this->breadcrumbs=array(
         <article>
             <div class="courseTeacher">
                 <div class="courseTeacherImg">
-                    <a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
                      <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher1.jpg" />
                     </a>
                 </div>
                 <div class="courseTeacherInfo">
-                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">Сіра Олександра</a></h3>
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сіра Олександра</a></h3>
                     <table class="courseTeacherDetail">
                         <tr>
                             <td>
@@ -207,12 +207,12 @@ $this->breadcrumbs=array(
             </div>
             <div class="courseTeacher">
                 <div class="courseTeacherImg">
-                    <a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
                       <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher4.jpg" />
                     </a>
                 </div>
                 <div class="courseTeacherInfo">
-                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">Сірий Олександр</a></h3>
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сірий Олександр</a></h3>
                     <table class="courseTeacherDetail">
                         <tr>
                             <td>
@@ -234,12 +234,12 @@ $this->breadcrumbs=array(
             </div>
             <div class="courseTeacher">
                 <div class="courseTeacherImg">
-                    <a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
                         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher1.jpg" />
                     </a>
                 </div>
                 <div class="courseTeacherInfo">
-                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">Сіра Олександра</a></h3>
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сіра Олександра</a></h3>
                     <table class="courseTeacherDetail">
                         <tr>
                             <td>
@@ -261,12 +261,12 @@ $this->breadcrumbs=array(
             </div>
             <div class="courseTeacher">
                 <div class="courseTeacherImg">
-                    <a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
                         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher1.jpg" />
                     </a>
                 </div>
                 <div class="courseTeacherInfo">
-                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">Сіра Олександра</a></h3>
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сіра Олександра</a></h3>
                     <table class="courseTeacherDetail">
                         <tr>
                             <td>
@@ -288,12 +288,12 @@ $this->breadcrumbs=array(
             </div>
             <div class="courseTeacher">
                 <div class="courseTeacherImg">
-                    <a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
                         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher4.jpg" />
                     </a>
                 </div>
                 <div class="courseTeacherInfo">
-                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">Сірий Олександр</a></h3>
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сірий Олександр</a></h3>
                     <table class="courseTeacherDetail">
                         <tr>
                             <td>
@@ -315,12 +315,12 @@ $this->breadcrumbs=array(
             </div>
             <div class="courseTeacher">
                 <div class="courseTeacherImg">
-                    <a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
                         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher1.jpg" />
                     </a>
                 </div>
                 <div class="courseTeacherInfo">
-                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">Сіра Олександра</a></h3>
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сіра Олександра</a></h3>
                     <table class="courseTeacherDetail">
                         <tr>
                             <td>
@@ -342,12 +342,12 @@ $this->breadcrumbs=array(
             </div>
             <div class="courseTeacher">
                 <div class="courseTeacherImg">
-                    <a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
                         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher1.jpg" />
                     </a>
                 </div>
                 <div class="courseTeacherInfo">
-                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">Сіра Олександра</a></h3>
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сіра Олександра</a></h3>
                     <table class="courseTeacherDetail">
                         <tr>
                             <td>
@@ -369,12 +369,12 @@ $this->breadcrumbs=array(
             </div>
             <div class="courseTeacher">
                 <div class="courseTeacherImg">
-                    <a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
                         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher4.jpg" />
                     </a>
                 </div>
                 <div class="courseTeacherInfo">
-                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">Сірий Олександр</a></h3>
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сірий Олександр</a></h3>
                     <table class="courseTeacherDetail">
                         <tr>
                             <td>
@@ -396,12 +396,12 @@ $this->breadcrumbs=array(
             </div>
             <div class="courseTeacher">
                 <div class="courseTeacherImg">
-                    <a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
                         <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher1.jpg" />
                     </a>
                 </div>
                 <div class="courseTeacherInfo">
-                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/teacherprofile'?>">Сіра Олександра</a></h3>
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сіра Олександра</a></h3>
                     <table class="courseTeacherDetail">
                         <tr>
                             <td>
