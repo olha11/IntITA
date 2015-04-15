@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-15 14:57:57
+-- Date/time:                    2015-04-15 17:37:54
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesru: ~91 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesru: ~136 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
 INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(1, 'ru', 'INTITA'),
@@ -97,7 +97,7 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(72, 'ru', 'Модуль:'),
 	(73, 'ru', 'Занятие:'),
 	(74, 'ru', 'Тип:'),
-	(75, 'ru', 'Продолжительность:'),
+	(75, 'ru', 'Время:'),
 	(76, 'ru', 'мин'),
 	(77, 'ru', 'Преподаватель'),
 	(78, 'ru', 'детальнее'),

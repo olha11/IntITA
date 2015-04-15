@@ -13,4 +13,8 @@ class LessonController extends Controller{
         ));
     }
 
+    public function actionLesson(){
+        $this->render('index');
+    }
+
 }

@@ -6,9 +6,10 @@
  * Time: 15:45
  */
 //Загальні параметри блоку
-$footNavSize='1200px'; // Ширина блоку
+$footNavSize='960px'; // Ширина блоку
 $footNavMaxMark='6'; // Шкала оцінювання - максимальна кількість балів, поділок
 ?>
+<link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/lessonFooter.css" />
 
 <div class="subViewLessons" id="subViewLessons"	style="width:<?php echo $footNavSize; ?>" >
     <?php
@@ -32,7 +33,7 @@ $footNavMaxMark='6'; // Шкала оцінювання - максимальна
                                 break;
                         }
                         ?> " style="width:<?php echo $footNavSize*0.02 . 'px'; ?>"></td>
-                    <td><p><?php echo Yii::t('lecture','Duration:'); ?></p></td>
+                    <td><p><?php echo Yii::t('lecture','0075'); ?></p></td>
                     <td><span><?php echo $lecture->getPreDur() ?></span></td>
                     <td><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/timeIco.png" style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
                 </tr>
@@ -90,7 +91,7 @@ $footNavMaxMark='6'; // Шкала оцінювання - максимальна
                             break;
                     }
                     ?> "style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
-                <td><p><?php echo Yii::t('lecture','0074'); ?></p></td>
+                <td><p><?php echo Yii::t('lecture','0075'); ?></p></td>
                 <td><span><?php echo $lecture->getPostDur() ?></span></td>
                 <td><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/timeIco.png" style="width:<?php echo $footNavSize*0.02 . 'px';?>"></td>
             </tr>
@@ -125,10 +126,12 @@ $footNavMaxMark='6'; // Шкала оцінювання - максимальна
             <div class="nextLesonLink">
                 <p><a href="#"><input class="nextLessButt" type="submit" value="<?php echo Yii::t('lecture','0088'); ?>"></a></p>
             </div>
-        <?php  }?>
+
+            <?php  }?>
     </div>
-</div>
+
 <?php
-}
+    }
 ?>
+</div>
 

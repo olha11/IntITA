@@ -63,6 +63,9 @@ $this->widget('zii.widgets.CListView', array(
     'emptyText' => 'В данной лекции еще ничего нет (',
 ));
 ?>
-
+    </div>
+</div>
 <!-- lesson footer -->
 <?php $this->renderPartial('_footer', array('lecture'=>$lecture));?>
+
+
