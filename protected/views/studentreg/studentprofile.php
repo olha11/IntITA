@@ -19,13 +19,13 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
         <table class="titleProfile">
             <tr>
                 <td>
-                    <h2>Профіль студента</h2>
+                    <h2><?php echo Yii::t('profile', '0095'); ?></h2>
                 </td>
                 <td>
                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/profileedit.png"/>
                 </td>
                 <td>
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=studentreg/edit">Редагувати </br> профіль</a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=studentreg/edit"><?php echo Yii::t('profile', '0096'); ?></a>
                 </td>
             </tr>
         </table>
@@ -52,19 +52,19 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
                         </p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP">Про себе:</span> </br><?php echo $post->aboutMy;?></p>
+                        <p> <span class="colorP"><?php echo Yii::t('profile', '0100'); ?></span><?php echo $post->aboutMy;?></p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP">Електрона пошта:</span> </br><?php echo $post->email;?></p>
+                        <p> <span class="colorP"><?php echo Yii::t('profile', '0101'); ?></span><?php echo $post->email;?></p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP">Телефон:</span> </br><?php echo $post->phone;?></p>
+                        <p> <span class="colorP"><?php echo Yii::t('profile', '0102'); ?></span><?php echo $post->phone;?></p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP">Освіта:</span> </br><?php echo $post->education;?></p>
+                        <p> <span class="colorP"><?php echo Yii::t('profile', '0103'); ?></span><?php echo $post->education;?></p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP">Інтереси:</span> </br>
+                        <p> <span class="colorP"><?php echo Yii::t('profile', '0104'); ?></span>
                             <?php
                             $interestArray=explode(",", $post->interests);
                             for ($i = 0; $i < count($interestArray); $i++)
@@ -77,17 +77,14 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
                         </p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP">Звідки дізнався про Вас:</span> </br><?php echo $post->aboutUs;?></p>
+                        <p> <span class="colorP"><?php echo Yii::t('profile', '0105'); ?></span><?php echo $post->aboutUs;?></p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP">Форма навчання:</span> </br><?php echo $post->educform;?></p>
+                        <p> <span class="colorP"><?php echo Yii::t('profile', '0106'); ?></span><?php echo $post->educform;?></p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP">Завершенні курси:</span> </br>Курси самогоних апаратів 6-го рівня</p>
+                        <p> <span class="colorP"><?php echo Yii::t('profile', '0107'); ?></span>Курси самогоних апаратів 6-го рівня</p>
                     </div>
-                    <?php if(Yii::app()->user->hasFlash('messageedit')):
-                        echo Yii::app()->user->getFlash('messageedit');
-                    endif; ?>
                 </td>
             </tr>
         </table>
@@ -95,26 +92,26 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
     <div class="profileActivity">
         <div class="tabs">
             <input id="tab1" type="radio" name="tabs" checked>
-            <label class="tabsUp1" for="tab1" title="Мої курси">Мої курси</label>
+            <label class="tabsUp1" for="tab1" title="<?php echo Yii::t('profile', '0108'); ?>"><?php echo Yii::t('profile', '0108'); ?></label>
             <input id="tab2" type="radio" name="tabs" >
-            <label for="tab2" title="Розклад">Розклад</label>
+            <label for="tab2" title="<?php echo Yii::t('profile', '0109'); ?>"><?php echo Yii::t('profile', '0109'); ?></label>
             <input id="tab3" type="radio" name="tabs" >
-            <label for="tab3" title="Консультації">Консультації</label>
+            <label for="tab3" title="<?php echo Yii::t('profile', '0110'); ?>"><?php echo Yii::t('profile', '0110'); ?></label>
             <input id="tab4" type="radio" name="tabs">
-            <label for="tab4" title="Екзамени">Екзамени</label>
+            <label for="tab4" title="<?php echo Yii::t('profile', '0111'); ?>"><?php echo Yii::t('profile', '0111'); ?></label>
             <input id="tab5" type="radio" name="tabs" >
-            <label for="tab5" title="Мої проекти">Проекти</label>
+            <label for="tab5" title="<?php echo Yii::t('profile', '0112'); ?>"><?php echo Yii::t('profile', '0112'); ?></label>
             <div class="lineUnderTab"></div>
             <input id="tab6" type="radio" name="tabs">
-            <label class="tabsDown1" for="tab6" title="Мій рейтинг">Мій рейтинг</label>
+            <label class="tabsDown1" for="tab6" title="<?php echo Yii::t('profile', '0113'); ?>"><?php echo Yii::t('profile', '0113'); ?></label>
             <input id="tab7" type="radio" name="tabs">
-            <label for="tab7" title="Завантаження">Завантаження</label>
+            <label for="tab7" title="<?php echo Yii::t('profile', '0114'); ?>"><?php echo Yii::t('profile', '0114'); ?></label>
             <input id="tab8" type="radio" name="tabs">
-            <label class="tabsDown" for="tab8" title="Листування">Листування</label>
+            <label class="tabsDown" for="tab8" title="<?php echo Yii::t('profile', '0115'); ?>"><?php echo Yii::t('profile', '0115'); ?></label>
             <input id="tab9" type="radio" name="tabs">
-            <label class="tabsDown" for="tab9" title="Мої оцінювання">Мої оцінювання</label>
+            <label class="tabsDown" for="tab9" title="<?php echo Yii::t('profile', '0116'); ?>"><?php echo Yii::t('profile', '0116'); ?></label>
             <input id="tab10" type="radio" name="tabs">
-            <label class="tabsDown" style="background-image:url(<?php echo Yii::app()->request->baseUrl; ?>/css/images/financeico.png);background-repeat: no-repeat;background-position:10px 3px;" for="tab10" title="Фінанси">Фінанси</label>
+            <label class="tabsDown" style="background-image:url(<?php echo Yii::app()->request->baseUrl; ?>/css/images/financeico.png);background-repeat: no-repeat;background-position:10px 3px;" for="tab10" title="<?php echo Yii::t('profile', '0117'); ?>"><?php echo Yii::t('profile', '0117'); ?></label>
             <div class="lineUnderTab"></div>
             <section id="myCourse">
                 <?php $this->renderPartial('_mycourse'); ?>

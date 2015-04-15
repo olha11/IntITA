@@ -1,4 +1,4 @@
-<p class="tabHeader">Розклад</p>
+<p class="tabHeader"><?php echo Yii::t('profile', '0109'); ?></p>
 
 <table class="exmCons">
     <tr>
@@ -6,25 +6,25 @@
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/exam.png"/>
         </td>
         <td>
-            <span class='selectedTab' onclick="changeTabs(this)">Екзамени</span>
+            <span class='selectedTab' onclick="changeTabs(this)"><?php echo Yii::t('profile', '0111'); ?></span>
         </td>
         <td>
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/consultation.png"/>
         </td>
         <td>
-            <span class='selectedTab' onclick="changeTabs(this)">Консультації</span>
+            <span class='selectedTab' onclick="changeTabs(this)"><?php echo Yii::t('profile', '0110'); ?></span>
         </td>
         <td>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/exam.png"/>
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/imp.png"/>
         </td>
         <td>
-            <span class='selectedTab' onclick="changeTabs(this)">Індивідуальний модульний проект</span>
+            <span class='selectedTab' onclick="changeTabs(this)"><?php echo Yii::t('profile', '0124'); ?></span>
         </td>
         <td>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/consultation.png"/>
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/kdp.png"/>
         </td>
         <td>
-            <span class='selectedTab' onclick="changeTabs(this)">Командний дипломний проект</span>
+            <span class='selectedTab' onclick="changeTabs(this)"><?php echo Yii::t('profile', '0125'); ?></span>
         </td>
     </tr>
 </table>
@@ -32,24 +32,24 @@
 <table class="timeTable">
     <tr>
         <td>
-            <div>Тип</div>
+            <div><?php echo Yii::t('profile', '0126'); ?></div>
         </td>
         <td>
-            <div>Дата</div>
+            <div><?php echo Yii::t('profile', '0127'); ?></div>
         </td>
         <td>
-            <div>Час</div>
+            <div><?php echo Yii::t('profile', '0128'); ?></div>
         </td>
         <td>
-            <div>Викладач</div>
+            <div><?php echo Yii::t('profile', '0129'); ?></div>
         </td>
         <td>
-            <div>Тема</div>
+            <div><?php echo Yii::t('profile', '0130'); ?></div>
         </td>
     </tr>
     <tr class="exm">
         <td>
-            <div>Е</div>
+            <div><?php echo Yii::t('profile', '0131'); ?></div>
         </td>
         <td>
             <div>14 березня 2015</div>
@@ -66,7 +66,7 @@
     </tr>
     <tr class="consult">
         <td>
-            <div>К</div>
+            <div><?php echo Yii::t('profile', '0132'); ?></div>
         </td>
         <td>
             <div>14 березня 2015</div>
@@ -83,7 +83,7 @@
     </tr>
     <tr class="imp">
         <td>
-            <div>ІМП</div>
+            <div><?php echo Yii::t('profile', '0133'); ?></div>
         </td>
         <td>
             <div>14 березня 2015</div>
@@ -100,7 +100,7 @@
     </tr>
     <tr class="exm">
         <td>
-            <div>Е</div>
+            <div><?php echo Yii::t('profile', '0131'); ?></div>
         </td>
         <td>
             <div>15 березня 2015</div>
@@ -118,7 +118,7 @@
 
     <tr class="consult">
         <td>
-            <div>К</div>
+            <div><?php echo Yii::t('profile', '0132'); ?></div>
         </td>
         <td>
             <div>15 березня 2015</div>
@@ -136,7 +136,7 @@
 
     <tr class="imp">
         <td>
-            <div>ІМП</div>
+            <div><?php echo Yii::t('profile', '0133'); ?></div>
         </td>
         <td>
             <div>15 березня 2015</div>
@@ -154,7 +154,7 @@
 
     <tr class="exm">
         <td>
-            <div>Е</div>
+            <div><?php echo Yii::t('profile', '0131'); ?></div>
         </td>
         <td>
             <div>17 березня 2015</div>
@@ -172,7 +172,7 @@
 
     <tr class="consult">
         <td>
-            <div>К</div>
+            <div><?php echo Yii::t('profile', '0132'); ?></div>
         </td>
         <td>
             <div>17 березня 2015</div>
@@ -190,7 +190,7 @@
 
     <tr class="imp">
         <td>
-            <div>ІМП</div>
+            <div><?php echo Yii::t('profile', '0133'); ?></div>
         </td>
         <td>
             <div>17 березня 2015</div>
@@ -207,7 +207,7 @@
     </tr>
     <tr class="exm">
         <td>
-            <div>Е</div>
+            <div><?php echo Yii::t('profile', '0131'); ?></div>
         </td>
         <td>
             <div>19 березня 2015</div>
@@ -225,7 +225,7 @@
 
     <tr class="consult">
         <td>
-            <div>К</div>
+            <div><?php echo Yii::t('profile', '0132'); ?></div>
         </td>
         <td>
             <div>19 березня 2015</div>
@@ -243,7 +243,7 @@
 
     <tr  class="kdp">
         <td>
-            <div>КДП</div>
+            <div><?php echo Yii::t('profile', '0134'); ?></div>
         </td>
         <td>
             <div>19 березня 2015</div>
@@ -261,7 +261,7 @@
 
     <tr  class="kdp">
         <td>
-            <div>КДП</div>
+            <div><?php echo Yii::t('profile', '0134'); ?></div>
         </td>
         <td>
             <div>20 березня 2015</div>
@@ -279,7 +279,7 @@
 
     <tr class="exm">
         <td>
-            <div>Е</div>
+            <div><?php echo Yii::t('profile', '0131'); ?></div>
         </td>
         <td>
             <div>20 березня 2015</div>
@@ -297,7 +297,7 @@
 
     <tr class="consult">
         <td>
-            <div>К</div>
+            <div><?php echo Yii::t('profile', '0132'); ?></div>
         </td>
         <td>
             <div>20 березня 2015</div>
@@ -315,7 +315,7 @@
 
     <tr  class="kdp">
         <td>
-            <div>КДП</div>
+            <div><?php echo Yii::t('profile', '0134'); ?></div>
         </td>
         <td>
             <div>21 березня 2015</div>
@@ -333,7 +333,7 @@
 
     <tr class="consult">
         <td>
-            <div>К</div>
+            <div><?php echo Yii::t('profile', '0132'); ?></div>
         </td>
         <td>
             <div>21 березня 2015</div>
@@ -351,7 +351,7 @@
 
     <tr class="exm">
         <td>
-            <div>Е</div>
+            <div><?php echo Yii::t('profile', '0131'); ?></div>
         </td>
         <td>
             <div>21 березня 2015</div>
@@ -369,7 +369,7 @@
 
     <tr class="exm">
         <td>
-            <div>Е</div>
+            <div><?php echo Yii::t('profile', '0131'); ?></div>
         </td>
         <td>
             <div>22 березня 2015</div>
@@ -387,7 +387,7 @@
 
     <tr class="consult">
         <td>
-            <div>К</div>
+            <div><?php echo Yii::t('profile', '0132'); ?></div>
         </td>
         <td>
             <div>22 березня 2015</div>
@@ -405,7 +405,7 @@
 
     <tr  class="kdp">
         <td>
-            <div>КДП</div>
+            <div><?php echo Yii::t('profile', '0134'); ?></div>
         </td>
         <td>
             <div>22 березня 2015</div>
@@ -424,28 +424,28 @@
 
 <script>
     function changeTabs(n){
-        if (n.innerHTML=='Екзамени'){
+        if (n.innerHTML=="<?php echo Yii::t('profile', '0111'); ?>"){
             $('.exm').toggle('fast');
             if(n.className=='selectedTab')
                 n.className='unselectedTab';
             else n.className='selectedTab';
         }
 
-        if (n.innerHTML=='Консультації'){
+        if (n.innerHTML=="<?php echo Yii::t('profile', '0110'); ?>"){
             $('.consult').toggle('fast');
             if(n.className=='selectedTab')
                 n.className='unselectedTab';
             else n.className='selectedTab';
         }
 
-        if (n.innerHTML=='Індивідуальний модульний проект'){
+        if (n.innerHTML=="<?php echo Yii::t('profile', '0124'); ?>"){
             $('.imp').toggle('fast');
             if(n.className=='selectedTab')
                 n.className='unselectedTab';
             else n.className='selectedTab';
         }
 
-        if (n.innerHTML=='Командний дипломний проект'){
+        if (n.innerHTML=="<?php echo Yii::t('profile', '0125'); ?>"){
             $('.kdp').toggle('fast');
             if(n.className=='selectedTab')
                 n.className='unselectedTab';
