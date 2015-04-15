@@ -87,10 +87,9 @@ div.linesignInForm{
     margin-bottom:25px;
     position: relative;
 }
-.image{
+div.image{
     margin:0 auto;
-    width:410px;
-    height:50px;
+    width:444px;
 }
 /****************registration***********/
 /* Cначала обозначаем стили для IE8 и более старых версий
@@ -295,8 +294,11 @@ select.error
     font:"MyriadPro";
 }
 #studentreg-form{
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     overflow: hidden;
+}
+#quick-form{
+    padding-bottom: 20px;
 }
 .signIn .image{
     margin-bottom: 20px;
@@ -313,67 +315,28 @@ select.error
 }/* PassEye */
 
 /* Slider Registration Form */
-#singInFormCarousel {
-  position: relative;
-  width: 344px;
-  padding: 8px 40px;
-  margin-left: -7px;
-  margin-top: -9px;
-  
-
+#uLogin, #uReg {
+    margin: 0 auto;
+    width: 100%;
 }
-#singInFormCarousel .arrow {
-  position: absolute;
-  top: 2px;
-  padding: 3px 8px 8px 9px;
-  border-radius: 15px;
-  font-size: 19px;
-  color: #444;
-  text-decoration: none;
-}
-
-#singInFormCarousel .left-arrow {
-  left: 7px;
-}
-#singInFormCarousel .right-arrow {
-  right: 9px;
-}
-
-#singInFormCarousel p {
-	font-family: "MyriadPro2";
-	font-weight: 900;
-    line-height: 7px;
-    color: #4b75a4;
-}
-
-#singInFormCarousel #uLogin,#singInFormCarousel #uReg {
-  width: 344px;
-  overflow: hidden;
-}
-
-#singInFormCarousel #uLogin ul,#singInFormCarousel #uReg ul {
- width: 9999px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+#uLogin ul,#uReg ul {
+    margin: 0 auto;
+    width: 390px;
+    padding: 0;
+    list-style: none;
  }
- 
-#singInFormCarousel #uLogin ul li,#singInFormCarousel #uReg ul li {
+#uLogin ul li,#uReg ul li {
 	float: left;
 	margin-left: 1.5px;
 	margin-right: 1.5px;
-	}
-	
-
-#singInFormCarousel #uLogin img,#singInFormCarousel #uReg img {
-  width: 40px;
-  height: 40px;
-  display: block;
+}
+#uLogin img,#uReg img {
+  width: 75px;
+  height: 75px;
   filter: Alpha(Opacity=40);/*IE7 fix*/
   opacity: 0.4;
  }
- 
- #singInFormCarousel #uLogin img:hover, #singInFormCarousel #uReg img:hover {
+#uLogin img:hover,#uReg img:hover {
 	filter: Alpha(Opacity=100);/*IE7 fix*/
 	opacity: 1.0;
  }
