@@ -1,34 +1,5 @@
 <p class="tabHeader"><?php echo Yii::t('profile', '0111'); ?></p>
 
-<table class="exmCons">
-    <tr>
-        <td>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/exam.png"/>
-        </td>
-        <td>
-            <span class='selectedTab' onclick="changeTabs(this)"><?php echo Yii::t('profile', '0111'); ?></span>
-        </td>
-        <td>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/consultation.png"/>
-        </td>
-        <td>
-            <span class='unselectedTab' onclick="changeTabs(this)"><?php echo Yii::t('profile', '0110'); ?></span>
-        </td>
-        <td>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/imp.png"/>
-        </td>
-        <td>
-            <span class='unselectedTab' onclick="changeTabs(this)"><?php echo Yii::t('profile', '0124'); ?></span>
-        </td>
-        <td>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/kdp.png"/>
-        </td>
-        <td>
-            <span class='unselectedTab' onclick="changeTabs(this)"><?php echo Yii::t('profile', '0125'); ?></span>
-        </td>
-    </tr>
-</table>
-
 <table class="timeTable">
     <tr>
         <td>
