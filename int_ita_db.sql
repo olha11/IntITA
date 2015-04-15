@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-14 18:02:00
+-- Date/time:                    2015-04-15 14:58:05
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_authorizations: ~46 rows (approximately)
+-- Dumping data for table int_ita_db.aa_authorizations: ~50 rows (approximately)
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
 INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(1, 2, '2015-03-02 15:33:25', '::1'),
@@ -446,32 +446,32 @@ CREATE TABLE IF NOT EXISTS `lecture_element` (
 /*!40000 ALTER TABLE `lecture_element` DISABLE KEYS */;
 INSERT INTO `lecture_element` (`id_lecture`, `block_order`, `type`, `id_type`, `html_block`) VALUES
 	(1, 1, 'text', 1, '    <h1 class="lessonPart">Вступ</h1>\r\n    <span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:\r\n    \r\n   '),
-	(1, 2, 'code', 4, '<div class="lessonCode"><p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>'),
+	(1, 2, 'code', 4, '<p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p>'),
 	(1, 3, 'text', 1, ' <span class="colorBlack">Імена змінних</span>\r\n    <p>Будь-яка змінна в РНР має ім\'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>'),
 	(1, 4, 'video', 2, '<iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>'),
 	(1, 5, 'label', 8, '    <a name="Частина 1: Типи змінних та перемінних"></a>'),
 	(1, 6, 'text', 1, '    <h1 class="lessonPart">Частина 1: Типи змінних та перемінних</h1>\r\n    <span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:'),
-	(1, 7, 'code', 4, '<div class="lessonCode"><p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>'),
+	(1, 7, 'code', 4, '<p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p>'),
 	(1, 8, 'text', 1, '    <span class="colorBlack">Імена змінних</span>\r\n    <p>Будь-яка змінна в РНР має ім\'я, що починається із знаку $, наприклад Svariable. При такому способі формування \r\n        імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим,\r\n        що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. \r\n        Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>'),
-	(1, 9, 'code', 4, '<div class="lessonCode">\r\n        <p>$names="value";</p>\r\n        <p>$names=5;</p>\r\n        <p>echo $$name;</p>\r\n    </div>'),
+	(1, 9, 'code', 4, '\r\n        <p>$names="value";</p>\r\n        <p>$names=5;</p>\r\n        <p>echo $$name;</p>\r\n'),
 	(1, 10, 'text', 1, '    <p>Змінні в РНР представляються у вигляді рядка, що починається знаком долара, а за ним слідує ім\'я змінної. Ім\'я змінної може складатися з латинських літер, звичайних цифр і деяких символів або комбінацій літер, цифр і символів.</p>'),
 	(1, 11, 'example', 3, '<span class="subChapter">Зразок коду 1:</span>\r\n<pre class="prettyprint linenums">\r\n&lt;html&gt;\r\n  &lt;head&gt;\r\n  &lt;/head&gt;\r\n  &lt;body&gt;\r\n    &lt;p&gt;\r\n      &lt;?php\r\n      $items= //Set this to a number greater than 5! Type the string &quot;Arr, matey!&quot;\r\n\r\n      if ($items&lt;5) {\r\n      echo &quot;You get a 10% discount!&quot;;\r\n      }\r\n    ?&gt;\r\n    &lt;/p&gt;\r\n &lt;/body&gt;\r\n&lt;/html&gt;\r\n</pre>'),
 	(1, 12, 'example', 3, '<span class="subChapter">Зразок коду 2  </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>'),
 	(1, 13, 'video', 2, '<h3><span class="subChapter">Відео 1.</span></h3>\r\n    <iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>'),
 	(1, 14, 'instruction', 7, '<div class="lessonInstr">\r\n        <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">\r\n        <div class="lessonButName" unselectable = "on">Інструкція</div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/instr.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set <span class="colorBP"><span class="colorGreen">$</span>terms</span> equal to a number greater than 5. Make sure to put a semicolon at the end of the line.</li>\r\n                    <li>On line 9, edit the state condition so that your program will be out Some expressions return a \' logical value": TRUE or FALSE, text like thise:<span class="colorAlert">You get a 10% discount!</span></li>\r\n                </ol>\r\n            </div>\r\n        </div>\r\n    </div>'),
-	(1, 15, 'task', 5, ' <div class="lessonTask">\r\n        <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">\r\n        <div class="lessonButName" unselectable = "on"><?php echo Yii::t(\'lecture\',\'Exercise\'); ?> 1</div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>\r\n                    <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>An if statement is made up of the if keyword, a condition like we\'ve seen before <span class="colorBP"><span class="colorGreen">$</span>terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>\r\n                    <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP"><span class="colorGreen">$</span>terms</span> браузера или с разрешением экрана)</li>\r\n                </ol>\r\n                <div class="BBCode">\r\n                    <form action="" method="post">\r\n                        <textarea class="editor"></textarea>\r\n                        <input  id="lessonTask1" type="submit" value="Відповісти">\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>'),
+	(1, 15, 'task', 5, '\r\n        <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">\r\n        <div class="lessonButName" unselectable = "on"><?php echo Yii::t(\'lecture\',\'Exercise\'); ?> 1</div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>\r\n                    <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>An if statement is made up of the if keyword, a condition like we\'ve seen before <span class="colorBP"><span class="colorGreen">$</span>terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>\r\n                    <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP"><span class="colorGreen">$</span>terms</span> браузера или с разрешением экрана)</li>\r\n                </ol>\r\n                <div class="BBCode">\r\n                    <form action="" method="post">\r\n                        <textarea class="editor"></textarea>\r\n                        <input  id="lessonTask1" type="submit" value="Відповісти">\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n   '),
 	(1, 16, 'label', 8, '    <a name="Частина 7: Типи данних та математичний аналіз"></a>\r\n    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/borderLesson.png">'),
 	(1, 17, 'text', 1, '<span class="colorBlack">Змінна</span> - це літерно-символьне подання частини інформації, яка перебуває в памяті Web-сервера. В php змінна виглядає ось так:'),
-	(1, 18, 'code', 4, '<div class="lessonCode"><p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p></div>'),
+	(1, 18, 'code', 4, '<p><span class="colorGreen">$</span>names=<span class="colorO">"Я інформація в памяті тчк"</span>;</p>'),
 	(1, 19, 'text', 1, '    <span class="colorBlack">Імена змінних</span>\r\n    <p>Будь-яка змінна в РНР має ім\'я, що починається із знаку $, наприклад Svariable. При такому способі формування імен змінних їх дуже легко відрізнити від іншого коду. Якщо в інших мовах інколи може виникати плутанина з тим, що при першому погляді на код не завжди ясно - де тут змінні, а де функції, то в РНР це питання навіть не постає. Наприклад, ссилка на змінну по її імені, що зберігається в іншій змінній:</p>'),
-	(1, 20, 'code', 4, '    <div class="lessonCode">\r\n        <p>$names="value";</p>\r\n        <p>$names=5;</p>\r\n        <p>echo $$name;</p>\r\n    </div>'),
+	(1, 20, 'code', 4, '        <p>$names="value";</p>\r\n        <p>$names=5;</p>\r\n        <p>echo $$name;</p>\r\n'),
 	(1, 21, 'text', 1, '    <p>Змінні в РНР представляються у вигляді рядка, що починається знаком долара, а за ним слідує ім\'я змінної. Ім\'я змінної може складатися з латинських літер, звичайних цифр і деяких символів або комбінацій літер, цифр і символів.</p>'),
 	(1, 22, 'example', 3, '<span class="subChapter">Зразок коду 1:</span>\r\n<pre class="prettyprint linenums">\r\n&lt;html&gt;\r\n  &lt;head&gt;\r\n  &lt;/head&gt;\r\n  &lt;body&gt;\r\n    &lt;p&gt;\r\n      &lt;?php\r\n      $items= //Set this to a number greater than 5! Type the string &quot;Arr, matey!&quot;\r\n\r\n      if ($items&lt;5) {\r\n      echo &quot;You get a 10% discount!&quot;;\r\n      }\r\n    ?&gt;\r\n    &lt;/p&gt;\r\n &lt;/body&gt;\r\n&lt;/html&gt;\r\n</pre>'),
 	(1, 23, 'example', 3, '    <span class="subChapter"><?php echo Yii::t(\'lecture\',\'Code example\'); ?> 2  </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>\r\n    <div class="spoilerBody">\r\n<pre class="prettyprint linenums">\r\n&lt;html&gt;\r\n  &lt;head&gt;\r\n  &lt;/head&gt;\r\n  &lt;body&gt;\r\n    &lt;p&gt;\r\n      &lt;?php\r\n      $items= //Set this to a number greater than 5! Type the string &quot;Arr, matey!&quot;\r\n\r\n      if ($items&lt;5) {\r\n      echo &quot;You get a 10% discount!&quot;;\r\n      }\r\n    ?&gt;\r\n    &lt;/p&gt;\r\n &lt;/body&gt;\r\n&lt;/html&gt;\r\n</pre>\r\n    </div>'),
 	(1, 24, 'video', 2, '<h3><span class="subChapter"><?php echo Yii::t(\'lecture\',\'0083\'); ?> 1.</span></h3>\r\n    <iframe width="633" height="390" src="https://www.youtube.com/embed/L3Mg6lk6yyA" frameborder="0" allowfullscreen></iframe>'),
-	(1, 25, 'instruction', 7, '<div class="lessonInstr">\r\n        <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">\r\n        <div class="lessonButName" unselectable = "on"><?php echo Yii::t(\'lecture\',\'0085\'); ?></div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/instr.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set <span class="colorBP"><span class="colorGreen">$</span>items</span> equal to a number greater than 5. Make sure to put a semicolon at the end of the line.</li>\r\n                    <li>On line 9, edit the state condition so that your program will be out Some expressions return a \' logical value": TRUE or FALSE, text like thise:<span class="colorAlert">You get a 10% discount!</span></li>\r\n                </ol>\r\n            </div>\r\n        </div>\r\n    </div>'),
-	(1, 26, 'task', 5, '<div class="lessonTask">\r\n        <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">\r\n        <div class="lessonButName" unselectable = "on"><?php echo Yii::t(\'lecture\',\'0086\'); ?> 1</div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>\r\n                    <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>An if statement is made up of the if keyword, a condition like we\'ve seen before <span class="colorBP"><span class="colorGreen">$</span>terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>\r\n                    <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP"><span class="colorGreen">$</span>terms</span> браузера или с разрешением экрана)</li>\r\n                </ol>\r\n                <div class="BBCode">\r\n                    <form action="" method="post">\r\n                        <textarea class="editor"></textarea>\r\n                        <input  id="lessonTask2" type="submit" value="Відповісти">\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>'),
-	(1, 27, 'final task', 6, '<div class="lessonText">\r\n    <div class="lessonTask">\r\n        <img class="lessonButFinal" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButtonFinale.png">\r\n        <div class="lessonButFinal" unselectable = "on"><?php echo Yii::t(\'lecture\',\'0090\'); ?></div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>\r\n                    <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>An if statement is made up of the if keyword, a condition like we\'ve seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>\r\n                    <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>\r\n                </ol>\r\n                <div class="BBCode">\r\n                    <form action="" method="post">\r\n                        <textarea class="editor"></textarea>\r\n                        <input  id="lessonTask3" type="submit" value="<?php echo Yii::t(\'lecture\',\'0089\'); ?>">\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>');
+	(1, 25, 'instruction', 7, '<div class="lessonInstr">\r\n        <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">\r\n        <div class="lessonButName" unselectable = "on"><?php echo Yii::t(\'lecture\',\'0085\'); ?></div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/instr.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set <span class="colorBP"><span class="colorGreen">$</span>items</span> equal to a number greater than 5. Make sure to put a semicolon at the end of the line.</li>\r\n                    <li>On line 9, edit the state condition so that your program will be out Some expressions return a \' logical value": TRUE or FALSE, text like thise:<span class="colorAlert">You get a 10% discount!</span></li>\r\n                </ol>\r\n            </div>\r\n        </div>\r\n    </div>\r\n'),
+	(1, 26, 'task', 5, '<div class="lessonTask">\r\n        <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">\r\n        <div class="lessonButName" unselectable = "on"><?php echo Yii::t(\'lecture\',\'0086\'); ?> 1</div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>\r\n                    <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>An if statement is made up of the if keyword, a condition like we\'ve seen before <span class="colorBP"><span class="colorGreen">$</span>terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>\r\n                    <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP"><span class="colorGreen">$</span>terms</span> браузера или с разрешением экрана)</li>\r\n                </ol>\r\n                <div class="BBCode">\r\n                    <form action="" method="post">\r\n                        <textarea class="editor"></textarea>\r\n                        <input  id="lessonTask2" type="submit" value="Відповісти">\r\n                    </form>\r\n                </div>\r\n            </div>\r\n\r\n</div>'),
+	(1, 27, 'final task', 6, '\r\n    <div class="lessonTask">\r\n        <img class="lessonButFinal" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButtonFinale.png">\r\n        <div class="lessonButFinal" unselectable = "on"><?php echo Yii::t(\'lecture\',\'0090\'); ?></div>\r\n        <div class="lessonLine"></div>\r\n        <div class="lessonBG">\r\n            <div class="instrTaskImg">\r\n                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/task.png">\r\n            </div>\r\n            <div class="instrTaskText">\r\n                <ol>\r\n                    <li>On line 7, set equal to a number greater than 5. Some expressions return a "logical value": TRUE or FALSE. Make sure to put a semicolon at the end of the line.</li>\r\n                    <a href="#"> <span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>An if statement is made up of the if keyword, a condition like we\'ve seen before <span class="colorBP">$terms</span>, and a pair of curly braces <span class="colorBP">{}</span>. If the answer to the condition is yes, the code inside the curly will run.</li>\r\n                    <a href="#"><span class="colorP"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/arrow.png"> Відповісти</span></a>\r\n                    <li>Резиновая по ширине (изменяется с Some expressions return a "logical value": TRUE or FALSE, изменением окна <span class="colorBP">$terms</span> браузера или с разрешением экрана)</li>\r\n                </ol>\r\n                <div class="BBCode">\r\n                    <form action="" method="post">\r\n                        <textarea class="editor"></textarea>\r\n                        <input  id="lessonTask3" type="submit" value="<?php echo Yii::t(\'lecture\',\'0089\'); ?>">\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n');
 /*!40000 ALTER TABLE `lecture_element` ENABLE KEYS */;
 
 
@@ -508,7 +508,7 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.mainpage: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.mainpage: ~1 rows (approximately)
 /*!40000 ALTER TABLE `mainpage` DISABLE KEYS */;
 INSERT INTO `mainpage` (`id`, `language`, `title`, `sliderHeader`, `sliderText`, `category`, `message`, `sliderTextureURL`, `sliderLineURL`, `sliderButtonText`, `header1`, `subLineImage`, `subheader1`, `arrayBlocks`, `header2`, `subheader2`, `arraySteps`, `stepSize`, `linkName`, `hexagon`, `formHeader1`, `formHeader2`, `regText`, `buttonStart`, `socialText`, `imageNetwork`, `formFon`) VALUES
 	(0, 'ua', 'INTITA', 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту і стань класним спеціалістом!', 'mainpage', 'PROGRAM FUTURE', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png', 'Готові розпочати?', 'Введіть дані в форму нижче', 'розширена реєстрація', 'ПОЧАТИ', 'Ви можете також зареєструватися через соцмережі:', '/css/images/networking.png', '/css/images/formFon.png');
@@ -568,9 +568,9 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   `category` varchar(32) NOT NULL,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~90 rows (approximately)
+-- Dumping data for table int_ita_db.sourcemessages: ~136 rows (approximately)
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', '0001'),
@@ -666,7 +666,49 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(91, 'regform', '0091'),
 	(92, 'regform', '0092'),
 	(93, 'regform', '0093'),
-	(94, 'courses', '0094');
+	(94, 'courses', '0094'),
+	(95, 'profile', '0095'),
+	(96, 'profile', '0096'),
+	(97, 'profile', '0097'),
+	(98, 'profile', '0098'),
+	(99, 'profile', '0099'),
+	(100, 'profile', '0100'),
+	(101, 'profile', '0101'),
+	(102, 'profile', '0102'),
+	(103, 'profile', '0103'),
+	(104, 'profile', '0104'),
+	(105, 'profile', '0105'),
+	(106, 'profile', '0106'),
+	(107, 'profile', '0107'),
+	(108, 'profile', '0108'),
+	(109, 'profile', '0109'),
+	(110, 'profile', '0110'),
+	(111, 'profile', '0111'),
+	(112, 'profile', '0112'),
+	(113, 'profile', '0113'),
+	(114, 'profile', '0114'),
+	(115, 'profile', '0115'),
+	(116, 'profile', '0116'),
+	(117, 'profile', '0117'),
+	(118, 'profile', '0118'),
+	(119, 'profile', '0119'),
+	(120, 'profile', '0120'),
+	(121, 'profile', '0121'),
+	(122, 'profile', '0122'),
+	(123, 'profile', '0123'),
+	(124, 'profile', '0124'),
+	(125, 'profile', '0125'),
+	(126, 'profile', '0126'),
+	(127, 'profile', '0127'),
+	(128, 'profile', '0128'),
+	(129, 'profile', '0129'),
+	(130, 'profile', '0130'),
+	(131, 'profile', '0131'),
+	(132, 'profile', '0132'),
+	(133, 'profile', '0133'),
+	(134, 'profile', '0134'),
+	(135, 'profile', '0135'),
+	(136, 'profile', '0136');
 /*!40000 ALTER TABLE `sourcemessages` ENABLE KEYS */;
 
 
@@ -778,12 +820,12 @@ CREATE TABLE IF NOT EXISTS `teacher_temp` (
 -- Dumping data for table int_ita_db.teacher_temp: ~6 rows (approximately)
 /*!40000 ALTER TABLE `teacher_temp` DISABLE KEYS */;
 INSERT INTO `teacher_temp` (`teacher_id`, `lang`, `first_name`, `middle_name`, `last_name`, `foto_url`, `subjects`, `profile_text_big`, `profile_text`, `readMoreLink`, `email`, `tel`, `skype`, `title`, `linkName`, `smallImage`) VALUES
-	(1, 'UA', 'Олександра', 'Василівна', 'Сіра', '/css/images/teacher1.jpg', 'кройка и шитье сроков; програмування самоубийств', 'Народилася і виросла в Сакраменто, у 18 років вона переїхала до Лос-Анджелеса й незабаром стала вкладачем. У 2007, 2008 і 2010 рр.. вона виграла кілька номінацій премії AVN Awards (також була названа «Найкращою програмісткою» у 2007 році за версією XRCO). Паралельно з вікладауцью роботою та роботою програміста в Саша Грей грає головну роль в тестванні Інтернету.\r\n\r\nМарина Енн Генціс народилася у родині механіка. Її батько мав грецьке походження. Батьки дівчинки розлучилися коли їй було 5 років, надалі її виховувала мати, яка вступила в повторний шлюб у 2000 роц. Марина не ладнала з вітчимом, і, коли їй виповнилося 16 років, дівчина повідомила матері, що збирається покинути будинок. Достеменно невідомо, втекла вона з свого будинку або ж її відпустила мати. Сама Олександра пізніше зізнавалася, що в той час робила все те, що не подобалося її батькам і що вони їй забороняли.\r\n\r\nГлавный бухгалтер акционерного предприятия, специализирующегося на:\r\n\r\n    оказании полезных услуг горизонтального характера;\r\n    торговле, внешнеэкономической и внутреннеэкономической;\r\n    позитивное обучение швейного мастерства;\r\n\r\n Олександра Сіра виконала головну роль у фільмі оскароносного режисера Стівена Содерберга «Дівчина за викликом»[27][28]. Олександра грає дівчину на ім\'я Челсі, яка надає ескорт послуги заможним людям. Содерберг взяв її на роль після того, як прочитав статтю про неї у журналі Los Angeles, коментуючи це так: «She\'s kind of a new breed, I think. She doesn\'t really fit the typical mold of someone who goes into the adult film business. … I\'d never heard anybody talk about the business the way that she talked about it». Журналіст Скотт Маколей каже, що можливо Грей вибрала саме цю роль через свій інтерес до незалежних режисерів, таких як Жан-Люк Годар, Хармоні Корін, Девід Гордон Грін, Мікеланджело Антоніоні, Аньєс Варда та Вільям Клейн.\r\n\r\nКоли Олександра готувалася до ролі у «Дівчині за викликом», Содерберг попросив її подивитися «Жити своїм життям» і «Божевільний П\'єро»[29]. У фільмі «Жити своїм життям» піднімаються проблеми проституції, звідки Грей могла взяти щось і для своєї ролі, в той час як у «Божевільному П\'єро» показані відносини, схожі на ті, що відбуваються між Челсі, її хлопцем і клієнтами.\'; ', '<p>Профессиональный преподаватель бухгалтерского и налогового учета Национальноготранспортного университета кафедры финансов, учета и аудита со стажем преподавательской работы более 25 лет. Закончила аспирантуру, автор 36 научных работ в области учета и аудита, в т.ч. уникальной обучающей методики написания бухгалтерских проводок: <span>"Как украсть и не сесть" </span> и <span>"Как украсть и посадить другого" </span>.</p><p>Главный бухгалтер акционерного предприятия, специализирующегося на:<ul><li>оказании полезных услуг горизонтального характера;</li><li>торговле, внешнеэкономической и внутреннеэкономической;</li><li>позитивное обучение швейного мастерства;</li></ul></p>', '/teacherProfile', 'ivanov@intita.org, ivanov@gmail.com', '/067/56-569-56, /093/26-45-65', 'ivanov.ivanov', '', '', '/css/images/teacherImage.png'),
-	(2, 'UA', 'Константин', 'Константинович', 'Константинопольский', '/css/images/teacher2.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/teacherProfile', 'ivanov@intita.org, ivanov@gmail.com', '/067/56-569-56, /093/26-45-65', 'ivanov.ivanov', '', '', '/css/images/teacherImage.png'),
-	(3, 'UA', 'Любовь', 'Анатольевна', 'Ктоятакая-Замухриншская', '/css/images/teacher3.jpg', 'Бухгалтер с «О» и до первой отсидки; Программирование своего позитивного прошлого', '', '<p>Практикующий главный бухгалтер. Учредитель ПП <span>«Логика тут безсильна»</span>;</p>\r\n<p>Образование высшее - ДонГУ (1987г.)</p>\r\n<p>Опыт работы 27 лет, в т. ч. преподавания - 9 лет.</p>\r\n<ul><li>специалист по позитивной энергетике;</li><li>эксперт по эффективному ремонту баянов;</li><li>мастер психотерапии для сложных бабушек и дедушек;</li></ul>', '/teacherProfile', 'ivanov@intita.org, ivanov@gmail.com', '/067/56-569-56, /093/26-45-65', 'ivanov.ivanov', '', '', '/css/images/teacherImage.png'),
-	(4, 'UA', 'Василий', 'Васильевич', 'Меняетпроффесию', '/css/images/teacher4.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/teacherProfile', 'ivanov@intita.org, ivanov@gmail.com', '/067/56-569-56, /093/26-45-65', 'ivanov.ivanov', '', '', '/css/images/teacherImage.png'),
-	(5, 'UA', 'Ия', 'Тожевна', 'Воваяготова', '/css/images/teacher5.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/teacherProfile', 'ivanov@intita.org, ivanov@gmail.com', '/067/56-569-56, /093/26-45-65', 'ivanov.ivanov', '', '', '/css/images/teacherImage.png'),
-	(6, 'UA', 'Петросян', 'Петросянович', 'Забугорный', '/css/images/teacher6.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/teacherProfile', 'ivanov@intita.org, ivanov@gmail.com', '/067/56-569-56, /093/26-45-65', 'ivanov.ivanov', '', '', '/css/images/teacherImage.png');
+	(1, 'UA', 'Олександра', 'Василівна', 'Сіра', '/css/images/teacher1.jpg', 'кройка и шитье сроков; програмування самоубийств', 'Народилася і виросла в Сакраменто, у 18 років вона переїхала до Лос-Анджелеса й незабаром стала вкладачем. У 2007, 2008 і 2010 рр.. вона виграла кілька номінацій премії AVN Awards (також була названа «Найкращою програмісткою» у 2007 році за версією XRCO). Паралельно з вікладауцью роботою та роботою програміста в Саша Грей грає головну роль в тестванні Інтернету.\r\n\r\nМарина Енн Генціс народилася у родині механіка. Її батько мав грецьке походження. Батьки дівчинки розлучилися коли їй було 5 років, надалі її виховувала мати, яка вступила в повторний шлюб у 2000 роц. Марина не ладнала з вітчимом, і, коли їй виповнилося 16 років, дівчина повідомила матері, що збирається покинути будинок. Достеменно невідомо, втекла вона з свого будинку або ж її відпустила мати. Сама Олександра пізніше зізнавалася, що в той час робила все те, що не подобалося її батькам і що вони їй забороняли.\r\n\r\nГлавный бухгалтер акционерного предприятия, специализирующегося на:\r\n\r\n    оказании полезных услуг горизонтального характера;\r\n    торговле, внешнеэкономической и внутреннеэкономической;\r\n    позитивное обучение швейного мастерства;\r\n\r\n Олександра Сіра виконала головну роль у фільмі оскароносного режисера Стівена Содерберга «Дівчина за викликом»[27][28]. Олександра грає дівчину на ім\'я Челсі, яка надає ескорт послуги заможним людям. Содерберг взяв її на роль після того, як прочитав статтю про неї у журналі Los Angeles, коментуючи це так: «She\'s kind of a new breed, I think. She doesn\'t really fit the typical mold of someone who goes into the adult film business. … I\'d never heard anybody talk about the business the way that she talked about it». Журналіст Скотт Маколей каже, що можливо Грей вибрала саме цю роль через свій інтерес до незалежних режисерів, таких як Жан-Люк Годар, Хармоні Корін, Девід Гордон Грін, Мікеланджело Антоніоні, Аньєс Варда та Вільям Клейн.\r\n\r\nКоли Олександра готувалася до ролі у «Дівчині за викликом», Содерберг попросив її подивитися «Жити своїм життям» і «Божевільний П\'єро»[29]. У фільмі «Жити своїм життям» піднімаються проблеми проституції, звідки Грей могла взяти щось і для своєї ролі, в той час як у «Божевільному П\'єро» показані відносини, схожі на ті, що відбуваються між Челсі, її хлопцем і клієнтами.\'; ', '<p>Профессиональный преподаватель бухгалтерского и налогового учета Национальноготранспортного университета кафедры финансов, учета и аудита со стажем преподавательской работы более 25 лет. Закончила аспирантуру, автор 36 научных работ в области учета и аудита, в т.ч. уникальной обучающей методики написания бухгалтерских проводок: <span>"Как украсть и не сесть" </span> и <span>"Как украсть и посадить другого" </span>.</p><p>Главный бухгалтер акционерного предприятия, специализирующегося на:<ul><li>оказании полезных услуг горизонтального характера;</li><li>торговле, внешнеэкономической и внутреннеэкономической;</li><li>позитивное обучение швейного мастерства;</li></ul></p>', '/profile', 'ivanov@intita.org, ivanov@gmail.com', '/067/56-569-56, /093/26-45-65', 'ivanov.ivanov', '', '', '/css/images/teacherImage.png'),
+	(2, 'UA', 'Константин', 'Константинович', 'Константинопольский', '/css/images/teacher2.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/profile', 'ivanov@intita.org, ivanov@gmail.com', '/067/56-569-56, /093/26-45-65', 'ivanov.ivanov', '', '', '/css/images/teacherImage.png'),
+	(3, 'UA', 'Любовь', 'Анатольевна', 'Ктоятакая-Замухриншская', '/css/images/teacher3.jpg', 'Бухгалтер с «О» и до первой отсидки; Программирование своего позитивного прошлого', '', '<p>Практикующий главный бухгалтер. Учредитель ПП <span>«Логика тут безсильна»</span>;</p>\r\n<p>Образование высшее - ДонГУ (1987г.)</p>\r\n<p>Опыт работы 27 лет, в т. ч. преподавания - 9 лет.</p>\r\n<ul><li>специалист по позитивной энергетике;</li><li>эксперт по эффективному ремонту баянов;</li><li>мастер психотерапии для сложных бабушек и дедушек;</li></ul>', '/profile', 'ivanov@intita.org, ivanov@gmail.com', '/067/56-569-56, /093/26-45-65', 'ivanov.ivanov', '', '', '/css/images/teacherImage.png'),
+	(4, 'UA', 'Василий', 'Васильевич', 'Меняетпроффесию', '/css/images/teacher4.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/profile', 'ivanov@intita.org, ivanov@gmail.com', '/067/56-569-56, /093/26-45-65', 'ivanov.ivanov', '', '', '/css/images/teacherImage.png'),
+	(5, 'UA', 'Ия', 'Тожевна', 'Воваяготова', '/css/images/teacher5.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/profile', 'ivanov@intita.org, ivanov@gmail.com', '/067/56-569-56, /093/26-45-65', 'ivanov.ivanov', '', '', '/css/images/teacherImage.png'),
+	(6, 'UA', 'Петросян', 'Петросянович', 'Забугорный', '/css/images/teacher6.jpg', 'программування БДСМ; программування на Php для пострадавших в ЧАЭС; GlobalLoqic, Samsung, Coqniance', '', '<p>Консультант по вопросам бухгалтерского и налогового учета, отчетности для предприятий разной формы собственности. Преподаватель с многолетним стажем работы. <span>Реально шарит в компьютерах.</span></p><p>Автор технологии повышения квалификации специалистов экономического профиля.</p><p>Опыт преподавательской работы около 20 лет в учебных центрах и ВУЗах Киева. Опыт работы главным бухгалтером, финансовым директором. Большой опыт внедрения программ системы Виндовз 3:11.</p>', '/profile', 'ivanov@intita.org, ivanov@gmail.com', '/067/56-569-56, /093/26-45-65', 'ivanov.ivanov', '', '', '/css/images/teacherImage.png');
 /*!40000 ALTER TABLE `teacher_temp` ENABLE KEYS */;
 
 
@@ -794,9 +836,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesen` (
   `language` varchar(16) NOT NULL,
   `translation` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesen: ~82 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesen: ~136 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesen` DISABLE KEYS */;
 INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(1, 'en', 'INTITA'),
@@ -832,7 +874,7 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(31, 'en', 'Do not lose your chance for creative, interesting, and challenging decent work -<br>\r\nplan their professional future today!'),
 	(32, 'en', 'What are you dreaming?'),
 	(33, 'en', 'Future Studies'),
-	(34, 'en', 'Questions and comments'),
+	(34, 'en', 'Important questions'),
 	(35, 'en', 'Maybe this freedom to live their lives? Independently manage own time with opportunity to earn by doing things you love and get business and get meet the modern profession?'),
 	(36, 'en', 'Unlike traditional schools, We do not teach for the sake of ratings. We work individually with each student to achieve 100% mastering the necessary knowledge.'),
 	(37, 'en', 'We offer each of our graduate guaranteed receipt employment offers for 4-6 months after the successful completion of training.'),
@@ -892,7 +934,49 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(91, 'en', 'You can also enter by social networks:'),
 	(92, 'en', 'Forget password?'),
 	(93, 'en', 'SIGN IN'),
-	(94, 'en', 'Status:');
+	(94, 'en', 'Status:'),
+	(95, 'en', 'Student Profile'),
+	(96, 'en', 'Edit </br> profile'),
+	(97, 'en', ' years'),
+	(98, 'en', ' year'),
+	(99, 'en', ' years'),
+	(100, 'en', 'About myself:'),
+	(101, 'en', 'Email:'),
+	(102, 'en', 'Phone:'),
+	(103, 'en', 'Education:'),
+	(104, 'en', 'Interests:'),
+	(105, 'en', 'Where learned you:'),
+	(106, 'en', 'Learning:'),
+	(107, 'en', 'Completion of the course:'),
+	(108, 'en', 'My courses'),
+	(109, 'en', 'Timetable'),
+	(110, 'en', 'Consultation'),
+	(111, 'en', 'Exams'),
+	(112, 'en', 'Projects'),
+	(113, 'en', 'My rating'),
+	(114, 'en', 'Downloads'),
+	(115, 'en', 'Correspondence'),
+	(116, 'en', 'My assessment'),
+	(117, 'en', 'Finances'),
+	(118, 'en', 'Current course:'),
+	(119, 'en', 'Unfinished course:'),
+	(120, 'en', 'Completed course:'),
+	(121, 'en', 'Please make the following payments to'),
+	(122, 'en', 'Amount of payment:'),
+	(123, 'en', ' UAH'),
+	(124, 'en', 'Individual modular project'),
+	(125, 'en', 'Team thesis project'),
+	(126, 'en', 'Type'),
+	(127, 'en', 'Date'),
+	(128, 'en', 'Time'),
+	(129, 'en', 'Teacher'),
+	(130, 'en', 'Theme'),
+	(131, 'en', 'E'),
+	(132, 'en', 'C'),
+	(133, 'en', 'IMP'),
+	(134, 'en', 'TTP'),
+	(135, 'en', ' strong junior'),
+	(136, 'en', ' ukrainian');
 /*!40000 ALTER TABLE `translatedmessagesen` ENABLE KEYS */;
 
 
@@ -904,9 +988,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesru: ~91 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesru: ~136 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
 INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(1, 'ru', 'INTITA'),
@@ -942,7 +1026,7 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(31, 'ru', 'Текст на пятой картинке слайдера'),
 	(32, 'ru', 'О чем ты мечтаешь?'),
 	(33, 'ru', 'Обучение будущего'),
-	(34, 'ru', 'Вопросы и отзывы'),
+	(34, 'ru', 'Вопросы'),
 	(35, 'ru', 'Может, это возможность жить своей жизнью? Самостоятельно распоряжаться своим временем с возможностью зарабатывать, занимаясь любимым делом и получать удовольстие от современной профессии?'),
 	(36, 'ru', 'В отличие от традиционных заведений, мы не учим ради оценок. Мы индивидуально работаем с каждым студентом, чтобы достичь 100% усвоения необходимых знаний.'),
 	(37, 'ru', 'Мы предлагаем каждому выпускнику гарантированное получение предложения работы в течении 4-6-ти месяцев после успешного завершения обучения.'),
@@ -1002,7 +1086,49 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(91, 'ru', 'Вы также можете ввойти с помощью соцсетей:'),
 	(92, 'ru', 'Забыли пароль?'),
 	(93, 'ru', 'ВОЙТИ'),
-	(94, 'ru', 'Статус курса: ');
+	(94, 'ru', 'Статус курса: '),
+	(95, 'ru', 'Профиль студента'),
+	(96, 'ru', 'Редактировать </br> профиль'),
+	(97, 'ru', ' лет'),
+	(98, 'ru', ' год'),
+	(99, 'ru', ' года'),
+	(100, 'ru', 'Про себя:'),
+	(101, 'ru', 'Электронная почта:'),
+	(102, 'ru', 'Телефон:'),
+	(103, 'ru', 'Образование:'),
+	(104, 'ru', 'Интересы:'),
+	(105, 'ru', 'Откуда узнал о Вас:'),
+	(106, 'ru', 'Форма обучения:'),
+	(107, 'ru', 'Завершенные курсы:'),
+	(108, 'ru', 'Мои курсы'),
+	(109, 'ru', 'Расписание'),
+	(110, 'ru', 'Консультации'),
+	(111, 'ru', 'Экзамены'),
+	(112, 'ru', 'Проекты'),
+	(113, 'ru', 'Мой рейтинг'),
+	(114, 'ru', 'Загрузки'),
+	(115, 'ru', 'Переписка'),
+	(116, 'ru', 'Мои оценки'),
+	(117, 'ru', 'Финансы'),
+	(118, 'ru', 'Текущий курс:'),
+	(119, 'ru', 'Незавершенный курс:'),
+	(120, 'ru', 'Завершен курс:'),
+	(121, 'ru', 'Необходимо осуществить следующую проплату до'),
+	(122, 'ru', 'Сумма оплаты:'),
+	(123, 'ru', ' грн'),
+	(124, 'ru', 'Индивидуальный модульный проект'),
+	(125, 'ru', 'Командный дипломный проект'),
+	(126, 'ru', 'Тип'),
+	(127, 'ru', 'Дата'),
+	(128, 'ru', 'Время'),
+	(129, 'ru', 'Преподаватель'),
+	(130, 'ru', 'Тема'),
+	(131, 'ru', 'Э'),
+	(132, 'ru', 'К'),
+	(133, 'ru', 'ИМП'),
+	(134, 'ru', 'КДП'),
+	(135, 'ru', ' начинающий сильный'),
+	(136, 'ru', ' украинский');
 /*!40000 ALTER TABLE `translatedmessagesru` ENABLE KEYS */;
 
 
@@ -1014,9 +1140,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedmessages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
 
--- Dumping data for table int_ita_db.translatedmessagesua: ~90 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesua: ~136 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesua` DISABLE KEYS */;
 INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -1052,7 +1178,7 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(31, 'ua', 'Не втрачай свій шанс на творчу, цікаву, гідну та перспективну працю –<br>\r\n плануй своє професійне майбутнє вже сьогодні!'),
 	(32, 'ua', 'Про що мрієш ти?'),
 	(33, 'ua', 'Навчання майбутнього'),
-	(34, 'ua', 'Питання та відгуки'),
+	(34, 'ua', 'Важливі питання'),
 	(35, 'ua', 'Можливо, це свобода жити своїм життям? \r\nСамостійно керувати власним часом\r\nз можливістю заробляти, займаючись \r\nулюбленою справою і отримувати \r\nзадоволення від сучасної професії?'),
 	(36, 'ua', 'На відміну від традиційних закладів, \r\nми не навчаємо задля оцінок.  \r\nМи працюємо індивідуально  \r\nз кожним студентом, щоб досягти \r\n100% засвоєння необхідних знань. '),
 	(37, 'ua', 'Ми пропонуємо кожному нашому \r\nвипускнику гарантоване отримання \r\nпропозиції працевлаштування \r\nпротягом 4-6-ти місяців після \r\nуспішного завершення навчання.'),
@@ -1112,7 +1238,49 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(91, 'ua', 'Ви можете також увійти через соцмережі:'),
 	(92, 'ua', 'Забули пароль?'),
 	(93, 'ua', 'ВВІЙТИ'),
-	(94, 'ua', 'Стан курсу: ');
+	(94, 'ua', 'Стан курсу: '),
+	(95, 'ua', 'Профіль студента'),
+	(96, 'ua', 'Редагувати </br> профіль'),
+	(97, 'ua', ' років'),
+	(98, 'ua', ' рік'),
+	(99, 'ua', ' роки'),
+	(100, 'ua', 'Про себе:'),
+	(101, 'ua', 'Електрона пошта:'),
+	(102, 'ua', 'Телефон:'),
+	(103, 'ua', 'Освіта:'),
+	(104, 'ua', 'Інтереси:'),
+	(105, 'ua', 'Звідки дізнався про Вас:'),
+	(106, 'ua', 'Форма навчання:'),
+	(107, 'ua', 'Завершенні курси:'),
+	(108, 'ua', 'Мої курси'),
+	(109, 'ua', 'Розклад'),
+	(110, 'ua', 'Консультації'),
+	(111, 'ua', 'Екзамени'),
+	(112, 'ua', 'Проекти'),
+	(113, 'ua', 'Мій рейтинг'),
+	(114, 'ua', 'Завантаження'),
+	(115, 'ua', 'Листування'),
+	(116, 'ua', 'Мої оцінювання'),
+	(117, 'ua', 'Фінанси'),
+	(118, 'ua', 'Поточний курс:'),
+	(119, 'ua', 'Незавершений курс:'),
+	(120, 'ua', 'Завершений курс:'),
+	(121, 'ua', 'Необхідно здійснити наступну проплату до'),
+	(122, 'ua', 'Сума проплати:'),
+	(123, 'ua', ' грн'),
+	(124, 'ua', 'Індивідуальний модульний проект'),
+	(125, 'ua', 'Командний дипломний проект'),
+	(126, 'ua', 'Тип'),
+	(127, 'ua', 'Дата'),
+	(128, 'ua', 'Час'),
+	(129, 'ua', 'Викладач'),
+	(130, 'ua', 'Тема'),
+	(131, 'ua', 'Е'),
+	(132, 'ua', 'К'),
+	(133, 'ua', 'ІМП'),
+	(134, 'ua', 'КДП'),
+	(135, 'ua', ' сильний початківець'),
+	(136, 'ua', ' українська');
 /*!40000 ALTER TABLE `translatedmessagesua` ENABLE KEYS */;
 
 
@@ -1144,7 +1312,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.user: ~15 rows (approximately)
+-- Dumping data for table int_ita_db.user: ~22 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `firstName`, `identity`, `network`, `state`, `full_name`, `middleName`, `secondName`, `nickname`, `birthday`, `email`, `password`, `phone`, `hash`, `address`, `education`, `educform`, `interests`, `aboutUs`, `aboutMy`, `avatar`, `role`) VALUES
 	(1, 'Вова', '', '', 0, '', 'Джа', 'Марля', 'Wizlight', '21/03/1997', 'Wizlightdragon@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', '911', '', 'Ямайка', 'ВДПУ', 'Онлайн', 'Ковбаска, колобки, раста', 'Інтернет', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', '/css/images/1id.jpg', ''),

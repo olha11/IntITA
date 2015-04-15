@@ -1,5 +1,5 @@
 <?php
-class TeacherProfileController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Declares class-based actions.

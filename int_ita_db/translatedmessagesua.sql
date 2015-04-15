@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-14 19:44:11
+-- Date/time:                    2015-04-15 14:57:57
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,9 +18,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedmessages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
 
--- Dumping data for table int_ita_db.translatedmessagesua: ~94 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesua: ~90 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesua` DISABLE KEYS */;
 INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -56,7 +56,7 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(31, 'ua', 'Не втрачай свій шанс на творчу, цікаву, гідну та перспективну працю –<br>\r\n плануй своє професійне майбутнє вже сьогодні!'),
 	(32, 'ua', 'Про що мрієш ти?'),
 	(33, 'ua', 'Навчання майбутнього'),
-	(34, 'ua', 'Питання та відгуки'),
+	(34, 'ua', 'Важливі питання'),
 	(35, 'ua', 'Можливо, це свобода жити своїм життям? \r\nСамостійно керувати власним часом\r\nз можливістю заробляти, займаючись \r\nулюбленою справою і отримувати \r\nзадоволення від сучасної професії?'),
 	(36, 'ua', 'На відміну від традиційних закладів, \r\nми не навчаємо задля оцінок.  \r\nМи працюємо індивідуально  \r\nз кожним студентом, щоб досягти \r\n100% засвоєння необхідних знань. '),
 	(37, 'ua', 'Ми пропонуємо кожному нашому \r\nвипускнику гарантоване отримання \r\nпропозиції працевлаштування \r\nпротягом 4-6-ти місяців після \r\nуспішного завершення навчання.'),
@@ -116,7 +116,49 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(91, 'ua', 'Ви можете також увійти через соцмережі:'),
 	(92, 'ua', 'Забули пароль?'),
 	(93, 'ua', 'ВВІЙТИ'),
-	(94, 'ua', 'Стан курсу: ');
+	(94, 'ua', 'Стан курсу: '),
+	(95, 'ua', 'Профіль студента'),
+	(96, 'ua', 'Редагувати </br> профіль'),
+	(97, 'ua', ' років'),
+	(98, 'ua', ' рік'),
+	(99, 'ua', ' роки'),
+	(100, 'ua', 'Про себе:'),
+	(101, 'ua', 'Електрона пошта:'),
+	(102, 'ua', 'Телефон:'),
+	(103, 'ua', 'Освіта:'),
+	(104, 'ua', 'Інтереси:'),
+	(105, 'ua', 'Звідки дізнався про Вас:'),
+	(106, 'ua', 'Форма навчання:'),
+	(107, 'ua', 'Завершенні курси:'),
+	(108, 'ua', 'Мої курси'),
+	(109, 'ua', 'Розклад'),
+	(110, 'ua', 'Консультації'),
+	(111, 'ua', 'Екзамени'),
+	(112, 'ua', 'Проекти'),
+	(113, 'ua', 'Мій рейтинг'),
+	(114, 'ua', 'Завантаження'),
+	(115, 'ua', 'Листування'),
+	(116, 'ua', 'Мої оцінювання'),
+	(117, 'ua', 'Фінанси'),
+	(118, 'ua', 'Поточний курс:'),
+	(119, 'ua', 'Незавершений курс:'),
+	(120, 'ua', 'Завершений курс:'),
+	(121, 'ua', 'Необхідно здійснити наступну проплату до'),
+	(122, 'ua', 'Сума проплати:'),
+	(123, 'ua', ' грн'),
+	(124, 'ua', 'Індивідуальний модульний проект'),
+	(125, 'ua', 'Командний дипломний проект'),
+	(126, 'ua', 'Тип'),
+	(127, 'ua', 'Дата'),
+	(128, 'ua', 'Час'),
+	(129, 'ua', 'Викладач'),
+	(130, 'ua', 'Тема'),
+	(131, 'ua', 'Е'),
+	(132, 'ua', 'К'),
+	(133, 'ua', 'ІМП'),
+	(134, 'ua', 'КДП'),
+	(135, 'ua', ' сильний початківець'),
+	(136, 'ua', ' українська');
 /*!40000 ALTER TABLE `translatedmessagesua` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

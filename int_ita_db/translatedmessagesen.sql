@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-14 19:44:11
+-- Date/time:                    2015-04-15 14:57:57
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesen` (
   `language` varchar(16) NOT NULL,
   `translation` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesen: ~94 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesen: ~82 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesen` DISABLE KEYS */;
 INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(1, 'en', 'INTITA'),
@@ -55,7 +55,7 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(31, 'en', 'Do not lose your chance for creative, interesting, and challenging decent work -<br>\r\nplan their professional future today!'),
 	(32, 'en', 'What are you dreaming?'),
 	(33, 'en', 'Future Studies'),
-	(34, 'en', 'Questions and comments'),
+	(34, 'en', 'Important questions'),
 	(35, 'en', 'Maybe this freedom to live their lives? Independently manage own time with opportunity to earn by doing things you love and get business and get meet the modern profession?'),
 	(36, 'en', 'Unlike traditional schools, We do not teach for the sake of ratings. We work individually with each student to achieve 100% mastering the necessary knowledge.'),
 	(37, 'en', 'We offer each of our graduate guaranteed receipt employment offers for 4-6 months after the successful completion of training.'),
@@ -115,7 +115,49 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(91, 'en', 'You can also enter by social networks:'),
 	(92, 'en', 'Forget password?'),
 	(93, 'en', 'SIGN IN'),
-	(94, 'en', 'Status:');
+	(94, 'en', 'Status:'),
+	(95, 'en', 'Student Profile'),
+	(96, 'en', 'Edit </br> profile'),
+	(97, 'en', ' years'),
+	(98, 'en', ' year'),
+	(99, 'en', ' years'),
+	(100, 'en', 'About myself:'),
+	(101, 'en', 'Email:'),
+	(102, 'en', 'Phone:'),
+	(103, 'en', 'Education:'),
+	(104, 'en', 'Interests:'),
+	(105, 'en', 'Where learned you:'),
+	(106, 'en', 'Learning:'),
+	(107, 'en', 'Completion of the course:'),
+	(108, 'en', 'My courses'),
+	(109, 'en', 'Timetable'),
+	(110, 'en', 'Consultation'),
+	(111, 'en', 'Exams'),
+	(112, 'en', 'Projects'),
+	(113, 'en', 'My rating'),
+	(114, 'en', 'Downloads'),
+	(115, 'en', 'Correspondence'),
+	(116, 'en', 'My assessment'),
+	(117, 'en', 'Finances'),
+	(118, 'en', 'Current course:'),
+	(119, 'en', 'Unfinished course:'),
+	(120, 'en', 'Completed course:'),
+	(121, 'en', 'Please make the following payments to'),
+	(122, 'en', 'Amount of payment:'),
+	(123, 'en', ' UAH'),
+	(124, 'en', 'Individual modular project'),
+	(125, 'en', 'Team thesis project'),
+	(126, 'en', 'Type'),
+	(127, 'en', 'Date'),
+	(128, 'en', 'Time'),
+	(129, 'en', 'Teacher'),
+	(130, 'en', 'Theme'),
+	(131, 'en', 'E'),
+	(132, 'en', 'C'),
+	(133, 'en', 'IMP'),
+	(134, 'en', 'TTP'),
+	(135, 'en', ' strong junior'),
+	(136, 'en', ' ukrainian');
 /*!40000 ALTER TABLE `translatedmessagesen` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

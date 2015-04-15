@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-14 19:44:11
+-- Date/time:                    2015-04-15 14:57:57
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,9 +18,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesru: ~94 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesru: ~91 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
 INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(1, 'ru', 'INTITA'),
@@ -56,7 +56,7 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(31, 'ru', 'Текст на пятой картинке слайдера'),
 	(32, 'ru', 'О чем ты мечтаешь?'),
 	(33, 'ru', 'Обучение будущего'),
-	(34, 'ru', 'Вопросы и отзывы'),
+	(34, 'ru', 'Вопросы'),
 	(35, 'ru', 'Может, это возможность жить своей жизнью? Самостоятельно распоряжаться своим временем с возможностью зарабатывать, занимаясь любимым делом и получать удовольстие от современной профессии?'),
 	(36, 'ru', 'В отличие от традиционных заведений, мы не учим ради оценок. Мы индивидуально работаем с каждым студентом, чтобы достичь 100% усвоения необходимых знаний.'),
 	(37, 'ru', 'Мы предлагаем каждому выпускнику гарантированное получение предложения работы в течении 4-6-ти месяцев после успешного завершения обучения.'),
@@ -116,7 +116,49 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(91, 'ru', 'Вы также можете ввойти с помощью соцсетей:'),
 	(92, 'ru', 'Забыли пароль?'),
 	(93, 'ru', 'ВОЙТИ'),
-	(94, 'ru', 'Статус курса: ');
+	(94, 'ru', 'Статус курса: '),
+	(95, 'ru', 'Профиль студента'),
+	(96, 'ru', 'Редактировать </br> профиль'),
+	(97, 'ru', ' лет'),
+	(98, 'ru', ' год'),
+	(99, 'ru', ' года'),
+	(100, 'ru', 'Про себя:'),
+	(101, 'ru', 'Электронная почта:'),
+	(102, 'ru', 'Телефон:'),
+	(103, 'ru', 'Образование:'),
+	(104, 'ru', 'Интересы:'),
+	(105, 'ru', 'Откуда узнал о Вас:'),
+	(106, 'ru', 'Форма обучения:'),
+	(107, 'ru', 'Завершенные курсы:'),
+	(108, 'ru', 'Мои курсы'),
+	(109, 'ru', 'Расписание'),
+	(110, 'ru', 'Консультации'),
+	(111, 'ru', 'Экзамены'),
+	(112, 'ru', 'Проекты'),
+	(113, 'ru', 'Мой рейтинг'),
+	(114, 'ru', 'Загрузки'),
+	(115, 'ru', 'Переписка'),
+	(116, 'ru', 'Мои оценки'),
+	(117, 'ru', 'Финансы'),
+	(118, 'ru', 'Текущий курс:'),
+	(119, 'ru', 'Незавершенный курс:'),
+	(120, 'ru', 'Завершен курс:'),
+	(121, 'ru', 'Необходимо осуществить следующую проплату до'),
+	(122, 'ru', 'Сумма оплаты:'),
+	(123, 'ru', ' грн'),
+	(124, 'ru', 'Индивидуальный модульный проект'),
+	(125, 'ru', 'Командный дипломный проект'),
+	(126, 'ru', 'Тип'),
+	(127, 'ru', 'Дата'),
+	(128, 'ru', 'Время'),
+	(129, 'ru', 'Преподаватель'),
+	(130, 'ru', 'Тема'),
+	(131, 'ru', 'Э'),
+	(132, 'ru', 'К'),
+	(133, 'ru', 'ИМП'),
+	(134, 'ru', 'КДП'),
+	(135, 'ru', ' начинающий сильный'),
+	(136, 'ru', ' украинский');
 /*!40000 ALTER TABLE `translatedmessagesru` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

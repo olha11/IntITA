@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-14 19:44:11
+-- Date/time:                    2015-04-15 14:57:57
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   `category` varchar(32) NOT NULL,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~94 rows (approximately)
+-- Dumping data for table int_ita_db.sourcemessages: ~90 rows (approximately)
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', '0001'),
@@ -115,7 +115,49 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(91, 'regform', '0091'),
 	(92, 'regform', '0092'),
 	(93, 'regform', '0093'),
-	(94, 'courses', '0094');
+	(94, 'courses', '0094'),
+	(95, 'profile', '0095'),
+	(96, 'profile', '0096'),
+	(97, 'profile', '0097'),
+	(98, 'profile', '0098'),
+	(99, 'profile', '0099'),
+	(100, 'profile', '0100'),
+	(101, 'profile', '0101'),
+	(102, 'profile', '0102'),
+	(103, 'profile', '0103'),
+	(104, 'profile', '0104'),
+	(105, 'profile', '0105'),
+	(106, 'profile', '0106'),
+	(107, 'profile', '0107'),
+	(108, 'profile', '0108'),
+	(109, 'profile', '0109'),
+	(110, 'profile', '0110'),
+	(111, 'profile', '0111'),
+	(112, 'profile', '0112'),
+	(113, 'profile', '0113'),
+	(114, 'profile', '0114'),
+	(115, 'profile', '0115'),
+	(116, 'profile', '0116'),
+	(117, 'profile', '0117'),
+	(118, 'profile', '0118'),
+	(119, 'profile', '0119'),
+	(120, 'profile', '0120'),
+	(121, 'profile', '0121'),
+	(122, 'profile', '0122'),
+	(123, 'profile', '0123'),
+	(124, 'profile', '0124'),
+	(125, 'profile', '0125'),
+	(126, 'profile', '0126'),
+	(127, 'profile', '0127'),
+	(128, 'profile', '0128'),
+	(129, 'profile', '0129'),
+	(130, 'profile', '0130'),
+	(131, 'profile', '0131'),
+	(132, 'profile', '0132'),
+	(133, 'profile', '0133'),
+	(134, 'profile', '0134'),
+	(135, 'profile', '0135'),
+	(136, 'profile', '0136');
 /*!40000 ALTER TABLE `sourcemessages` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
