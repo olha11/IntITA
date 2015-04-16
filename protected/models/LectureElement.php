@@ -94,9 +94,9 @@ class LectureElement extends CActiveRecord
                     'block_order'=>CSort::SORT_ASC,
                 )
             ),
-//            'pagination'=>array(
-//                'pageSize'=>count($criteria),
-//            ),
+            'pagination'=>array(
+                'pageSize'=>count($criteria),
+            ),
 		));
 	}
 
