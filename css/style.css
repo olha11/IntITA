@@ -31,6 +31,7 @@ p {
     position: fixed;
 }
 #lang.down {
+    display: none;
     margin-top: -40px;
     margin-left: 500px;
 }
@@ -66,15 +67,16 @@ p {
     z-index: 5;
 }
 #navigation.down {
-    height: 68px;
+    height: 60px;
 }
 
 #navigation ul {
     margin-left: 475px;
-    margin-top: 65px;
+    margin-top: 55px;
 }
 #navigation.down ul {
-    margin-top: 22px;
+    margin-top: 17px;
+    margin-left: 335px;
 }
 #navigation li {
     display:inline;
@@ -99,7 +101,7 @@ p {
     max-height: 75px;
 }
 #logo_img.down {
-    margin-top: 12px;
+    margin-top: 7px;
 }
 #logo_img.down img {
     max-height: 46px;
@@ -145,7 +147,7 @@ p {
     background: #363636;
 }
 #enter_button.down {
-    margin-top: 18px;
+    margin-top: 12px;
 }
 #enter_button.down:hover{
     background: #454545;
