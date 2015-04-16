@@ -9,6 +9,7 @@
 /* @var $model StudentReg */
 /* @var $regExtended Regextended*/
 /* @var $form CActiveForm */
+$this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
     Yii::t('breadcrumbs', 'Register'),
 );
@@ -44,12 +45,12 @@ $this->breadcrumbs=array(
             <?php $model->role =0; ?>
             <?php echo $form->labelEx($model,'role'); ?>
             <div class="radiolabelRole">
-                <?php echo $form->radioButtonList($model,'role',array(0=>'Студент',1=>'Викладач'), array('separator'=>' '));?>
+                <?php echo $form->radioButtonList($model,'role',array(0=>'Студент'), array('separator'=>' '));?>
             </div>
         </div>
         <div class="row">
             <?php echo $form->labelEx($model,'firstName'); ?>
-            <?php echo $form->textField($model,'firstName',array('maxlength'=>255)); ?>
+            <?php echo $form->textField($model,'firstName',array('maxlength'=>255, 'autofocus'=>'true')); ?>
             <span><?php echo $form->error($model,'firstName'); ?></span>
         </div>
         <div class="row">
@@ -64,7 +65,7 @@ $this->breadcrumbs=array(
         </div>
         <div class="rowDate">
             <?php echo $form->label($model,'birthday'); ?>
-            <?php echo $form->textField($model,'birthday',array('maxlength'=>11, 'class'=>'date', 'placeholder'=>'введіть в форматі дд.мм.рррр'));?>
+            <?php echo $form->textField($model,'birthday',array('maxlength'=>11, 'class'=>'date', 'placeholder'=>'введіть в форматі дд/мм/рррр'));?>
             <span><?php echo $form->error($model,'birthday'); ?></span>
         </div>
         <div class="rowPhone">
@@ -102,8 +103,7 @@ $this->breadcrumbs=array(
             <span><?php echo $form->error($model,'interests'); ?></span>
         </div>
         <div class="row">
-            <?php echo $form->label($model,'aboutUs'); ?>
-            <?php echo $form->textField($model,'aboutUs'); ?>
+            <?php echo $form->textField($model,'aboutUs',array('placeholder'=>'звідки Ви про нас дізналися?', 'id'=>'aboutUs')); ?>
             <span><?php echo $form->error($model,'aboutUs'); ?></span>
         </div>
         <div class="row">
@@ -136,10 +136,10 @@ $this->breadcrumbs=array(
                 </td>
             </tr>
         </table>
-        <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/1id.jpg"/></br>
+        <img class='avatarimg' src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/avatars/noname.png"/></br>
         <div class="fileform">
             <input class="avatar" type="button" value="ВИБЕРІТЬ ФАЙЛ">
-            <input tabindex="-1" type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg">
+            <input tabindex="-1" type="file" name="upload" class="chooseAvatar" onchange="getName(this.value);" accept="image/jpeg/gif">
             <input tabindex="-1" class="uploadAvatar" type="submit">
         </div>
         <div id="avatarHelp">Розмір фото до 512кб</div>

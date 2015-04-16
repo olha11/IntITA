@@ -25,15 +25,7 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
         Yii::t('breadcrumbs', 'Profile')=>Yii::app()->request->baseUrl.'/studentreg/profile',Yii::t('breadcrumbs', 'Edit profile')
     );
     ?>
-    <div class="profileStatus">
-        <div>
-            <?php echo $post->firstName;?></br>
-            <?php echo $post->secondName;?></br>
-            <?php echo $post->nickname;?></br>
-            <span style="color: #33cc00; font-size: smaller">&#x25A0; online</span>
-        </div>
-        <img src="<?php echo Yii::app()->request->baseUrl.$post->avatar; ?>"/>
-    </div>
+
 </div>
 <div class="formStudProf">
     <?php $form=$this->beginWidget('CActiveForm', array(
@@ -54,6 +46,8 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
                 </td>
             </tr>
         </table>
+        <?php echo CHtml::hiddenField('id', $post->id); ?>
+
         <div class="row">
             <?php echo $form->label($model,'firstName'); ?>
             <?php echo $form->textField($model,'firstName',array('value'=>$post->firstName,'maxlength'=>255)); ?>
@@ -71,7 +65,7 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
         </div>
         <div class="rowDate">
             <?php echo $form->label($model,'birthday'); ?>
-            <?php echo $form->textField($model,'birthday',array('value'=>$post->birthday, 'class'=>'date','maxlength'=>11, 'placeholder'=>'введіть в форматі дд.мм.рррр')); ?>
+            <?php echo $form->textField($model,'birthday',array('value'=>$post->birthday, 'class'=>'date','maxlength'=>11, 'placeholder'=>'введіть в форматі дд/мм/рррр')); ?>
             <span><?php echo $form->error($model,'birthday'); ?></span>
         </div>
         <div class="row">

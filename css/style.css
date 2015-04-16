@@ -3,7 +3,8 @@ body {
 }
 
 .main {
-    width: 960px;
+    position: relative;
+    width: 1200px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -34,12 +35,12 @@ p {
     margin-left: 500px;
 }
 #lang #en {
-    border-left: 1px solid #999999;
-    border-right: 1px solid #999999;
-    padding-left: 8px;
-    padding-right: 8px;
-}
-#lang button{
+     border-left: 1px solid #999999;
+     border-right: 1px solid #999999;
+     padding-left: 8px;
+     padding-right: 8px;
+ }
+#lang input[type="button"]{
     background:none!important;
     border:none;
     cursor: pointer;
@@ -48,7 +49,7 @@ p {
     font-family: "MyriadPro";
     text-decoration: underline;
 }
-#lang .selectedLang {
+#lang input[type="button"].selectedLang {
     text-decoration: none;
     color: #999999;
 }
@@ -234,8 +235,8 @@ p {
 {
     font-size: 35px;
     letter-spacing: 1px;
-    margin-bottom:0;
-    padding-bottom: 0;
+    margin:0;
+    padding: 0;
     color:#ffffff;
     line-height: 100%;
 }
@@ -362,7 +363,7 @@ input[type="submit"]::-moz-focus-inner { /* убираем внутренний 
 
 /* breadcrumbs */
 .my-cool-breadcrumbs{
-    margin-bottom: 24px;
+    padding-bottom: 24px;
     display: inline-block;
     margin-top: 40px;
     color: #666666;
@@ -371,3 +372,24 @@ input[type="submit"]::-moz-focus-inner { /* убираем внутренний 
     color: #666666;
 }
 /* breadcrumbs */
+
+div.profileStatus{
+    position: absolute;
+    top:76px;
+    right:0;
+    float:right;
+    display:block;
+    overflow: hidden;
+}
+.profileStatus img {
+    width:56px;
+    height:56px;
+    float: right;
+    margin-right: 10px;
+}
+.profileStatus div {
+    float: right;
+    font-size: smaller;
+    line-height: 110%;
+    color:#4b75a4;
+}

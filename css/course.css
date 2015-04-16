@@ -16,39 +16,164 @@ div.subLinksCourse{
     color: #666666;
 }
 /*Main Block*/
+
+/*Short Info*/
 .courseBlock
 {
     margin: 0 auto;
-    width: 960px;
+    width: 1200px;
     border-top: 1px solid #d8d8d8;
     color: #666666;
     overflow: hidden;
 }
+.spoilerBody {
+    display:none;
+}
+span.spoilerLinks {
+    cursor:pointer;
+}
+span.spoilerClick:hover{
+    cursor:pointer;
+    color:#666666;
+}
+span.spoilerClick {
+    text-decoration:underline;
+    color:#4b75a4;
+}
+.courseDetail td, .spoilerBody {
+    white-space: nowrap;
+}
+.spoilerRow{
+    display: none;
+}
+.spoilerBody{
+    width: 100%;
+}
+.courseBlock a
+{
+    color: #4b75a4;
+}
+.courseTeacherDetail a{
+    color: #666666;
+}
 .courseTitle h1{
     font-weight: inherit;
+    font-size: 36px;
     color: #4B75A4;
-    margin: 24px 0 0 176px;
+    margin: 24px 0 0 0;
     line-height: 100%;
 }
 img.courseImg{
-    position: absolute;
-    width: 140px;
-    margin-top: 20px;
+    width: 115px;
+    margin: 20px 30px 0 0;
+    vertical-align: top;
 }
+div.courseShortInfo{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    vertical-align: top;
+    font-size: 14px;
+}
+div.courseShortInf table {
+    border-spacing: 0;
+    vertical-align: middle;
+}
+div.courseShortInfoTable{
+    display: inline-block;
+    width: 450px;
+}
+.courseShortInfo table.courseLevelLine{
+    width: 100%;
+}
+.courseShortInfo td.courseLevel {
+    text-align: right;
+}
+/*Short Info*/
+
+/*Course Info*/
 .courseInfo {
-    display:inline-block;
-    margin-left: 18%;
-    margin-right: 2%;
-    width: 30%;
+    display:block;
+    width: 100%;
     overflow: hidden;
     vertical-align: top;
 }
-.courseModules {
+.courseInfo ul {
+    font-size: 14px;
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 35px;
+    width: 270px;
+}
+.courseInfo p {
+    margin-left: -15px;
+}
+/*Course Info*/
+
+/*courseTeachers*/
+.courseTeachers{
+    width: 310px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 55px;
+}
+.courseTeachers h2, .courseModules h2{
+    width: 310px;
+    border-top: 1px solid #cccccc;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: inherit;
+    color: #4B75A4;
+}
+.courseTeacher{
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 7px;
+    margin-bottom: 5px;
+}
+.courseTeacherImg{
     display:inline-block;
-    width: 48%;
+    width: 85px;
+}
+.courseTeacherImg img{
+    width: 80px;
+    height: 100px;
+    border: 1px solid #cccccc;
+}
+.courseTeacherInfo{
     overflow: hidden;
+    font-size: 14px;
+    display:inline-block;
+    width: 210px;
     vertical-align: top;
 }
+.courseTeacherInfo h3{
+    font-size: 18px;
+    font-weight: inherit;
+    color: #4B75A4;
+    margin: -2px 0 5px 0;
+    line-height: 1.2;
+}
+.courseTeachers article + span{
+    text-align: right;
+    margin-top: 5px;
+    font-size: 15px;
+    color: #4b75a4;
+    cursor: pointer;
+}
+.courseTeacher a{
+    text-decoration: none;
+}
+.spoilerTriangle{
+    font-size: xx-small;
+    color: #4b75a4;
+    margin-left: 3px;
+    text-decoration: none;
+}
+.spoiler{
+    text-decoration: underline;
+}
+/*teachers*/
+
 .courseInfo{
     font-size: small;
 }
@@ -58,22 +183,25 @@ img.courseImg{
 .colorGrey{
     color: #666666;
 }
-table.courseLevelLine{
-    width: 100%;
+.redStrike{
+    color: #ff0000;
+    text-decoration: line-through;
 }
 .courseInfo table{
     border-spacing: 0;
-}
-td.courseLevel {
-    text-align: right;
 }
 .courseDetail td{
     padding-right: 28px;
     vertical-align: top;
 }
 .courseTeacherDetail td{
-    padding-right: 15px;
+    padding-left: 0;
     vertical-align: top;
+    line-height: 1;
+}
+.courseTeacherDetail{
+    margin-bottom: 7px;
+    margin-left: -2px;
 }
 p.subCourseInfo, p.courseAboutTeacher{
     color: #4b75a4;
@@ -84,70 +212,27 @@ p.subCourseInfo, p.courseAboutTeacher{
     margin-bottom: 10px;
     padding-left: 20px;
 }
-/*teachers*/
-.courseInfo h2{
-    border-top: 1px solid #cccccc;
-    font-weight: inherit;
-    color: #4B75A4;
-}
-.courseTeacherImg{
-    display:inline-block;
-    width: 70px;
-}
-.courseTeacherImg img{
-    width: 64px;
-}
-.courseTeacherInfo{
-    display:inline-block;
-    width: 210px;
-    margin-bottom: 20px;
-    vertical-align: top;
-}
-.courseTeacherInfo h3{
-    font-weight: inherit;
-    color: #4B75A4;
-    margin: 0 0 5px 0;
-}
-/*teachers*/
+
 /*modules*/
-.courseModuleNumber{
-    display:inline-block;
-    width: 74px;
-}
-.courseModuleInfo {
-    display:inline-block;
-    width: 378px;
+.courseModules {
+    width: 590px;
+    display: inline-block;
     vertical-align: top;
 }
-.courseModuleInfo a{
-    display:inline-block;
-    width: 378px;
+.cModule {
+    margin: -7px 0 10px -3px;
+    font-size: 16px;
+}
+.cModule td{
     vertical-align: top;
+}
+.cModule a{
     text-decoration: none;
 }
-div.cModuleNumber{
-    float: right;
-    margin-right: 12px;
-}
-.cModuleNumber{
-    text-align: center;
-    font-size: xx-large;
-    border: 1px solid;
-    width: 45px;
-    height: 45px;
-    border-radius: 150px;
-}
-.courseModuleInfo h2{
-    font-weight: inherit;
-    font-size: larger;
-    color: #4B75A4;
-    margin: 0 0 0 0;
-    line-height: 100%;
-}
-.cModule{
-    margin: 15px 0 10px 0;
-}
-.cModule p{
-    font-size: small;
+.cModule td > span{
+    white-space: nowrap
 }
 /*modules*/
+td{
+
+}

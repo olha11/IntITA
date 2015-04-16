@@ -19,6 +19,7 @@
  * @property string $skype
  * @property string $title
  * @property string $linkName
+ * @property string $smallImage
  */
 class TeachersTemp extends CActiveRecord
 {
@@ -36,7 +37,6 @@ class TeachersTemp extends CActiveRecord
 		$this->last_name = $this->findByPk($id)->last_name;
 		$this->middle_name = $this->findByPk($id)->middle_name;
 		$this->profile_text = $this->findByPk($id)->profile_text;
-
 		$this->readMoreLink = $this->findByPk($id)->readMoreLink;
 		$this->subjects = $this->findByPk($id)->subjects;
 		return $this;
@@ -54,11 +54,11 @@ class TeachersTemp extends CActiveRecord
 			array('lang', 'length', 'max'=>6),
 			array('first_name, middle_name, last_name', 'length', 'max'=>35),
 			array('foto_url, subjects, tel', 'length', 'max'=>100),
-			array('readMoreLink', 'length', 'max'=>255),
+			array('readMoreLink, smallImage', 'length', 'max'=>255),
 			array('email, skype, title, linkName', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('teacher_id, lang, first_name, middle_name, last_name, foto_url, subjects, profile_text_big, profile_text, readMoreLink, email, tel, skype, title, linkName', 'safe', 'on'=>'search'),
+			array('teacher_id, lang, first_name, middle_name, last_name, foto_url, subjects, profile_text_big, profile_text, readMoreLink, email, tel, skype, title, linkName, smallImage', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -94,6 +94,7 @@ class TeachersTemp extends CActiveRecord
 			'skype' => 'Skype',
 			'title' => 'Title',
 			'linkName' => 'Link Name',
+			'smallImage' => 'Small photo',
 		);
 	}
 
@@ -130,6 +131,7 @@ class TeachersTemp extends CActiveRecord
 		$criteria->compare('skype',$this->skype,true);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('linkName',$this->linkName,true);
+		$criteria->compare('smallImage',$this->smallImage);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

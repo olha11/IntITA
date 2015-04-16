@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "studentprofile".
+ * This is the model class for table "user".
  *
- * The followings are the available columns in table 'studentprofile':
+ * The followings are the available columns in table 'user':
  * @property integer $id
  * @property string $firstName
  * @property string $middleName
@@ -51,10 +51,13 @@ class StudentReg extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('firstName, email, password, password_repeat', 'required', 'message'=>'Будь ласка введіть {attribute}.'),
+            array('firstName, email, password, password_repeat', 'required', 'message'=>'Будь ласка введіть {attribute}.','on'=>'reguser'),
+            array('email, password', 'required', 'message'=>'Будь ласка введіть {attribute}.','on'=>'repidreg,loginuser,sociallogin'),
             array('email', 'email', 'message'=>'Email не являється правильною {attribute} адресою'),
-            array('birthday', 'date','format' => 'dd/MM/yyyy','message'=>'Введіть дату народження в форматі дд.мм.рррр'),
-            array('password', 'compare', 'compareAttribute'=>'password_repeat', 'message'=>'Паролі не співпадають'),
+            array('email','unique', 'caseSensitive'=>true, 'allowEmpty'=>true,'message'=>'Email уже зайнятий','on'=>'repidreg,reguser'),
+            array('password', 'authenticate','on'=>'loginuser'),
+            //array('birthday', 'date','format' => 'dd/MM/yyyy','message'=>'Введіть дату народження в форматі дд.мм.рррр'),
+            array('password', 'compare', 'compareAttribute'=>'password_repeat', 'message'=>'Паролі не співпадають','on'=>'reguser'),
             array('firstName, secondName, nickname, email, password, education', 'length', 'max'=>255),
             array('birthday', 'length', 'max'=>11),
             array('phone', 'length', 'max'=>15),
@@ -65,7 +68,12 @@ class StudentReg extends CActiveRecord
             array('id, firstName, secondName, nickname, birthday, email, password, phone, address, education, educform, interests, aboutUs, password_repeat, middleName,aboutMy, avatar, upload, role', 'safe', 'on'=>'search'),
         );
     }
-
+    public function authenticate($attribute,$params)
+    {
+        $this->_identity=new UserIdentity($this->email,$this->password);
+        if(!$this->_identity->authenticate())
+            $this->addError('password',"Невірний email або пароль.");
+    }
     /**
      * @return array relational rules.
      */
@@ -115,6 +123,22 @@ class StudentReg extends CActiveRecord
             $this->_identity->authenticate();
         }
         if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
+        {
+            $duration=3600*24; // 30 days
+            Yii::app()->user->login($this->_identity,$duration);
+            return true;
+        }
+        else
+            return false;
+    }
+    public function socialLogin()
+    {
+        if($this->_identity===null)
+        {
+            $this->_identity=new SocialUserIdentity($this->email,$this->email);
+            $this->_identity->authenticate();
+        }
+        if($this->_identity->errorCode===SocialUserIdentity::ERROR_NONE)
         {
             $duration=3600*24; // 30 days
             Yii::app()->user->login($this->_identity,$duration);
@@ -195,17 +219,17 @@ class StudentReg extends CActiveRecord
         //Тогда подставляем окончание "ЕВ"
         if($number > 10 and $number < 15)
         {
-            $term = " років";
+            $term = Yii::t('profile', '0097');
         }
         else
         {
 
             $number = substr($number, -1);
 
-            if($number == 0) {$term = " років";}
-            if($number == 1 ) {$term = " рік";}
-            if($number > 1 ) {$term = " роки";}
-            if($number > 4 ) {$term = " років";}
+            if($number == 0) {$term = Yii::t('profile', '0097');}
+            if($number == 1 ) {$term = Yii::t('profile', '0098');}
+            if($number > 1 ) {$term = Yii::t('profile', '0099');}
+            if($number > 4 ) {$term = Yii::t('profile', '0097');}
         }
         echo  $term;
     }

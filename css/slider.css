@@ -9,7 +9,7 @@
 }
 .owl-wrapper-outer
 {
-	margin-top: 49px;
+	margin-top: 52px;
 }
 #slider
 {
@@ -18,15 +18,15 @@
 .slide p
 {
 	position: absolute;
-	font-size: 0.5em;
+	font-size: 0.6em;
 	font-family: "MyriadPro";
 	font-weight: 200;
 	color: white;
-	text-shadow: 1px 1px 1px #555;
+	text-shadow: 0.1em 0.1em 0.1em #555;
 	text-align: center;
 	z-index: 1;
 	left: 50%;
-	top: 50%;
+	
 }
 .slide img
 {
@@ -46,29 +46,32 @@
 	position: relative;
 	line-height: 5%;
 	text-align: center;
-	left: -2px;
 	color : #ffffff;
-	font-size: 1em;
+	font-size: 1.4em;
 	font-family: "MyriadPro";
 	text-shadow: 0.05em 0.05em 0.05em #555;
 }
-.sliderCenterBoxLine p
+
+
+
+.sliderCenterBoxLine hr
 {
-	position: relative;
-	line-height: 5%;
-	text-align: center;
-	color : #ffffff;
-	font-size: 0.4em;
-	font-family: "MyriadPro";
+	border: 0.05em solid white;
+	width: 2.5em;
+	
 }
+
+
 .sliderSnake .snake img
 {
 	position: absolute;
+	top: 145%;
+	
 }
 .sliderSnake .button
 {
 	position: absolute;
-	top: 170%;
+	top: 195%;
 	left: 50%;
 }
 .sliderSnake .button a
@@ -76,16 +79,16 @@
 	position: absolute;
 	text-shadow: 0.1em 0.1em 0.1em black;
 	color: white;
-	font: normal 400 0.54em/2.16em "MyriadPro";
+	font: normal 400 0.54em/2.16em "MyriadPro2";
 	line-height: 300%
-vertical-align: middle;
+	vertical-align: middle;
 	text-align: center;
 	text-decoration: none;
 	font-weight: 300;
 	border-top: 0.05em solid #007cbf;
 	background: #4b70a3;
 	border-radius: 0.3em;
-	box-shadow: 0px 0.1em 0px black;
+	box-shadow: 0em 0.1em 0em black;
 	z-index: 4;
 }
 .sliderSnake .button a:hover
@@ -103,6 +106,6 @@ vertical-align: middle;
 .mouseLine img
 {
 	position: absolute;
-	margin-top: -1.8%;
+	margin-top: -2.55%;
 	z-index: 2;
 }

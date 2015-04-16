@@ -9,19 +9,42 @@ class MainpageController extends Controller
 		$this->module->setPK('id');
 		$fieldsConf = array(
 			array('category', 'string', 'Категорія', array('show')),
-			array('message', 'text', 'Англійською', array('show', 'directoryPath'=>'./')),
 			array('id', 'foreign', 'Українською', array(
 				'show', //Show in List mode
 				'search',   //User is allowed to search by this field
 				'bindBy'=>'id', //Country is fixed by previous interface. Set that field.
 				'foreign'=>array(   //Foreign key options
-					'table'     => 'translatedMessages', //Table which it belongs to
+					'table'     => 'translatedMessagesUA', //Table which it belongs to
 					'pk'        => 'id',    //Foreign table's PK
 					'select'    => array('translation'),    //Foreign field to select for listing
 					'searchBy'  => array('translation'=>'Українською'),//Foreign field to search by
 					'order'     => 'translation',   //Foreign field to order by
 				)
 			)),
+            array('id', 'foreign', 'Російською', array(
+                'show', //Show in List mode
+                'search',   //User is allowed to search by this field
+                'bindBy'=>'id', //Country is fixed by previous interface. Set that field.
+                'foreign'=>array(   //Foreign key options
+                    'table'     => 'translatedMessagesRU', //Table which it belongs to
+                    'pk'        => 'id',    //Foreign table's PK
+                    'select'    => array('translation'),    //Foreign field to select for listing
+                    'searchBy'  => array('translation'=>'Російською'),//Foreign field to search by
+                    'order'     => 'translation',   //Foreign field to order by
+                )
+            )),
+            array('id', 'foreign', 'Англійською', array(
+                'show', //Show in List mode
+                'search',   //User is allowed to search by this field
+                'bindBy'=>'id', //Country is fixed by previous interface. Set that field.
+                'foreign'=>array(   //Foreign key options
+                    'table'     => 'translatedMessagesEN', //Table which it belongs to
+                    'pk'        => 'id',    //Foreign table's PK
+                    'select'    => array('translation'),    //Foreign field to select for listing
+                    'searchBy'  => array('translation'=>'Англійською'),//Foreign field to search by
+                    'order'     => 'translation',   //Foreign field to order by
+                )
+            )),
 		);
 		$this->module->fieldsConf($fieldsConf);
 		$this->module->sortDefault(array('category'));

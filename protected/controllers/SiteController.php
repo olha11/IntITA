@@ -12,9 +12,12 @@ class SiteController extends Controller
 	/* @var $objAbout1 AboutUs*/
 	/* @var $objAbout2 AboutUs*/
 	/* @var $objAbout3 AboutUs*/
-	/**
+	/* @var $sourceMessages MyCDbMessageSource*/
+    /*
 	 * Declares class-based actions.
 	 */
+    public $source;
+
 	public function actions()
 	{
 		return array(
@@ -40,9 +43,17 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index1.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$modelCarousel = new Carousel();
+
 		$mainpage = new Mainpage();
 		$mainpage->setValueById(0);
-
+//        if ($this->sourceMessages == null){
+//            $this->sourceMessages = new MyCDbMessageSource();
+//            $this->sourceMessages->changeTranslatedTable('translatedmessagesua');
+//        }
+        if (!(Yii::app()->session['translatedTable'])) {
+            $source = new MyCDbMessageSource();
+            $source->changeTranslatedTable('translatedmessagesua');
+        }
 		$arraySteps = $this->initSteps();
 		$arrayAboutUs = $this->initAboutus();
 		
@@ -58,6 +69,7 @@ class SiteController extends Controller
 			'slider2'=>$sliderPictures['slider2'],
 			'slider3'=>$sliderPictures['slider3'],
 			'slider4'=>$sliderPictures['slider4'],
+            'mainpageModel'=>$mainpage,
 			'mainpage'=>array(
 				'sliderLine'=> $mainpage->sliderLineURL,
 				'sliderTexture'=> $mainpage->sliderTextureURL,
@@ -87,16 +99,16 @@ class SiteController extends Controller
 	public function initAboutus(){
 		$objAbout1 = new AboutUs(1);
 		$objAbout1->setValuesById(1);
-		$objAbout1->titleText = Yii::t('aboutus', 'What you dream about?');
-		$objAbout1->textAbout = Yii::t('aboutus', 'Try to guess: their own apartment or even a house? A good car? Foreign travel may have to exotic countries?');
+		$objAbout1->titleText = Yii::t('aboutus', '0032');
+		$objAbout1->textAbout = Yii::t('aboutus', '0035');
 		$objAbout2 = new AboutUs(2);
 		$objAbout2->setValuesById(2);
-		$objAbout2->titleText = Yii::t('aboutus', 'Learning of the future');
-		$objAbout2->textAbout = Yii::t('aboutus', 'Programming - it\'s not as hard as you can imagine. Of course, to become a good programmer, it takes time and effort.');
+		$objAbout2->titleText = Yii::t('aboutus', '0033');
+		$objAbout2->textAbout = Yii::t('aboutus', '0036');
 		$objAbout3 = new AboutUs(3);
 		$objAbout3->setValuesById(3);
-		$objAbout3->titleText = Yii::t('aboutus', 'Questions & feedback');
-		$objAbout3->textAbout = Yii::t('aboutus', 'Three whales INTITA Independent Programming Academy training schedule. Only 100% of the necessary knowledge. The acquisition of 100% of knowledge!');
+		$objAbout3->titleText = Yii::t('aboutus', '0034');
+		$objAbout3->textAbout = Yii::t('aboutus', '0037');
 		return $arrayAboutUs = array(
 			'objAbout1'=>$objAbout1,
 			'objAbout2'=>$objAbout2,
@@ -116,17 +128,22 @@ class SiteController extends Controller
 		$step5=new Step();
 		$step5->setValueById(5);
 
-		$step1->stepTitle =  Yii::t('step','Online Registration');
-		$step2->stepTitle =  Yii::t('step','Choosing course or module');
-		$step3->stepTitle =  Yii::t('step','Payment');
-		$step4->stepTitle =  Yii::t('step','Learning material');
-		$step5->stepTitle =  Yii::t('step','Completion of the course');
+		$step1->stepTitle =  Yii::t('step','0038');
+		$step2->stepTitle =  Yii::t('step','0039');
+		$step3->stepTitle =  Yii::t('step','0040');
+		$step4->stepTitle =  Yii::t('step','0041');
+		$step5->stepTitle =  Yii::t('step','0042');
 
-		$step1->stepText =  Yii::t('step','To access the list of courses, modules and classes and pass free modules and classes register on the site. Registering will allow you to assess the quality and usability of our product that you will become a reliable partner and advisor to professional fulfillment.');
-		$step2->stepText =  Yii::t('step','To become a specialist in a certain direction and level (get professional specialization) choose to undergo appropriate course. If you are interested only deepen the knowledge in a particular area of IT, then choose the module to pass.');
-		$step3->stepText =  Yii::t('step','To start a course or module choose payment scheme (the entire amount for the course, month, potrymestrovo etc) and make a payment convenient way to You (payment scheme or course module can be changed also possible monthly payment on credit).');
-		$step4->stepText =  Yii::t('step','Learning material is possible by reading the text and / or viewing video for each session. During the development of the material classes perform intermediate tests. At the end of each session do the final test task. Each module ends with an individual project or exam. You can get individual counseling teacher or discuss the issue on the forum.');
-		$step5->stepText =  Yii::t('step','The result of course is the command thesis project, performed together with other students (the team recommends that forms an independent or executive who approved topic and terms of reference of the project). Filing project involves peredzahyst and protection in the online mode of presentation design.');
+		$step1->stepText =  Yii::t('step','0044');
+		//To access the list of courses, modules and classes and pass free modules and classes register on the site. Registering will allow you to assess the quality and usability of our product that you will become a reliable partner and advisor to professional fulfillment.');
+		$step2->stepText =  Yii::t('step','0045');
+		//To become a specialist in a certain direction and level (get professional specialization) choose to undergo appropriate course. If you are interested only deepen the knowledge in a particular area of IT, then choose the module to pass.');
+		$step3->stepText =  Yii::t('step','0046');
+		//To start a course or module choose payment scheme (the entire amount for the course, month, potrymestrovo etc) and make a payment convenient way to You (payment scheme or course module can be changed also possible monthly payment on credit).');
+		$step4->stepText =  Yii::t('step','0047');
+		//Learning material is possible by reading the text and / or viewing video for each session. During the development of the material classes perform intermediate tests. At the end of each session do the final test task. Each module ends with an individual project or exam. You can get individual counseling teacher or discuss the issue on the forum.');
+		$step5->stepText =  Yii::t('step','0048');
+		//The result of course is the command thesis project, performed together with other students (the team recommends that forms an independent or executive who approved topic and terms of reference of the project). Filing project involves peredzahyst and protection in the online mode of presentation design.');
 
 		return $arraySteps = array(
 			'step1'=>$step1,
@@ -169,13 +186,43 @@ class SiteController extends Controller
 				$this->render('error', $error);
 		}
 	}
-	public function setLang($lang='UA'){
-		$this->actionIndex();
-	}
-	public function actionChangeLang($lang)
+
+	public function actionChangeLang($lg)
 	{
-		Yii::app()->language = $lang;
-		$this->redirect(Yii::app()->user->returnUrl);
+       /* if ($this->sourceMessages == null){
+            $this->sourceMessages = new MyCDbMessageSource();
+            $this->sourceMessages->changeTranslatedTable('translatedmessagesua');
+        } else {
+            switch($_GET['lg']){
+                case 'ru':
+                    $this->sourceMessages->changeTranslatedTable('translatedmessagesru');
+                    break;
+                case 'en':
+                    $this->sourceMessages->changeTranslatedTable('translatedmessagesen');
+                    break;
+                case 'ua':
+                    $this->sourceMessages->changeTranslatedTable('translatedmessagesua');
+                    break;
+                default:
+                    $this->sourceMessages->changeTranslatedTable('translatedmessagesua');
+                    break;
+            }
+        }*/
+
+        $app = Yii::app();
+		if (isset($_GET['lg'])) {
+			if($_GET['lg'] == 'ru') {
+                $app->session['translatedTable'] = 'translatedmessagesru';
+            }
+            if($_GET['lg'] == 'en') {
+                $app->session['translatedTable'] = 'translatedmessagesen';
+            }
+            if($_GET['lg'] == 'ua') {
+                $app->session['translatedTable'] = 'translatedmessagesua';
+            }
+			$app->session['lg'] = $_GET['lg'];
+		}
+        $this->redirect($_SERVER["HTTP_REFERER"]);
 	}
 	/**
 	 * Displays the contact page
@@ -204,53 +251,110 @@ class SiteController extends Controller
 	/**
 	 * Displays the login page
 	 */
-	public function actionLogin()
+	public function actionRapidReg()
 	{
-		if(isset($_POST['isExtended']))
-		{
-			$this->redirect(array('studentreg/index'));
-		}
-		$model = new StudentReg;
+		$model = new StudentReg('repidreg');
 // if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='studentreg-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+        if(isset($_POST['isExtended']))
+        {
+            $this->redirect(array('studentreg/index'));
+        }
 // collect user input data
 		if(isset($_POST['StudentReg']))
 		{
 			$model->attributes=$_POST['StudentReg'];
+
 // validate user input and redirect to the previous page if valid
-			if(!empty($_POST['StudentReg']['password']) && !empty($_POST['StudentReg']['email']) && $model->login()) {
-				$this->redirect(Yii::app()->request->baseUrl.'/courses');
-			} else if(empty($_POST['StudentReg']['password']) || empty($_POST['StudentReg']['email'])) {
-				Yii::app()->user->setFlash('forminfo', 'Заповніть поля для Входу або Реєстрації' );
-				$this->redirect(Yii::app()->request->baseUrl.'/site#form');
-			} else {
-				$model->firstName=$_POST['StudentReg']['email'];
-				$model->email=$_POST['StudentReg']['email'];
-				$model->password=$_POST['StudentReg']['password'];
-				$model->password_repeat=$_POST['StudentReg']['password'];
-				if ($model->model()->count("email = :email", array(':email' => $model->email)))
-				{
-// Указанный email уже занят. Создаем ошибку и передаем в форму
-					$model->addError('email', 'Email уже зайнятий');
-				}else
-					$model->save();
-				Yii::app()->user->setFlash('forminfo', 'Ви успішно зареєструвалися. Введіть дані для авторизації' );
-				$this->redirect(Yii::app()->request->baseUrl.'/site#form');
+            if($model->validate()) {
+                $model->save();
+                $modellogin = new StudentReg('loginuser');
+                $modellogin->attributes=$_POST['StudentReg'];
+                if($modellogin->login())
+                    $this->redirect(Yii::app()->request->baseUrl.'/courses');
 			}
+            Yii::app()->user->setFlash('forminfo', 'Ви ввели не вірні дані.');
+            $this->redirect(Yii::app()->request->baseUrl . '/site#form');
 		}
-// display the login form
-		$this->redirect(Yii::app()->user->returnUrl);
+
 	}
+
+    public function actionLogin()
+    {
+        $model = new StudentReg('loginuser');
+        // if it is ajax validation request
+        if(isset($_POST['ajax']) && $_POST['ajax']==='quick-form')
+        {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+        // collect user input data
+        if(isset($_POST['StudentReg']))
+        {
+            $model->attributes=$_POST['StudentReg'];
+            // validate user input and redirect to the previous page if valid
+            if($model->login())
+                $this->redirect(Yii::app()->request->baseUrl.'/courses');
+        }
+    }
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
 	public function actionLogout()
 	{
+        $tmp = Yii::app()->session['translatedTable'];
 		Yii::app()->user->logout();
+        Yii::app()->session['translatedTable'] = $tmp;
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+    public function actionSocialReg()
+    {
+        $model = new StudentReg('repidreg');
+
+        $s = file_get_contents('http://ulogin.ru/token.php?token=' .$_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
+        $user = json_decode($s, true);
+        $model->email=$user['email'];
+        $model->firstName=$user['first_name'];
+        $model->secondName=$user['last_name'];
+        //$model->nickname=$user['nickname'];
+        //$model->birthday=$user['bdate'];
+        //$model->phone=$user['phone'];
+        //$model->avatar=$user['photo_big'];
+        //$model->address=$user['city'];
+
+        $model->password='1111';
+        if($model->validate()) {
+            $model->save();
+            if($model->socialLogin())
+                $this->redirect(Yii::app()->request->baseUrl.'/courses');
+        } else {
+            Yii::app()->user->setFlash('forminfo', 'Ви уже зареєстровані');
+            $this->redirect(Yii::app()->request->baseUrl . '/site#form');
+        }
+    }
+
+    public function actionSocialLogin()
+    {
+        $model = new StudentReg('sociallogin');
+
+        $s = file_get_contents('http://ulogin.ru/token.php?token=' .$_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
+        $user = json_decode($s, true);
+        //$user['network']
+        //$user['identity']
+        //$user['first_name']
+        //$user['last_name']
+
+        $model->email=$user['email'];
+        if($model->socialLogin())
+            $this->redirect(Yii::app()->request->baseUrl.'/courses');
+        else {
+            Yii::app()->user->setFlash('forminfo', 'Зареєструйтесь спочатку через соцмережу');
+            $this->redirect(Yii::app()->request->baseUrl . '/site#form');
+        }
+    }
 }

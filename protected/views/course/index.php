@@ -9,259 +9,524 @@
 <!-- course style -->
 <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/course.css" />
 <!-- course style -->
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/spoilerPrice.js"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/readmore/readmore.js"></script>
 <!-- BD -))) -->
 <?php
 $post=Course::model()->findByPk(1);
 ?>
 <?php
 $this->breadcrumbs=array(
-    Yii::t('breadcrumbs', 'Courses')=>Yii::app()->request->baseUrl."/index.php/?r=courses",'Програмування для чайників',
+    Yii::t('breadcrumbs', '0050')=>Yii::app()->request->baseUrl."/courses",'Програмування для чайників',
 );
 ?>
-<!-- BD -))) -->
+
 <div class="courseBlock">
-<img class="courseImg" src="<?php echo Yii::app()->request->baseUrl.$post->course_img ?>" />
-<div class="courseTitle">
-    <h1><?php echo $post->course_name;?></h1>
-</div>
+    <div class="courseTitle">
+        <h1><?php echo $post->course_name;?></h1>
+    </div>
+    <div class="courseShortInfo">
+        <img class="courseImg" style="display: inline-block" src="<?php echo Yii::app()->request->baseUrl.$post->course_img ?>" />
+        <div class="courseShortInfoTable">
+            <table class="courseLevelLine">
+                    <tr>
+                        <td>
+                            <p><span class="colorP"><b>Рівень курсу: </b></span>сильний початківець</p>
+                        </td>
+                        <td class="courseLevel">
+                            <?php
+                            for ($i=0; $i<3; $i++)
+                            {
+                                ?>
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco1.png" >
+                            <?php
+                            }
+                            for ($j=0; $j<2; $j++)
+                            {
+                                ?>
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco0.png" >
+                            <?php
+                            }
+                            ?>
+                        </td>
+                    </tr>
+            </table>
+            <table class="courseDetail">
+                <tr>
+                    <td>
+                        <span class="colorP">Тривалість курсу: </span>
+                    </td>
+                    <td>
+                        <span class="colorGrey"><b><?php echo $post->course_duration_hours;?> занять</b>, орієнтовно - <b><?php echo ceil($post->course_duration_hours/36);?> міс.</b> (3 год./день, 3 дні/тиждень)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="colorP">Модулів: </span>
+                    </td>
+                    <td>
+                        <span class="colorGrey"><b><?php echo $post->modules_count;?></b><?php $post::getModulesTermination($post->modules_count);?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="spoilerLinks"><span class="spoilerClick">Схеми проплат </span><span class="spoilerTriangle">&#9660;</span></span>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;за весь курс наперід:
+                    </td>
+                    <td>
+                        <span class="redStrike">21600.00 грн.</span> <b>16500.00 грн.</b> (знижка - 25%)
+                    </td>
+                </tr>
+                <tr class="spoilerRow">
+                    <td>
+                        &nbsp;2 проплати за курс:
+                    </td>
+                    <td>
+                        <span class="redStrike">21600.00 грн.</span> 9000.00 грн. х 2 проплати = <b>18000.00 грн.</b> (знижка - 8%)
+                    </td>
+                </tr>
+                <tr class="spoilerRow">
+                    <td>
+                        &nbsp;4 проплати за курс:
+                    </td>
+                    <td>
+                        <span class="redStrike">21600.00 грн.</span> 5000.00 грн. х 4 проплати = <b>20000.00 грн.</b> (знижка - 9%)
+                    </td>
+                </tr>
+                <tr class="spoilerRow">
+                    <td>
+                        &nbsp;помісячно:
+                    </td>
+                    <td>
+                        1800.00 грн.х 12 проплат = <b>21600.00 грн.</b>
+                    </td>
+                </tr>
+                <tr class="spoilerRow">
+                    <td>
+                        &nbsp;кредит на 2 роки:
+                    </td>
+                    <td>
+                        1000.00 грн./міс. х 24 проплати = <b>24000.00 грн.</b>
+                    </td>
+                </tr>
+                <tr class="spoilerRow">
+                    <td>
+                        &nbsp;кредит на 3 роки:
+                    </td>
+                    <td>
+                        800.00 грн./міс. х 36 проплат = <b>28800.00 грн.</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="colorP">Середня оцінка: </span>
+                    </td>
+                    <td>
+                        <?php
+                        for ($i=0; $i<10; $i++)
+                        {
+                            ?>
+                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/>
+                        <?php
+                        }
+                        ?>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
-<div class="courseInfo">
-    <table class="courseLevelLine">
-        <tr>
-            <td>
-                <p><span class="colorP"><b>Рівень курсу: </b></span>сильний початківець</p>
-            </td>
-            <td class="courseLevel">
-                <?php
-                for ($i=0; $i<1; $i++)
-                {
-                    ?>
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco1.png" >
-                <?php
-                }
-                for ($j=0; $j<3; $j++)
-                {
-                    ?>
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/ratIco0.png" >
-                <?php
-                }
+    <div class="courseInfo">
+        <ul>
+            <p class="subCourseInfo"><b>Для кого:</b></p>
+            <?php
+            $forWhomArray=explode(";", $post->for_whom);
+            for ($k = 0; $k < count($forWhomArray)-1; $k++)
+            {
                 ?>
-            </td>
-        </tr>
-    </table>
-    <table class="courseDetail">
-        <tr>
-            <td>
-                <span class="colorP">Тривалість курсу: </span>
-            </td>
-            <td>
-                <span class="colorGrey"><b><?php echo $post->course_duration_hours;?></b><?php $post::getHoursTermination($post->course_duration_hours);?> </span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span class="colorP">Модулів: </span>
-            </td>
-            <td>
-                <span class="colorGrey"><b><?php echo $post->modules_count;?></b><?php $post::getModulesTermination($post->modules_count);?></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span class="colorP">Вартість курсу: </span>
-            </td>
-            <td>
-                <span class="colorGrey"><b><?php echo number_format($post->course_price, 0, ',', ' ');?></b> грн</span>
-            </td>
-        </tr>
-    </table>
-    <p class="subCourseInfo"><b>Для кого:</b></p>
-    <ul>
-        <?php
-        $forWhomArray=explode(";", $post->for_whom);
-        for ($k = 0; $k < count($forWhomArray)-1; $k++)
-        {
+                <li><?php echo $forWhomArray[$k].";";?></li>
+            <?php
+            }
             ?>
-            <li><?php echo $forWhomArray[$k].";";?></li>
-        <?php
-        }
-        ?>
-    </ul>
-    <p class="subCourseInfo"><b>Чому Ви навчитеся?</b></p>
-    <ul>
-        <?php
-        $whatYouLearnArray=explode(";", $post->what_you_learn);
-        for ($l = 0; $l < count($whatYouLearnArray)-1; $l++)
-        {
+        </ul>
+        <ul>
+            <p class="subCourseInfo"><b>Чому Ви навчитеся?</b></p>
+            <?php
+            $whatYouLearnArray=explode(";", $post->what_you_learn);
+            for ($l = 0; $l < count($whatYouLearnArray)-1; $l++)
+            {
+                ?>
+                <li><?php echo $whatYouLearnArray[$l].";";?></li>
+            <?php
+            }
             ?>
-            <li><?php echo $whatYouLearnArray[$l].";";?></li>
-        <?php
-        }
-        ?>
-    </ul>
-    <p class="subCourseInfo"><b>Що Ви отримаєте?</b></p>
-    <ul>
-        <?php
-        $whatYouLearnArray=explode(";", $post->what_you_get);
-        for ($r = 0; $r < count($whatYouLearnArray)-1; $r++)
-        {
+        </ul>
+        <ul>
+            <p class="subCourseInfo"><b>Що Ви отримаєте?</b></p>
+            <?php
+            $whatYouLearnArray=explode(";", $post->what_you_get);
+            for ($r = 0; $r < count($whatYouLearnArray)-1; $r++)
+            {
+                ?>
+                <li><?php echo $whatYouLearnArray[$r].";";?></li>
+            <?php
+            }
             ?>
-            <li><?php echo $whatYouLearnArray[$r].";";?></li>
-        <?php
-        }
-        ?>
-    </ul>
-    <p class="subCourseInfo"><b>Середня оцінка:</b></p>
-    <table class="courseDetail">
-        <tr>
-            <td>
-                <span class="colorGrey">програма:<b> 4,8/5</b></span>
-            </td>
-            <td>
-                <span class="colorGrey">програма:<b> 4,5/5</b></span>
-            </td>
-        </tr>
-    </table>
-
-    <h2>Викладачі</h2>
-    <div class="courseTeacherImg">
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher1.jpg" />
-    </div>
-    <div class="courseTeacherInfo">
-        <h3>Сіра Олександра Василівна</h3>
-        <table class="courseTeacherDetail">
-            <tr>
-                <td>
-                    <span class="colorP">Рейтинг: </span>
-                </td>
-                <td>
-                    <span class="colorGrey"><b>8,2/10</b></span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="colorP">Модуль: </span>
-                </td>
-                <td>
-                    <span class="colorGrey">Програмування PHP; Ява скрипт та Суматра</span>
-                </td>
-            </tr>
-        </table>
-        <p class="courseAboutTeacher">Про викладача</p>
-        Повний веб-розробник з великим досвідом розробки систем для електронної комерції. Спеціальності: <b>“Прикладна математика“</b> та <b>"Менеджмінет"</b>.
+        </ul>
     </div>
 
-    <div class="courseTeacherImg">
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher4.jpg" />
-    </div>
-    <div class="courseTeacherInfo">
-        <h3>Сірий Олександр Васильович</h3>
-        <table class="courseTeacherDetail">
-            <tr>
-                <td>
-                    <span class="colorP">Рейтинг: </span>
-                </td>
-                <td>
-                    <span class="colorGrey"><b>9,3/10</b></span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="colorP">Модуль: </span>
-                </td>
-                <td>
-                    <span class="colorGrey">Програмування PHP; Ява скрипт та Суматра</span>
-                </td>
-            </tr>
-        </table>
-        <p class="courseAboutTeacher">Про викладача</p>
-        преподаватель с многолетним стажем работы. Реально шарит в компьютерах.
-    </div>
-</div>
-
-<div class="courseModules">
-    <div class="cModule">
-        <div class="courseModuleNumber">
-            <div class="cModuleNumber">
-                1
+    <div class="courseTeachers">
+        <h2>Викладачі</h2>
+        <article>
+            <div class="courseTeacher">
+                <div class="courseTeacherImg">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
+                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher1.jpg" />
+                    </a>
+                </div>
+                <div class="courseTeacherInfo">
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сіра Олександра</a></h3>
+                    <table class="courseTeacherDetail">
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 1: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 2: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Ява скрипт та Суматра;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 3: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-        </div>
-        <div class="courseModuleInfo">
-            <a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=module"><h2>Модуль 1. Основи PHP</h2></a>
-            <p>Про PHP, Базовий синтаксис, Змінні, Константи, Типи даних, Перетворення типів, Оператори, Операції, Резюме, Домашнє заданіе. Цикли в РНР, Цикл, поки, Цикл do..while, для Цикл, Нескінченний цикл, Оператор виходу з циклу, Оператор переривання ітерації циклу, Масиви, Обхід масивів в циклі, Функції для роботи з масивами, Багатовимірні масиви, Попереднє визначення масиви, Резюме, Домашнє завдання</p>
-        </div>
+            <div class="courseTeacher">
+                <div class="courseTeacherImg">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
+                      <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher4.jpg" />
+                    </a>
+                </div>
+                <div class="courseTeacherInfo">
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сірий Олександр</a></h3>
+                    <table class="courseTeacherDetail">
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Ява скрипт та Суматра;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="courseTeacher">
+                <div class="courseTeacherImg">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher1.jpg" />
+                    </a>
+                </div>
+                <div class="courseTeacherInfo">
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сіра Олександра</a></h3>
+                    <table class="courseTeacherDetail">
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 1: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 2: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Ява скрипт та Суматра;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 3: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="courseTeacher">
+                <div class="courseTeacherImg">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher1.jpg" />
+                    </a>
+                </div>
+                <div class="courseTeacherInfo">
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сіра Олександра</a></h3>
+                    <table class="courseTeacherDetail">
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 1: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 2: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Ява скрипт та Суматра;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 3: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="courseTeacher">
+                <div class="courseTeacherImg">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher4.jpg" />
+                    </a>
+                </div>
+                <div class="courseTeacherInfo">
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сірий Олександр</a></h3>
+                    <table class="courseTeacherDetail">
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Ява скрипт та Суматра;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="courseTeacher">
+                <div class="courseTeacherImg">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher1.jpg" />
+                    </a>
+                </div>
+                <div class="courseTeacherInfo">
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сіра Олександра</a></h3>
+                    <table class="courseTeacherDetail">
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 1: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 2: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Ява скрипт та Суматра;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 3: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="courseTeacher">
+                <div class="courseTeacherImg">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher1.jpg" />
+                    </a>
+                </div>
+                <div class="courseTeacherInfo">
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сіра Олександра</a></h3>
+                    <table class="courseTeacherDetail">
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 1: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 2: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Ява скрипт та Суматра;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 3: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="courseTeacher">
+                <div class="courseTeacherImg">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher4.jpg" />
+                    </a>
+                </div>
+                <div class="courseTeacherInfo">
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сірий Олександр</a></h3>
+                    <table class="courseTeacherDetail">
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Ява скрипт та Суматра;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="courseTeacher">
+                <div class="courseTeacherImg">
+                    <a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher1.jpg" />
+                    </a>
+                </div>
+                <div class="courseTeacherInfo">
+                    <h3><a href="<?php echo Yii::app()->request->baseUrl.'/profile'?>">Сіра Олександра</a></h3>
+                    <table class="courseTeacherDetail">
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 1: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 2: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Ява скрипт та Суматра;</a></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="colorP">Модуль 3: </span><span class="colorGrey"><a href="<?php echo Yii::app()->request->baseUrl.'/module'?>">Програмування PHP;</a></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </article>
     </div>
 
-    <div class="cModule">
-        <div class="courseModuleNumber">
-            <div class="cModuleNumber">
-                2
-            </div>
-        </div>
-        <div class="courseModuleInfo">
-            <a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=module"><h2>Модуль 2. Семантичне ядро сайту</h2></a>
-            <p>Успішне семядро. Комерційні та некомерційні запити. Загальні принципи збору СемЯдра. Конкуренція ключових слів. Програми та комплекси в допомогу при зборі СемЯдра. Оцінка конкурентів в мережі.</p>
-        </div>
-    </div>
+    <script>
+        $('article').readmore({
+            maxHeight: 360,
+            moreLink: '<span><span class="spoiler">Всі викладачі</span> <span class="spoilerTriangle"> &#9660;</span></span>',
+            lessLink: '<span><span class="spoiler">Згорнути</span> <span class="spoilerTriangle"> &#9650;</span></span>'
+        });
+    </script>
 
-    <div class="cModule">
-        <div class="courseModuleNumber">
-            <div class="cModuleNumber">
-                3
-            </div>
-        </div>
-        <div class="courseModuleInfo">
-            <a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=module"><h2>Модуль 3. Зовнішні ресурси в просуванні</h2></a>
-            <p>Посилальна маса, оцінка сайтів донорів. Біржі посилань, біржі статей-використання і методики. Робота з біржами посилань і статей. Обмін посиланнями-статтями з веб-майстрами безпосередньо. Фахівці та ресурси в цій області Каталоги Яндекс, Мейл, DMOZ в просуванні. Розгалуження програми, Оператор, якщо тернарного оператор умови, Оператор перемикач, Функції, Визначення функції, Значення за замовчуванням, Рекурсия, Область видимості і час життя змінних, Резюме, Домашнє завдання</p>
-        </div>
-    </div>
+    <div class="courseModules">
+        <h2>Модулі</h2>
+        <div class="cModule">
+            <table>
+                <tr>
+                    <td>
+                        <span class="colorGrey">Модуль 1. </span>
+                    </td>
+                    <td>
+                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Основи PHP</span></a>
+                    </td>
+                </tr>
+            </table>
 
-    <div class="cModule">
-        <div class="courseModuleNumber">
-            <div class="cModuleNumber">
-                4
-            </div>
-        </div>
-        <div class="courseModuleInfo">
-            <a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=module"><h2>Модуль 4. Запити HTTP, URL параметри і форми HTML</h2></a>
-            <p>Типи запитів HTTP, URL і параметри запиту, URL Обробка параметрів, HTML Обробка відправки форми, Резюме, Google Аналітика, Яндекс Метрика, Liveinternet - збір статистики Яндекс Вебвізор, Google Аналітика та інші сервіси аналізу просування Програми та сервіси для збору позиці в посіке СемЯдра, трафіку і інших характеристик розкривають просування. Домашнє завдання</p>
-        </div>
-    </div>
+            <table>
+                <tr>
+                    <td>
+                        <span class="colorGrey">Модуль 2. </span>
+                    </td>
+                    <td>
+                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Семантичне ядро сайту</span></a>
+                    </td>
+                </tr>
+            </table>
 
-    <div class="cModule">
-        <div class="courseModuleNumber">
-            <div class="cModuleNumber">
-                5
-            </div>
-        </div>
-        <div class="courseModuleInfo">
-            <a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=module"><h2>Модуль 5. Cookies Урок і сесії</h2></a>
-            <p>Що таке Cookies і з чим їх їдять, маніпулюючи Cookies засобами РНР, Що таке сесії РНР і як вони працюють, Робимо авторизацію на сайті, Резюме, Домашнє завдання. Растрове зображення, Розмір зображення, Дозвіл, Зміна розміру зображення. Розмір Команда Image, Зміна розміру полотна. Команда Canvas Size, Повороти і отзеркаливание картинки. Команди Поворот зображення, Інструмент ручного кадрування Crop Tool, Як комп'ютер ставить яскравість, Глибина кольору, Гістограма, Аналіз зображення, Криві (криві) - інтерфейс і принципи роботи, Установка білої і чорної точок, Колір, як відчуття спостерігача, Колірний обхват, адитивності ( RGB) і субтрактивна (CMYK) колірні моделі, Кольоровий круг, Вимірювальні інструменти: Піпетка (піпетка) і палітра Info, Завдання кольору в палітрі Color Picker, Канали зображення, палітра канали, Установка колірного балансу інструментом Curves, Автоматичні корекції і область їх застосування, Аналоги роботи з експозицією: Витримка і Photo Filter</p>
-        </div>
-    </div>
+            <table>
+                <tr>
+                    <td>
+                        <span class="colorGrey">Модуль 3. </span>
+                    </td>
+                    <td>
+                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Зовнішні ресурси в просуванні</span></a>
+                    </td>
+                </tr>
+            </table>
 
-    <div class="cModule">
-        <div class="courseModuleNumber">
-            <div class="cModuleNumber">
-                6
-            </div>
-        </div>
-        <div class="courseModuleInfo">
-            <a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=module"><h2>Модуль 6. Робота з файлами</h2></a>
-            <p>Особливості роботи з файлами в РНР, Два режими роботи з файлом, Функції для роботи з файлами, Журнал відвідувань сайту, Завантаження файлів на сервер, Функції для роботи з каталогами, Отримання списку файлів і підпапок в каталогах, Резюме, Домашнє завдання</p>
-        </div>
-    </div>
+            <table>
+                <tr>
+                    <td>
+                        <span class="colorGrey"">Модуль 4. </span>
+                    </td>
+                    <td>
+                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Запити HTTP, URL параметри і форми HTML котрі допомагають справжньому програмісту</span></a>
+                    </td>
+                </tr>
+            </table>
 
-    <div class="cModule">
-        <div class="courseModuleNumber">
-            <div class="cModuleNumber">
-                7
-            </div>
-        </div>
-        <div class="courseModuleInfo">
-            <a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=module"><h2>Модуль 7. Урок Робота з базою даних</h2></a>
-            <p>Для чого потрібна база даних, Відмінність БД від СУБД, Реляційна база даних, Мова SQL Вставка рядків, Видалення рядків, Зміна рядків, Вибірка рядків, Засоби для роботи з РНР MySQL, Резюме, Домашнє завдання</p>
+            <table>
+                <tr>
+                    <td>
+                        <span class="colorGrey">Модуль 5. </span>
+                    </td>
+                    <td>
+                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Cookies Урок і сесії</span></a>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td>
+                        <span class="colorGrey">Модуль 6. </span>
+                    </td>
+                    <td>
+                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Робота з файлами</span></a>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td>
+                        <span class="colorGrey">Модуль 7. </span>
+                    </td>
+                    <td>
+                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Урок Робота з базою даних</span></a>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        <span class="colorGrey">Модуль 11. </span>
+                    </td>
+                    <td>
+                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/module"><span class="colorP">Урок Робота з базою даних</span></a>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
-</div>
 </div>

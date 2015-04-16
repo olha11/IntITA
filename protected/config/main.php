@@ -9,7 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'INTITA',
 
-	'sourceLanguage'=>'en',
+	'sourceLanguage'=>'xs',
 	'language'=>'ua',
 
 	// preloading 'log' component
@@ -54,14 +54,17 @@ return array(
     		'class' => 'system.web.CClientScript'
     	),
 
+		'cache'=>array(
+			'class'=>'system.caching.CFileCache',
+		),
+
         'messages'=>array(
-            'class'=>'CDbMessageSource',
-            'sourceMessageTable'=>'sourceMessages',
-            'translatedMessageTable'=>'translatedMessagesUA',
+            'class'=>'MyCDbMessageSource',
+            'sourceMessageTable'=>'sourcemessages',
+            'translatedMessageTable'=>'translatedmessagesua',
         ),
 
 		'user' => array(
-			'class'          => 'application.components.WebUser',
 			'loginUrl'       => array('/site/login'),
 			'allowAutoLogin' => true,
 		),
@@ -88,6 +91,7 @@ return array(
 				'<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
 				'<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
 			),
+
 		),
 
 
@@ -108,13 +112,11 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
-				// uncomment the following to show log messages on web pages
-				/*
-				array(
-					'class'=>'CWebLogRoute',
-				),
-				*/
 			),
+		),
+
+		'config' => array(
+			'class' => 'application.extensions.EConfig',
 		),
 	),
 

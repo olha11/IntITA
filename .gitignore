@@ -4,5 +4,6 @@
 .idea/*
 protected/runtime/*
 
-assets
 
+
+cache

@@ -23,26 +23,7 @@ div.regLinks{
 .regLinks a{
     color: #666666;
 }
-div.profileStatus{
-    position: absolute;
-    top:-65px;
-    right:0;
-    float:right;
-    display:block;
-    overflow: hidden;
-}
-.profileStatus img {
-    width:56px;
-    height:56px;
-    float: right;
-    margin-right: 10px;
-}
-.profileStatus div {
-    float: right;
-    font-size: smaller;
-    line-height: 110%;
-    color:#4b75a4;
-}
+
 /* ˳�� �����*/
 .studProf{
     display:inline-block;
@@ -86,6 +67,7 @@ table.profileInfo {
     line-height: 40px;
     color: #828282;
 }
+
 .studProf input
 {
     padding-left: 8px;
@@ -93,6 +75,9 @@ table.profileInfo {
     height: 40px;
     border: 1px solid #d8d8d8;
     border-radius: 5px;
+}
+#aboutUs{
+    margin-left: 176px;
 }
 .studProf textarea
 {
@@ -122,9 +107,14 @@ table.profileInfo {
     text-align: left;
     margin-bottom: 8px;
 }
+.radiolabelRole label
+{
+    width: 200px;
+}
 .rowRadioButton input[type="radio"]:hover,.rowRadioButton input[type="checkbox"]:hover
 {
     box-shadow:0 0 3px #ffffff;
+    cursor: pointer;
 }
 .studProf input:focus,
 .studProf textarea:focus{
@@ -405,12 +395,14 @@ p.courseLevLang{
 .profileCoursePay p {
     margin-bottom: 5px;
 }
-#myCourse div.studPay {
+#myCourse .studPay p{
     color: #e10000;
     font-size: 0.9em;
     margin: 0;
     padding: 0 0 0 20px;
     line-height: 100%;
+}
+#myCourse div.studPay {
     border-bottom:none;
 }
 .profileModule {
@@ -459,16 +451,16 @@ p.courseLevLang{
 }
 /*Form style*/
 /* PassEye */
-.passEye {
+.studProf .passEye {
     position:relative;display:inline-block;
 }
-.passEye input {
+.studProf .passEye input {
     padding-right:0px;
 }
-.passEye input::-ms-reveal, .passEye input::-ms-clear {
+.studProf .passEye input::-ms-reveal, .studProf .passEye input::-ms-clear {
     display:none
 }
-.passEye .eye {
+.studProf .passEye .eye {
     position:absolute;
     right:10px;
     top:50%;
@@ -479,7 +471,7 @@ p.courseLevLang{
     cursor:pointer;
     background:url('images/passEye.png') no-repeat left 2px;
 }
-.passEye .openEye {
+.studProf .passEye .openEye {
     background-position:left bottom;
 }
 /* PassEye */

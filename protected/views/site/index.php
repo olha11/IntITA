@@ -46,9 +46,9 @@
 </script>
 <script type="text/javascript"> /* Маштабування слайдера відповідно до ширини екрану*/
     $(function(){
-        $('.owl-item').height(document.body.clientWidth/3.1);
+        $('.owl-item').height(document.body.clientWidth/2.18);
         $(window).resize(function(){
-            $('.owl-item').height(document.body.clientWidth/3.1);
+            $('.owl-item').height(document.body.clientWidth/2.18);
         });
     });
     function fontSize() { /* Маштабування тексту слайдера*/
@@ -68,58 +68,54 @@
     function marginLeft() { /* Маштабування змійки*/
         var pictureWidht=911
         if ( document.body.clientWidth <= 1440 ){
-            $('.sliderSnake .snake img').height(document.body.clientWidth*0.6/4.85);
-            $('.sliderSnake .snake img').width(document.body.clientWidth*0.6);
+            $('.sliderSnake .snake img').height(document.body.clientWidth*0.675/5.5);
+            $('.sliderSnake .snake img').width(document.body.clientWidth*0.675);
             $('.sliderSnake .snake img').css('margin-left', (document.body.clientWidth*0.6/2-document.body.clientWidth*0.6)+'px');
-            $('.sliderSnake .snake img').css('left', '50%' );
+            $('.sliderSnake .snake img').css('left', document.body.clientWidth/1.98+'px' );
+			
         }else {
             $('.sliderSnake .snake img').height('auto');
-            $('.sliderSnake .snake img').width('auto');
-            $('.sliderSnake .snake img').css('margin-left', (pictureWidht/2-pictureWidht)+'px');
-            $('.sliderSnake .snake img').css('left', document.body.clientWidth/2 );
+            $('.sliderSnake .snake img').width('1010px');
+            $('.sliderSnake .snake img').css('margin-left', (1161/2-1161)+'px');
+            $('.sliderSnake .snake img').css('left', document.body.clientWidth/1.98+130+'px' );
+		
         }
     }
     $(function() { marginLeft(); });
     $(window).resize(function() { marginLeft(); });
-    function textSliderCentr() { /* Центрування тексту картинки слайдеру*/
+    
+	function textSliderCentr() { /* Центрування тексту картинки слайдеру*/
         $('.slide p').width(document.body.clientWidth);
         $('.slide p').css('margin-left', (document.body.clientWidth/2-document.body.clientWidth)+'px');
+		$('.slide p').css('top', document.body.clientWidth/4.05+'px');
     }
     $(function() { textSliderCentr(); });
     $(window).resize(function() { textSliderCentr(); });
-    function sliderBoxCentr() { /* Центрування центрального боксу слайдера*/
+    
+	function sliderBoxCentr() { /* Центрування центрального боксу слайдера*/
         if ( document.body.clientWidth <= 1440 ){
-            $('#sliderCenterBox').css('top', document.body.clientWidth/3.1/3.1+'px');
+            $('#sliderCenterBox').css('margin-top', document.body.clientWidth/3/2+'px');
         } else {
-            $('#sliderCenterBox').css('top', ((document.body.clientWidth)/3.1)/2-90+'px');
+            $('#sliderCenterBox').css('margin-top', document.body.clientWidth/4.05-120+'px');
         }
     }
     $(function() { sliderBoxCentr(); });
     $(window).resize(function() { sliderBoxCentr(); });
-    function sliderButtonSize() { /* Розмір кнопки на слайдері*/
+   
+   function sliderButtonSize() { /* Розмір кнопки на слайдері*/
         if ( document.body.clientWidth <= 1440 ){
             $('.sliderSnake .button a').css('margin-left', (document.body.clientWidth*0.11/2-document.body.clientWidth*0.11)+'px');
-            $('.sliderSnake .button a').css('width',document.body.clientWidth*0.11+'px');
+            $('.sliderSnake .button a').css('width',document.body.clientWidth*0.12+'px');
             $('.sliderSnake .button a').css('height',document.body.clientWidth/3.2*0.11+'px');
         } else {
-            $('.sliderSnake .button a').css('margin-left', '-80px')
-            $('.sliderSnake .button a').css('width','160px');
+            $('.sliderSnake .button a').css('margin-left', '-85px')
+            $('.sliderSnake .button a').css('width','180px');
             $('.sliderSnake .button a').css('height','50px');
         }
     }
     $(function() { sliderButtonSize(); });
     $(window).resize(function() { sliderButtonSize(); });
-    function sizeButttonImg() { /* Маштабування картинки на кнопці*/
-        if ( document.body.clientWidth <= 1440 ){
-            $('.sliderSnake .button img').height(document.body.clientWidth*0.011/0.94);
-            $('.sliderSnake .button img').width(document.body.clientWidth*0.0125);
-        }else {
-            $('.sliderSnake .button img').height('16px');
-            $('.sliderSnake .button img').width('18px');
-        }
-    }
-    $(function() { sizeButttonImg(); });
-    $(window).resize(function() { sizeButttonImg(); });
+   
     function centrSliderButtons() { /* центрування кнопок прокрутки слайдеру*/
         if ( document.body.clientWidth <= 1000){
             $('.owl-controls').css('margin-left', '0')
@@ -134,9 +130,9 @@
     $(function() { centrSliderButtons(); });
     $(window).resize(function() { centrSliderButtons(); });
     function centrMouseLine() { /* Маштабування лінії з мишкою*/
-        $('.mouseLine').css('height', document.body.clientWidth/35+'px')
+        $('.mouseLine').css('height', document.body.clientWidth/15+'px')
         $('.mouseLine').css('width', document.body.clientWidth+'px')
-        $('.mouseLine img').css('height', document.body.clientWidth/21.5+'px')
+        $('.mouseLine img').css('height', document.body.clientWidth/15.42+'px')
         $('.mouseLine img').css('width', document.body.clientWidth+'px')
     }
     $(function() { centrMouseLine(); });
@@ -144,42 +140,46 @@
 </script>
 <div id="sliderCenterBox">
     <div class="sliderCenterBoxText">
-        <p><?php echo Yii::t('slider','PROGRAM THE FUTURE'); ?></p>
+        <p><?php echo Yii::t('slider','0005'); ?></p>
     </div>
     <div class="sliderCenterBoxLine">
-        <p>__________</p>
+        <hr>
     </div>
     <div class="sliderSnake">
         <div class="snake">
             <img src="<?php echo $mainpage['sliderLine']; ?>">
         </div>
         <div class="button">
-            <a class="sliderButton" href="#form"><?php echo Yii::t('slider','ENTER'); ?> <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/pointer.png"/></a>
+            <a class="sliderButton" href="#form"><?php echo Yii::t('slider', '0008'); ?></a>
         </div>
     </div>
 </div>
 <div id="slider" class="owl-carousel">
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','Don\'t miss your chance to change the world - get high-quality and modern education class and become an expert!'); ?></p>
+            <p><?php echo Yii::t('slider','0027<br>
+sliderText1'); ?></p>
             <img src="<?php echo $slider1 ?>" />
         </div>
     </div>
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','Want to become a highly qualified specialist, take the right decision - Join the IT Academy INTITA!'); ?></p>
+            <p><?php echo Yii::t('slider','0028<br>
+sliderText2'); ?></p>
             <img src="<?php echo $slider2 ?>" />
         </div>
     </div>
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','One year of productive and interesting learning - and you will become a professional programmer. Learning to hard - but easy to find a job!'); ?></p>
+            <p><?php echo Yii::t('slider','0029<br>
+sliderText3'); ?></p>
             <img src="<?php echo $slider3 ?>" />
         </div>
     </div>
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','Do not lose your chance at a decent and interesting work - Store your future today!'); ?></p>
+            <p><?php echo Yii::t('slider','0030<br>
+sliderText4'); ?></p>
             <img src="<?php echo $slider4 ?>" />
         </div>
     </div>
@@ -188,12 +188,18 @@
     <a id="mouseLine" href="#form"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/mouseLine.png"/></a>
 </div>
 
+
+
+
+
+
 <?php
-$this->pageTitle = Yii::t('mainpage','INTITA');
-$headerText = Yii::t('mainpage','About us');
-$subheaderText = Yii::t('mainpage','something that you need to know about our courses');
+$mainpageModel = new Mainpage();
+$this->pageTitle = $mainpageModel->getTitle();
+$headerText = $mainpageModel->getHeader1();
+$subheaderText = $mainpageModel->getSubheader1();
 $subLineImage = $mainpage['subLineImage'];
-$linkName = Yii::t('mainpage','read more ...');
+$linkName = $mainpageModel->getLinkName();
 $massAbout=array($block1,$block2,$block3);
 ?>
 <div class="mainAboutBlock">
@@ -239,15 +245,14 @@ $massAbout=array($block1,$block2,$block3);
 
     </div>
 </div>
-<! Ініціалізація екземплярів класу>
+
 <?php
-$stepHeader =  Yii::t('mainpage','How is the training?');
-$stepSubheader =  Yii::t('mainpage','then explain how you will learn step by step');
-$stepSize= $mainpage['stepSize'];
+$stepHeader =  $mainpageModel->getHeader2();
+$stepSubheader =  $mainpageModel->getSubheader2();
+$stepSize = $mainpage['stepSize'];
 $stepsArray=array($step1,$step2,$step3,$step4,$step5);
 ?>
 
-<! Верстка за допомогою масиву з екземплярами класу>
 <div class="steps" >
     <div class="stepHeaderCont" style="width:<?php echo $stepSize; ?>">
         <div class="stepHeader">
@@ -269,41 +274,74 @@ $stepsArray=array($step1,$step2,$step3,$step4,$step5);
                 <div class="line">
                 </div>
 
-                <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
-                <div class="stepArticle">
-                    <p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
-                    <p class="stepName"><?php echo Yii::t('step','step'); ?></p>
-                </div>
-                <div class="stepInfo" style="min-height:<?php echo $stepSize*0.23 . 'px';?> ">
-                    <h2><?php echo $stepValue->stepTitle; ?></h2>
-                    <p><?php echo $stepValue->stepText; ?></p>
-                </div>
-            </div>
-        <?php
-        }
-        else
-        {
-            ?>
-            <div class="stepRight" style="width:<?php echo $stepSize; ?>" >
-                <div class="stepUrl">
-                    <img src="<?php echo $stepValue->stepImage; ?>">
-                </div>
-                <div class="line">
-                </div>
-                <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
-                <div class="stepArticle">
-                    <p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
-                    <p class="stepName"><?php echo Yii::t('step','step'); ?></p>
-                </div>
-                <div class="stepInfo">
-                    <h2><?php echo $stepValue->stepTitle; ?></h2>
-                    <p><?php echo $stepValue->stepText; ?></p>
-                </div>
-            </div>
-        <?php
-        }
-    }
-    ?>
+                    <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
+					<div class="stepArticle">
+						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
+						<p class="stepName"><?php echo Yii::t('step','step'); ?></p>
+					</div>
+        			<div class="stepInfo" style="min-height:<?php echo $stepSize*0.23 . 'px';?> ">
+          				  <h2><?php echo $stepValue->stepTitle; ?></h2>
+              			  <p><?php echo $stepValue->stepText; ?></p>
+          			</div>
+         </div>
+		 <?php
+		 }
+		 else
+		 {
+		 ?>
+		 <div class="stepRight" style="width:<?php echo $stepSize; ?>" >
+					<div class="stepUrl">
+                        <img class="grid" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/grid.png">
+        		   		<img src="<?php echo $stepValue->stepImage; ?>">
+        		    </div>
+					<div class="line">
+                    </div>
+                     <img class="hexagon" src="<?php echo $mainpage['hexagon']; ?>">
+					<div class="stepArticle">
+						<p class="stepNumber"><?php echo $stepValue->stepNumber; ?></p>
+						<p class="stepName"><?php echo Yii::t('step','0043'); ?></p>
+					</div>
+        			<div class="stepInfo">
+          				  <h2><?php echo $stepValue->stepTitle; ?></h2>
+              			  <p><?php echo $stepValue->stepText; ?></p>
+          			</div>
+         </div>
+<?php
+	    }
+	}
+?>
 </div>
-<?php $this->renderPartial('_form', array('mainpage'=>$mainpage)); ?>
+<?php $this->renderPartial('_form'); ?>
+
+<script type="text/javascript">
+    var width = 43; // ширина изображения
+    var count = 8; // количество изображений
+
+    var ul = document.getElementById('uLoginImages');
+    var imgs = ul.getElementsByTagName('li');
+
+    var position = 0; // текущий сдвиг влево
+
+    document.getElementById('prev').onclick = function() {
+        if (position >= 0) return false; // уже до упора
+
+        // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
+        position = Math.min(position + width*count, 0)
+        ul.style.marginLeft = position + 'px';
+        return false;
+    }
+
+    document.getElementById('next').onclick = function() {
+        if (position <= -width*(imgs.length-count)) return false; // уже до упора
+
+        // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
+        position = Math.max(position-width*count, -width*(imgs.length-count));
+        ul.style.marginLeft = position + 'px';
+        return false;
+    };
+</script>
+
 </body>
+
+
+
