@@ -11,7 +11,7 @@ class LessonController extends Controller{
         }
 //        else{
 //            if (Permissions::model()->checkPermission(Yii::app()->user->getId(), $id, 'view')){
-
+//
 //            } else {
 //                throw new CHttpException(403, 'Sorry, you couldn\'t view this lecture.
 //                You don\'t have access to this lecture.

@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-17 00:59:32
+-- Date/time:                    2015-04-17 01:32:10
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_authorizations: ~46 rows (approximately)
+-- Dumping data for table int_ita_db.aa_authorizations: ~50 rows (approximately)
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
 INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(1, 2, '2015-03-02 15:33:25', '::1'),
@@ -508,7 +508,7 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.mainpage: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.mainpage: ~1 rows (approximately)
 /*!40000 ALTER TABLE `mainpage` DISABLE KEYS */;
 INSERT INTO `mainpage` (`id`, `language`, `title`, `sliderHeader`, `sliderText`, `category`, `message`, `sliderTextureURL`, `sliderLineURL`, `sliderButtonText`, `header1`, `subLineImage`, `subheader1`, `arrayBlocks`, `header2`, `subheader2`, `arraySteps`, `stepSize`, `linkName`, `hexagon`, `formHeader1`, `formHeader2`, `regText`, `buttonStart`, `socialText`, `imageNetwork`, `formFon`) VALUES
 	(0, 'ua', 'INTITA', 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту і стань класним спеціалістом!', 'mainpage', 'PROGRAM FUTURE', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png', 'Готові розпочати?', 'Введіть дані в форму нижче', 'розширена реєстрація', 'ПОЧАТИ', 'Ви можете також зареєструватися через соцмережі:', '/css/images/networking.png', '/css/images/formFon.png');
@@ -570,7 +570,7 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~136 rows (approximately)
+-- Dumping data for table int_ita_db.sourcemessages: ~137 rows (approximately)
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', '0001'),
@@ -599,11 +599,11 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(24, 'footer', '0024'),
 	(25, 'footer', '0025'),
 	(26, 'footer', '0026'),
-	(27, 'slider', '0027<br>\r\nsliderText1'),
-	(28, 'slider', '0028<br>\r\nsliderText2'),
-	(29, 'slider', '0029<br>\r\nsliderText3'),
-	(30, 'slider', '0030<br>\r\nsliderText4'),
-	(31, 'slider', '0031<br>\r\nsliderText5'),
+	(27, 'slider', '0027'),
+	(28, 'slider', '0028'),
+	(29, 'slider', '0029'),
+	(30, 'slider', '0030'),
+	(31, 'slider', '0031'),
 	(32, 'aboutus', '0032'),
 	(33, 'aboutus', '0033'),
 	(34, 'aboutus', '0034'),
@@ -708,7 +708,8 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(133, 'profile', '0133'),
 	(134, 'profile', '0134'),
 	(135, 'profile', '0135'),
-	(136, 'profile', '0136');
+	(136, 'profile', '0136'),
+	(137, 'header', '0137');
 /*!40000 ALTER TABLE `sourcemessages` ENABLE KEYS */;
 
 
@@ -838,7 +839,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesen` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesen: ~136 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesen: ~137 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesen` DISABLE KEYS */;
 INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(1, 'en', 'INTITA'),
@@ -976,7 +977,8 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(133, 'en', 'IMP'),
 	(134, 'en', 'TTP'),
 	(135, 'en', ' strong junior'),
-	(136, 'en', ' ukrainian');
+	(136, 'en', ' ukrainian'),
+	(137, 'en', 'Graduates');
 /*!40000 ALTER TABLE `translatedmessagesen` ENABLE KEYS */;
 
 
@@ -990,7 +992,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesru: ~136 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesru: ~137 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
 INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(1, 'ru', 'INTITA'),
@@ -1128,7 +1130,8 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(133, 'ru', 'ИМП'),
 	(134, 'ru', 'КДП'),
 	(135, 'ru', ' начинающий сильный'),
-	(136, 'ru', ' украинский');
+	(136, 'ru', ' украинский'),
+	(137, 'ru', 'Выпускники');
 /*!40000 ALTER TABLE `translatedmessagesru` ENABLE KEYS */;
 
 
@@ -1142,7 +1145,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   CONSTRAINT `FK_translatedmessages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
 
--- Dumping data for table int_ita_db.translatedmessagesua: ~136 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesua: ~137 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesua` DISABLE KEYS */;
 INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -1280,7 +1283,8 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(133, 'ua', 'ІМП'),
 	(134, 'ua', 'КДП'),
 	(135, 'ua', ' сильний початківець'),
-	(136, 'ua', ' українська');
+	(136, 'ua', ' українська'),
+	(137, 'ua', 'Випускники');
 /*!40000 ALTER TABLE `translatedmessagesua` ENABLE KEYS */;
 
 
@@ -1312,7 +1316,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.user: ~14 rows (approximately)
+-- Dumping data for table int_ita_db.user: ~25 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `firstName`, `identity`, `network`, `state`, `full_name`, `middleName`, `secondName`, `nickname`, `birthday`, `email`, `password`, `phone`, `hash`, `address`, `education`, `educform`, `interests`, `aboutUs`, `aboutMy`, `avatar`, `role`) VALUES
 	(1, 'Вова', '', '', 0, '', 'Джа', 'Марля', 'Wizlight', '21/03/1997', 'Wizlightdragon@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', '911', '', 'Ямайка', 'ВДПУ', 'Онлайн', 'Ковбаска, колобки, раста', 'Інтернет', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', '/css/images/1id.jpg', ''),

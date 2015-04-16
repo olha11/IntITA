@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-17 00:59:59
+-- Date/time:                    2015-04-17 01:32:06
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -158,7 +158,8 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(133, 'ua', 'ІМП'),
 	(134, 'ua', 'КДП'),
 	(135, 'ua', ' сильний початківець'),
-	(136, 'ua', ' українська');
+	(136, 'ua', ' українська'),
+	(137, 'ua', 'Випускники');
 /*!40000 ALTER TABLE `translatedmessagesua` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

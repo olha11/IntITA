@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-17 00:59:59
+-- Date/time:                    2015-04-17 01:32:06
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -48,11 +48,11 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(24, 'footer', '0024'),
 	(25, 'footer', '0025'),
 	(26, 'footer', '0026'),
-	(27, 'slider', '0027<br>\r\nsliderText1'),
-	(28, 'slider', '0028<br>\r\nsliderText2'),
-	(29, 'slider', '0029<br>\r\nsliderText3'),
-	(30, 'slider', '0030<br>\r\nsliderText4'),
-	(31, 'slider', '0031<br>\r\nsliderText5'),
+	(27, 'slider', '0027'),
+	(28, 'slider', '0028'),
+	(29, 'slider', '0029'),
+	(30, 'slider', '0030'),
+	(31, 'slider', '0031'),
 	(32, 'aboutus', '0032'),
 	(33, 'aboutus', '0033'),
 	(34, 'aboutus', '0034'),
@@ -157,7 +157,8 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(133, 'profile', '0133'),
 	(134, 'profile', '0134'),
 	(135, 'profile', '0135'),
-	(136, 'profile', '0136');
+	(136, 'profile', '0136'),
+	(137, 'header', '0137');
 /*!40000 ALTER TABLE `sourcemessages` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

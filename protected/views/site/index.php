@@ -157,29 +157,25 @@
 <div id="slider" class="owl-carousel">
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','0027<br>
-sliderText1'); ?></p>
+            <p><?php echo Yii::t('slider','0027'); ?></p>
             <img src="<?php echo $slider1 ?>" />
         </div>
     </div>
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','0028<br>
-sliderText2'); ?></p>
+            <p><?php echo Yii::t('slider','0028'); ?></p>
             <img src="<?php echo $slider2 ?>" />
         </div>
     </div>
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','0029<br>
-sliderText3'); ?></p>
+            <p><?php echo Yii::t('slider','0029'); ?></p>
             <img src="<?php echo $slider3 ?>" />
         </div>
     </div>
     <div class="slide">
         <div>
-            <p><?php echo Yii::t('slider','0030<br>
-sliderText4'); ?></p>
+            <p><?php echo Yii::t('slider','0030'); ?></p>
             <img src="<?php echo $slider4 ?>" />
         </div>
     </div>
@@ -187,11 +183,6 @@ sliderText4'); ?></p>
 <div class="mouseLine">
     <a id="mouseLine" href="#form"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/slider_img/mouseLine.png"/></a>
 </div>
-
-
-
-
-
 
 <?php
 $mainpageModel = new Mainpage();
