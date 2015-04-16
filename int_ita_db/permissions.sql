@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-15 19:31:16
+-- Date/time:                    2015-04-17 00:59:59
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -15,9 +15,9 @@ DROP TABLE IF EXISTS `permissions`;
 CREATE TABLE IF NOT EXISTS `permissions` (
   `id_user` int(11) NOT NULL,
   `id_resource` int(11) NOT NULL,
-  `rigths` bit(32) NOT NULL,
+  `rights` bit(32) NOT NULL,
   PRIMARY KEY (`id_user`,`id_resource`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='User rights for lectures: BIT (32) \r\n0 - view\r\n1 - edit\r\n2 - create\r\n3 - delete  ';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='User rights for lectures: BIT (32) \r\n0 - read\r\n1 - edit\r\n2 - create\r\n3 - delete  ';
 
 -- Dumping data for table int_ita_db.permissions: ~0 rows (approximately)
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;

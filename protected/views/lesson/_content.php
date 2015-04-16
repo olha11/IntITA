@@ -9,6 +9,7 @@
 <!--Render all parts of lesson content-->
 <?php
     for ($i = count($data); $i > 0; $i--){
+
         switch ($data['id_type']){
             case 1:
                 $this->renderPartial('_textBlock', array('data'=>$data['html_block']));

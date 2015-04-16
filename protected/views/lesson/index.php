@@ -27,7 +27,6 @@ $this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
     Yii::t('breadcrumbs', '0050')=>Yii::app()->request->baseUrl."/courses",'Модуль PHP'=>Yii::app()->request->baseUrl."/course",'Заняття 2: Змінні та типи данних в PHP',
 );
-$lecture = new Lecture();
 ?>
 
 <div class="lectureMainBlock" >
@@ -50,11 +49,6 @@ $lecture = new Lecture();
 
 <!-- Lesson content-->
 <?php
-$dataProvider = new CActiveDataProvider('LectureElement');
-$dataProvider->setPagination(array(
-    'pageSize' => 1000,
-    )
-);
 
 $this->widget('zii.widgets.CListView', array(
     'dataProvider'=>$dataProvider,
@@ -65,7 +59,8 @@ $this->widget('zii.widgets.CListView', array(
 ?>
     </div>
 </div>
+
 <!-- lesson footer -->
-<?php $this->renderPartial('_footer', array('lecture'=>$lecture));?>
+<?php $this->renderPartial('_lectureFooter', array('lecture'=>$lecture));?>
 
 
