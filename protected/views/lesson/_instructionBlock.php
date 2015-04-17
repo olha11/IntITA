@@ -9,7 +9,7 @@
 ?>
 <div class="lessonInstr">
     <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">
-    <div class="lessonButName" unselectable = "on">Інструкція</div>
+    <div class="lessonButName" unselectable = "on"><?php echo Yii::t('lecture', '0085'); ?></div>
     <div class="lessonLine"></div>
     <div class="lessonBG">
         <div class="instrTaskImg">
