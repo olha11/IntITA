@@ -106,6 +106,7 @@ p {
 #logo_img.down img {
     max-height: 46px;
     max-width: 142px;
+    margin-left: 62px;
 }
 
 /******************enter button***************/
