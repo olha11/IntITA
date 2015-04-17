@@ -28,13 +28,37 @@
                         <?php echo 'skype: '?><div id="teacherSkype"><?php echo $teacher['skype']; ?>
                         </div>
                     </li>
-                    <li>
-                        <a href="<?php echo Yii::app()->request->baseUrl.$teacher['readMoreLink']; ?>">
-                            <?php echo Yii::t('lecture','0078'); ?>
+                    <p class="calendar">
+                        <?php
+                        $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                            'id'=>'calendar',
+                            'themeUrl'=>Yii::app()->request->baseUrl.'/css',
+                            'cssFile'=>'jquery-ui.css',
+                            'theme'=>'my',
+                            'language'=>'ru',
+                            'name'=>'datepicker-showButtonPanel',
+                            'options'=>array(
+                                'showAnim'=>'slideDown',//'slide','fold','slideDown','fadeIn','blind','bounce','clip','drop'
+                                'showButtonPanel'=>false,
+                                'showOtherMonths'=>true,
+                            ),
+                            'htmlOptions'=>array(
+                                'style'=>''
+                            ),
+                        ));
+                        ?>
+                        <a id="consultationCalendar">
+                            <?php echo Yii::t('lecture','0079'); ?>
                         </a>
-                    </li>
-                    <p><a href="#"><input type="submit" value="<?php echo Yii::t('lecture','0079'); ?>"></a></p>
+                    </p>
                 </ul>
         </span>
     </div>
 </div>
+
+<script>
+    $('#consultationCalendar').click(function() {
+        $('#calendar').focus();
+    });
+</script>
+
