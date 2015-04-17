@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-17 02:31:57
+-- Date/time:                    2015-04-17 17:05:38
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,9 +18,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesru: ~137 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesru: ~149 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
 INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(1, 'ru', 'INTITA'),
@@ -159,7 +159,20 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(134, 'ru', 'КДП'),
 	(135, 'ru', ' начинающий сильный'),
 	(136, 'ru', ' украинский'),
-	(137, 'ru', 'Выпускники');
+	(137, 'ru', 'Выпускники'),
+	(138, 'ru', 'Извините, Вы не можете просматривать эту лекцию. Пожалуйста, зарестрируйтесь для доступа к этой лекции.'),
+	(139, 'ru', ''),
+	(140, 'ru', 'Для начинающих'),
+	(141, 'ru', 'Для специалистов'),
+	(142, 'ru', 'Для экспертов'),
+	(143, 'ru', 'Все курсы'),
+	(144, 'ru', 'скидка'),
+	(145, 'ru', 'Оценка курса:'),
+	(146, 'ru', 'детальнее ...'),
+	(147, 'ru', 'Стоимость курса:'),
+	(148, 'ru', 'В начале обучения формируется стойкий фундамент для подготовки программистов: необходимые знания элементарной математики, устройства компьютера и основ информатики.'),
+	(149, 'ru', '<p>Потом изучаются основные принципы программирования на базе классических компьютерних наук и методологий: алгоритмический язык; элементы высшей и дискретной математики, комбинаторики; структуры данных, разработка и анализ алгоритмов.\r\n<P> После чего формируется база для перехода к современным технологиям программирования: объектно-ориентированное программирование; проектирования баз данных.\r\n<P> Завершением процесса подготовки есть конкретное применение полученных знаний на реальных проектах с усвоением современных методов и технологий, используемых в ИТ индустрии компаниями.'),
+	(150, 'ru', '');
 /*!40000 ALTER TABLE `translatedmessagesru` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

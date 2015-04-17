@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-17 02:31:51
+-- Date/time:                    2015-04-17 17:05:41
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -262,29 +262,31 @@ CREATE TABLE IF NOT EXISTS `course` (
   `alias` varchar(10) NOT NULL,
   `language` varchar(6) NOT NULL,
   `course_name` varchar(45) NOT NULL,
-  `course_duration_hours` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL,
   `modules_count` int(255) DEFAULT NULL,
+  `course_duration_lectures` int(11) NOT NULL,
   `course_price` decimal(10,0) DEFAULT NULL,
   `for_whom` text,
   `what_you_learn` text,
   `what_you_get` text,
   `course_img` varchar(255) DEFAULT NULL,
+  `review` text,
   PRIMARY KEY (`course_ID`),
   UNIQUE KEY `course_name` (`course_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='status: 0 - in develop, 1 - avaliable';
 
 -- Dumping data for table int_ita_db.course: ~9 rows (approximately)
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
-INSERT INTO `course` (`course_ID`, `alias`, `language`, `course_name`, `course_duration_hours`, `modules_count`, `course_price`, `for_whom`, `what_you_learn`, `what_you_get`, `course_img`) VALUES
-	(1, 'course1', 'ua', 'Програмування для чайників', 89, 7, 6548, 'хто відповідає за постановку завдань на розробку;для дизайнерів, які готові почати не просто малювати красиві картинки, а й навчитися тому, як створювати працюючі і зручні інтерфейси;для розробників, які хочуть самостійно створити або змінити свій проект;', 'Ви навчитеся писати чистий код;Користуватися системами контролю версій;Дізнаєтеся, з чого складається сучасний додаток;Для чого потрібен безперервна інтеграція (СІ) сервер;Чому потрібно тестувати свої програми і як це робити;', 'Відеозаписи та текстові матеріали всіх онлайн-занять;Спілкування з розумними одногрупниками;Сертифікат про закінчення навчання;Прилаштованість на робоче місце в силіконовій долині;', '/css/images/course1Image.png'),
-	(2, 'course2', 'ua', 'Course 2. Programming', 120, 0, 0, '', '', '', NULL),
-	(3, 'course3', 'ua', 'Course 3. Math', 30, 0, 0, '', '', '', NULL),
-	(4, 'course4', 'ua', 'Course 4. Discrete math', 40, 0, 0, '', '', '', NULL),
-	(5, 'course5', 'ua', 'Course 5', 36, 0, 0, '', '', '', NULL),
-	(6, 'course6', 'ua', 'Course 6', 130, 0, 0, '', '', '', NULL),
-	(7, 'course7', 'ua', 'Course 7', 64, 0, 0, '', '', '', NULL),
-	(8, 'course8', 'ua', 'Course 8', 54, 0, 0, '', '', '', NULL),
-	(9, 'course9', 'ua', 'Course 9', 90, 0, 0, '', '', '', NULL);
+INSERT INTO `course` (`course_ID`, `alias`, `language`, `course_name`, `status`, `modules_count`, `course_duration_lectures`, `course_price`, `for_whom`, `what_you_learn`, `what_you_get`, `course_img`, `review`) VALUES
+	(1, 'course1', 'ua', 'Програмування для чайників', 0, 7, 89, 6548, 'хто відповідає за постановку завдань на розробку;для дизайнерів, які готові почати не просто малювати красиві картинки, а й навчитися тому, як створювати працюючі і зручні інтерфейси;для розробників, які хочуть самостійно створити або змінити свій проект;', 'Ви навчитеся писати чистий код;Користуватися системами контролю версій;Дізнаєтеся, з чого складається сучасний додаток;Для чого потрібен безперервна інтеграція (СІ) сервер;Чому потрібно тестувати свої програми і як це робити;', 'Відеозаписи та текстові матеріали всіх онлайн-занять;Спілкування з розумними одногрупниками;Сертифікат про закінчення навчання;Прилаштованість на робоче місце в силіконовій долині;', '/css/images/course1Image.png', NULL),
+	(2, 'course2', 'ua', 'Course 2. Programming', 0, 0, 120, 0, '', '', '', NULL, NULL),
+	(3, 'course3', 'ua', 'Course 3. Math', 0, 0, 30, 0, '', '', '', NULL, NULL),
+	(4, 'course4', 'ua', 'Course 4. Discrete math', 0, 0, 40, 0, '', '', '', NULL, NULL),
+	(5, 'course5', 'ua', 'Course 5', 0, 0, 36, 0, '', '', '', NULL, NULL),
+	(6, 'course6', 'ua', 'Course 6', 0, 0, 130, 0, '', '', '', NULL, NULL),
+	(7, 'course7', 'ua', 'Course 7', 0, 0, 64, 0, '', '', '', NULL, NULL),
+	(8, 'course8', 'ua', 'Course 8', 0, 0, 54, 0, '', '', '', NULL, NULL),
+	(9, 'course9', 'ua', 'Course 9', 0, 0, 90, 0, '', '', '', NULL, NULL);
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 
 
@@ -343,17 +345,15 @@ CREATE TABLE IF NOT EXISTS `header` (
   `item2Link` varchar(255) NOT NULL,
   `item3Link` varchar(255) NOT NULL,
   `item4Link` varchar(255) NOT NULL,
-  `enterButtonText` varchar(30) NOT NULL,
-  `logoutButtonText` varchar(30) NOT NULL,
   PRIMARY KEY (`headerID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table int_ita_db.header: ~3 rows (approximately)
 /*!40000 ALTER TABLE `header` DISABLE KEYS */;
-INSERT INTO `header` (`headerID`, `language`, `logoURL`, `smallLogoURL`, `item1Link`, `item2Link`, `item3Link`, `item4Link`, `enterButtonText`, `logoutButtonText`) VALUES
-	(0, 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', '/courses', '/teachers', '/index.php', '/site/aboutdetail', 'Вхід', 'Вхід'),
-	(1, 'RU', '/css/images/Logo_big.png', '/css/images/Logo_small.png', '/courses', '/teachers', '/index.php', '/site/aboutdetail', 'Вход', 'Выход'),
-	(3, 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', '/courses', '/teachers', '/index.php', '/site/aboutdetail', 'Вхід', 'Вхід');
+INSERT INTO `header` (`headerID`, `language`, `logoURL`, `smallLogoURL`, `item1Link`, `item2Link`, `item3Link`, `item4Link`) VALUES
+	(0, 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', '/courses', '/teachers', '/index.php', '/site/aboutdetail'),
+	(1, 'RU', '/css/images/Logo_big.png', '/css/images/Logo_small.png', '/courses', '/teachers', '/index.php', '/site/aboutdetail'),
+	(3, 'UA', '/css/images/Logo_big.png', '/css/images/Logo_small.png', '/courses', '/teachers', '/index.php', '/site/aboutdetail');
 /*!40000 ALTER TABLE `header` ENABLE KEYS */;
 
 
@@ -541,7 +541,7 @@ CREATE TABLE IF NOT EXISTS `module` (
 -- Dumping data for table int_ita_db.module: ~3 rows (approximately)
 /*!40000 ALTER TABLE `module` DISABLE KEYS */;
 INSERT INTO `module` (`module_ID`, `course`, `module_name`, `alias`, `language`, `module_duration_hours`, `module_duration_days`, `lesson_count`, `module_price`, `for_whom`, `what_you_learn`, `what_you_get`, `module_img`, `about_module`) VALUES
-	(1, 1, 'Основи PHP', 'start', 'ua', 14, 20, 6, 1256, 'для менеджерів проектів і тих, хто відповідає за постановку завдань на розробку;для дизайнерів, які готові почати не просто малювати красиві картинки, а й навчитися тому, як створювати працюючі і зручні інтерфейси;для розробників, які хочуть самостійно створити або змінити свій проект;', 'Ви навчитеся писати чистий код;Користуватися системами контролю версій;Дізнаєтеся, з чого складається сучасний додаток;Для чого потрібен безперервна інтеграція (СІ) сервер;Чому потрібно тестувати свої програми і як це робити;', 'Відеозаписи та текстові матеріали всіх онлайн-занять;Спілкування з розумними одногрупниками;Сертифікат про закінчення навчання;Прилаштованість на робоче місце в силіконовій долині;', '/css/images/courseimg1.png', NULL),
+	(1, 1, 'Основи PHP', 'start', 'ua', 14, 20, 27, 1256, 'для менеджерів проектів і тих, хто відповідає за постановку завдань на розробку;для дизайнерів, які готові почати не просто малювати красиві картинки, а й навчитися тому, як створювати працюючі і зручні інтерфейси;для розробників, які хочуть самостійно створити або змінити свій проект;', 'Ви навчитеся писати чистий код;Користуватися системами контролю версій;Дізнаєтеся, з чого складається сучасний додаток;Для чого потрібен безперервна інтеграція (СІ) сервер;Чому потрібно тестувати свої програми і як це робити;', 'Відеозаписи та текстові матеріали всіх онлайн-занять;Спілкування з розумними одногрупниками;Сертифікат про закінчення навчання;Прилаштованість на робоче місце в силіконовій долині;', '/css/images/courseimg1.png', NULL),
 	(2, 2, 'Module 2', 'module2', 'ua', 30, 15, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(3, 3, 'Module 3', 'module3', 'ua', 60, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `module` ENABLE KEYS */;
@@ -553,13 +553,17 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   `id_user` int(11) NOT NULL,
   `id_resource` int(11) NOT NULL,
   `rights` bit(32) NOT NULL,
-  PRIMARY KEY (`id_user`,`id_resource`)
+  PRIMARY KEY (`id_user`,`id_resource`),
+  KEY `FK_permissions_lectures` (`id_resource`),
+  CONSTRAINT `FK_permissions_lectures` FOREIGN KEY (`id_resource`) REFERENCES `lectures` (`id`),
+  CONSTRAINT `FK_permissions_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='User rights for lectures: BIT (32) \r\n0 - read\r\n1 - edit\r\n2 - create\r\n3 - delete  ';
 
--- Dumping data for table int_ita_db.permissions: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.permissions: ~2 rows (approximately)
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
 INSERT INTO `permissions` (`id_user`, `id_resource`, `rights`) VALUES
-	(1, 1, b'10000000');
+	(1, 1, b'10000000'),
+	(11, 1, b'11110000');
 /*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
 
 
@@ -570,9 +574,9 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   `category` varchar(32) NOT NULL,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~137 rows (approximately)
+-- Dumping data for table int_ita_db.sourcemessages: ~150 rows (approximately)
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', '0001'),
@@ -711,7 +715,20 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(134, 'profile', '0134'),
 	(135, 'profile', '0135'),
 	(136, 'profile', '0136'),
-	(137, 'header', '0137');
+	(137, 'header', '0137'),
+	(138, 'errors', '0138'),
+	(139, 'errors', '0139'),
+	(140, 'courses', '0140'),
+	(141, 'courses', '0141'),
+	(142, 'courses', '0142'),
+	(143, 'courses', '0143'),
+	(144, 'courses', '0144'),
+	(145, 'courses', '0145'),
+	(146, 'courses', '0146'),
+	(147, 'courses', '0147'),
+	(148, 'courses', '0148'),
+	(149, 'courses', '0149'),
+	(150, 'courses', '0150');
 /*!40000 ALTER TABLE `sourcemessages` ENABLE KEYS */;
 
 
@@ -839,9 +856,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesen` (
   `language` varchar(16) NOT NULL,
   `translation` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesen: ~137 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesen: ~150 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesen` DISABLE KEYS */;
 INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(1, 'en', 'INTITA'),
@@ -910,7 +927,7 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(64, 'en', 'Section:'),
 	(65, 'en', 'About the teacher:'),
 	(66, 'en', 'Our courses'),
-	(67, 'en', 'The concept of training'),
+	(67, 'en', 'Training concept'),
 	(68, 'en', 'Level: '),
 	(69, 'en', 'Language: '),
 	(70, 'en', 'Course:'),
@@ -980,7 +997,20 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(134, 'en', 'TTP'),
 	(135, 'en', ' strong junior'),
 	(136, 'en', ' ukrainian'),
-	(137, 'en', 'Graduates');
+	(137, 'en', 'Graduates'),
+	(138, 'en', 'Sorry, you couldn\\\'t view this lecture.Please login for getting access to this material.'),
+	(139, 'en', 'Sorry, you couldn\\\'t view this lecture.\r\nYou don\\\'t have access to this lecture.\r\nPlease go to your profile and pay access.'),
+	(140, 'en', 'For beginners'),
+	(141, 'en', 'For specialists'),
+	(142, 'en', 'For experts'),
+	(143, 'en', 'All courses'),
+	(144, 'en', 'discount'),
+	(145, 'en', 'Сourse rate:'),
+	(146, 'en', 'details ...'),
+	(147, 'en', 'Course price:'),
+	(148, 'en', 'Firstly training creates a stable foundation for training programmers: requires knowledge of elementary mathematics, the structure of computer and computer science.'),
+	(149, 'en', '<P>Then we study the basic principles of programming based on classic PC & raquo; Books sciences and methodologies algorithmic language, elements of higher and discrete mathematics and combinatorics; data structures, design and analysis of algorithms.\r\n<P> After that formed the basis for the transition to modern programming technologies: object-oriented programming; database design.\r\n<P> Completion of training by the specific application of knowledge to real projects with the assimilation of modern techniques and technologies used in the IT industry companies.'),
+	(150, 'en', '');
 /*!40000 ALTER TABLE `translatedmessagesen` ENABLE KEYS */;
 
 
@@ -992,9 +1022,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesru: ~137 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesru: ~150 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
 INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(1, 'ru', 'INTITA'),
@@ -1133,7 +1163,20 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(134, 'ru', 'КДП'),
 	(135, 'ru', ' начинающий сильный'),
 	(136, 'ru', ' украинский'),
-	(137, 'ru', 'Выпускники');
+	(137, 'ru', 'Выпускники'),
+	(138, 'ru', 'Извините, Вы не можете просматривать эту лекцию. Пожалуйста, зарестрируйтесь для доступа к этой лекции.'),
+	(139, 'ru', ''),
+	(140, 'ru', 'Для начинающих'),
+	(141, 'ru', 'Для специалистов'),
+	(142, 'ru', 'Для экспертов'),
+	(143, 'ru', 'Все курсы'),
+	(144, 'ru', 'скидка'),
+	(145, 'ru', 'Оценка курса:'),
+	(146, 'ru', 'детальнее ...'),
+	(147, 'ru', 'Стоимость курса:'),
+	(148, 'ru', 'В начале обучения формируется стойкий фундамент для подготовки программистов: необходимые знания элементарной математики, устройства компьютера и основ информатики.'),
+	(149, 'ru', '<p>Потом изучаются основные принципы программирования на базе классических компьютерних наук и методологий: алгоритмический язык; элементы высшей и дискретной математики, комбинаторики; структуры данных, разработка и анализ алгоритмов.\r\n<P> После чего формируется база для перехода к современным технологиям программирования: объектно-ориентированное программирование; проектирования баз данных.\r\n<P> Завершением процесса подготовки есть конкретное применение полученных знаний на реальных проектах с усвоением современных методов и технологий, используемых в ИТ индустрии компаниями.'),
+	(150, 'ru', '');
 /*!40000 ALTER TABLE `translatedmessagesru` ENABLE KEYS */;
 
 
@@ -1145,9 +1188,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedmessages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
+) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
 
--- Dumping data for table int_ita_db.translatedmessagesua: ~137 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesua: ~150 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesua` DISABLE KEYS */;
 INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -1286,7 +1329,20 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(134, 'ua', 'КДП'),
 	(135, 'ua', ' сильний початківець'),
 	(136, 'ua', ' українська'),
-	(137, 'ua', 'Випускники');
+	(137, 'ua', 'Випускники'),
+	(138, 'ua', 'Вибачте, Ви не можете переглядати цю лекцію. Щоб отримати доступ до цієї лекції, зареєструйтесь або увійдіть у свій аккаунт.'),
+	(139, 'ua', ''),
+	(140, 'ua', 'Для початківців'),
+	(141, 'ua', 'Для спеціалістів'),
+	(142, 'ua', 'Для експертів'),
+	(143, 'ua', 'Усі курси'),
+	(144, 'ua', 'знижка'),
+	(145, 'ua', 'Оцінка курсу:'),
+	(146, 'ua', 'детальніше ...'),
+	(147, 'ua', 'Вартість курсу: '),
+	(148, 'ua', 'Спочатку навчання створюється стійкий фундамент для підготовки програмістів: необхідні знання елементарної математики, будови комп’ютера і основ інформатики.'),
+	(149, 'ua', '<p>Потім вивчаються основні принципи програмування на базі класичних комп&rsquo;ютерних наук і методологій: алгоритмічна мова;елементи вищої та дискретної математики і комбінаторики; структури даних, розробка і аналіз алгоритмів.                                 \r\n<p>Після чого формується база для переходу до сучасних технологій програмування: об’єктно-орієнтоване програмування; проектування баз даних.\r\n<p>Завершення процесу підготовки шляхом конкретного застосування отриманих знань на реальних проектах із засвоєнням сучасних методів і технологій, які використовуються в ІТ індустрії компаніями.'),
+	(150, 'ua', '');
 /*!40000 ALTER TABLE `translatedmessagesua` ENABLE KEYS */;
 
 
