@@ -159,9 +159,10 @@ class StudentRegController extends Controller
                     if($_FILES["upload"]["size"] > 1024*1024*0.5)
                     {
                         Yii::app()->user->setFlash('avatarmessage','Розмір файла перевищує 512кб');
-                    }elseif (is_uploaded_file($_FILES["upload"]["tmp_name"])) {
+                    }elseif (is_uploaded_file($_FILES["upload"]["tmp_name"]))
+                    {
                         $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
-                        $_FILES["upload"]["name"]=$_POST['StudentReg']['email'].'.'.$ext;
+                        $_FILES["upload"]["name"]=uniqid().'.'.$ext;
                         copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/avatars/".$_FILES['upload']['name']);
                         $model->avatar="/css/images/avatars/".$_FILES["upload"]["name"];
                     }
