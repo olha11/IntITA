@@ -282,3 +282,31 @@ table {
     width: 370px;
     font-size: 14px;
 }
+
+
+.download {
+    position: relative;
+    margin-top: px;
+
+    height: 33px;
+    width: 200px;
+    background: #ffffff;
+    border-radius:8px;
+    border: 1px solid #4B75A4;
+    color: white;
+    vertical-align: middle;
+    font: 16px/30px "MyriadPro";
+    text-align:      center;
+    text-decoration: none;
+}
+.download:hover {
+    background: #4B75A4;
+}
+.download:active {
+    background: #363636;
+}
+.download.down {
+    margin-top: 12px;
+}
+.download.down:hover{
+    background: #454545;

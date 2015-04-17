@@ -24,6 +24,7 @@ return array(
 		'ext.autoadmin.models.field.*',
 		'ext.autoadmin.helpers.*',
 		'ext.autoadmin.controllers.*',
+        'ext.imperavi-redactor-widget.*',
 	),
 
 	'modules'=>array(
@@ -49,7 +50,7 @@ return array(
 
 	// application components
 	'components'=>array(
-		
+
 		'clientScript'   => array(
     		'class' => 'system.web.CClientScript'
     	),

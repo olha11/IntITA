@@ -24,7 +24,6 @@ $dropName = Yii::t('mainpage','0004');
 
 $massAbout = array($block1,$block2,$block3);
 
-
 $block1->drop1Text='<div class="aboutStepBlock"><span class="detailTitle1"> Про що мрієш ти? </span>
 
 <p> Спробуємо вгадати: власна квартира чи навіть будинок? Гарний автомобіль? Закордонні подорожі, можливо, до екзотичних країн? Забезпечене життя для себе та близьких, коли не доводиться думати про гроші?
@@ -194,7 +193,7 @@ function WindowShow(buttonNumber,anchor)
 			$('#dropTextLayer1').css('display', 'none');   		
 			$('#dropButton1').css('text-decoration','underline');
 			$('#dropButton2').css('text-decoration','underline');
-			$('#dropButton3').css('text-decoration','none');			
+			$('#dropButton3').css('text-decoration','none');
 		}	
 }
 	
@@ -217,6 +216,38 @@ function WindowShow(buttonNumber,anchor)
 
 <div id='aboutDetailMain'>
 
+<!--    --><?php
+//    // use editor WYSIWYG Imperavi
+//    $this->widget('ImperaviRedactorWidget', array(
+//        // use editor to field .aboutStepBlock
+//        'selector' => '.aboutStepBlock',
+//        'options' => array(
+//            'imageUpload' => $this->createUrl('files/upload'),
+//            'lang' => 'ua',
+//            'toolbar' => true,
+//            'iframe' => true,
+//            'css' => 'wym.css',
+//        ),
+//        'plugins' => array(
+//            'fullscreen' => array(
+//                'js' => array('fullscreen.js',),
+//            ),
+//            'video' => array(
+//                'js' => array('video.js',),
+//            ),
+//            'fontsize' => array(
+//                'js' => array('fontsize.js',),
+//            ),
+//            'fontfamily' => array(
+//                'js' => array('fontfamily.js',),
+//            ),
+//            'fontcolor' => array(
+//                'js' => array('fontcolor.js',),
+//            ),
+//
+//        ),
+//    ));
+//    ?>
 
 <div id="dropTextLayer1" >
     <div  class="textBox">
@@ -230,7 +261,7 @@ function WindowShow(buttonNumber,anchor)
 </div>	
 <div id="dropTextLayer3">
     <div  class="textBox">
-	<?php 	echo $block1->drop3Text;	 ?>
+    <?php 	echo $block1->drop3Text;	 ?>
     </div>
 </div>	
 </div>

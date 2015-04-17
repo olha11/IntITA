@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-15 19:31:16
+-- Date/time:                    2015-04-17 17:05:38
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   `category` varchar(32) NOT NULL,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~136 rows (approximately)
+-- Dumping data for table int_ita_db.sourcemessages: ~149 rows (approximately)
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', '0001'),
@@ -48,11 +48,11 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(24, 'footer', '0024'),
 	(25, 'footer', '0025'),
 	(26, 'footer', '0026'),
-	(27, 'slider', '0027<br>\r\nsliderText1'),
-	(28, 'slider', '0028<br>\r\nsliderText2'),
-	(29, 'slider', '0029<br>\r\nsliderText3'),
-	(30, 'slider', '0030<br>\r\nsliderText4'),
-	(31, 'slider', '0031<br>\r\nsliderText5'),
+	(27, 'slider', '0027'),
+	(28, 'slider', '0028'),
+	(29, 'slider', '0029'),
+	(30, 'slider', '0030'),
+	(31, 'slider', '0031'),
 	(32, 'aboutus', '0032'),
 	(33, 'aboutus', '0033'),
 	(34, 'aboutus', '0034'),
@@ -157,7 +157,21 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(133, 'profile', '0133'),
 	(134, 'profile', '0134'),
 	(135, 'profile', '0135'),
-	(136, 'profile', '0136');
+	(136, 'profile', '0136'),
+	(137, 'header', '0137'),
+	(138, 'errors', '0138'),
+	(139, 'errors', '0139'),
+	(140, 'courses', '0140'),
+	(141, 'courses', '0141'),
+	(142, 'courses', '0142'),
+	(143, 'courses', '0143'),
+	(144, 'courses', '0144'),
+	(145, 'courses', '0145'),
+	(146, 'courses', '0146'),
+	(147, 'courses', '0147'),
+	(148, 'courses', '0148'),
+	(149, 'courses', '0149'),
+	(150, 'courses', '0150');
 /*!40000 ALTER TABLE `sourcemessages` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

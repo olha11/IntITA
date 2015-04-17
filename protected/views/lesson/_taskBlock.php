@@ -5,7 +5,6 @@
  * Date: 14.04.2015
  * Time: 18:43
  */
-echo $data;
 ?>
 <div class="lessonTask">
     <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">

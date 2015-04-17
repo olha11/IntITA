@@ -27,7 +27,6 @@ $this->pageTitle = 'INTITA';
 $this->breadcrumbs=array(
     Yii::t('breadcrumbs', '0050')=>Yii::app()->request->baseUrl."/courses",'Модуль PHP'=>Yii::app()->request->baseUrl."/course",'Заняття 2: Змінні та типи данних в PHP',
 );
-$lecture = new Lecture();
 ?>
 
 <div class="lectureMainBlock" >
@@ -50,11 +49,6 @@ $lecture = new Lecture();
 
 <!-- Lesson content-->
 <?php
-$dataProvider = new CActiveDataProvider('LectureElement');
-$dataProvider->setPagination(array(
-    'pageSize' => 1000,
-    )
-);
 
 $this->widget('zii.widgets.CListView', array(
     'dataProvider'=>$dataProvider,
@@ -63,9 +57,20 @@ $this->widget('zii.widgets.CListView', array(
     'emptyText' => 'В данной лекции еще ничего нет (',
 ));
 ?>
-    </div>
+
+
+<table class="download2"><tr><td>
+        <div class="download">  <a  href="#"><img style="position: relative; top: 7px; padding-right: 3px;" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/000zav-yrok.png">Завантажити урок</a></div>
+            </td><td>
+            <div class="download"> <a  href="#"><img style="position: relative; top: 7px; padding-right: 5px;" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/000zav-ysi-vid.png">Завантажити всі відео</a></div>
+            </td><td>
+                <div class="download" id="do1">  <a href="#"><img style="position: relative; top: 7px; padding-right: 5px;" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/000zav-ysi-vid2.png">Завантажити всі відео</a></div>
+</td></tr></table>
+
 </div>
+</div>
+
 <!-- lesson footer -->
-<?php $this->renderPartial('_footer', array('lecture'=>$lecture));?>
+<?php $this->renderPartial('_lectureFooter', array('lecture'=>$lecture));?>
 
 
