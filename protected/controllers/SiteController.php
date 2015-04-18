@@ -189,20 +189,20 @@ class SiteController extends Controller
 	{
         $app = Yii::app();
 		if (isset($_GET['lg'])) {
-            switch($_GET['lg']){
-                case 'ru':
-                    $app->session['translatedTable'] = 'translatedmessagesru';
-                    break;
-                case 'en':
-                    $app->session['translatedTable'] = 'translatedmessagesen';
-                    break;
-                case 'ua':
-                    $app->session['translatedTable'] = 'translatedmessagesua';
-                    break;
-                default:
-                    $app->session['translatedTable'] = 'translatedmessagesua';
-                    break;
-            }
+//            switch($_GET['lg']){
+//                case 'ru':
+//                    $app->session['translatedTable'] = 'translatedmessagesru';
+//                    break;
+//                case 'en':
+//                    $app->session['translatedTable'] = 'translatedmessagesen';
+//                    break;
+//                case 'ua':
+//                    $app->session['translatedTable'] = 'translatedmessagesua';
+//                    break;
+//                default:
+//                    $app->session['translatedTable'] = 'translatedmessagesua';
+//                    break;
+//            }
 			$app->session['lg'] = $_GET['lg'];
 		}
         $access = new Permissions();
@@ -291,9 +291,9 @@ class SiteController extends Controller
 	 */
 	public function actionLogout()
 	{
-        $tmp = Yii::app()->session['translatedTable'];
+//        $tmp = Yii::app()->session['translatedTable'];
 		Yii::app()->user->logout();
-        Yii::app()->session['translatedTable'] = $tmp;
+//        Yii::app()->session['translatedTable'] = $tmp;
 		$this->redirect(Yii::app()->homeUrl);
 	}
 

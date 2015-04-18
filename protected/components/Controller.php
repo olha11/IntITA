@@ -40,11 +40,11 @@ class Controller extends CController
 			$app->language = $app->session['lg'];
 		}
 
-        if ($app->session['translatedTable'] == null) {
-            $app->session['translatedTable'] = 'translatedmessagesua';
-        } else {
-            $app->session['translatedTable'] = strtolower($app->session['translatedTable']);
-        }
+//        if ($app->session['translatedTable'] == null) {
+//            $app->session['translatedTable'] = 'translatedmessagesua';
+//        } else {
+//            $app->session['translatedTable'] = strtolower($app->session['translatedTable']);
+//        }
 	}
 	/**
 	 * @var string the default layout for the controller view. Defaults to '//layouts/column1',

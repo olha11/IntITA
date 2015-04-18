@@ -60,9 +60,9 @@ return array(
 		),
 
         'messages'=>array(
-            'class'=>'MyCDbMessageSource',
+            'class'=>'CDbMessageSource',
             'sourceMessageTable'=>'sourcemessages',
-            'translatedMessageTable'=>'translatedmessagesua',
+            'translatedMessageTable'=>'messages',
         ),
 
 		'user' => array(
