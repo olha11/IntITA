@@ -67,11 +67,14 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
                         <p> <span class="colorP">Інтереси:</span> </br>
                             <?php
                             $interestArray=explode(",", $post->interests);
-                            for ($i = 0; $i < count($interestArray); $i++)
-                            {
-                                ?>
-                                <span class="interestBG"><?php echo $interestArray[$i]." ";?></span>
-                            <?php
+
+                            if (!empty($interestArray[0])){
+                                for ($i = 0; $i < count($interestArray); $i++)
+                                {
+                                    ?>
+                                    <span class="interestBG"><?php echo $interestArray[$i]." ";?></span>
+                                <?php
+                                }
                             }
                             ?>
                         </p>

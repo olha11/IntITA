@@ -159,3 +159,62 @@ font-size:16px;
     color: #fcfcfc;
     cursor: pointer;
 }
+/*----Calendar----*/
+p.calendar{
+    margin-top: 20px;
+}
+#consultationCalendar{
+    display: block;
+    cursor: pointer;
+    text-decoration: underline;
+}
+#calendar{
+    display: block;
+    height: 1px;
+    opacity: 0;
+    cursor: pointer;
+}
+div#ui-datepicker-div{
+    overflow: hidden;
+    width: 270px;
+    height:350px;
+    border-radius: 0;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+    padding: 10px 18px 0 18px;
+    font-family: SegoeUILight;
+}
+.ui-datepicker td span, .ui-datepicker td a{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+ }
+.ui-datepicker-calendar thead {
+    border-bottom: 1px solid #007070;
+    font-size: 10px;
+    color: #7b7b7b;
+}
+.ui-datepicker-calendar tbody {
+    font-size: 13px;
+}
+.ui-datepicker-calendar tbody .ui-state-default{
+    color: #00701d;
+}
+.ui-datepicker td span.ui-state-default{
+    color: #cbcbcb;
+}
+.ui-datepicker-calendar a.ui-state-active, .ui-datepicker-calendar a.ui-state-hover {
+    color: #ffffff;
+    background: #4b75a4;
+    border-radius: 150px;
+}
+.ui-datepicker-calendar .ui-state-highlight{
+    border: 1px solid #4B75A4;
+}
+.ui-datepicker-week-end{
+    color: #ff7272;
+}
+.ui-datepicker-calendar tbody td.ui-datepicker-week-end a.ui-state-default {
+    color: #ff7272;
+}
+/*----Calendar----*/
