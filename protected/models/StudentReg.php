@@ -231,7 +231,61 @@ class StudentReg extends CActiveRecord
             if($number > 1 ) {$term = Yii::t('profile', '0099');}
             if($number > 4 ) {$term = Yii::t('profile', '0097');}
         }
-        echo  $term;
+        return  $term;
+    }
+    public function getYears ($birthday)
+    {
+        $myAge = $birthday;
+        $myAge = str_replace("/",".",$myAge);
+        $date_a = new DateTime($myAge);
+        $date_b = new DateTime();
+        $interval = $date_b->diff($date_a);
+        if($interval->format("%y")!=='0'){
+            echo $interval->format("%y").' '.StudentReg::getYearsTermination($interval->format("%Y"));
+        }
+    }
+    public function getAboutMy ($aboutMy)
+    {
+        if($aboutMy)
+            echo  '<span class="colorP">'.Yii::t('profile', '0100').'</span>'.$aboutMy;
+    }
+    public function getPhone ($phone)
+    {
+        if($phone)
+            echo  '<span class="colorP">'.Yii::t('profile', '0102').'</span>'.$phone;
+    }
+    public function getEducation ($education)
+    {
+        if($education)
+            echo  '<span class="colorP">'.Yii::t('profile', '0103').'</span>'.$education;
+    }
+    public function getInterests ($interests)
+    {
+        if($interests){
+            echo  '<span class="colorP">'.Yii::t('profile', '0104').'</span>';
+            $interestArray=explode(",", $interests);
+            if (!empty($interestArray[0])){
+                for ($i = 0; $i < count($interestArray); $i++)
+                {
+                    echo  '<span class="interestBG">'.$interestArray[$i].' '.'</span>';
+                }
+            }
+        }
+    }
+    public function getAboutUs ($aboutUs)
+    {
+        if($aboutUs)
+            echo  '<span class="colorP">'.Yii::t('profile', '0105').'</span>'.$aboutUs;
+    }
+    public function getEducform ($educform)
+    {
+        if($educform)
+            echo  '<span class="colorP">'.Yii::t('profile', '0106').'</span>'.$educform;
+    }
+    public function getCourses ($courses)
+    {
+        if($courses)
+            echo  '<span class="colorP">'.Yii::t('profile', '0107').'</span>'.$courses;
     }
     public function validatePassword($password)
     {

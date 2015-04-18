@@ -25,7 +25,7 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/profileedit.png"/>
                 </td>
                 <td>
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/?r=studentreg/edit"><?php echo Yii::t('profile', '0096'); ?></a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/studentreg/edit"><?php echo Yii::t('profile', '0096'); ?></a>
                 </td>
             </tr>
         </table>
@@ -37,56 +37,36 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
                     <h1><?php echo $post->firstName;?></h1>
                     <h1><?php echo $post->secondName;?></h1>
                     <div class="aboutInfo">
-                        <p><?php echo $post->address;
+                        <p>
+                            <?php echo $post->address;
                             if(!empty($post->address)&&!empty($post->birthday)) echo ', ';
-                            $myAge = $post->birthday;
-                            $myAge = str_replace("/",".",$myAge);
-                            $date_a = new DateTime($myAge);
-                            $date_b = new DateTime();
-                            $interval = $date_b->diff($date_a);
-                            if($interval->format("%Y")!=='00'){
-                                echo $interval->format("%Y");
-                                $post::getYearsTermination($interval->format("%Y"));
-                            }
+                            $post::getYears($post->birthday);
                             ?>
                         </p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP"><?php echo Yii::t('profile', '0100'); ?></span><?php echo $post->aboutMy;?></p>
+                        <p><?php $post::getAboutMy($post->aboutMy);?></p>
                     </div>
                     <div class="aboutInfo">
                         <p> <span class="colorP"><?php echo Yii::t('profile', '0101'); ?></span><?php echo $post->email;?></p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP"><?php echo Yii::t('profile', '0102'); ?></span><?php echo $post->phone;?></p>
+                        <p><?php $post::getPhone($post->phone);?></p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP"><?php echo Yii::t('profile', '0103'); ?></span><?php echo $post->education;?></p>
+                        <p><?php $post::getEducation($post->education);?></p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP"><?php echo Yii::t('profile', '0104'); ?></span>
-                            <?php
-                            $interestArray=explode(",", $post->interests);
-
-                            if (!empty($interestArray[0])){
-                                for ($i = 0; $i < count($interestArray); $i++)
-                                {
-                                    ?>
-                                    <span class="interestBG"><?php echo $interestArray[$i]." ";?></span>
-                                <?php
-                                }
-                            }
-                            ?>
-                        </p>
+                        <p><?php $post::getInterests($post->interests);?></p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP"><?php echo Yii::t('profile', '0105'); ?></span><?php echo $post->aboutUs;?></p>
+                        <p><?php $post::getAboutUs($post->aboutUs);?></p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP"><?php echo Yii::t('profile', '0106'); ?></span><?php echo $post->educform;?></p>
+                        <p><?php $post::getEducform($post->educform);?></p>
                     </div>
                     <div class="aboutInfo">
-                        <p> <span class="colorP"><?php echo Yii::t('profile', '0107'); ?></span>Курси самогоних апаратів 6-го рівня</p>
+                        <p><?php $post::getCourses('Курси самогоних апаратів 6-го рівня');?></p>
                     </div>
                 </td>
             </tr>
@@ -142,7 +122,7 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
                 </p>
             </section>
             <section id="mylettersSend">
-                <form method="post" action="<?php echo Yii::app()->request->baseUrl; ?>/?r=studentreg/sendletter">
+                <form method="post" action="<?php echo Yii::app()->request->baseUrl; ?>/studentreg/sendletter">
                     <label for="letterTheme">Тема:</label>
                     <input type="text" id="letterTheme" name="letterTheme" /></br> </br>
                     <label for="send_letter">Повідомлення:</label>
