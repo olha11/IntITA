@@ -48,9 +48,6 @@ table.titleProfile{
     font-size: smaller;
     line-height: 120%;
 }
-.titleProfile td{
-    width: 100%;
-}
 .titleProfile a:hover{
     color:#666666;
 }
@@ -60,6 +57,7 @@ table.titleProfile{
     font-size: 24px;
     margin-top: 0;
     margin-bottom: 0;
+    margin-right: 115px;
 }
 .studProfInf img.avatarimg{
     width:220px;
@@ -160,9 +158,7 @@ p.tabHeader{
     border-bottom:1px solid #d8d8d8;
     margin: 0 10px 0 0;
 }
-#myCourse a{
-    text-decoration: none;
-}
+
 .profileCourse div{
     padding-bottom: 20px;
 }
@@ -247,7 +243,6 @@ table.exmCons{
 }
 table.exmCons img{
     display: block;
-    height: 12px;
 }
 table.exmCons span{
     color: #4b75a4;
@@ -300,14 +295,72 @@ table.timeTable tr:first-child td{
 .timeTable tr:first-child td{
     border-top: none;
 }
-table.exmCons span.selectedTab {
+#consultation img{
+    display: block;
+}
+.selectedTab {
     text-decoration: none;
     color: #999999;
 }
-table.exmCons span.unselectedTab {
-    text-decoration: underline;
-    color: #4B75A4;
+
+.profileMyRatting {
+    border-bottom: 1px solid #d8d8d8;
 }
+.disabledModul {
+    border-bottom: 1px solid #d8d8d8;
+}
+.ButtonRatting {
+    width: 100px;
+    height: 55px;
+    color:#ffffff;
+    background:#4b70a3;
+    border-radius: 10px;
+    text-align: center;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+}
+
+.disabled1 {
+    pointer-events: none;
+    color: #666666;
+    cursor: default;
+}
+.linkFinances {
+    border-right: 1px solid gray;
+    text-transform: lowercase;
+}
+.colorF {
+    color: #4b75a4;
+}
+.borderF {
+    border-bottom: 1px solid #d8d8d8;
+}
+.studPay p{
+    color: #e10000;
+    font-size: 0.9em;
+    margin: 0;
+    padding: 0 0 0 20px;
+    line-height: 100%;
+}
+.FinancesPay {
+    margin: 0;
+    padding: 0 0 0 20px;
+    line-height: 100%;
+}
+.ButtonFinances {
+    width: 110px;
+    height: 25px;
+    color:#ffffff;
+    background:#4b70a3;
+    border-radius: 7px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+}
+
 /*Timetable*/
 /*consultation*/
 

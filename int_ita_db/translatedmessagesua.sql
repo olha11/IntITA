@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-17 17:05:38
+-- Date/time:                    2015-04-18 17:33:16
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,9 +18,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedmessages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
 
--- Dumping data for table int_ita_db.translatedmessagesua: ~149 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesua: ~150 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesua` DISABLE KEYS */;
 INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -161,7 +161,7 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(136, 'ua', ' українська'),
 	(137, 'ua', 'Випускники'),
 	(138, 'ua', 'Вибачте, Ви не можете переглядати цю лекцію. Щоб отримати доступ до цієї лекції, зареєструйтесь або увійдіть у свій аккаунт.'),
-	(139, 'ua', ''),
+	(139, 'ua', 'Вибачте, у Вас немає доступу до цієї лекції. Будь-ласка. зайдіть у свій аккаунт та оплатіть доступ до лекції.'),
 	(140, 'ua', 'Для початківців'),
 	(141, 'ua', 'Для спеціалістів'),
 	(142, 'ua', 'Для експертів'),

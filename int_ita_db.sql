@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-17 17:05:41
+-- Date/time:                    2015-04-18 17:33:07
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_authorizations: ~50 rows (approximately)
+-- Dumping data for table int_ita_db.aa_authorizations: ~46 rows (approximately)
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
 INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(1, 2, '2015-03-02 15:33:25', '::1'),
@@ -264,7 +264,7 @@ CREATE TABLE IF NOT EXISTS `course` (
   `course_name` varchar(45) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `modules_count` int(255) DEFAULT NULL,
-  `course_duration_lectures` int(11) NOT NULL,
+  `course_duration_hours` int(11) NOT NULL,
   `course_price` decimal(10,0) DEFAULT NULL,
   `for_whom` text,
   `what_you_learn` text,
@@ -277,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `course` (
 
 -- Dumping data for table int_ita_db.course: ~9 rows (approximately)
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
-INSERT INTO `course` (`course_ID`, `alias`, `language`, `course_name`, `status`, `modules_count`, `course_duration_lectures`, `course_price`, `for_whom`, `what_you_learn`, `what_you_get`, `course_img`, `review`) VALUES
+INSERT INTO `course` (`course_ID`, `alias`, `language`, `course_name`, `status`, `modules_count`, `course_duration_hours`, `course_price`, `for_whom`, `what_you_learn`, `what_you_get`, `course_img`, `review`) VALUES
 	(1, 'course1', 'ua', 'Програмування для чайників', 0, 7, 89, 6548, 'хто відповідає за постановку завдань на розробку;для дизайнерів, які готові почати не просто малювати красиві картинки, а й навчитися тому, як створювати працюючі і зручні інтерфейси;для розробників, які хочуть самостійно створити або змінити свій проект;', 'Ви навчитеся писати чистий код;Користуватися системами контролю версій;Дізнаєтеся, з чого складається сучасний додаток;Для чого потрібен безперервна інтеграція (СІ) сервер;Чому потрібно тестувати свої програми і як це робити;', 'Відеозаписи та текстові матеріали всіх онлайн-занять;Спілкування з розумними одногрупниками;Сертифікат про закінчення навчання;Прилаштованість на робоче місце в силіконовій долині;', '/css/images/course1Image.png', NULL),
 	(2, 'course2', 'ua', 'Course 2. Programming', 0, 0, 120, 0, '', '', '', NULL, NULL),
 	(3, 'course3', 'ua', 'Course 3. Math', 0, 0, 30, 0, '', '', '', NULL, NULL),
@@ -508,11 +508,175 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.mainpage: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.mainpage: ~0 rows (approximately)
 /*!40000 ALTER TABLE `mainpage` DISABLE KEYS */;
 INSERT INTO `mainpage` (`id`, `language`, `title`, `sliderHeader`, `sliderText`, `category`, `message`, `sliderTextureURL`, `sliderLineURL`, `sliderButtonText`, `header1`, `subLineImage`, `subheader1`, `arrayBlocks`, `header2`, `subheader2`, `arraySteps`, `stepSize`, `linkName`, `hexagon`, `formHeader1`, `formHeader2`, `regText`, `buttonStart`, `socialText`, `imageNetwork`, `formFon`) VALUES
 	(0, 'ua', 'INTITA', 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту і стань класним спеціалістом!', 'mainpage', 'PROGRAM FUTURE', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png', 'Готові розпочати?', 'Введіть дані в форму нижче', 'розширена реєстрація', 'ПОЧАТИ', 'Ви можете також зареєструватися через соцмережі:', '/css/images/networking.png', '/css/images/formFon.png');
 /*!40000 ALTER TABLE `mainpage` ENABLE KEYS */;
+
+
+-- Dumping structure for table int_ita_db.messages
+DROP TABLE IF EXISTS `messages`;
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` int(11) NOT NULL,
+  `language` varchar(16) NOT NULL,
+  `translation` text NOT NULL,
+  PRIMARY KEY (`id`,`language`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table int_ita_db.messages: ~149 rows (approximately)
+/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+INSERT INTO `messages` (`id`, `language`, `translation`) VALUES
+	(1, 'ua', 'INTITA'),
+	(2, 'ua', 'Про нас'),
+	(3, 'ua', 'Як розпочати навчання?'),
+	(4, 'ua', 'детальніше ...'),
+	(5, 'ua', 'ПРОГРАМУЙ МАЙБУТНЄ'),
+	(6, 'ua', 'Важлива інформація про навчання разом з нами'),
+	(7, 'ua', 'П’ять кроків до здійснення твоїх мрій'),
+	(8, 'ua', 'ПОЧАТИ  />'),
+	(9, 'ua', 'Готові розпочати?'),
+	(10, 'ua', 'Введіть дані в форму нижче'),
+	(11, 'ua', 'розширена реєстрація'),
+	(12, 'ua', 'Ви можете також зареєструватися через соцмережі:'),
+	(13, 'ua', 'ПОЧАТИ'),
+	(14, 'ua', 'Електронна пошта'),
+	(15, 'ua', 'Пароль'),
+	(16, 'ua', 'Курси'),
+	(17, 'ua', 'Форум'),
+	(18, 'ua', 'Про нас'),
+	(19, 'ua', 'Вхід'),
+	(20, 'ua', 'Вихід'),
+	(21, 'ua', 'Викладачі'),
+	(22, 'ua', 'Вихід'),
+	(23, 'ua', 'телефон: +38 0432 52 82 67 '),
+	(24, 'ua', 'тел. моб. +38 067 432 20 10'),
+	(25, 'ua', 'e-mail: intita.hr@gmail.com'),
+	(26, 'ua', 'скайп: int.ita'),
+	(27, 'ua', 'Ми гарантуємо тобі отримання пропозиції працевлаштування<br>\r\nпісля успішного завершення навчання!'),
+	(28, 'ua', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту<br>\r\nі стань класним спеціалістом!'),
+	(29, 'ua', 'Один рік наполегливого та цікавого навчання - і ти станеш професійним програмістом<br>\r\nготовим працювати в індустрії інформаційних технологій!\r\n'),
+	(30, 'ua', 'Хочеш стати висококласним спеціалістом?<br>\r\nПриймай вірне і виважене рішення - навчайся разом з нами! \r\n'),
+	(31, 'ua', 'Не втрачай свій шанс на творчу, цікаву, гідну та перспективну працю –<br>\r\n плануй своє професійне майбутнє вже сьогодні!'),
+	(32, 'ua', 'Про що мрієш ти?'),
+	(33, 'ua', 'Навчання майбутнього'),
+	(34, 'ua', 'Важливі питання'),
+	(35, 'ua', 'Можливо, це свобода жити своїм життям? \r\nСамостійно керувати власним часом\r\nз можливістю заробляти, займаючись \r\nулюбленою справою і отримувати \r\nзадоволення від сучасної професії?'),
+	(36, 'ua', 'На відміну від традиційних закладів, \r\nми не навчаємо задля оцінок.  \r\nМи працюємо індивідуально  \r\nз кожним студентом, щоб досягти \r\n100% засвоєння необхідних знань. '),
+	(37, 'ua', 'Ми пропонуємо кожному нашому \r\nвипускнику гарантоване отримання \r\nпропозиції працевлаштування \r\nпротягом 4-6-ти місяців після \r\nуспішного завершення навчання.'),
+	(38, 'ua', 'Реєстрація на сайті'),
+	(39, 'ua', 'Вибір курсу чи модуля'),
+	(40, 'ua', 'Проплата за навчання'),
+	(41, 'ua', 'Освоєння матеріалу'),
+	(42, 'ua', 'Завершення курсу'),
+	(43, 'ua', 'крок'),
+	(44, 'ua', 'Щоб отримати доступ до курсів та пройти безкоштовні модулі і заняття зареєструйся на сайті. Реєстрація дозволить тобі оцінити якість та зручність нашого продукт, який стане для тебе надійним партнером і порадником в професійній самореалізації.'),
+	(45, 'ua', 'Щоб стати спеціалістом певного напрямку та рівня (отримати професійну спеціалізацію) вибери для проходження відповідний курс. Якщо Тебе цікавить виключно поглиблення знань в певному напрямку інформаційних технологій, то вибери відповідний модуль для проходження.'),
+	(46, 'ua', 'Щоб розпочати проходження курсу чи модуля вибери схему оплати (вся сума за курс, оплата модулів, оплата потриместрово, помісячно тощо) та здійсни оплату зручним Тобі способом (схему оплати курсу чи модуля можна змінювати, також можлива помісячна оплата в кредит).'),
+	(47, 'ua', 'Вивчення матеріалу можливе шляхом читання тексту чи/і перегляду відео для кожного заняття. Під час проходження заняття виконуй Проміжні тестові завдання. По завершенню кожного заняття виконуй Підсумкове тестове завдання. Кожен модуль завершується Індивідуальним проектом чи Екзаменом. 	Можна отримати індивідуальну консультацію викладача чи консультацію онлайн.'),
+	(48, 'ua', 'Підсумком курсу є Командний дипломний проект, який виконується разом з іншими студентами (склад команди формуєш самостійно чи рекомендує керівник, який затверджує тему і технічне завдання проекту). Здача проекту передбачає передзахист та захист в он-лайн режимі із представленням технічної документації. Після захисту видається диплом та рекомендація для працевлаштування.'),
+	(49, 'ua', 'Головна'),
+	(50, 'ua', 'Курси'),
+	(51, 'ua', 'Про нас'),
+	(52, 'ua', 'Викладачі'),
+	(53, 'ua', 'Форум'),
+	(54, 'ua', 'Профіль'),
+	(55, 'ua', 'Редагувати профіль'),
+	(56, 'ua', 'Реєстрація'),
+	(57, 'ua', 'Профіль викладача'),
+	(58, 'ua', 'Наші викладачі'),
+	(59, 'ua', 'персональна сторінка'),
+	(60, 'ua', 'Якщо ви професійний ІТ-шник і бажаєте викладати окремі ІТ курси чи модулі і співпрацювати з нами в напрямку підготовки програмістів, напишіть нам листа.'),
+	(61, 'ua', 'Веде курси:'),
+	(62, 'ua', 'Читати повністю'),
+	(63, 'ua', 'Відгуки'),
+	(64, 'ua', 'Розділ:'),
+	(65, 'ua', 'Про викладача:'),
+	(66, 'ua', 'Наші курси'),
+	(67, 'ua', 'Концепція підготовки'),
+	(68, 'ua', 'Рівень курсу:'),
+	(69, 'ua', 'Мова курсу:'),
+	(70, 'ua', 'Курс:'),
+	(71, 'ua', 'мова:'),
+	(72, 'ua', 'Модуль:'),
+	(73, 'ua', 'Заняття:'),
+	(74, 'ua', 'Тип:'),
+	(75, 'ua', 'Тривалість:'),
+	(76, 'ua', 'хв'),
+	(77, 'ua', 'Викладач'),
+	(78, 'ua', 'детальніше'),
+	(79, 'ua', 'Запланувати консультацію'),
+	(80, 'ua', 'Зміст'),
+	(81, 'ua', 'показати'),
+	(82, 'ua', 'приховати'),
+	(83, 'ua', 'Відео'),
+	(84, 'ua', 'Зразок коду'),
+	(85, 'ua', 'Інструкція'),
+	(86, 'ua', 'Завдання'),
+	(87, 'ua', 'переглянути знову попередній урок'),
+	(88, 'ua', 'НАСТУПНИЙ УРОК'),
+	(89, 'ua', 'Відповісти'),
+	(90, 'ua', 'Підсумкове завдання'),
+	(91, 'ua', 'Ви можете також увійти через соцмережі:'),
+	(92, 'ua', 'Забули пароль?'),
+	(93, 'ua', 'ВВІЙТИ'),
+	(94, 'ua', 'Стан курсу: '),
+	(95, 'ua', 'Профіль студента'),
+	(96, 'ua', 'Редагувати </br> профіль'),
+	(97, 'ua', ' років'),
+	(98, 'ua', ' рік'),
+	(99, 'ua', ' роки'),
+	(100, 'ua', 'Про себе:'),
+	(101, 'ua', 'Електрона пошта:'),
+	(102, 'ua', 'Телефон:'),
+	(103, 'ua', 'Освіта:'),
+	(104, 'ua', 'Інтереси:'),
+	(105, 'ua', 'Звідки дізнався про Вас:'),
+	(106, 'ua', 'Форма навчання:'),
+	(107, 'ua', 'Завершенні курси:'),
+	(108, 'ua', 'Мої курси'),
+	(109, 'ua', 'Розклад'),
+	(110, 'ua', 'Консультації'),
+	(111, 'ua', 'Екзамени'),
+	(112, 'ua', 'Проекти'),
+	(113, 'ua', 'Мій рейтинг'),
+	(114, 'ua', 'Завантаження'),
+	(115, 'ua', 'Листування'),
+	(116, 'ua', 'Мої оцінювання'),
+	(117, 'ua', 'Фінанси'),
+	(118, 'ua', 'Поточний курс:'),
+	(119, 'ua', 'Незавершений курс:'),
+	(120, 'ua', 'Завершений курс:'),
+	(121, 'ua', 'Необхідно здійснити наступну проплату до'),
+	(122, 'ua', 'Сума проплати:'),
+	(123, 'ua', ' грн'),
+	(124, 'ua', 'Індивідуальний модульний проект'),
+	(125, 'ua', 'Командний дипломний проект'),
+	(126, 'ua', 'Тип'),
+	(127, 'ua', 'Дата'),
+	(128, 'ua', 'Час'),
+	(129, 'ua', 'Викладач'),
+	(130, 'ua', 'Тема'),
+	(131, 'ua', 'Е'),
+	(132, 'ua', 'К'),
+	(133, 'ua', 'ІМП'),
+	(134, 'ua', 'КДП'),
+	(135, 'ua', ' сильний початківець'),
+	(136, 'ua', ' українська'),
+	(137, 'ua', 'Випускники'),
+	(138, 'ua', 'Вибачте, Ви не можете переглядати цю лекцію. Щоб отримати доступ до цієї лекції, зареєструйтесь або увійдіть у свій аккаунт.'),
+	(139, 'ua', ''),
+	(140, 'ua', 'Для початківців'),
+	(141, 'ua', 'Для спеціалістів'),
+	(142, 'ua', 'Для експертів'),
+	(143, 'ua', 'Усі курси'),
+	(144, 'ua', 'знижка'),
+	(145, 'ua', 'Оцінка курсу:'),
+	(146, 'ua', 'детальніше ...'),
+	(147, 'ua', 'Вартість курсу: '),
+	(148, 'ua', 'Спочатку навчання створюється стійкий фундамент для підготовки програмістів: необхідні знання елементарної математики, будови комп’ютера і основ інформатики.'),
+	(149, 'ua', '<p>Потім вивчаються основні принципи програмування на базі класичних комп&rsquo;ютерних наук і методологій: алгоритмічна мова;елементи вищої та дискретної математики і комбінаторики; структури даних, розробка і аналіз алгоритмів.                                 \r\n<p>Після чого формується база для переходу до сучасних технологій програмування: об’єктно-орієнтоване програмування; проектування баз даних.\r\n<p>Завершення процесу підготовки шляхом конкретного застосування отриманих знань на реальних проектах із засвоєнням сучасних методів і технологій, які використовуються в ІТ індустрії компаніями.');
+/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 
 
 -- Dumping structure for table int_ita_db.module
@@ -559,7 +723,7 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   CONSTRAINT `FK_permissions_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='User rights for lectures: BIT (32) \r\n0 - read\r\n1 - edit\r\n2 - create\r\n3 - delete  ';
 
--- Dumping data for table int_ita_db.permissions: ~2 rows (approximately)
+-- Dumping data for table int_ita_db.permissions: ~1 rows (approximately)
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
 INSERT INTO `permissions` (`id_user`, `id_resource`, `rights`) VALUES
 	(1, 1, b'10000000'),
@@ -576,7 +740,7 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~150 rows (approximately)
+-- Dumping data for table int_ita_db.sourcemessages: ~136 rows (approximately)
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', '0001'),
@@ -858,7 +1022,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesen` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesen: ~150 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesen: ~136 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesen` DISABLE KEYS */;
 INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(1, 'en', 'INTITA'),
@@ -1024,7 +1188,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesru: ~150 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesru: ~136 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
 INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(1, 'ru', 'INTITA'),
@@ -1165,7 +1329,7 @@ INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(136, 'ru', ' украинский'),
 	(137, 'ru', 'Выпускники'),
 	(138, 'ru', 'Извините, Вы не можете просматривать эту лекцию. Пожалуйста, зарестрируйтесь для доступа к этой лекции.'),
-	(139, 'ru', ''),
+	(139, 'ru', 'Извините, Вы не можете просматривать эту лекцию. Вы не имеете доступа к этой лекции. Пожалуйста, зайдите в свой аккаунт и оплатите доступ.'),
 	(140, 'ru', 'Для начинающих'),
 	(141, 'ru', 'Для специалистов'),
 	(142, 'ru', 'Для экспертов'),
@@ -1188,9 +1352,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   `translation` text NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_translatedmessages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
 
--- Dumping data for table int_ita_db.translatedmessagesua: ~150 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesua: ~136 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesua` DISABLE KEYS */;
 INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -1331,7 +1495,7 @@ INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(136, 'ua', ' українська'),
 	(137, 'ua', 'Випускники'),
 	(138, 'ua', 'Вибачте, Ви не можете переглядати цю лекцію. Щоб отримати доступ до цієї лекції, зареєструйтесь або увійдіть у свій аккаунт.'),
-	(139, 'ua', ''),
+	(139, 'ua', 'Вибачте, у Вас немає доступу до цієї лекції. Будь-ласка. зайдіть у свій аккаунт та оплатіть доступ до лекції.'),
 	(140, 'ua', 'Для початківців'),
 	(141, 'ua', 'Для спеціалістів'),
 	(142, 'ua', 'Для експертів'),
@@ -1374,7 +1538,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.user: ~25 rows (approximately)
+-- Dumping data for table int_ita_db.user: ~14 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `firstName`, `identity`, `network`, `state`, `full_name`, `middleName`, `secondName`, `nickname`, `birthday`, `email`, `password`, `phone`, `hash`, `address`, `education`, `educform`, `interests`, `aboutUs`, `aboutMy`, `avatar`, `role`) VALUES
 	(1, 'Вова', '', '', 0, '', 'Джа', 'Марля', 'Wizlight', '21/03/1997', 'Wizlightdragon@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', '911', '', 'Ямайка', 'ВДПУ', 'Онлайн', 'Ковбаска, колобки, раста', 'Інтернет', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', '/css/images/1id.jpg', ''),

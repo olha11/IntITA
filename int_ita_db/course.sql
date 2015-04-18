@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-17 17:05:37
+-- Date/time:                    2015-04-18 17:33:15
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `course` (
   `course_name` varchar(45) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `modules_count` int(255) DEFAULT NULL,
-  `course_duration_lectures` int(11) NOT NULL,
+  `course_duration_hours` int(11) NOT NULL,
   `course_price` decimal(10,0) DEFAULT NULL,
   `for_whom` text,
   `what_you_learn` text,
@@ -30,9 +30,9 @@ CREATE TABLE IF NOT EXISTS `course` (
   UNIQUE KEY `course_name` (`course_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='status: 0 - in develop, 1 - avaliable';
 
--- Dumping data for table int_ita_db.course: ~4 rows (approximately)
+-- Dumping data for table int_ita_db.course: ~9 rows (approximately)
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
-INSERT INTO `course` (`course_ID`, `alias`, `language`, `course_name`, `status`, `modules_count`, `course_duration_lectures`, `course_price`, `for_whom`, `what_you_learn`, `what_you_get`, `course_img`, `review`) VALUES
+INSERT INTO `course` (`course_ID`, `alias`, `language`, `course_name`, `status`, `modules_count`, `course_duration_hours`, `course_price`, `for_whom`, `what_you_learn`, `what_you_get`, `course_img`, `review`) VALUES
 	(1, 'course1', 'ua', 'Програмування для чайників', 0, 7, 89, 6548, 'хто відповідає за постановку завдань на розробку;для дизайнерів, які готові почати не просто малювати красиві картинки, а й навчитися тому, як створювати працюючі і зручні інтерфейси;для розробників, які хочуть самостійно створити або змінити свій проект;', 'Ви навчитеся писати чистий код;Користуватися системами контролю версій;Дізнаєтеся, з чого складається сучасний додаток;Для чого потрібен безперервна інтеграція (СІ) сервер;Чому потрібно тестувати свої програми і як це робити;', 'Відеозаписи та текстові матеріали всіх онлайн-занять;Спілкування з розумними одногрупниками;Сертифікат про закінчення навчання;Прилаштованість на робоче місце в силіконовій долині;', '/css/images/course1Image.png', NULL),
 	(2, 'course2', 'ua', 'Course 2. Programming', 0, 0, 120, 0, '', '', '', NULL, NULL),
 	(3, 'course3', 'ua', 'Course 3. Math', 0, 0, 30, 0, '', '', '', NULL, NULL),

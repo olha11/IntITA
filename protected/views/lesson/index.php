@@ -35,32 +35,29 @@ $this->breadcrumbs=array(
 </div>
 
 <div class="lessonBlock" id="lessonBlock">
-    <?php $this->renderPartial('_sidebar', array('lecture'=>$lecture, 'skype'=>$lecture->getTeacherInfoById(1)));?>
+    <?php $this->renderPartial('_sidebar', array('lecture'=>$lecture, 'skype'=>$lecture->getTeacherInfoById(1)['skype']));?>
 
 
-<div class="lessonText">
-    <h1 class="lessonTheme">Змінні та типи даних в PHP </h1>
-    <span class="listTheme">Зміст </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
+    <div class="lessonText">
+        <h1 class="lessonTheme">Змінні та типи даних в PHP </h1>
+        <span class="listTheme">Зміст </span><span class="spoilerLinks"><span class="spoilerClick">(показати)</span><span class="spoilerTriangle"> &#9660;</span></span>
 
-    <div class="spoilerBody">
-        <p><a href="#Частина 1: Типи змінних та перемінних">Частина 1: Типи змінних та перемінних</a></p>
-        <p><a href="#Частина 7: Типи данних та математичний аналіз">Частина 7: Типи данних та математичний аналіз</a></p>
-    </div>
+        <div class="spoilerBody">
+            <p><a href="#Частина 1: Типи змінних та перемінних">Частина 1: Типи змінних та перемінних</a></p>
+            <p><a href="#Частина 7: Типи данних та математичний аналіз">Частина 7: Типи данних та математичний аналіз</a></p>
+        </div>
 
-<!-- Lesson content-->
-<?php
-
-$this->widget('zii.widgets.CListView', array(
-    'dataProvider'=>$dataProvider,
-    'itemView'=>'_content',
-    'summaryText' => '',
-    'emptyText' => 'В данной лекции еще ничего нет (',
-));
-?>
+        <!-- Lesson content-->
+        <?php
+        $this->widget('zii.widgets.CListView', array(
+            'dataProvider'=>$dataProvider,
+            'itemView'=>'_content',
+            'summaryText' => '',
+            'emptyText' => 'В данной лекции еще ничего нет (',
+        ));
+        ?>
     </div>
 </div>
 
 <!-- lesson footer -->
 <?php $this->renderPartial('_lectureFooter', array('lecture'=>$lecture));?>
-
-
