@@ -30,4 +30,9 @@ class LessonController extends Controller{
             'lecture' => $lecture,
         ));
     }
+
+    public function actionLesson(){
+        $this->render('index');
+    }
+
 }
