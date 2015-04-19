@@ -52,10 +52,22 @@ class StudentReg extends CActiveRecord
         // will receive user inputs.
         return array(
             array('firstName, email, password, password_repeat', 'required', 'message'=>'Будь ласка введіть {attribute}.','on'=>'reguser'),
+            array('firstName, email', 'required', 'message'=>'{attribute} не може бути пустим.','on'=>'edit'),
             array('email, password', 'required', 'message'=>'Будь ласка введіть {attribute}.','on'=>'repidreg,loginuser,sociallogin'),
             array('email', 'email', 'message'=>'Email не являється правильною {attribute} адресою'),
-            array('email','unique', 'caseSensitive'=>true, 'allowEmpty'=>true,'message'=>'Email уже зайнятий','on'=>'repidreg,reguser'),
+            array('email','unique', 'caseSensitive'=>true, 'allowEmpty'=>true,'message'=>'Email уже зайнятий','on'=>'repidreg,reguser,edit'),
+//            array('avatar', 'file',
+//                'allowEmpty'  => true,
+//                'maxFiles'   => 1,
+//                'maxSize'   => 0.5,
+//                'types'   => 'jpg',
+//                'tooLarge' => 'Розмір файлу не має перевищувати 512кб',
+//                'tooMany' => 'Не можна завантажувати більше 1-го файла',
+//                'wrongType' => 'Невірний тип файла',
+//                'wrongMimeType' => 'Невірний MIME-тип файла',
+//                'on'=>'edit'),
             array('password', 'authenticate','on'=>'loginuser'),
+            array('password_repeat', 'passdiff','on'=>'edit'),
             //array('birthday', 'date','format' => 'dd/MM/yyyy','message'=>'Введіть дату народження в форматі дд.мм.рррр'),
             array('password', 'compare', 'compareAttribute'=>'password_repeat', 'message'=>'Паролі не співпадають','on'=>'reguser'),
             array('firstName, secondName, nickname, email, password, education', 'length', 'max'=>255),
@@ -73,6 +85,13 @@ class StudentReg extends CActiveRecord
         $this->_identity=new UserIdentity($this->email,$this->password);
         if(!$this->_identity->authenticate())
             $this->addError('password',"Невірний email або пароль.");
+    }
+    public function passdiff($pass1,$pass2)
+    {
+        if (isset($this->password) || isset($this->password_repeat)){
+        if($this->password!==$this->password_repeat)
+            $this->addError('password','Паролі не співпадають');
+        }
     }
     /**
      * @return array relational rules.
