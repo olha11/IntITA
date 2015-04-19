@@ -30,7 +30,7 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
 <div class="formStudProf">
     <?php $form=$this->beginWidget('CActiveForm', array(
         'id'=>'studentreg-form',
-        'action'=> Yii::app()->createUrl('studentreg/rewrite', array('id'=>$post->id)),
+        'action'=> Yii::app()->createUrl('studentreg/rewrite'),
 // Please note: When you enable ajax validation, make sure the corresponding
 // controller action is handling ajax validation correctly.
 // There is a call to performAjaxValidation() commented in generated controller code.
@@ -46,7 +46,6 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
                 </td>
             </tr>
         </table>
-        <?php echo CHtml::hiddenField('id', $post->id); ?>
 
         <div class="row">
             <?php echo $form->label($model,'firstName'); ?>
@@ -94,8 +93,7 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
             <span><?php echo $form->error($model,'interests'); ?></span>
         </div>
         <div class="row">
-            <?php echo $form->label($model,'aboutUs'); ?>
-            <?php echo $form->textField($model,'aboutUs',array('value'=>$post->aboutUs)); ?>
+            <?php echo $form->textField($model,'aboutUs',array('placeholder'=>'звідки Ви про нас дізналися?', 'id'=>'aboutUs')); ?>
             <span><?php echo $form->error($model,'aboutUs'); ?></span>
         </div>
         <div class="row">
