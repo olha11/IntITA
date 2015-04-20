@@ -122,11 +122,11 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
                 <?php $this->renderPartial('_myRatting'); ?>
             </section>
             <section id="myDownload">
-                <?php //$this->renderPartial('_myDownload'); ?>
+                <?php $this->renderPartial('_myDownload'); ?>
             </section>
             <section id="mylettersSend">
-                <?php //$this->renderPartial('_mylettersSend'); ?>
-                <form method="post" action="<?php echo Yii::app()->request->baseUrl; ?>/?r=studentreg/sendletter">
+                <?php $this->renderPartial('_mylettersSend'); ?>
+                <form method="post" action="<?php echo Yii::app()->request->baseUrl; ?>/studentreg/sendletter">
                     <label for="letterTheme">Тема:</label>
                     <input type="text" id="letterTheme" name="letterTheme" /></br> </br>
                     <label for="send_letter">Повідомлення:</label>

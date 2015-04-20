@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-20 19:30:11
+-- Date/time:                    2015-04-21 01:48:15
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_authorizations: ~46 rows (approximately)
+-- Dumping data for table int_ita_db.aa_authorizations: ~50 rows (approximately)
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
 INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(1, 2, '2015-03-02 15:33:25', '::1'),
@@ -262,7 +262,8 @@ CREATE TABLE IF NOT EXISTS `course` (
   `alias` varchar(10) NOT NULL,
   `language` varchar(6) NOT NULL,
   `course_name` varchar(45) NOT NULL,
-  `status` tinyint(1) NOT NULL,
+  `status` enum('intern','junior','strong junior','middle','senior') NOT NULL,
+  `start` date NOT NULL,
   `modules_count` int(255) DEFAULT NULL,
   `course_duration_hours` int(11) NOT NULL,
   `course_price` decimal(10,0) DEFAULT NULL,
@@ -275,18 +276,16 @@ CREATE TABLE IF NOT EXISTS `course` (
   UNIQUE KEY `course_name` (`course_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='status: 0 - in develop, 1 - avaliable';
 
--- Dumping data for table int_ita_db.course: ~9 rows (approximately)
+-- Dumping data for table int_ita_db.course: ~7 rows (approximately)
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
-INSERT INTO `course` (`course_ID`, `alias`, `language`, `course_name`, `status`, `modules_count`, `course_duration_hours`, `course_price`, `for_whom`, `what_you_learn`, `what_you_get`, `course_img`, `review`) VALUES
-	(1, 'course1', 'ua', 'Програмування для чайників', 0, 7, 89, 6548, 'хто відповідає за постановку завдань на розробку;для дизайнерів, які готові почати не просто малювати красиві картинки, а й навчитися тому, як створювати працюючі і зручні інтерфейси;для розробників, які хочуть самостійно створити або змінити свій проект;', 'Ви навчитеся писати чистий код;Користуватися системами контролю версій;Дізнаєтеся, з чого складається сучасний додаток;Для чого потрібен безперервна інтеграція (СІ) сервер;Чому потрібно тестувати свої програми і як це робити;', 'Відеозаписи та текстові матеріали всіх онлайн-занять;Спілкування з розумними одногрупниками;Сертифікат про закінчення навчання;Прилаштованість на робоче місце в силіконовій долині;', '/css/images/course1Image.png', NULL),
-	(2, 'course2', 'ua', 'Course 2. Programming', 0, 0, 120, 0, '', '', '', NULL, NULL),
-	(3, 'course3', 'ua', 'Course 3. Math', 0, 0, 30, 0, '', '', '', NULL, NULL),
-	(4, 'course4', 'ua', 'Course 4. Discrete math', 0, 0, 40, 0, '', '', '', NULL, NULL),
-	(5, 'course5', 'ua', 'Course 5', 0, 0, 36, 0, '', '', '', NULL, NULL),
-	(6, 'course6', 'ua', 'Course 6', 0, 0, 130, 0, '', '', '', NULL, NULL),
-	(7, 'course7', 'ua', 'Course 7', 0, 0, 64, 0, '', '', '', NULL, NULL),
-	(8, 'course8', 'ua', 'Course 8', 0, 0, 54, 0, '', '', '', NULL, NULL),
-	(9, 'course9', 'ua', 'Course 9', 0, 0, 90, 0, '', '', '', NULL, NULL);
+INSERT INTO `course` (`course_ID`, `alias`, `language`, `course_name`, `status`, `start`, `modules_count`, `course_duration_hours`, `course_price`, `for_whom`, `what_you_learn`, `what_you_get`, `course_img`, `review`) VALUES
+	(1, 'Php', 'ua', 'Інтернет програміст (РНР)', 'strong junior', '2015-07-30', 7, 89, 6548, 'хто відповідає за постановку завдань на розробку;для дизайнерів, які готові почати не просто малювати красиві картинки, а й навчитися тому, як створювати працюючі і зручні інтерфейси;для розробників, які хочуть самостійно створити або змінити свій проект;', 'Ви навчитеся писати чистий код;Користуватися системами контролю версій;Дізнаєтеся, з чого складається сучасний додаток;Для чого потрібен безперервна інтеграція (СІ) сервер;Чому потрібно тестувати свої програми і як це робити;', 'Відеозаписи та текстові матеріали всіх онлайн-занять;Спілкування з розумними одногрупниками;Сертифікат про закінчення навчання;Прилаштованість на робоче місце в силіконовій долині;', '/css/images/course1Image.png', NULL),
+	(2, 'Javascript', 'ua', 'Інтернет програміст (Java Script)', 'strong junior', '2015-10-30', 0, 120, 0, '', '', '', NULL, NULL),
+	(3, 'Java', 'ua', 'Програміст (Java)', 'strong junior', '2015-10-30', 0, 30, 0, '', '', '', NULL, NULL),
+	(4, 'C#', 'ua', 'Програміст (C#)', 'strong junior', '2015-10-30', 0, 40, 0, '', '', '', NULL, NULL),
+	(5, 'C++', 'ua', 'Програміст (С++)', 'intern', '2015-12-30', 0, 36, 0, '', '', '', NULL, NULL),
+	(6, 'ObjectiveC', 'ua', 'Програміст (Objective С)', 'middle', '2015-10-30', 0, 130, 0, '', '', '', NULL, NULL),
+	(7, 'QA', 'ua', 'Тестувальник (QA)', 'junior', '2016-02-28', 0, 64, 0, '', '', '', NULL, NULL);
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 
 
@@ -370,9 +369,9 @@ CREATE TABLE IF NOT EXISTS `language` (
 -- Dumping data for table int_ita_db.language: ~3 rows (approximately)
 /*!40000 ALTER TABLE `language` DISABLE KEYS */;
 INSERT INTO `language` (`id`, `code`, `language`, `country`) VALUES
-	(1, 'RU', 'русский', 'Россия'),
-	(2, 'EN', 'english', 'Great Britain'),
-	(3, 'UA', 'українська', 'Україна');
+	(1, 'ru', 'русский', 'Россия'),
+	(2, 'en', 'english', 'Great Britain'),
+	(3, 'ua', 'українська', 'Україна');
 /*!40000 ALTER TABLE `language` ENABLE KEYS */;
 
 
@@ -414,17 +413,18 @@ CREATE TABLE IF NOT EXISTS `lecturetype` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) NOT NULL,
   `text` varchar(50) NOT NULL,
+  `short` varchar(5) NOT NULL,
   `description` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table int_ita_db.lecturetype: ~4 rows (approximately)
 /*!40000 ALTER TABLE `lecturetype` DISABLE KEYS */;
-INSERT INTO `lecturetype` (`id`, `image`, `text`, `description`) VALUES
-	(1, '/css/images/lectureType.png', 'лекція/практика', ''),
-	(2, '/css/images/lectureType.png', 'екзамен', ''),
-	(3, '', 'індивідуальний модульний проект', ''),
-	(4, '', 'командний дипломний проект', '');
+INSERT INTO `lecturetype` (`id`, `image`, `text`, `short`, `description`) VALUES
+	(1, '/css/images/lectureType.png', 'лекція/практика', 'л/п', ''),
+	(2, '/css/images/exam.png', 'екзамен', 'екз', ''),
+	(3, '/css/images/imp.png', 'індивідуальний модульний проект', 'ІМП', ''),
+	(4, '/css/images/kdp.png', 'командний дипломний проект', 'КДП', '');
 /*!40000 ALTER TABLE `lecturetype` ENABLE KEYS */;
 
 
@@ -508,7 +508,7 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.mainpage: ~0 rows (approximately)
+-- Dumping data for table int_ita_db.mainpage: ~1 rows (approximately)
 /*!40000 ALTER TABLE `mainpage` DISABLE KEYS */;
 INSERT INTO `mainpage` (`id`, `language`, `title`, `sliderHeader`, `sliderText`, `category`, `message`, `sliderTextureURL`, `sliderLineURL`, `sliderButtonText`, `header1`, `subLineImage`, `subheader1`, `arrayBlocks`, `header2`, `subheader2`, `arraySteps`, `stepSize`, `linkName`, `hexagon`, `formHeader1`, `formHeader2`, `regText`, `buttonStart`, `socialText`, `imageNetwork`, `formFon`) VALUES
 	(0, 'ua', 'INTITA', 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту і стань класним спеціалістом!', 'mainpage', 'PROGRAM FUTURE', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png', 'Готові розпочати?', 'Введіть дані в форму нижче', 'розширена реєстрація', 'ПОЧАТИ', 'Ви можете також зареєструватися через соцмережі:', '/css/images/networking.png', '/css/images/formFon.png');
@@ -525,7 +525,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
   CONSTRAINT `FK_messages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.messages: ~447 rows (approximately)
+-- Dumping data for table int_ita_db.messages: ~516 rows (approximately)
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
 INSERT INTO `messages` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -536,10 +536,10 @@ INSERT INTO `messages` (`id`, `language`, `translation`) VALUES
 	(6, 'ua', 'Важлива інформація про навчання разом з нами'),
 	(7, 'ua', 'П’ять кроків до здійснення твоїх мрій'),
 	(8, 'ua', 'ПОЧАТИ  />'),
-	(9, 'ua', 'Готові розпочати?'),
+	(9, 'ua', 'Реєстрація в один клік'),
 	(10, 'ua', 'Введіть дані в форму нижче'),
 	(11, 'ua', 'розширена реєстрація'),
-	(12, 'ua', 'Ви можете також зареєструватися через соцмережі:'),
+	(12, 'ua', 'Зареєструватись через соцмережі'),
 	(13, 'ua', 'ПОЧАТИ'),
 	(14, 'ua', 'Електронна пошта'),
 	(15, 'ua', 'Пароль'),
@@ -587,7 +587,7 @@ INSERT INTO `messages` (`id`, `language`, `translation`) VALUES
 	(57, 'ua', 'Профіль викладача'),
 	(58, 'ua', 'Наші викладачі'),
 	(59, 'ua', 'персональна сторінка'),
-	(60, 'ua', 'Якщо ви професійний ІТ-шник і бажаєте викладати окремі ІТ курси чи модулі і співпрацювати з нами в напрямку підготовки програмістів, напишіть нам листа.'),
+	(60, 'ua', 'Якщо ви професійний ІТ-шник і бажаєте викладати окремі ІТ теми чи модулі і співпрацювати з нами в напрямку підготовки програмістів, напишіть нам листа.'),
 	(61, 'ua', 'Веде курси:'),
 	(62, 'ua', 'Читати повністю'),
 	(63, 'ua', 'Відгуки'),
@@ -666,7 +666,7 @@ INSERT INTO `messages` (`id`, `language`, `translation`) VALUES
 	(136, 'ua', ' українська'),
 	(137, 'ua', 'Випускники'),
 	(138, 'ua', 'Вибачте, Ви не можете переглядати цю лекцію. Щоб отримати доступ до цієї лекції, зареєструйтесь або увійдіть у свій аккаунт.'),
-	(139, 'ua', ''),
+	(139, 'ua', 'Вибачте, Ви не можете переглядати цю лекцію. Щоб отримати доступ до цієї лекції, увійдіть у свій аккаунт та оплатіть доступ до лекції.'),
 	(140, 'ua', 'Для початківців'),
 	(141, 'ua', 'Для спеціалістів'),
 	(142, 'ua', 'Для експертів'),
@@ -675,7 +675,7 @@ INSERT INTO `messages` (`id`, `language`, `translation`) VALUES
 	(145, 'ua', 'Оцінка курсу:'),
 	(146, 'ua', 'детальніше ...'),
 	(147, 'ua', 'Вартість курсу: '),
-	(148, 'ua', 'Спочатку навчання створюється стійкий фундамент для підготовки програмістів: необхідні знання елементарної математики, будови комп’ютера і основ інформатики.'),
+	(148, 'ua', 'Спочатку навчання створюється стійкий фундамент для підготовки програмістів: необхідні знання елементарної математики, будови комп’ютера і основ програмування.'),
 	(149, 'ua', '<p>Потім вивчаються основні принципи програмування на базі класичних комп&rsquo;ютерних наук і методологій: алгоритмічна мова;елементи вищої та дискретної математики і комбінаторики; структури даних, розробка і аналіз алгоритмів.                                 \r\n<p>Після чого формується база для переходу до сучасних технологій програмування: об’єктно-орієнтоване програмування; проектування баз даних.\r\n<p>Завершення процесу підготовки шляхом конкретного застосування отриманих знань на реальних проектах із засвоєнням сучасних методів і технологій, які використовуються в ІТ індустрії компаніями.'),
 	(1, 'en', 'INTITA'),
 	(2, 'en', 'About Us'),
@@ -1084,18 +1084,18 @@ DROP TABLE IF EXISTS `permissions`;
 CREATE TABLE IF NOT EXISTS `permissions` (
   `id_user` int(11) NOT NULL,
   `id_resource` int(11) NOT NULL,
-  `rights` bit(32) NOT NULL,
+  `rights` tinyint(10) NOT NULL,
   PRIMARY KEY (`id_user`,`id_resource`),
   KEY `FK_permissions_lectures` (`id_resource`),
   CONSTRAINT `FK_permissions_lectures` FOREIGN KEY (`id_resource`) REFERENCES `lectures` (`id`),
   CONSTRAINT `FK_permissions_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='User rights for lectures: BIT (32) \r\n0 - read\r\n1 - edit\r\n2 - create\r\n3 - delete  ';
 
--- Dumping data for table int_ita_db.permissions: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.permissions: ~2 rows (approximately)
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
 INSERT INTO `permissions` (`id_user`, `id_resource`, `rights`) VALUES
-	(1, 1, b'10000000'),
-	(11, 1, b'11110000');
+	(1, 1, 1),
+	(11, 1, 15);
 /*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
 
 
@@ -1108,7 +1108,7 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=173 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~136 rows (approximately)
+-- Dumping data for table int_ita_db.sourcemessages: ~172 rows (approximately)
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', '0001'),
@@ -1412,7 +1412,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesen` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesen: ~136 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesen: ~150 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesen` DISABLE KEYS */;
 INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(1, 'en', 'INTITA'),
@@ -1578,7 +1578,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesru: ~136 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesru: ~150 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
 INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(1, 'ru', 'INTITA'),
@@ -1744,7 +1744,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   CONSTRAINT `FK_translatedmessages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
 
--- Dumping data for table int_ita_db.translatedmessagesua: ~136 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesua: ~150 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesua` DISABLE KEYS */;
 INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -1928,7 +1928,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.user: ~30 rows (approximately)
+-- Dumping data for table int_ita_db.user: ~34 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `firstName`, `identity`, `network`, `state`, `full_name`, `middleName`, `secondName`, `nickname`, `birthday`, `email`, `password`, `phone`, `hash`, `address`, `education`, `educform`, `interests`, `aboutUs`, `aboutMy`, `avatar`, `role`) VALUES
 	(1, 'Вова', '', '', 0, '', 'Джа', 'Марля', 'Wizlight', '21/03/1997', 'Wizlightdragon@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', '911', '', 'Ямайка', 'ВДПУ', 'Онлайн', 'Ковбаска, колобки, раста', 'Інтернет', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', '/css/images/1id.jpg', ''),
