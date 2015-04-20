@@ -42,7 +42,6 @@ div.regLinks{
     border: 1px solid #d8d8d8;
     border-radius: 5px;
 }
-
 table.titleProfile{
     margin:20px 0 0 24px;
     display:inline-block;
@@ -67,6 +66,7 @@ table.titleProfile td:last-child{
     font-size: 24px;
     margin-top: 0;
     margin-bottom: 0;
+    margin-right: 115px;
 }
 
 .studProfInf img.avatarimg{
@@ -156,7 +156,6 @@ p.tabHeader{
     color:#4b75a4;
     margin: 0 0 10px 0;
     font-weight: 500;
-
 }
 .profileCourse img{
     margin-left: 20px;
@@ -344,7 +343,6 @@ table.timeTable tr:first-child td{
 }
 .linkFinances {
     border-right: 1px solid gray;
-    text-transform: lowercase;
 }
 .colorF {
     color: #4b75a4;
@@ -376,7 +374,171 @@ table.timeTable tr:first-child td{
     border-bottom-width: 0px;
 }
 
-/*Timetable*/
+    /*Timetable*/
 /*consultation*/
 
-/*consultation*/
+
+
+
+
+
+
+
+
+
+
+/*-----ЗАВАНТАЖЕННЯ-----ЗАВАНТАЖЕННЯ-----ЗАВАНТАЖЕННЯ-----ЗАВАНТАЖЕННЯ-----ЗАВАНТАЖЕННЯ-----ЗАВАНТАЖЕННЯ-----*/
+.download_tabs {
+    width:100%;
+    display:inline-block;
+}
+.download_tab-links:after {
+    display:block;
+    clear:both;
+    content:'';
+}
+
+.download_tab-links li {
+    margin:0px 5px;
+    float:left;
+    list-style:none;
+}
+
+.download_tab-links a {
+    padding:9px 10px;
+    display:inline-block;
+    border-radius:3px 3px 0px 0px;
+    font-size:16px;
+    font-weight:600;
+    color:#4c4c4c;
+    transition:all linear 0.15s;
+}
+
+.download_tab-content {
+    padding:10px;
+    border-radius:3px;
+    box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+    background:#fff;
+}
+
+.download_tab {
+    display:none;
+}
+
+.download_tab.active {
+    display:block;
+}
+li.active a, li.active a:hover {
+    background: white;
+    color: #4b70a3;
+}
+
+
+.downlT {
+    color: #4b70a3;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-left: 40px;
+}
+.downlT1 {
+    color: #4b70a3;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 40px;
+}
+
+.downlT2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 40px;
+}
+
+.downlT3 {
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.downlT4 {
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 85px;
+}
+.downlT5 {
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 85px;
+}
+.ModLess {
+    border-bottom: 1px solid #d8d8d8;
+}
+
+/*------------------------------------------------------------------------------------------*/
+
+
+/***ЛИСТУВАНЯ----ЛИСТУВАНЯ----ЛИСТУВАНЯ----ЛИСТУВАНЯ----ЛИСТУВАНЯ----ЛИСТУВАНЯ----ЛИСТУВАНЯ***/
+.box_tabs {
+    width:100%;
+    display:inline-block;
+}
+
+.box_tab-links:after {
+    display:block;
+    clear:both;
+    content:'';
+}
+
+.box_tab-links li {
+    margin:0px 5px;
+    float:left;
+    list-style:none;
+}
+
+.box_tab-links a {
+    padding:9px 15px;
+    display:inline-block;
+    border-radius:1px 1px 1px 1px;
+    background:rgba(0,0,0,0.15);
+    font-size:16px;
+    font-weight:600;
+    color: grey;
+    transition:all linear 0.15s;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0,0,0,0.15)
+}
+
+.box_tab-links a:hover {
+    color: #4b70a3;
+}
+
+li.active_box a, li.active_box a:hover {
+    background: white;
+    color: #4b70a3;
+    border-color: rgba(0,0,0,0.15);
+}
+
+.box_tab-content {
+    padding:15px;
+    border-radius:3px;
+    box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+    background:#fff;
+}
+
+.box_tab {
+    display:none;
+}
+
+.box_tab.active_box {
+    display:block;
+}
+
+.Btn_Msg {
+    width: 150px;
+    height: 50px;
+    color:#ffffff;
+    background:#4b70a3;
+
+}
+/*------------------------------------------------------------------------------------------*/

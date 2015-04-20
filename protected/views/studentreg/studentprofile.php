@@ -37,10 +37,17 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
                     <h1><?php echo $post->firstName;?></h1>
                     <h1><?php echo $post->secondName;?></h1>
                     <div class="aboutInfo">
-                        <p>
-                            <?php echo $post->address;
+                        <p><?php echo $post->address;
                             if(!empty($post->address)&&!empty($post->birthday)) echo ', ';
-                            $post::getYears($post->birthday);
+                            $myAge = $post->birthday;
+                            $myAge = str_replace("/",".",$myAge);
+                            $date_a = new DateTime($myAge);
+                            $date_b = new DateTime();
+                            $interval = $date_b->diff($date_a);
+                            if($interval->format("%Y")!=='00'){
+                                echo $interval->format("%Y");
+                                $post::getYearsTermination($interval->format("%Y"));
+                            }
                             ?>
                         </p>
                     </div>
@@ -131,7 +138,7 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
                 endif; ?>
             </section>
             <section id="myMark">
-                <?php //$this->renderPartial('_myMark'); ?>
+                <?php $this->renderPartial('_myMark'); ?>
             </section>
             <section id="finances">
                 <?php $this->renderPartial('_finances'); ?>
