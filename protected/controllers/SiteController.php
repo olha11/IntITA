@@ -43,9 +43,6 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index1.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$modelCarousel = new Carousel();
-        $access = new Permissions();
-        $access->setPermission(1, 1, ['read']);
-        $access->setPermission(11, 1, ['read', 'edit', 'create', 'delete']);
 		$mainpage = new Mainpage();
 		$mainpage->setValueById(0);
 
