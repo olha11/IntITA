@@ -43,14 +43,12 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index1.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$modelCarousel = new Carousel();
-        $dataProvider = new CActiveDataProvider('Mainpage');
+        $access = new Permissions();
+        $access->setPermission(1, 1, ['read']);
+        $access->setPermission(11, 1, ['read', 'edit', 'create', 'delete']);
 		$mainpage = new Mainpage();
 		$mainpage->setValueById(0);
 
-        if (!(Yii::app()->session['translatedTable'])) {
-            $source = new MyCDbMessageSource();
-            $source->changeTranslatedTable('translatedmessagesua');
-        }
 		$arraySteps = $this->initSteps();
 		$arrayAboutUs = $this->initAboutus();
 		
@@ -205,8 +203,6 @@ class SiteController extends Controller
 //            }
 			$app->session['lg'] = $_GET['lg'];
 		}
-        $access = new Permissions();
-        //$access->setPermission(11, 1, ['read', 'edit', 'create', 'delete']);
         $this->redirect($_SERVER["HTTP_REFERER"]);
 	}
 	/**
