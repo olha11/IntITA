@@ -1,4 +1,3 @@
-
 <?php
 /* $this*/
 ?>
@@ -16,7 +15,6 @@ $post=Teacher::model()->findAll();
         Yii::t('breadcrumbs', '0052'));
     ?>
 </div>
-
 <div class='teachersList'>
     <div class="titleTeachers">
         <h1><?php echo Yii::t('teachers', '0058'); ?></h1>
@@ -40,7 +38,7 @@ $post=Teacher::model()->findAll();
                                 <h2><?php echo $teacherValue->first_name ?> <?php echo $teacherValue->middle_name ?></h2>
                                 <?php echo $teacherValue->profile_text ?>
                                 <p>
-                                    <?php echo Yii::t('teachers', 'Read courses:'); ?>
+                                    <?php echo Yii::t('teachers', 'Ведет курсы:'); ?>
                                 </p>
                                 <div class="teacherCourses">
                                     <ul>
@@ -82,6 +80,7 @@ $post=Teacher::model()->findAll();
                 <tr>
                     <td valign="top"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/teacher123.png"/></td>
                     <td valign="center"><div id="formTeacher3"><?php echo Yii::t('teachers', '0060');?></div></td>
+                    <td valign="top"><img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/close_button.png"/></td>
                 </tr>
             </table>
             <form method="post" action="#">
@@ -127,14 +126,14 @@ $post=Teacher::model()->findAll();
                         <tr>
                             <td class="profileTeacher" >
                                 <img class='teacherAvatar' src="<?php echo Yii::app()->request->baseUrl.$teacherValue->foto_url ?>"/>
-                                <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>"><?php echo Yii::t('teachers', 'personal page'); ?> &#187;</a>
+                                <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>"><?php echo Yii::t('teachers', 'персональная страница'); ?> &#187;</a>
                             </td>
                             <td>
                                 <h2><?php echo $teacherValue->last_name ?></h2>
                                 <h2><?php echo $teacherValue->first_name ?> <?php echo $teacherValue->middle_name ?></h2>
                                 <?php echo $teacherValue->profile_text ?>
                                 <p>
-                                    <?php echo Yii::t('teachers', 'Read courses:'); ?>
+                                    <?php echo Yii::t('teachers', 'Ведет курсы:'); ?>
                                 </p>
                                 <div class="teacherCourses">
                                     <ul>
@@ -153,7 +152,7 @@ $post=Teacher::model()->findAll();
                         </tr>
                     </table>
                     <div class="aboutMore">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>"><?php echo Yii::t('teachers', 'Read more'); ?> &#187;</a></br>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/readMore.png"/> <a href="<?php echo Yii::app()->request->baseUrl.$teacherValue->readMoreLink; ?>"><?php echo Yii::t('teachers', 'Читать полностью'); ?> &#187;</a></br>
                         <?php
                         for ($k=0; $k<10; $k++)
                         {
@@ -162,7 +161,7 @@ $post=Teacher::model()->findAll();
                         <?php
                         }
                         ?>
-                        <a href="#"><?php echo Yii::t('teachers', 'Reviews'); ?> &#187;</a>
+                        <a href="#"><?php echo Yii::t('teachers', 'Отзывы'); ?> &#187;</a>
                     </div>
                 </div>
             <?php
