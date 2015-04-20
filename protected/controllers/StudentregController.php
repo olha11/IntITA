@@ -129,7 +129,10 @@ class StudentRegController extends Controller
         {
             if(is_null($_POST['StudentReg']['firstName']))
                 $this->redirect('courses');
-
+            //if user don't check education form, we write to db value 'don't choose'
+            if( !isset($_POST['StudentReg']['educform'][0]) ){
+                $_POST['StudentReg']['educform'] = 'Не вибрано';
+            }
             if(isset($_POST['StudentReg']))
             {
                 if(($_POST['StudentReg']['educform'][0]=='Онлайн') && (!isset($_POST['StudentReg']['educform'][1]))){
@@ -140,9 +143,6 @@ class StudentRegController extends Controller
                 }
                 if(($_POST['StudentReg']['educform'][0]=='Онлайн') && ($_POST['StudentReg']['educform'][1]=='Офлайн')){
                     $_POST['StudentReg']['educform']='Онлайн/Офлайн';
-                }
-                if((!isset($_POST['StudentReg']['educform'][0])) && (!isset($_POST['StudentReg']['educform'][1]))){
-                    $_POST['StudentReg']['educform']='Не вибрано';
                 }
             }
 

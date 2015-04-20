@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-19 00:15:39
+-- Date/time:                    2015-04-20 19:30:18
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   `category` varchar(32) NOT NULL,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
+) ENGINE=InnoDB AUTO_INCREMENT=173 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~136 rows (approximately)
+-- Dumping data for table int_ita_db.sourcemessages: ~172 rows (approximately)
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', '0001'),
@@ -171,7 +171,29 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(147, 'courses', '0147'),
 	(148, 'courses', '0148'),
 	(149, 'courses', '0149'),
-	(150, 'courses', '0150');
+	(150, 'regexp', '0150'),
+	(151, 'regexp', '0151'),
+	(152, 'regexp', '0152'),
+	(153, 'regexp', '0153'),
+	(154, 'regexp', '0154'),
+	(155, 'regexp', '0155'),
+	(156, 'regexp', '0156'),
+	(157, 'regexp', '0157'),
+	(158, 'regexp', '0158'),
+	(159, 'regexp', '0159'),
+	(160, 'regexp', '0160'),
+	(161, 'regexp', '0161'),
+	(162, 'regexp', '0162'),
+	(163, 'regexp', '0163'),
+	(164, 'regexp', '0164'),
+	(165, 'regexp', '0165'),
+	(166, 'regexp', '0166'),
+	(167, 'regexp', '0167'),
+	(168, 'regexp', '0168'),
+	(169, 'regexp', '0169'),
+	(170, 'regexp', '0170'),
+	(171, 'regexp', '0171'),
+	(172, 'regexp', '0172');
 /*!40000 ALTER TABLE `sourcemessages` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

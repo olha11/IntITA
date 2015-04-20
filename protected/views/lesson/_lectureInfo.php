@@ -45,10 +45,10 @@
 <div id="counter">
     <?php
     for ($i=0; $i<$lecture->findByPk(1)->order;$i++){ ?>
-        <img src="<?php echo Yii::app()->request->baseUrl.'/'.$lecture->lectureOverlookedImage;?>">
+        <img src="<?php echo Yii::app()->request->baseUrl.$lecture->lectureOverlookedImage;?>">
     <?php }
     for ($i=0; $i<6-$lecture->findByPk(1)->order;$i++){ ?>
-        <img src="<?php echo Yii::app()->request->baseUrl.'/'.$lecture->lectureUnwatchedImage;?>">
+        <img src="<?php echo Yii::app()->request->baseUrl.$lecture->lectureUnwatchedImage;?>">
     <?php } ?>
 </div>
 </ul>

@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-19 00:15:42
+-- Date/time:                    2015-04-20 19:30:11
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `aa_authorizations` (
   CONSTRAINT `aa_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `aa_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
--- Dumping data for table int_ita_db.aa_authorizations: ~50 rows (approximately)
+-- Dumping data for table int_ita_db.aa_authorizations: ~46 rows (approximately)
 /*!40000 ALTER TABLE `aa_authorizations` DISABLE KEYS */;
 INSERT INTO `aa_authorizations` (`id`, `user_id`, `when_enter`, `ip`) VALUES
 	(1, 2, '2015-03-02 15:33:25', '::1'),
@@ -508,7 +508,7 @@ CREATE TABLE IF NOT EXISTS `mainpage` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.mainpage: ~1 rows (approximately)
+-- Dumping data for table int_ita_db.mainpage: ~0 rows (approximately)
 /*!40000 ALTER TABLE `mainpage` DISABLE KEYS */;
 INSERT INTO `mainpage` (`id`, `language`, `title`, `sliderHeader`, `sliderText`, `category`, `message`, `sliderTextureURL`, `sliderLineURL`, `sliderButtonText`, `header1`, `subLineImage`, `subheader1`, `arrayBlocks`, `header2`, `subheader2`, `arraySteps`, `stepSize`, `linkName`, `hexagon`, `formHeader1`, `formHeader2`, `regText`, `buttonStart`, `socialText`, `imageNetwork`, `formFon`) VALUES
 	(0, 'ua', 'INTITA', 'ПРОГРАМУЙ  МАЙБУТНЄ', 'Не упусти свій шанс змінити світ - отримай якісну та сучасну освіту і стань класним спеціалістом!', 'mainpage', 'PROGRAM FUTURE', '/css/images/slider_img/texture.png', '/css/images/slider_img/line.png', 'ПОЧАТИ', 'Про нас', '/css/images/line1.png', 'дещо, що Вам потрібно знати про наші курси', '1', 'Як проводиться навчання?', 'далі пояснення як ви будете вчитися крок за кроком', '1', '958px', 'детальніше ...', '/css/images/hexagon.png', 'Готові розпочати?', 'Введіть дані в форму нижче', 'розширена реєстрація', 'ПОЧАТИ', 'Ви можете також зареєструватися через соцмережі:', '/css/images/networking.png', '/css/images/formFon.png');
@@ -974,7 +974,76 @@ INSERT INTO `messages` (`id`, `language`, `translation`) VALUES
 	(146, 'ru', 'детальнее ...'),
 	(147, 'ru', 'Стоимость курса:'),
 	(148, 'ru', 'В начале обучения формируется стойкий фундамент для подготовки программистов: необходимые знания элементарной математики, устройства компьютера и основ информатики.'),
-	(149, 'ru', '<p>Потом изучаются основные принципы программирования на базе классических компьютерних наук и методологий: алгоритмический язык; элементы высшей и дискретной математики, комбинаторики; структуры данных, разработка и анализ алгоритмов.\r\n<P> После чего формируется база для перехода к современным технологиям программирования: объектно-ориентированное программирование; проектирования баз данных.\r\n<P> Завершением процесса подготовки есть конкретное применение полученных знаний на реальных проектах с усвоением современных методов и технологий, используемых в ИТ индустрии компаниями.');
+	(149, 'ru', '<p>Потом изучаются основные принципы программирования на базе классических компьютерних наук и методологий: алгоритмический язык; элементы высшей и дискретной математики, комбинаторики; структуры данных, разработка и анализ алгоритмов.\r\n<P> После чего формируется база для перехода к современным технологиям программирования: объектно-ориентированное программирование; проектирования баз данных.\r\n<P> Завершением процесса подготовки есть конкретное применение полученных знаний на реальных проектах с усвоением современных методов и технологий, используемых в ИТ индустрии компаниями.'),
+	(150, 'ua', 'Персональні дані'),
+	(150, 'ru', 'Персональные данные'),
+	(150, 'en', 'Personal info'),
+	(151, 'ua', 'Студент'),
+	(151, 'ru', 'Студент'),
+	(151, 'en', 'Student'),
+	(152, 'ua', 'введіть в форматі дд/мм/рррр'),
+	(152, 'ru', 'введите в формате дд/мм/гггг'),
+	(152, 'en', 'enter as dd/mm/yyyy'),
+	(153, 'ua', 'введіть Ваші інтереси (через кому)'),
+	(153, 'ru', 'введите Ваши интересы (через запятую)'),
+	(153, 'en', 'enter Your interests '),
+	(154, 'ua', 'звідки Ви про нас дізналися?'),
+	(154, 'en', 'where you hear about us?'),
+	(154, 'ru', 'откуда Вы о нас узнали?'),
+	(155, 'ua', 'ВІДПРАВИТИ'),
+	(155, 'ru', 'ОТПРАВИТЬ'),
+	(155, 'en', 'SEND'),
+	(156, 'ua', 'Завантажити фото профілю'),
+	(156, 'ru', 'Загрузить фото профиля'),
+	(156, 'en', 'Download your profile avatar'),
+	(157, 'ua', 'ВИБЕРІТЬ ФАЙЛ'),
+	(157, 'ru', 'ВЫБЕРИТЕ ФАЙЛ'),
+	(157, 'en', 'CHOOSE FILE'),
+	(158, 'ua', 'Розмір фото до 512Kб'),
+	(158, 'ru', 'Размер фото до 512Kб'),
+	(158, 'en', 'Photo size to 512Kb'),
+	(159, 'ua', 'Файл не вибрано...'),
+	(159, 'ru', 'Файл не выбран...'),
+	(159, 'en', 'The file is not selected'),
+	(160, 'ua', 'І\'мя'),
+	(160, 'ru', 'Имя'),
+	(160, 'en', 'Name'),
+	(161, 'ua', 'Роль'),
+	(161, 'ru', 'Роль'),
+	(161, 'en', 'Role'),
+	(162, 'ua', 'Прізвище'),
+	(162, 'ru', 'Фамилия'),
+	(162, 'en', 'Last name'),
+	(163, 'ua', 'Нік'),
+	(163, 'ru', 'Ник'),
+	(163, 'en', 'Nickname'),
+	(164, 'ua', 'Дата народження'),
+	(164, 'ru', 'Дата рождения'),
+	(164, 'en', 'Date of birth'),
+	(165, 'ua', 'Телефон'),
+	(165, 'ru', 'Телефон'),
+	(165, 'en', 'Phone'),
+	(166, 'ua', 'Адреса'),
+	(166, 'ru', 'Адрес'),
+	(166, 'en', 'Address'),
+	(167, 'ua', 'Освіта'),
+	(167, 'ru', 'Образование'),
+	(167, 'en', 'Education'),
+	(168, 'ua', 'Форма навчання'),
+	(168, 'ru', 'Форма обучения'),
+	(168, 'en', 'Education form'),
+	(169, 'ua', 'Захоплення'),
+	(169, 'ru', 'Увлечения'),
+	(169, 'en', 'Interests'),
+	(170, 'ua', 'Про себе'),
+	(170, 'ru', 'О себе'),
+	(170, 'en', 'About myself'),
+	(171, 'ua', 'Пароль'),
+	(171, 'ru', 'Пароль'),
+	(171, 'en', 'Password'),
+	(172, 'ua', 'Повтор пароля'),
+	(172, 'ru', 'Повтор пароля'),
+	(172, 'en', 'Repeat password');
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 
 
@@ -1022,7 +1091,7 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   CONSTRAINT `FK_permissions_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='User rights for lectures: BIT (32) \r\n0 - read\r\n1 - edit\r\n2 - create\r\n3 - delete  ';
 
--- Dumping data for table int_ita_db.permissions: ~2 rows (approximately)
+-- Dumping data for table int_ita_db.permissions: ~1 rows (approximately)
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
 INSERT INTO `permissions` (`id_user`, `id_resource`, `rights`) VALUES
 	(1, 1, b'10000000'),
@@ -1037,9 +1106,9 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   `category` varchar(32) NOT NULL,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
+) ENGINE=InnoDB AUTO_INCREMENT=173 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~150 rows (approximately)
+-- Dumping data for table int_ita_db.sourcemessages: ~136 rows (approximately)
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', '0001'),
@@ -1191,7 +1260,29 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(147, 'courses', '0147'),
 	(148, 'courses', '0148'),
 	(149, 'courses', '0149'),
-	(150, 'courses', '0150');
+	(150, 'regexp', '0150'),
+	(151, 'regexp', '0151'),
+	(152, 'regexp', '0152'),
+	(153, 'regexp', '0153'),
+	(154, 'regexp', '0154'),
+	(155, 'regexp', '0155'),
+	(156, 'regexp', '0156'),
+	(157, 'regexp', '0157'),
+	(158, 'regexp', '0158'),
+	(159, 'regexp', '0159'),
+	(160, 'regexp', '0160'),
+	(161, 'regexp', '0161'),
+	(162, 'regexp', '0162'),
+	(163, 'regexp', '0163'),
+	(164, 'regexp', '0164'),
+	(165, 'regexp', '0165'),
+	(166, 'regexp', '0166'),
+	(167, 'regexp', '0167'),
+	(168, 'regexp', '0168'),
+	(169, 'regexp', '0169'),
+	(170, 'regexp', '0170'),
+	(171, 'regexp', '0171'),
+	(172, 'regexp', '0172');
 /*!40000 ALTER TABLE `sourcemessages` ENABLE KEYS */;
 
 
@@ -1321,7 +1412,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesen` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesen: ~150 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesen: ~136 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesen` DISABLE KEYS */;
 INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(1, 'en', 'INTITA'),
@@ -1487,7 +1578,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesru` (
   CONSTRAINT `FK_translatedMessagesRU_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesru: ~150 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesru: ~136 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesru` DISABLE KEYS */;
 INSERT INTO `translatedmessagesru` (`id`, `language`, `translation`) VALUES
 	(1, 'ru', 'INTITA'),
@@ -1653,7 +1744,7 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesua` (
   CONSTRAINT `FK_translatedmessages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8 COMMENT='Table for translation interface messages (see sourceMessages). UA';
 
--- Dumping data for table int_ita_db.translatedmessagesua: ~150 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesua: ~136 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesua` DISABLE KEYS */;
 INSERT INTO `translatedmessagesua` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -1828,16 +1919,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `hash` varchar(20) NOT NULL,
   `address` text,
   `education` varchar(255) DEFAULT NULL,
-  `educform` varchar(60) DEFAULT NULL,
+  `educform` varchar(60) DEFAULT 'Не вибрано',
   `interests` text,
   `aboutUs` text,
   `aboutMy` varchar(255) DEFAULT NULL,
   `avatar` varchar(255) DEFAULT '/css/images/avatars/noname.png',
   `role` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.user: ~26 rows (approximately)
+-- Dumping data for table int_ita_db.user: ~30 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `firstName`, `identity`, `network`, `state`, `full_name`, `middleName`, `secondName`, `nickname`, `birthday`, `email`, `password`, `phone`, `hash`, `address`, `education`, `educform`, `interests`, `aboutUs`, `aboutMy`, `avatar`, `role`) VALUES
 	(1, 'Вова', '', '', 0, '', 'Джа', 'Марля', 'Wizlight', '21/03/1997', 'Wizlightdragon@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', '911', '', 'Ямайка', 'ВДПУ', 'Онлайн', 'Ковбаска, колобки, раста', 'Інтернет', 'Володію албанською. Люблю м\'ясо та до м\'яса. Розвожу королів. ', '/css/images/1id.jpg', ''),
@@ -1858,14 +1949,22 @@ INSERT INTO `user` (`id`, `firstName`, `identity`, `network`, `state`, `full_nam
 	(19, 'rsysryyu', '', '', 0, '', NULL, '', '', '', 'tesys45y@yt.uy', '12c6fc06c99a462375eeb3f43dfd832b08ca9e17', '', '', '', '', 'Не вибрано', '', '', '', NULL, '0'),
 	(20, '', '', '', 0, '', NULL, NULL, NULL, NULL, 'hsvfhjs@dewj.few', '12c6fc06c99a462375eeb3f43dfd832b08ca9e17', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
 	(21, 'kjhkohlnk', '', '', 0, '', NULL, '', '', '', 'hchh+5@opjuigbliy.gkyugf', '73bf9dfd2709e0dfc11bc4ce8cf259a347556dcb', '', '', '', '', 'Не вибрано', '', '', '', '/css/images/avatar/noname.png', '0'),
-	(22, 'tttttt', '', '', 0, '', NULL, '', '', '', 'ttttt@tttt.com', '20eabe5d64b0e216796e834f52d61fd0b70332fc', '', '', '', '', 'Не вибрано', '', '', '', '/css/images/avatars/ttttt@tttt.com.jpg', '0'),
+	(22, 'tttttt', '', '', 0, '', NULL, '', '', '', 'ttttt@tttt.com', '011c945f30ce2cbafc452f39840f025693339c42', '', '', '', '', 'Не вибрано', '', '', '', '/css/images/avatars/ttttt@tttt.com.jpg', '0'),
 	(23, '', '', '', 0, '', NULL, '', '', '', 'gjgugug@hh.ij', '12c6fc06c99a462375eeb3f43dfd832b08ca9e17', '', '', '', '', NULL, '', '', '', '/css/images/avatars/gjgugug@hh.ij.jpg', ''),
 	(24, '', '', '', 0, '', NULL, NULL, NULL, NULL, 'vhfvyh@ft.huh', 'f2c42640c920871074aea6971d71d038f95e8cf6', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/noname.png', ''),
 	(25, '', '', '', 0, '', NULL, NULL, NULL, NULL, 'bjhbi@fyh.ji', 'b4aa1b38a0c42a0854f1a39b3f47171d48bd7887', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/css/images/avatars/noname.png', ''),
 	(26, '', '', '', 0, '', NULL, NULL, NULL, NULL, 'tttedtt@tttt.com', '70f615ab34448baae29eada2921932adf6eabdf0', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/css/images/avatars/noname.png', ''),
 	(27, 'Ivanna', '', '', 0, '', NULL, 'Bezpalko', NULL, NULL, 'vnnchkh@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/css/images/avatars/noname.png', ''),
 	(28, 'Иванна', '', '', 0, '', NULL, 'Безпалько', NULL, NULL, 'ivanna_sunny@ukr.net', '011c945f30ce2cbafc452f39840f025693339c42', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '/css/images/avatars/noname.png', ''),
-	(29, ' n,jb,bhj,b', '', '', 0, '', NULL, '', '', '', 'vhvghvh@rw.dw', '17ba0791499db908433b80f37c5fbc89b870084b', '', '', '', '', 'Офлайн', '', '', '', '/css/images/avatars/noname.png', '0');
+	(29, ' n,jb,bhj,b', '', '', 0, '', NULL, '', '', '', 'vhvghvh@rw.dw', '17ba0791499db908433b80f37c5fbc89b870084b', '', '', '', '', 'Офлайн', '', '', '', '/css/images/avatars/noname.png', '0'),
+	(30, 'dafse', '', '', 0, '', NULL, '', '', '', 'fsrgfe@rth.tr', '17ba0791499db908433b80f37c5fbc89b870084b', '', '', '', '', 'Офлайн', '', '', '', '/css/images/avatars/noname.png', '0'),
+	(31, 'уцуфуафукп', '', '', 0, '', NULL, '', '', '', 'vdrgf@ferw.dwe', '17ba0791499db908433b80f37c5fbc89b870084b', '', '', '', '', 'Офлайн', '', '', '', '/css/images/avatars/noname.png', '0'),
+	(32, 'ewerwrdw', '', '', 0, '', NULL, '', '', '', 'werfw@few.yjt', 'b6692ea5df920cad691c20319a6fffd7a4a766b8', '', '', '', '', 'Онлайн', '', '', '', '/css/images/avatars/noname.png', '0'),
+	(33, 'rw3trw34', '', '', 0, '', NULL, '', '', '', 'erq3r@rfe.uky', '17ba0791499db908433b80f37c5fbc89b870084b', '', '', '', '', 'Не вибрано', '', '', '', '/css/images/avatars/noname.png', '0'),
+	(34, 'fdsfdrfvd', '', '', 0, '', NULL, '', '', '', 'fesrfre@gtr.fre', '98fbc42faedc02492397cb5962ea3a3ffc0a9243', '', '', '', '', 'Не вибрано', '', '', '', '/css/images/avatars/noname.png', '0'),
+	(35, 'вуацупацкп', '', '', 0, '', NULL, '', '', '', 'dnfj@fnek.fe', '17ba0791499db908433b80f37c5fbc89b870084b', '', '', '', '', 'Не вибрано', '', '', '', '/css/images/avatars/noname.png', '0'),
+	(36, 'gerwggt', '', '', 0, '', NULL, '', '', '', 'fersrg@fe.yu', '17ba0791499db908433b80f37c5fbc89b870084b', '', '', '', '', 'Не вибрано', '', '', '', '/css/images/avatars/noname.png', '0'),
+	(37, 'bdfwjednb', '', '', 0, '', NULL, '', '', '', 'dseafa@rew.ew', '17ba0791499db908433b80f37c5fbc89b870084b', '', '', '', '', 'Не вибрано', '', '', '', '/css/images/avatars/noname.png', '0');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
