@@ -7,6 +7,7 @@
  */
 
 ?>
+
 <div class="teacherBlock">
     <img src="<?php echo Yii::app()->request->baseUrl.$teacher['photo']; ?>">
     <a href="<?php echo Yii::app()->request->baseUrl.$teacher['readMoreLink']; ?>"><?php echo Yii::t('teachers','0059'); ?> &#187;</a>
@@ -47,6 +48,7 @@
                             ),
                         ));
                         ?>
+                        <?php $this->renderPartial('_timeConsultation');?>
                         <a id="consultationCalendar">
                             <?php echo Yii::t('lecture','0079'); ?>
                         </a>
@@ -59,6 +61,13 @@
 <script>
     $('#consultationCalendar').click(function() {
         $('#calendar').focus();
+        $(".ui-datepicker-calendar td[data-handler=selectDay]").click(function(){
+            $("#tablcons").css('display', 'block');
+        });
     });
+
+
 </script>
+
+
 
