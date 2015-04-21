@@ -259,6 +259,23 @@ class StudentRegController extends Controller
         $id=Yii::app()->user->id;
         $model=StudentReg::model()->findByPk(Yii::app()->user->id);
         $model->setScenario('edit');
+
+        if( !isset($_POST['StudentReg']['educform'][0]) ){
+            $_POST['StudentReg']['educform'] = 'Не вибрано';
+        }
+        if(isset($_POST['StudentReg']))
+        {
+            if(($_POST['StudentReg']['educform'][0]=='Онлайн') && (!isset($_POST['StudentReg']['educform'][1]))){
+                $_POST['StudentReg']['educform']='Онлайн';
+            }
+            if(($_POST['StudentReg']['educform'][0]=='Офлайн') && (!isset($_POST['StudentReg']['educform'][1]))){
+                $_POST['StudentReg']['educform']='Офлайн';
+            }
+            if(($_POST['StudentReg']['educform'][0]=='Онлайн') && ($_POST['StudentReg']['educform'][1]=='Офлайн')){
+                $_POST['StudentReg']['educform']='Онлайн/Офлайн';
+            }
+        }
+
         $model->attributes=$_POST['StudentReg'];
         if($model->validate()) {
             $model->updateByPk($id, array('firstName' => $_POST['StudentReg']['firstName']));
@@ -270,6 +287,7 @@ class StudentRegController extends Controller
             $model->updateByPk($id, array('phone' => $_POST['StudentReg']['phone']));
             $model->updateByPk($id, array('address' => $_POST['StudentReg']['address']));
             $model->updateByPk($id, array('education' => $_POST['StudentReg']['education']));
+            $model->updateByPk($id, array('education' => $_POST['StudentReg']['educform']));
             $model->updateByPk($id, array('interests' => $_POST['StudentReg']['interests']));
             $model->updateByPk($id, array('aboutUs' => $_POST['StudentReg']['aboutUs']));
             $model->updateByPk($id, array('aboutMy' => $_POST['StudentReg']['aboutMy']));
