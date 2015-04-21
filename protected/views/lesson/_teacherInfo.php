@@ -85,7 +85,7 @@ $app = Yii::app();
 
     $('#consultationButton').click(function() {
         document.getElementById('consultationInfo').style.display="none";
-        document.getElementById('consInfText').innerHTML='у вас запланована консультація з біології у виклача Ореста Остаповича Лютого.';
+        document.getElementById('consInfText').innerHTML=' у вас запланована консультація з біології у виклача Ореста Остаповича Лютого.';
     });
 //    var pirduha = getElementById('content');
 //    pirduha.innerHTML = pirduha.innerHTML+'тут всякий бредовый текст';
