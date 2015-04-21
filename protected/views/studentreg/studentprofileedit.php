@@ -82,6 +82,17 @@ $post=StudentReg::model()->findByPk(Yii::app()->user->id);
             <?php echo $form->textField($model,'education',array('value'=>$post->education,'maxlength'=>255)); ?>
             <span><?php echo $form->error($model,'education'); ?></span>
         </div>
+        <div class="rowRadioButton" id="rowEducForm">
+            <?php
+            if ($post->education=='Офлайн') $model->educform = array('Офлайн');
+            if ($post->education=='Онлайн/Офлайн') $model->educform = array('Онлайн','Офлайн');
+            if ($post->education=='Онлайн') $model->educform = array('Онлайн');
+            ?>
+            <?php echo $form->labelEx($model,'educform'); ?>
+            <div class="radiolabel">
+                <?php echo $form->checkBoxList($model,'educform',array('Онлайн'=>'online','Офлайн'=>'offline'), array('separator'=>' '));?>
+            </div>
+        </div>
         <div class="row">
             <?php echo $form->label($model,'aboutMy'); ?>
             <?php echo $form->textArea($model,'aboutMy',array('value'=>$post->aboutMy)); ?>
