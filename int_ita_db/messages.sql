@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-21 01:48:01
+-- Date/time:                    2015-04-21 20:48:20
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
   CONSTRAINT `FK_messages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.messages: ~498 rows (approximately)
+-- Dumping data for table int_ita_db.messages: ~519 rows (approximately)
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
 INSERT INTO `messages` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -538,7 +538,10 @@ INSERT INTO `messages` (`id`, `language`, `translation`) VALUES
 	(171, 'en', 'Password'),
 	(172, 'ua', 'Повтор пароля'),
 	(172, 'ru', 'Повтор пароля'),
-	(172, 'en', 'Repeat password');
+	(172, 'en', 'Repeat password'),
+	(173, 'ua', 'ЗБЕРЕГТИ'),
+	(173, 'ru', 'СОХРАНИТЬ'),
+	(173, 'en', 'SAVE');
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

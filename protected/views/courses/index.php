@@ -5,10 +5,10 @@
     function wrt(x)
     {
         document.getElementById("razv").innerHTML=x;
-        if (x!="")
-        {document.getElementById("sver").innerHTML="<u><?php echo Yii::t('lecture', '0082'); ?></u>";}
-        else
-        {document.getElementById("sver").innerHTML=""; document.getElementById("razv").innerHTML="<br><u><?php echo Yii::t('courses', '0146'); ?></u>";}
+//        if (x!="")
+//        {document.getElementById("sver").innerHTML="<u><?php //echo Yii::t('lecture', '0082'); ?>//</u>";}
+//        else
+//        {document.getElementById("sver").innerHTML=""; document.getElementById("razv").innerHTML="<br><u><?php //echo Yii::t('courses', '0146'); ?>//</u>";}
     }
 </script>
 <script>

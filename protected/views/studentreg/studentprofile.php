@@ -11,7 +11,7 @@ $this->pageTitle = 'INTITA';
 $post=StudentReg::model()->findByPk(Yii::app()->user->id);
 ?>
 <?php
-$this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
+$this->breadcrumbs=array(Yii::t('breadcrumbs', '0054'),
 );
 ?>
 <div class="formStudProf">

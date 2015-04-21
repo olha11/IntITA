@@ -162,7 +162,6 @@ p {
     margin-bottom: 10px;
     overflow: hidden;
     border-bottom: 1px solid #33ccff;
-
 }
 #footer .main div {
     margin-right: 15px;
@@ -179,7 +178,7 @@ p {
 #footer ul {
     margin-top: 10px;
     margin-left: px;
-    padding-left: 175px;
+    padding-left: 150px;
 }
 #footer li {
     display:inline;

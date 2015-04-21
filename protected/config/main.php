@@ -119,6 +119,11 @@ return array(
 		'config' => array(
 			'class' => 'application.extensions.EConfig',
 		),
+
+        'request' => array(
+            //'baseUrl' => 'http://intita.itatests.com/',
+            //'baseUrl' => 'http://localhost/IntITA/',
+        ),
 	),
 
 	// application-level parameters that can be accessed

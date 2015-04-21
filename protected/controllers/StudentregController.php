@@ -221,8 +221,24 @@ class StudentRegController extends Controller
             Yii::app()->end();
         }
     }
+
+    public function checkAccess($id=1, $right, $code1, $code2)
+    {
+        if(Yii::app()->user->isGuest){
+            throw new CHttpException(403, Yii::t('errors', $code1));
+        }
+        else{
+            $permission = new Permissions();
+            if (!$permission->checkPermission(Yii::app()->user->getId(), $id, array($right))) {
+                throw new CHttpException(403, Yii::t('errors', $code2));
+            }
+        }
+    }
+
     public function actionProfile()
     {
+        $this->checkAccess(1, 'read', 'Ви не можете переглядати цю сторінку. Будь-ласка, увійдіть у свій аккаунт.',
+            'Ви не можете переглядати чужий профіль. Ввійдіть у свій аккаунт.');
         $model=new StudentReg();
 
         $this->render("studentprofile", array('model'=>$model));
@@ -249,6 +265,8 @@ class StudentRegController extends Controller
     }
     public function actionEdit()
     {
+        $this->checkAccess(1, 'edit', 'Ви не можете переглядати цю сторінку. Будь-ласка, увійдіть у свій аккаунт.',
+            'Ви не можете редагувати чужий профіль. Ввійдіть у свій аккаунт.');
         $model=new StudentReg();
 
         $this->render("studentprofileedit", array('model'=>$model));
