@@ -160,8 +160,10 @@ font-size:16px;
     cursor: pointer;
 }
 /*----Calendar----*/
-p.calendar{
+div.calendar{
     margin-top: 20px;
+    overflow: hidden;
+    display: block;
 }
 #consultationCalendar{
     display: block;
@@ -170,9 +172,12 @@ p.calendar{
 }
 #dateTimePicker{
     display: block;
-    height: 10px;
+    height: 1px;
     opacity: 0;
     cursor: pointer;
+}
+.datetimepicker{
+    width: 305px;
 }
 .datetimepicker table.table-condensed tr td.disabled{
     color: #ff7272;
@@ -234,13 +239,19 @@ p.calendar{
     background-position: 100% 16px; /* Положение фона */
     background-repeat: no-repeat; /* Отменяем повторение фона */
 }
+.datetimepicker .datetimepicker-hours .icon-arrow-left, .datetimepicker .datetimepicker-minutes .icon-arrow-left{
+    background-position: 0 12px; /* Положение фона */
+}
+.datetimepicker .datetimepicker-hours .icon-arrow-right, .datetimepicker .datetimepicker-minutes .icon-arrow-right{
+    background-position: 100% 12px; /* Положение фона */
+}
 .datetimepicker table.table-condensed th.prev:hover,.datetimepicker table.table-condensed th.next:hover,.datetimepicker table.table-condensed th.switch:hover {
     background: #ffffff;
 }
 .datetimepicker-hours .switch, .datetimepicker-minutes .switch{
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 100;
-    color: #dedede;
+    color: #666666;
     text-transform: lowercase;
     line-height: 28px;
 }
@@ -267,8 +278,50 @@ div.datetimepicker-minutes{
     background: #4b75a4;
     color: #ffffff;
 }
+.datetimepicker .datetimepicker-days table.table-condensed tr td.today:hover{
+    background: #4b75a4;
+    color: #ffffff;
+    border: none;
+}
 .datetimepicker-hours table.table-condensed td span.active.active, .datetimepicker-minutes table.table-condensed td span.active.active{
     background: #4b75a4;
     color: #ffffff;
+}
+.datetimepicker table.table-condensed tr td.today{
+    border: 1px solid #4b75a4;
+    background: #ffffff;
+}
+div#consultationInfo{
+    background: #ffffff;
+    position: absolute;
+    z-index: 3;
+    font-family: SegoeUILight;
+    width: 305px;
+    height:200px;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+#consultationInfo{
+    display: none;
+    text-align: center;
+    font-size: 15px;
+    color: #9f9f9f;
+}
+#consultationInfo p{
+    margin: 10px 15px 10px 15px;
+}
+#consultationInfo .consInfHeader{
+    font-size: 18px;
+    color: #4b75a4;
+}
+#consultationInfo #consInfText{
+    text-align: left;
+}
+#consultationButton{
+    width: 130px;
+    height: 34px;
+    border-radius: 10px;
+    background: #4b75a4;
+    color: #ffffff;
+    margin-top: 20px;
 }
 /*----Calendar----*/
