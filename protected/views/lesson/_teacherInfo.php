@@ -36,15 +36,24 @@ $app = Yii::app();
                         <?php echo 'skype: '?><div id="teacherSkype"><?php echo $teacher['skype']; ?>
                         </div>
                     </li>
-                    <p class="calendar">
+                    <div class="calendar">
                     <div class="input-append date form_datetime">
                         <input size="16" type="text" value="" readonly id="dateTimePicker">
                         <span class="add-on"><i class="icon-th"></i></span>
                     </div>
+                    <div id="consultationInfo">
+                        <p class="consInfHeader">
+                       Вітаємо!
+                        </p>
+                        <p id="consInfText">
+                        у вас запланована консультація з біології у виклача Ореста Остаповича Лютого.
+                        </p>
+                        <button id="consultationButton">Підтверджую</button>
+                    </div>
                         <a id="consultationCalendar">
                             <?php echo Yii::t('lecture','0079'); ?>
                         </a>
-                    </p>
+                    </div>
                 </ul>
         </span>
     </div>
@@ -61,7 +70,7 @@ $app = Yii::app();
     });
 
     $("#dateTimePicker").datetimepicker({
-        format: "dd MM yyyy - hh:ii",
+        format: "d MM yyyy - hh:ii",
         language: '<?php echo $app->session['lg']?>',
         weekStart: 1,
         autoclose: true,
@@ -73,6 +82,25 @@ $app = Yii::app();
         minuteStep: 20,
     });
     $('#dateTimePicker').datetimepicker('setDaysOfWeekDisabled', [0,6]);
+
+    $('#consultationButton').click(function() {
+        document.getElementById('consultationInfo').style.display="none";
+        document.getElementById('consInfText').innerHTML='у вас запланована консультація з біології у виклача Ореста Остаповича Лютого.';
+    });
+//    var pirduha = getElementById('content');
+//    pirduha.innerHTML = pirduha.innerHTML+'тут всякий бредовый текст';
+//    $(".ui-datepicker-calendar td[data-handler=selectDay]").click(function(){
+//        $("#tablcons").css('display', 'block');
+    $(".datetimepicker-minutes td").click(function (){
+        var textinfo = document.getElementById('consInfText');
+        setTimeout(function() {
+            var dateinfo = document.getElementById('dateTimePicker').value;
+            textinfo.innerHTML = dateinfo + textinfo.innerHTML;
+            $("#consultationInfo").css('display', 'block');
+        },1000);
+
+    });
+
 </script>
 
 
