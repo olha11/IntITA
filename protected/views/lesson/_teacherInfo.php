@@ -7,6 +7,13 @@
  */
 
 ?>
+<?php
+$user = new StudentReg();
+$app = Yii::app();
+?>
+<link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/bootstrap-datetimepicker/bootstrap/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/bootstrap-datetimepicker/bootstrap/css/bootstrap.css">
+<link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/scripts/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
 
 <div class="teacherBlock">
     <img src="<?php echo Yii::app()->request->baseUrl.$teacher['photo']; ?>">
@@ -30,25 +37,10 @@
                         </div>
                     </li>
                     <p class="calendar">
-                        <?php
-                        $this->widget('zii.widgets.jui.CJuiDatePicker',array(
-                            'id'=>'calendar',
-                            'themeUrl'=>Yii::app()->request->baseUrl.'/css',
-                            'cssFile'=>'jquery-ui.css',
-                            'theme'=>'my',
-                            'language'=>'ru',
-                            'name'=>'datepicker-showButtonPanel',
-                            'options'=>array(
-                                'showAnim'=>'slideDown',//'slide','fold','slideDown','fadeIn','blind','bounce','clip','drop'
-                                'showButtonPanel'=>false,
-                                'showOtherMonths'=>true,
-                            ),
-                            'htmlOptions'=>array(
-                                'style'=>''
-                            ),
-                        ));
-                        ?>
-                        <?php $this->renderPartial('_timeConsultation');?>
+                    <div class="input-append date form_datetime">
+                        <input size="16" type="text" value="" readonly id="dateTimePicker">
+                        <span class="add-on"><i class="icon-th"></i></span>
+                    </div>
                         <a id="consultationCalendar">
                             <?php echo Yii::t('lecture','0079'); ?>
                         </a>
@@ -58,16 +50,29 @@
     </div>
 </div>
 
-<script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/bootstrap-datetimepicker/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ua.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ru.js"></script>
+
+<script type="text/javascript">
     $('#consultationCalendar').click(function() {
-        $('#calendar').focus();
-        $(".ui-datepicker-calendar td[data-handler=selectDay]").click(function(){
-            $("#tablcons").css('display', 'block');
-        });
+        $('#dateTimePicker').focus();
     });
 
-
+    $("#dateTimePicker").datetimepicker({
+        format: "dd MM yyyy - hh:ii",
+        language: '<?php echo $app->session['lg']?>',
+        weekStart: 1,
+        autoclose: true,
+        todayBtn: 0,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 0,
+        forceParse: 0,
+        minuteStep: 20,
+    });
+    $('#dateTimePicker').datetimepicker('setDaysOfWeekDisabled', [0,6]);
 </script>
-
 
 
