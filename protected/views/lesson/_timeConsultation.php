@@ -1,30 +1,30 @@
 <?php
-$sql = "select time1, time2, time3 from timeconsultation";
-$SqldataProvider = new CSqlDataProvider($sql, array(
-    'pagination'=>array(
-        'pageSize'=>14,
-    ),
-));
-$this->widget('zii.widgets.grid.CGridView', array(
-    'id'=>'tablcons',
-    'dataProvider'=>$SqldataProvider,
-    'enablePagination' => true,
-    'columns'=>array(
-        array(
-            'name'=>'time1',
-            'htmlOptions'=>array('style'=>'width: 94px; height: 28px; text-align: center;'),
-        ),
-        array(
-            'name'=>'time2',
-            'htmlOptions'=>array('style'=>'width: 94px; height: 28px; text-align: center;'),
-        ),
-        array(
-            'name'=>'time3',
-            'htmlOptions'=>array('style'=>'width: 94px; height: 28px; text-align: center;'),
-        ),
-    )
-));
-?>
+//$sql = "select time1, time2, time3 from timeconsultation";
+//$SqldataProvider = new CSqlDataProvider($sql, array(
+//    'pagination'=>array(
+//        'pageSize'=>14,
+//    ),
+//));
+//$this->widget('zii.widgets.grid.CGridView', array(
+//    'id'=>'tablcons',
+//    'dataProvider'=>$SqldataProvider,
+//    'enablePagination' => true,
+//    'columns'=>array(
+//        array(
+//            'name'=>'time1',
+//            'htmlOptions'=>array('style'=>'width: 94px; height: 28px; text-align: center;'),
+//        ),
+//        array(
+//            'name'=>'time2',
+//            'htmlOptions'=>array('style'=>'width: 94px; height: 28px; text-align: center;'),
+//        ),
+//        array(
+//            'name'=>'time3',
+//            'htmlOptions'=>array('style'=>'width: 94px; height: 28px; text-align: center;'),
+//        ),
+//    )
+//));
+//?>
 <style>
     #tablcons{
         margin: 0 auto;

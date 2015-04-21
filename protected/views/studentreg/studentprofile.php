@@ -11,7 +11,7 @@ $this->pageTitle = 'INTITA';
 $post=StudentReg::model()->findByPk(Yii::app()->user->id);
 ?>
 <?php
-$this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
+$this->breadcrumbs=array(Yii::t('breadcrumbs', '0054'),
 );
 ?>
 <div class="formStudProf">
@@ -37,10 +37,17 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
                     <h1><?php echo $post->firstName;?></h1>
                     <h1><?php echo $post->secondName;?></h1>
                     <div class="aboutInfo">
-                        <p>
-                            <?php echo $post->address;
+                        <p><?php echo $post->address;
                             if(!empty($post->address)&&!empty($post->birthday)) echo ', ';
-                            $post::getYears($post->birthday);
+                            $myAge = $post->birthday;
+                            $myAge = str_replace("/",".",$myAge);
+                            $date_a = new DateTime($myAge);
+                            $date_b = new DateTime();
+                            $interval = $date_b->diff($date_a);
+                            if($interval->format("%Y")!=='00'){
+                                echo $interval->format("%Y");
+                                $post::getYearsTermination($interval->format("%Y"));
+                            }
                             ?>
                         </p>
                     </div>
@@ -112,16 +119,13 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
                 <?php $this->renderPartial('_projects'); ?>
             </section>
             <section id="myRatting">
-                <p>
-                    Мій рейтинг
-                </p>
+                <?php $this->renderPartial('_myRatting'); ?>
             </section>
             <section id="myDownload">
-                <p>
-                    Якісь завантаження
-                </p>
+                <?php $this->renderPartial('_myDownload'); ?>
             </section>
             <section id="mylettersSend">
+                <?php $this->renderPartial('_mylettersSend'); ?>
                 <form method="post" action="<?php echo Yii::app()->request->baseUrl; ?>/studentreg/sendletter">
                     <label for="letterTheme">Тема:</label>
                     <input type="text" id="letterTheme" name="letterTheme" /></br> </br>
@@ -134,14 +138,10 @@ $this->breadcrumbs=array(Yii::t('breadcrumbs', 'Profile'),
                 endif; ?>
             </section>
             <section id="myMark">
-                <p>
-                    Як я оцінюю
-                </p>
+                <?php $this->renderPartial('_myMark'); ?>
             </section>
             <section id="finances">
-                <p>
-                    Фінанси
-                </p>
+                <?php $this->renderPartial('_finances'); ?>
             </section>
         </div>
     </div>

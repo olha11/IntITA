@@ -129,7 +129,10 @@ class StudentRegController extends Controller
         {
             if(is_null($_POST['StudentReg']['firstName']))
                 $this->redirect('courses');
-
+            //if user don't check education form, we write to db value 'don't choose'
+            if( !isset($_POST['StudentReg']['educform'][0]) ){
+                $_POST['StudentReg']['educform'] = 'Не вибрано';
+            }
             if(isset($_POST['StudentReg']))
             {
                 if(($_POST['StudentReg']['educform'][0]=='Онлайн') && (!isset($_POST['StudentReg']['educform'][1]))){
@@ -140,9 +143,6 @@ class StudentRegController extends Controller
                 }
                 if(($_POST['StudentReg']['educform'][0]=='Онлайн') && ($_POST['StudentReg']['educform'][1]=='Офлайн')){
                     $_POST['StudentReg']['educform']='Онлайн/Офлайн';
-                }
-                if((!isset($_POST['StudentReg']['educform'][0])) && (!isset($_POST['StudentReg']['educform'][1]))){
-                    $_POST['StudentReg']['educform']='Не вибрано';
                 }
             }
 
@@ -159,9 +159,10 @@ class StudentRegController extends Controller
                     if($_FILES["upload"]["size"] > 1024*1024*0.5)
                     {
                         Yii::app()->user->setFlash('avatarmessage','Розмір файла перевищує 512кб');
-                    }elseif (is_uploaded_file($_FILES["upload"]["tmp_name"])) {
+                    }elseif (is_uploaded_file($_FILES["upload"]["tmp_name"]))
+                    {
                         $ext = substr(strrchr( $_FILES["upload"]["name"],'.'), 1);
-                        $_FILES["upload"]["name"]=$_POST['StudentReg']['email'].'.'.$ext;
+                        $_FILES["upload"]["name"]=uniqid().'.'.$ext;
                         copy($_FILES['upload']['tmp_name'], Yii::getpathOfAlias('webroot')."/css/images/avatars/".$_FILES['upload']['name']);
                         $model->avatar="/css/images/avatars/".$_FILES["upload"]["name"];
                     }
@@ -220,8 +221,24 @@ class StudentRegController extends Controller
             Yii::app()->end();
         }
     }
+
+    public function checkAccess($id=1, $right, $code1, $code2)
+    {
+        if(Yii::app()->user->isGuest){
+            throw new CHttpException(403, Yii::t('errors', $code1));
+        }
+        else{
+            $permission = new Permissions();
+            if (!$permission->checkPermission(Yii::app()->user->getId(), $id, array($right))) {
+                throw new CHttpException(403, Yii::t('errors', $code2));
+            }
+        }
+    }
+
     public function actionProfile()
     {
+        $this->checkAccess(1, 'read', 'Ви не можете переглядати цю сторінку. Будь-ласка, увійдіть у свій аккаунт.',
+            'Ви не можете переглядати чужий профіль. Ввійдіть у свій аккаунт.');
         $model=new StudentReg();
 
         $this->render("studentprofile", array('model'=>$model));
@@ -248,6 +265,8 @@ class StudentRegController extends Controller
     }
     public function actionEdit()
     {
+        $this->checkAccess(1, 'edit', 'Ви не можете переглядати цю сторінку. Будь-ласка, увійдіть у свій аккаунт.',
+            'Ви не можете редагувати чужий профіль. Ввійдіть у свій аккаунт.');
         $model=new StudentReg();
 
         $this->render("studentprofileedit", array('model'=>$model));

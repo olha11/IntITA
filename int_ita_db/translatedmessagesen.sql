@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-15 19:31:16
+-- Date/time:                    2015-04-21 20:48:20
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS `translatedmessagesen` (
   `language` varchar(16) NOT NULL,
   `translation` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.translatedmessagesen: ~136 rows (approximately)
+-- Dumping data for table int_ita_db.translatedmessagesen: ~150 rows (approximately)
 /*!40000 ALTER TABLE `translatedmessagesen` DISABLE KEYS */;
 INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(1, 'en', 'INTITA'),
@@ -88,7 +88,7 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(64, 'en', 'Section:'),
 	(65, 'en', 'About the teacher:'),
 	(66, 'en', 'Our courses'),
-	(67, 'en', 'The concept of training'),
+	(67, 'en', 'Training concept'),
 	(68, 'en', 'Level: '),
 	(69, 'en', 'Language: '),
 	(70, 'en', 'Course:'),
@@ -157,7 +157,21 @@ INSERT INTO `translatedmessagesen` (`id`, `language`, `translation`) VALUES
 	(133, 'en', 'IMP'),
 	(134, 'en', 'TTP'),
 	(135, 'en', ' strong junior'),
-	(136, 'en', ' ukrainian');
+	(136, 'en', ' ukrainian'),
+	(137, 'en', 'Graduates'),
+	(138, 'en', 'Sorry, you couldn\\\'t view this lecture.Please login for getting access to this material.'),
+	(139, 'en', 'Sorry, you couldn\\\'t view this lecture.\r\nYou don\\\'t have access to this lecture.\r\nPlease go to your profile and pay access.'),
+	(140, 'en', 'For beginners'),
+	(141, 'en', 'For specialists'),
+	(142, 'en', 'For experts'),
+	(143, 'en', 'All courses'),
+	(144, 'en', 'discount'),
+	(145, 'en', 'Сourse rate:'),
+	(146, 'en', 'details ...'),
+	(147, 'en', 'Course price:'),
+	(148, 'en', 'Firstly training creates a stable foundation for training programmers: requires knowledge of elementary mathematics, the structure of computer and computer science.'),
+	(149, 'en', '<P>Then we study the basic principles of programming based on classic PC & raquo; Books sciences and methodologies algorithmic language, elements of higher and discrete mathematics and combinatorics; data structures, design and analysis of algorithms.\r\n<P> After that formed the basis for the transition to modern programming technologies: object-oriented programming; database design.\r\n<P> Completion of training by the specific application of knowledge to real projects with the assimilation of modern techniques and technologies used in the IT industry companies.'),
+	(150, 'en', '');
 /*!40000 ALTER TABLE `translatedmessagesen` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

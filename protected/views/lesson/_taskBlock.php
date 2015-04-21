@@ -5,7 +5,6 @@
  * Date: 14.04.2015
  * Time: 18:43
  */
-echo $data;
 ?>
 <div class="lessonTask">
     <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">
@@ -22,7 +21,7 @@ echo $data;
             <div class="BBCode">
                 <form action="" method="post">
                     <textarea class="editor"></textarea>
-                    <input  id="lessonTask2" type="submit" value="<?php echo Yii::t('lecture','0089'); ?>">
+                    <input onclick="$(&quot;#mydialog&quot;).dialog(&quot;open&quot;); return false;" href="#" id="lessonTask2" type="submit" value="<?php echo Yii::t('lecture','0089'); ?>">
                 </form>
             </div>
         </div>

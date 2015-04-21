@@ -14,12 +14,12 @@
 <!-- steps style -->
 <?php
 $this->pageTitle = 'INTITA';
-$this->breadcrumbs=array(Yii::t('breadcrumbs', 'Teacher profile'),);
+$this->breadcrumbs=array(Yii::t('breadcrumbs', '0057'),);
 $model = new TeacherProfile;
 $model->firstName='Сіра';
 $model->lastName='Олександра Василівна';
 $model->arraySectionText=array('Програмування ПХП;','Java для IOS;');
-$tmp2 = Yii::t('teachers', 'Read courses:');
+$tmp2 = Yii::t('teachers', '0061');
 $model->arrayCourseText=array(
     ' •  кройка и шитье сроков давности;'=>'https://www.google.com.ua/',
     ' •  программування самоубийств;'=>'https://www.google.com.ua/'
@@ -38,7 +38,7 @@ $model->arrayCourseText=array(
                     <div class="TeacherProfilename"> <?php echo $model->lastName; ?> </div>
 
                     <div class="TeacherProfiletitles">
-                        <?php echo Yii::t('teacher', 'Chapter:') ?>
+                        <?php echo Yii::t('teacher', '0064') ?>
                     </div>
 
                     <div class="TeacherProfilesectionText">
@@ -50,7 +50,7 @@ $model->arrayCourseText=array(
                     </div>
 
                     <div class="TeacherProfiletitles">
-                        <?php echo "Про викладача:"; ?>
+                        <?php echo Yii::t('teacher', '0065') ?>
                     </div>
 
                     <div class="txtMsg">
@@ -71,6 +71,7 @@ $model->arrayCourseText=array(
                     <li>торговле, внешнеэкономической и внутреннеэкономической;</li>
                     <li>позитивное обучение швейного мастерства;</li></ul>"; ?>
                     </div>
+                    <?php echo Yii::t('teachers', '0061'); ?>
                     <div class="TeacherProfilecourse">
                         <?php
                         foreach ($model->arrayCourseText as $linkText => $linkAdress) {
