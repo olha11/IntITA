@@ -95,25 +95,25 @@ $post=Teacher::model()->findAll();
                 </tr>
             </table>
             <form method="post" action="#">
-                <label id="formTeacher" for="name" style="margin-left: 50px">Ім'я</label>
+                <label id="formTeacher" for="name" style="margin-left: 50px"><?php echo Yii::t('teachers', '0174');?></label>
                 <input class="formTeacher1" required type="text" name="firstname">
                 <br>  <br>
-                <label id="formTeacher" for="name" style="margin-left: 8px">Прізвище</label>
+                <label id="formTeacher" for="name" style="margin-left: 8px"><?php echo Yii::t('teachers', '0175');?></label>
                 <input class="formTeacher1" required type="text" name="lastname">
                 <br> <br>
-                <label id="formTeacher" for="name" style="margin-left: 52px">Вік</label>
+                <label id="formTeacher" for="name" style="margin-left: 52px"><?php echo Yii::t('teachers', '0176');?></label>
                 <input class="formTeacher1" required type="text" name="yearname">
                 <br> <br>
-                <label id="formTeacher" for="name" style="margin-left: 30px">Освіта</label>
+                <label id="formTeacher" for="name" style="margin-left: 30px"><?php echo Yii::t('teachers', '0177');?></label>
                 <input class="formTeacher1" required type="text" name="educationname">
                 <br> <br>
-                <label id="formTeacher" for="name" style="margin-left: 15px">Телефон</label>
+                <label id="formTeacher" for="name" style="margin-left: 15px"><?php echo Yii::t('teachers', '0178');?></label>
                 <input class="formTeacher1" required type="text" name="phonename">
                 <br> <br>
                 <table>
                     <tr>
                         <td>
-                            <label id="formTeacher" for="text">Які курси <br> Ви готові <br> викладати</label>
+                            <label id="formTeacher" for="text"><?php echo Yii::t('teachers', '0179');?></label>
                         </td>
                         <td>
                             <textarea class="formTeacher1" id="formTeacher2" required type="text" name="textname"></textarea>
@@ -121,7 +121,7 @@ $post=Teacher::model()->findAll();
                     </tr>
                 </table>
                 <ul class="actions">
-                    <input id="send_btn" type="submit" value="Отправить" />
+                    <input id="send_btn" type="submit" value="<?php echo Yii::t('teachers', '0180');?>" />
                 </ul>
             </form>
         </div>

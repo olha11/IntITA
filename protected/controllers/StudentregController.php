@@ -265,8 +265,8 @@ class StudentRegController extends Controller
     }
     public function actionEdit()
     {
-        $this->checkAccess(1, 'edit', 'Ви не можете переглядати цю сторінку. Будь-ласка, увійдіть у свій аккаунт.',
-            'Ви не можете редагувати чужий профіль. Ввійдіть у свій аккаунт.');
+//        $this->checkAccess(1, 'edit', 'Ви не можете переглядати цю сторінку. Будь-ласка, увійдіть у свій аккаунт.',
+//            'Ви не можете редагувати чужий профіль. Ввійдіть у свій аккаунт.');
         $model=new StudentReg();
 
         $this->render("studentprofileedit", array('model'=>$model));

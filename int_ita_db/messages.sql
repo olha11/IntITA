@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-21 20:48:20
+-- Date/time:                    2015-04-22 09:15:00
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
   CONSTRAINT `FK_messages_sourcemessages` FOREIGN KEY (`id`) REFERENCES `sourcemessages` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table int_ita_db.messages: ~519 rows (approximately)
+-- Dumping data for table int_ita_db.messages: ~576 rows (approximately)
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
 INSERT INTO `messages` (`id`, `language`, `translation`) VALUES
 	(1, 'ua', 'INTITA'),
@@ -541,7 +541,64 @@ INSERT INTO `messages` (`id`, `language`, `translation`) VALUES
 	(172, 'en', 'Repeat password'),
 	(173, 'ua', 'ЗБЕРЕГТИ'),
 	(173, 'ru', 'СОХРАНИТЬ'),
-	(173, 'en', 'SAVE');
+	(173, 'en', 'SAVE'),
+	(174, 'ua', 'І\'мя'),
+	(174, 'ru', 'Имя'),
+	(174, 'en', 'Name'),
+	(175, 'ua', 'Прізвище'),
+	(175, 'ru', 'Фамилия'),
+	(175, 'en', 'Last name'),
+	(176, 'ua', 'Вік'),
+	(176, 'ru', 'Возраст'),
+	(176, 'en', 'Age'),
+	(177, 'ua', 'Освіта'),
+	(177, 'ru', 'Образование'),
+	(177, 'en', 'Education'),
+	(178, 'ua', 'Телефон'),
+	(178, 'ru', 'Телефон'),
+	(178, 'en', 'Phone'),
+	(179, 'ua', 'Які курси <br> Ви готові <br> викладати'),
+	(179, 'ru', 'Какие курсы <br> Вы готовы <br> преподавать'),
+	(179, 'en', 'What courses <br> you ready <br> to teach '),
+	(180, 'ua', 'Відправити'),
+	(180, 'ru', 'Отправить'),
+	(180, 'en', 'Send'),
+	(181, 'ua', 'Відгуки студентів про викладача:'),
+	(181, 'ru', 'Отзывы студентов о преподавателе:'),
+	(181, 'en', 'Guest students of the teacher:'),
+	(182, 'ua', 'Середня оцінка: '),
+	(182, 'ru', 'Средний балл:'),
+	(182, 'en', 'Average rate:'),
+	(183, 'ua', 'Знання: '),
+	(183, 'ru', 'Знания:'),
+	(183, 'en', 'Knowledge:'),
+	(184, 'ua', 'Ефективність: '),
+	(184, 'ru', 'Эффективность:'),
+	(184, 'en', 'Efficiency:'),
+	(185, 'ua', 'Відношення до студента: '),
+	(185, 'ru', 'Отношение к студенту:'),
+	(185, 'en', 'Relationship to student:'),
+	(186, 'ua', 'Оцінка: '),
+	(186, 'ru', 'Оценка:'),
+	(186, 'en', 'Rate:'),
+	(187, 'ua', 'Твій відгук'),
+	(187, 'ru', 'Твой отзыв'),
+	(187, 'en', 'Your review:'),
+	(188, 'ua', 'Ваша оцінка'),
+	(188, 'ru', 'Ваша оценка'),
+	(188, 'en', 'Your rate'),
+	(189, 'ua', 'Знання викладача:'),
+	(189, 'ru', 'Знания преподавателя:'),
+	(189, 'en', 'Teacher knowledge:'),
+	(190, 'ua', 'Ефективність: '),
+	(190, 'ru', 'Эффективность:'),
+	(190, 'en', 'Efficiency:'),
+	(191, 'ua', 'Ставлення до студента:'),
+	(191, 'ru', 'Отношение к студенту:'),
+	(191, 'en', 'Relationship to student:'),
+	(192, 'ua', 'Відправити'),
+	(192, 'ru', 'Отправить'),
+	(192, 'en', 'Send');
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

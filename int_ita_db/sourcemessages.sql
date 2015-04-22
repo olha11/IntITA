@@ -3,7 +3,7 @@
 -- Server version:               5.6.21 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-04-21 20:48:20
+-- Date/time:                    2015-04-22 09:15:00
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS `sourcemessages` (
   `category` varchar(32) NOT NULL,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=174 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
+) ENGINE=InnoDB AUTO_INCREMENT=193 DEFAULT CHARSET=utf8 COMMENT='Table for interface messages (keys).';
 
--- Dumping data for table int_ita_db.sourcemessages: ~173 rows (approximately)
+-- Dumping data for table int_ita_db.sourcemessages: ~192 rows (approximately)
 /*!40000 ALTER TABLE `sourcemessages` DISABLE KEYS */;
 INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(1, 'mainpage', '0001'),
@@ -194,7 +194,26 @@ INSERT INTO `sourcemessages` (`id`, `category`, `message`) VALUES
 	(170, 'regexp', '0170'),
 	(171, 'regexp', '0171'),
 	(172, 'regexp', '0172'),
-	(173, 'regexp', '0173');
+	(173, 'regexp', '0173'),
+	(174, 'teachers', '0174'),
+	(175, 'teachers', '0175'),
+	(176, 'teachers', '0176'),
+	(177, 'teachers', '0177'),
+	(178, 'teachers', '0178'),
+	(179, 'teachers', '0179'),
+	(180, 'teachers', '0180'),
+	(181, 'teacher', '0181'),
+	(182, 'teacher', '0182'),
+	(183, 'teacher', '0183'),
+	(184, 'teacher', '0184'),
+	(185, 'teacher', '0185'),
+	(186, 'teacher', '0186'),
+	(187, 'teacher', '0187'),
+	(188, 'teacher', '0188'),
+	(189, 'teacher', '0189'),
+	(190, 'teacher', '0190'),
+	(191, 'teacher', '0191'),
+	(192, 'teacher', '0192');
 /*!40000 ALTER TABLE `sourcemessages` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -21,8 +21,8 @@ $model->lastName='Олександра Василівна';
 $model->arraySectionText=array('Програмування ПХП;','Java для IOS;');
 $tmp2 = Yii::t('teachers', '0061');
 $model->arrayCourseText=array(
-    ' •  кройка и шитье сроков давности;'=>'https://www.google.com.ua/',
-    ' •  программування самоубийств;'=>'https://www.google.com.ua/'
+    ' •  кройка и шитье сроков давности;'=> Yii::app()->request->baseUrl.'/course',
+    ' •  программування самоубийств;'=> Yii::app()->request->baseUrl.'/course'
 );
 ?>
 <div class="TeacherProfilemainBlock">
@@ -79,7 +79,7 @@ $model->arrayCourseText=array(
                             <a href="<?php echo $linkAdress; ?>">
                                 <?php echo $linkText; ?>
                             </a>
-                            <p></p>
+                            <br>
                         <?php
                         }
                         ?>
@@ -109,7 +109,7 @@ $model->arrayCourseText=array(
     <div class="TeacherProfileblock2">
         <div class="border">
             <div class="TeacherProfiletitles">
-                <?php echo "Відгуки студентів про викладача:"; ?>
+                <?php echo Yii::t('teacher', '0181'); ?>
                 <b>
                     <?php echo $model->firstName; ?>
                     <?php echo $model->lastName; ?>
@@ -117,15 +117,15 @@ $model->arrayCourseText=array(
             </div>
         </div>
 
-        <div class="TeacherProfiletitles"><?php echo "Середня оцінка: "; ?></div>
+        <div class="TeacherProfiletitles"><?php echo Yii::t('teacher', '0182'); ?></div>
 
         <div class="border">
             <div class="txtMsg">
                 <?php
                 $foo = 12;
-                echo "Знання: $foo ";
-                echo "Ефективність: $foo ";
-                echo "Відношення до студента: $foo ";
+                echo Yii::t('teacher', '0183').$foo;
+                echo Yii::t('teacher', '0184').$foo;
+                echo Yii::t('teacher', '0185').$foo;
                 ?>
             </div>
         </div>
@@ -149,7 +149,7 @@ $model->arrayCourseText=array(
         <div class="border">
             <div class="TeacherProfiletitles">
                 <?php
-                echo "Оцінка: ";
+                echo Yii::t('teacher', '0186');
 
                 for ($k = 0; $k < 10; $k++) {
                     ?>
@@ -182,7 +182,7 @@ $model->arrayCourseText=array(
         <div class="border">
             <div class="TeacherProfiletitles">
                 <?php
-                echo "Оцінка: ";
+                echo Yii::t('teacher', '0186');
 
                 for ($k = 0; $k < 7; $k++) {
                     ?>
@@ -217,7 +217,7 @@ $model->arrayCourseText=array(
         <div class="border">
             <div class="TeacherProfiletitles">
                 <?php
-                echo "Оцінка: ";
+                echo Yii::t('teacher', '0186');
                 for ($k = 0; $k < 4; $k++) {
                     ?>
                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/>
@@ -255,7 +255,7 @@ $model->arrayCourseText=array(
         <div class="border">
             <div class="TeacherProfiletitles">
                 <?php
-                echo "Оцінка: ";
+                echo Yii::t('teacher', '0186');
                 for ($k = 0; $k < 5; $k++) {
                     ?>
                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/starFull.png"/>
@@ -276,19 +276,19 @@ $model->arrayCourseText=array(
         <div class="lessonTask">
             <img class="lessonBut" src="<?php echo Yii::app()->request->baseUrl; ?>/css/images/lessButton.png">
 
-            <div class="lessonButName" unselectable="on">Твій відгук</div>
+            <div class="lessonButName" unselectable="on"><?php echo Yii::t('teacher', '0187'); ?></div>
             <div class="lessonLine"></div>
             <div class="responseBG">
             <div class="txtMsg">
                 <table style="padding-left: 35px; padding-top: 30px;">
                     <tr>
                         <td align="right">
-                            <b><?php echo "Ваша оцінка"; ?></b>
+                            <b><?php echo  Yii::t('teacher', '0188'); ?></b>
                         </td>
                     </tr>
                     <tr>
                         <td align="right">
-                            <?php echo "Знания викладача:"; ?>
+                            <?php echo Yii::t('teacher', '0189'); ?>
                         </td>
                         <td>
                             <?php
@@ -302,7 +302,7 @@ $model->arrayCourseText=array(
                     </tr>
                     <tr>
                         <td align="right">
-                            <?php echo "Эффективність:"; ?>
+                            <?php echo Yii::t('teacher', '0190'); ?>
                         </td>
                         <td>
                             <?php
@@ -316,7 +316,7 @@ $model->arrayCourseText=array(
                     </tr>
                     <tr>
                         <td align="right">
-                            <?php echo "Ставленя до студента:"; ?>
+                            <?php echo Yii::t('teacher', '0191'); ?>
                         </td>
                         <td>
                             <?php
@@ -333,7 +333,7 @@ $model->arrayCourseText=array(
             <div class="BBCode">
                 <form action="" method="post">
                     <textarea class="editor"></textarea>
-                    <input id="lessonTask1" type="submit" value="Відправити">
+                    <input id="lessonTask1" type="submit" value="<?php echo Yii::t('teacher', '0192'); ?>">
                 </form>
             </div>
         </div>
