@@ -281,7 +281,7 @@ $header = new Header();?>
                  <a href="https://www.facebook.com/pages/INTITA/320360351410183">
                     <img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/facebook.png"/></a>
                 <a href="https://www.linkedin.com/company/intita?trk=biz-companies-cym">
-                    <img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/odnoklasniki.png"/></a>
+                    <img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/inl.png"/></a>
                 <a href="http://vk.com/intita">
                     <img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/vkontakte.png"/></a>
 
@@ -296,7 +296,7 @@ $header = new Header();?>
                         <img src="<?php echo Yii::app()->request->baseUrl;?>/css/images/Logo_small.png" style="max-width: 140px; padding-left: 0px;">
                     </a>
                 </div>
-                <div style="margin-left: 0px">
+                <div style="margin-left: 0px; padding-bottom: -10px;">
                     <p > <?php echo $footer->getTel();  ?><br/>
                         <?php echo $footer->getMobile();  ?><br/>
                         <?php echo $footer->getEmail(); ?><br/>
